@@ -8,8 +8,8 @@ const NursingPage = lazy(() =>
 
 export default function HomePage() {
   return (
-    <Suspense fallback={<LoadingScreen />}>
-      <AsramPage />
-    </Suspense>
+    <>
+    <AsramPage />
+    </>
   );
 }

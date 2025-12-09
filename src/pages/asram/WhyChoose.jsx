@@ -1,3 +1,4 @@
+// src/sections/home/WhyChooseAsram.jsx
 import React from "react";
 
 import academicsIcon from "../../assets/asram/academic.svg";
@@ -52,22 +53,27 @@ export default function WhyChooseAsram() {
   ];
 
   return (
-    <section className={`w-full ${T.bg.programCard} flex justify-center`}>
+    <section className={`w-full ${T.bg.programCard} py-[60px] md:py-[80px] flex justify-center`}>
+
+      {/* ⭐ UNIFIED BASELINE CONTAINER */}
       <div
         className="
-          w-[1440px] max-w-full mx-auto
-          px-[120px]
-          pt-[80px] pb-[80px]
-          flex flex-col gap-[60px]
+          w-full max-w-[1440px] mx-auto
+          px-4 sm:px-6 md:px-10 lg:px-[120px]
+          flex flex-col 
+          gap-[40px] md:gap-[60px]
         "
       >
         {/* Heading */}
-        <div className="flex flex-col gap-[16px] w-full">
+        <div className="flex flex-col gap-[12px] w-full">
           <h2
             className={`
               ${T.font.family}
               ${T.font.weight.bold}
-              text-[36px] leading-[48px]
+              text-[26px] leading-[34px]
+              sm:text-[30px] sm:leading-[40px]
+              md:text-[32px] md:leading-[44px]
+              lg:text-[36px] lg:leading-[48px]
             `}
             style={{ color: T.color.text.secondary }}
           >
@@ -75,10 +81,13 @@ export default function WhyChooseAsram() {
           </h2>
         </div>
 
-        {/* Grid - same as ResearchSection but using variant="feature" */}
+        {/* Responsive GRID */}
         <div
           className="
-            grid grid-cols-3
+            grid
+            grid-cols-1 
+            sm:grid-cols-2 
+            lg:grid-cols-3 
             gap-x-[28px] gap-y-[32px]
             w-full
           "
@@ -109,6 +118,7 @@ export default function WhyChooseAsram() {
         >
           Apply Now
         </Button>
+
       </div>
     </section>
   );

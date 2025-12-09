@@ -6,56 +6,54 @@ import repImage from "../../assets/asram/reputation.svg";
 const ReputationQuality = () => {
   return (
     <section
-      className="w-full"
-      style={{
-        backgroundColor: "#FFF", // exact Figma light-beige background
-        padding: "80px 0",          // top & bottom 80px
-      }}
+      className="w-full bg-white py-[60px] md:py-[80px]"
+      /* mobile: 60px padding, desktop: 80px */
     >
-      {/* FRAME-141 → 1440px width centered */}
+      {/* CONTAINER */}
       <div
-        className="mx-auto"
-        style={{
-          width: "1440px",
-          padding: "0 120px", // left & right 120px as per Figma
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "flex-start",
-        }}
+        className="
+          w-full 
+          max-w-[1440px] 
+          mx-auto 
+          flex flex-col md:flex-row 
+          gap-[40px] md:gap-0 
+          px-4 sm:px-6 md:px-10 lg:px-[120px]
+          items-start justify-between
+        "
       >
-        {/* LEFT COLUMN (TEXT AREA 535.9px) */}
+        {/* LEFT COLUMN */}
         <div
-          style={{
-            width: "535.9px",
-            marginTop: "0px",
-          }}
+          className="
+            w-full 
+            md:w-[535.9px]
+            flex flex-col
+          "
         >
           {/* TITLE */}
           <h2
-            style={{
-              fontFamily: "Montserrat",
-              fontSize: "32px",
-              fontWeight: "700",
-              color: "#223F7F",
-              lineHeight: "40px",
-              marginBottom: "20px",
-            }}
+            className={`
+              ${T.font.family} 
+              font-bold
+              text-[#223F7F]
+              text-[26px] leading-[32px] 
+              sm:text-[30px] sm:leading-[36px]
+              md:text-[32px] md:leading-[40px]
+              mb-[20px]
+            `}
           >
             A Reputation Built on Quality
           </h2>
 
           {/* PARAGRAPH */}
           <p
-            style={{
-              fontFamily: "Montserrat",
-              fontSize: "18px",
-              fontWeight: "400",
-              color: "rgba(25,25,25,0.75)",
-              lineHeight: "1.61",
-              width: "535.9px",
-              height: "116px",
-            }}
+            className={`
+              ${T.font.family} 
+              text-[16px] leading-[26px]
+              sm:text-[17px] sm:leading-[28px]
+              md:text-[18px] md:leading-[29px]
+              text-[rgba(25,25,25,0.75)]
+              mb-[30px]
+            `}
           >
             ASRAM School of Nursing is widely respected for its high-quality
             teaching, strong clinical training, and excellent student outcomes.
@@ -63,48 +61,39 @@ const ReputationQuality = () => {
             standards and hands-on learning.
           </p>
 
-          {/* BUTTON → exact layout & spacing */}
+          {/* BUTTON */}
           <button
-            style={{
-              width: "301px",
-              height: "46px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "row",
-              gap: "10px",
-              margin: "40px 234.9px 0 0", // EXACT from Figma
-              padding: "12px 24px",
-              borderRadius: "8px",
-              backgroundColor: "#223f7f",
-              color: "#ffffff",
-              fontFamily: "Montserrat",
-              fontWeight: "600",
-              fontSize: "16px",
-            }}
+            className={`
+              w-full md:w-[301px] 
+              h-[46px]
+              flex items-center justify-center
+              rounded-[8px]
+              text-white
+              ${T.font.family}
+              font-semibold
+              text-[15px] sm:text-[16px]
+              bg-[#223F7F]
+              md:mt-[40px]
+            `}
           >
             Explore Our Achievements
           </button>
         </div>
 
-        {/* RIGHT IMAGE BLOCK — EXACT 523 × 343 */}
+        {/* RIGHT IMAGE */}
         <div
-          style={{
-            width: "523px",
-            height: "343px",
-            borderRadius: "8px",
-            overflow: "hidden",
-            backgroundColor: "#D9D9D9",
-          }}
+          className="
+            w-full 
+            md:w-[523px]
+            h-[240px] sm:h-[280px] md:h-[343px] 
+            rounded-[8px] overflow-hidden bg-[#D9D9D9]
+            flex-shrink-0
+          "
         >
           <img
             src={repImage}
             alt="Reputation Built on Quality"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
+            className="w-full h-full object-cover"
           />
         </div>
       </div>

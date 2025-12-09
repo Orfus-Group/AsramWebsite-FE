@@ -41,6 +41,7 @@ color: {
  dark: "#191919",
  extra: {
   dark80: "#191919CC",   // original #191919/80
+  dark75: "#191919BF",
   dark10: "rgba(25,25,25,0.10)",  // original #1919191A
 },
   text: {

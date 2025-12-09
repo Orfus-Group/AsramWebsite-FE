@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import cancerIcon from "../../assets/asram/insideasram.svg";
 import ResearchIcon from "../../assets/asram/researchinnov.svg";
-import LoadingScreen from "../../components/loader/LoadingScreen";
 
 // Lazy imports (same style as NursingPage)
 const AsramHero = lazy(() => import("./AsramHero"));
@@ -32,8 +31,8 @@ const AsramFooter = lazy(() =>
 
 const AsramPage = () => {
   return (
-    <Suspense fallback={<LoadingScreen />}>
-      <AsramHero />
+   <>
+    <AsramHero />
       <ReputationQuality />
       <InstitutionsSection />
       <AsramHealthcareServices />
@@ -55,7 +54,7 @@ const AsramPage = () => {
       />
 
       <AsramFooter />
-    </Suspense>
+   </>
   );
 };
 

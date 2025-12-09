@@ -53,7 +53,7 @@ const megaMenuContent = {
 
 const AsramMainHeader = () => {
   const [openMenu, setOpenMenu] = useState(null);
-
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -62,194 +62,289 @@ const AsramMainHeader = () => {
         setOpenMenu(null);
       }
     }
+    if (openMenu) document.addEventListener("mousedown", handleClickOutside);
 
-    if (openMenu) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [openMenu]);
+
+  // Disable page scroll when mobile menu is open
+useEffect(() => {
+  if (mobileMenuOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [mobileMenuOpen]);
+
 
   return (
     <>
-      {/* ─────────────── TOP UTILITY BAR ─────────────── */}
+      {/* ----------------------- TOP BAR ----------------------- */}
+<div className="w-full" style={{ backgroundColor: T.color.secondary }}>
+  <div className="w-full max-w-[1440px] mx-auto h-[40px] flex justify-center px-4 lg:px-[120px]">
+   <div 
+  className="
+    w-full 
+    max-w-full              /* mobile & tablet unchanged */
+    lg:max-w-[1440px]       /* desktop now aligns with all sections */
+    h-full 
+    flex items-center 
+    justify-center lg:justify-end
+    overflow-x-hidden 
+    gap-[20px] 
+    scrollbar-none
+  "
+>
+
+
       <div
-        className="w-full"
-        style={{ backgroundColor: T.color.text.secondary }}
+        className={`
+          flex items-center 
+          gap-[12px] sm:gap-[20px] 
+          text-white 
+          ${T.font.family} 
+          ${T.font.weight.medium} 
+          text-[10px] sm:text-[14px]
+        `}
       >
-        <div className="w-full max-w-[1440px] mx-auto h-[40px] flex justify-center px-[120px]">
-          <div className="w-[1200px] h-full flex items-center justify-end pr-[1px]">
-            <div
-              className={`flex items-center gap-[20px] text-white ${T.font.family} ${T.font.weight.medium} text-[14px] leading-[16px]`}
+        {utilityLinks.map((item) => (
+          <button
+            key={item.label}
+            className="flex items-center gap-[4px] hover:opacity-80 transition whitespace-nowrap"
+          >
+            <img
+              src={item.icon}
+              className="w-[12px] h-[12px] sm:w-[16px] sm:h-[16px]"
+            />
+            <span>{item.label}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      {/* ----------------------- MAIN HEADER ----------------------- */}
+<header className="w-full bg-white relative z-[100] shadow-[0_4px_20px_rgba(0,0,0,0.25)]">
+        <div className="w-full max-w-[1440px] mx-auto px-4 lg:px-[120px] h-[70px] lg:h-[84px] flex items-center justify-between">
+
+          {/* Modern Animated Hamburger */}
+          <button
+            className="lg:hidden flex flex-col gap-[5px] group"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <span
+              className={`w-7 h-[3px] bg-black rounded transition-all ${
+                mobileMenuOpen ? "rotate-45 translate-y-[6px]" : ""
+              }`}
+            ></span>
+            <span
+              className={`w-7 h-[3px] bg-black rounded transition-all ${
+                mobileMenuOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              className={`w-7 h-[3px] bg-black rounded transition-all ${
+                mobileMenuOpen ? "-rotate-45 -translate-y-[6px]" : ""
+              }`}
+            ></span>
+          </button>
+
+          {/* LEFT NAV (Desktop) */}
+          <nav className={`${T.font.family} hidden lg:flex items-center gap-[40px]`}>
+            <Link
+              to="/academics"
+              onClick={() => setOpenMenu(null)}
+              className={`${T.font.weight.medium} text-[18px] leading-[26px]`}
+              style={{ color: T.color.dark }}
             >
-              {utilityLinks.map((item) => (
-                <button
-                  key={item.label}
-                  className="flex items-center gap-[4px] hover:opacity-80 transition"
-                >
-                  <img
-                    src={item.icon}
-                    className="w-[16px] h-[16px] object-contain"
-                    alt={item.label}
-                  />
-                  <span className="whitespace-nowrap">{item.label}</span>
-                </button>
-              ))}
+              Academics
+            </Link>
+
+            {["Admissions", "Institutes"].map((label) => (
+             <button
+  key={label}
+  onClick={(e) => {
+    e.stopPropagation();
+    setOpenMenu(prev => prev === label ? null : label);
+  }}
+  className={`${T.font.weight.medium} text-[18px] leading-[26px]`}
+  style={{ color: T.color.dark }}
+>
+  {label}
+</button>
+
+            ))}
+          </nav>
+
+          {/* LOGO */}
+          <img
+            src={Logo}
+            className="h-[42px] w-[170px] sm:h-[46px] sm:w-[189px] object-contain mx-auto lg:mx-0"
+            alt="Asram Logo"
+          />
+
+          {/* RIGHT NAV (Desktop) */}
+          <nav className={`${T.font.family} hidden lg:flex items-center gap-[40px]`}>
+            {["Healthcare", "Campus Life", "About"].map((label) => (
+              <button
+  key={label}
+  onClick={(e) => {
+    e.stopPropagation();
+    setOpenMenu(prev => prev === label ? null : label);
+  }}
+  className={`${T.font.weight.medium} text-[18px] leading-[26px]`}
+  style={{ color: T.color.dark }}
+>
+  {label}
+</button>
+
+            ))}
+          </nav>
+        </div>
+
+        {/* ----------------------- MOBILE NAV ----------------------- */}
+       {/* ---------------- MOBILE NAVIGATION DROPDOWN ---------------- */}
+{/* ---------------- MOBILE NAVIGATION DROPDOWN ---------------- */}
+{mobileMenuOpen && (
+  <div
+    className="
+      lg:hidden fixed 
+      top-[110px] left-0 
+      w-full 
+      bg-white 
+      shadow-lg 
+      z-[100] 
+      max-h-[80vh] 
+      overflow-y-auto 
+      border-t
+    "
+  >
+    {/* MAIN MENU ITEMS */}
+    <div className="flex flex-col px-4 py-4 gap-4 text-[16px] font-medium">
+      {Object.keys(megaMenuContent).map((item) => (
+        <button
+          key={item}
+          className="text-left py-3 border-b"
+          onClick={() => setOpenMenu(openMenu === item ? null : item)}
+        >
+          {item}
+        </button>
+      ))}
+    </div>
+
+    {/* ---------------- MOBILE MEGA MENU CONTENT ---------------- */}
+    {openMenu && (
+      <div className="bg-gray-50 px-4 py-4 border-t animate-slideDown">
+        <p
+          className={`${T.font.family} text-[14px] leading-[20px] text-gray-700 mb-4`}
+        >
+          {megaMenuContent[openMenu].leftText}
+        </p>
+
+        <button
+          className={`${T.font.family} ${T.font.weight.semibold} w-full text-[16px] text-white py-3 rounded-[8px] mb-6`}
+          style={{ backgroundColor: T.color.secondary }}
+        >
+          {megaMenuContent[openMenu].button}
+        </button>
+
+        <div className="flex flex-col gap-6">
+          {megaMenuContent[openMenu].columns.map((col) => (
+            <div key={col.heading}>
+              <h3
+                className={`${T.font.family} ${T.font.weight.bold} text-[18px] leading-[24px] mb-2`}
+                style={{ color: T.color.extra.dark75 }}
+              >
+                {col.heading}
+              </h3>
+
+              <div className="flex flex-col gap-2">
+                {col.links.map((link) => (
+                  <Link
+                    key={link}
+                    to={link === "College of Nursing" ? "/nursing" : "#"}
+                    className={`${T.font.family} ${T.font.weight.medium} text-[15px] leading-[20px]`}
+                    style={{ color: T.color.secondary }}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-
-      {/* ─────────────── MAIN HEADER (WITH SHADOW) ─────────────── */}
-      <header className="w-full bg-white relative z-[60] shadow-[0_4px_20px_rgba(0,0,0,0.25)]">
-        <div className="w-full max-w-[1440px] mx-auto px-[120px] h-[84px] flex items-center justify-center">
-          <div className="w-[1200px] h-[50px] flex items-center justify-between">
-            {/* LEFT NAV */}
-           <nav className={`${T.font.family} flex items-center gap-[40px]`}>
-
-  {/* ✅ Academics = Proper Route Navigation */}
-  <Link
-    to="/academics"
-    className={`${T.font.family} text-[#191919] text-[18px] leading-[26px] hover:text-[#223F7F]`}
-    onClick={() => setOpenMenu(null)} 
-  >
-    Academics
-  </Link>
-
-  {/* ✅ Admissions = Mega Menu */}
-  <button
-    onClick={(e) => {
-      e.stopPropagation();
-      setOpenMenu(openMenu === "Admissions" ? null : "Admissions");
-    }}
-    className={`${T.font.family} text-[#191919] text-[18px] leading-[26px] hover:text-[#223F7F]`}
-  >
-    Admissions
-  </button>
-
-  {/* ✅ Institutes = Mega Menu */}
-  <button
-    onClick={(e) => {
-      e.stopPropagation();
-      setOpenMenu(openMenu === "Institutes" ? null : "Institutes");
-    }}
-    className={`${T.font.family} text-[#191919] text-[18px] leading-[26px] hover:text-[#223F7F]`}
-  >
-    Institutes
-  </button>
-
-</nav>
+    )}
+  </div>
+)}
 
 
-            {/* LOGO */}
-            <img
-              src={Logo}
-              alt="Asram Logo"
-              className="h-[46px] w-[189px] object-contain"
-              draggable="false"
-            />
-
-            {/* RIGHT NAV */}
-            <nav className={`${T.font.family} flex items-center gap-[40px]`}>
-              {["Healthcare", "Campus Life", "About"].map((label) => (
-                <button
-                  key={label}
-                  onClick={() => setOpenMenu(openMenu === label ? null : label)}
-                  className="
-                    text-[#191919]
-                    text-[18px]
-                    leading-[26px]
-                    hover:text-[#223F7F]
-                    transition
-                  "
-                >
-                  {label}
-                </button>
-              ))}
-            </nav>
-          </div>
-        </div>
       </header>
 
-      {/* ─────────────── MEGA MENU ─────────────── */}
-      {/* ─────────────── MEGA MENU (OVERLAY, NO PAGE SHIFT) ─────────────── */}
+      {/* ----------------------- DESKTOP MEGA MENU ----------------------- */}
       {openMenu && megaMenuContent[openMenu] && (
         <div
           ref={menuRef}
-          onClick={(e) => e.stopPropagation()}
-          className="
-      absolute left-0 top-[124px] 
-      w-full 
-      bg-[#F5F6FA]
-      z-[40]
-      border-t border-[#E5E7EB]
-    "
+          className="absolute left-0 top-[124px] w-full z-[40] border-t border-[#E5E7EB] hidden lg:block"
+          style={{ backgroundColor: T.color.background.section }}
         >
-          {/* WHITE BACKGROUND FOR RIGHT SIDE */}
-          <div className="absolute right-0 top-0 h-full w-[70%] bg-white"></div>
+          <div
+            className="absolute right-0 top-0 h-full w-[70%]"
+            style={{ backgroundColor: T.color.background.white }}
+          />
 
-          {/* MAIN CONTENT */}
           <div className="w-full max-w-[1440px] mx-auto flex relative">
-            {/* LEFT FIXED PANEL */}
-            {/* LEFT FIXED PANEL */}
+
+            {/* LEFT PANEL */}
             <div
-              className="flex-none bg-[#F4F5F8] flex flex-col"
+              className="flex-none flex flex-col"
               style={{
                 width: "579px",
-                paddingTop: "24px", // reduced from 48px
-                paddingBottom: "28px", // reduced from 49px
+                paddingTop: "24px",
+                paddingBottom: "28px",
                 paddingLeft: "120px",
                 paddingRight: "78px",
+                backgroundColor: T.color.background.programCard,
               }}
             >
               <p
-                className="
-    font-montserrat 
-    text-[18px]
-    leading-[29px]
-    text-justify
-  "
+                className={`${T.font.family} text-[18px] leading-[29px]`}
                 style={{
+                  color: T.color.extra.dark80,
                   width: "381px",
-                  color: "rgba(25,25,25,0.75)",
                   marginBottom: "20px",
+                  textAlign: "justify",
                 }}
               >
                 {megaMenuContent[openMenu].leftText}
               </p>
 
               <button
-                className="
-    font-montserrat
-    text-[18px]
-    font-semibold
-    text-white
-    flex items-center justify-center
-    rounded-[8px]
-  "
+                className={`${T.font.family} ${T.font.weight.semibold} text-[18px] text-white flex items-center justify-center rounded-[8px]`}
                 style={{
                   width: "301px",
                   height: "46px",
-                  padding: "12px 24px",
-                  gap: "10px",
-                  marginTop: "20px",
-                  marginRight: "80px",
-                  backgroundColor: "#223F7F",
+                  backgroundColor: T.color.secondary,
                 }}
               >
                 {megaMenuContent[openMenu].button}
               </button>
             </div>
 
-            {/* RIGHT CONTENT PANEL */}
-            {/* RIGHT CONTENT PANEL */}
+            {/* RIGHT PANEL */}
             <div
               className="flex-1 relative"
               style={{
-                paddingTop: "24px", // reduced from 48px
-                paddingBottom: "28px", // reduced from 48px
+                paddingTop: "24px",
+                paddingBottom: "28px",
                 paddingLeft: "78px",
                 paddingRight: "120px",
               }}
@@ -260,55 +355,30 @@ const AsramMainHeader = () => {
                     key={col.heading}
                     className="flex flex-col"
                     style={{
-                      width: "125px",
-                      marginRight: "161px",
-                      marginBottom: "32.4px",
-                      fontFamily: "Montserrat",
-                      fontStyle: "normal",
-                      fontStretch: "normal",
-                      letterSpacing: "normal",
-                      textAlign: "justify",
-                      color: "rgba(25, 25, 25, 0.75)",
+                      width: col.heading === "Colleges" ? "286px" : "301px",
                     }}
                   >
-                    {/* Heading */}
                     <h3
+                      className={`${T.font.family} ${T.font.weight.bold} text-[28px] leading-[34px]`}
                       style={{
-                        width: "172px",
-                        height: "34px",
-                        fontFamily: "Montserrat",
-                        fontSize: "28px",
-                        fontWeight: 700,
-                        lineHeight: "34px",
-                        letterSpacing: "0px",
-                        textAlign: "justify",
-                        color: "rgba(25, 25, 25, 0.75)",
-                        marginBottom: "32px", // spacing below heading (matches figma vertical spacing)
+                        color: T.color.extra.dark75,
+                        marginBottom: "20px",
+                        marginTop: "-4px",
                       }}
                     >
                       {col.heading}
                     </h3>
 
-                    {/* Links */}
-                    <ul className="mt-[1px] space-y-[20px]">
+                    <ul className="space-y-[16px]">
                       {col.links.map((link) => (
                         <Link
                           key={link}
-                          to={link === "College of Nursing" ? "/nursing" : "#"} // <-- route mapping
+                          to={link === "College of Nursing" ? "/nursing" : "#"}
+                          className={`${T.font.family} ${T.font.weight.semibold} text-[22px] leading-[27px] block`}
                           style={{
-                            width: "286px",
-                            height: "27px",
-                            fontFamily: "Inter",
-                            fontSize: "22px",
-                            fontWeight: 600,
-                            lineHeight: "27px",
-                            letterSpacing: "0px",
-                            textAlign: "justify",
-                            color: "#223F7F",
-                            marginBottom: "27px",
-                            cursor: "pointer",
-                            textDecoration: "none",
-                            display: "block", // so spacing remains identical
+                            color: T.color.secondary,
+                            letterSpacing: "-0.2px",
+                            whiteSpace: "nowrap",
                           }}
                         >
                           {link}
@@ -319,6 +389,7 @@ const AsramMainHeader = () => {
                 ))}
               </div>
             </div>
+
           </div>
         </div>
       )}

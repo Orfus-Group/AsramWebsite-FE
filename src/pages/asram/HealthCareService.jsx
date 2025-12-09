@@ -27,7 +27,7 @@ const services = [
     tagline: "Empowering Compassionate Nurses",
     description:
       "Advanced oncology services with modern radiotherapy and comprehensive cancer care.",
-      ctatext: "Visit Cancer Care Website",
+    ctatext: "Visit Cancer Care Website",
     underline: "#6A1B9A",
     iconBg: "rgba(106, 27, 154, 0.10)",
     buttonBg: "rgba(106, 27, 154, 0.10)",
@@ -35,39 +35,50 @@ const services = [
   },
 ];
 
-const CARD_BORDER = "rgba(26, 24, 24, 0.10)"; // Figma Card Strokes - dark
+const CARD_BORDER = "rgba(26, 24, 24, 0.10)";
 
 const HealthcareServices = () => {
   return (
     <section
-      className={`${T.font.family} w-full`}
-      style={{
-        paddingTop: "80px",
-        paddingBottom: "80px",
-        backgroundColor: "transparent",
-      }}
+      className={`${T.font.family} w-full py-[60px] md:py-[80px]`}
+      style={{ backgroundColor: "transparent" }}
     >
-      {/* FIXED 1440 WIDTH WRAPPER */}
-      <div
-        className="mx-auto"
-        style={{
-          width: "1440px",
-          paddingLeft: "120px",
-          paddingRight: "120px",
-        }}
-      >
+      {/* ⭐ UNIFIED BASELINE CONTAINER */}
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px]">
+
         {/* SECTION TITLE */}
-        <h2 className="font-semibold text-[#223F7F] text-[42px] leading-[52px] mb-[6px]">
+        <h2
+          className="
+            font-semibold text-[#223F7F]
+            text-[28px] sm:text-[34px] md:text-[38px] lg:text-[42px]
+            leading-[36px] sm:leading-[44px] lg:leading-[52px]
+            mb-[6px]
+          "
+        >
           Our Healthcare Services
         </h2>
 
         {/* SUBTITLE */}
-        <p className="font-medium text-[#191919] text-[22px] leading-[32px] mb-[40px]">
+        <p
+          className="
+            font-medium text-[#191919]
+            text-[18px] sm:text-[20px] lg:text-[22px]
+            leading-[28px] sm:leading-[30px] lg:leading-[32px]
+            mb-[30px] lg:mb-[40px]
+          "
+        >
           World-Class Care Backed by Cutting-Edge Technology.
         </p>
 
-        {/* 2 CARD LAYOUT */}
-        <div className="flex flex-row gap-[40px]">
+        {/* RESPONSIVE CARD GRID */}
+        <div
+          className="
+            grid 
+            grid-cols-1
+            md:grid-cols-2
+            gap-[30px] md:gap-[40px]
+          "
+        >
           {services.map((item) => (
             <div
               key={item.id}
@@ -75,53 +86,72 @@ const HealthcareServices = () => {
                 bg-white 
                 rounded-[8px]
                 flex flex-col
-                px-[30px] pt-[30px] pb-[30px]
+                px-[24px] sm:px-[28px] pt-[24px] pb-[28px]
+                shadow-[0px_12px_28px_rgba(15,23,42,0.06)]
+                border
               "
               style={{
-                width: "585px",
-                height: "385px",
-                border: `1px solid ${CARD_BORDER}`,
+                borderColor: CARD_BORDER,
+                width: "100%",           
+                maxWidth: "585px",       
               }}
             >
+
               {/* ICON CIRCLE */}
               <div
-                className="flex items-center justify-center mb-[30px]"
-                style={{
-                  width: "64px",
-                  height: "64px",
-                  borderRadius: "49px",
-                  backgroundColor: item.iconBg,
-                }}
+                className="
+                  w-[64px] h-[64px] 
+                  rounded-full 
+                  flex items-center justify-center 
+                  mb-[30px]
+                "
+                style={{ backgroundColor: item.iconBg }}
               >
                 <img
                   src={item.icon}
                   alt=""
-                  style={{ width: "24px", height: "24px" }}
+                  className="w-[24px] h-[24px]"
                 />
               </div>
 
               {/* TITLE */}
-              <h3 className="font-semibold text-[#191919] text-[22px] leading-[27px] mb-[6px] relative pb-[8px]">
+              <h3
+                className="
+                  font-semibold text-[#191919]
+                  text-[20px] sm:text-[22px]
+                  leading-[26px] sm:leading-[27px]
+                  mb-[6px] relative pb-[8px]
+                "
+              >
                 {item.name}
                 <span
                   className="absolute left-0 bottom-0 border-b-[2.5px]"
-                  style={{
-                    width: "84px",
-                    borderColor: item.underline,
-                  }}
+                  style={{ width: "84px", borderColor: item.underline }}
                 />
               </h3>
 
               {/* TAGLINE */}
               <p
-                className="font-semibold text-[18px] leading-[24px] mb-[18px]"
+                className="
+                  font-semibold 
+                  text-[16px] sm:text-[18px]
+                  leading-[22px] sm:leading-[24px]
+                  mb-[16px]
+                "
                 style={{ color: item.taglineColor }}
               >
                 {item.tagline}
               </p>
 
               {/* DESCRIPTION */}
-              <p className="font-normal text-[#191919] text-[16px] leading-[24px] mb-[24px]">
+              <p
+                className="
+                  font-normal text-[#191919]
+                  text-[15px] sm:text-[16px]
+                  leading-[23px] sm:leading-[24px]
+                  mb-[24px]
+                "
+              >
                 {item.description}
               </p>
 
@@ -130,23 +160,27 @@ const HealthcareServices = () => {
                 className="
                   flex items-center justify-center gap-[6px]
                   rounded-[6px]
+                  h-[46px]
+                  w-full
                 "
-                style={{
-                  width: "525px",
-                  height: "46px",
-                  backgroundColor: item.buttonBg,
-                }}
+                style={{ backgroundColor: item.buttonBg }}
               >
-                <span className="font-semibold text-[18px] leading-none text-[#191919]">
+                <span
+                  className="
+                    font-semibold text-[16px] sm:text-[18px]
+                    text-[#191919]
+                  "
+                >
                   {item.ctatext}
                 </span>
 
                 <img
                   src={ArrowRight}
                   alt=""
-                  className="w-[22px] h-[22px] translate-y-[1px]"
+                  className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px]"
                 />
               </button>
+
             </div>
           ))}
         </div>

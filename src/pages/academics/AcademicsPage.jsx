@@ -24,8 +24,8 @@ const AcademicsHero = lazy(() => import("./AcademicsHero"));
 
 const AcademicsPage = () => {
   return (
-    <Suspense fallback={<LoadingScreen />}>
-      <AcademicsHero />
+   <>
+    <AcademicsHero />
       <ProgramsOffered />
       <NursingCareerSection />
       <WhyChooseNursingSchool />
@@ -35,18 +35,7 @@ const AcademicsPage = () => {
       <FinancialAidScholarships />
       <JoinOurNursingCommunity />
       <Footer />
-      {/* <FinancialAidScholarships />
-      <VisionMissionSection />
-      <NewsEvents />
-      <StudentExperience />
-      <ResearchSection />
-      <CommunityOutreachSection />
-      <ClinicalPracticumSection />
-      <FacultySpotlightSection />
-      <KeyStrengthsSection />
-      <WhyChooseSection />
-      <Footer /> */}
-    </Suspense>
+   </>
   );
 };
 

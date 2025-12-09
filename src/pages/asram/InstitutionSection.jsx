@@ -1,3 +1,4 @@
+// src/sections/home/InstitutionsSection.jsx
 import React from "react";
 
 // Icons
@@ -38,21 +39,18 @@ const institutions = [
   },
 ];
 
-// underline colors
 const underlineColors = {
   1: "#C0392B",
   2: "#008C8C",
   3: "#A66E00",
 };
 
-// icon background colors
 const iconBgColors = {
   1: "rgba(192,57,43,0.10)",
   2: "rgba(0,140,140,0.10)",
   3: "rgba(166,110,0,0.10)",
 };
 
-// CTA button colors
 const ctaColors = {
   1: "#C0392B1A",
   2: "#EAF5F5",
@@ -62,91 +60,156 @@ const ctaColors = {
 const InstitutionsSection = () => {
   return (
     <section
-      className="relative py-[68px] overflow-visible"
+      className="relative py-[68px]"
       style={{ backgroundColor: "rgba(34,63,127,0.05)" }}
     >
-      <div className="absolute top-[-70px] lg:top-[-90px] 2xl:top-[-92px] right-[92px] opacity-30 select-none pointer-events-none" />
+      {/* decorative element stays same */}
+      <div className="absolute top-[-60px] lg:top-[-90px] right-8 lg:right-[92px] opacity-30 select-none pointer-events-none" />
 
-      <div className="w-[1440px] max-w-full mx-auto px-[130px]">
-        {/* SECTION TITLE */}
+      {/* ⭐ UNIFIED CONTAINER FOR BASELINE ALIGNMENT */}
+      <div
+        className="
+          w-full max-w-[1440px]
+          mx-auto
+          px-4 sm:px-6 md:px-10 lg:px-[120px]
+        "
+      >
+        {/* Section Title */}
         <h2
-          className={`${T.font.family} ${T.font.weight.bold} text-[42px] leading-[52px] text-[#223F7F] mb-[6px]`}
+          className={`
+            ${T.font.family} ${T.font.weight.bold} 
+            text-[#223F7F]
+            text-[28px] sm:text-[34px] lg:text-[42px]
+            leading-[36px] sm:leading-[44px] lg:leading-[52px]
+            mb-[6px]
+          `}
         >
           Our Institutions
         </h2>
 
         <p
-          className={`${T.font.family} ${T.font.weight.medium} text-[22px] leading-[32px] text-[#191919] mt-[2px] mb-[45px]`}
+          className={`
+            ${T.font.family} ${T.font.weight.medium} 
+            text-[#191919]
+            text-[18px] sm:text-[20px] lg:text-[22px]
+            leading-[28px] sm:leading-[30px] lg:leading-[32px]
+            mt-[2px] mb-[30px] lg:mb-[45px]
+          `}
         >
           Three Institutions. One Vision for Future Healthcare Leaders.
         </p>
 
-        {/* CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[26px]">
+        {/* RESPONSIVE CARD GRID */}
+        <div
+          className="
+            grid 
+            grid-cols-1 
+            sm:grid-cols-2 
+            md:grid-cols-3 
+            gap-[26px] 
+            justify-items-center
+          "
+        >
           {institutions.map((item) => (
             <div
               key={item.id}
-              className="group w-[386px] min-h-[388px] bg-white rounded-[14px] border border-[#E1E6EF] shadow-[0px_12px_28px_rgba(15,23,42,0.06)] px-[28px] pt-[24px] pb-[24px] flex flex-col transition-all duration-200 hover:-translate-y-[4px] hover:shadow-[0px_20px_42px_rgba(15,23,42,0.12)]"
+              className="
+                group 
+                w-full sm:w-[370px] md:w-[386px] 
+                min-h-[388px]
+                bg-white 
+                rounded-[14px] 
+                border border-[#E1E6EF] 
+                shadow-[0px_12px_28px_rgba(15,23,42,0.06)]
+                px-[24px] sm:px-[28px]
+                pt-[24px] pb-[24px]
+                flex flex-col 
+                transition-all duration-200 
+                hover:-translate-y-[4px] 
+                hover:shadow-[0px_20px_42px_rgba(15,23,42,0.12)]
+              "
             >
               {/* ICON */}
               <div
-                className="w-[64px] h-[64px] rounded-full flex items-center justify-center mb-[22px]"
+                className="
+                  w-[64px] h-[64px] 
+                  rounded-full flex items-center justify-center 
+                  mb-[22px]
+                "
                 style={{ backgroundColor: iconBgColors[item.id] }}
               >
                 <img src={item.icon} className="w-[32px] h-[32px]" alt="" />
               </div>
 
-              {/* TITLE WITH UNDERLINE */}
+              {/* TITLE */}
               <h3
-                className={`${T.font.family} ${T.font.weight.semibold} text-[22px] leading-[32px] text-[#191919] mb-[6px] relative pb-[8px]`}
+                className={`
+                  ${T.font.family} ${T.font.weight.semibold} 
+                  text-[#191919]
+                  text-[20px] sm:text-[22px]
+                  leading-[30px] sm:leading-[32px]
+                  mb-[6px] relative pb-[8px]
+                `}
               >
                 {item.name}
                 <span
-                  className="absolute left-0 bottom-0 w-[84px] border-b-[2.5px]"
+                  className="absolute left-0 bottom-0 w-[70px] sm:w-[84px] border-b-[2.5px]"
                   style={{ borderColor: underlineColors[item.id] }}
                 />
               </h3>
 
               {/* TAGLINE */}
               <p
-                className={`${T.font.family} ${T.font.weight.bold} text-[18px] leading-[28px] text-[#223F7F] mt-[8px] mb-[10px]`}
+                className={`
+                  ${T.font.family} ${T.font.weight.bold}
+                  text-[#223F7F]
+                  text-[16px] sm:text-[18px]
+                  leading-[26px] sm:leading-[28px]
+                  mt-[8px] mb-[10px]
+                `}
               >
                 {item.tagline}
               </p>
 
               {/* DESCRIPTION */}
               <p
-                className={`${T.font.family} ${T.font.weight.normal} text-[18px] leading-[26px] text-[#191919] mt-[8px] mb-[24px]`}
+                className={`
+                  ${T.font.family} ${T.font.weight.normal}
+                  text-[#191919]
+                  text-[16px] sm:text-[18px]
+                  leading-[24px] sm:leading-[26px]
+                  mt-[8px] mb-[24px]
+                `}
               >
                 {item.description}
               </p>
 
               {/* CTA BUTTON */}
-             <Link
-  to={item.id === 2 ? "/nursing" : "#"}  // 👈 Nursing navigation
-  className="
-    mt-auto flex items-center justify-center gap-[6px]
-    w-full h-[46px] rounded-[6px]
-  "
-  style={{ backgroundColor: ctaColors[item.id], textDecoration: "none" }}
->
-  <span
-    className={`
-      ${T.font.family}
-      ${T.font.weight.semibold}
-      text-[18px] leading-none text-[#191919]
-    `}
-  >
-    {item.cta}
-  </span>
+              <Link
+                to={item.id === 2 ? "/nursing" : "#"}
+                className="
+                  mt-auto flex items-center justify-center 
+                  gap-[6px]
+                  w-full h-[46px] rounded-[6px]
+                "
+                style={{ backgroundColor: ctaColors[item.id] }}
+              >
+                <span
+                  className={`
+                    ${T.font.family} ${T.font.weight.semibold}
+                    text-[16px] sm:text-[18px]
+                    text-[#191919]
+                  `}
+                >
+                  {item.cta}
+                </span>
 
-  <img
-    src={ArrowRight}
-    className="w-[22px] h-[22px] select-none pointer-events-none"
-    alt=""
-  />
-</Link>
-
+                <img
+                  src={ArrowRight}
+                  className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px]"
+                  alt=""
+                />
+              </Link>
             </div>
           ))}
         </div>

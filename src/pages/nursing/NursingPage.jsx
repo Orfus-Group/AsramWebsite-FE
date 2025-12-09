@@ -16,8 +16,8 @@ const Footer = lazy(() => import("./NursingFooter"));
 
 const NursingPage = () => {
   return (
-    <Suspense fallback={<LoadingScreen />}>
-      <NursingHero />
+    <>
+     <NursingHero />
       <AcademicProgramsSection />
       <VisionMissionSection />
       <NewsEvents />
@@ -29,7 +29,7 @@ const NursingPage = () => {
       <KeyStrengthsSection />
       <WhyChooseSection />
       <Footer />
-    </Suspense>
+    </>
   );
 };
 
