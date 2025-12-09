@@ -1,4 +1,4 @@
-import{j as e,T as s}from"./index-BSDxuoWB.js";import{P as t}from"./PixelSliderDots-BRwn6gh-.js";const l="/AsramWebsite-FE/assets/herobgimage-BZnX6yEl.svg",r=()=>e.jsxs("section",{className:`
+import{j as e,T as s}from"./index-DtYukAq7.js";import{P as t}from"./PixelSliderDots-DIvpoLVx.js";const l="/AsramWebsite-FE/assets/herobgimage-BZnX6yEl.svg",r=()=>e.jsxs("section",{className:`
         relative
         w-full
         h-[797px]

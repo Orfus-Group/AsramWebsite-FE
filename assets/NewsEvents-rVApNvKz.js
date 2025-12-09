@@ -1,4 +1,4 @@
-import{j as e,T as s}from"./index-BSDxuoWB.js";import{i as t,a,b as l,u as i,c as r,n as o,d as n,e as c}from"./notific-BTAgUBWa.js";const m=()=>e.jsx("section",{className:"w-full bg-white py-16",id:"news",children:e.jsxs("div",{className:"max-w-[1280px] mx-auto px-4",children:[e.jsx("h2",{className:`
+import{j as e,T as s}from"./index-DtYukAq7.js";import{i as t,a,b as l,u as i,c as r,n as o,d as n,e as c}from"./notific-BTAgUBWa.js";const m=()=>e.jsx("section",{className:"w-full bg-white py-16",id:"news",children:e.jsxs("div",{className:"max-w-[1280px] mx-auto px-4",children:[e.jsx("h2",{className:`
             ${s.font.family}
             ${s.font.weight.bold}
             text-[42px] leading-[48px]

@@ -1,4 +1,4 @@
-import{j as t,T as d}from"./index-BSDxuoWB.js";const l=({total:r=5,activeIndex:p=0})=>t.jsx("div",{className:`
+import{j as t,T as d}from"./index-DtYukAq7.js";const l=({total:r=5,activeIndex:p=0})=>t.jsx("div",{className:`
         absolute
         left-[52.5px]
         top-[332px]

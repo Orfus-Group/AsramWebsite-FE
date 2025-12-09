@@ -1,4 +1,4 @@
-import{j as t,T as e}from"./index-BSDxuoWB.js";function g({icon:p,title:o,description:a,years:l,seats:i,variant:r="program"}){const n=r==="program",x={program:{wrapper:`
+import{j as t,T as e}from"./index-DtYukAq7.js";function g({icon:p,title:o,description:a,years:l,seats:i,variant:r="program"}){const n=r==="program",x={program:{wrapper:`
         w-[378.95px]
         h-[422.37px]
         flex flex-col items-start justify-start
