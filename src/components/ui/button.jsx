@@ -7,24 +7,30 @@ export default function Button({
   color = T.color.background.white,
   font = T.font.family,
   weight = T.font.weight.regular,
+
   size = "md",
   radius = "md",
-  rounded,          // NEW
+  rounded, 
+
   width,
   height,
+
   px,
   py,
-  customPadding,     // NEW
+  customPadding,  
+
   textSize,
   leading,
   tracking = "tracking-[0px]",
-  gap = "",          // NEW: icon/text spacing
-  borderColor,       // NEW
-  borderWidth,       // NEW
-  borderStyle = "solid", // NEW
 
-  icon = null,       // NEW
-  customClass = "",  // NEW
+  gap = "",
+
+  borderColor,
+  borderWidth,
+  borderStyle = "solid",
+
+  icon = null,
+  customClass = "",
   className = "",
   ...rest
 }) {
@@ -55,22 +61,26 @@ export default function Button({
     <button
       className={`
         flex items-center justify-center
+        whitespace-nowrap   /* 🔥 FIXES TEXT BREAKING */
+
         ${font}
         ${weight}
         ${textSize || current.text}
         ${leading || current.leading}
         ${tracking}
 
+        /* Radius */
         ${rounded ? "" : T.radius[radius]}
-        ${rounded ? "" : ""}
 
+        /* Padding Logic */
         ${customPadding ? customPadding : ""}
         ${!customPadding && !px && !py ? current.padding : ""}
         ${px ? `px-[${px}]` : ""}
         ${py ? `py-[${py}]` : ""}
 
+        /* Gap */
         ${gap ? `gap-[${gap}]` : "gap-[0px]"}
-        
+
         ${className}
         ${customClass}
       `}
@@ -79,20 +89,18 @@ export default function Button({
         color: color,
         width: width || "auto",
         height: height || "auto",
+
         borderColor: borderColor || "transparent",
         borderWidth: borderWidth || 0,
         borderStyle: borderStyle,
+
         borderRadius: rounded || undefined,
       }}
       {...rest}
     >
       {children}
 
-      {icon && (
-        <span className="ml-[6px] flex items-center">
-          {icon}
-        </span>
-      )}
+      {icon && <span className="ml-[6px] flex items-center">{icon}</span>}
     </button>
   );
 }

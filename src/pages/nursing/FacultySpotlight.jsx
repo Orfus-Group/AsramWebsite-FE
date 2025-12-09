@@ -161,31 +161,40 @@ export default function FacultySpotlightSection() {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex justify-between mt-[16px]">
-                  <Button
-                    width="160px"
-                    height="40px"
-                    textSize="text-[14px]"
-                    leading="leading-[20px]"
-                    radius="custom"
-                    className="rounded-[8px]"
-                  >
-                    Book Appointment
-                  </Button>
+           <div className="flex items-center gap-[12px] mt-[16px]">
 
-                  <Button
-                    bg="#FFFFFF"
-                    color={T.color.text.secondary}
-                    width="120px"
-                    height="40px"
-                    textSize="text-[14px]"
-                    leading="leading-[20px]"
-                    radius="custom"
-                    className="rounded-[8px] border border-[#CBD5E1]"
-                  >
-                    View Profile
-                  </Button>
-                </div>
+  <Button
+    width="194px"
+    height="48px"
+    textSize="text-[14px]"
+    font={T.font.family}
+    leading="leading-[20px]"
+    radius="custom"
+    className="rounded-[8px]"
+  >
+    Book Appointment
+  </Button>
+
+<Button
+  padding="px-0 py-0"
+  bg={T.color.background.white}
+  color={T.color.text.secondary}
+  font={T.font.family}
+  width="120.19px"
+  height="48.66px"
+  rounded="9.73px"
+  borderColor="#D1D5DB"
+  borderWidth="0.97px"
+  textSize="text-[15px]"
+  leading="leading-[22px]"
+  weight={T.font.weight.regular}
+>
+  View Profile
+</Button>
+
+
+</div>
+
               </div>
             </div>
           ))}

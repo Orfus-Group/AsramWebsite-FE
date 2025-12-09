@@ -9,7 +9,7 @@ const AcademicsHeader = () => {
   return (
     <>
       <div
-        className="px-[120px]"
+        className="px-[100px]"
         style={{ backgroundColor: T.color.text.secondary }} // #1E3E7B
       >
         <div className="w-[1440px] max-w-full mx-auto flex justify-end items-center h-[46px]">

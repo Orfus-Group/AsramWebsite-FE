@@ -118,7 +118,7 @@ export default function ClinicalPracticumSection() {
              <Button
   bg={T.color.primary}
   color="#FFFFFF"
-  font={T.font.familyMulish}
+  font={T.font.family}
   weight={T.font.weight.regular}
   textSize="text-[15.79px]"
   leading="leading-[23.7px]"

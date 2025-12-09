@@ -98,7 +98,7 @@ export default function WhyChooseAsram() {
         <Button
           bg={T.color.secondary}
           color={T.color.background.white}
-          font={T.font.familyMulish}
+          font={T.font.family}
           weight={T.font.weight.regular}
           textSize="text-[15.79px]"
           leading="leading-[23.7px]"

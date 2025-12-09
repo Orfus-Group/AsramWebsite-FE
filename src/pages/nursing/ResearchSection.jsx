@@ -94,20 +94,23 @@ export default function ResearchSection() {
         </div>
 
         {/* CTA Button */}
-       <Button
+  <Button
   bg={T.color.primary}
-  color={T.color.background.white}
-  font={T.font.familyMulish}
+  color="#FFFFFF"
+  font={T.font.family}
   weight={T.font.weight.regular}
-  textSize="text-[15.79px]"
-  leading="leading-[23.7px]"
-  width="201.47px"
-  height="47.37px"
-  radius="md"
+  textSize="text-[15.02px]"
+  leading="leading-[22.53px]"
+   width="219.63px"
+  height="49.21px"
+  rounded="9.39px"
+  customPadding="px-[22px] py-[12px]"
   className="mx-auto"
 >
   Explore Our Research
 </Button>
+
+
 
       </div>
     </section>

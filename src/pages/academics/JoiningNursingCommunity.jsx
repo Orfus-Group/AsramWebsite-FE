@@ -39,6 +39,7 @@ export default function JoinOurNursingCommunity() {
   customPadding="px-[39px] py-[18px]"
   bg={T.color.primary}
   color="white"
+            font={T.font.family}
   rounded="9.87px"
   textSize="text-[15.79px]"
   leading="leading-[23.68px]"
@@ -55,6 +56,7 @@ export default function JoinOurNursingCommunity() {
       <Button
   customPadding="px-[39.47px] py-[15.79px]"
   bg={T.color.background.programCard}
+            font={T.font.family}
   color={T.color.secondary}
   rounded="9.87px"
   textSize="text-[15.79px]"
