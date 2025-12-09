@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { T } from "../../theme";
 
 import location from "../../assets/academics/location.svg";
@@ -177,10 +177,59 @@ function ContactCard({ icon, title, subtitle1, subtitle2 }) {
   );
 }
 
-/* ---------------- STAT BLOCK ---------------- */
+
 function StatBlock({ count, label }) {
+  const [displayValue, setDisplayValue] = useState("0");
+  const ref = useRef(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const target = ref.current;
+
+    const handleIntersect = (entries) => {
+      if (entries[0].isIntersecting && !hasAnimated.current) {
+        hasAnimated.current = true;
+        animateCount();
+      }
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, {
+      threshold: 0.4,
+    });
+
+    if (target) observer.observe(target);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const animateCount = () => {
+    const numberOnly = parseInt(count.replace(/\D/g, ""), 10); // extract digits
+    const suffix = count.replace(/[0-9]/g, ""); // keep + or INC
+
+    if (isNaN(numberOnly)) {
+      // For things like “INC”
+      setDisplayValue(count);
+      return;
+    }
+
+    let start = 0;
+    const duration = 1200; // animation speed
+    const startTime = performance.now();
+
+    const step = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const current = Math.floor(progress * numberOnly);
+
+      setDisplayValue(current + suffix);
+
+      if (progress < 1) requestAnimationFrame(step);
+    };
+
+    requestAnimationFrame(step);
+  };
+
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center" ref={ref}>
       <span
         className={`
           ${T.font.family}
@@ -191,7 +240,7 @@ function StatBlock({ count, label }) {
           text-[${T.color.secondary}]
         `}
       >
-        {count}
+        {displayValue}
       </span>
 
       <span

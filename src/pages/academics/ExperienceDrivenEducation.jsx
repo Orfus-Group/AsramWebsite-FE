@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { T } from "../../theme";
 
 export default function ExperienceDrivenEducation() {
@@ -102,8 +102,9 @@ export default function ExperienceDrivenEducation() {
                 "
               >
 
-                {/* VALUE */}
-                <span
+                {/* VALUE WITH ANIMATION */}
+                <AnimatedStatValue
+                  value={stat.value}
                   className={`
                     ${T.font.family}
                     ${T.font.weight.bold}
@@ -111,9 +112,7 @@ export default function ExperienceDrivenEducation() {
                     leading-[35.53px]
                   `}
                   style={{ color: T.color.dark }}
-                >
-                  {stat.value}
-                </span>
+                />
 
                 {/* LABEL */}
                 <span
@@ -134,5 +133,62 @@ export default function ExperienceDrivenEducation() {
         </div>
       </div>
     </section>
+  );
+}
+
+/* ------------------------------------------
+    ANIMATED STAT VALUE COMPONENT
+------------------------------------------- */
+function AnimatedStatValue({ value, className, style }) {
+  const [displayValue, setDisplayValue] = useState("0");
+  const ref = useRef(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const element = ref.current;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          animateValue();
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    if (element) observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
+  const animateValue = () => {
+    const number = parseInt(value.replace(/\D/g, ""), 10);
+    const suffix = value.replace(/[0-9]/g, "");
+
+    // If it's non-numeric like "INC"
+    if (isNaN(number)) {
+      setDisplayValue(value);
+      return;
+    }
+
+    const duration = 1200;
+    const startTime = performance.now();
+
+    const step = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const current = Math.floor(progress * number);
+
+      setDisplayValue(current + suffix);
+
+      if (progress < 1) requestAnimationFrame(step);
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  return (
+    <span ref={ref} className={className} style={style}>
+      {displayValue}
+    </span>
   );
 }
