@@ -1,14 +1,20 @@
-import React, { lazy } from "react";
+import React from "react";
 
-const HomePage = lazy(() => import("../pages/asram/AsramHome"));
-const NursingPage = lazy(() => import("../pages/nursing/NursingPage"));
-const AcademicsPage = lazy(() => import("../pages/academics/AcademicsPage"));
+import AsramHomePage from "../pages/asram/AsramLatestHome";
+import HomePage from "../pages/asram/AsramHome";
+import NursingPage from "../pages/nursing/NursingPage";
+import AcademicsPage from "../pages/academics/AcademicsPage";
 
 const routesConfig = [
   {
     path: "/",
     label: "Home",
     element: <HomePage />,
+  },
+  {
+    path: "/asram-home",
+    label: "Home",
+    element: <AsramHomePage />,
   },
   {
     path: "/academics",

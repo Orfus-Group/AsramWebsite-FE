@@ -2,7 +2,7 @@
 import React from "react";
 import { T } from "../../theme";
 
-const ResearchInnovation = ({ title, description1, description2, image }) => {
+const ResearchInnovation = ({ title, description1, image }) => {
   return (
     <section className="w-full py-[80px] bg-white">
 
@@ -31,6 +31,7 @@ const ResearchInnovation = ({ title, description1, description2, image }) => {
         </h2>
 
         {/* MAIN ROW — Figma accurate spacing */}
+       {/* MAIN ROW — Responsive spacing */}
         <div
           className="
             w-full
@@ -38,8 +39,7 @@ const ResearchInnovation = ({ title, description1, description2, image }) => {
             flex flex-col lg:flex-row
             justify-between
             items-start
-            gap-[40px] 
-            lg:gap-[170px]
+            gap-[24px] sm:gap-[32px] md:gap-[48px] lg:gap-[80px] xl:gap-[120px] 2xl:gap-[170px]
             mx-auto
           "
         >
@@ -64,17 +64,7 @@ const ResearchInnovation = ({ title, description1, description2, image }) => {
               {description1}
             </p>
 
-            <p
-              className={T.font.family}
-              style={{
-                fontSize: "18px",
-                lineHeight: "26px",
-                textAlign: "justify",
-                color: "#191919",
-              }}
-            >
-              {description2}
-            </p>
+           
           </div>
 
           {/* RIGHT IMAGE — identical to design */}

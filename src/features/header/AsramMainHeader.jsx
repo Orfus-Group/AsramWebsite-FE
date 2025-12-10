@@ -296,7 +296,7 @@ const AsramMainHeader = () => {
               }}
             >
               <p
-                className={`${T.font.family} text-[18px] leading-[29px]`}
+                className={`${T.font.family} text-[16px] leading-[29px]`}
                 style={{
                   color: T.color.extra.dark80,
                   width: "381px",
@@ -352,7 +352,7 @@ const AsramMainHeader = () => {
                         <Link
                           key={link}
                           to={link === "College of Nursing" ? "/nursing" : "#"}
-                          className={`${T.font.family} ${T.font.weight.semibold} text-[22px] leading-[27px] block`}
+                          className={`${T.font.family} ${T.font.weight.semibold} text-[18px] leading-[22px] block`}
                           style={{
                             color: T.color.secondary,
                             letterSpacing: "-0.2px",
