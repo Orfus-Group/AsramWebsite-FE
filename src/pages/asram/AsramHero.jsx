@@ -8,7 +8,10 @@ const AsramHero = () => {
     <section
       className="
         relative w-full 
-        h-[80vh] sm:h-[70vh] md:h-[80vh] lg:h-[665px]
+        h-[50vh]            /* MOBILE */
+        sm:h-[55vh]        /* Slightly taller small phones */
+        md:h-[60vh]        /* Tablets */
+        lg:h-[665px]       /* Desktop unchanged */
         overflow-hidden
       "
     >
@@ -22,7 +25,7 @@ const AsramHero = () => {
       {/* HERO HEADING */}
       <div className="absolute inset-0 flex items-center justify-center">
         
-        {/* UNIFIED CONTAINER */}
+        {/* Unified Container */}
         <div
           className="
             w-full 
@@ -37,10 +40,10 @@ const AsramHero = () => {
               ${T.font.family}
               font-bold
               text-white
-              text-[34px] leading-[38px]
-              sm:text-[48px] sm:leading-[46px]
-              md:text-[60px] md:leading-[54px]
-              lg:text-[72px] lg:leading-[54px]
+              text-[38px] leading-[32px]   /* MOBILE */
+              sm:text-[38px] sm:leading-[40px]
+              md:text-[52px] md:leading-[50px]
+              lg:text-[72px] lg:leading-[54px]   /* Desktop unchanged */
               text-center
             `}
           >

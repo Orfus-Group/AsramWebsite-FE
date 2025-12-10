@@ -10,6 +10,7 @@ import practical from "../../assets/nursing/practicalorient.svg";
 
 import { T } from "../../theme";
 import InfoCard from "../infoCard";
+import PageSection from "../../features/common/layout/PageContainer";
 
 export default function KeyStrengthsSection() {
   const strengths = [
@@ -52,46 +53,44 @@ export default function KeyStrengthsSection() {
   ];
 
   return (
-    <section className={`w-full ${T.bg.white} flex justify-center`}>
-      <div
-        className="
-          w-[1440px] max-w-full
-          px-[120px]
-          pt-[80px] pb-[40px]
-          flex flex-col gap-[60px]
-        "
-      >
-        {/* ---------------- TOP HEADINGS ---------------- */}
-        <div className="flex justify-between items-start w-full">
-          <h2
-            className={`
-              ${T.font.family}
-              ${T.font.weight.bold}
-              text-[36px] leading-[48px]
-              w-[420px]
-            `}
-            style={{ color: T.color.text.secondary }}
-          >
-            Key Strengths
-          </h2>
+    <PageSection bg={T.bg.white}>
+      <div className="flex flex-col gap-[50px]">
+        {/* TITLE */}
+        <h2
+          className={`
+            ${T.font.family}
+            ${T.font.weight.bold}
+            text-[28px] md:text-[32px] lg:text-[36px]
+            leading-[36px] md:leading-[44px] lg:leading-[48px]
+          `}
+          style={{ color: T.color.text.secondary }}
+        >
+          Key Strengths
+        </h2>
 
-         
-        </div>
-
-        {/* ---------------- GRID OF CARDS ---------------- */}
-        <div className="grid grid-cols-3 gap-x-[28px] gap-y-[40px] w-full">
+        {/* GRID */}
+        <div
+          className="
+            grid 
+            grid-cols-1 
+            sm:grid-cols-2 
+            lg:grid-cols-3
+            gap-x-[28px] 
+            gap-y-[32px]
+            w-full
+          "
+        >
           {strengths.map((item, index) => (
-             <InfoCard
-  key={index}
-  variant="keystrength"
-  icon={item.icon}
-  title={item.title}
-  description={item.description}
-/>
-
+            <InfoCard
+              key={index}
+              variant="keystrength"
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+            />
           ))}
         </div>
       </div>
-    </section>
+    </PageSection>
   );
 }

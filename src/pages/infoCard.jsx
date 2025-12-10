@@ -17,10 +17,12 @@ export default function InfoCard({
   const variants = {
  program: {
       wrapper: `
-        w-[378.95px]
-        h-[422.37px]
-        flex flex-col items-start justify-start
-        rounded-[9.87px]
+      w-full             
+    max-w-[380px]    
+    min-w-[340px]       
+    h-[422.37px]
+    flex flex-col items-start justify-start
+    rounded-[9.87px]
       `,
     wrapperStyle: {
   backgroundColor: "#F7F9FC",   // your card BG
@@ -51,28 +53,32 @@ export default function InfoCard({
 
 
     vmv: {
-      wrapper: `
-        w-[378.95px]
-        h-[330px]
-        flex flex-col items-start justify-start
-        rounded-[9.87px]
-        bg-white
-      `,
-      wrapperStyle: {
-        border: `1px solid ${T.color.border}`,
-        padding: "33px",
-        gap: "20px",
-      },
-      title: `
-        ${T.font.family}
-        ${T.font.weight.bold}
-        text-[20px] leading-[28px] text-left
-      `,
-      paragraph: `
-        w-[304.93px] h-[144px]
-        ${T.font.family} text-[16px] leading-[24px] text-left
-      `,
-    },
+  wrapper: `
+    w-full                 /* allow responsive width */
+    max-w-[380px]    
+    min-w-[340px]   
+    h-[330px]
+    flex flex-col items-start justify-start
+    rounded-[9.87px]
+    bg-white
+  `,
+  wrapperStyle: {
+    border: `1px solid ${T.color.border}`,
+    padding: "33px",
+    gap: "20px",
+  },
+  title: `
+    ${T.font.family}
+    ${T.font.weight.bold}
+    text-[20px] leading-[28px] text-left
+  `,
+  paragraph: `
+    w-full
+    max-w-[304.93px]
+    ${T.font.family} text-[16px] leading-[24px] text-left
+  `,
+},
+
 
    // ⭐ ADD THIS NEW VARIANT INSIDE variants = { ... }
 
@@ -106,37 +112,39 @@ export default function InfoCard({
   `,
     },
 
-       feature: {
-       wrapper: `
-    w-[282.2px]
-    h-[296.1px]
-    flex flex-col items-start justify-start
-    rounded-[9.87px]
-    bg-white
-  `,
-  wrapperStyle: {
-    paddingTop: "23.7px",
-    paddingLeft: "23.7px",
-    paddingRight: "23.7px",
-    paddingBottom: "23.7px",
-    border: `1px solid ${T.color.border}`,
-    boxShadow:
-      "0px 8px 16px rgba(0, 140, 140, 0.04), 0px 4px 8px rgba(0, 140, 140, 0.08)",
-    gap: "16.8px",
-  },
-  title: `
-    ${T.font.family}
-    ${T.font.weight.semibold}
-    text-[20px] leading-[28px]
-    text-left
-    w-full
-  `,
-  paragraph: `
-    ${T.font.family}
-    text-[16px] leading-[24px]
-    text-left
-    w-full
-  `,
+    feature: {
+      wrapper: `
+        w-full
+        max-w-[282.2px]
+        min-h-[296.1px]
+        flex flex-col items-start justify-start
+        rounded-[9.87px]
+        bg-white
+        mx-auto
+      `,
+      wrapperStyle: {
+        paddingTop: "23.7px",
+        paddingLeft: "23.7px",
+        paddingRight: "23.7px",
+        paddingBottom: "23.7px",
+        border: `1px solid ${T.color.border}`,
+        boxShadow:
+          "0px 8px 16px rgba(0, 140, 140, 0.04), 0px 4px 8px rgba(0, 140, 140, 0.08)",
+        gap: "16.8px",
+      },
+      title: `
+        ${T.font.family}
+        ${T.font.weight.semibold}
+        text-[20px] leading-[28px]
+        text-left
+        w-full
+      `,
+      paragraph: `
+        ${T.font.family}
+        text-[16px] leading-[24px]
+        text-left
+        w-full
+      `,
     },
 
  featureLeft: {
@@ -174,8 +182,9 @@ export default function InfoCard({
 
 keystrength: {
   wrapper: `
-    w-[378.95px]
-    h-[277.89px]
+    w-full
+    max-w-[390px]        /* FIX: Prevents breaking on smaller laptops */
+    min-h-[277px]
     flex flex-col items-start justify-start
     rounded-[9.87px]
     bg-[#F7F9FC]
@@ -217,36 +226,35 @@ keystrength: {
 
 ,
 
- research: {
-      wrapper: `
-        w-[378.95px]
-        h-[223px]
-        flex flex-col justify-start items-start
-        rounded-[9.87px]
-      `,
-      wrapperStyle: {
-        backgroundColor: T.color.background.soft,
-        border: `1px solid ${T.color.border}`,
-        paddingTop: "24.67px",
-        paddingLeft: "24.67px",
-        paddingRight: "24.7px",
-        paddingBottom: "0.99px",
-        gap: "15.79px",
-      },
-      title: `
-        ${T.font.family}
-        ${T.font.weight.semibold}
-        text-[20px] leading-[28px]
-        text-left
-      `,
-      paragraph: `
-        ${T.font.family}
-        ${T.font.weight.regular}
-        text-[15.8px] leading-[1.6]
-        w-[295.1px] h-[76px]
-        text-left
-      `,
-    },
+research: {
+  wrapper: `
+    w-full
+    max-w-[390px]        /* FIX: Prevents breaking on smaller laptops */
+    min-h-[220px]
+    flex flex-col justify-start items-start
+    rounded-[10px]
+  `,
+  wrapperStyle: {
+    backgroundColor: T.color.background.soft,
+    border: `1px solid ${T.color.border}`,
+    padding: "26px",
+    gap: "16px",
+  },
+  title: `
+    ${T.font.family}
+    ${T.font.weight.semibold}
+    text-[20px] leading-[28px]
+    text-left
+  `,
+  paragraph: `
+    ${T.font.family}
+    ${T.font.weight.regular}
+    text-[16px] leading-[24px]
+    text-left
+    w-full
+  `,
+},
+
   };
 
   const v = variants[variant];

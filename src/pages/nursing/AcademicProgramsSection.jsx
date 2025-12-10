@@ -1,6 +1,8 @@
 import iconNursing from "../../assets/nursing/bscnursing.svg";
 import iconGeneral from "../../assets/nursing/generalnursing.svg";
 import iconMSc from "../../assets/nursing/mscnursing.svg";
+
+import PageSection from "../../features/common/layout/PageContainer";   // ✅ FIXED
 import { T } from "../../theme";
 import InfoCard from "../infoCard";
 
@@ -33,40 +35,56 @@ export default function AcademicProgramsSection() {
   ];
 
   return (
-    <section className={`relative ${T.bg.white} py-[84px]`}>
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[100px]">
+    <PageSection bg={T.bg.white}>
+      
+      {/* ========================= HEADING ========================= */}
+   <h2
+  className={`
+    ${T.font.family}
+    ${T.font.weight.bold}
+    text-[#223F7F]
 
-        {/* Heading */}
-        <h2
-          className={`
-            ${T.font.family}
-            ${T.font.weight.bold}
-            text-[36px]
-            leading-[48px]
-            text-[#223F7F]
-            tracking-[0px]
-            mb-[52px]
-          `}
-        >
-          Academic Programs
-        </h2>
+    /* MOBILE – strong but compact */
+    text-[28px] leading-[28px] tracking-[-0.2px]
 
-        {/* Responsive Cards */}
-        <div
-          className="
-            grid 
-            grid-cols-1          /* Mobile */
-            sm:grid-cols-2       /* Tablets */
-            lg:grid-cols-3       /* Desktop - EXACT original layout */
-            gap-[28.95px]
-            justify-between
-          "
-        >
-          {programs.map((p, i) => (
-            <InfoCard key={i} {...p} variant="program" />
-          ))}
-        </div>
+    /* TABLET */
+    sm:text-[28px] sm:leading-[34px]
+
+    /* DESKTOP – unchanged */
+    md:text-[36px] md:leading-[48px]
+
+    mb-[28px] sm:mb-[36px] md:mb-[52px]
+  `}
+>
+  Academic Programs
+</h2>
+
+
+      {/* ========================= CARDS GRID ========================= */}
+      <div
+        className="
+          grid 
+          grid-cols-1            /* Mobile */
+          gap-[22px]             /* Mobile gap improved */
+
+          sm:grid-cols-2         /* Tablet */
+          sm:gap-[26px]
+
+          lg:grid-cols-3         /* Desktop (untouched) */
+          lg:gap-[28.95px]
+          lg:justify-between
+        "
+      >
+        {programs.map((p, i) => (
+          <InfoCard 
+            key={i} 
+            {...p} 
+            variant="program"
+            className="w-full"
+          />
+        ))}
       </div>
-    </section>
+
+    </PageSection>
   );
 }

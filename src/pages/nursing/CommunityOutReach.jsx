@@ -50,8 +50,18 @@ export default function CommunityOutreachSection() {
         "The focus on holistic development includes instilling ethics, empathy, and a service-oriented mindset among nursing students, preparing them to serve diverse communities with compassion and dedication.",
       ]}
     >
-      {/* Bottom Feature Cards */}
-      <div className="grid grid-cols-4 gap-[28px] w-full">
+      {/* Responsive Feature Grid */}
+      <div
+        className="
+          grid 
+          grid-cols-1 
+          sm:grid-cols-2 
+          lg:grid-cols-2 
+          xl:grid-cols-4
+          gap-[28px]
+          w-full
+        "
+      >
         {features.map((item, i) => (
           <InfoCard key={i} {...item} variant="feature" />
         ))}

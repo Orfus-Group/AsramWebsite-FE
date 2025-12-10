@@ -1,63 +1,55 @@
 import React from "react";
 import checkIcon from "../../assets/nursing/checkicon.svg";
 import { T } from "../../theme";
+import PageSection from "../../features/common/layout/PageContainer";
 
 export default function WhyChooseSection() {
   return (
-    <section className="w-full flex justify-center bg-white pt-[60px] pb-[60px]">
-      {/* Wrapper for 1440px layout */}
-      <div
-        className="flex flex-col items-center"
-        style={{ width: "1440px", padding: "0px 120px 80px" }}
-      >
-        {/* Outer Figma box - NO TOP PADDING */}
+    <PageSection bg="bg-white">
+      {/* Centered outer box as per Figma */}
+      <div className="w-full flex flex-col items-center">
         <div
           className="
-            w-[1200px]
-            h-[301.11px]
-            rounded-[9.87px]
-            flex flex-col
-            items-center
+            w-full max-w-[1200px]
+            rounded-[10px]
+            flex flex-col items-center
+            bg-[#F7F9FC]
+            px-[24px] md:px-[40px]
+            py-[30px] md:py-[40px]
           "
-          style={{
-            backgroundColor: "#F7F9FC",
-            paddingLeft: "39.47px",
-            paddingRight: "39.47px",
-            paddingTop: "0px",     // ✅ Removed as you requested
-            paddingBottom: "0px",
-            gap: "39.47px",
-          }}
         >
           {/* Heading */}
           <h2
             className={`
               ${T.font.family}
               ${T.font.weight.bold}
-              text-[28px]
-              leading-[36px]
+              text-[22px] sm:text-[24px] md:text-[26px] lg:text-[28px]
+              leading-[30px] md:leading-[34px] lg:leading-[36px]
               text-center
-              mt-[39.47px]     // ✅ offset heading visually like Figma WITHOUT using padding-top
+              mb-[32px]
             `}
             style={{ color: "#223F7F" }}
           >
             Why Choose ASRAM Nursing?
           </h2>
 
-          {/* 2 Column Layout */}
+          {/* Two Columns */}
           <div
-            className="flex w-full"
-            style={{
-              gap: "31.58px",
-              justifyContent: "center",
-            }}
+            className="
+              grid 
+              grid-cols-1 
+              md:grid-cols-2 
+              gap-[30px] md:gap-[40px] 
+              w-full
+            "
           >
             {/* LEFT COLUMN */}
-            <div className="flex flex-col w-[50%] gap-[16px]">
+            <div className="flex flex-col gap-[16px]">
               <h3
                 className={`
                   ${T.font.family}
                   ${T.font.weight.semibold}
-                  text-[18px]
+                  text-[18px] md:text-[20px]
                   leading-[26px]
                 `}
                 style={{ color: "#223F7F" }}
@@ -68,7 +60,7 @@ export default function WhyChooseSection() {
               <ul className="flex flex-col gap-[10px]">
                 {[
                   "Integration with comprehensive multispecialty hospital",
-                  "Robust infrastructure across 10-acre campus",
+                  "Robust infrastructure across the 10-acre campus",
                   "Recognized affiliations and regulatory approvals",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-[10px]">
@@ -79,15 +71,14 @@ export default function WhyChooseSection() {
                         filter:
                           "brightness(0) saturate(100%) invert(44%) sepia(71%) saturate(406%) hue-rotate(112deg) brightness(93%) contrast(90%)",
                       }}
-                      alt=""
                     />
                     <p
                       className={`
                         ${T.font.family}
-                        text-[15px]
-                        leading-[23px]
+                        text-[14px] sm:text-[15px]
+                        leading-[22px]
+                        text-[#191919BF]
                       `}
-                      style={{ color: "#191919BF" }}
                     >
                       {item}
                     </p>
@@ -97,12 +88,12 @@ export default function WhyChooseSection() {
             </div>
 
             {/* RIGHT COLUMN */}
-            <div className="flex flex-col w-[50%] gap-[16px]">
+            <div className="flex flex-col gap-[16px]">
               <h3
                 className={`
                   ${T.font.family}
                   ${T.font.weight.semibold}
-                  text-[18px]
+                  text-[18px] md:text-[20px]
                   leading-[26px]
                 `}
                 style={{ color: "#223F7F" }}
@@ -124,15 +115,14 @@ export default function WhyChooseSection() {
                         filter:
                           "brightness(0) saturate(100%) invert(44%) sepia(71%) saturate(406%) hue-rotate(112deg) brightness(93%) contrast(90%)",
                       }}
-                      alt=""
                     />
                     <p
                       className={`
                         ${T.font.family}
-                        text-[15px]
-                        leading-[23px]
+                        text-[14px] sm:text-[15px]
+                        leading-[22px]
+                        text-[#191919BF]
                       `}
-                      style={{ color: "#191919BF" }}
                     >
                       {item}
                     </p>
@@ -143,6 +133,6 @@ export default function WhyChooseSection() {
           </div>
         </div>
       </div>
-    </section>
+    </PageSection>
   );
 }

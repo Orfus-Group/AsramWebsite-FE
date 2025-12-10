@@ -1,5 +1,5 @@
 import React from "react";
-import heroBg from "../../assets/academics/academicsbg.jpg";
+import heroBg from "../../assets/academics/academicsbg.svg";
 import { theme as T } from "../../globalTheme";
 import PixelsSliderDots from "../PixelSliderDots";
 

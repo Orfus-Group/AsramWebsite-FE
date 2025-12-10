@@ -1,113 +1,84 @@
 import React from "react";
-import { T } from "../../../theme";
+import PageSection from "./PageContainer";
 
 export default function TwoColumnSection({
   title,
-  subtitle,
-  innerHeading,             // NEW → H3 heading inside right column
+  innerHeading,
   image,
-  reverse = false,
   paragraphs = [],
-  children,                 // Extra items like cards, buttons, lists
+  children,
   pt = "pt-[80px]",
   pb = "pb-[80px]",
+  bg = "bg-white",
 }) {
   return (
-    <section className={`w-full ${T.bg.section} flex justify-center`}>
-      <div
-        className={`
-          w-[1440px] max-w-full
-          flex flex-col
-          gap-[40px]
-          px-[120px]
-          ${pt} ${pb}
-        `}
-      >
+    <PageSection
+      bg={bg}
+      className={`${pt} ${pb}`}
+    >
+      {/* Top Heading */}
+      {title && (
+        <h2 className="
+          font-montserrat font-bold
+          text-[32px] md:text-[36px]
+          leading-[42px] md:leading-[48px]
+          text-[#223F7F] mb-[40px]
+        ">
+          {title}
+        </h2>
+      )}
 
-        {/* ────────────── MAIN TITLE + SUBTITLE (Top Area) ────────────── */}
-        <div className="flex flex-col gap-[8px] w-full">
-          {/* Main Title */}
-          <h2
-            className={`
-              ${T.font.family}
-              ${T.font.weight.bold}
-              text-[36px] leading-[48px]
-            `}
-            style={{ color: T.color.text.secondary }}
-          >
-            {title}
-          </h2>
-
-          {/* Optional subtitle (small paragraph under title) */}
-          {subtitle && (
-            <p
-              className={`
-                ${T.font.family}
-                ${T.font.weight.regular}
-                text-[18px] leading-[28px]
-                w-[650px]
-              `}
-              style={{ color: T.color.text.muted }}
-            >
-              {subtitle}
-            </p>
-          )}
-        </div>
-
-        {/* ────────────── TWO-COLUMN LAYOUT ────────────── */}
-        <div
-          className={`
-            flex items-start justify-between gap-[40px] w-full
-            ${reverse ? "flex-row-reverse" : ""}
-          `}
-        >
-
-          {/* LEFT IMAGE */}
+      <div className="flex flex-col lg:flex-row gap-[40px] w-full">
+        
+        {/* LEFT: Image */}
+        <div className="w-full lg:w-[50%] flex-shrink-0">
           <img
             src={image}
-            alt=""
-            className="w-[576px] h-[384px] object-cover rounded-[8px]"
+            alt={title}
+            className="w-full h-auto rounded-[10px] object-cover"
           />
+        </div>
 
-          {/* RIGHT TEXT BLOCK */}
-          <div className="flex flex-col gap-[24px] w-[550px] h-[130px]">
+        {/* RIGHT: Content */}
+        <div className="w-full lg:w-[50%] flex flex-col gap-[24px]">
 
-            {/* NEW → Inner H3 Heading */}
-            {innerHeading && (
-              <h3
-                className={`
-                  ${T.font.family}
-                  ${T.font.weight.semibold}
-                  text-[32px] leading-[42px]
-                  w-[461px]
-                `}
-                style={{ color: T.color.text.secondary }}
-              >
-                {innerHeading}
-              </h3>
-            )}
+          {/* Sub heading */}
+          {innerHeading && (
+            <h3 className="
+              font-montserrat font-semibold
+              text-[24px] md:text-[28px]
+              leading-[32px] md:leading-[38px]
+              text-[#223F7F]
+              max-w-[520px]
+            ">
+              {innerHeading}
+            </h3>
+          )}
 
-            {/* Paragraph list */}
+          {/* Paragraphs */}
+          <div className="flex flex-col gap-[16px]">
             {paragraphs.map((p, i) => (
               <p
                 key={i}
-                className={`
-                  ${T.font.family}
-                  ${T.font.weight.regular}
-                  text-[18px] leading-[26px]
-                `}
-                style={{ color: T.color.text.muted }}
+                className="
+                  font-montserrat
+                  text-[16px] md:text-[17px]
+                  leading-[24px] md:leading-[26px]
+                  text-[#6B7280]
+                "
               >
                 {p}
               </p>
             ))}
-
           </div>
-        </div>
 
-        {/* ────────────── EXTRA CHILDREN (cards, buttons, lists) ────────────── */}
+        </div>
+      </div>
+
+      {/* Children → Feature grid */}
+      <div className="mt-[40px]">
         {children}
       </div>
-    </section>
+    </PageSection>
   );
 }

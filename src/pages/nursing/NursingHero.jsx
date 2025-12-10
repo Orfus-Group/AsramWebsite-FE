@@ -9,21 +9,29 @@ const NursingHero = () => {
       className={`
         relative
         w-full
-        h-[797px]            /* Desktop */
-        md:h-[797px]
-        sm:h-[560px]
-        h-[480px]            /* Mobile */
         overflow-hidden
+
+        /* HEIGHTS — DESKTOP UNTOUCHED */
+        md:h-[797px]
+        lg:h-[797px]
+
+        /* MOBILE HEIGHT OPTIMIZED */
+        h-[520px]          /* base mobile height */
+        sm:h-[560px]
       `}
     >
       {/* Background Image */}
       <img
         src={heroBg}
         alt="Nursing campus"
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        className="
+          absolute inset-0 
+          w-full h-full 
+          object-cover object-center
+        "
       />
 
-      {/* Overlay */}
+      {/* Dark Overlay */}
       <div
         className="absolute inset-0"
         style={{ backgroundColor: "rgba(0,0,0,0.30)" }}
@@ -33,11 +41,12 @@ const NursingHero = () => {
       <div
         className="
           absolute 
-          bottom-[120px] 
+          bottom-[120px]            /* Desktop */
+          md:bottom-[120px]
           sm:bottom-[90px]
-          md:bottom-[102px]
-          w-full 
-          flex justify-center
+          bottom-[70px]             /* Mobile */
+          w-full flex justify-center
+          px-4
         "
       >
         <div
@@ -53,9 +62,16 @@ const NursingHero = () => {
             className={`
               ${T.font.family}
               ${T.font.weight.bold}
+
+              /* DESKTOP — UNTOUCHED */
               text-[52px] leading-[48px]
               sm:text-[60px] sm:leading-[50px]
               md:text-[72px] md:leading-[54px]
+
+              /* MOBILE IMPROVEMENTS */
+              text-[34px] leading-[36px]    /* base mobile */
+              sm:text-[48px] sm:leading-[44px]
+
               text-center
             `}
             style={{
@@ -68,7 +84,17 @@ const NursingHero = () => {
         </div>
       </div>
 
-           <PixelsSliderDots total={5} activeIndex={0} />
+      {/* SLIDER DOTS */}
+      <div
+        className="
+          absolute bottom-[20px]
+          w-full flex justify-center
+          sm:bottom-[30px]
+          md:bottom-[40px]
+        "
+      >
+        <PixelsSliderDots total={5} activeIndex={0} />
+      </div>
 
     </section>
   );
