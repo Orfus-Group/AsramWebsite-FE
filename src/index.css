@@ -6,3 +6,14 @@
 @tailwind utilities;
 
 
+/* GLOBAL FONT VARIABLES */
+:root {
+  --asram-font: "Montserrat", sans-serif; /* or whatever T.font.family points to */
+  --asram-text-color: #191919;
+}
+
+/* GLOBAL TYPOGRAPHY CLASS */
+.asram-font {
+  font-family: var(--asram-font), sans-serif;
+  color: var(--asram-text-color, #191919);
+}

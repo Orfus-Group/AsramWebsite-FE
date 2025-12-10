@@ -2,25 +2,17 @@
 import React from "react";
 import { T } from "../../theme";
 import repImage from "../../assets/asram/reputation.svg";
+import PageSection from "../../features/common/layout/PageContainer";
 
 const ReputationQuality = () => {
   return (
-    <section
-      className="w-full bg-white py-[60px] md:py-[80px]"
-    >
-      {/* FIXED DESKTOP LAYOUT WIDTH — EXACT FIGMA 1440 + 120px PADDINGS */}
+    <PageSection bg="bg-white">
+      {/* INNER LAYOUT (UNCHANGED DESIGN) */}
       <div
         className="
-          w-full 
-          max-w-[1440px]
-          mx-auto
+          w-full
           flex flex-col md:flex-row
           items-start justify-between
-
-          /* RESPONSIVE PADDING */
-          px-4 sm:px-6 md:px-10 lg:px-[120px]
-
-          /* GAP SHOULD BE STRICT AS PER FIGMA */
           gap-[40px] md:gap-[80px]
         "
       >
@@ -28,7 +20,7 @@ const ReputationQuality = () => {
         <div className="w-full md:w-[536px] flex flex-col">
           <h2
             className={`
-              ${T.font.family}
+              
               font-bold
               text-[#223F7F]
               text-[32px] leading-[38px]
@@ -41,7 +33,7 @@ const ReputationQuality = () => {
 
           <p
             className={`
-              ${T.font.family}
+              
               text-[16px] leading-[26px]
               md:text-[18px] md:leading-[29px]
               text-[rgba(25,25,25,0.75)]
@@ -61,7 +53,7 @@ const ReputationQuality = () => {
               flex items-center justify-center
               rounded-[8px]
               text-white
-              ${T.font.family}
+              
               font-semibold
               text-[15px] md:text-[16px]
               bg-[#223F7F]
@@ -89,7 +81,8 @@ const ReputationQuality = () => {
           />
         </div>
       </div>
-    </section>
+      {/* END INNER */}
+    </PageSection>
   );
 };
 

@@ -1,3 +1,4 @@
+// PageSection.jsx
 import React from "react";
 
 export default function PageSection({
@@ -7,20 +8,18 @@ export default function PageSection({
   sectionClassName = "",
 }) {
   return (
-    <section className={`w-full ${bg} ${sectionClassName}`}>
+    <section className={`w-full ${bg} ${sectionClassName} asram-font`}>
       <div
         className={`
           w-full
           max-w-[1440px]
           mx-auto
 
-          /* RESPONSIVE PADDING */
           px-4
           sm:px-6
           md:px-10
           lg:px-[120px]
 
-          /* Vertical rhythm */
           py-[80px]
 
           ${className}

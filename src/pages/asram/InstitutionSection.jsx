@@ -6,8 +6,11 @@ import medicalIcon from "../../assets/asram/medical.svg";
 import nursingIcon from "../../assets/asram/nursing.svg";
 import paramedIcon from "../../assets/asram/paramedical.svg";
 import ArrowRight from "../../assets/asram/arrow-right.svg";
+
 import { Link } from "react-router";
 import { T } from "../../theme";
+
+import PageSection from "../../features/common/layout/PageContainer";
 
 const institutions = [
   {
@@ -59,25 +62,18 @@ const ctaColors = {
 
 const InstitutionsSection = () => {
   return (
-    <section
-      className="relative py-[68px]"
-      style={{ backgroundColor: "rgba(34,63,127,0.05)" }}
+    <PageSection
+      bg="bg-[rgba(34,63,127,0.05)]"
+      sectionClassName="relative py-[68px]"
     >
-      {/* Decorative element (unchanged) */}
+      {/* Decorative floating element */}
       <div className="absolute top-[-60px] lg:top-[-90px] right-8 lg:right-[92px] opacity-30 select-none pointer-events-none" />
 
-      {/* ⭐ FIXED DESKTOP LAYOUT (1440 + 120px PADDING) – EXACT FIGMA */}
-      <div
-        className="
-          w-full max-w-[1440px]
-          mx-auto
-          px-4 sm:px-6 md:px-10 lg:px-[120px]
-        "
-      >
+      <div className="w-full">
         {/* Section Title */}
         <h2
           className={`
-            ${T.font.family} ${T.font.weight.bold} 
+             ${T.font.weight.bold} 
             text-[#223F7F]
             text-[28px] sm:text-[34px] lg:text-[42px]
             leading-[36px] sm:leading-[44px] lg:leading-[52px]
@@ -89,7 +85,7 @@ const InstitutionsSection = () => {
 
         <p
           className={`
-            ${T.font.family} ${T.font.weight.medium} 
+             ${T.font.weight.medium} 
             text-[#191919]
             text-[18px] sm:text-[20px] lg:text-[22px]
             leading-[28px] sm:leading-[30px] lg:leading-[32px]
@@ -99,51 +95,51 @@ const InstitutionsSection = () => {
           Three Institutions. One Vision for Future Healthcare Leaders.
         </p>
 
-     {/* RESPONSIVE CARD GRID */}
-<div
-  className="
-    grid 
-    grid-cols-1 
-    sm:grid-cols-2 
-    md:grid-cols-3
-    gap-[26px]
-  "
->
-  {institutions.map((item) => (
-    <div
-      key={item.id}
-      className="
-        group 
-        w-full
-        min-h-[388px]
-        bg-white 
-        rounded-[14px] 
-        border border-[#E1E6EF] 
-        shadow-[0px_12px_28px_rgba(15,23,42,0.06)]
-        px-[24px] sm:px-[28px]
-        pt-[24px] pb-[24px]
-        flex flex-col 
-        transition-all duration-200 
-        hover:-translate-y-[4px] 
-        hover:shadow-[0px_20px_42px_rgba(15,23,42,0.12)]
-      "
-    >
-      {/* ICON */}
-      <div
-        className="
-          w-[64px] h-[64px] 
-          rounded-full flex items-center justify-center 
-          mb-[22px]
-        "
-        style={{ backgroundColor: iconBgColors[item.id] }}
-      >
-        <img src={item.icon} className="w-[32px] h-[32px]" alt="" />
-      </div>
+        {/* CARD GRID */}
+        <div
+          className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            md:grid-cols-3
+            gap-[26px]
+          "
+        >
+          {institutions.map((item) => (
+            <div
+              key={item.id}
+              className="
+                group 
+                w-full
+                min-h-[388px]
+                bg-white 
+                rounded-[14px] 
+                border border-[#E1E6EF] 
+                shadow-[0px_12px_28px_rgba(15,23,42,0.06)]
+                px-[24px] sm:px-[28px]
+                pt-[24px] pb-[24px]
+                flex flex-col 
+                transition-all duration-200 
+                hover:-translate-y-[4px] 
+                hover:shadow-[0px_20px_42px_rgba(15,23,42,0.12)]
+              "
+            >
+              {/* ICON */}
+              <div
+                className="
+                  w-[64px] h-[64px] 
+                  rounded-full flex items-center justify-center 
+                  mb-[22px]
+                "
+                style={{ backgroundColor: iconBgColors[item.id] }}
+              >
+                <img src={item.icon} className="w-[32px] h-[32px]" alt="" />
+              </div>
 
-             {/* TITLE */}
+              {/* TITLE */}
               <h3
                 className={`
-                  ${T.font.family} ${T.font.weight.semibold} 
+                   ${T.font.weight.semibold} 
                   text-[#191919]
                   text-[20px] sm:text-[22px]
                   leading-[30px] sm:leading-[32px]
@@ -160,7 +156,7 @@ const InstitutionsSection = () => {
               {/* TAGLINE */}
               <p
                 className={`
-                  ${T.font.family} ${T.font.weight.bold}
+                   ${T.font.weight.bold}
                   text-[#223F7F]
                   text-[16px] sm:text-[18px]
                   leading-[26px] sm:leading-[28px]
@@ -173,7 +169,7 @@ const InstitutionsSection = () => {
               {/* DESCRIPTION */}
               <p
                 className={`
-                  ${T.font.family} ${T.font.weight.normal}
+                   ${T.font.weight.normal}
                   text-[#191919]
                   text-[16px] sm:text-[18px]
                   leading-[24px] sm:leading-[26px]
@@ -184,45 +180,41 @@ const InstitutionsSection = () => {
               </p>
 
               {/* CTA BUTTON */}
-<Link
-  to={item.id === 2 ? "/nursing" : "#"}
-  className="
-    mt-auto 
-    w-full h-[46px]
-    rounded-[6px]
-    px-[12px] md:px-[10px] lg:px-[14px]
-    flex items-center justify-between
-    gap-[8px]
-  "
-  style={{ backgroundColor: ctaColors[item.id] }}
->
-  <span
-    className={`
-      ${T.font.family} ${T.font.weight.semibold}
-      text-[15px] sm:text-[16px]
-      text-[#191919]
-      whitespace-nowrap
-      flex-shrink-0
-    `}
-  >
-    {item.cta}
-  </span>
+              <Link
+                to={item.id === 2 ? "/nursing" : "#"}
+                className="
+                  mt-auto 
+                  w-full h-[46px]
+                  rounded-[6px]
+                  px-[12px] md:px-[10px] lg:px-[14px]
+                  flex items-center justify-between
+                  gap-[8px]
+                "
+                style={{ backgroundColor: ctaColors[item.id] }}
+              >
+                <span
+                  className={`
+                     ${T.font.weight.semibold}
+                    text-[15px] sm:text-[16px]
+                    text-[#191919]
+                    whitespace-nowrap
+                    flex-shrink-0
+                  `}
+                >
+                  {item.cta}
+                </span>
 
-  <img
-    src={ArrowRight}
-    className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px] flex-none"
-    alt=""
-  />
-</Link>
-
-
-
-    </div>
-  ))}
-</div>
-
+                <img
+                  src={ArrowRight}
+                  className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px] flex-none"
+                  alt=""
+                />
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
-    </section>
+    </PageSection>
   );
 };
 
