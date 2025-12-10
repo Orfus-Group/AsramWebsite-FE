@@ -1,4 +1,4 @@
-import{j as e,T as s}from"./index-Dands00y.js";const t="/AsramWebsite-FE/assets/asramherobanner-COH59IT3.svg",l=()=>e.jsxs("section",{className:`\r
+import{j as e,T as s}from"./index-C0EgcVay.js";const t="/AsramWebsite-FE/assets/asramherobanner-COH59IT3.svg",l=()=>e.jsxs("section",{className:`\r
         relative w-full \r
         h-[80vh] sm:h-[70vh] md:h-[80vh] lg:h-[665px]\r
         overflow-hidden\r

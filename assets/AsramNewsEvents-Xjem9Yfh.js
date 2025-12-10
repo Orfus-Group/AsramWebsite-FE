@@ -1,4 +1,4 @@
-import{j as e,T as s}from"./index-Dands00y.js";import{i as l,a as i,b as r,u as n,c as o,n as m,d as x,e as c}from"./notific-BTAgUBWa.js";const p=()=>e.jsx("section",{className:`w-full ${s.bg.programCard} py-16`,id:"news",children:e.jsxs("div",{className:"w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px]",children:[e.jsx("h2",{className:`
+import{j as e,T as s}from"./index-C0EgcVay.js";import{i as l,a as i,b as r,u as n,c as o,n as m,d as x,e as c}from"./notific-BTAgUBWa.js";const p=()=>e.jsx("section",{className:`w-full ${s.bg.programCard} py-16`,id:"news",children:e.jsxs("div",{className:"w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px]",children:[e.jsx("h2",{className:`
             ${s.font.family}
             ${s.font.weight.bold}
             text-[28px] sm:text-[36px] lg:text-[42px]

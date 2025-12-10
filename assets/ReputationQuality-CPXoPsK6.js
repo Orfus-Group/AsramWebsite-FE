@@ -1,4 +1,4 @@
-import{j as e,T as t}from"./index-Dands00y.js";const n="/AsramWebsite-FE/assets/reputation-BKKxq0eo.svg",l=()=>e.jsx("section",{className:"w-full bg-white py-[60px] md:py-[80px]",children:e.jsxs("div",{className:`\r
+import{j as e,T as t}from"./index-C0EgcVay.js";const n="/AsramWebsite-FE/assets/reputation-BKKxq0eo.svg",l=()=>e.jsx("section",{className:"w-full bg-white py-[60px] md:py-[80px]",children:e.jsxs("div",{className:`\r
           w-full \r
           max-w-[1440px] \r
           mx-auto \r
