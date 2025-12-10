@@ -26,9 +26,18 @@ const voices = [
 
 export default function StudentVoices() {
   return (
-    <section className={`${T.bg.white} w-full py-[80px]`}>
-      <div className="w-[1440px] max-w-full mx-auto px-[120px] flex flex-col gap-[32px]">
-
+    <section className={`${T.bg.white} w-full py-[80px] flex justify-center`}>
+      {/* ⭐ UNIFIED BASELINE CONTAINER (Matches Hero, Header, Everything) */}
+      <div
+        className="
+          w-full
+          max-w-[1440px]
+          mx-auto
+          px-4 sm:px-6 md:px-10 lg:px-[120px]
+          flex flex-col
+          gap-[32px]
+        "
+      >
         {/* SECTION TITLE */}
         <h2
           className={`
@@ -42,18 +51,23 @@ export default function StudentVoices() {
           Student Voices
         </h2>
 
-        {/* VOICES GRID */}
-        <div className="grid grid-cols-3 gap-[31.58px] w-[1200px]">
-
+        {/* RESPONSIVE VOICES GRID */}
+        <div
+          className="
+            grid
+            grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+            gap-[31.58px]
+            w-full
+          "
+        >
           {voices.map((item, index) => (
             <div
               key={index}
               className="
-                w-[378.95px]
-                h-[335.59px]
                 rounded-[8px]
                 p-[30px]
                 flex flex-col
+                h-full
               "
               style={{
                 backgroundColor: T.color.background.programCard,
@@ -73,7 +87,6 @@ export default function StudentVoices() {
                   ${T.font.family}
                   text-[18px]
                   leading-[26px]
-                  w-[296.05px]
                 `}
                 style={{ color: T.color.text.grayish }}
               >
@@ -114,10 +127,8 @@ export default function StudentVoices() {
                   </p>
                 </div>
               </div>
-
             </div>
           ))}
-
         </div>
       </div>
     </section>

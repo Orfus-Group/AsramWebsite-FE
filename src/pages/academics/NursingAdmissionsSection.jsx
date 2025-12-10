@@ -14,7 +14,7 @@ const processSteps = [
     step: "Step 1",
     title: "Submit Application",
     desc: "Complete your online application and submit required documents including transcripts and test scores.",
-    timeline: "Timeline: ",
+    timeline: "Timeline:",
     timelinedescription: "Rolling Admissions",
     icon: submitdocicon,
   },
@@ -22,7 +22,7 @@ const processSteps = [
     step: "Step 2",
     title: "Application Review",
     desc: "Our admissions committee carefully reviews your academic achievements and experience.",
-    timeline: "Timeline: ",
+    timeline: "Timeline:",
     timelinedescription: "2–4 Weeks",
     icon: appreview,
   },
@@ -30,7 +30,7 @@ const processSteps = [
     step: "Step 3",
     title: "Interview & Decision",
     desc: "Selected candidates are invited for an interview. Admission decisions typically follow within two weeks.",
-    timeline: "Timeline: ",
+    timeline: "Timeline:",
     timelinedescription: "As Scheduled",
     icon: interviewicon,
   },
@@ -38,7 +38,7 @@ const processSteps = [
     step: "Step 4",
     title: "Enrollment",
     desc: "Accept your offer, submit enrollment deposit, and prepare for orientation and course registration.",
-    timeline: "Timeline: ",
+    timeline: "Timeline:",
     timelinedescription: "Before Start Date",
     icon: enrollmenticon,
   },
@@ -89,8 +89,20 @@ const dates = [
 
 const NursingAdmissionsSection = () => {
   return (
-    <section className={`${T.bg.programCard} pt-[80px] pb-[20px]`}>
-      <div className="w-[1440px] max-w-full mx-auto px-[120px] flex flex-col gap-[40px]">
+    <section
+      className={`${T.bg.programCard} pt-[80px] pb-[20px] w-full flex justify-center`}
+    >
+      {/* ⭐ UNIFIED MASTER CONTAINER */}
+      <div
+        className="
+          w-full
+          max-w-[1440px]
+          mx-auto
+          px-4 sm:px-6 md:px-10 lg:px-[120px]
+          flex flex-col
+          gap-[40px]
+        "
+      >
         {/* MAIN TITLE */}
         <h2
           className={`
@@ -117,30 +129,30 @@ const NursingAdmissionsSection = () => {
             Application Process
           </h3>
 
-          <div className="grid grid-cols-4 gap-[23.68px]">
+          <div
+            className="
+              grid
+              grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+              gap-[23.68px]
+            "
+          >
             {processSteps.map((item, i) => (
               <div
                 key={i}
                 className="
-                  w-[282.24px]
-                  h-[258px]
+                  w-full
                   bg-white
                   rounded-[10px]
                   border
                   p-[20px]
                   grid
                   grid-rows-[auto_auto_auto_1fr_auto]
+                  h-full
                 "
                 style={{ borderColor: T.color.border }}
               >
-                {/* ICON */}
-                <img
-                  src={item.icon}
-                  alt=""
-                  className="w-[31.58px] h-[31.58px]"
-                />
+                <img src={item.icon} className="w-[31.58px] h-[31.58px]" />
 
-                {/* STEP */}
                 <span
                   className={`
                     ${T.font.family}
@@ -152,7 +164,6 @@ const NursingAdmissionsSection = () => {
                   {item.step}
                 </span>
 
-                {/* TITLE */}
                 <h4
                   className={`
                     ${T.font.family}
@@ -166,7 +177,6 @@ const NursingAdmissionsSection = () => {
                   {item.title}
                 </h4>
 
-                {/* DESCRIPTION */}
                 <p
                   className={`
                     ${T.font.family}
@@ -178,17 +188,16 @@ const NursingAdmissionsSection = () => {
                   {item.desc}
                 </p>
 
-                {/* TIMELINE */}
                 <p
                   className={`
                     ${T.font.family}
                     text-[14px]
                     leading-[20px]
-                    self-end 
+                    self-end
                     text-[${T.color.secondary}]
                   `}
                 >
-                  <span className={`${T.font.weight.bold}`}> {item.timeline}</span>
+                  <span className={T.font.weight.bold}>{item.timeline}</span>{" "}
                   {item.timelinedescription}
                 </p>
               </div>
@@ -209,7 +218,13 @@ const NursingAdmissionsSection = () => {
             Admission Requirements
           </h3>
 
-          <div className="grid grid-cols-3 gap-[31.58px]">
+          <div
+            className="
+              grid
+              grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+              gap-[31.58px]
+            "
+          >
             {requirements.map((box, i) => (
               <div
                 key={i}
@@ -218,7 +233,9 @@ const NursingAdmissionsSection = () => {
                   rounded-[12px]
                   border
                   p-[20px]
-                  flex flex-col gap-[12px]
+                  flex flex-col
+                  gap-[12px]
+                  h-full
                 "
                 style={{ borderColor: T.color.border }}
               >
@@ -248,7 +265,6 @@ const NursingAdmissionsSection = () => {
                     >
                       <img
                         src={checkIcon}
-                        alt=""
                         className="w-[17.76px] h-[17.76px]"
                       />
                       <span
@@ -271,8 +287,7 @@ const NursingAdmissionsSection = () => {
 
         {/* IMPORTANT DATES */}
         <section className="w-full flex justify-center mt-[40px]">
-          <div className="w-[1200px] bg-white rounded-[8px] py-[30px] px-[30px]">
-            {/* Heading */}
+          <div className="w-full max-w-[1200px] bg-white rounded-[8px] py-[30px] px-[30px]">
             <h2
               className={`
                 w-full text-center
@@ -287,18 +302,15 @@ const NursingAdmissionsSection = () => {
               Important Dates
             </h2>
 
-            {/* Date Grid */}
-            <div className="grid grid-cols-4 gap-x-[23.68px] w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-[23.68px] gap-y-[20px]">
               {dates.map((item, i) => (
-                <div key={i} className="flex flex-col items-center">
-                  {/* DATE */}
+                <div key={i} className="flex flex-col items-center text-center">
                   <p
                     className={`
                       ${T.font.family}
                       ${T.font.weight.bold}
                       text-[18px]
                       leading-[22px]
-                      text-center
                       mb-[10px]
                     `}
                     style={{ color: T.color.dark }}
@@ -306,13 +318,11 @@ const NursingAdmissionsSection = () => {
                     {item.date}
                   </p>
 
-                  {/* LABEL */}
                   <p
                     className={`
                       ${T.font.family}
                       text-[14px]
                       leading-[20px]
-                      text-center
                     `}
                     style={{ color: T.color.dark + "BF" }}
                   >
@@ -325,15 +335,20 @@ const NursingAdmissionsSection = () => {
         </section>
 
         {/* READY TO APPLY BLOCK */}
-        <div className="rounded-[12px] p-[24px] grid grid-cols-2 gap-[24px]">
-          {/* IMAGE */}
+        <div
+          className="
+            rounded-[12px]
+            grid grid-cols-1 lg:grid-cols-2
+            gap-[24px]
+            p-[24px]
+            w-full
+          "
+        >
           <img
             src={nursingcareer}
-            alt=""
-            className="w-[584px] h-[389px] object-cover rounded-[12px]"
+            className="w-full h-[389px] object-cover rounded-[12px]"
           />
 
-          {/* RIGHT CONTENT */}
           <div className="flex flex-col items-start gap-[16px] pt-[8px]">
             <h3
               className={`
@@ -361,38 +376,36 @@ const NursingAdmissionsSection = () => {
               support you throughout the process.
             </p>
 
-            <div className="flex gap-[12px] mt-[8px]">
-             <Button
-  bg={T.color.primary}
-  color="white"
-  rounded="8px"
-  textSize="text-[14px]"
-  leading="leading-[20px]"
-  width="206px"
-  height="44px"
-  customPadding="px-[22px] py-[12px]"
-  weight={T.font.weight.bold}
->
-  Start Your Application
-</Button>
-
+            <div className="flex flex-wrap gap-[12px] mt-[8px]">
+              <Button
+                bg={T.color.primary}
+                color="white"
+                rounded="8px"
+                textSize="text-[14px]"
+                leading="leading-[20px]"
+                width="206px"
+                height="44px"
+                customPadding="px-[22px] py-[12px]"
+                weight={T.font.weight.bold}
+              >
+                Start Your Application
+              </Button>
 
               <Button
-  bg={T.color.background.white}
-  color={T.color.secondary}
-  rounded="8px"
-  textSize="text-[14px]"
-  leading="leading-[20px]"
-  width="206px"
-  height="44px"
-  customPadding="px-[22px] py-[12px]"
-  borderColor={T.color.secondary}
-  borderWidth="1px"
-  weight={T.font.weight.bold}
->
-  Contact Admissions
-</Button>
-
+                bg={T.color.background.white}
+                color={T.color.secondary}
+                rounded="8px"
+                textSize="text-[14px]"
+                leading="leading-[20px]"
+                width="206px"
+                height="44px"
+                customPadding="px-[22px] py-[12px]"
+                borderColor={T.color.secondary}
+                borderWidth="1px"
+                weight={T.font.weight.bold}
+              >
+                Contact Admissions
+              </Button>
             </div>
           </div>
         </div>

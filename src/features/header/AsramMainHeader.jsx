@@ -68,118 +68,104 @@ const AsramMainHeader = () => {
   }, [openMenu]);
 
   // Disable page scroll when mobile menu is open
-useEffect(() => {
-  if (mobileMenuOpen) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
-  }
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
-  return () => {
-    document.body.style.overflow = "auto";
-  };
-}, [mobileMenuOpen]);
-
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <>
       {/* ----------------------- TOP BAR ----------------------- */}
-<div className="w-full" style={{ backgroundColor: T.color.secondary }}>
-  <div className="w-full max-w-[1440px] mx-auto h-[40px] flex justify-center px-4 lg:px-[120px]">
-   <div 
-  className="
-    w-full 
-    max-w-full              /* mobile & tablet unchanged */
-    lg:max-w-[1440px]       /* desktop now aligns with all sections */
-    h-full 
-    flex items-center 
-    justify-center lg:justify-end
-    overflow-x-hidden 
-    gap-[20px] 
-    scrollbar-none
-  "
->
-
-
-      <div
-        className={`
-          flex items-center 
-          gap-[12px] sm:gap-[20px] 
-          text-white 
-          ${T.font.family} 
-          ${T.font.weight.medium} 
-          text-[10px] sm:text-[14px]
-        `}
-      >
-        {utilityLinks.map((item) => (
-          <button
-            key={item.label}
-            className="flex items-center gap-[4px] hover:opacity-80 transition whitespace-nowrap"
+      <div className="w-full" style={{ backgroundColor: T.color.secondary }}>
+        <div className="w-full max-w-[1440px] mx-auto h-[40px] flex justify-center px-4 sm:px-6 md:px-10 lg:px-[120px]">
+          <div
+            className="
+              w-full
+              max-w-full
+              lg:max-w-[1440px]
+              h-full
+              flex items-center
+              justify-center lg:justify-end
+              overflow-x-hidden
+              gap-[20px]
+              scrollbar-none
+            "
           >
-            <img
-              src={item.icon}
-              className="w-[12px] h-[12px] sm:w-[16px] sm:h-[16px]"
-            />
-            <span>{item.label}</span>
-          </button>
-        ))}
+            <div
+              className={`
+                flex items-center
+                gap-[12px] sm:gap-[20px]
+                text-white
+                ${T.font.family}
+                ${T.font.weight.medium}
+                text-[10px] sm:text-[14px]
+              `}
+            >
+              {utilityLinks.map((item) => (
+                <button
+                  key={item.label}
+                  className={`
+                    flex items-center gap-[4px] 
+                    hover:opacity-80 transition whitespace-nowrap
+                    ${T.font.family}
+                  `}
+                >
+                  <img
+                    src={item.icon}
+                    className="w-[12px] h-[12px] sm:w-[16px] sm:h-[16px]"
+                  />
+                  <span className={T.font.family}>{item.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-
-
 
       {/* ----------------------- MAIN HEADER ----------------------- */}
-<header className="w-full bg-white relative z-[100] shadow-[0_4px_20px_rgba(0,0,0,0.25)]">
-        <div className="w-full max-w-[1440px] mx-auto px-4 lg:px-[120px] h-[70px] lg:h-[84px] flex items-center justify-between">
+      <header className="w-full bg-white relative z-[100] shadow-[0_4px_20px_rgba(0,0,0,0.25)]">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px] h-[70px] lg:h-[84px] flex items-center justify-between">
 
-          {/* Modern Animated Hamburger */}
+          {/* Hamburger */}
           <button
             className="lg:hidden flex flex-col gap-[5px] group"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            <span
-              className={`w-7 h-[3px] bg-black rounded transition-all ${
-                mobileMenuOpen ? "rotate-45 translate-y-[6px]" : ""
-              }`}
-            ></span>
-            <span
-              className={`w-7 h-[3px] bg-black rounded transition-all ${
-                mobileMenuOpen ? "opacity-0" : ""
-              }`}
-            ></span>
-            <span
-              className={`w-7 h-[3px] bg-black rounded transition-all ${
-                mobileMenuOpen ? "-rotate-45 -translate-y-[6px]" : ""
-              }`}
-            ></span>
+            <span className={`w-7 h-[3px] bg-black rounded transition-all ${mobileMenuOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
+            <span className={`w-7 h-[3px] bg-black rounded transition-all ${mobileMenuOpen ? "opacity-0" : ""}`} />
+            <span className={`w-7 h-[3px] bg-black rounded transition-all ${mobileMenuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
           </button>
 
-          {/* LEFT NAV (Desktop) */}
+          {/* LEFT NAV */}
           <nav className={`${T.font.family} hidden lg:flex items-center gap-[40px]`}>
             <Link
               to="/academics"
               onClick={() => setOpenMenu(null)}
-              className={`${T.font.weight.medium} text-[18px] leading-[26px]`}
+              className={`${T.font.family} ${T.font.weight.medium} text-[18px] leading-[26px]`}
               style={{ color: T.color.dark }}
             >
               Academics
             </Link>
 
             {["Admissions", "Institutes"].map((label) => (
-             <button
-  key={label}
-  onClick={(e) => {
-    e.stopPropagation();
-    setOpenMenu(prev => prev === label ? null : label);
-  }}
-  className={`${T.font.weight.medium} text-[18px] leading-[26px]`}
-  style={{ color: T.color.dark }}
->
-  {label}
-</button>
-
+              <button
+                key={label}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setOpenMenu((prev) => (prev === label ? null : label));
+                }}
+                className={`${T.font.family} ${T.font.weight.medium} text-[18px] leading-[26px]`}
+                style={{ color: T.color.dark }}
+              >
+                {label}
+              </button>
             ))}
           </nav>
 
@@ -187,106 +173,100 @@ useEffect(() => {
           <img
             src={Logo}
             className="h-[42px] w-[170px] sm:h-[46px] sm:w-[189px] object-contain mx-auto lg:mx-0"
-            alt="Asram Logo"
           />
 
-          {/* RIGHT NAV (Desktop) */}
+          {/* RIGHT NAV */}
           <nav className={`${T.font.family} hidden lg:flex items-center gap-[40px]`}>
             {["Healthcare", "Campus Life", "About"].map((label) => (
               <button
-  key={label}
-  onClick={(e) => {
-    e.stopPropagation();
-    setOpenMenu(prev => prev === label ? null : label);
-  }}
-  className={`${T.font.weight.medium} text-[18px] leading-[26px]`}
-  style={{ color: T.color.dark }}
->
-  {label}
-</button>
-
+                key={label}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setOpenMenu((prev) => (prev === label ? null : label));
+                }}
+                className={`${T.font.family} ${T.font.weight.medium} text-[18px] leading-[26px]`}
+                style={{ color: T.color.dark }}
+              >
+                {label}
+              </button>
             ))}
           </nav>
         </div>
 
         {/* ----------------------- MOBILE NAV ----------------------- */}
-       {/* ---------------- MOBILE NAVIGATION DROPDOWN ---------------- */}
-{/* ---------------- MOBILE NAVIGATION DROPDOWN ---------------- */}
-{mobileMenuOpen && (
-  <div
-    className="
-      lg:hidden fixed 
-      top-[110px] left-0 
-      w-full 
-      bg-white 
-      shadow-lg 
-      z-[100] 
-      max-h-[80vh] 
-      overflow-y-auto 
-      border-t
-    "
-  >
-    {/* MAIN MENU ITEMS */}
-    <div className="flex flex-col px-4 py-4 gap-4 text-[16px] font-medium">
-      {Object.keys(megaMenuContent).map((item) => (
-        <button
-          key={item}
-          className="text-left py-3 border-b"
-          onClick={() => setOpenMenu(openMenu === item ? null : item)}
-        >
-          {item}
-        </button>
-      ))}
-    </div>
-
-    {/* ---------------- MOBILE MEGA MENU CONTENT ---------------- */}
-    {openMenu && (
-      <div className="bg-gray-50 px-4 py-4 border-t animate-slideDown">
-        <p
-          className={`${T.font.family} text-[14px] leading-[20px] text-gray-700 mb-4`}
-        >
-          {megaMenuContent[openMenu].leftText}
-        </p>
-
-        <button
-          className={`${T.font.family} ${T.font.weight.semibold} w-full text-[16px] text-white py-3 rounded-[8px] mb-6`}
-          style={{ backgroundColor: T.color.secondary }}
-        >
-          {megaMenuContent[openMenu].button}
-        </button>
-
-        <div className="flex flex-col gap-6">
-          {megaMenuContent[openMenu].columns.map((col) => (
-            <div key={col.heading}>
-              <h3
-                className={`${T.font.family} ${T.font.weight.bold} text-[18px] leading-[24px] mb-2`}
-                style={{ color: T.color.extra.dark75 }}
-              >
-                {col.heading}
-              </h3>
-
-              <div className="flex flex-col gap-2">
-                {col.links.map((link) => (
-                  <Link
-                    key={link}
-                    to={link === "College of Nursing" ? "/nursing" : "#"}
-                    className={`${T.font.family} ${T.font.weight.medium} text-[15px] leading-[20px]`}
-                    style={{ color: T.color.secondary }}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link}
-                  </Link>
-                ))}
-              </div>
+        {mobileMenuOpen && (
+          <div
+            className="
+              lg:hidden fixed
+              top-[110px] left-0
+              w-full
+              bg-white
+              shadow-lg
+              z-[100]
+              max-h-[80vh]
+              overflow-y-auto
+              border-t
+            "
+          >
+            <div className={`flex flex-col px-4 py-4 gap-4 text-[16px] font-medium ${T.font.family}`}>
+              {Object.keys(megaMenuContent).map((item) => (
+                <button
+                  key={item}
+                  className={`${T.font.family} text-left py-3 border-b`}
+                  onClick={() => setOpenMenu(openMenu === item ? null : item)}
+                >
+                  {item}
+                </button>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-    )}
-  </div>
-)}
 
+            {openMenu && (
+              <div className="bg-gray-50 px-4 py-4 border-t animate-slideDown">
+                <p className={`${T.font.family} text-[14px] leading-[20px] text-gray-700 mb-4`}>
+                  {megaMenuContent[openMenu].leftText}
+                </p>
 
+                <button
+                  className={`
+                    ${T.font.family} 
+                    ${T.font.weight.semibold} 
+                    w-full text-[16px] text-white py-3 rounded-[8px] mb-6
+                  `}
+                  style={{ backgroundColor: T.color.secondary }}
+                >
+                  {megaMenuContent[openMenu].button}
+                </button>
+
+                <div className="flex flex-col gap-6">
+                  {megaMenuContent[openMenu].columns.map((col) => (
+                    <div key={col.heading}>
+                      <h3
+                        className={`${T.font.family} ${T.font.weight.bold} text-[18px] leading-[24px] mb-2`}
+                        style={{ color: T.color.extra.dark75 }}
+                      >
+                        {col.heading}
+                      </h3>
+
+                      <div className="flex flex-col gap-2">
+                        {col.links.map((link) => (
+                          <Link
+                            key={link}
+                            to={link === "College of Nursing" ? "/nursing" : "#"}
+                            className={`${T.font.family} ${T.font.weight.medium} text-[15px] leading-[20px]`}
+                            style={{ color: T.color.secondary }}
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {link}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
       </header>
 
       {/* ----------------------- DESKTOP MEGA MENU ----------------------- */}
@@ -354,9 +334,7 @@ useEffect(() => {
                   <div
                     key={col.heading}
                     className="flex flex-col"
-                    style={{
-                      width: col.heading === "Colleges" ? "286px" : "301px",
-                    }}
+                    style={{ width: col.heading === "Colleges" ? "286px" : "301px" }}
                   >
                     <h3
                       className={`${T.font.family} ${T.font.weight.bold} text-[28px] leading-[34px]`}

@@ -1,78 +1,104 @@
+// src/components/header/AcademicsHeader.jsx
 import React from "react";
 import { T } from "../../theme";
+
 import LogoFull from "../../assets/nursing/asramlogo.svg";
 import SearchIcon from "../../assets/nursing/Search.svg";
 import ShortcutLinks from "./ShortcutLinks";
-import NursingPage from "../../pages/nursing/NursingPage";
 
 const AcademicsHeader = () => {
   return (
     <>
-      <div
-        className="px-[100px]"
-        style={{ backgroundColor: T.color.text.secondary }} // #1E3E7B
-      >
-        <div className="w-[1440px] max-w-full mx-auto flex justify-end items-center h-[46px]">
-          <ShortcutLinks />
+      {/* ========================================================= */}
+      {/* TOP SHORTCUT BAR — PERFECT 1440px / 1200px ALIGNMENT      */}
+      {/* ========================================================= */}
+      <div className="w-full" style={{ backgroundColor: T.color.secondary }}>
+        <div
+          className="
+            w-full max-w-[1440px] mx-auto
+            px-4 sm:px-6 md:px-10 lg:px-[120px]
+            h-[46px]
+            flex items-center
+          "
+        >
+          {/* CONTENT WIDTH = 1200px */}
+          <div className="w-full max-w-[1200px] mx-auto flex items-center justify-end">
+            <ShortcutLinks />
+          </div>
         </div>
       </div>
 
-      <nav className="w-full bg-white ">
+      {/* ========================================================= */}
+      {/* MAIN NAVBAR — FOLLOWING EXACT SAME ALIGNMENT STRUCTURE   */}
+      {/* ========================================================= */}
+      <nav className="w-full bg-white shadow-md">
         <div
           className="
-          w-full 
-          max-w-[1440px] 
-          mx-auto 
-          flex items-center justify-between
-          h-[66px]
-        "
-          style={{
-            paddingLeft: "120px",
-            paddingRight: "120px",
-          }}
+            w-full max-w-[1440px] mx-auto
+            px-4 sm:px-6 md:px-10 lg:px-[120px]
+            h-[66px]
+            flex items-center
+          "
         >
-          {/* LEFT: Logo + Text */}
-          <div className="flex items-center gap-[10px]">
-            <img
-              src={LogoFull}
-              alt="Asram Logo"
-              className="h-[46px] w-[191px]"
-            />
-          </div>
+          {/* CONTENT WIDTH = 1200px */}
+          <div className="w-full max-w-[1200px] mx-auto flex items-center justify-between">
 
-          {/* RIGHT: Nav Links + Search */}
-          <div className="flex items-center gap-[40px]">
-            {["Academics", "Research", "Global & Community", "News"].map(
-              (item) => (
-                <button
-                  key={item}
-                  className={`
-                     flex items-center
-        gap-[40px]                        
-        ${T.font.family}                  
-        ${T.font.weight.semibold}         
-        ${T.font.size.base}               
-        leading-[20px]                    
-        tracking-[0px]                    
-        text-[#4A5565]    
-        hover:text-[${T.color.text.secondary}]
-                transition
-                whitespace-nowrap
-              `}
-                >
-                  {item}
-                </button>
-              )
-            )}
+            {/* ------------------------------------------------------ */}
+            {/* LEFT LOGO                                              */}
+            {/* ------------------------------------------------------ */}
+            <div className="flex items-center gap-[10px]">
+              <img
+                src={LogoFull}
+                alt="Asram Logo"
+                className="h-[46px] w-[191px] object-contain"
+              />
+            </div>
 
-            {/* Search Icon */}
-            <button>
+            {/* ------------------------------------------------------ */}
+            {/* DESKTOP NAVIGATION MENU                                */}
+            {/* ------------------------------------------------------ */}
+            <div className="hidden lg:flex items-center gap-[40px]">
+              {["Academics", "Research", "Global & Community", "News"].map(
+                (item) => (
+                  <button
+                    key={item}
+                    className={`
+                      ${T.font.family}
+                      ${T.font.weight.semibold}
+                      text-[16px]
+                      leading-[20px]
+                      text-[#4A5565]
+                      whitespace-nowrap
+                      hover:text-[${T.color.text.secondary}]
+                      transition
+                    `}
+                  >
+                    {item}
+                  </button>
+                )
+              )}
+
+              {/* SEARCH ICON */}
+              <button>
+                <img
+                  src={SearchIcon}
+                  alt="Search"
+                  className="h-[20px] w-[20px]"
+                />
+              </button>
+            </div>
+
+            {/* ------------------------------------------------------ */}
+            {/* MOBILE ONLY SEARCH ICON                                */}
+            {/* ------------------------------------------------------ */}
+            <button className="lg:hidden flex items-center justify-center">
               <img
                 src={SearchIcon}
                 alt="Search"
-                className="h-[18px] w-[18px]"
+                className="h-[20px] w-[20px]"
               />
             </button>
+
           </div>
         </div>
       </nav>

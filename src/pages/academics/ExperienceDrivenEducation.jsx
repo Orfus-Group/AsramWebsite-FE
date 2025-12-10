@@ -4,24 +4,36 @@ import { T } from "../../theme";
 export default function ExperienceDrivenEducation() {
   return (
     <section className="w-full bg-transparent py-[60px] flex justify-center">
-      <div className="w-[1200px]">
 
-        {/* BLUE CARD */}
+      {/* ⭐ UNIFIED CONTAINER (Matches Hero / Header / All Sections) */}
+      <div
+        className="
+          w-full 
+          max-w-[1440px] 
+          mx-auto 
+          px-4 sm:px-6 md:px-10 lg:px-[120px]
+          flex justify-center
+        "
+      >
+
+        {/* ⭐ MAIN FIXED-WIDTH CARD (Desktop: 1200px EXACT) */}
         <div
           className="
-            w-[1200px]
-            h-[365.13px]
+            w-full 
+            max-w-[1200px]
             bg-[#F7F9FC]
             rounded-[16.18px]
             px-[39.47px]
             py-[39.47px]
-            flex
+            flex 
+            flex-col lg:flex-row
             gap-[32px]
           "
+          style={{ minHeight: "365.13px" }}
         >
 
           {/* LEFT CONTENT */}
-          <div className="w-[544.74px] flex flex-col gap-[18px]">
+          <div className="w-full lg:w-[544.74px] flex flex-col gap-[18px]">
 
             {/* TITLE */}
             <h3
@@ -42,7 +54,7 @@ export default function ExperienceDrivenEducation() {
                 ${T.font.family}
                 text-[15.79px]
                 leading-[27.63px]
-                w-[534.87px]
+                w-full lg:w-[534.87px]
               `}
               style={{ color: T.color.dark + "BF" }}
             >
@@ -80,8 +92,14 @@ export default function ExperienceDrivenEducation() {
           </div>
 
           {/* RIGHT GRID */}
-          <div className="w-[544.74px] grid grid-cols-2 grid-rows-2 gap-[15.79px]">
-
+          <div
+            className="
+              w-full
+              lg:w-[544.74px]
+              grid grid-cols-2 grid-rows-2
+              gap-[15.79px]
+            "
+          >
             {[
               { value: "100+", label: "B.Sc Seats" },
               { value: "60+", label: "GNM Seats" },
@@ -101,8 +119,7 @@ export default function ExperienceDrivenEducation() {
                   gap-[8px]
                 "
               >
-
-                {/* VALUE WITH ANIMATION */}
+                {/* ANIMATED VALUE */}
                 <AnimatedStatValue
                   value={stat.value}
                   className={`
@@ -125,7 +142,6 @@ export default function ExperienceDrivenEducation() {
                 >
                   {stat.label}
                 </span>
-
               </div>
             ))}
           </div>
@@ -165,17 +181,16 @@ function AnimatedStatValue({ value, className, style }) {
     const number = parseInt(value.replace(/\D/g, ""), 10);
     const suffix = value.replace(/[0-9]/g, "");
 
-    // If it's non-numeric like "INC"
     if (isNaN(number)) {
       setDisplayValue(value);
       return;
     }
 
     const duration = 1200;
-    const startTime = performance.now();
+    const start = performance.now();
 
     const step = (now) => {
-      const progress = Math.min((now - startTime) / duration, 1);
+      const progress = Math.min((now - start) / duration, 1);
       const current = Math.floor(progress * number);
 
       setDisplayValue(current + suffix);

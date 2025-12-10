@@ -1,37 +1,30 @@
+// src/components/header/ShortcutLinks.jsx
 import React from "react";
 import { T } from "../../theme";
 
-const links = ["Faculty", "Students", "Admissions", "About"];
+const ShortcutLinks = () => {
+  const links = ["Faculty", "Students", "Admissions", "About"];
 
-const ShortcutLinks = () => (
-  <div
-    className="
-      flex items-center justify-end
-      gap-[40px]
-      h-[40px]
-      px-[60px]
-    "
-    style={{
-      color: T.color.background.white,
-      fontFamily: T.font.family.replace("font-", ""), // ensures actual font loaded
-      fontWeight: 500, // theme equivalent of font-medium
-      fontSize: "14px",
-      lineHeight: "14px",
-    }}
-  >
-    {links.map((item) => (
-      <button
-        key={item}
-        className="hover:opacity-80 transition"
-        style={{
-          color: T.color.background.white,
-          fontFamily: T.font.family.replace("font-", ""),
-        }}
-      >
-        {item}
-      </button>
-    ))}
-  </div>
-);
+  return (
+    <div className="flex items-center gap-[40px]">
+      {links.map((item) => (
+        <button
+          key={item}
+          className={`
+            ${T.font.family}
+            ${T.font.weight.medium}
+            text-[14px]
+            leading-[14px]
+            flex items-center
+            text-white
+            whitespace-nowrap
+          `}
+        >
+          {item}
+        </button>
+      ))}
+    </div>
+  );
+};
 
 export default ShortcutLinks;

@@ -11,7 +11,18 @@ import approvedprograms from "../../assets/academics/approvedprograms.svg";
 export default function NursingCareerSection() {
   return (
     <section className={`w-full ${T.bg.programCard} py-[80px]`}>
-      <div className="w-[1200px] mx-auto flex flex-col gap-[40px]">
+
+      {/* ⭐ UNIFIED CONTAINER (Matches Hero/Header/Programs Offered) */}
+      <div
+        className="
+          w-full
+          max-w-[1440px]
+          mx-auto
+          px-4 sm:px-6 md:px-10 lg:px-[120px]
+          flex flex-col
+          gap-[40px]
+        "
+      >
 
         {/* SECTION TITLE */}
         <h2
@@ -26,11 +37,28 @@ export default function NursingCareerSection() {
           Shape Your Career in Nursing
         </h2>
 
-        {/* MAIN CONTENT WRAPPER */}
-        <div className="w-[1200px] h-[367px] flex justify-between">
+        {/* ⭐ RESPONSIVE LAYOUT */}
+        <div
+          className="
+            w-full
+            flex 
+            flex-col lg:flex-row
+            justify-between
+            gap-[30px]
+            lg:gap-[40px]
+          "
+        >
 
           {/* LEFT IMAGE */}
-          <div className="w-[563px] h-[367px] rounded-[8px] overflow-hidden">
+          <div
+            className="
+              w-full 
+              lg:w-[563px]
+              h-[260px] sm:h-[300px] md:h-[340px] lg:h-[367px]
+              rounded-[8px]
+              overflow-hidden
+            "
+          >
             <img
               src={nursingcareer}
               alt="Nursing Career"
@@ -38,38 +66,23 @@ export default function NursingCareerSection() {
             />
           </div>
 
-          {/* RIGHT 2x2 STATS GRID */}
-          <div className="w-[590px] h-[367px] grid grid-cols-2 grid-rows-2 gap-[10px]">
-
-            {/* CARD 1 */}
-            <StatCard
-              icon={excellence}
-              value="20+"
-              label="Years of Excellence"
-            />
-
-            {/* CARD 2 */}
-            <StatCard
-              icon={activestudents}
-              value="377+"
-              label="Active Students"
-            />
-
-            {/* CARD 3 */}
-            <StatCard
-              icon={performancesuccess}
-              value="95%"
-              label="Placement Success"
-            />
-
-            {/* CARD 4 */}
-            <StatCard
-              icon={approvedprograms}
-              value="INC"
-              label="Approved Programs"
-            />
-
+          {/* RIGHT GRID */}
+          <div
+            className="
+              w-full 
+              lg:w-[590px]
+              grid 
+              grid-cols-2 
+              grid-rows-2 
+              gap-[10px]
+            "
+          >
+            <StatCard icon={excellence} value="20+" label="Years of Excellence" />
+            <StatCard icon={activestudents} value="377+" label="Active Students" />
+            <StatCard icon={performancesuccess} value="95%" label="Placement Success" />
+            <StatCard icon={approvedprograms} value="INC" label="Approved Programs" />
           </div>
+
         </div>
       </div>
     </section>
@@ -77,13 +90,18 @@ export default function NursingCareerSection() {
 }
 
 /* ------------------------------------------
-    REUSABLE STAT CARD WITH ANIMATION
+    REUSABLE STAT CARD
 ------------------------------------------- */
 function StatCard({ icon, value, label }) {
   return (
     <div
-      className={`w-[282.16px] h-[171.66px] ${T.bg.white} ${T.radius.md}
-      flex flex-col items-center justify-center gap-[6px]`}
+      className={`
+        w-full
+        h-[171.66px]
+        ${T.bg.white} 
+        ${T.radius.md}
+        flex flex-col items-center justify-center gap-[6px]
+      `}
     >
       <img src={icon} className="w-[31.58px] h-[31.58px]" />
 
@@ -140,21 +158,20 @@ function AnimatedStatValue({ value, className, style }) {
 
   const animateValue = () => {
     const num = parseInt(value.replace(/\D/g, ""), 10);
-    const suffix = value.replace(/[0-9]/g, ""); // + or %
+    const suffix = value.replace(/[0-9]/g, "");
 
     if (isNaN(num)) {
-      setDisplayValue(value); // For non-numeric like “INC”
+      setDisplayValue(value);
       return;
     }
 
     const duration = 1200;
-    const startTime = performance.now();
+    const start = performance.now();
 
-    const step = (now) => {
-      const progress = Math.min((now - startTime) / duration, 1);
+    const step = (timestamp) => {
+      const progress = Math.min((timestamp - start) / duration, 1);
       const current = Math.floor(progress * num);
       setDisplayValue(current + suffix);
-
       if (progress < 1) requestAnimationFrame(step);
     };
 

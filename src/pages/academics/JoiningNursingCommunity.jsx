@@ -9,124 +9,133 @@ import Button from "../../components/ui/button";
 
 export default function JoinOurNursingCommunity() {
   return (
-    <section className={`w-full ${T.bg.white} py-[60px] ${T.font.family}`}>
-
-      {/* MAIN GRID */}
-    {/* MAIN GRID */}
-<div className="max-w-[1200px] mx-auto flex flex-col">
-
-  {/* FULL-WIDTH HEADING */}
-  <h2
-    className={`
-      ${T.font.family}
-      ${T.font.weight.bold}
-      text-[42px]
-      leading-[52px]
-      text-[${T.color.secondary}]
-    `}
-  >
-    Join Our Nursing Community
-  </h2>
-
-</div>
-
-
-      {/* BUTTON ROW */}
-      <div className="max-w-[1200px] mx-auto mt-[35px] flex justify-center gap-[18px]">
-
-        {/* PRIMARY BUTTON */}
-       <Button
-  customPadding="px-[39px] py-[18px]"
-  bg={T.color.primary}
-  color="white"
-            font={T.font.family}
-  rounded="9.87px"
-  textSize="text-[15.79px]"
-  leading="leading-[23.68px]"
-  gap="12px"
-  height="60px"
-  icon={<img src={rightarrow} className="w-[19.74px] h-[19.74px]" />}>
-  
-  Start Your Application
-</Button>
-
-
-
-        {/* SECONDARY BUTTON */}
-      <Button
-  customPadding="px-[39.47px] py-[15.79px]"
-  bg={T.color.background.programCard}
-            font={T.font.family}
-  color={T.color.secondary}
-  rounded="9.87px"
-  textSize="text-[15.79px]"
-  leading="leading-[23.68px]"
-  width="219.63px"
-  height="59.21px">
-  
-  Explore Programs
-</Button>
-
-
-        {/* OUTLINED BUTTON */}
-  <Button
-  customPadding="px-[39.47px] py-[15.79px]"
-  bg={T.color.extra.dark10}
-  color={T.color.dark}
-  rounded="9.87px"
-  borderColor={T.color.extra.dark10}
-  borderWidth="2px"
-  textSize="text-[15.79px]"
-  leading="leading-[23.68px]"
-  width="184.62px"
-  height="59.21px">
-  
-  Visit Website
-</Button>
-
-
-      </div>
-
-      {/* CONTACT CARDS GRID */}
-      <div
+    <section className={`w-full ${T.bg.white} py-[60px] ${T.font.family} flex justify-center`}>
+      
+      {/* ⭐ UNIFIED BASELINE CONTAINER (Matches Hero + Header) */}
+      <div 
         className="
-          max-w-[1200px] mx-auto mt-[50px]
-          grid grid-cols-3 gap-[23.68px]
+          w-full 
+          max-w-[1440px] 
+          mx-auto 
+          px-4 sm:px-6 md:px-10 lg:px-[120px]
+          flex flex-col
         "
       >
-        <ContactCard
-          icon={location}
-          title="Visit Campus"
-          subtitle1="ASRAM Campus"
-          subtitle2="Eluru, Andhra Pradesh"
-        />
 
-        <ContactCard
-          icon={phoneicon}
-          title="Call Us"
-          subtitle1="Admissions Office"
-          subtitle2="Contact via asram.in"
-        />
+        {/* HEADING */}
+        <h2
+          className={`
+            ${T.font.family}
+            ${T.font.weight.bold}
+            text-[42px]
+            leading-[52px]
+            text-[${T.color.secondary}]
+          `}
+        >
+          Join Our Nursing Community
+        </h2>
 
-        <ContactCard
-          icon={emailicon}
-          title="Email Us"
-          subtitle1="For admission inquiries"
-          subtitle2="See official website"
-        />
-      </div>
+        {/* ⭐ BUTTON ROW — FULLY RESPONSIVE */}
+        <div
+          className="
+            mt-[35px]
+            flex flex-wrap justify-center
+            gap-[18px]
+            w-full
+          "
+        >
+          {/* PRIMARY BUTTON */}
+          <Button
+            customPadding="px-[39px] py-[18px]"
+            bg={T.color.primary}
+            color="white"
+            font={T.font.family}
+            rounded="9.87px"
+            textSize="text-[15.79px]"
+            leading="leading-[23.68px]"
+            gap="12px"
+            height="60px"
+            icon={<img src={rightarrow} className="w-[19.74px] h-[19.74px]" />}
+          >
+            Start Your Application
+          </Button>
 
-      {/* STATISTICS ROW */}
-      <div
-        className="
-          max-w-[1200px] mx-auto mt-[60px]
-          grid grid-cols-4 text-center
-        "
-      >
-        <StatBlock count="20+" label="Years of Excellence" />
-        <StatBlock count="190+" label="Total Seats" />
-        <StatBlock count="56+" label="Expert Faculty" />
-        <StatBlock count="INC" label="Approved" />
+          {/* SECONDARY BUTTON */}
+          <Button
+            customPadding="px-[39.47px] py-[15.79px]"
+            bg={T.color.background.programCard}
+            font={T.font.family}
+            color={T.color.secondary}
+            rounded="9.87px"
+            textSize="text-[15.79px]"
+            leading="leading-[23.68px]"
+            height="59.21px"
+          >
+            Explore Programs
+          </Button>
+
+          {/* OUTLINED BUTTON */}
+          <Button
+            customPadding="px-[39.47px] py-[15.79px]"
+            bg={T.color.extra.dark10}
+            color={T.color.dark}
+            rounded="9.87px"
+            borderColor={T.color.extra.dark10}
+            borderWidth="2px"
+            textSize="text-[15.79px]"
+            leading="leading-[23.68px]"
+            height="59.21px"
+          >
+            Visit Website
+          </Button>
+        </div>
+
+        {/* ⭐ CONTACT CARDS — RESPONSIVE GRID */}
+        <div
+          className="
+            mt-[50px]
+            grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+            gap-[23.68px]
+            w-full
+          "
+        >
+          <ContactCard
+            icon={location}
+            title="Visit Campus"
+            subtitle1="ASRAM Campus"
+            subtitle2="Eluru, Andhra Pradesh"
+          />
+
+          <ContactCard
+            icon={phoneicon}
+            title="Call Us"
+            subtitle1="Admissions Office"
+            subtitle2="Contact via asram.in"
+          />
+
+          <ContactCard
+            icon={emailicon}
+            title="Email Us"
+            subtitle1="For admission inquiries"
+            subtitle2="See official website"
+          />
+        </div>
+
+        {/* ⭐ STATISTICS ROW — RESPONSIVE */}
+        <div
+          className="
+            mt-[60px]
+            grid grid-cols-2 sm:grid-cols-4
+            text-center
+            w-full
+          "
+        >
+          <StatBlock count="20+" label="Years of Excellence" />
+          <StatBlock count="190+" label="Total Seats" />
+          <StatBlock count="56+" label="Expert Faculty" />
+          <StatBlock count="INC" label="Approved" />
+        </div>
+
       </div>
     </section>
   );
@@ -137,9 +146,9 @@ function ContactCard({ icon, title, subtitle1, subtitle2 }) {
   return (
     <div
       className="
-        w-[321px] h-[195.39px]
         flex flex-col items-center justify-center
-        rounded-[9.87px]
+        rounded-[9.87px] p-[20px]
+        h-[195.39px]
       "
       style={{ backgroundColor: T.color.background.programCard }}
     >
@@ -177,7 +186,7 @@ function ContactCard({ icon, title, subtitle1, subtitle2 }) {
   );
 }
 
-
+/* ---------------- STAT BLOCK ---------------- */
 function StatBlock({ count, label }) {
   const [displayValue, setDisplayValue] = useState("0");
   const ref = useRef(null);
@@ -186,46 +195,41 @@ function StatBlock({ count, label }) {
   useEffect(() => {
     const target = ref.current;
 
-    const handleIntersect = (entries) => {
+    const run = (entries) => {
       if (entries[0].isIntersecting && !hasAnimated.current) {
         hasAnimated.current = true;
-        animateCount();
+        animate();
       }
     };
 
-    const observer = new IntersectionObserver(handleIntersect, {
-      threshold: 0.4,
-    });
-
+    const observer = new IntersectionObserver(run, { threshold: 0.4 });
     if (target) observer.observe(target);
 
     return () => observer.disconnect();
   }, []);
 
-  const animateCount = () => {
-    const numberOnly = parseInt(count.replace(/\D/g, ""), 10); // extract digits
-    const suffix = count.replace(/[0-9]/g, ""); // keep + or INC
+  const animate = () => {
+    const number = parseInt(count.replace(/\D/g, ""), 10);
+    const suffix = count.replace(/[0-9]/g, "");
 
-    if (isNaN(numberOnly)) {
-      // For things like “INC”
+    if (isNaN(number)) {
       setDisplayValue(count);
       return;
     }
 
-    let start = 0;
-    const duration = 1200; // animation speed
-    const startTime = performance.now();
+    const duration = 1200;
+    const start = performance.now();
 
-    const step = (now) => {
-      const progress = Math.min((now - startTime) / duration, 1);
-      const current = Math.floor(progress * numberOnly);
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const current = Math.floor(progress * number);
 
       setDisplayValue(current + suffix);
 
-      if (progress < 1) requestAnimationFrame(step);
+      if (progress < 1) requestAnimationFrame(tick);
     };
 
-    requestAnimationFrame(step);
+    requestAnimationFrame(tick);
   };
 
   return (
@@ -235,8 +239,8 @@ function StatBlock({ count, label }) {
           ${T.font.family}
           ${T.font.weight.bold}
           text-[35.53px]
-          mb-[5px]
           leading-[39.47px]
+          mb-[5px]
           text-[${T.color.secondary}]
         `}
       >

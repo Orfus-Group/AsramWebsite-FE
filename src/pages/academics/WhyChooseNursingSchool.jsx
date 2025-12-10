@@ -9,18 +9,59 @@ import holisticdev from "../../assets/academics/holisticdev.svg";
 import careerready from "../../assets/academics/careerready.svg";
 
 const features = [
-  { icon: hospitaltraining, title: "Hospital Training", desc: "Direct access to ASRAM's comprehensive multispeciality teaching hospital with over 500 beds, providing unmatched clinical exposure across all nursing specialties.", tag: "500+ Bed Hospital" },
-  { icon: artFacilities, title: "State-of-the-Art Facilities", desc: "Modern simulation labs, advanced anatomical models, e-library access, and cutting-edge equipment that mirrors real-world healthcare settings.", tag: "10 Acre Campus" },
-  { icon: mentorship, title: "Personalized Mentorship", desc: "With a student-faculty ratio of approximately 7:1, every student receives individual attention, guidance, and support throughout their educational journey.", tag: "7:1 Ratio" },
-  { icon: accredited, title: "Accredited Excellence", desc: "Full recognition from the Indian Nursing Council (INC) and affiliation with Dr. NTR University of Health Sciences ensuring top-tier education standards.", tag: "INC Approved" },
-  { icon: holisticdev, title: "Holistic Development", desc: "Beyond academics—sports facilities, cultural programs, leadership workshops, and community service opportunities shape well-rounded healthcare professionals.", tag: "360° Growth" },
-  { icon: careerready, title: "Career-Ready Graduates", desc: "Our curriculum balances theory with extensive practical training, ensuring graduates are confident, competent, and ready for diverse nursing roles.", tag: "95% Employability" },
+  {
+    icon: hospitaltraining,
+    title: "Hospital Training",
+    desc: "Direct access to ASRAM's comprehensive multispeciality teaching hospital with over 500 beds, providing unmatched clinical exposure across all nursing specialties.",
+    tag: "500+ Bed Hospital",
+  },
+  {
+    icon: artFacilities,
+    title: "State-of-the-Art Facilities",
+    desc: "Modern simulation labs, advanced anatomical models, e-library access, and cutting-edge equipment that mirrors real-world healthcare settings.",
+    tag: "10 Acre Campus",
+  },
+  {
+    icon: mentorship,
+    title: "Personalized Mentorship",
+    desc: "With a student-faculty ratio of approximately 7:1, every student receives individual attention, guidance, and support throughout their educational journey.",
+    tag: "7:1 Ratio",
+  },
+  {
+    icon: accredited,
+    title: "Accredited Excellence",
+    desc: "Full recognition from the Indian Nursing Council (INC) and affiliation with Dr. NTR University of Health Sciences ensuring top-tier education standards.",
+    tag: "INC Approved",
+  },
+  {
+    icon: holisticdev,
+    title: "Holistic Development",
+    desc: "Beyond academics—sports facilities, cultural programs, leadership workshops, and community service opportunities shape well-rounded healthcare professionals.",
+    tag: "360° Growth",
+  },
+  {
+    icon: careerready,
+    title: "Career-Ready Graduates",
+    desc: "Our curriculum balances theory with extensive practical training, ensuring graduates are confident, competent, and ready for diverse nursing roles.",
+    tag: "95% Employability",
+  },
 ];
 
 export default function WhyChooseNursingSchool() {
   return (
     <section className={`w-full ${T.bg.white} pt-[80px]`}>
-      <div className="w-[1200px] mx-auto flex flex-col gap-[40px]">
+
+      {/* ⭐ UNIFIED LAYOUT CONTAINER (Same as Hero / Header / All sections) */}
+      <div
+        className="
+          w-full 
+          max-w-[1440px] 
+          mx-auto 
+          px-4 sm:px-6 md:px-10 lg:px-[120px]
+          flex flex-col 
+          gap-[40px]
+        "
+      >
 
         {/* SECTION TITLE */}
         <h2
@@ -35,14 +76,21 @@ export default function WhyChooseNursingSchool() {
           Why Choose Our Nursing School
         </h2>
 
-        {/* GRID */}
-        <div className="grid grid-cols-3 gap-[30px]">
-
+        {/* ⭐ RESPONSIVE GRID */}
+        <div
+          className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-3
+            gap-[30px]
+          "
+        >
           {features.map((item, i) => (
             <div
               key={i}
               className="
-                w-[379px]
+                w-full
                 h-[430.16px]
                 bg-[#F7F9FC]
                 rounded-[8px]
@@ -118,7 +166,6 @@ export default function WhyChooseNursingSchool() {
 
             </div>
           ))}
-
         </div>
       </div>
     </section>

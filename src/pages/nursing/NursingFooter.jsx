@@ -5,17 +5,35 @@ import phoneIcon from "../../assets/nursing/contactphone.svg";
 import mailIcon from "../../assets/nursing/contactemail.svg";
 import { T } from "../../theme";
 
-
 export default function Footer() {
   return (
     <footer className="w-full bg-[#F7F9FC] flex justify-center">
-      <div className="w-[1440px] max-w-full pt-[80px] pb-[60px] px-[149.3px] flex flex-col gap-[45.1px]">
+      
+      {/* ⭐ UNIFIED BASELINE CONTAINER (Matches Hero + Header) */}
+      <div
+        className="
+          w-full 
+          max-w-[1440px] 
+          mx-auto 
+          px-4 sm:px-6 md:px-10 lg:px-[120px] 
+          pt-[80px] pb-[60px]
+          flex flex-col 
+          gap-[45.1px]
+        "
+      >
 
         {/* ================= TOP CONTENT ROW ================= */}
-        <div className="w-full flex justify-between">
+        <div
+          className="
+            w-full 
+            grid 
+            grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+            gap-[40px]
+          "
+        >
 
           {/* --------- Column 1: About --------- */}
-          <div className="flex flex-col w-[250.66px]">
+          <div className="flex flex-col">
             <h3
               className={`
                 ${T.font.family}
@@ -30,8 +48,8 @@ export default function Footer() {
 
             <p
               className={`
-               ${T.font.family}
-      ${T.font.weight.semibold}
+                ${T.font.family}
+                ${T.font.weight.semibold}
                 text-[15.79px]
                 leading-[26px]
                 text-[${T.color.text.dark}]
@@ -59,9 +77,7 @@ export default function Footer() {
               Quick Links
             </h3>
 
-            <div
-              className="flex flex-col mt-[16px] gap-[12px]"
-            >
+            <div className="flex flex-col mt-[16px] gap-[12px]">
               {["About Us", "Programs", "Infrastructure", "Admissions"].map(
                 (item, i) => (
                   <p
@@ -121,7 +137,7 @@ export default function Footer() {
           </div>
 
           {/* --------- Column 4: Contact --------- */}
-          <div className="flex flex-col w-[240px]">
+          <div className="flex flex-col">
             <h3
               className={`
                 ${T.font.family}
@@ -137,17 +153,17 @@ export default function Footer() {
             <div className="flex flex-col mt-[16px] gap-[12px]">
               {/* Address */}
               <div className="flex gap-[10px]">
-                <img
-                  src={locationIcon}
-                  className="w-[20px] h-[20px]"
-                />
+                <img src={locationIcon} className="w-[20px] h-[20px]" />
                 <p
                   className={`
-                    ${T.font.family} text-[15.79px] leading-[23.7px]
-                    text-[${T.color.text.dark}] opacity-70
+                    ${T.font.family}
+                    text-[15.79px] leading-[23.7px]
+                    text-[${T.color.text.dark}]
+                    opacity-70
                   `}
                 >
-                  ASRAM Campus, Eluru,<br />
+                  ASRAM Campus, Eluru,
+                  <br />
                   Andhra Pradesh, India
                 </p>
               </div>
@@ -157,8 +173,10 @@ export default function Footer() {
                 <img src={phoneIcon} className="w-[20px] h-[20px]" />
                 <p
                   className={`
-                    ${T.font.family} text-[15.79px] leading-[23.7px]
-                    text-[${T.color.text.dark}] opacity-70
+                    ${T.font.family}
+                    text-[15.79px] leading-[23.7px]
+                    text-[${T.color.text.dark}]
+                    opacity-70
                   `}
                 >
                   Contact: Visit asram.in
@@ -170,8 +188,10 @@ export default function Footer() {
                 <img src={mailIcon} className="w-[20px] h-[20px]" />
                 <p
                   className={`
-                    ${T.font.family} text-[15.79px] leading-[23.7px]
-                    text-[${T.color.text.dark}] opacity-70
+                    ${T.font.family}
+                    text-[15.79px] leading-[23.7px]
+                    text-[${T.color.text.dark}]
+                    opacity-70
                   `}
                 >
                   For admission inquiries
@@ -181,11 +201,20 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ================= DIVIDER LINE ================= */}
+        {/* ================= DIVIDER ================= */}
         <div className="w-full border-t border-[#E5E7EB]"></div>
 
         {/* ================= BOTTOM BAR ================= */}
-        <div className="w-full flex justify-between text-center">
+        <div
+          className="
+            w-full 
+            flex flex-col sm:flex-row
+            justify-between 
+            items-center 
+            gap-[12px]
+            text-center
+          "
+        >
           <p
             className={`
               ${T.font.family}
@@ -210,6 +239,7 @@ export default function Footer() {
             Affiliated to NTRUHS, Vijayawada &nbsp; · &nbsp; Approved by INC
           </p>
         </div>
+
       </div>
     </footer>
   );

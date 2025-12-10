@@ -41,9 +41,18 @@ export default function FinancialAidScholarships() {
   ];
 
   return (
-    <section className={`${T.bg.programCard} w-full py-[80px]`}>
-      <div className="w-[1440px] max-w-full mx-auto px-[120px] flex flex-col gap-[40px]">
-
+    <section className={`${T.bg.programCard} w-full py-[80px] flex justify-center`}>
+      {/* ⭐ UNIFIED BASELINE CONTAINER (Matches Hero + Header) */}
+      <div
+        className="
+          w-full
+          max-w-[1440px]
+          mx-auto
+          px-4 sm:px-6 md:px-10 lg:px-[120px]
+          flex flex-col
+          gap-[40px]
+        "
+      >
         {/* SECTION TITLE */}
         <h2
           className={`
@@ -57,12 +66,24 @@ export default function FinancialAidScholarships() {
           Financial Aid & Scholarships
         </h2>
 
-        {/* STATS GRID */}
-        <div className="grid grid-cols-4 gap-[23.68px] w-[1200px]">
+        {/* ⭐ STATS GRID — RESPONSIVE */}
+        <div
+          className="
+            grid
+            grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+            gap-[23.68px]
+            w-full
+          "
+        >
           {stats.map((item, i) => (
             <div
               key={i}
-              className="h-[100.66px] bg-white rounded-[9.87px] flex flex-col items-center justify-center gap-[6px]"
+              className="
+                bg-white
+                h-[100.66px]
+                rounded-[9.87px]
+                flex flex-col items-center justify-center gap-[6px]
+              "
               style={{ border: `1px solid ${T.color.border}` }}
             >
               <p
@@ -87,9 +108,15 @@ export default function FinancialAidScholarships() {
           ))}
         </div>
 
-        {/* 2x2 MAIN CARDS */}
-        <div className="grid grid-cols-2 gap-[31.58px] w-[1200px]">
-
+        {/* ⭐ 2x2 MAIN CARDS — RESPONSIVE */}
+        <div
+          className="
+            grid
+            grid-cols-1 md:grid-cols-2
+            gap-[31.58px]
+            w-full
+          "
+        >
           <Card
             icon={meritbased}
             title="Merit-Based Scholarships"
@@ -117,19 +144,23 @@ export default function FinancialAidScholarships() {
             desc="Tie-ups with leading banks for easy education loan processing at competitive interest rates."
             eligibility="All admitted students"
           />
-
         </div>
 
-        {/* BOTTOM 2 BIG CARDS */}
-        <div className="grid grid-cols-2 gap-[31.58px] w-[1200px]">
-
+        {/* ⭐ BOTTOM TWO LARGE CARDS — RESPONSIVE */}
+        <div
+          className="
+            grid
+            grid-cols-1 md:grid-cols-2
+            gap-[31.58px]
+            w-full
+          "
+        >
           {/* FEE STRUCTURE */}
           <div
             className="bg-white rounded-[9.87px] p-[31.58px] flex flex-col gap-[16px]"
             style={{ border: `1px solid ${T.color.border}` }}
           >
             <div className="flex items-center gap-[15.79px]">
-              {/* ICON */}
               <div
                 className="
                   w-[47.37px] h-[47.37px]
@@ -159,8 +190,8 @@ export default function FinancialAidScholarships() {
               style={{ color: T.color.text.muted }}
             >
               ASRAM School of Nursing offers competitive and transparent fee
-              structures for all programs. Fees are set in accordance with university
-              and regulatory body guidelines.
+              structures for all programs. Fees are set in accordance with
+              university and regulatory body guidelines.
             </p>
 
             <p
@@ -231,8 +262,6 @@ export default function FinancialAidScholarships() {
 
             {steps.map((step, i) => (
               <div key={i} className="flex gap-[10px] items-start">
-
-                {/* Number Bubble */}
                 <span
                   className={`
                     ${T.font.family}
@@ -251,9 +280,7 @@ export default function FinancialAidScholarships() {
                   {i + 1}
                 </span>
 
-                {/* TITLE + DESC */}
                 <div className="flex flex-col">
-
                   <span
                     className={`
                       ${T.font.family}
@@ -272,34 +299,29 @@ export default function FinancialAidScholarships() {
                       text-[15.79px]
                       leading-[23.68px]
                       mt-[2px]
-                      w-[417px]
                     `}
                     style={{ color: T.color.dark + "BF" }}
                   >
                     {step.description}
                   </p>
-
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>
   );
 }
 
-/* REUSABLE CARD COMPONENT */
+/* ⭐ REUSABLE CARD COMPONENT — RESPONSIVE */
 function Card({ icon, title, desc, eligibility }) {
   return (
     <div
-      className="bg-white rounded-[9.87px] p-[30px] border"
-      style={{ borderColor: T.color.border, width: "584.21px", height: "196.73px" }}
+      className="bg-white rounded-[9.87px] p-[30px] border flex flex-col gap-[12px]"
+      style={{ borderColor: T.color.border }}
     >
       <div className="flex gap-[15.79px] items-start">
-
-        {/* ICON */}
         <div
           className="
             w-[55.26px] h-[55.26px] rounded-[9.87px]
@@ -310,9 +332,7 @@ function Card({ icon, title, desc, eligibility }) {
           <img src={icon} alt="" className="w-[23.68px] h-[23.68px]" />
         </div>
 
-        {/* TEXT */}
         <div className="flex flex-col gap-[8px]">
-
           <h3
             className={`
               ${T.font.family}
@@ -332,22 +352,20 @@ function Card({ icon, title, desc, eligibility }) {
             {desc}
           </p>
 
-      <div className="flex gap-[8px] pt-[4px] items-start">
+          <div className="flex gap-[8px] pt-[4px] items-start">
+            <img src={checkIcon} className="w-[17.76px] h-[17.76px] mt-[2px]" />
 
-  <img src={checkIcon} className="w-[17.76px] h-[17.76px] mt-[2px]" />
-
-  <p className={`${T.font.family} text-[13.82px] leading-[19.74px]`}>
-    <span className={`${T.font.weight.semibold} text-[${T.color.text.grayish}]`}>
-      Eligibility:
-    </span>
-    &nbsp;
-    <span style={{ color: T.color.text.muted }}>
-      {eligibility}
-    </span>
-  </p>
-</div>
-
-
+            <p className={`${T.font.family} text-[13.82px] leading-[19.74px]`}>
+              <span
+                className={`${T.font.weight.semibold}`}
+                style={{ color: T.color.text.grayish }}
+              >
+                Eligibility:
+              </span>
+              &nbsp;
+              <span style={{ color: T.color.text.muted }}>{eligibility}</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>

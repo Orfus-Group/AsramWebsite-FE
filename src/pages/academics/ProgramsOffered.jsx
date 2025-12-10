@@ -1,3 +1,4 @@
+// src/sections/academics/ProgramsOffered.jsx
 import React from "react";
 import { T } from "../../theme";
 
@@ -51,7 +52,17 @@ const programs = [
 export default function ProgramsOffered() {
   return (
     <section className={`${T.bg.white} w-full`}>
-      <div className="w-full max-w-[1440px] mx-auto px-[120px] py-[80px] flex flex-col gap-[40px]">
+      
+      {/* ⭐ UNIFIED CONTAINER (Same as Header + Hero) */}
+      <div className="
+        w-full 
+        max-w-[1440px] 
+        mx-auto 
+        px-4 sm:px-6 md:px-10 lg:px-[120px] 
+        py-[80px] 
+        flex flex-col 
+        gap-[40px]
+      ">
 
         {/* SECTION TITLE */}
         <h2
@@ -66,14 +77,22 @@ export default function ProgramsOffered() {
           Programs Offered
         </h2>
 
-        {/* PROGRAM CARDS */}
-        <div className="w-[1200px] flex gap-[40px]">
-
+        {/* ⭐ RESPONSIVE GRID (Instead of fixed 1200px) */}
+        <div
+          className="
+            grid
+            grid-cols-1
+            md:grid-cols-2
+            lg:grid-cols-3
+            gap-[40px]
+            w-full
+          "
+        >
           {programs.map((program, idx) => (
             <div
               key={idx}
               className={`
-                w-[379px]
+                w-full
                 h-[619.74px]
                 ${T.radius.lg}
                 overflow-hidden
@@ -82,7 +101,7 @@ export default function ProgramsOffered() {
               `}
             >
 
-              {/* TOP BASELINE SECTION */}
+              {/* TOP SECTION */}
               <div className="h-[206px] bg-[rgba(0,140,140,0.10)] px-[24px] pt-[18px] pb-[16px] flex flex-col">
 
                 {/* TAG */}
@@ -120,7 +139,7 @@ export default function ProgramsOffered() {
                   </h3>
                 </div>
 
-                {/* YEARS & SEATS ROW */}
+                {/* YEARS + SEATS */}
                 <div
                   className="mt-auto flex gap-[18px] items-center text-[14px]"
                   style={{ color: T.color.text.muted }}
@@ -157,7 +176,7 @@ export default function ProgramsOffered() {
                       ${T.font.family}
                       text-[18px]
                       leading-[26px]
-                      w-[322.7px]
+                      w-full
                     `}
                     style={{ color: T.color.text.muted }}
                   >
