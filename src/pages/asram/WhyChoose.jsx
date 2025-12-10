@@ -1,4 +1,3 @@
-// src/sections/home/WhyChooseAsram.jsx
 import React from "react";
 
 import academicsIcon from "../../assets/asram/academic.svg";
@@ -53,9 +52,9 @@ export default function WhyChooseAsram() {
   ];
 
   return (
-    <section className={`w-full ${T.bg.programCard} py-[60px] md:py-[80px] flex justify-center`}>
-
-      {/* ⭐ UNIFIED BASELINE CONTAINER */}
+    <section
+      className={`w-full ${T.bg.programCard} py-[60px] md:py-[80px] flex justify-center`}
+    >
       <div
         className="
           w-full max-w-[1440px] mx-auto
@@ -81,13 +80,13 @@ export default function WhyChooseAsram() {
           </h2>
         </div>
 
-        {/* Responsive GRID */}
+        {/* Responsive Grid */}
         <div
           className="
             grid
-            grid-cols-1 
-            sm:grid-cols-2 
-            lg:grid-cols-3 
+            grid-cols-1                 /* MOBILE → 1 column */
+            sm:grid-cols-2              /* SMALL TABLETS → 2 columns */
+            lg:grid-cols-3              /* LAPTOPS → 3 columns as before */
             gap-x-[28px] gap-y-[32px]
             w-full
           "
@@ -103,7 +102,7 @@ export default function WhyChooseAsram() {
           ))}
         </div>
 
-        {/* CTA Button */}
+        {/* CTA */}
         <Button
           bg={T.color.secondary}
           color={T.color.background.white}
@@ -118,7 +117,6 @@ export default function WhyChooseAsram() {
         >
           Apply Now
         </Button>
-
       </div>
     </section>
   );

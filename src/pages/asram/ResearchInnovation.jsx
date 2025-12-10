@@ -4,12 +4,19 @@ import { T } from "../../theme";
 
 const ResearchInnovation = ({ title, description1, description2, image }) => {
   return (
-    <section className="w-full py-[80px]">
+    <section className="w-full py-[80px] bg-white">
 
-      {/* ⭐ UNIFIED CONTAINER */}
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px]">
-
-        {/* Title */}
+      {/* OUTER FIXED LAYOUT WRAPPER — SAME AS FIGMA */}
+      <div
+        className="
+          w-full 
+          max-w-[1440px]
+          mx-auto
+          px-4 sm:px-6 md:px-10 lg:px-[120px]
+          flex flex-col
+        "
+      >
+        {/* TITLE — unchanged */}
         <h2
           className={`
             ${T.font.family}
@@ -23,18 +30,20 @@ const ResearchInnovation = ({ title, description1, description2, image }) => {
           Research & Innovation
         </h2>
 
-        {/* ROW — RESPONSIVE */}
+        {/* MAIN ROW — Figma accurate spacing */}
         <div
           className="
-            flex 
-            flex-col lg:flex-row
-            items-start 
-            lg:items-start
-            gap-[40px] lg:gap-[170.5px]
             w-full
+            max-w-[1200px]
+            flex flex-col lg:flex-row
+            justify-between
+            items-start
+            gap-[40px] 
+            lg:gap-[170px]
+            mx-auto
           "
         >
-          {/* LEFT TEXT BLOCK */}
+          {/* LEFT TEXT BLOCK — original styles preserved */}
           <div
             className="
               flex flex-col
@@ -52,11 +61,7 @@ const ResearchInnovation = ({ title, description1, description2, image }) => {
                 color: "#191919",
               }}
             >
-              ASRAM drives research and innovation through collaborative projects,
-              clinical studies, and evidence-based exploration. Students and faculty
-              work together to develop new ideas, strengthen healthcare practices,
-              and contribute meaningful advancements to the medical and nursing
-              community.
+              {description1}
             </p>
 
             <p
@@ -68,16 +73,11 @@ const ResearchInnovation = ({ title, description1, description2, image }) => {
                 color: "#191919",
               }}
             >
-              ASRAM drives research and innovation through collaborative projects,
-              clinical studies, and evidence-based exploration. Students and faculty
-              work together to develop new ideas, improve treatment practices, and
-              advance healthcare knowledge. With access to modern labs, skilled
-              mentors, real clinical data, ASRAM fosters a culture of inquiry
-              that shapes future-ready healthcare professionals.
+              {description2}
             </p>
           </div>
 
-          {/* RIGHT IMAGE */}
+          {/* RIGHT IMAGE — identical to design */}
           <img
             src={image}
             alt=""
@@ -87,17 +87,17 @@ const ResearchInnovation = ({ title, description1, description2, image }) => {
               w-full
               max-w-[523px]
               h-[240px] sm:h-[280px] md:h-[300px] lg:h-[343px]
+              flex-shrink-0
             "
           />
         </div>
 
-        {/* BUTTON */}
+        {/* BUTTON — Figma spacing */}
         <div
           className="
-            flex 
-            justify-center
             w-full
-            mt-[46px]
+            flex justify-center
+            mt-[40px]
           "
         >
           <button

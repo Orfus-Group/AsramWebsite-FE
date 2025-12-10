@@ -12,10 +12,10 @@ export default function InfoCard({
   const isProgram = variant === "program";
 
   // -------------------------
-  // VARIANT DEFINITIONS
+  // VARIANT DEFINITIONS (Responsive)
   // -------------------------
   const variants = {
-    program: {
+ program: {
       wrapper: `
         w-[378.95px]
         h-[422.37px]
@@ -49,6 +49,7 @@ export default function InfoCard({
       `,
     },
 
+
     vmv: {
       wrapper: `
         w-[378.95px]
@@ -75,23 +76,20 @@ export default function InfoCard({
 
    // ⭐ ADD THIS NEW VARIANT INSIDE variants = { ... }
 
-whychoose: {
-  wrapper: `
-    w-[378.95px]
-    h-[264.84px]
-    flex flex-col items-start justify-start
-    rounded-[8px]
-    bg-white
-  `,
+    whychoose: {
+      wrapper: `
+        w-full max-w-[380px]
+        flex flex-col items-start justify-start
+        rounded-[8px]
+        bg-white
+      `,
   wrapperStyle: {
     padding: "30px",
     border: `1px solid ${T.color.border}`,
     borderRadius: "8px",
     gap: "18px",
   },
-
-  // Title → matches Figma
-  title: `
+       title: `
     ${T.font.family}
     ${T.font.weight.semibold}
     text-[20px]
@@ -99,8 +97,6 @@ whychoose: {
     text-left
     text-[#191919]
   `,
-
-  // Paragraph (Figma exact properties)
   paragraph: `
     ${T.font.family}
     font-normal
@@ -108,12 +104,9 @@ whychoose: {
     leading-[26px]
     text-justify
   `,
-},
+    },
 
-
-
-
-    feature: {
+       feature: {
        wrapper: `
     w-[282.2px]
     h-[296.1px]
@@ -146,7 +139,7 @@ whychoose: {
   `,
     },
 
-    featureLeft: {
+ featureLeft: {
   wrapper: `
     w-[259.2px]
     h-[270.1px]
@@ -178,6 +171,7 @@ whychoose: {
     w-full
   `,
 },
+
 keystrength: {
   wrapper: `
     w-[378.95px]
@@ -223,9 +217,7 @@ keystrength: {
 
 ,
 
-
-
-    research: {
+ research: {
       wrapper: `
         w-[378.95px]
         h-[223px]
@@ -259,34 +251,32 @@ keystrength: {
 
   const v = variants[variant];
 
-// -------------------------
-// ICON BLOCK
-// -------------------------
-const renderIcon = () => {
-  // 1️⃣ RESEARCH → NO BACKGROUND BOX
-  if (variant === "research") {
-    return (
-      <div className="w-[40px] h-[40px] flex items-center justify-center shrink-0">
-        <img src={icon} alt="" className="w-[38px] h-[38px] object-contain" />
-      </div>
-    );
-  }
+  // -------------------------
+  // ICON RENDER
+  // -------------------------
+  const renderIcon = () => {
+    if (variant === "research") {
+      return (
+        <div className="w-[40px] h-[40px] flex items-center justify-center shrink-0">
+          <img src={icon} alt="" className="w-[38px] h-[38px] object-contain" />
+        </div>
+      );
+    }
 
-  // 2️⃣ KEY STRENGTHS → GREEN BACKGROUND, FIXED SIZE
-  if (variant === "keystrength") {
-  return (
-    <div
+    if (variant === "keystrength") {
+      return (
+        <div
       className="w-[55.26px] h-[55.26px] flex items-center justify-center rounded-[9.87px] shrink-0"
-      style={{ backgroundColor: T.color.primary }}
-    >
-      <img src={icon} alt="" className="w-[28px] h-[28px] object-contain" />
-    </div>
-  );
-}
+          style={{ backgroundColor: T.color.primary }}
+        >
+          <img src={icon} alt="" className="w-[28px] h-[28px] object-contain" />
+        </div>
+      );
+    }
 
-if (variant === "whychoose") {
-  return (
-    <div
+    if (variant === "whychoose") {
+      return (
+       <div
       className="flex items-center justify-center shrink-0"
       style={{
         width: "55.26px",
@@ -298,16 +288,15 @@ if (variant === "whychoose") {
         justifyContent: "center",
       }}
     >
-      <img
+  <img
         src={icon}
         alt=""
         className="w-[28px] h-[28px] object-contain"
       />
-    </div>
-  );
-}
-
-
+              </div>
+      );
+    }
+    
 
   // 3️⃣ ALL OTHER EXISTING VARIANTS (program, vmv, feature, featureLeft)
   const iconWrapper = `
@@ -318,27 +307,25 @@ if (variant === "whychoose") {
     shrink-0
   `;
 
-  return (
-    <div
+    return (
+      <div
       className={`${iconWrapper} `}
-      style={{ backgroundColor: T.color.primary }}
-    >
-      <img src={icon} alt="" className="w-[28px] h-[28px] object-contain" />
-    </div>
-  );
-};
-
-
+        style={{ backgroundColor: T.color.primary }}
+      >
+        <img src={icon} alt="" className="w-[28px] h-[28px] object-contain" />
+      </div>
+    );
+  };
 
   // -------------------------
   // RENDER COMPONENT
   // -------------------------
   return (
     <div className={v.wrapper} style={v.wrapperStyle}>
-      {/* ICON */}
+            {/* ICON */}
       {renderIcon()}
 
-      {/* TITLE */}
+ {/* TITLE */}
       <h3
         className={v.title}
         style={{ color: T.color.text.secondary }}
@@ -350,7 +337,7 @@ if (variant === "whychoose") {
       {isProgram && (
         <div className="flex items-center gap-[10px] mb-[26px]">
           <span
-            className="
+             className="
               flex items-center justify-center
               w-[141.26px] h-[29.61px]
               rounded-[3.95px]
@@ -379,22 +366,19 @@ if (variant === "whychoose") {
       )}
 
       {/* DESCRIPTION */}
-     <p
-  className={v.paragraph}
-  style={{
-    width: variant === "whychoose" ? "320px" : undefined,
-    height: variant === "whychoose" ? "78px" : undefined,
-    color:
-      variant === "whychoose"
-        ? "rgba(25, 25, 25, 0.75)"
-        : variant === "research"
-        ? T.color.text.researchMuted
-        : T.color.text.muted,
-  }}
->
-  {description}
-</p>
-
+      <p
+        className={v.paragraph}
+        style={{
+          color:
+            variant === "whychoose"
+              ? "rgba(25, 25, 25, 0.75)"
+              : variant === "research"
+              ? T.color.text.researchMuted
+              : T.color.text.muted,
+        }}
+      >
+        {description}
+      </p>
     </div>
   );
 }

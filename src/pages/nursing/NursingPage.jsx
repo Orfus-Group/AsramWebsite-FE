@@ -1,23 +1,22 @@
-import React, { lazy, Suspense } from "react";
-import LoadingScreen from "../../components/loader/LoadingScreen";
+import React from "react";
 
-const NursingHero = lazy(() => import("../nursing/NursingHero"));
-const AcademicProgramsSection = lazy(() => import("./AcademicProgramsSection"));
-const VisionMissionSection = lazy(() => import("./VisionMission"));
-const NewsEvents = lazy(() => import("./NewsEvents"));
-const StudentExperience = lazy(() => import("./StudentExperience"));
-const ResearchSection = lazy(() => import("./ResearchSection"));
-const CommunityOutreachSection = lazy(() => import("./CommunityOutreach"));
-// const ClinicalPracticumSection = lazy(() => import("./ClinicalPracticumSection"));
-const FacultySpotlightSection = lazy(() => import("./FacultySpotlight"));
-const KeyStrengthsSection = lazy(() => import("./KeyStrenght"));
-const WhyChooseSection = lazy(() => import("./WhyChooseNursing"));
-const Footer = lazy(() => import("./NursingFooter"));
+import NursingHero from "../nursing/NursingHero";
+import AcademicProgramsSection from "./AcademicProgramsSection";
+import VisionMissionSection from "./VisionMission";
+import NewsEvents from "./NewsEvents";
+import StudentExperience from "./StudentExperience";
+import ResearchSection from "./ResearchSection";
+import CommunityOutreachSection from "./CommunityOutreach";
+// import ClinicalPracticumSection from "./ClinicalPracticumSection";
+import FacultySpotlightSection from "./FacultySpotlight";
+import KeyStrengthsSection from "./KeyStrenght";
+import WhyChooseSection from "./WhyChooseNursing";
+import Footer from "./NursingFooter";
 
 const NursingPage = () => {
   return (
     <>
-     <NursingHero />
+      <NursingHero />
       <AcademicProgramsSection />
       <VisionMissionSection />
       <NewsEvents />

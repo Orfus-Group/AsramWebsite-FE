@@ -9,8 +9,8 @@ import StudentVoices from "./StudentVoices";
 import FinancialAidScholarships from "./FinancialAidScholarships";
 import JoinOurNursingCommunity from "./JoiningNursingCommunity";
 import Footer from "../nursing/NursingFooter";
+import AcademicsHero from "./AcademicsHero";
 
-const AcademicsHero = lazy(() => import("./AcademicsHero"));
 // const AcademicProgramsSection = lazy(() => import("./AcademicProgramsSection"));
 // const VisionMissionSection = lazy(() => import("./VisionMission"));
 // const NewsEvents = lazy(() => import("./NewsEvents"));

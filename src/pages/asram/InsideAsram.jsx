@@ -7,10 +7,19 @@ const InsideASRAM = ({ title, image, quote }) => {
   return (
     <section className="w-full py-[60px] md:py-[80px]">
 
-      {/* ⭐ UNIFIED CONTAINER */}
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px]">
+      {/* MAIN OUTER CONTAINER — layout only adjusted */}
+      <div
+        className="
+          w-full 
+          max-w-[1440px]
+          mx-auto 
 
-        {/* Title */}
+          /* Figma padding structure */
+          px-4 sm:px-6 md:px-10 lg:px-[120px]
+        "
+      >
+
+        {/* TITLE — unchanged */}
         <h2
           className={`
             ${T.font.family}
@@ -26,7 +35,7 @@ const InsideASRAM = ({ title, image, quote }) => {
           {title}
         </h2>
 
-        {/* IMAGE + QUOTE ROW */}
+        {/* FIXED LAYOUT ON ALL SCREENS */}
         <div
           className="
             flex flex-col lg:flex-row 
@@ -36,27 +45,28 @@ const InsideASRAM = ({ title, image, quote }) => {
             gap-[30px] md:gap-[40px]
           "
         >
-          {/* LEFT IMAGE */}
+          {/* LEFT IMAGE — original styles preserved */}
           <img
             src={image}
             alt=""
             className="
-              rounded-[8px] 
-              object-cover 
-              w-full 
-              max-w-[704.5px] 
+              rounded-[8px]
+              object-cover
+              w-full
+              max-w-[704.5px]
               h-[260px] sm:h-[320px] md:h-[380px] lg:h-[412px]
+              flex-shrink-0
             "
           />
 
-          {/* RIGHT QUOTE BLOCK */}
+          {/* RIGHT QUOTE BLOCK — original styles preserved */}
           <div
             className="
-              relative 
-              flex flex-col 
-              items-start 
+              relative
+              flex flex-col
+              items-start
               justify-start
-              w-full 
+              w-full
               lg:w-[454.8px]
             "
           >

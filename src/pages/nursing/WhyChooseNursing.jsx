@@ -83,7 +83,7 @@ export default function WhyChooseSection() {
                     />
                     <p
                       className={`
-                        ${T.font.familyMulish}
+                        ${T.font.family}
                         text-[15px]
                         leading-[23px]
                       `}
@@ -128,7 +128,7 @@ export default function WhyChooseSection() {
                     />
                     <p
                       className={`
-                        ${T.font.familyMulish}
+                        ${T.font.family}
                         text-[15px]
                         leading-[23px]
                       `}

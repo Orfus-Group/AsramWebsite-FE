@@ -34,25 +34,34 @@ export default function AcademicProgramsSection() {
 
   return (
     <section className={`relative ${T.bg.white} py-[84px]`}>
-      <div className="w-[1440px] max-w-full mx-auto px-[100px]">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[100px]">
 
         {/* Heading */}
-      <h2
-  className={`
-    ${T.font.family}
-    ${T.font.weight.bold}
-    text-[36px]            /* Figma exact */
-    leading-[48px]         /* Figma exact */
-    text-[#223F7F]         /* Figma color */
-    tracking-[0px]         /* Figma exact */
-    mb-[52px]
-  `}
->
-  Academic Programs
-</h2>
+        <h2
+          className={`
+            ${T.font.family}
+            ${T.font.weight.bold}
+            text-[36px]
+            leading-[48px]
+            text-[#223F7F]
+            tracking-[0px]
+            mb-[52px]
+          `}
+        >
+          Academic Programs
+        </h2>
 
-        {/* Program Cards */}
-        <div className="flex justify-between gap-[28.95px]">
+        {/* Responsive Cards */}
+        <div
+          className="
+            grid 
+            grid-cols-1          /* Mobile */
+            sm:grid-cols-2       /* Tablets */
+            lg:grid-cols-3       /* Desktop - EXACT original layout */
+            gap-[28.95px]
+            justify-between
+          "
+        >
           {programs.map((p, i) => (
             <InfoCard key={i} {...p} variant="program" />
           ))}

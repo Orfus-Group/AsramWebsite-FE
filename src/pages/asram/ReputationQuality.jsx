@@ -1,4 +1,4 @@
-// src/sections/home/ReputationQuality.jsx
+// src/sections/home/ReputationQuality.jsx 
 import React from "react";
 import { T } from "../../theme";
 import repImage from "../../assets/asram/reputation.svg";
@@ -7,36 +7,31 @@ const ReputationQuality = () => {
   return (
     <section
       className="w-full bg-white py-[60px] md:py-[80px]"
-      /* mobile: 60px padding, desktop: 80px */
     >
-      {/* CONTAINER */}
+      {/* FIXED DESKTOP LAYOUT WIDTH — EXACT FIGMA 1440 + 120px PADDINGS */}
       <div
         className="
           w-full 
-          max-w-[1440px] 
-          mx-auto 
-          flex flex-col md:flex-row 
-          gap-[40px] md:gap-0 
-          px-4 sm:px-6 md:px-10 lg:px-[120px]
+          max-w-[1440px]
+          mx-auto
+          flex flex-col md:flex-row
           items-start justify-between
+
+          /* RESPONSIVE PADDING */
+          px-4 sm:px-6 md:px-10 lg:px-[120px]
+
+          /* GAP SHOULD BE STRICT AS PER FIGMA */
+          gap-[40px] md:gap-[80px]
         "
       >
-        {/* LEFT COLUMN */}
-        <div
-          className="
-            w-full 
-            md:w-[535.9px]
-            flex flex-col
-          "
-        >
-          {/* TITLE */}
+        {/* LEFT CONTENT */}
+        <div className="w-full md:w-[536px] flex flex-col">
           <h2
             className={`
-              ${T.font.family} 
+              ${T.font.family}
               font-bold
               text-[#223F7F]
-              text-[26px] leading-[32px] 
-              sm:text-[30px] sm:leading-[36px]
+              text-[32px] leading-[38px]
               md:text-[32px] md:leading-[40px]
               mb-[20px]
             `}
@@ -44,12 +39,10 @@ const ReputationQuality = () => {
             A Reputation Built on Quality
           </h2>
 
-          {/* PARAGRAPH */}
           <p
             className={`
-              ${T.font.family} 
+              ${T.font.family}
               text-[16px] leading-[26px]
-              sm:text-[17px] sm:leading-[28px]
               md:text-[18px] md:leading-[29px]
               text-[rgba(25,25,25,0.75)]
               mb-[30px]
@@ -61,7 +54,6 @@ const ReputationQuality = () => {
             standards and hands-on learning.
           </p>
 
-          {/* BUTTON */}
           <button
             className={`
               w-full md:w-[301px] 
@@ -71,7 +63,7 @@ const ReputationQuality = () => {
               text-white
               ${T.font.family}
               font-semibold
-              text-[15px] sm:text-[16px]
+              text-[15px] md:text-[16px]
               bg-[#223F7F]
               md:mt-[40px]
             `}
@@ -83,10 +75,10 @@ const ReputationQuality = () => {
         {/* RIGHT IMAGE */}
         <div
           className="
-            w-full 
-            md:w-[523px]
-            h-[240px] sm:h-[280px] md:h-[343px] 
-            rounded-[8px] overflow-hidden bg-[#D9D9D9]
+            w-full md:w-[523px]
+            h-[240px] sm:h-[280px] md:h-[343px]
+            rounded-[8px] overflow-hidden
+            bg-[#D9D9D9]
             flex-shrink-0
           "
         >

@@ -1,16 +1,26 @@
 // src/components/header/AcademicsHeader.jsx
-import React from "react";
+import React, { useState } from "react";
 import { T } from "../../theme";
 
 import LogoFull from "../../assets/nursing/asramlogo.svg";
 import SearchIcon from "../../assets/nursing/Search.svg";
 import ShortcutLinks from "./ShortcutLinks";
+import { Link } from "react-router-dom";
 
 const AcademicsHeader = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navItems = [
+    { label: "Academics", path: "/academics" },
+    { label: "Research", path: "/research" },
+    { label: "Global & Community", path: "/community" },
+    { label: "News", path: "/news" },
+  ];
+
   return (
     <>
       {/* ========================================================= */}
-      {/* TOP SHORTCUT BAR — PERFECT 1440px / 1200px ALIGNMENT      */}
+      {/* TOP SHORTCUT BAR — PERFECT BASELINE ALIGNMENT            */}
       {/* ========================================================= */}
       <div className="w-full" style={{ backgroundColor: T.color.secondary }}>
         <div
@@ -21,7 +31,6 @@ const AcademicsHeader = () => {
             flex items-center
           "
         >
-          {/* CONTENT WIDTH = 1200px */}
           <div className="w-full max-w-[1200px] mx-auto flex items-center justify-end">
             <ShortcutLinks />
           </div>
@@ -29,7 +38,7 @@ const AcademicsHeader = () => {
       </div>
 
       {/* ========================================================= */}
-      {/* MAIN NAVBAR — FOLLOWING EXACT SAME ALIGNMENT STRUCTURE   */}
+      {/* MAIN NAVBAR — RESPONSIVE FOR ALL DEVICES                */}
       {/* ========================================================= */}
       <nav className="w-full bg-white shadow-md">
         <div
@@ -40,12 +49,10 @@ const AcademicsHeader = () => {
             flex items-center
           "
         >
-          {/* CONTENT WIDTH = 1200px */}
+          {/* INNER 1200px ALIGNMENT */}
           <div className="w-full max-w-[1200px] mx-auto flex items-center justify-between">
 
-            {/* ------------------------------------------------------ */}
-            {/* LEFT LOGO                                              */}
-            {/* ------------------------------------------------------ */}
+            {/* LEFT — LOGO */}
             <div className="flex items-center gap-[10px]">
               <img
                 src={LogoFull}
@@ -54,53 +61,98 @@ const AcademicsHeader = () => {
               />
             </div>
 
-            {/* ------------------------------------------------------ */}
-            {/* DESKTOP NAVIGATION MENU                                */}
-            {/* ------------------------------------------------------ */}
+            {/* DESKTOP NAV */}
             <div className="hidden lg:flex items-center gap-[40px]">
-              {["Academics", "Research", "Global & Community", "News"].map(
-                (item) => (
-                  <button
-                    key={item}
-                    className={`
-                      ${T.font.family}
-                      ${T.font.weight.semibold}
-                      text-[16px]
-                      leading-[20px]
-                      text-[#4A5565]
-                      whitespace-nowrap
-                      hover:text-[${T.color.text.secondary}]
-                      transition
-                    `}
-                  >
-                    {item}
-                  </button>
-                )
-              )}
+              {navItems.map((nav) => (
+                <Link
+                  key={nav.label}
+                  to={nav.path}
+                  className={`
+                    ${T.font.family}
+                    ${T.font.weight.semibold}
+                    text-[16px]
+                    leading-[20px]
+                    text-[#4A5565]
+                    whitespace-nowrap
+                    hover:text-[${T.color.text.secondary}]
+                    transition
+                  `}
+                >
+                  {nav.label}
+                </Link>
+              ))}
 
               {/* SEARCH ICON */}
               <button>
-                <img
-                  src={SearchIcon}
-                  alt="Search"
-                  className="h-[20px] w-[20px]"
-                />
+                <img src={SearchIcon} alt="Search" className="h-[20px] w-[20px]" />
               </button>
             </div>
 
-            {/* ------------------------------------------------------ */}
-            {/* MOBILE ONLY SEARCH ICON                                */}
-            {/* ------------------------------------------------------ */}
-            <button className="lg:hidden flex items-center justify-center">
-              <img
-                src={SearchIcon}
-                alt="Search"
-                className="h-[20px] w-[20px]"
-              />
-            </button>
+            {/* MOBILE: SEARCH + HAMBURGER */}
+            <div className="lg:hidden flex items-center gap-[20px]">
 
+              {/* SEARCH */}
+              <button>
+                <img src={SearchIcon} alt="Search" className="h-[20px] w-[20px]" />
+              </button>
+
+              {/* HAMBURGER BUTTON */}
+              <button
+                className="flex flex-col gap-[4px]"
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                <span className="block w-[22px] h-[2px] bg-[#4A5565]" />
+                <span className="block w-[22px] h-[2px] bg-[#4A5565]" />
+                <span className="block w-[22px] h-[2px] bg-[#4A5565]" />
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* ========================================================= */}
+        {/* MOBILE DROPDOWN                                           */}
+        {/* ========================================================= */}
+      {/* ========================================================= */}
+{/* MOBILE DROPDOWN (Overlay — does NOT push content)         */}
+{/* ========================================================= */}
+{menuOpen && (
+  <div
+    className="
+      lg:hidden 
+      absolute 
+      top-[112px]   /* 46px top bar + 66px navbar */
+      left-0 
+      w-full 
+      bg-white 
+      shadow-md 
+      px-4 sm:px-6 
+      py-[20px]
+      flex flex-col 
+      gap-[16px]
+      z-[999]
+    "
+  >
+    {navItems.map((nav, index) => (
+      <Link
+        key={index}
+        to={nav.path}
+        className={`
+          ${T.font.family}
+          ${T.font.weight.semibold}
+          text-[16px]
+          leading-[20px]
+          text-[#4A5565]
+          hover:text-[${T.color.text.secondary}]
+          transition
+        `}
+        onClick={() => setMenuOpen(false)}
+      >
+        {nav.label}
+      </Link>
+    ))}
+  </div>
+)}
+
       </nav>
     </>
   );

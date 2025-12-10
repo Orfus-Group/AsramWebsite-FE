@@ -1,44 +1,30 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
+
+// Icons
 import cancerIcon from "../../assets/asram/insideasram.svg";
 import ResearchIcon from "../../assets/asram/researchinnov.svg";
 
-// Lazy imports (same style as NursingPage)
-const AsramHero = lazy(() => import("./AsramHero"));
-const ReputationQuality = lazy(() =>
-  import("./ReputationQuality")
-);
-const InstitutionsSection = lazy(() =>
-  import("./InstitutionSection")
-);
-const AsramHealthcareServices = lazy(() =>
-  import("./HealthCareService")
-);
-const WhyChooseAsramSection = lazy(() =>
-  import("./WhyChoose")
-);
-const InsideASRAM = lazy(() =>
-  import("./InsideAsram")
-);
-const AsramNewsEvents = lazy(() =>
-  import("./AsramNewsEvents")
-);
-const ResearchInnovation = lazy(() =>
-  import("./ResearchInnovation")
-);
-const AsramFooter = lazy(() =>
-  import("./AsramFooter")
-);
+// Normal Direct Imports (NO lazy loading)
+import AsramHero from "./AsramHero";
+import ReputationQuality from "./ReputationQuality";
+import InstitutionsSection from "./InstitutionSection";
+import AsramHealthcareServices from "./HealthCareService";
+import WhyChooseAsramSection from "./WhyChoose";
+import InsideASRAM from "./InsideAsram";
+import AsramNewsEvents from "./AsramNewsEvents";
+import ResearchInnovation from "./ResearchInnovation";
+import AsramFooter from "./AsramFooter";
 
 const AsramPage = () => {
   return (
-   <>
-    <AsramHero />
+    <>
+      <AsramHero />
       <ReputationQuality />
       <InstitutionsSection />
       <AsramHealthcareServices />
       <WhyChooseAsramSection />
 
-      <InsideASRAM 
+      <InsideASRAM
         title="Inside ASRAM"
         image={cancerIcon}
         quote="At ASRAM, education meets service through clinics, health camps, and meaningful community impact."
@@ -54,7 +40,7 @@ const AsramPage = () => {
       />
 
       <AsramFooter />
-   </>
+    </>
   );
 };
 
