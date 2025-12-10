@@ -13,7 +13,7 @@ const routesConfig = [
   },
   {
     path: "/asram-home",
-    label: "Home",
+    label: "AsramHome",
     element: <AsramHomePage />,
   },
   {
