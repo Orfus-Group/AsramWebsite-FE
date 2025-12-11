@@ -1,7 +1,5 @@
-// src/components/header/AcademicsHeader.jsx
 import React, { useState } from "react";
 import { T } from "../../theme";
-
 import LogoFull from "../../assets/nursing/asramlogo.svg";
 import SearchIcon from "../../assets/nursing/Search.svg";
 import ShortcutLinks from "./ShortcutLinks";
@@ -19,139 +17,173 @@ const AcademicsHeader = () => {
 
   return (
     <>
-      {/* ========================================================= */}
-      {/* TOP SHORTCUT BAR — PERFECT BASELINE ALIGNMENT            */}
-      {/* ========================================================= */}
-      <div className="w-full" style={{ backgroundColor: T.color.secondary }}>
+      {/* ================= TOP BLUE BAR ================= */}
+      <div style={{ backgroundColor: T.color.text.secondary }}>
         <div
           className="
-            w-full max-w-[1440px] mx-auto
+            w-full 
+            max-w-[1440px] 
+            mx-auto 
             px-4 sm:px-6 md:px-10 lg:px-[120px]
+            flex justify-end items-center
             h-[46px]
-            flex items-center
           "
         >
-          <div className="w-full max-w-[1200px] mx-auto flex items-center justify-end">
-            <ShortcutLinks />
-          </div>
+          <ShortcutLinks />
         </div>
       </div>
 
-      {/* ========================================================= */}
-      {/* MAIN NAVBAR — RESPONSIVE FOR ALL DEVICES                */}
-      {/* ========================================================= */}
-      <nav className="w-full bg-white shadow-md">
+      {/* ================= MAIN NAV ================= */}
+      <nav className="w-full bg-white border-b border-gray-100 relative z-[100]">
         <div
           className="
-            w-full max-w-[1440px] mx-auto
+            w-full max-w-[1440px] mx-auto 
             px-4 sm:px-6 md:px-10 lg:px-[120px]
             h-[66px]
-            flex items-center
+            flex items-center justify-between
           "
         >
-          {/* INNER 1200px ALIGNMENT */}
-          <div className="w-full max-w-[1200px] mx-auto flex items-center justify-between">
+          {/* ================= MOBILE LEFT: HAMBURGER ================= */}
+          <button
+            className="md:hidden flex flex-col justify-center items-center gap-[4px] mr-[10px] transition-all duration-300"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span
+              className={`
+                block w-[24px] h-[2.5px] bg-[#4A5565] rounded transition-all duration-300
+                ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}
+              `}
+            ></span>
+            <span
+              className={`
+                block w-[24px] h-[2.5px] bg-[#4A5565] rounded transition-all duration-300
+                ${menuOpen ? "opacity-0" : "opacity-100"}
+              `}
+            ></span>
+            <span
+              className={`
+                block w-[24px] h-[2.5px] bg-[#4A5565] rounded transition-all duration-300
+                ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}
+              `}
+            ></span>
+          </button>
 
-            {/* LEFT — LOGO */}
-            <div className="flex items-center gap-[10px]">
-              <img
-                src={LogoFull}
-                alt="Asram Logo"
-                className="h-[46px] w-[191px] object-contain"
-              />
-            </div>
+          {/* ================= CENTER LOGO (Mobile) ================= */}
+          <div className="flex-1 flex justify-center md:justify-start">
+            <img
+              src={LogoFull}
+              alt="Asram Logo"
+              className="
+                h-[40px] 
+                w-auto 
+                md:h-[46px] 
+                md:w-[191px]
+              "
+            />
+          </div>
+
+          {/* ================= RIGHT SIDE — SEARCH + DESKTOP NAV ================= */}
+          <div className="flex items-center gap-[20px]">
 
             {/* DESKTOP NAV */}
-            <div className="hidden lg:flex items-center gap-[40px]">
-              {navItems.map((nav) => (
+            <div className="hidden md:flex items-center gap-[32px]">
+              {navItems.map((item, index) => (
                 <Link
-                  key={nav.label}
-                  to={nav.path}
+                  key={index}
+                  to={item.path}
                   className={`
                     ${T.font.family}
                     ${T.font.weight.semibold}
-                    text-[16px]
+                    text-[15px]
                     leading-[20px]
                     text-[#4A5565]
-                    whitespace-nowrap
                     hover:text-[${T.color.text.secondary}]
-                    transition
+                    transition whitespace-nowrap
                   `}
                 >
-                  {nav.label}
+                  {item.label}
                 </Link>
               ))}
-
-              {/* SEARCH ICON */}
-              <button>
-                <img src={SearchIcon} alt="Search" className="h-[20px] w-[20px]" />
-              </button>
             </div>
 
-            {/* MOBILE: SEARCH + HAMBURGER */}
-            <div className="lg:hidden flex items-center gap-[20px]">
-
-              {/* SEARCH */}
-              <button>
-                <img src={SearchIcon} alt="Search" className="h-[20px] w-[20px]" />
-              </button>
-
-              {/* HAMBURGER BUTTON */}
-              <button
-                className="flex flex-col gap-[4px]"
-                onClick={() => setMenuOpen(!menuOpen)}
-              >
-                <span className="block w-[22px] h-[2px] bg-[#4A5565]" />
-                <span className="block w-[22px] h-[2px] bg-[#4A5565]" />
-                <span className="block w-[22px] h-[2px] bg-[#4A5565]" />
-              </button>
-            </div>
+            {/* SEARCH ICON */}
+            <button className="flex items-center justify-center md:ml-[10px]">
+              <img
+                src={SearchIcon}
+                alt="Search"
+                className="h-[18px] w-[18px]"
+              />
+            </button>
           </div>
         </div>
 
-        {/* ========================================================= */}
-        {/* MOBILE DROPDOWN                                           */}
-        {/* ========================================================= */}
-      {/* ========================================================= */}
-{/* MOBILE DROPDOWN (Overlay — does NOT push content)         */}
-{/* ========================================================= */}
-{menuOpen && (
-  <div
-    className="
-      lg:hidden 
-      absolute 
-      top-[112px]   /* 46px top bar + 66px navbar */
-      left-0 
-      w-full 
-      bg-white 
-      shadow-md 
-      px-4 sm:px-6 
-      py-[20px]
-      flex flex-col 
-      gap-[16px]
-      z-[999]
-    "
-  >
-    {navItems.map((nav, index) => (
+        {/* ================= MOBILE MENU OVERLAY ================= */}
+        {menuOpen && (
+          <div
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[80]"
+            onClick={() => setMenuOpen(false)}
+          ></div>
+        )}
+
+       {/* ================= MOBILE SLIDE-IN MENU (LEFT DRAWER) ================= */}
+<div
+  className={`
+    fixed top-0 left-0 
+    h-full w-[78%] max-w-[320px]
+    bg-[#223F7F]             /* NEW drawer background */
+    shadow-lg 
+    z-[90]
+    p-[24px]
+    flex flex-col gap-[20px]
+    transform transition-transform duration-300 ease-out
+    ${menuOpen ? "translate-x-0" : "-translate-x-full"}
+  `}
+>
+
+  {/* LOGO SMALL */}
+  <div className="flex items-center mb-[10px]">
+    <img 
+      src={LogoFull} 
+      alt="Asram Logo" 
+      className="h-[34px] brightness-0 invert"   /* Makes logo white */
+    />
+  </div>
+
+  {/* NAV LINKS */}
+  <div className="flex flex-col gap-[20px] mt-[10px]">
+    {navItems.map((item, index) => (
       <Link
         key={index}
-        to={nav.path}
+        to={item.path}
+        onClick={() => setMenuOpen(false)}
         className={`
           ${T.font.family}
           ${T.font.weight.semibold}
-          text-[16px]
-          leading-[20px]
-          text-[#4A5565]
-          hover:text-[${T.color.text.secondary}]
-          transition
+          text-[18px]
+          leading-[24px]
+          text-white                /* NEW link color */
+          hover:text-gray-200
         `}
-        onClick={() => setMenuOpen(false)}
       >
-        {nav.label}
+        {item.label}
       </Link>
     ))}
   </div>
-)}
+
+  {/* FOOTER INSIDE DRAWER */}
+  <div className="mt-auto pt-[20px] border-t border-white/20">
+    <p
+      className={`
+        ${T.font.family}
+        text-[14px]
+        leading-[20px]
+        text-white/70            /* NEW footer text color */
+      `}
+    >
+      © ASRAM School of Nursing
+    </p>
+  </div>
+</div>
 
       </nav>
     </>
