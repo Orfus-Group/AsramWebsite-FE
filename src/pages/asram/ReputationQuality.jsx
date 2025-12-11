@@ -74,7 +74,7 @@ const ReputationQuality = () => {
             flex-shrink-0
           "
         >
-          <img
+          <img loading="lazy" decoding="async"
             src={repImage}
             alt="Reputation Built on Quality"
             className="w-full h-full object-cover"

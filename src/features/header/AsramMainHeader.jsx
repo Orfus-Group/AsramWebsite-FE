@@ -120,7 +120,7 @@ const AsramMainHeader = () => {
                     ${T.font.family}
                   `}
                 >
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={item.icon}
                     className="w-[12px] h-[12px] sm:w-[16px] sm:h-[16px]"
                   />
@@ -174,6 +174,9 @@ const AsramMainHeader = () => {
 
           {/* LOGO */}
           <img
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
             src={Logo}
             className="h-[42px] w-[170px] sm:h-[46px] sm:w-[189px] object-contain mx-auto lg:mx-0"
           />
@@ -225,7 +228,7 @@ const AsramMainHeader = () => {
 
               {/* LOGO */}
               <div className="flex items-center justify-start mb-6">
-                <img
+                <img loading="lazy" decoding="async"
                   src={Logo}
                   alt="ASRAM Logo"
                   className="h-[38px] brightness-0 invert"

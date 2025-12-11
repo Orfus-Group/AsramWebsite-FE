@@ -55,7 +55,7 @@ export default function JoinOurNursingCommunity() {
             leading="leading-[23.68px]"
             gap="12px"
             height="60px"
-            icon={<img src={rightarrow} className="w-[19.74px] h-[19.74px]" />}
+            icon={<img loading="lazy" decoding="async" src={rightarrow} className="w-[19.74px] h-[19.74px]" />}
           >
             Start Your Application
           </Button>
@@ -159,7 +159,7 @@ function ContactCard({ icon, title, subtitle1, subtitle2 }) {
         "
         style={{ backgroundColor: T.color.primary }}
       >
-        <img src={icon} className="w-[23.68px] h-[23.68px]" />
+        <img loading="lazy" decoding="async" src={icon} className="w-[23.68px] h-[23.68px]" />
       </div>
 
       <h3

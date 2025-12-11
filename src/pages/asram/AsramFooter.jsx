@@ -42,7 +42,7 @@ const AsramFooter = () => {
                   background: "white",
                 }}
               >
-                <img src={item.icon} style={{ width: "40.13px", height: "40.13px" }} />
+                <img loading="lazy" decoding="async" src={item.icon} style={{ width: "40.13px", height: "40.13px" }} />
               </div>
               <span className={`${T.font.family} text-white text-[14px] font-medium`}>
                 {item.text}
@@ -69,11 +69,11 @@ const AsramFooter = () => {
             </p>
 
             <div className="flex items-center gap-[10px]">
-              <img src={facebookIcon} className="w-[30.3px] h-[30.3px]" />
-              <img src={twitterIcon} className="w-[30.3px] h-[30.3px]" />
-              <img src={instaIcon} className="w-[30.3px] h-[30.3px]" />
-              <img src={linkedincon} className="w-[30.3px] h-[30.3px]" />
-              <img src={youtubeIcon} className="w-[30.3px] h-[30.3px]" />
+              <img loading="lazy" decoding="async" src={facebookIcon} className="w-[30.3px] h-[30.3px]" />
+              <img loading="lazy" decoding="async" src={twitterIcon} className="w-[30.3px] h-[30.3px]" />
+              <img loading="lazy" decoding="async" src={instaIcon} className="w-[30.3px] h-[30.3px]" />
+              <img loading="lazy" decoding="async" src={linkedincon} className="w-[30.3px] h-[30.3px]" />
+              <img loading="lazy" decoding="async" src={youtubeIcon} className="w-[30.3px] h-[30.3px]" />
             </div>
           </div>
 

@@ -151,7 +151,7 @@ const NursingAdmissionsSection = () => {
                 "
                 style={{ borderColor: T.color.border }}
               >
-                <img src={item.icon} className="w-[31.58px] h-[31.58px]" />
+                <img loading="lazy" decoding="async" src={item.icon} className="w-[31.58px] h-[31.58px]" />
 
                 <span
                   className={`
@@ -263,7 +263,7 @@ const NursingAdmissionsSection = () => {
                       `}
                       style={{ color: T.color.text.muted }}
                     >
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={checkIcon}
                         className="w-[17.76px] h-[17.76px]"
                       />
@@ -344,7 +344,7 @@ const NursingAdmissionsSection = () => {
             w-full
           "
         >
-          <img
+          <img loading="lazy" decoding="async"
             src={nursingcareer}
             className="w-full h-[389px] object-cover rounded-[12px]"
           />

@@ -64,7 +64,7 @@ export default function WhyChooseSection() {
                   "Recognized affiliations and regulatory approvals",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-[10px]">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={checkIcon}
                       className="w-[16px] h-[16px] mt-[4px]"
                       style={{
@@ -108,7 +108,7 @@ export default function WhyChooseSection() {
                   "Practical orientation ensuring job readiness",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-[10px]">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={checkIcon}
                       className="w-[16px] h-[16px] mt-[4px]"
                       style={{

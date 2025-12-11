@@ -65,7 +65,7 @@ const AsramNewsEventsLat = () => {
                 key={i}
                 className="relative rounded-lg overflow-hidden group h-[240px] sm:h-[260px] lg:h-[282px]"
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={item.img}
                   className="w-full h-full object-cover group-hover:scale-105 duration-300"
                 />
@@ -92,7 +92,7 @@ const AsramNewsEventsLat = () => {
               w-full
             "
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={img3}
               className="w-full h-full object-cover group-hover:scale-105 duration-300"
             />
@@ -120,13 +120,13 @@ const AsramNewsEventsLat = () => {
                 `}
               >
                 <span className="flex items-center gap-1">
-                  <img src={usericon} className="w-4 h-4" /> Ganesh Garuda
+                  <img loading="lazy" decoding="async" src={usericon} className="w-4 h-4" /> Ganesh Garuda
                 </span>
                 <span className="flex items-center gap-1">
-                  <img src={calicon} className="w-4 h-4" /> 14 Nov 2025
+                  <img loading="lazy" decoding="async" src={calicon} className="w-4 h-4" /> 14 Nov 2025
                 </span>
                 <span className="flex items-center gap-1">
-                  <img src={notificationicon} className="w-4 h-4" /> 23
+                  <img loading="lazy" decoding="async" src={notificationicon} className="w-4 h-4" /> 23
                 </span>
               </div>
 
@@ -142,7 +142,7 @@ const AsramNewsEventsLat = () => {
                 key={i}
                 className="relative rounded-lg overflow-hidden group h-[240px] sm:h-[260px] lg:h-[282px]"
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={item.img}
                   className="w-full h-full object-cover group-hover:scale-105 duration-300"
                 />

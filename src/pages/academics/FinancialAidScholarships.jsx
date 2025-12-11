@@ -169,7 +169,7 @@ export default function FinancialAidScholarships() {
                 "
                 style={{ backgroundColor: T.color.primary }}
               >
-                <img src={scholar} className="w-[23.68px] h-[23.68px]" />
+                <img loading="lazy" decoding="async" src={scholar} className="w-[23.68px] h-[23.68px]" />
               </div>
 
               <h3
@@ -244,7 +244,7 @@ export default function FinancialAidScholarships() {
                 "
                 style={{ backgroundColor: T.color.dark + "1A" }}
               >
-                <img src={applyIcon} className="w-[23.68px] h-[23.68px]" />
+                <img loading="lazy" decoding="async" src={applyIcon} className="w-[23.68px] h-[23.68px]" />
               </div>
 
               <h3
@@ -329,7 +329,7 @@ function Card({ icon, title, desc, eligibility }) {
           "
           style={{ backgroundColor: T.color.primary }}
         >
-          <img src={icon} alt="" className="w-[23.68px] h-[23.68px]" />
+          <img loading="lazy" decoding="async" src={icon} alt="" className="w-[23.68px] h-[23.68px]" />
         </div>
 
         <div className="flex flex-col gap-[8px]">
@@ -353,7 +353,7 @@ function Card({ icon, title, desc, eligibility }) {
           </p>
 
           <div className="flex gap-[8px] pt-[4px] items-start">
-            <img src={checkIcon} className="w-[17.76px] h-[17.76px] mt-[2px]" />
+            <img loading="lazy" decoding="async" src={checkIcon} className="w-[17.76px] h-[17.76px] mt-[2px]" />
 
             <p className={`${T.font.family} text-[13.82px] leading-[19.74px]`}>
               <span

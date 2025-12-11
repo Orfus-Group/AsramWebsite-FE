@@ -160,7 +160,7 @@ export default function Footer() {
 
                 {/* Address */}
                 <div className="flex gap-[10px]">
-                  <img src={locationIcon} className="w-[20px] h-[20px]" />
+                  <img loading="lazy" decoding="async" src={locationIcon} className="w-[20px] h-[20px]" />
                   <p
                     className={`
                       ${T.font.family} 
@@ -177,7 +177,7 @@ export default function Footer() {
 
                 {/* Contact */}
                 <div className="flex gap-[10px]">
-                  <img src={phoneIcon} className="w-[20px] h-[20px]" />
+                  <img loading="lazy" decoding="async" src={phoneIcon} className="w-[20px] h-[20px]" />
                   <p
                     className={`
                       ${T.font.family}
@@ -192,7 +192,7 @@ export default function Footer() {
 
                 {/* Email */}
                 <div className="flex gap-[10px]">
-                  <img src={mailIcon} className="w-[20px] h-[20px]" />
+                  <img loading="lazy" decoding="async" src={mailIcon} className="w-[20px] h-[20px]" />
                   <p
                     className={`
                       ${T.font.family}

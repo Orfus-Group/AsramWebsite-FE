@@ -111,7 +111,7 @@ export default function WhyChooseNursingSchool() {
                 "
                 style={{ backgroundColor: T.color.primary }}
               >
-                <img src={item.icon} className="w-[28px] h-[28px]" />
+                <img loading="lazy" decoding="async" src={item.icon} className="w-[28px] h-[28px]" />
               </div>
 
               {/* TITLE */}

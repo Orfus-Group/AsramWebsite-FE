@@ -32,7 +32,7 @@ export default function TwoColumnSection({
         
         {/* LEFT: Image */}
         <div className="w-full lg:w-[50%] flex-shrink-0">
-          <img
+          <img loading="lazy" decoding="async"
             src={image}
             alt={title}
             className="w-full h-auto rounded-[10px] object-cover"

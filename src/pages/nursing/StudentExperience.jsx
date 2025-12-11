@@ -45,7 +45,7 @@ export default function StudentExperience() {
       <div className="flex flex-col xl:flex-row items-start justify-between gap-[24px] md:gap-[32px] xl:gap-[40px] w-full mb-[32px] md:mb-[40px]">
         {/* Left Image */}
         <div className="w-full xl:w-[578px] flex-shrink-0">
-          <img
+          <img loading="lazy" decoding="async"
             src={studentExpMain}
             alt="Student Experience"
             className="w-full h-[250px] sm:h-[320px] md:h-[360px] xl:h-[394px] object-cover rounded-[8px]"

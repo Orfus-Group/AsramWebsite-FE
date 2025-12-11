@@ -59,7 +59,7 @@ export default function NursingCareerSection() {
               overflow-hidden
             "
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={nursingcareer}
               alt="Nursing Career"
               className="w-full h-full object-cover"
@@ -103,7 +103,7 @@ function StatCard({ icon, value, label }) {
         flex flex-col items-center justify-center gap-[6px]
       `}
     >
-      <img src={icon} className="w-[31.58px] h-[31.58px]" />
+      <img loading="lazy" decoding="async" src={icon} className="w-[31.58px] h-[31.58px]" />
 
       {/* Animated Value */}
       <AnimatedStatValue

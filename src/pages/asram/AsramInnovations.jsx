@@ -69,7 +69,7 @@ const ResearchInnovation = ({ title, description1, description2, image }) => {
     </div>
 
     {/* RIGHT IMAGE BLOCK */}
-    <img
+    <img loading="lazy" decoding="async"
       src="/assets/asram/research.jpg"
       alt=""
       style={{

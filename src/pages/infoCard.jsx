@@ -266,7 +266,7 @@ research: {
     if (variant === "research") {
       return (
         <div className="w-[40px] h-[40px] flex items-center justify-center shrink-0">
-          <img src={icon} alt="" className="w-[38px] h-[38px] object-contain" />
+          <img loading="lazy" decoding="async" src={icon} alt="" className="w-[38px] h-[38px] object-contain" />
         </div>
       );
     }
@@ -277,7 +277,7 @@ research: {
       className="w-[55.26px] h-[55.26px] flex items-center justify-center rounded-[9.87px] shrink-0"
           style={{ backgroundColor: T.color.primary }}
         >
-          <img src={icon} alt="" className="w-[28px] h-[28px] object-contain" />
+          <img loading="lazy" decoding="async" src={icon} alt="" className="w-[28px] h-[28px] object-contain" />
         </div>
       );
     }
@@ -296,7 +296,7 @@ research: {
         justifyContent: "center",
       }}
     >
-  <img
+  <img loading="lazy" decoding="async"
         src={icon}
         alt=""
         className="w-[28px] h-[28px] object-contain"
@@ -320,7 +320,7 @@ research: {
       className={`${iconWrapper} `}
         style={{ backgroundColor: T.color.primary }}
       >
-        <img src={icon} alt="" className="w-[28px] h-[28px] object-contain" />
+        <img loading="lazy" decoding="async" src={icon} alt="" className="w-[28px] h-[28px] object-contain" />
       </div>
     );
   };

@@ -107,7 +107,7 @@ const HealthcareServicesLat = () => {
                 "
                 style={{ backgroundColor: item.iconBg }}
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={item.icon}
                   alt=""
                   className="w-[24px] h-[24px]"
@@ -174,7 +174,7 @@ const HealthcareServicesLat = () => {
                   {item.ctatext}
                 </span>
 
-                <img
+                <img loading="lazy" decoding="async"
                   src={ArrowRight}
                   alt=""
                   className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px]"

@@ -35,7 +35,7 @@ const InsideASRAM = ({ title, image, quote }) => {
         "
       >
         {/* LEFT IMAGE */}
-        <img
+        <img loading="lazy" decoding="async"
           src={image}
           alt=""
           className="
@@ -59,7 +59,7 @@ const InsideASRAM = ({ title, image, quote }) => {
             lg:w-[454.8px]
           "
         >
-          <img
+          <img loading="lazy" decoding="async"
             src={quoteIcon}
             alt=""
             className="w-[26px] h-[26px] sm:w-[30px] sm:h-[30px]"

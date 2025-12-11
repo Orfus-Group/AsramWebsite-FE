@@ -225,7 +225,7 @@ export default function Academic() {
             {/* Hero Section */}
             <section className="relative w-full h-[500px] overflow-hidden">
                 {/* Background Image */}
-                <img
+                <img loading="lazy" decoding="async"
                     src={heroBg}
                     alt="Nursing Students"
                     className="absolute inset-0 w-full h-full object-cover"
@@ -268,7 +268,7 @@ export default function Academic() {
                         <div className="w-full lg:w-1/2 h-[500px] rounded-lg overflow-hidden relative">
                             {/* Placeholder for student image */}
                             <div className="w-full h-full bg-gray-300 flex items-center justify-center text-gray-500">
-                                <img src={heroBg} alt="Student" className="w-full h-full object-cover" />
+                                <img loading="lazy" decoding="async" src={heroBg} alt="Student" className="w-full h-full object-cover" />
                             </div>
                         </div>
 

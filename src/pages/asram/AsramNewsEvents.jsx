@@ -48,7 +48,7 @@ const AsramNewsEvents = () => {
 
         {/* FEATURED BIG CARD */}
         <div className="relative rounded-xl overflow-hidden mb-4 h-[340px] sm:h-[380px]">
-          <img src={img3} className="w-full h-full object-cover" />
+          <img loading="lazy" decoding="async" src={img3} className="w-full h-full object-cover" />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
 
@@ -65,13 +65,13 @@ const AsramNewsEvents = () => {
 
             <div className="flex items-center gap-4 text-white/90 text-xs sm:text-sm">
               <span className="flex items-center gap-1">
-                <img src={usericon} className="w-4 h-4" /> Ganesh Garuda
+                <img loading="lazy" decoding="async" src={usericon} className="w-4 h-4" /> Ganesh Garuda
               </span>
               <span className="flex items-center gap-1">
-                <img src={calicon} className="w-4 h-4" /> 14 Nov 2025
+                <img loading="lazy" decoding="async" src={calicon} className="w-4 h-4" /> 14 Nov 2025
               </span>
               <span className="flex items-center gap-1">
-                <img src={notificationicon} className="w-4 h-4" /> 23
+                <img loading="lazy" decoding="async" src={notificationicon} className="w-4 h-4" /> 23
               </span>
             </div>
           </div>
@@ -84,7 +84,7 @@ const AsramNewsEvents = () => {
               key={i}
               className="relative rounded-xl overflow-hidden h-[160px] sm:h-[180px]"
             >
-              <img src={img} className="w-full h-full object-cover" />
+              <img loading="lazy" decoding="async" src={img} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/30"></div>
             </div>
           ))}
@@ -106,7 +106,7 @@ const AsramNewsEvents = () => {
             { img: img2, text: "Comprehensive Healthcare for Every Patient" }
           ].map((item, i) => (
             <div key={i} className="relative overflow-hidden rounded-xl h-[282px]">
-              <img src={item.img} className="w-full h-full object-cover" />
+              <img loading="lazy" decoding="async" src={item.img} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
               <p className="absolute bottom-4 left-4 text-white font-semibold text-lg">
                 {item.text}
@@ -117,7 +117,7 @@ const AsramNewsEvents = () => {
 
         {/* CENTER MAIN FEATURE */}
         <div className="relative rounded-xl overflow-hidden h-[576px]">
-          <img src={img3} className="w-full h-full object-cover" />
+          <img loading="lazy" decoding="async" src={img3} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 to-transparent"></div>
 
           <div className="absolute bottom-6 left-6 right-6">
@@ -127,13 +127,13 @@ const AsramNewsEvents = () => {
 
             <div className="flex items-center gap-4 text-white/90 text-sm">
               <span className="flex items-center gap-1">
-                <img src={usericon} className="w-4 h-4" /> Ganesh Garuda
+                <img loading="lazy" decoding="async" src={usericon} className="w-4 h-4" /> Ganesh Garuda
               </span>
               <span className="flex items-center gap-1">
-                <img src={calicon} className="w-4 h-4" /> 14 Nov 2025
+                <img loading="lazy" decoding="async" src={calicon} className="w-4 h-4" /> 14 Nov 2025
               </span>
               <span className="flex items-center gap-1">
-                <img src={notificationicon} className="w-4 h-4" /> 23
+                <img loading="lazy" decoding="async" src={notificationicon} className="w-4 h-4" /> 23
               </span>
             </div>
           </div>
@@ -145,7 +145,7 @@ const AsramNewsEvents = () => {
             { img: img5, text: "Training Professionals for Modern Healthcare" }
           ].map((item, i) => (
             <div key={i} className="relative overflow-hidden rounded-xl h-[282px]">
-              <img src={item.img} className="w-full h-full object-cover" />
+              <img loading="lazy" decoding="async" src={item.img} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
               <p className="absolute bottom-4 left-4 text-white font-semibold text-lg">
                 {item.text}

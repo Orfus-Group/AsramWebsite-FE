@@ -26,6 +26,9 @@ const AsramHero = () => {
       >
         {/* Background Image */}
         <img
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
           src={heroBg}
           alt="Asram Campus"
           onLoad={() => setLoaded(true)}         // <-- hero loaded!

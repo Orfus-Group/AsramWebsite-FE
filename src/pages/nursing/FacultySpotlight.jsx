@@ -84,7 +84,7 @@ export default function FacultySpotlightSection() {
               "
             >
               {/* Image */}
-              <img
+              <img loading="lazy" decoding="async"
                 src={f.img}
                 alt={f.name}
                 className="
@@ -134,7 +134,7 @@ export default function FacultySpotlightSection() {
                 {/* Icons List */}
                 <div className="flex flex-col gap-[10px] mt-[6px]">
                   <div className="flex items-center gap-[10px]">
-                    <img src={expIcon} className="w-[18px] h-[18px]" />
+                    <img loading="lazy" decoding="async" src={expIcon} className="w-[18px] h-[18px]" />
                     <span
                       className={`${T.font.family} text-[14px] leading-[20px]`}
                       style={{ color: T.color.text.muted }}
@@ -144,7 +144,7 @@ export default function FacultySpotlightSection() {
                   </div>
 
                   <div className="flex items-center gap-[10px]">
-                    <img src={calendarIcon} className="w-[18px] h-[18px]" />
+                    <img loading="lazy" decoding="async" src={calendarIcon} className="w-[18px] h-[18px]" />
                     <span
                       className={`${T.font.family} text-[14px] leading-[20px]`}
                       style={{ color: T.color.text.muted }}
@@ -154,7 +154,7 @@ export default function FacultySpotlightSection() {
                   </div>
 
                   <div className="flex items-center gap-[10px]">
-                    <img src={timeIcon} className="w-[18px] h-[18px]" />
+                    <img loading="lazy" decoding="async" src={timeIcon} className="w-[18px] h-[18px]" />
                     <span
                       className={`${T.font.family} text-[14px] leading-[20px]`}
                       style={{ color: T.color.text.muted }}

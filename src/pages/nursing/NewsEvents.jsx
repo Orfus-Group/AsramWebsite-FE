@@ -57,7 +57,7 @@ const NewsEvents = () => {
           {/* LEFT column */}
           <div className="flex flex-col gap-[15px]">
             <div className="relative rounded-[10px] overflow-hidden group h-[285px]">
-              <img
+              <img loading="lazy" decoding="async"
                 src={img1}
                 className="w-full h-full object-cover group-hover:scale-105 duration-300"
                 alt=""
@@ -69,7 +69,7 @@ const NewsEvents = () => {
             </div>
 
             <div className="relative rounded-[10px] overflow-hidden group h-[285px]">
-              <img
+              <img loading="lazy" decoding="async"
                 src={img2}
                 className="w-full h-full object-cover group-hover:scale-105 duration-300"
                 alt=""
@@ -84,7 +84,7 @@ const NewsEvents = () => {
           {/* CENTER main card */}
           <div className="rounded-[10px] overflow-hidden group bg-black w-full h-[585px]">
             <div className="relative w-full h-full">
-              <img
+              <img loading="lazy" decoding="async"
                 src={img3}
                 alt=""
                 className="w-full h-full object-cover group-hover:scale-105 duration-300"
@@ -100,17 +100,17 @@ const NewsEvents = () => {
 
                 <div className="flex items-center gap-6 text-white/90 text-sm">
                   <span className="flex items-center gap-1">
-                    <img src={usericon} className="w-[16px] h-[16px]" />
+                    <img loading="lazy" decoding="async" src={usericon} className="w-[16px] h-[16px]" />
                     Ganesh Garuda
                   </span>
 
                   <span className="flex items-center gap-1">
-                    <img src={calicon} className="w-[16px] h-[16px]" />
+                    <img loading="lazy" decoding="async" src={calicon} className="w-[16px] h-[16px]" />
                     14 Nov 2025
                   </span>
 
                   <span className="flex items-center gap-1">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={notificationicon}
                       className="w-[16px] h-[16px]"
                     />
@@ -124,7 +124,7 @@ const NewsEvents = () => {
           {/* RIGHT column */}
           <div className="flex flex-col gap-[15px]">
             <div className="relative rounded-[10px] overflow-hidden group h-[285px]">
-              <img
+              <img loading="lazy" decoding="async"
                 src={img4}
                 className="w-full h-full object-cover group-hover:scale-105 duration-300"
                 alt=""
@@ -136,7 +136,7 @@ const NewsEvents = () => {
             </div>
 
             <div className="relative rounded-[10px] overflow-hidden group h-[285px]">
-              <img
+              <img loading="lazy" decoding="async"
                 src={img5}
                 className="w-full h-full object-cover group-hover:scale-105 duration-300"
                 alt=""
@@ -152,7 +152,7 @@ const NewsEvents = () => {
         {/* --------------------------- MOBILE/TABLET VERSION --------------------------- */}
         <div className="lg:hidden flex flex-col gap-4">
           <div className="relative rounded-[10px] overflow-hidden group h-[400px] sm:h-[500px]">
-            <img
+            <img loading="lazy" decoding="async"
               src={img3}
               className="w-full h-full object-cover group-hover:scale-105 duration-300"
               alt=""
@@ -167,17 +167,17 @@ const NewsEvents = () => {
 
               <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-white/90 text-xs sm:text-sm">
                 <span className="flex items-center gap-1">
-                  <img src={usericon} className="w-[14px] h-[14px]" />
+                  <img loading="lazy" decoding="async" src={usericon} className="w-[14px] h-[14px]" />
                   Ganesh Garuda
                 </span>
 
                 <span className="flex items-center gap-1">
-                  <img src={calicon} className="w-[14px] h-[14px]" />
+                  <img loading="lazy" decoding="async" src={calicon} className="w-[14px] h-[14px]" />
                   14 Nov 2025
                 </span>
 
                 <span className="flex items-center gap-1">
-                  <img src={notificationicon} className="w-[14px] h-[14px]" />
+                  <img loading="lazy" decoding="async" src={notificationicon} className="w-[14px] h-[14px]" />
                   23
                 </span>
               </div>
@@ -191,7 +191,7 @@ const NewsEvents = () => {
                 key={index}
                 className="relative rounded-[10px] overflow-hidden group h-[180px] sm:h-[220px]"
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={src}
                   className="w-full h-full object-cover group-hover:scale-105 duration-300"
                   alt=""

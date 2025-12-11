@@ -75,7 +75,7 @@ export default function StudentVoices() {
               }}
             >
               {/* QUOTE ICON */}
-              <img
+              <img loading="lazy" decoding="async"
                 src={quoteicon}
                 alt=""
                 className="w-[39.47px] h-[39.47px] mb-[12px]"

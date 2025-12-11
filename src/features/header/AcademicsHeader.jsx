@@ -71,6 +71,8 @@ const AcademicsHeader = () => {
           {/* ================= CENTER LOGO (Mobile) ================= */}
           <div className="flex-1 flex justify-center md:justify-start">
             <img
+              loading="eager"
+              decoding="async"
               src={LogoFull}
               alt="Asram Logo"
               className="
@@ -108,7 +110,7 @@ const AcademicsHeader = () => {
 
             {/* SEARCH ICON */}
             <button className="flex items-center justify-center md:ml-[10px]">
-              <img
+              <img loading="lazy" decoding="async"
                 src={SearchIcon}
                 alt="Search"
                 className="h-[18px] w-[18px]"
@@ -142,7 +144,7 @@ const AcademicsHeader = () => {
 
   {/* LOGO SMALL */}
   <div className="flex items-center mb-[10px]">
-    <img 
+    <img loading="lazy" decoding="async" 
       src={LogoFull} 
       alt="Asram Logo" 
       className="h-[34px] brightness-0 invert"   /* Makes logo white */

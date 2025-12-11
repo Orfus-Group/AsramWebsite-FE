@@ -145,7 +145,7 @@ export default function ProgramsOffered() {
                   style={{ color: T.color.text.muted }}
                 >
                   <div className="flex items-center gap-[6px]">
-                    <img src={timeperiodicon} className="w-[16px] h-[16px]" />
+                    <img loading="lazy" decoding="async" src={timeperiodicon} className="w-[16px] h-[16px]" />
                     <span
                       className={`${T.font.family}`}
                       style={{ color: T.color.dark + "BF" }}
@@ -155,7 +155,7 @@ export default function ProgramsOffered() {
                   </div>
 
                   <div className="flex items-center gap-[6px]">
-                    <img src={seatsicon} className="w-[16px] h-[16px]" />
+                    <img loading="lazy" decoding="async" src={seatsicon} className="w-[16px] h-[16px]" />
                     <span
                       className={`${T.font.family}`}
                       style={{ color: T.color.dark + "BF" }}
@@ -205,7 +205,7 @@ export default function ProgramsOffered() {
                         className="flex gap-[10px] text-[13px]"
                         style={{ color: T.color.text.muted }}
                       >
-                        <img src={checkIcon} className="w-[16px] h-[16px]" />
+                        <img loading="lazy" decoding="async" src={checkIcon} className="w-[16px] h-[16px]" />
                         <span className={`${T.font.family}`}>{item}</span>
                       </li>
                     ))}
@@ -224,7 +224,7 @@ export default function ProgramsOffered() {
                   `}
                 >
                   Learn More
-                  <img src={ArrowRight} className="w-[14px] h-[14px]" />
+                  <img loading="lazy" decoding="async" src={ArrowRight} className="w-[14px] h-[14px]" />
                 </button>
 
               </div>

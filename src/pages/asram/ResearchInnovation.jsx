@@ -49,7 +49,7 @@ const ResearchInnovation = ({ title, description1, image }) => {
         </div>
 
         {/* RIGHT IMAGE */}
-        <img
+        <img loading="lazy" decoding="async"
           src={image}
           alt=""
           className="

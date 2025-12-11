@@ -137,7 +137,7 @@ const InstitutionsSectionLat = () => {
         "
         style={{ backgroundColor: iconBgColors[item.id] }}
       >
-        <img src={item.icon} className="w-[32px] h-[32px]" alt="" />
+        <img loading="lazy" decoding="async" src={item.icon} className="w-[32px] h-[32px]" alt="" />
       </div>
 
              {/* TITLE */}
@@ -208,7 +208,7 @@ const InstitutionsSectionLat = () => {
     {item.cta}
   </span>
 
-  <img
+  <img loading="lazy" decoding="async"
     src={ArrowRight}
     className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px] flex-none"
     alt=""

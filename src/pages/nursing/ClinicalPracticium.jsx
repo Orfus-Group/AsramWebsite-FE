@@ -135,7 +135,7 @@ export default function ClinicalPracticumSection() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <img
+          <img loading="lazy" decoding="async"
             src={doctorImg}
             alt="Clinical Hub"
             className="

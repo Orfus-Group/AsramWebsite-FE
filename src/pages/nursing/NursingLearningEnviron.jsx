@@ -65,7 +65,7 @@ const NursingLearningEnvironment = () => {
               shadow-[0_16px_40px_rgba(15,23,42,0.22)]
             "
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={labImage}
               alt="Nursing lab"
               className="h-full w-full object-cover"
@@ -81,7 +81,7 @@ const NursingLearningEnvironment = () => {
               shadow-[0_16px_40px_rgba(15,23,42,0.22)]
             "
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={hostelImage}
               alt="Nursing hostel & campus"
               className="h-full w-full object-cover"
