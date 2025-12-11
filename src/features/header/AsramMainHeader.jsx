@@ -84,7 +84,7 @@ const AsramMainHeader = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <>
+    <div className="asram-font">
       {/* ----------------------- TOP BAR ----------------------- */}
       <div className="w-full" style={{ backgroundColor: T.color.secondary }}>
         <div className="w-full max-w-[1440px] mx-auto h-[40px] flex justify-center px-4 sm:px-6 md:px-10 lg:px-[120px]">
@@ -299,32 +299,29 @@ const AsramMainHeader = () => {
                             {megaMenuContent[item].leftText}
                           </p>
 
-                          {/* CTA BUTTON */}
-                         <button
-  className="
-    w-full
+                          {/* CTA BUTTON (mobile drawer) */}
+                          <div className="flex justify-center px-2">
+                            <button
+                              className="
+    w-auto
+    px-6
     py-2.5
-    px-3
     rounded-md
     bg-white
     text-[#223F7F]
-
-    /* Text handling */
     text-center
     font-semibold
     leading-[20px]
-
-    /* Responsive font size */
-    text-[14px]    /* mobile */
+    text-[14px]
     sm:text-[16px]
-
-    /* Avoid breaking */
     whitespace-nowrap
     flex items-center justify-center
+    mt-2
   "
->
-  {megaMenuContent[item].button}
-</button>
+                            >
+                              {megaMenuContent[item].button}
+                            </button>
+                          </div>
 
 
                           {/* SUBMENU LINKS */}
@@ -476,7 +473,7 @@ const AsramMainHeader = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
