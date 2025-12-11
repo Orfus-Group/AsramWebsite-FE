@@ -164,7 +164,7 @@ to earn strong learning.`,button:"Explore Our Achievements",columns:[{heading:"C
       sm:object-center\r
     `}),s.jsx("div",{className:"absolute inset-0 flex items-center justify-center",children:s.jsx(Q2,{sectionClassName:"absolute inset-0 flex justify-center items-center",className:"!py-0",bg:"transparent",children:s.jsx("h1",{className:`\r
           font-bold text-white text-center\r
-          text-[30px] leading-[34px]           /* ↓ Mobile */\r
+          text-[40px] leading-[34px]           /* ↓ Mobile */\r
           sm:text-[48px] sm:leading-[46px]\r
           md:text-[60px] md:leading-[54px]\r
           lg:text-[72px] lg:leading-[54px]\r
