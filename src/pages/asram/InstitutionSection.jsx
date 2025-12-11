@@ -62,10 +62,14 @@ const ctaColors = {
 
 const InstitutionsSection = () => {
   return (
-    <PageSection
-      bg="bg-[rgba(34,63,127,0.05)]"
-      sectionClassName="relative py-[68px]"
-    >
+  <PageSection
+  bg="bg-[rgba(34,63,127,0.05)]"
+  sectionClassName="
+    relative
+    py-[10px]      /* Mobile reduced */
+  "
+>
+
       {/* Decorative floating element */}
       <div className="absolute top-[-60px] lg:top-[-90px] right-8 lg:right-[92px] opacity-30 select-none pointer-events-none" />
 

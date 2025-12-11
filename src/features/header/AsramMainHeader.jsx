@@ -58,6 +58,9 @@ const AsramMainHeader = () => {
 
   useEffect(() => {
     function handleClickOutside(event) {
+      // If mobile menu is active, ignore global clicks intended for desktop dropdown closure
+      if (mobileMenuOpen) return;
+
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setOpenMenu(null);
       }
@@ -65,7 +68,7 @@ const AsramMainHeader = () => {
     if (openMenu) document.addEventListener("mousedown", handleClickOutside);
 
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [openMenu]);
+  }, [openMenu, mobileMenuOpen]);
 
   // Disable page scroll when mobile menu is open
   useEffect(() => {
@@ -193,20 +196,20 @@ const AsramMainHeader = () => {
           </nav>
         </div>
 
-{mobileMenuOpen && (
-  <>
-    {/* BACKDROP */}
-    <div
-      className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[90]"
-      onClick={() => {
-        setMobileMenuOpen(false);
-        setOpenMenu(null);
-      }}
-    ></div>
+        {mobileMenuOpen && (
+          <>
+            {/* BACKDROP */}
+            <div
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[90]"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setOpenMenu(null);
+              }}
+            ></div>
 
-    {/* DRAWER */}
-    <div
-      className={`
+            {/* DRAWER */}
+            <div
+              className={`
         fixed top-0 left-0
         h-full w-[78%] max-w-[320px]
         z-[100]
@@ -218,134 +221,151 @@ const AsramMainHeader = () => {
         transform transition-transform duration-300 ease-out
         ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"}
       `}
-    >
+            >
 
-      {/* LOGO */}
-      <div className="flex items-center justify-start mb-6">
-        <img
-          src={Logo}
-          alt="ASRAM Logo"
-          className="h-[38px] brightness-0 invert"
-        />
-      </div>
+              {/* LOGO */}
+              <div className="flex items-center justify-start mb-6">
+                <img
+                  src={Logo}
+                  alt="ASRAM Logo"
+                  className="h-[38px] brightness-0 invert"
+                />
+              </div>
 
-      {/* MAIN MENU */}
-      <div className="flex flex-col gap-2">
+              {/* MAIN MENU */}
+              <div className="flex flex-col gap-2">
 
-        {Object.keys(megaMenuContent).map((item) => {
-          
-          // which items have direct navigation?
-          const routeMap = {
-            Academics: "/academics",
-            Admissions: null,
-            Institutes: null,
-            Healthcare: null,
-            "Campus Life": null,
-            About: null,
-          };
-          const hasRoute = routeMap[item] !== null;
-          const isOpen = openMenu === item;
+                {Object.keys(megaMenuContent).map((item) => {
 
-          return (
-            <div key={item} className="w-full">
+                  // which items have direct navigation?
+                  const routeMap = {
+                    Academics: "/academics",
+                    Admissions: null,
+                    Institutes: null,
+                    Healthcare: null,
+                    "Campus Life": null,
+                    About: null,
+                  };
+                  const hasRoute = routeMap[item] !== null;
+                  const isOpen = openMenu === item;
 
-             {/* MAIN MENU BUTTON */}
-<button
-  className={`
+                  return (
+                    <div key={item} className="w-full">
+
+                      {/* MAIN MENU BUTTON */}
+                      <button
+                        className={`
     w-full flex justify-between items-center
     py-3 text-left
     text-[18px] font-semibold
     ${T.font.family}
   `}
-  onClick={() => {
-    if (hasRoute) {
-      // Normal navigation
-      setMobileMenuOpen(false);
-      setOpenMenu(null);
-    } else {
-      // Toggle accordion open/close
-      setOpenMenu(prev => (prev === item ? null : item));
-    }
-  }}
->
-  <span>{item}</span>
+                        onClick={() => {
+                          if (hasRoute) {
+                            // Normal navigation
+                            setMobileMenuOpen(false);
+                            setOpenMenu(null);
+                          } else {
+                            // Toggle accordion open/close
+                            setOpenMenu(prev => (prev === item ? null : item));
+                          }
+                        }}
+                      >
+                        <span>{item}</span>
 
-  {/* Chevron Icon */}
-  {!hasRoute && (
-    <span
-      className={`
+                        {/* Chevron Icon */}
+                        {!hasRoute && (
+                          <span
+                            className={`
         transition-transform duration-300
         ${openMenu === item ? "rotate-90" : ""}
       `}
-    >
-      ▶
-    </span>
-  )}
+                          >
+                            ▶
+                          </span>
+                        )}
+                      </button>
+
+
+                      {/* SUBMENU ACCORDION */}
+                      {!hasRoute && isOpen && (
+                        <div className="pl-4 py-3 flex flex-col gap-4 bg-[#1C3569] rounded-md animate-slideDown">
+
+                          {/* SECTION TEXT */}
+                          <p className="text-white/80 text-[14px] leading-[20px]">
+                            {megaMenuContent[item].leftText}
+                          </p>
+
+                          {/* CTA BUTTON */}
+                         <button
+  className="
+    w-full
+    py-2.5
+    px-3
+    rounded-md
+    bg-white
+    text-[#223F7F]
+
+    /* Text handling */
+    text-center
+    font-semibold
+    leading-[20px]
+
+    /* Responsive font size */
+    text-[14px]    /* mobile */
+    sm:text-[16px]
+
+    /* Avoid breaking */
+    whitespace-nowrap
+    flex items-center justify-center
+  "
+>
+  {megaMenuContent[item].button}
 </button>
 
 
-              {/* SUBMENU ACCORDION */}
-              {!hasRoute && isOpen && (
-                <div className="pl-4 py-3 flex flex-col gap-4 bg-[#1C3569] rounded-md animate-slideDown">
+                          {/* SUBMENU LINKS */}
+                          <div className="flex flex-col gap-4">
+                            {megaMenuContent[item].columns.map((col) => (
+                              <div key={col.heading}>
+                                <h3 className="text-[16px] font-bold text-white mb-2">
+                                  {col.heading}
+                                </h3>
 
-                  {/* SECTION TEXT */}
-                  <p className="text-white/80 text-[14px] leading-[20px]">
-                    {megaMenuContent[item].leftText}
-                  </p>
-
-                  {/* CTA BUTTON */}
-                  <button
-                    className="
-                      w-full py-2 rounded-md 
-                      text-[16px] font-semibold
-                      bg-white text-[#223F7F]
-                    "
-                  >
-                    {megaMenuContent[item].button}
-                  </button>
-
-                  {/* SUBMENU LINKS */}
-                  <div className="flex flex-col gap-4">
-                    {megaMenuContent[item].columns.map((col) => (
-                      <div key={col.heading}>
-                        <h3 className="text-[16px] font-bold text-white mb-2">
-                          {col.heading}
-                        </h3>
-
-                        <div className="flex flex-col gap-2">
-                          {col.links.map((link) => (
-                            <Link
-                              key={link}
-                              to={link === "College of Nursing" ? "/nursing" : "#"}
-                              className="text-white/90 text-[15px]"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setOpenMenu(null);
-                              }}
-                            >
-                              {link}
-                            </Link>
-                          ))}
+                                <div className="flex flex-col gap-2">
+                                  {col.links.map((link) => (
+                                    <Link
+                                      key={link}
+                                      to={link === "College of Nursing" ? "/nursing" : "#"}
+                                      className="text-white/90 text-[15px]"
+                                      onClick={() => {
+                                        setMobileMenuOpen(false);
+                                        setOpenMenu(null);
+                                      }}
+                                    >
+                                      {link}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
 
-      {/* FOOTER INSIDE DRAWER */}
-      <div className="mt-auto pt-6 border-t border-white/20">
-        <p className="text-white/70 text-[14px]">
-          © ASRAM School of Nursing
-        </p>
-      </div>
-    </div>
-  </>
-)}
+              {/* FOOTER INSIDE DRAWER */}
+              <div className="mt-auto pt-6 border-t border-white/20">
+                <p className="text-white/70 text-[14px]">
+                  © ASRAM School of Nursing
+                </p>
+              </div>
+            </div>
+          </>
+        )}
 
 
 
