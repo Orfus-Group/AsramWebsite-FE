@@ -255,29 +255,39 @@ const AsramMainHeader = () => {
                   return (
                     <div key={item} className="w-full">
 
-                      {/* MAIN MENU BUTTON */}
-                      <button
-                        className={`
+                      {/* MAIN MENU BUTTON / LINK */}
+                      {hasRoute ? (
+                        <Link
+                          to={routeMap[item]}
+                          className={`
     w-full flex justify-between items-center
     py-3 text-left
     text-[18px] font-semibold
     ${T.font.family}
   `}
-                        onClick={() => {
-                          if (hasRoute) {
-                            // Normal navigation
+                          onClick={() => {
                             setMobileMenuOpen(false);
                             setOpenMenu(null);
-                          } else {
+                          }}
+                        >
+                          <span>{item}</span>
+                        </Link>
+                      ) : (
+                        <button
+                          className={`
+    w-full flex justify-between items-center
+    py-3 text-left
+    text-[18px] font-semibold
+    ${T.font.family}
+  `}
+                          onClick={() => {
                             // Toggle accordion open/close
                             setOpenMenu(prev => (prev === item ? null : item));
-                          }
-                        }}
-                      >
-                        <span>{item}</span>
+                          }}
+                        >
+                          <span>{item}</span>
 
-                        {/* Chevron Icon */}
-                        {!hasRoute && (
+                          {/* Chevron Icon */}
                           <span
                             className={`
         transition-transform duration-300
@@ -286,8 +296,8 @@ const AsramMainHeader = () => {
                           >
                             ▶
                           </span>
-                        )}
-                      </button>
+                        </button>
+                      )}
 
 
                       {/* SUBMENU ACCORDION */}
