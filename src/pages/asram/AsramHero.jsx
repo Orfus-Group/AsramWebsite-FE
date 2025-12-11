@@ -37,7 +37,7 @@ const AsramHero = () => {
       <h1
         className="
           font-bold text-white text-center
-          text-[30px] leading-[34px]           /* ↓ Mobile */
+          text-[40px] leading-[34px]           /* ↓ Mobile */
           sm:text-[48px] sm:leading-[46px]
           md:text-[60px] md:leading-[54px]
           lg:text-[72px] lg:leading-[54px]
