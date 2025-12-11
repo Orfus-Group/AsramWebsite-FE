@@ -3,6 +3,8 @@ import { T } from "../../theme";
 import LogoFull from "../../assets/nursing/asramlogo.svg";
 import SearchIcon from "../../assets/nursing/Search.svg";
 import ShortcutLinks from "./ShortcutLinks";
+import AsramLogo from "../../assets/asram/asramcolredlogo.png";
+
 import { Link } from "react-router-dom";
 
 const AcademicsHeader = () => {
@@ -143,13 +145,30 @@ const AcademicsHeader = () => {
 >
 
   {/* LOGO SMALL */}
-  <div className="flex items-center mb-[10px]">
-    <img loading="lazy" decoding="async" 
-      src={LogoFull} 
-      alt="Asram Logo" 
-      className="h-[34px] brightness-0 invert"   /* Makes logo white */
-    />
-  </div>
+<div className="flex items-center mb-6 w-full justify-center">
+  <img
+    src={AsramLogo}
+    alt="ASRAM Logo"
+    className="
+      h-[54px] w-[54px]
+      sm:h-[60px] sm:w-[60px]
+      object-contain
+    "
+  />
+
+  <span
+    className={`text-white
+      text-[36px]
+      sm:text-[34px]
+      font-semibold
+      tracking-wide
+      leading-none
+      ml-[-2px] ${T.font.family}`}
+  >
+    Asram
+  </span>
+</div>
+
 
   {/* NAV LINKS */}
   <div className="flex flex-col gap-[20px] mt-[10px]">

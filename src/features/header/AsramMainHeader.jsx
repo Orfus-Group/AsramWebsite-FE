@@ -1,6 +1,7 @@
 // src/components/header/AsramMainHeader.jsx
 import React, { useEffect, useRef, useState } from "react";
 import Logo from "../../assets/asram/mainasramlogo.svg";
+import AsramLogo from "../../assets/asram/asramcolredlogo.png";
 
 import StudentIcon from "../../assets/asram/studentcentericon.svg";
 import LibraryIcon from "../../assets/asram/libraryicon.svg";
@@ -228,14 +229,33 @@ const AsramMainHeader = () => {
             }}
             >
 
-              {/* LOGO */}
-              <div className="flex items-center justify-start mb-6">
-                <img loading="lazy" decoding="async"
-                  src={Logo}
-                  alt="ASRAM Logo"
-                  className="h-[38px] brightness-0 invert"
-                />
-              </div>
+<div className="flex items-center mb-6 w-full justify-center">
+  <img
+    src={AsramLogo}
+    alt="ASRAM Logo"
+    className="
+      h-[54px] w-[54px]
+      sm:h-[60px] sm:w-[60px]
+      object-contain
+    "
+  />
+
+  <span
+    className={`text-white
+      text-[36px]
+      sm:text-[34px]
+      font-semibold
+      tracking-wide
+      leading-none
+      ml-[-2px] ${T.font.family}`}
+  >
+    Asram
+  </span>
+</div>
+
+
+
+
 
               {/* MAIN MENU */}
               <div className="flex flex-col gap-2">
