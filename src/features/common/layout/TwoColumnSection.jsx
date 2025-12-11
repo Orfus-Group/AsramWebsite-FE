@@ -1,5 +1,6 @@
 import React from "react";
 import PageSection from "./PageContainer";
+import { T } from "../../../theme";
 
 export default function TwoColumnSection({
   title,
@@ -10,26 +11,32 @@ export default function TwoColumnSection({
   pt = "pt-[80px]",
   pb = "pb-[80px]",
   bg = "bg-white",
+  bgColor,
 }) {
   return (
     <PageSection
       bg={bg}
+      bgColor={bgColor}
       className={`${pt} ${pb}`}
     >
       {/* Top Heading */}
       {title && (
-        <h2 className="
-          font-montserrat font-bold
+        <h2
+          className={`
+          ${T.font.family}
+          ${T.font.weight.bold}
           text-[32px] md:text-[36px]
           leading-[42px] md:leading-[48px]
-          text-[#223F7F] mb-[40px]
-        ">
+          mb-[40px]
+        `}
+          style={{ color: T.color.secondary }}
+        >
           {title}
         </h2>
       )}
 
       <div className="flex flex-col lg:flex-row gap-[40px] w-full">
-        
+
         {/* LEFT: Image */}
         <div className="w-full lg:w-[50%] flex-shrink-0">
           <img loading="lazy" decoding="async"
@@ -44,13 +51,16 @@ export default function TwoColumnSection({
 
           {/* Sub heading */}
           {innerHeading && (
-            <h3 className="
-              font-montserrat font-semibold
+            <h3
+              className={`
+              ${T.font.family}
+              ${T.font.weight.semibold}
               text-[24px] md:text-[28px]
               leading-[32px] md:leading-[38px]
-              text-[#223F7F]
               max-w-[520px]
-            ">
+            `}
+              style={{ color: T.color.secondary }}
+            >
               {innerHeading}
             </h3>
           )}
@@ -60,12 +70,12 @@ export default function TwoColumnSection({
             {paragraphs.map((p, i) => (
               <p
                 key={i}
-                className="
-                  font-montserrat
+                className={`
+                  ${T.font.family}
                   text-[16px] md:text-[17px]
                   leading-[24px] md:leading-[26px]
-                  text-[#6B7280]
-                "
+                `}
+                style={{ color: T.color.text.muted }}
               >
                 {p}
               </p>

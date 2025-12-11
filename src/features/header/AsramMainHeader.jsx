@@ -175,7 +175,7 @@ const AsramMainHeader = () => {
           {/* LOGO */}
           <img
             loading="eager"
-            fetchpriority="high"
+            fetchPriority="high"
             decoding="async"
             src={Logo}
             className="h-[42px] w-[170px] sm:h-[46px] sm:w-[189px] object-contain mx-auto lg:mx-0"
@@ -212,18 +212,20 @@ const AsramMainHeader = () => {
 
             {/* DRAWER */}
             <div
-              className={`
+            className={`
         fixed top-0 left-0
         h-full w-[78%] max-w-[320px]
         z-[100]
-        bg-[#223F7F]
-        text-white
         flex flex-col
         px-5 py-6
         overflow-y-auto
         transform transition-transform duration-300 ease-out
         ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"}
       `}
+            style={{
+              backgroundColor: T.color.surface.drawer,
+              color: T.color.text.light,
+            }}
             >
 
               {/* LOGO */}
@@ -302,7 +304,10 @@ const AsramMainHeader = () => {
 
                       {/* SUBMENU ACCORDION */}
                       {!hasRoute && isOpen && (
-                        <div className="pl-4 py-3 flex flex-col gap-4 bg-[#1C3569] rounded-md animate-slideDown">
+                        <div
+                          className="pl-4 py-3 flex flex-col gap-4 rounded-md animate-slideDown"
+                          style={{ backgroundColor: T.color.surface.drawerSub }}
+                        >
 
                           {/* SECTION TEXT */}
                           <p className="text-white/80 text-[14px] leading-[20px]">

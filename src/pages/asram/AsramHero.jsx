@@ -32,7 +32,7 @@ const AsramHero = () => {
           src={heroBg}
           alt="Asram Campus"
           loading="eager"
-          fetchpriority="high"
+          fetchPriority="high"
           decoding="async"
           onLoad={() => setLoaded(true)}
           className={`

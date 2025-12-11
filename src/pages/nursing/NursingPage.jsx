@@ -27,7 +27,6 @@ const NursingPage = () => {
       <FacultySpotlightSection />
       <KeyStrengthsSection />
       <WhyChooseSection />
-      <Footer />
     </>
   );
 };

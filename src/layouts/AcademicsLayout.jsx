@@ -1,16 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import AcademicsHeader from "../features/header/AcademicsHeader";
+import Footer from "../pages/nursing/NursingFooter";
 
-const AcademicsLayout = () => {
-  return (
-    <>
-      <AcademicsHeader  />   
-      <main>
-        <Outlet />
-      </main>
-    </>
-  );
-};
+const AcademicsLayout = () => (
+  <>
+    <AcademicsHeader />
+    <Outlet />
+    <Footer />
+  </>
+);
 
 export default AcademicsLayout;

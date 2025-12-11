@@ -5,10 +5,14 @@ export default function PageSection({
   children,
   className = "",
   bg = "bg-white",
+  bgColor,
   sectionClassName = "",
 }) {
   return (
-    <section className={`w-full ${bg} ${sectionClassName} asram-font`}>
+    <section
+      className={`w-full ${bg} ${sectionClassName} asram-font`}
+      style={bgColor ? { backgroundColor: bgColor } : undefined}
+    >
       <div
         className={` 
           w-full

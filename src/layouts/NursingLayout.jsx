@@ -1,16 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import NursingHeader from "../features/header/NursingHeader";
+import AsramMainHeader from "../features/header/AsramMainHeader";
+import Footer from "../pages/nursing/NursingFooter";
 
-const NursingLayout = () => {
-  return (
-    <>
-      <NursingHeader  />   
-      <main>
-        <Outlet />
-      </main>
-    </>
-  );
-};
+const NursingLayout = () => (
+  <>
+    <AsramMainHeader />
+    <Outlet />
+    <Footer />
+  </>
+);
 
 export default NursingLayout;

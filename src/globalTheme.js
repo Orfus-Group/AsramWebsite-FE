@@ -35,34 +35,55 @@ export const theme = {
   // ------------------------------------
   // COLOR SYSTEM (DESIGN TOKENS)
   // ------------------------------------
-color: {
-  primary: "#008C8C",
- secondary: "#223F7F",
- dark: "#191919",
- extra: {
-  dark80: "#191919CC",   // original #191919/80
-  dark75: "#191919BF",
-  dark10: "rgba(25,25,25,0.10)",  // original #1919191A
-},
-  text: {
-    main: "#1A2A44",
-    dark: "#191919",
-    light: "#FFF",
+  color: {
+    // Core brand
+    primary: "#008C8C",
     secondary: "#223F7F",
-    muted: "#6B7280",
-    grayish: "#374151",
-    researchMuted: "#4B5563",
-  },
+    accent: "#008C8C",
+    dark: "#191919",
 
-  border: "#E5E7EB",
+    // Text palette
+    text: {
+      main: "#1A2A44",
+      dark: "#191919",
+      light: "#FFFFFF",
+      secondary: "#223F7F",
+      muted: "#6B7280",
+      grayish: "#374151",
+      researchMuted: "#4B5563",
+    },
 
-  background: {
-    white: "#FFFFFF",
-    soft: "#F9FAFB",
-    section: "#F7FAFF",
-    programCard: "#F7F9FC",
+    // Surface palette
+    surface: {
+      card: "#FFFFFF",
+      soft: "#F9FAFB",
+      section: "#F7FAFF",
+      programCard: "#F7F9FC",
+      drawer: "#223F7F",
+      drawerSub: "#1C3569",
+    },
+
+    // Legacy alias for backward compatibility
+    background: {
+      white: "#FFFFFF",
+      soft: "#F9FAFB",
+      section: "#F7FAFF",
+      programCard: "#F7F9FC",
+    },
+
+    // Border + overlay
+    border: "#E5E7EB",
+    overlayDark: "rgba(0,0,0,0.70)",
+    overlayDarker: "rgba(0,0,0,0.85)",
+    overlayLight: "rgba(0,0,0,0.30)",
+
+    // Opacity variants
+    extra: {
+      dark80: "#191919CC",
+      dark75: "#191919BF",
+      dark10: "rgba(25,25,25,0.10)",
+    },
   },
-},
 
 
 
@@ -70,11 +91,12 @@ color: {
   // TAILWIND BACKGROUND UTILITY HELPERS
   // ------------------------------------
  bg: {
-  white: "bg-white",
-  soft: "bg-[#F9FAFB]",
-  section: "bg-[#F7FAFF]",
-  programCard: "bg-[#F7F9FC]",
-},
+    white: "bg-white",
+    soft: "bg-[#F9FAFB]",
+    section: "bg-[#F7FAFF]",
+    programCard: "bg-[#F7F9FC]",
+    brand: "bg-[#223F7F]",
+  },
 
 
   // ------------------------------------

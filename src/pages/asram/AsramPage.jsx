@@ -38,7 +38,6 @@ const AsramPage = () => {
         image={ResearchIcon}
       />
 
-      <AsramFooter />
     </>
   );
 };

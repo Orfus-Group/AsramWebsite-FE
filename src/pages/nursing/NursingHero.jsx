@@ -39,7 +39,7 @@ const NursingHero = () => {
         <img
           src={heroBg}
           loading="eager"
-          fetchpriority="high"
+          fetchPriority="high"
           decoding="async"
           alt="Nursing campus"
           onLoad={() => setLoaded(true)}
