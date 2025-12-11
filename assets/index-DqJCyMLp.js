@@ -151,26 +151,26 @@ to earn strong learning.`,button:"Explore Our Achievements",columns:[{heading:"C
           lg:py-[80px]     /* desktop */
 
           ${u}
-        `,children:r})})}const nu=()=>{const[r,u]=z.useState(!1);return s.jsxs(s.Fragment,{children:[!r&&s.jsx(Ma,{}),s.jsxs("section",{className:`
-          relative w-full 
-          h-[65vh]
-          sm:h-[60vh]
-          md:h-[75vh]
-          lg:h-[665px]
-          overflow-hidden
-          ${r?"opacity-100":"opacity-0"}
-          transition-opacity duration-500
-        `,children:[s.jsx("img",{loading:"eager",fetchpriority:"high",decoding:"async",src:Z4,alt:"Asram Campus",onLoad:()=>u(!0),className:`\r
-            w-full h-full object-cover\r
-            object-[50%_30%]\r
-            sm:object-center\r
-          `}),s.jsx("div",{className:"absolute inset-0 flex items-center justify-center",children:s.jsx(Q2,{sectionClassName:"absolute inset-0 flex justify-center items-center",className:"!py-0",bg:"transparent",children:s.jsx("h1",{className:`\r
-                font-bold text-white text-center\r
-                text-[38px] leading-[34px]\r
-                sm:text-[48px] sm:leading-[46px]\r
-                md:text-[60px] md:leading-[54px]\r
-                lg:text-[72px] lg:leading-[54px]\r
-              `,children:"We Make Doctors"})})})]})]})},q4="/AsramWebsite-FE/assets/reputation-BKKxq0eo.svg",au=()=>s.jsx(Q2,{bg:"bg-white",children:s.jsxs("div",{className:`\r
+        `,children:r})})}const nu=()=>{const[r,u]=z.useState(!1);return s.jsxs("section",{className:`\r
+        relative w-full\r
+        h-[65vh]\r
+        sm:h-[60vh]\r
+        md:h-[75vh]\r
+        lg:h-[665px]\r
+        overflow-hidden\r
+      `,children:[s.jsxs("div",{className:"absolute inset-0 w-full h-full",children:[!r&&s.jsx(Ma,{}),s.jsx("img",{src:Z4,alt:"Asram Campus",loading:"eager",fetchpriority:"high",decoding:"async",onLoad:()=>u(!0),className:`
+            w-full h-full object-cover
+            object-[50%_30%]
+            sm:object-center
+            transition-opacity duration-500
+            ${r?"opacity-100":"opacity-0"}
+          `})]}),s.jsx("div",{className:"absolute inset-0 flex items-center justify-center z-[10]",children:s.jsx(Q2,{sectionClassName:"absolute inset-0 flex justify-center items-center",className:"!py-0",bg:"transparent",children:s.jsx("h1",{className:`\r
+              font-bold text-white text-center\r
+              text-[38px] leading-[34px]\r
+              sm:text-[48px] sm:leading-[46px]\r
+              md:text-[60px] md:leading-[54px]\r
+              lg:text-[72px] lg:leading-[54px]\r
+            `,children:"We Make Doctors"})})})]})},q4="/AsramWebsite-FE/assets/reputation-BKKxq0eo.svg",au=()=>s.jsx(Q2,{bg:"bg-white",children:s.jsxs("div",{className:`\r
           w-full\r
           flex flex-col md:flex-row\r
           items-start justify-between\r
@@ -781,66 +781,67 @@ to earn strong learning.`,button:"Explore Our Achievements",columns:[{heading:"C
         top-[332px]
         flex flex-col items-center
         backdrop-blur-[4px]
-      `,style:{width:"27.08px",height:"96px",padding:`${7.4}px 0`,gap:`${7.4}px`,borderRadius:"12px",backgroundColor:"rgba(255,255,255,0.30)"},children:[...Array(r)].map((h,w)=>s.jsx("span",{style:{width:`${12.31}px`,height:`${12.31}px`,borderRadius:"50%",backgroundColor:w===u?c.color.text.secondary:"#D9D9D9"}},w))}),j7=()=>{const[r,u]=z.useState(!1);return s.jsxs(s.Fragment,{children:[!r&&s.jsx(Ma,{}),s.jsxs("section",{className:`
-          relative
-          w-full
-          overflow-hidden
-
-          /* HEIGHTS — DESKTOP */
-          md:h-[797px]
-          lg:h-[797px]
-
-          /* MOBILE HEIGHT */
-          h-[520px]
-          sm:h-[560px]
-
-          /* FADE-IN EFFECT */
-          ${r?"opacity-100":"opacity-0"}
-          transition-opacity duration-500
-        `,children:[s.jsx("img",{loading:"eager",fetchpriority:"high",decoding:"async",src:w7,alt:"Nursing campus",onLoad:()=>u(!0),className:`\r
-            absolute inset-0\r
-            w-full h-full\r
-            object-cover object-center\r
-          `}),s.jsx("div",{className:"absolute inset-0",style:{backgroundColor:"rgba(0,0,0,0.30)"}}),s.jsx("div",{className:`\r
-            absolute \r
-            w-full flex justify-center\r
+      `,style:{width:"27.08px",height:"96px",padding:`${7.4}px 0`,gap:`${7.4}px`,borderRadius:"12px",backgroundColor:"rgba(255,255,255,0.30)"},children:[...Array(r)].map((h,w)=>s.jsx("span",{style:{width:`${12.31}px`,height:`${12.31}px`,borderRadius:"50%",backgroundColor:w===u?c.color.text.secondary:"#D9D9D9"}},w))}),j7=()=>{const[r,u]=z.useState(!1);return s.jsxs("section",{className:`\r
+        relative\r
+        w-full\r
+        overflow-hidden\r
 \r
-            /* DESKTOP SPACING */\r
-            bottom-[120px] md:bottom-[120px]\r
+        /* HEIGHTS — DESKTOP */\r
+        md:h-[797px]\r
+        lg:h-[797px]\r
 \r
-            /* TABLET */\r
-            sm:bottom-[90px]\r
+        /* MOBILE HEIGHT */\r
+        h-[520px]\r
+        sm:h-[560px]\r
+      `,children:[s.jsxs("div",{className:"absolute inset-0 w-full h-full",children:[!r&&s.jsx("div",{className:"absolute inset-0 flex items-center justify-center bg-white z-[5]",children:s.jsx(Ma,{})}),s.jsx("img",{src:w7,loading:"eager",fetchpriority:"high",decoding:"async",alt:"Nursing campus",onLoad:()=>u(!0),className:`
+            absolute inset-0
+            w-full h-full
+            object-cover object-center
+            transition-opacity duration-500
+            ${r?"opacity-100":"opacity-0"}
+          `})]}),s.jsx("div",{className:"absolute inset-0",style:{backgroundColor:"rgba(0,0,0,0.30)"}}),s.jsx("div",{className:`\r
+          absolute \r
+          w-full flex justify-center\r
 \r
-            /* MOBILE */\r
-            bottom-[70px]\r
-            px-4\r
-          `,children:s.jsx("div",{className:`\r
-              w-full\r
-              max-w-[1440px]\r
-              mx-auto\r
-              px-4 sm:px-6 md:px-10 lg:px-[120px]\r
-              flex justify-center\r
-            `,children:s.jsx("h1",{className:`
-                ${c.font.family}
-                ${c.font.weight.bold}
+          /* DESKTOP SPACING */\r
+          bottom-[120px] md:bottom-[120px]\r
+\r
+          /* TABLET */\r
+          sm:bottom-[90px]\r
+\r
+          /* MOBILE */\r
+          bottom-[70px]\r
+\r
+          px-4\r
+          z-[10]\r
+        `,children:s.jsx("div",{className:`\r
+            w-full\r
+            max-w-[1440px]\r
+            mx-auto\r
+            px-4 sm:px-6 md:px-10 lg:px-[120px]\r
+            flex justify-center\r
+          `,children:s.jsx("h1",{className:`
+              ${c.font.family}
+              ${c.font.weight.bold}
 
-                /* DESKTOP */
-                text-[52px] leading-[48px]
-                sm:text-[60px] sm:leading-[50px]
-                md:text-[72px] md:leading-[54px]
+              /* DESKTOP */
+              text-[52px] leading-[48px]
+              sm:text-[60px] sm:leading-[50px]
+              md:text-[72px] md:leading-[54px]
 
-                /* MOBILE */
-                text-[34px] leading-[36px]
-                sm:text-[48px] sm:leading-[44px]
+              /* MOBILE */
+              text-[34px] leading-[36px]
+              sm:text-[48px] sm:leading-[44px]
 
-                text-center
-              `,style:{color:c.color.text.light,maxWidth:"886px"},children:"Your Career Starts Here"})})}),s.jsx("div",{className:`\r
-            absolute\r
-            w-full flex justify-center\r
-            bottom-[20px]\r
-            sm:bottom-[30px]\r
-            md:bottom-[40px]\r
-          `,children:s.jsx(b7,{total:5,activeIndex:0})})]})]})},N7="data:image/svg+xml,%3csvg%20width='28'%20height='28'%20viewBox='0%200%2028%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M24.6609%2012.5744C24.867%2012.4834%2025.0419%2012.334%2025.1639%2012.1447C25.286%2011.9553%2025.3498%2011.7344%2025.3475%2011.5091C25.3451%2011.2838%2025.2768%2011.0642%2025.1508%2010.8774C25.0249%2010.6906%2024.847%2010.5449%2024.639%2010.4582L14.7711%205.96351C14.4711%205.82667%2014.1452%205.75586%2013.8155%205.75586C13.4858%205.75586%2013.1599%205.82667%2012.8599%205.96351L2.99314%2010.4536C2.78817%2010.5434%202.6138%2010.691%202.49136%2010.8783C2.36892%2011.0656%202.30371%2011.2845%202.30371%2011.5082C2.30371%2011.732%202.36892%2011.9509%202.49136%2012.1382C2.6138%2012.3255%202.78817%2012.4731%202.99314%2012.5628L12.8599%2017.0622C13.1599%2017.199%2013.4858%2017.2698%2013.8155%2017.2698C14.1452%2017.2698%2014.4711%2017.199%2014.7711%2017.0622L24.6609%2012.5744Z'%20stroke='white'%20stroke-width='2.30263'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M25.3289%2011.5127V18.4206'%20stroke='white'%20stroke-width='2.30263'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M6.90796%2014.3916V18.4212C6.90796%2019.3373%207.63575%2020.2158%208.93123%2020.8635C10.2267%2021.5113%2011.9838%2021.8752%2013.8159%2021.8752C15.6479%2021.8752%2017.405%2021.5113%2018.7005%2020.8635C19.996%2020.2158%2020.7237%2019.3373%2020.7237%2018.4212V14.3916'%20stroke='white'%20stroke-width='2.30263'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e",k7="data:image/svg+xml,%3csvg%20width='28'%20height='28'%20viewBox='0%200%2028%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.8159%208.05859V24.177'%20stroke='white'%20stroke-width='2.30263'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M3.45429%2020.7238C3.14895%2020.7238%202.8561%2020.6025%202.64019%2020.3866C2.42428%2020.1707%202.30298%2019.8779%202.30298%2019.5725V4.60542C2.30298%204.30007%202.42428%204.00723%202.64019%203.79131C2.8561%203.5754%203.14895%203.4541%203.45429%203.4541H9.21087C10.4323%203.4541%2011.6036%203.9393%2012.4673%204.80295C13.3309%205.66661%2013.8161%206.83797%2013.8161%208.05936C13.8161%206.83797%2014.3013%205.66661%2015.165%204.80295C16.0286%203.9393%2017.2%203.4541%2018.4214%203.4541H24.178C24.4833%203.4541%2024.7762%203.5754%2024.9921%203.79131C25.208%204.00723%2025.3293%204.30007%2025.3293%204.60542V19.5725C25.3293%2019.8779%2025.208%2020.1707%2024.9921%2020.3866C24.7762%2020.6025%2024.4833%2020.7238%2024.178%2020.7238H17.2701C16.354%2020.7238%2015.4755%2021.0877%2014.8278%2021.7355C14.18%2022.3832%2013.8161%2023.2617%2013.8161%2024.1778C13.8161%2023.2617%2013.4522%2022.3832%2012.8045%2021.7355C12.1568%2021.0877%2011.2782%2020.7238%2010.3622%2020.7238H3.45429Z'%20stroke='white'%20stroke-width='2.30263'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e",S7="data:image/svg+xml,%3csvg%20width='28'%20height='28'%20viewBox='0%200%2028%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17.8197%2014.8398L19.5639%2024.656C19.5834%2024.7715%2019.5672%2024.8903%2019.5174%2024.9965C19.4676%2025.1026%2019.3866%2025.191%2019.2852%2025.2498C19.1838%2025.3086%2019.0669%2025.3351%2018.95%2025.3257C18.8332%2025.3163%2018.722%2025.2714%2018.6313%2025.1971L14.5096%2022.1035C14.3107%2021.9548%2014.0689%2021.8745%2013.8206%2021.8745C13.5722%2021.8745%2013.3305%2021.9548%2013.1315%2022.1035L9.00289%2025.1959C8.91231%2025.2701%208.80125%2025.3149%208.68455%2025.3243C8.56784%2025.3338%208.45104%2025.3074%208.34971%2025.2487C8.24838%2025.1901%208.16735%2025.1019%208.11744%2024.996C8.06752%2024.8901%208.05109%2024.7715%208.07033%2024.656L9.81342%2014.8398'%20stroke='white'%20stroke-width='2.30263'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M13.8163%2016.1185C17.6315%2016.1185%2020.7242%2013.0258%2020.7242%209.21063C20.7242%205.3955%2017.6315%202.30273%2013.8163%202.30273C10.0012%202.30273%206.90845%205.3955%206.90845%209.21063C6.90845%2013.0258%2010.0012%2016.1185%2013.8163%2016.1185Z'%20stroke='white'%20stroke-width='2.30263'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e";function M7(){const r=[{icon:N7,title:"B.Sc Nursing",years:"4 Years Full-Time",seats:"~100 Seats",description:"Flagship undergraduate programme integrating theoretical lectures, practical labs, simulation, and clinical postings. Prepares students for both patient care and professional advancement."},{icon:k7,title:"General Nursing",years:"3 Years Full-Time",seats:"~60 Seats",description:"Diploma level programme providing comprehensive training in nursing fundamentals and midwifery practices, preparing students for immediate clinical roles."},{icon:S7,title:"M.Sc Nursing",years:"3 Years Full-Time",seats:"~60 Seats",description:"Specialization tracks include Medical-Surgical Nursing, Obstetrics & Gynaecological Nursing, Paediatric Nursing, Community Health Nursing, and Psychiatric Nursing."}];return s.jsxs(Q2,{bg:c.bg.white,children:[s.jsx("h2",{className:`
+              text-center
+            `,style:{color:c.color.text.light,maxWidth:"886px"},children:"Your Career Starts Here"})})}),s.jsx("div",{className:`\r
+          absolute\r
+          w-full flex justify-center\r
+          bottom-[20px]\r
+          sm:bottom-[30px]\r
+          md:bottom-[40px]\r
+          z-[10]\r
+        `,children:s.jsx(b7,{total:5,activeIndex:0})})]})},N7="data:image/svg+xml,%3csvg%20width='28'%20height='28'%20viewBox='0%200%2028%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M24.6609%2012.5744C24.867%2012.4834%2025.0419%2012.334%2025.1639%2012.1447C25.286%2011.9553%2025.3498%2011.7344%2025.3475%2011.5091C25.3451%2011.2838%2025.2768%2011.0642%2025.1508%2010.8774C25.0249%2010.6906%2024.847%2010.5449%2024.639%2010.4582L14.7711%205.96351C14.4711%205.82667%2014.1452%205.75586%2013.8155%205.75586C13.4858%205.75586%2013.1599%205.82667%2012.8599%205.96351L2.99314%2010.4536C2.78817%2010.5434%202.6138%2010.691%202.49136%2010.8783C2.36892%2011.0656%202.30371%2011.2845%202.30371%2011.5082C2.30371%2011.732%202.36892%2011.9509%202.49136%2012.1382C2.6138%2012.3255%202.78817%2012.4731%202.99314%2012.5628L12.8599%2017.0622C13.1599%2017.199%2013.4858%2017.2698%2013.8155%2017.2698C14.1452%2017.2698%2014.4711%2017.199%2014.7711%2017.0622L24.6609%2012.5744Z'%20stroke='white'%20stroke-width='2.30263'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M25.3289%2011.5127V18.4206'%20stroke='white'%20stroke-width='2.30263'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M6.90796%2014.3916V18.4212C6.90796%2019.3373%207.63575%2020.2158%208.93123%2020.8635C10.2267%2021.5113%2011.9838%2021.8752%2013.8159%2021.8752C15.6479%2021.8752%2017.405%2021.5113%2018.7005%2020.8635C19.996%2020.2158%2020.7237%2019.3373%2020.7237%2018.4212V14.3916'%20stroke='white'%20stroke-width='2.30263'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e",k7="data:image/svg+xml,%3csvg%20width='28'%20height='28'%20viewBox='0%200%2028%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.8159%208.05859V24.177'%20stroke='white'%20stroke-width='2.30263'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M3.45429%2020.7238C3.14895%2020.7238%202.8561%2020.6025%202.64019%2020.3866C2.42428%2020.1707%202.30298%2019.8779%202.30298%2019.5725V4.60542C2.30298%204.30007%202.42428%204.00723%202.64019%203.79131C2.8561%203.5754%203.14895%203.4541%203.45429%203.4541H9.21087C10.4323%203.4541%2011.6036%203.9393%2012.4673%204.80295C13.3309%205.66661%2013.8161%206.83797%2013.8161%208.05936C13.8161%206.83797%2014.3013%205.66661%2015.165%204.80295C16.0286%203.9393%2017.2%203.4541%2018.4214%203.4541H24.178C24.4833%203.4541%2024.7762%203.5754%2024.9921%203.79131C25.208%204.00723%2025.3293%204.30007%2025.3293%204.60542V19.5725C25.3293%2019.8779%2025.208%2020.1707%2024.9921%2020.3866C24.7762%2020.6025%2024.4833%2020.7238%2024.178%2020.7238H17.2701C16.354%2020.7238%2015.4755%2021.0877%2014.8278%2021.7355C14.18%2022.3832%2013.8161%2023.2617%2013.8161%2024.1778C13.8161%2023.2617%2013.4522%2022.3832%2012.8045%2021.7355C12.1568%2021.0877%2011.2782%2020.7238%2010.3622%2020.7238H3.45429Z'%20stroke='white'%20stroke-width='2.30263'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e",S7="data:image/svg+xml,%3csvg%20width='28'%20height='28'%20viewBox='0%200%2028%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17.8197%2014.8398L19.5639%2024.656C19.5834%2024.7715%2019.5672%2024.8903%2019.5174%2024.9965C19.4676%2025.1026%2019.3866%2025.191%2019.2852%2025.2498C19.1838%2025.3086%2019.0669%2025.3351%2018.95%2025.3257C18.8332%2025.3163%2018.722%2025.2714%2018.6313%2025.1971L14.5096%2022.1035C14.3107%2021.9548%2014.0689%2021.8745%2013.8206%2021.8745C13.5722%2021.8745%2013.3305%2021.9548%2013.1315%2022.1035L9.00289%2025.1959C8.91231%2025.2701%208.80125%2025.3149%208.68455%2025.3243C8.56784%2025.3338%208.45104%2025.3074%208.34971%2025.2487C8.24838%2025.1901%208.16735%2025.1019%208.11744%2024.996C8.06752%2024.8901%208.05109%2024.7715%208.07033%2024.656L9.81342%2014.8398'%20stroke='white'%20stroke-width='2.30263'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M13.8163%2016.1185C17.6315%2016.1185%2020.7242%2013.0258%2020.7242%209.21063C20.7242%205.3955%2017.6315%202.30273%2013.8163%202.30273C10.0012%202.30273%206.90845%205.3955%206.90845%209.21063C6.90845%2013.0258%2010.0012%2016.1185%2013.8163%2016.1185Z'%20stroke='white'%20stroke-width='2.30263'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e";function M7(){const r=[{icon:N7,title:"B.Sc Nursing",years:"4 Years Full-Time",seats:"~100 Seats",description:"Flagship undergraduate programme integrating theoretical lectures, practical labs, simulation, and clinical postings. Prepares students for both patient care and professional advancement."},{icon:k7,title:"General Nursing",years:"3 Years Full-Time",seats:"~60 Seats",description:"Diploma level programme providing comprehensive training in nursing fundamentals and midwifery practices, preparing students for immediate clinical roles."},{icon:S7,title:"M.Sc Nursing",years:"3 Years Full-Time",seats:"~60 Seats",description:"Specialization tracks include Medical-Surgical Nursing, Obstetrics & Gynaecological Nursing, Paediatric Nursing, Community Health Nursing, and Psychiatric Nursing."}];return s.jsxs(Q2,{bg:c.bg.white,children:[s.jsx("h2",{className:`
     ${c.font.family}
     ${c.font.weight.bold}
     text-[#223F7F]
@@ -1635,25 +1636,29 @@ to earn strong learning.`,button:"Explore Our Achievements",columns:[{heading:"C
           ${c.font.weight.regular}
           text-[15.79px]
           leading-[23.68px]
-        `,style:{color:c.color.extra.dark80},children:u})]})}const cf="/AsramWebsite-FE/assets/academicsbg-CY2UFibQ.svg",uf=()=>{const[r,u]=z.useState(!1);return s.jsxs(s.Fragment,{children:[!r&&s.jsx(Ma,{}),s.jsxs("section",{className:`
-          relative 
-          w-full 
-          h-[492px]
-          overflow-hidden
-          ${r?"opacity-100":"opacity-0"}
-          transition-opacity duration-500
-        `,children:[s.jsx("img",{loading:"eager",fetchpriority:"high",decoding:"async",src:cf,alt:"Nursing campus",onLoad:()=>u(!0),className:"absolute inset-0 w-full h-full object-cover"}),s.jsx("div",{className:"absolute inset-0",style:{backgroundColor:"rgba(0,0,0,0.30)"}}),s.jsx("div",{className:"absolute bottom-[102px] w-full",children:s.jsx("div",{className:`\r
-              w-full \r
-              max-w-[1440px] \r
-              mx-auto \r
-              px-4 sm:px-6 md:px-10 lg:px-[120px]\r
-            `,children:s.jsx("div",{className:"max-w-[1200px]",children:s.jsx("h1",{className:`
-                  ${ja.font.family}
-                  ${ja.font.weight.bold}
-                  text-[42px]
-                  leading-[52px]
-                  text-white
-                `,style:{maxWidth:"673px",color:ja.color.text.light},children:"Explore Our Nursing Programs"})})})})]})]})},df=()=>s.jsxs(s.Fragment,{children:[s.jsx(uf,{}),s.jsx(w5,{}),s.jsx(M5,{}),s.jsx(D5,{}),s.jsx(B5,{}),s.jsx(X5,{}),s.jsx(J5,{}),s.jsx(lf,{}),s.jsx(of,{}),s.jsx(yu,{})]}),ls=[{path:"/",label:"Home",element:s.jsx(C7,{})},{path:"/asram-home",label:"AsramHome",element:s.jsx(y7,{})},{path:"/academics",label:"Academics",element:s.jsx(df,{})},{path:"/nursing",label:"Nursing",element:s.jsx(Cu,{}),nursing:!0}],ff=()=>{const[r,u]=z.useState(!1),p=[{label:"Academics",path:"/academics"},{label:"Research",path:"/research"},{label:"Global & Community",path:"/community"},{label:"News",path:"/news"}];return s.jsxs(s.Fragment,{children:[s.jsx("div",{style:{backgroundColor:c.color.text.secondary},children:s.jsx("div",{className:`\r
+        `,style:{color:c.color.extra.dark80},children:u})]})}const cf="/AsramWebsite-FE/assets/academicsbg-CY2UFibQ.svg",uf=()=>{const[r,u]=z.useState(!1);return s.jsxs("section",{className:`\r
+        relative \r
+        w-full \r
+        h-[492px]\r
+        overflow-hidden\r
+      `,children:[s.jsxs("div",{className:"absolute inset-0 w-full h-full",children:[!r&&s.jsx("div",{className:"absolute inset-0 flex items-center justify-center bg-white z-[5]",children:s.jsx(Ma,{})}),s.jsx("img",{src:cf,alt:"Nursing campus",loading:"eager",fetchpriority:"high",decoding:"async",onLoad:()=>u(!0),className:`
+            absolute inset-0 
+            w-full h-full 
+            object-cover
+            transition-opacity duration-500
+            ${r?"opacity-100":"opacity-0"}
+          `})]}),s.jsx("div",{className:"absolute inset-0",style:{backgroundColor:"rgba(0,0,0,0.30)"}}),s.jsx("div",{className:"absolute bottom-[102px] w-full z-[10]",children:s.jsx("div",{className:`\r
+            w-full \r
+            max-w-[1440px] \r
+            mx-auto \r
+            px-4 sm:px-6 md:px-10 lg:px-[120px]\r
+          `,children:s.jsx("div",{className:"max-w-[1200px]",children:s.jsx("h1",{className:`
+                ${ja.font.family}
+                ${ja.font.weight.bold}
+                text-[42px]
+                leading-[52px]
+                text-white
+              `,style:{maxWidth:"673px",color:ja.color.text.light},children:"Explore Our Nursing Programs"})})})})]})},df=()=>s.jsxs(s.Fragment,{children:[s.jsx(uf,{}),s.jsx(w5,{}),s.jsx(M5,{}),s.jsx(D5,{}),s.jsx(B5,{}),s.jsx(X5,{}),s.jsx(J5,{}),s.jsx(lf,{}),s.jsx(of,{}),s.jsx(yu,{})]}),ls=[{path:"/",label:"Home",element:s.jsx(C7,{})},{path:"/asram-home",label:"AsramHome",element:s.jsx(y7,{})},{path:"/academics",label:"Academics",element:s.jsx(df,{})},{path:"/nursing",label:"Nursing",element:s.jsx(Cu,{}),nursing:!0}],ff=()=>{const[r,u]=z.useState(!1),p=[{label:"Academics",path:"/academics"},{label:"Research",path:"/research"},{label:"Global & Community",path:"/community"},{label:"News",path:"/news"}];return s.jsxs(s.Fragment,{children:[s.jsx("div",{style:{backgroundColor:c.color.text.secondary},children:s.jsx("div",{className:`\r
             w-full \r
             max-w-[1440px] \r
             mx-auto \r
