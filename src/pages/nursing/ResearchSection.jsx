@@ -54,7 +54,7 @@ export default function ResearchSection() {
   return (
     <PageSection
       bg="bg-white"
-      className="flex flex-col items-center"
+      paddingClass="py-[80px]"
     >
       {/* Heading */}
       <h2

@@ -8,8 +8,6 @@ export default function TwoColumnSection({
   image,
   paragraphs = [],
   children,
-  pt = "pt-[80px]",
-  pb = "pb-[80px]",
   bg = "bg-white",
   bgColor,
 }) {
@@ -17,7 +15,7 @@ export default function TwoColumnSection({
     <PageSection
       bg={bg}
       bgColor={bgColor}
-      className={`${pt} ${pb}`}
+   paddingClass="py-[80px]"
     >
       {/* Top Heading */}
       {title && (

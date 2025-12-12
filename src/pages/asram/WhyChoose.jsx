@@ -54,7 +54,10 @@ export default function WhyChooseAsram() {
   ];
 
   return (
-    <PageSection bg={T.bg.programCard}>
+      <PageSection 
+           bg={T.bg.programCard}
+                 paddingClass="py-[80px]"   // ⭐ Padding fully controlled here
+              >
 
       {/* Heading */}
       <h2

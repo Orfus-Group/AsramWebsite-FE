@@ -53,7 +53,7 @@ export default function KeyStrengthsSection() {
   ];
 
   return (
-    <PageSection bg={T.bg.white}>
+    <PageSection bg={T.bg.white} paddingClass="py-[80px] pb-[40px]">
       <div className="flex flex-col gap-[50px]">
         {/* TITLE */}
         <h2

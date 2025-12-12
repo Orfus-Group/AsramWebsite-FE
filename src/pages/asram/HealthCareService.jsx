@@ -41,7 +41,11 @@ const CARD_BORDER = "rgba(26, 24, 24, 0.10)";
 
 const HealthcareServices = () => {
   return (
-    <PageSection bg="transparent">
+       <PageSection 
+ bg="transparent"
+       paddingClass="py-[80px]"   // ⭐ Padding fully controlled here
+    >
+      
       {/* SECTION TITLE */}
       <h2
         className="

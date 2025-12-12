@@ -45,8 +45,8 @@ const NewsSection = ({
   bg = T.bg.programCard,
 }) => {
   return (
-    <PageSection bg={bg} id={id}>
-      <h2
+    <PageSection bg={bg} id={id} paddingClass="py-[80px]">
+      <h2 
         className={`
           ${T.font.weight.bold}
           text-[28px] sm:text-[36px] lg:text-[42px]

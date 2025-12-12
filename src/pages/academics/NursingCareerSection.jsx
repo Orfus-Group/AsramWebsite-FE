@@ -1,5 +1,8 @@
+// src/sections/academics/NursingCareerSection.jsx
 import React, { useEffect, useRef, useState } from "react";
 import { T } from "../../theme";
+
+import PageSection from "../../features/common/layout/PageContainer";
 
 import nursingcareer from "../../assets/academics/nursingcareer.svg";
 
@@ -10,82 +13,67 @@ import approvedprograms from "../../assets/academics/approvedprograms.svg";
 
 export default function NursingCareerSection() {
   return (
-    <section className={`w-full ${T.bg.programCard} py-[80px]`}>
+    <PageSection bg={T.bg.programCard} paddingClass="py-[80px]">
+      {/* SECTION TITLE */}
+      <h2
+        className={`
+          ${T.font.family}
+          ${T.font.weight.bold}
+          text-[42px]
+          leading-[46px]
+          text-[${T.color.secondary}]
+          mb-[60px]
+        `}
+      >
+        Shape Your Career in Nursing
+      </h2>
 
-      {/* ⭐ UNIFIED CONTAINER (Matches Hero/Header/Programs Offered) */}
+      {/* MAIN LAYOUT */}
       <div
         className="
           w-full
-          max-w-[1440px]
-          mx-auto
-          px-4 sm:px-6 md:px-10 lg:px-[120px]
-          flex flex-col
-          gap-[40px]
+          flex 
+          flex-col lg:flex-row
+          justify-between
+          gap-[30px]
+          lg:gap-[40px]
         "
       >
-
-        {/* SECTION TITLE */}
-        <h2
-          className={`
-            ${T.font.family}
-            ${T.font.weight.bold}
-            text-[42px]
-            leading-[46px]
-            text-[${T.color.secondary}]
-          `}
-        >
-          Shape Your Career in Nursing
-        </h2>
-
-        {/* ⭐ RESPONSIVE LAYOUT */}
+        {/* LEFT IMAGE */}
         <div
           className="
-            w-full
-            flex 
-            flex-col lg:flex-row
-            justify-between
-            gap-[30px]
-            lg:gap-[40px]
+            w-full 
+            lg:w-[563px]
+            h-[260px] sm:h-[300px] md:h-[340px] lg:h-[367px]
+            rounded-[8px]
+            overflow-hidden
           "
         >
-
-          {/* LEFT IMAGE */}
-          <div
-            className="
-              w-full 
-              lg:w-[563px]
-              h-[260px] sm:h-[300px] md:h-[340px] lg:h-[367px]
-              rounded-[8px]
-              overflow-hidden
-            "
-          >
-            <img loading="lazy" decoding="async"
+        <img loading="lazy" decoding="async"
               src={nursingcareer}
               alt="Nursing Career"
               className="w-full h-full object-cover"
             />
-          </div>
+        </div>
 
-          {/* RIGHT GRID */}
-          <div
-            className="
-              w-full 
-              lg:w-[590px]
-              grid 
-              grid-cols-2 
-              grid-rows-2 
-              gap-[10px]
-            "
-          >
-            <StatCard icon={excellence} value="20+" label="Years of Excellence" />
-            <StatCard icon={activestudents} value="377+" label="Active Students" />
-            <StatCard icon={performancesuccess} value="95%" label="Placement Success" />
-            <StatCard icon={approvedprograms} value="INC" label="Approved Programs" />
-          </div>
-
+        {/* RIGHT GRID */}
+        <div
+          className="
+            w-full 
+            lg:w-[590px]
+            grid 
+            grid-cols-2 
+            grid-rows-2 
+            gap-[10px]
+          "
+        >
+          <StatCard icon={excellence} value="20+" label="Years of Excellence" />
+          <StatCard icon={activestudents} value="377+" label="Active Students" />
+          <StatCard icon={performancesuccess} value="95%" label="Placement Success" />
+          <StatCard icon={approvedprograms} value="INC" label="Approved Programs" />
         </div>
       </div>
-    </section>
+    </PageSection>
   );
 }
 
@@ -132,7 +120,7 @@ function StatCard({ icon, value, label }) {
 }
 
 /* ------------------------------------------
-    COUNT-UP ANIMATION COMPONENT
+    COUNT-UP ANIMATION
 ------------------------------------------- */
 function AnimatedStatValue({ value, className, style }) {
   const [displayValue, setDisplayValue] = useState("0");

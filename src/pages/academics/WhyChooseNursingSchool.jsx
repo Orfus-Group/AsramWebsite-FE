@@ -1,5 +1,8 @@
+// src/sections/academics/WhyChooseNursingSchool.jsx
 import React from "react";
 import { T } from "../../theme";
+
+import PageSection from "../../features/common/layout/PageContainer";
 
 import hospitaltraining from "../../assets/academics/hospitaltraining.svg";
 import artFacilities from "../../assets/academics/art-facilities.svg";
@@ -49,125 +52,113 @@ const features = [
 
 export default function WhyChooseNursingSchool() {
   return (
-    <section className={`w-full ${T.bg.white} pt-[80px]`}>
+    <PageSection bg={T.bg.white} paddingClass="pt-[80px] pb-[40px]">
+      
+      {/* SECTION TITLE */}
+      <h2
+        className={`
+          ${T.font.family}
+          ${T.font.weight.bold}
+          text-[42px]
+          leading-[46px]
+          text-[${T.color.secondary}]
+          mb-[40px]
+        `}
+      >
+        Why Choose Our Nursing School
+      </h2>
 
-      {/* ⭐ UNIFIED LAYOUT CONTAINER (Same as Hero / Header / All sections) */}
+      {/* GRID */}
       <div
         className="
-          w-full 
-          max-w-[1440px] 
-          mx-auto 
-          px-4 sm:px-6 md:px-10 lg:px-[120px]
-          flex flex-col 
-          gap-[40px]
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-3
+          gap-[30px]
+          w-full
         "
       >
-
-        {/* SECTION TITLE */}
-        <h2
-          className={`
-            ${T.font.family}
-            ${T.font.weight.bold}
-            text-[42px]
-            leading-[46px]
-            text-[${T.color.secondary}]
-          `}
-        >
-          Why Choose Our Nursing School
-        </h2>
-
-        {/* ⭐ RESPONSIVE GRID */}
-        <div
-          className="
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            lg:grid-cols-3
-            gap-[30px]
-          "
-        >
-          {features.map((item, i) => (
+        {features.map((item, i) => (
+          <div
+            key={i}
+            className="
+              w-full
+              h-[430.16px]
+              bg-[#F7F9FC]
+              rounded-[8px]
+              p-[30px]
+              flex
+              flex-col
+              justify-between
+              border
+              border-[#1A18181A]
+            "
+          >
+            {/* ICON */}
             <div
-              key={i}
               className="
-                w-full
-                h-[430.16px]
-                bg-[#F7F9FC]
-                rounded-[8px]
-                p-[30px]
-                flex
-                flex-col
-                justify-between
-                border
-                border-[#1A18181A]
+                w-[63.16px] h-[63.16px]
+                flex items-center justify-center
+                rounded-[9.87px]
               "
+              style={{ backgroundColor: T.color.primary }}
             >
-              {/* ICON */}
-              <div
-                className="
-                  w-[63.16px] h-[63.16px]
-                  flex items-center justify-center
-                  rounded-[9.87px]
-                "
-                style={{ backgroundColor: T.color.primary }}
-              >
-                <img loading="lazy" decoding="async" src={item.icon} className="w-[28px] h-[28px]" />
-              </div>
-
-              {/* TITLE */}
-              <h3
-                className={`
-                  mt-[20px]
-                  ${T.font.family}
-                  ${T.font.weight.semibold}
-                  text-[24px]
-                  leading-[24px]
-                  text-[${T.color.secondary}]
-                `}
-              >
-                {item.title}
-              </h3>
-
-              {/* DESCRIPTION */}
-              <p
-                className={`
-                  mt-[14px]
-                  ${T.font.family}
-                  text-[18px]
-                  leading-[26px]
-                `}
-                style={{ color: T.color.text.muted }}
-              >
-                {item.desc}
-              </p>
-
-              {/* TAG */}
-              <div className="mt-[20px]">
-                <span
-                  className={`
-                    inline-flex items-center justify-center
-                    px-[16px] py-[6px]
-                    w-[193px] h-[48px]
-                    rounded-[8px]
-                    border
-                    text-[14px]
-                    ${T.font.family}
-                    ${T.font.weight.medium}
-                  `}
-                  style={{
-                    borderColor: T.color.border,
-                    backgroundColor: T.color.background.white,
-                    color: T.color.primary,
-                  }}
-                >
-                  {item.tag}
-                </span>
-              </div>
-
+                             <img loading="lazy" decoding="async" src={item.icon} className="w-[28px] h-[28px]" />
             </div>
-          ))}
-        </div>
+
+            {/* TITLE */}
+            <h3
+              className={`
+                mt-[20px]
+                ${T.font.family}
+                ${T.font.weight.semibold}
+                text-[24px]
+                leading-[24px]
+                text-[${T.color.secondary}]
+              `}
+            >
+              {item.title}
+            </h3>
+
+            {/* DESCRIPTION */}
+            <p
+              className={`
+                mt-[14px]
+                ${T.font.family}
+                text-[18px]
+                leading-[26px]
+              `}
+              style={{ color: T.color.text.muted }}
+            >
+              {item.desc}
+            </p>
+
+            {/* TAG */}
+            <div className="mt-[20px]">
+              <span
+                className={`
+                  inline-flex items-center justify-center
+                  px-[16px] py-[6px]
+                  w-[193px] h-[48px]
+                  rounded-[8px]
+                  border
+                  text-[14px]
+                  ${T.font.family}
+                  ${T.font.weight.medium}
+                `}
+                style={{
+                  borderColor: T.color.border,
+                  backgroundColor: T.color.background.white,
+                  color: T.color.primary,
+                }}
+              >
+                {item.tag}
+              </span>
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </PageSection>
   );
 }

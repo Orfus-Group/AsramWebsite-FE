@@ -6,7 +6,7 @@ import PageSection from "../../features/common/layout/PageContainer";
 
 const InsideASRAM = ({ title, image, quote }) => {
   return (
-    <PageSection bg="bg-white">
+    <PageSection bg="bg-white" paddingClass="py-[80px]">
 
       {/* TITLE — unchanged */}
       <h2

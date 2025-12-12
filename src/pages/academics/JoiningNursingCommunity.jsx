@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { T } from "../../theme";
 
+import PageSection from "../../features/common/layout/PageContainer";
+
 import location from "../../assets/academics/location.svg";
 import phoneicon from "../../assets/academics/phoneicon.svg";
 import emailicon from "../../assets/academics/emailicon.svg";
@@ -9,146 +11,144 @@ import Button from "../../components/ui/button";
 
 export default function JoinOurNursingCommunity() {
   return (
-    <section className={`w-full ${T.bg.white} py-[60px] ${T.font.family} flex justify-center`}>
-      
-      {/* ⭐ UNIFIED BASELINE CONTAINER (Matches Hero + Header) */}
-      <div 
+    <PageSection
+      bg={T.bg.white}
+      paddingClass="py-[100px]"   // ⭐ SAME PADDING AS NursingCareerSection
+      sectionClassName="flex justify-center"
+      className="flex flex-col gap-[40px]"
+    >
+      {/* ---------------- HEADING ---------------- */}
+      <h2
+        className={`
+          ${T.font.family}
+          ${T.font.weight.bold}
+          text-[42px]
+          leading-[52px]
+          text-[${T.color.secondary}]
+        `}
+      >
+        Join Our Nursing Community
+      </h2>
+
+      {/* ---------------- BUTTON ROW ---------------- */}
+      <div
         className="
-          w-full 
-          max-w-[1440px] 
-          mx-auto 
-          px-4 sm:px-6 md:px-10 lg:px-[120px]
-          flex flex-col
+          flex flex-wrap
+          justify-center
+          gap-[18px]
+          mt-[20px]
         "
       >
-
-        {/* HEADING */}
-        <h2
-          className={`
-            ${T.font.family}
-            ${T.font.weight.bold}
-            text-[42px]
-            leading-[52px]
-            text-[${T.color.secondary}]
-          `}
+        <Button
+          customPadding="px-[39px] py-[18px]"
+          bg={T.color.primary}
+          color="white"
+          rounded="9.87px"
+          textSize="text-[15.79px]"
+          leading="leading-[23.68px]"
+          height="60px"
+          icon={<img src={rightarrow} className="w-[19.74px] h-[19.74px]" />}
         >
-          Join Our Nursing Community
-        </h2>
+          Start Your Application
+        </Button>
 
-        {/* ⭐ BUTTON ROW — FULLY RESPONSIVE */}
-        <div
-          className="
-            mt-[35px]
-            flex flex-wrap justify-center
-            gap-[18px]
-            w-full
-          "
+        <Button
+          customPadding="px-[39.47px] py-[15.79px]"
+          bg={T.color.background.programCard}
+          color={T.color.secondary}
+          rounded="9.87px"
+          textSize="text-[15.79px]"
+          leading="leading-[23.68px]"
+          height="59.21px"
         >
-          {/* PRIMARY BUTTON */}
-          <Button
-            customPadding="px-[39px] py-[18px]"
-            bg={T.color.primary}
-            color="white"
-            font={T.font.family}
-            rounded="9.87px"
-            textSize="text-[15.79px]"
-            leading="leading-[23.68px]"
-            gap="12px"
-            height="60px"
-            icon={<img loading="lazy" decoding="async" src={rightarrow} className="w-[19.74px] h-[19.74px]" />}
-          >
-            Start Your Application
-          </Button>
+          Explore Programs
+        </Button>
 
-          {/* SECONDARY BUTTON */}
-          <Button
-            customPadding="px-[39.47px] py-[15.79px]"
-            bg={T.color.background.programCard}
-            font={T.font.family}
-            color={T.color.secondary}
-            rounded="9.87px"
-            textSize="text-[15.79px]"
-            leading="leading-[23.68px]"
-            height="59.21px"
-          >
-            Explore Programs
-          </Button>
-
-          {/* OUTLINED BUTTON */}
-          <Button
-            customPadding="px-[39.47px] py-[15.79px]"
-            bg={T.color.extra.dark10}
-            color={T.color.dark}
-            rounded="9.87px"
-            borderColor={T.color.extra.dark10}
-            borderWidth="2px"
-            textSize="text-[15.79px]"
-            leading="leading-[23.68px]"
-            height="59.21px"
-          >
-            Visit Website
-          </Button>
-        </div>
-
-        {/* ⭐ CONTACT CARDS — RESPONSIVE GRID */}
-        <div
-          className="
-            mt-[50px]
-            grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
-            gap-[23.68px]
-            w-full
-          "
+        <Button
+          customPadding="px-[39.47px] py-[15.79px]"
+          bg={T.color.extra.dark10}
+          color={T.color.dark}
+          rounded="9.87px"
+          borderColor={T.color.extra.dark10}
+          borderWidth="2px"
+          textSize="text-[15.79px]"
+          leading="leading-[23.68px]"
+          height="59.21px"
         >
-          <ContactCard
-            icon={location}
-            title="Visit Campus"
-            subtitle1="ASRAM Campus"
-            subtitle2="Eluru, Andhra Pradesh"
-          />
-
-          <ContactCard
-            icon={phoneicon}
-            title="Call Us"
-            subtitle1="Admissions Office"
-            subtitle2="Contact via asram.in"
-          />
-
-          <ContactCard
-            icon={emailicon}
-            title="Email Us"
-            subtitle1="For admission inquiries"
-            subtitle2="See official website"
-          />
-        </div>
-
-        {/* ⭐ STATISTICS ROW — RESPONSIVE */}
-        <div
-          className="
-            mt-[60px]
-            grid grid-cols-2 sm:grid-cols-4
-            text-center
-            w-full
-          "
-        >
-          <StatBlock count="20+" label="Years of Excellence" />
-          <StatBlock count="190+" label="Total Seats" />
-          <StatBlock count="56+" label="Expert Faculty" />
-          <StatBlock count="INC" label="Approved" />
-        </div>
-
+          Visit Website
+        </Button>
       </div>
-    </section>
+
+      {/* ---------------- CONTACT CARDS ---------------- */}
+      <div
+        className="
+          grid 
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-3
+          gap-[22px]      /* ⭐ REALISTIC GAP WORKS NOW */
+          mt-[40px]
+        "
+      >
+        <ContactCard
+          icon={location}
+          title="Visit Campus"
+          subtitle1="ASRAM Campus"
+          subtitle2="Eluru, Andhra Pradesh"
+        />
+
+        <ContactCard
+          icon={phoneicon}
+          title="Call Us"
+          subtitle1="Admissions Office"
+          subtitle2="Contact via asram.in"
+        />
+
+        <ContactCard
+          icon={emailicon}
+          title="Email Us"
+          subtitle1="For admission inquiries"
+          subtitle2="See official website"
+        />
+      </div>
+
+      {/* ---------------- DIVIDER ---------------- */}
+      <div
+        className="w-full mt-[40px]"
+        style={{ borderTop: `1px solid ${T.color.border}` }}
+      />
+
+      {/* ---------------- STATISTICS ---------------- */}
+      <div
+        className="
+          grid grid-cols-2 sm:grid-cols-4
+          text-center
+          mt-[40px]
+          gap-[24px]
+        "
+      >
+        <StatBlock count="20+" label="Years of Excellence" />
+        <StatBlock count="190+" label="Total Seats" />
+        <StatBlock count="56+" label="Expert Faculty" />
+        <StatBlock count="INC" label="Approved" />
+      </div>
+    </PageSection>
   );
 }
 
-/* ---------------- CONTACT CARD ---------------- */
+/* =========================================================
+   CONTACT CARD COMPONENT — CLEANED + RESPONSIVE
+========================================================= */
 function ContactCard({ icon, title, subtitle1, subtitle2 }) {
   return (
     <div
       className="
         flex flex-col items-center justify-center
-        rounded-[9.87px] p-[20px]
-        h-[195.39px]
+        rounded-[9.87px]
+        p-[20px]
+        max-w-[321px]
+        w-full            /* ⭐ prevents huge grid gaps */
+        h-[195px]
       "
       style={{ backgroundColor: T.color.background.programCard }}
     >
@@ -159,7 +159,7 @@ function ContactCard({ icon, title, subtitle1, subtitle2 }) {
         "
         style={{ backgroundColor: T.color.primary }}
       >
-        <img loading="lazy" decoding="async" src={icon} className="w-[23.68px] h-[23.68px]" />
+        <img loading="lazy" src={icon} className="w-[23.68px] h-[23.68px]" />
       </div>
 
       <h3
@@ -186,7 +186,9 @@ function ContactCard({ icon, title, subtitle1, subtitle2 }) {
   );
 }
 
-/* ---------------- STAT BLOCK ---------------- */
+/* =========================================================
+   STAT BLOCK COMPONENT (same)
+========================================================= */
 function StatBlock({ count, label }) {
   const [displayValue, setDisplayValue] = useState("0");
   const ref = useRef(null);

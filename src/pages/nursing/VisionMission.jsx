@@ -31,11 +31,10 @@ export default function VisionMissionSection() {
   return (
     <PageSection
       bg="bg-[#F7F9FC]"
-      sectionClassName="relative"
-      className="flex flex-col gap-[60px]"
+      paddingClass="py-[80px]"
     >
       {/* Heading */}
-      <h2 className="font-montserrat font-bold text-[36px] leading-[48px] tracking-[0px] text-[#223F7F] w-full">
+      <h2 className="font-montserrat font-bold text-[36px] leading-[48px] mb-[40px] tracking-[0px] text-[#223F7F] w-full">
         Vision, Mission & Values
       </h2>
 

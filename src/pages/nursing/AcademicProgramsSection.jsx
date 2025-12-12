@@ -35,7 +35,7 @@ export default function AcademicProgramsSection() {
   ];
 
   return (
-    <PageSection bg={T.bg.white}>
+    <PageSection bg={T.bg.white} paddingClass="py-[80px]">
       
       {/* ========================= HEADING ========================= */}
    <h2

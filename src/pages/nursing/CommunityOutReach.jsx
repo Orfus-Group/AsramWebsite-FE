@@ -41,10 +41,9 @@ export default function CommunityOutreachSection() {
   return (
     <TwoColumnSection
       title="Social Commitment"
+      bgColor="#F7F9FC"
       innerHeading="Service-Oriented Education"
       image={outreachImg}
-      pt="pt-[80px]"
-      pb="pb-[60px]"
       paragraphs={[
         "As part of the ASRAM educational society, the nursing school actively participates in health camps, rural outreach, and community health programmes—aligning education with service to society.",
         "The focus on holistic development includes instilling ethics, empathy, and a service-oriented mindset among nursing students, preparing them to serve diverse communities with compassion and dedication.",

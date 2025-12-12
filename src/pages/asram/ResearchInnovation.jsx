@@ -5,7 +5,7 @@ import PageSection from "../../features/common/layout/PageContainer";
 
 const ResearchInnovation = ({ title, description1, image }) => {
   return (
-    <PageSection bg="bg-white">
+    <PageSection bg="bg-white" paddingClass="py-[80px]">
 
       {/* TITLE — preserved exactly */}
       <h2

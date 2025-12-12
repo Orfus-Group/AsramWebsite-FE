@@ -5,7 +5,7 @@ import PageSection from "../../features/common/layout/PageContainer";
 
 export default function WhyChooseSection() {
   return (
-    <PageSection bg="bg-white">
+    <PageSection bg="bg-white" paddingClass="py-[40px] mb-[40px]">
       {/* Centered outer box as per Figma */}
       <div className="w-full flex flex-col items-center">
         <div

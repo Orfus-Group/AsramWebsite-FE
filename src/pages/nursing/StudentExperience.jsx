@@ -33,7 +33,7 @@ export default function StudentExperience() {
   ];
 
   return (
-    <PageSection bg="bg-[#F7F9FC]">
+    <PageSection bg="bg-[#F7F9FC]" paddingClass="py-[80px]">
       {/* Heading */}
       <div className="flex flex-col gap-[8px] w-full mb-[32px] md:mb-[40px]">
         <h2 className="font-montserrat font-bold text-[28px] md:text-[32px] lg:text-[36px] leading-[38px] md:leading-[44px] lg:leading-[48px] text-[#223F7F]">

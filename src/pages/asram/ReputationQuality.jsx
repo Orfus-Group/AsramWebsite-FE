@@ -6,7 +6,10 @@ import PageSection from "../../features/common/layout/PageContainer";
 
 const ReputationQuality = () => {
   return (
-    <PageSection bg="bg-white">
+<PageSection 
+  bg="bg-white"
+  paddingClass="py-[80px]"   // ⭐ Explicit padding
+>
       {/* INNER LAYOUT (UNCHANGED DESIGN) */}
       <div
         className="

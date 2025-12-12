@@ -62,12 +62,9 @@ const ctaColors = {
 
 const InstitutionsSection = () => {
   return (
-  <PageSection
+  <PageSection 
   bg="bg-[rgba(34,63,127,0.05)]"
-  sectionClassName="
-    relative
-    py-[10px]      /* Mobile reduced */
-  "
+  paddingClass="py-[80px]"   // ⭐ Explicit padding
 >
 
       {/* Decorative floating element */}

@@ -87,6 +87,7 @@ export default function StudentVoices() {
                   ${T.font.family}
                   text-[18px]
                   leading-[26px]
+                  mb-[20px]
                 `}
                 style={{ color: T.color.text.grayish }}
               >
