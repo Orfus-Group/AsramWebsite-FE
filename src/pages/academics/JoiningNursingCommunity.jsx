@@ -13,8 +13,7 @@ export default function JoinOurNursingCommunity() {
   return (
     <PageSection
       bg={T.bg.white}
-      paddingClass="py-[100px]"   // ⭐ SAME PADDING AS NursingCareerSection
-      sectionClassName="flex justify-center"
+      paddingClass="py-[80px]"
       className="flex flex-col gap-[40px]"
     >
       {/* ---------------- HEADING ---------------- */}
@@ -30,15 +29,8 @@ export default function JoinOurNursingCommunity() {
         Join Our Nursing Community
       </h2>
 
-      {/* ---------------- BUTTON ROW ---------------- */}
-      <div
-        className="
-          flex flex-wrap
-          justify-center
-          gap-[18px]
-          mt-[20px]
-        "
-      >
+      {/* ---------------- BUTTONS ---------------- */}
+      <div className="flex flex-wrap justify-center gap-[18px] mt-[40px]">
         <Button
           customPadding="px-[39px] py-[18px]"
           bg={T.color.primary}
@@ -79,15 +71,15 @@ export default function JoinOurNursingCommunity() {
         </Button>
       </div>
 
-      {/* ---------------- CONTACT CARDS ---------------- */}
+      {/* ---------------- CONTACT CARDS (FIGMA EXACT) ---------------- */}
       <div
         className="
-          grid 
+          grid
           grid-cols-1
           sm:grid-cols-2
           lg:grid-cols-3
-          gap-[22px]      /* ⭐ REALISTIC GAP WORKS NOW */
           mt-[40px]
+          place-items-center
         "
       >
         <ContactCard
@@ -112,19 +104,17 @@ export default function JoinOurNursingCommunity() {
         />
       </div>
 
-      {/* ---------------- DIVIDER ---------------- */}
-      <div
-        className="w-full mt-[40px]"
-        style={{ borderTop: `1px solid ${T.color.border}` }}
-      />
+      {/* LINE DIVIDER */}
+      <div className="w-full mt-[40px] border-t" style={{ borderColor: "#E5E5E5" }} />
 
-      {/* ---------------- STATISTICS ---------------- */}
+      {/* ---------------- STATISTICS (EXACT SPACING) ---------------- */}
       <div
         className="
-          grid grid-cols-2 sm:grid-cols-4
+          grid
+          grid-cols-4
           text-center
-          mt-[40px]
           gap-[24px]
+          place-items-center
         "
       >
         <StatBlock count="20+" label="Years of Excellence" />
@@ -137,29 +127,32 @@ export default function JoinOurNursingCommunity() {
 }
 
 /* =========================================================
-   CONTACT CARD COMPONENT — CLEANED + RESPONSIVE
+   CONTACT CARD EXACT FIGMA STYLE
 ========================================================= */
 function ContactCard({ icon, title, subtitle1, subtitle2 }) {
   return (
     <div
       className="
-        flex flex-col items-center justify-center
+        flex flex-col
+        items-center justify-center
+        text-center
         rounded-[9.87px]
         p-[20px]
-        max-w-[321px]
-        w-full            /* ⭐ prevents huge grid gaps */
+        w-[321px]
         h-[195px]
       "
-      style={{ backgroundColor: T.color.background.programCard }}
+      style={{ backgroundColor: "#F7F9FC" }}
     >
       <div
         className="
-          w-[55.26px] h-[55.26px] rounded-full
-          flex items-center justify-center mb-[16px]
+          w-[55.26px] h-[55.26px]
+          rounded-full
+          flex items-center justify-center
+          mb-[16px]
         "
         style={{ backgroundColor: T.color.primary }}
       >
-        <img loading="lazy" src={icon} className="w-[23.68px] h-[23.68px]" />
+        <img src={icon} className="w-[23.68px] h-[23.68px]" />
       </div>
 
       <h3
@@ -175,7 +168,7 @@ function ContactCard({ icon, title, subtitle1, subtitle2 }) {
       </h3>
 
       <p
-        className="text-[14px] leading-[20px] mt-[6px] text-center"
+        className="text-[14px] leading-[20px] mt-[6px]"
         style={{ color: T.color.extra.dark80 }}
       >
         {subtitle1}
@@ -187,7 +180,10 @@ function ContactCard({ icon, title, subtitle1, subtitle2 }) {
 }
 
 /* =========================================================
-   STAT BLOCK COMPONENT (same)
+   STAT BLOCK — EXACT FIGMA POSITIONING
+========================================================= */
+/* =========================================================
+   STAT BLOCK — FIGMA LAYOUT + ORIGINAL ANIMATION RESTORED
 ========================================================= */
 function StatBlock({ count, label }) {
   const [displayValue, setDisplayValue] = useState("0");
@@ -197,16 +193,17 @@ function StatBlock({ count, label }) {
   useEffect(() => {
     const target = ref.current;
 
-    const run = (entries) => {
-      if (entries[0].isIntersecting && !hasAnimated.current) {
-        hasAnimated.current = true;
-        animate();
-      }
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          animate();
+        }
+      },
+      { threshold: 0.4 }
+    );
 
-    const observer = new IntersectionObserver(run, { threshold: 0.4 });
     if (target) observer.observe(target);
-
     return () => observer.disconnect();
   }, []);
 
@@ -225,7 +222,6 @@ function StatBlock({ count, label }) {
     const tick = (now) => {
       const progress = Math.min((now - start) / duration, 1);
       const current = Math.floor(progress * number);
-
       setDisplayValue(current + suffix);
 
       if (progress < 1) requestAnimationFrame(tick);
@@ -235,14 +231,13 @@ function StatBlock({ count, label }) {
   };
 
   return (
-    <div className="flex flex-col items-center" ref={ref}>
+    <div className="flex flex-col items-center text-center" ref={ref}>
       <span
         className={`
           ${T.font.family}
           ${T.font.weight.bold}
           text-[35.53px]
           leading-[39.47px]
-          mb-[5px]
           text-[${T.color.secondary}]
         `}
       >
@@ -252,7 +247,6 @@ function StatBlock({ count, label }) {
       <span
         className={`
           ${T.font.family}
-          ${T.font.weight.regular}
           text-[15.79px]
           leading-[23.68px]
         `}
@@ -263,3 +257,4 @@ function StatBlock({ count, label }) {
     </div>
   );
 }
+
