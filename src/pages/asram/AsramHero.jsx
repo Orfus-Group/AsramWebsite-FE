@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import heroBg from "@/assets/asram/asramherobanner.svg";
 import PageSection from "@/features/common/layout/PageContainer";
 
 
 const AsramHero = () => {
-  const [loaded, setLoaded] = useState(false);
 
   return (
     <section
@@ -31,15 +30,12 @@ const AsramHero = () => {
           alt="Asram Campus"
           loading="eager"
           fetchPriority="high"
-          decoding="async"
-          onLoad={() => setLoaded(true)}
-          className={`
+          decoding="sync"
+          className="
             w-full h-full object-cover
             object-[50%_30%]
             sm:object-center
-            transition-opacity duration-500
-            ${loaded ? "opacity-100" : "opacity-0"}
-          `}
+          "
         />
       </div>
 

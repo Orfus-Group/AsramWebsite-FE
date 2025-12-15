@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { T } from "@/theme";
 import ResearchHerobg from "@/assets/research/researchherobg.svg";
 
 
 const ResearchHero = () => {
-  const [loaded, setLoaded] = useState(false);
 
   return (
     <section className="relative w-full overflow-hidden">
@@ -22,15 +21,12 @@ const ResearchHero = () => {
           alt="Research & Innovation"
           loading="eager"
           fetchPriority="high"
-          decoding="async"
-          onLoad={() => setLoaded(true)}
-          className={`
+          decoding="sync"
+          className="
             absolute inset-0
             w-full h-full
             object-cover
-            transition-opacity duration-500
-            ${loaded ? "opacity-100" : "opacity-0"}
-          `}
+          "
         />
 
         {/* Dark Overlay (always visible) */}

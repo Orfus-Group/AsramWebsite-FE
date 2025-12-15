@@ -19,11 +19,11 @@ const NewsCard = ({
       <h3 className="text-white font-semibold text-lg sm:text-xl leading-snug mb-3">{title}</h3>
 
       {showMeta && (
-        <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-white/90 text-xs sm:text-sm">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-dark/90 text-xs sm:text-sm">
           {meta.map((item) => (
-            <span key={item.label} className="flex items-center gap-1">
-               {/* {item.icon} */}
-              {item.icon && <img loading="lazy" decoding="async" src={item.icon} className="w-4 h-4 sm:w-[16px] sm:h-[16px]" alt="" />}
+            <span key={item.label} className="flex font-medium text-[16px] items-center gap-1">
+               {item.icon}
+              {/* {item.icon && <img loading="lazy" decoding="async" src={item.icon} className="w-4 h-4 sm:w-[16px] sm:h-[16px]" alt="" />} */}
               {item.label}
             </span>
           ))}

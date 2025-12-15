@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import heroBg from "@/assets/nursing/herobgimage.svg";
 import { T } from "@/theme";
 
 import CarouselSlideIcon from "@/assets/icons/CarouselSlideIcon";
 
 const NursingHero = () => {
-  const [loaded, setLoaded] = useState(false);
+
 
   return (
     <section
@@ -36,15 +36,12 @@ const NursingHero = () => {
           src={heroBg}
           loading="eager"
           fetchPriority="high"
-          decoding="async"
+          decoding="sync"
           alt="Nursing campus"
-          onLoad={() => setLoaded(true)}
           className={`
             absolute inset-0
             w-full h-full
             object-cover object-center
-            transition-opacity duration-500
-            ${loaded ? "opacity-100" : "opacity-0"}
           `}
         />
       </div>
@@ -119,9 +116,9 @@ const NursingHero = () => {
 
 
       {/* SLIDER DOTS */}
-<div className="hidden md:block">
-  <CarouselSlideIcon activeIndex={0} />
-</div>
+      <div className="hidden md:block">
+        <CarouselSlideIcon activeIndex={0} />
+      </div>
     </section>
   );
 };
