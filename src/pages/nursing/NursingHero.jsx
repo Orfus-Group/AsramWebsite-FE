@@ -119,8 +119,9 @@ const NursingHero = () => {
 
 
       {/* SLIDER DOTS */}
-      <CarouselSlideIcon activeIndex={0} />
-
+<div className="hidden md:block">
+  <CarouselSlideIcon activeIndex={0} />
+</div>
     </section>
   );
 };

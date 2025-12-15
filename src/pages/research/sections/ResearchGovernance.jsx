@@ -87,7 +87,7 @@ const ResearchGovernance = () => {
             className="flex flex-col rounded-[10.4px] border border-[rgba(7,7,7,0.2)] overflow-hidden hover:shadow-lg transition-shadow"
           >
             {/* Header */}
-            <div className="p-[30px] pb-6" style={{ background: "rgba(0, 140, 140, 0.1)" }}>
+            <div className="p-[24px] md:p-[30px] pb-6" style={{ background: "rgba(0, 140, 140, 0.1)" }}>
               <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-5">
                 {item.icon}
               </div>
@@ -102,7 +102,7 @@ const ResearchGovernance = () => {
             </div>
 
             {/* Body */}
-            <div className="bg-white p-[30px] flex flex-col flex-grow">
+            <div className="bg-white p-[24px] md:p-[30px] flex flex-col flex-grow">
               <p className="text-[15px] text-gray-600 leading-relaxed mb-8 flex-grow">
                 {item.desc}
               </p>

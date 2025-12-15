@@ -18,7 +18,7 @@ const ResearchPage = () => {
     return (
         <>
             <ResearchHero />
-            {/* <ResearchOverview />
+            <ResearchOverview />
             <ResearchPriorities />
             <ResearchGovernance />
             <ResearchPolicies />
@@ -30,7 +30,7 @@ const ResearchPage = () => {
             <ResearchCollaborations />
             <ResearchPatentsAndInnovations />
             <ResearchResources />
-            <ResearchContactAndSupport /> */}
+            <ResearchContactAndSupport />
         </>
     );
 };

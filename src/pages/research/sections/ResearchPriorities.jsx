@@ -167,9 +167,9 @@ export const PublicHealthIcon = ({
 
 const ClinicalTrialsIcon = ({ size = 24, color = "currentColor", strokeWidth = 2 }) => (
   <BaseIcon size={size}>
-<path d="M14 2V8C13.9998 8.33548 14.0841 8.66561 14.245 8.96L19.755 19.04C19.9216 19.3446 20.0061 19.6874 20.0001 20.0345C19.9941 20.3817 19.8979 20.7213 19.7208 21.02C19.5437 21.3187 19.2919 21.5661 18.9902 21.7379C18.6885 21.9098 18.3472 22.0001 18 22H5.99997C5.65275 22.0001 5.31149 21.9098 5.00976 21.7379C4.70804 21.5661 4.45625 21.3187 4.27916 21.02C4.10208 20.7213 4.0058 20.3817 3.99981 20.0345C3.99382 19.6874 4.07831 19.3446 4.24497 19.04L9.75497 8.96C9.91587 8.66561 10.0001 8.33548 9.99997 8V2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M6.45312 15H17.5471" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8.5 2H15.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M14 2V8C13.9998 8.33548 14.0841 8.66561 14.245 8.96L19.755 19.04C19.9216 19.3446 20.0061 19.6874 20.0001 20.0345C19.9941 20.3817 19.8979 20.7213 19.7208 21.02C19.5437 21.3187 19.2919 21.5661 18.9902 21.7379C18.6885 21.9098 18.3472 22.0001 18 22H5.99997C5.65275 22.0001 5.31149 21.9098 5.00976 21.7379C4.70804 21.5661 4.45625 21.3187 4.27916 21.02C4.10208 20.7213 4.0058 20.3817 3.99981 20.0345C3.99382 19.6874 4.07831 19.3446 4.24497 19.04L9.75497 8.96C9.91587 8.66561 10.0001 8.33548 9.99997 8V2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M6.45312 15H17.5471" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M8.5 2H15.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 
   </BaseIcon>
 );
@@ -179,17 +179,17 @@ const ClinicalTrialsIcon = ({ size = 24, color = "currentColor", strokeWidth = 2
 
 const GenomicsIcon = ({ size = 24, color = "currentColor", strokeWidth = 2 }) => (
   <BaseIcon size={size}>
-<path d="M10 16L11.5 17.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M14 8L12.5 6.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M14.9999 2C13.2019 3.998 12.4819 5.995 12.1929 7.993" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16.5 10.5L17.5 11.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16.9999 6.00038L14.1089 3.10938" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M2 15C8.667 9 15.333 15 22 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 9L20.891 9.891" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M3.10913 14.1094L4.00013 15.0004" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M6.5 12.5L7.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M7 18L9.891 20.891" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M9 21.9989C10.798 20.0009 11.518 18.0039 11.807 16.0059" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10 16L11.5 17.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M14 8L12.5 6.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M14.9999 2C13.2019 3.998 12.4819 5.995 12.1929 7.993" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M16.5 10.5L17.5 11.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M16.9999 6.00038L14.1089 3.10938" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M2 15C8.667 9 15.333 15 22 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M20 9L20.891 9.891" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M3.10913 14.1094L4.00013 15.0004" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M6.5 12.5L7.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M7 18L9.891 20.891" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M9 21.9989C10.798 20.0009 11.518 18.0039 11.807 16.0059" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 
   </BaseIcon>
 );
@@ -199,8 +199,8 @@ const GenomicsIcon = ({ size = 24, color = "currentColor", strokeWidth = 2 }) =>
 
 const PatientSafetyIcon = ({ size = 24, color = "currentColor", strokeWidth = 2 }) => (
   <BaseIcon size={size}>
-<path d="M15.477 12.8887L16.992 21.4147C17.009 21.5151 16.9949 21.6183 16.9516 21.7104C16.9084 21.8026 16.838 21.8794 16.7499 21.9305C16.6619 21.9816 16.5603 22.0046 16.4588 21.9964C16.3573 21.9882 16.2607 21.9492 16.182 21.8847L12.602 19.1977C12.4292 19.0686 12.2192 18.9988 12.0035 18.9988C11.7878 18.9988 11.5778 19.0686 11.405 19.1977L7.819 21.8837C7.74032 21.9481 7.64386 21.987 7.54249 21.9952C7.44112 22.0034 7.33967 21.9805 7.25166 21.9295C7.16365 21.8786 7.09327 21.802 7.04991 21.71C7.00656 21.618 6.99228 21.515 7.009 21.4147L8.523 12.8887" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 14C15.3137 14 18 11.3137 18 8C18 4.68629 15.3137 2 12 2C8.68629 2 6 4.68629 6 8C6 11.3137 8.68629 14 12 14Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M15.477 12.8887L16.992 21.4147C17.009 21.5151 16.9949 21.6183 16.9516 21.7104C16.9084 21.8026 16.838 21.8794 16.7499 21.9305C16.6619 21.9816 16.5603 22.0046 16.4588 21.9964C16.3573 21.9882 16.2607 21.9492 16.182 21.8847L12.602 19.1977C12.4292 19.0686 12.2192 18.9988 12.0035 18.9988C11.7878 18.9988 11.5778 19.0686 11.405 19.1977L7.819 21.8837C7.74032 21.9481 7.64386 21.987 7.54249 21.9952C7.44112 22.0034 7.33967 21.9805 7.25166 21.9295C7.16365 21.8786 7.09327 21.802 7.04991 21.71C7.00656 21.618 6.99228 21.515 7.009 21.4147L8.523 12.8887" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M12 14C15.3137 14 18 11.3137 18 8C18 4.68629 15.3137 2 12 2C8.68629 2 6 4.68629 6 8C6 11.3137 8.68629 14 12 14Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 
   </BaseIcon>
 );
@@ -243,52 +243,52 @@ const priorities = [
 
 
 const ResearchPriorities = () => {
-    return (
-        <PageSection bgColor="#d8dfef" paddingClass="py-[80px]">
-            <div className="flex flex-col items-start mb-10">
-                <h2 className={`${T.font.family} font-bold text-[42px] text-[#223f7f]`}>
-                    Research Priorities
-                </h2>
+  return (
+    <PageSection bgColor="#d8dfef" paddingClass="py-[80px]">
+      <div className="flex flex-col items-start mb-10">
+        <h2 className={`${T.font.family} font-bold text-[42px] text-[#223f7f]`}>
+          Research Priorities
+        </h2>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+        {priorities.map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-start bg-white p-[24px] md:p-[30px] rounded-[12px] shadow-sm hover:shadow-md transition-shadow h-full"
+          >
+            {/* Icon Box */}
+            <div className="w-[50px] h-[50px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-5 shrink-0">
+              {item.icon}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
-                {priorities.map((item, index) => (
-                    <div
-                        key={index}
-                        className="flex flex-col items-start bg-white p-[30px] rounded-[12px] shadow-sm hover:shadow-md transition-shadow h-full"
-                    >
-                        {/* Icon Box */}
-                        <div className="w-[50px] h-[50px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-5 shrink-0">
-                            {item.icon}
-                        </div>
+            {/* Title */}
+            <h3 className={`${T.font.family} font-bold text-[22px] text-[#223f7f] mb-3 leading-tight`}>
+              {item.title}
+            </h3>
 
-                        {/* Title */}
-                        <h3 className={`${T.font.family} font-bold text-[22px] text-[#223f7f] mb-3 leading-tight`}>
-                            {item.title}
-                        </h3>
+            {/* Description */}
+            <p className={`${T.font.family} max-w-[344px] text-[18px] leading-[1.44]`} style={{ color: "rgba(25, 25, 25, 0.75)" }}>
+              {item.desc}
+            </p>
+          </div>
+        ))}
+      </div>
 
-                        {/* Description */}
-                        <p className={`${T.font.family} max-w-[344px] text-[18px] leading-[1.44]`} style={{ color: "rgba(25, 25, 25, 0.75)" }}>
-                            {item.desc}
-                        </p>
-                    </div>
-                ))}
-            </div>
+      {/* Button */}
+      <div className="flex justify-center mt-12">
+        <button className="bg-[#008c8c] hover:bg-[#007A7A] text-white px-8 py-3 rounded-[10px] font-regular text-[18px] flex items-center gap-2 transition-colors">
+          Explore Research Areas in Detail
+          <IconArrowRight
+            size={19}
+            stroke="white"
+            strokeWidth={2}
+          />
 
-            {/* Button */}
-            <div className="flex justify-center mt-12">
-                <button className="bg-[#008c8c] hover:bg-[#007A7A] text-white px-8 py-3 rounded-[10px] font-regular text-[18px] flex items-center gap-2 transition-colors">
-                    Explore Research Areas in Detail
-                    <IconArrowRight
-                        size={19}
-                        stroke="white"
-                        strokeWidth={2}
-                    />
-
-                </button>
-            </div>
-        </PageSection>
-    );
+        </button>
+      </div>
+    </PageSection>
+  );
 };
 
 export default ResearchPriorities;

@@ -47,7 +47,7 @@ const AsramLatestPage = () => {
         image={ResearchIcon}
       />
 
-      <AsramFooterLat />
+      {/* <AsramFooterLat /> */}
     </>
   );
 };
