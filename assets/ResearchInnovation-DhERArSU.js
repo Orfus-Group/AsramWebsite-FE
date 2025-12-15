@@ -1,4 +1,4 @@
-import{j as e,T as l}from"./index-D2of1Zwq.js";import{b as a}from"./vendor-k9dDiao6.js";import{P as s}from"./button-D6uj-XGV.js";const m="/AsramWebsite-FE/assets/insideasram-Dfnt98k_.svg",g="/AsramWebsite-FE/assets/researchinnov-CVjGdoJq.svg",x="/AsramWebsite-FE/assets/asramherobanner-COH59IT3.svg",h=()=>{const[n,r]=a.useState(!1);return e.jsxs("section",{className:`\r
+import{j as e,T as l}from"./index-B7-ilf7f.js";import{b as a}from"./vendor-k9dDiao6.js";import{P as s}from"./PageContainer-DnVf-7ba.js";const m="/AsramWebsite-FE/assets/insideasram-Dfnt98k_.svg",g="/AsramWebsite-FE/assets/researchinnov-CVjGdoJq.svg",x="/AsramWebsite-FE/assets/asramherobanner-COH59IT3.svg",h=()=>{const[n,r]=a.useState(!1);return e.jsxs("section",{className:`\r
         relative w-full\r
         h-[65vh]\r
         sm:h-[60vh]\r
