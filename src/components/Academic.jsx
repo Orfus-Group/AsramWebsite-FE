@@ -1,6 +1,6 @@
 import React from "react";
-import heroBg from "../assets/nursing/herobgimage.svg"; // Reusing existing asset or placeholder
-import { T } from "../theme"; // Assuming theme usage based on other files
+import heroBg from "@/assets/nursing/herobgimage.svg"; // Reusing existing asset or placeholder
+import { T } from "@/theme"; // Assuming theme usage based on other files
 
 // Icons as inline SVGs to avoid adding dependencies
 const ClockIcon = () => (
@@ -127,15 +127,7 @@ const BookIcon = () => (
     </svg>
 );
 
-const StatCard = ({ icon: Icon, value, label }) => (
-    <div className="bg-white p-8 rounded-lg shadow-sm flex flex-col items-center justify-center text-center h-[200px] w-full">
-        <div className="text-[#223F7F] mb-4">
-            <Icon />
-        </div>
-        <div className="text-[#223F7F] text-3xl font-bold mb-2">{value}</div>
-        <div className="text-[#555555] text-sm">{label}</div>
-    </div>
-);
+import StatCard from "@/features/common/cards/StatCard";
 
 const FeatureCard = ({ icon: Icon, title, description, tag }) => (
     <div className="bg-[#F8F9FA] p-8 rounded-lg flex flex-col items-start h-full">

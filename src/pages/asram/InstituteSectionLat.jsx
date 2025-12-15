@@ -2,12 +2,12 @@
 import React from "react";
 
 // Icons
-import medicalIcon from "../../assets/asram/medical.svg";
-import nursingIcon from "../../assets/asram/nursing.svg";
-import paramedIcon from "../../assets/asram/paramedical.svg";
-import ArrowRight from "../../assets/asram/arrow-right.svg";
+import medicalIcon from "@/assets/asram/medical.svg";
+import nursingIcon from "@/assets/asram/nursing.svg";
+import paramedIcon from "@/assets/asram/paramedical.svg";
+import ArrowRight from "@/assets/asram/arrow-right.svg";
 import { Link } from "react-router";
-import { T } from "../../theme";
+import { T } from "@/theme";
 
 const institutions = [
   {
@@ -99,20 +99,20 @@ const InstitutionsSectionLat = () => {
           Three Institutions. One Vision for Future Healthcare Leaders.
         </p>
 
-     {/* RESPONSIVE CARD GRID */}
-<div
-  className="
+        {/* RESPONSIVE CARD GRID */}
+        <div
+          className="
     grid 
     grid-cols-1 
     sm:grid-cols-2 
     md:grid-cols-3
     gap-[26px]
   "
->
-  {institutions.map((item) => (
-    <div
-      key={item.id}
-      className="
+        >
+          {institutions.map((item) => (
+            <div
+              key={item.id}
+              className="
         group 
         w-full
         min-h-[388px]
@@ -127,20 +127,20 @@ const InstitutionsSectionLat = () => {
         hover:-translate-y-[4px] 
         hover:shadow-[0px_20px_42px_rgba(15,23,42,0.12)]
       "
-    >
-      {/* ICON */}
-      <div
-        className="
+            >
+              {/* ICON */}
+              <div
+                className="
           w-[64px] h-[64px] 
           rounded-full flex items-center justify-center 
           mb-[22px]
         "
-        style={{ backgroundColor: iconBgColors[item.id] }}
-      >
-        <img loading="lazy" decoding="async" src={item.icon} className="w-[32px] h-[32px]" alt="" />
-      </div>
+                style={{ backgroundColor: iconBgColors[item.id] }}
+              >
+                <img loading="lazy" decoding="async" src={item.icon} className="w-[32px] h-[32px]" alt="" />
+              </div>
 
-             {/* TITLE */}
+              {/* TITLE */}
               <h3
                 className={`
                   ${T.font.family} ${T.font.weight.semibold} 
@@ -184,9 +184,9 @@ const InstitutionsSectionLat = () => {
               </p>
 
               {/* CTA BUTTON */}
-<Link
-  to={item.id === 2 ? "/nursing" : "#"}
-  className="
+              <Link
+                to={item.id === 2 ? "/nursing" : "#"}
+                className="
     mt-auto 
     w-full h-[46px]
     rounded-[6px]
@@ -194,32 +194,32 @@ const InstitutionsSectionLat = () => {
     flex items-center justify-between
     gap-[8px]
   "
-  style={{ backgroundColor: ctaColors[item.id] }}
->
-  <span
-    className={`
+                style={{ backgroundColor: ctaColors[item.id] }}
+              >
+                <span
+                  className={`
       ${T.font.family} ${T.font.weight.semibold}
       text-[15px] sm:text-[16px]
       text-[#191919]
       whitespace-nowrap
       flex-shrink-0
     `}
-  >
-    {item.cta}
-  </span>
+                >
+                  {item.cta}
+                </span>
 
-  <img loading="lazy" decoding="async"
-    src={ArrowRight}
-    className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px] flex-none"
-    alt=""
-  />
-</Link>
+                <img loading="lazy" decoding="async"
+                  src={ArrowRight}
+                  className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px] flex-none"
+                  alt=""
+                />
+              </Link>
 
 
 
-    </div>
-  ))}
-</div>
+            </div>
+          ))}
+        </div>
 
       </div>
     </section>

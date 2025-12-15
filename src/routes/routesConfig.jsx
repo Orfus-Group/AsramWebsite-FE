@@ -1,8 +1,10 @@
-import React from "react";
-import AsramHomePage from "../pages/asram/AsramLatestHome";
-import HomePage from "../pages/asram/AsramHome";
-import NursingPage from "../pages/nursing/NursingPage";
-import AcademicsPage from "../pages/academics/AcademicsPage";
+import React, { lazy } from "react";
+
+const AsramHomePage = lazy(() => import("@/pages/asram/AsramLatestHome"));
+const HomePage = lazy(() => import("@/pages/asram/AsramHome"));
+const NursingPage = lazy(() => import("@/pages/nursing/NursingPage"));
+const AcademicsPage = lazy(() => import("@/pages/academics/AcademicsPage"));
+const ResearchPage = lazy(() => import("@/pages/research/ResearchPage"));
 
 const routesConfig = [
   {
@@ -28,6 +30,12 @@ const routesConfig = [
     label: "Nursing",
     element: <NursingPage />,
     layout: "nursing",
+  },
+  {
+    path: "/research",
+    label: "Research",
+    element: <ResearchPage />,
+    layout: "research",
   },
 ];
 

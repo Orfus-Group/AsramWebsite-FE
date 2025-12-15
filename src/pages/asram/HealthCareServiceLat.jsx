@@ -1,10 +1,10 @@
 // src/sections/home/HealthcareServices.jsx
 import React from "react";
-import { T } from "../../theme";
+import { T } from "@/theme";
 
-import hospitalIcon from "../../assets/asram/multispec.svg";
-import cancerIcon from "../../assets/asram/care.svg";
-import ArrowRight from "../../assets/asram/arrow-right.svg";
+import hospitalIcon from "@/assets/asram/multispec.svg";
+import cancerIcon from "@/assets/asram/care.svg";
+import ArrowRight from "@/assets/asram/arrow-right.svg";
 
 const services = [
   {
@@ -92,8 +92,8 @@ const HealthcareServicesLat = () => {
               "
               style={{
                 borderColor: CARD_BORDER,
-                width: "100%",           
-                maxWidth: "585px",       
+                width: "100%",
+                maxWidth: "585px",
               }}
             >
 

@@ -1,50 +1,177 @@
 import React from "react";
 
-import equityIcon from "../../assets/nursing/healthequity.svg";
-import wellnessIcon from "../../assets/nursing/brain.svg";
-import preciousIcon from "../../assets/nursing/preciousicon.svg";
-import chronicIcon from "../../assets/nursing/chronicdisicon.svg";
-import clinicalIcon from "../../assets/nursing/clinicalpractice.svg";
-import mascularIcon from "../../assets/nursing/cardiovascular.svg";
-import { T } from "../../theme";
-import InfoCard from "../infoCard";
-import Button from "../../components/ui/button";
-import PageSection from "../../features/common/layout/PageContainer";
+import preciousIcon from "@/assets/nursing/preciousicon.svg";
+import { T } from "@/theme";
+import InfoCard from "@/features/common/cards/InfoCard";
+import Button from "@/components/ui/button";
+import PageSection from "@/features/common/layout/PageContainer";
+import HeartCareIcon from "@/assets/icons/HeartCareIcon";
+import { AiHealthIcon, NcdIcon, PublicHealthIcon } from "../research/sections/ResearchPriorities";
+
+
+const BaseIcon = ({
+  size = 24,
+  viewBox = "0 0 38 38", // ⭐ padding added
+  children,
+  className = "",
+}) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox={viewBox}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    {children}
+  </svg>
+);
+
+
+
+
+export const ClinicalPracticeIcon = ({
+  size = 24,
+  color = "currentColor",
+  strokeWidth = 2,
+  className = "",
+}) => (
+  <BaseIcon size={size} className={className}>
+    <path
+      d="M17.4168 3.16644V6.33311"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.91681 3.16644V6.33311"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.91663 4.74969H6.33329C5.49344 4.74969 4.68799 5.08332 4.09412 5.67719C3.50026 6.27106 3.16663 7.07651 3.16663 7.91636V14.2497C3.16663 16.7693 4.16752 19.1856 5.94911 20.9672C7.73071 22.7488 10.1471 23.7497 12.6666 23.7497C15.1862 23.7497 17.6025 22.7488 19.3841 20.9672C21.1657 19.1856 22.1666 16.7693 22.1666 14.2497V7.91636C22.1666 7.07651 21.833 6.27106 21.2391 5.67719C20.6453 5.08332 19.8398 4.74969 19 4.74969H17.4166"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12.6666 23.7499C12.6666 26.2695 13.6675 28.6859 15.4491 30.4675C17.2306 32.249 19.647 33.2499 22.1666 33.2499C24.6861 33.2499 27.1025 32.249 28.8841 30.4675C30.6657 28.6859 31.6666 26.2695 31.6666 23.7499V18.9999"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M31.6667 18.9998C33.4156 18.9998 34.8334 17.582 34.8334 15.8331C34.8334 14.0842 33.4156 12.6664 31.6667 12.6664C29.9178 12.6664 28.5001 14.0842 28.5001 15.8331C28.5001 17.582 29.9178 18.9998 31.6667 18.9998Z"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </BaseIcon>
+);
+
+
+export const PreciousHealthIcon = ({
+  size = 24,
+  color = "currentColor",
+  strokeWidth = 2,
+  className = "",
+}) => (
+  <BaseIcon size={size} className={className}>
+    <path
+      d="M17.4168 3.16644V6.33311"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.91681 3.16644V6.33311"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.91663 4.74969H6.33329C5.49344 4.74969 4.68799 5.08332 4.09412 5.67719C3.50026 6.27106 3.16663 7.07651 3.16663 7.91636V14.2497C3.16663 16.7693 4.16752 19.1856 5.94911 20.9672C7.73071 22.7488 10.1471 23.7497 12.6666 23.7497C15.1862 23.7497 17.6025 22.7488 19.3841 20.9672C21.1657 19.1856 22.1666 16.7693 22.1666 14.2497V7.91636C22.1666 7.07651 21.833 6.27106 21.2391 5.67719C20.6453 5.08332 19.8398 4.74969 19 4.74969H17.4166"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12.6666 23.7499C12.6666 26.2695 13.6675 28.6859 15.4491 30.4675C17.2306 32.249 19.647 33.2499 22.1666 33.2499C24.6861 33.2499 27.1025 32.249 28.8841 30.4675C30.6657 28.6859 31.6666 26.2695 31.6666 23.7499V18.9999"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M31.6667 18.9998C33.4156 18.9998 34.8334 17.582 34.8334 15.8331C34.8334 14.0842 33.4156 12.6664 31.6667 12.6664C29.9178 12.6664 28.5001 14.0842 28.5001 15.8331C28.5001 17.582 29.9178 18.9998 31.6667 18.9998Z"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </BaseIcon>
+);
+
+
+
+
+
+
 
 export default function ResearchSection() {
   const researchList = [
     {
-      icon: mascularIcon,
+      icon: (<HeartCareIcon
+        size={38}
+        color="#008C8C"
+        strokeWidth={2.8}
+      />
+      ),
       title: "Cardiovascular Health",
       description:
         "Investigating novel interventions to improve outcomes for patients with heart disease.",
     },
     {
-      icon: wellnessIcon,
+      icon: <AiHealthIcon size={38} color="#008C8C" strokeWidth={2.8} />,
       title: "Mental Health & Wellness",
       description:
         "Advancing evidence-based approaches to mental health care and substance use disorders.",
     },
     {
-      icon: equityIcon,
+      icon: (<PublicHealthIcon size={38}
+        strokeWidth={2.8}
+        color="#008C8C"
+      />),
       title: "Health Equity",
       description:
         "Addressing disparities and promoting health equity in underserved communities.",
     },
     {
-      icon: chronicIcon,
+      icon: (<NcdIcon size={38}
+        strokeWidth={2.8}
+        color="#008C8C"
+      />),
       title: "Chronic Disease Management",
       description:
         "Developing innovative strategies for managing diabetes, cancer, and other chronic conditions.",
     },
     {
-      icon: clinicalIcon,
+      icon: <ClinicalPracticeIcon size={38} color="#008C8C" strokeWidth={2.8} />,
       title: "Clinical Practice Innovation",
       description:
         "Transforming care delivery through technology and evidence-based practice improvements.",
     },
     {
-      icon: preciousIcon,
+      icon: <PreciousHealthIcon size={38} color="#008C8C" strokeWidth={2.8} />,
       title: "Precision Health",
       description:
         "Utilizing genomics and personalized medicine to optimize patient outcomes.",
@@ -92,9 +219,10 @@ export default function ResearchSection() {
       </div>
 
       {/* CTA */}
-      <div className="mt-[50px]">
+      <div className="mt-[50px] flex justify-center">
         <Button>Explore Our Research</Button>
       </div>
+
     </PageSection>
   );
 }

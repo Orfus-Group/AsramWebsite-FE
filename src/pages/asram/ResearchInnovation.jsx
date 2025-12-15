@@ -1,7 +1,7 @@
 // src/sections/home/ResearchInnovation.jsx
 import React from "react";
-import { T } from "../../theme";
-import PageSection from "../../features/common/layout/PageContainer";
+import { T } from "@/theme";
+import PageSection from "@/features/common/layout/PageContainer";
 
 const ResearchInnovation = ({ title, description1, image }) => {
   return (

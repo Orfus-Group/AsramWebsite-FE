@@ -1,8 +1,8 @@
 import React from "react";
-import { T } from "../theme";
+import { T } from "@/theme";
 
-import doctorImg from "../assets/nursing/clinicalmain.svg";
-import Button from "../components/Button/Button";
+import doctorImg from "@/assets/nursing/clinicalmain.svg";
+import Button from "@/components/Button/Button";
 
 export default function ClinicalPracticumSection() {
   return (
@@ -115,21 +115,21 @@ export default function ClinicalPracticumSection() {
 
             {/* BUTTON (outside card, aligned left, Figma width) */}
             <div className="w-[228px]">
-             <Button
-  bg={T.color.primary}
-  color="#FFFFFF"
-  font={T.font.family}
-  weight={T.font.weight.regular}
-  textSize="text-[15.79px]"
-  leading="leading-[23.7px]"
-  tracking="tracking-[0px]"
-  radius="custom"
-  className="rounded-[9.87px]"
-  width="261.78px"
-  height="47.37px"
->
-  Explore Clinical Opportunities
-</Button>
+              <Button
+                bg={T.color.primary}
+                color="#FFFFFF"
+                font={T.font.family}
+                weight={T.font.weight.regular}
+                textSize="text-[15.79px]"
+                leading="leading-[23.7px]"
+                tracking="tracking-[0px]"
+                radius="custom"
+                className="rounded-[9.87px]"
+                width="261.78px"
+                height="47.37px"
+              >
+                Explore Clinical Opportunities
+              </Button>
 
             </div>
           </div>

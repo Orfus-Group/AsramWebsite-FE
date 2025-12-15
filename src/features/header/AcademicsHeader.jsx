@@ -1,14 +1,44 @@
 import React, { useState } from "react";
-import { T } from "../../theme";
-import LogoFull from "../../assets/nursing/asramlogo.svg";
-import SearchIcon from "../../assets/nursing/Search.svg";
+import { T } from "@/theme";
+import LogoFull from "@/assets/nursing/asramlogo.svg";
+import SearchIcon from "@/assets/nursing/Search.svg";
 import ShortcutLinks from "./ShortcutLinks";
-import AsramLogo from "../../assets/asram/asramcolredlogo.png";
+import AsramLogo from "@/assets/asram/asramcolredlogo.png";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+
+/* =======================
+   SEARCH ICON (SVG)
+======================= */
+const SearchSvgIcon = ({ className = "" }) => (
+  <svg
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path
+      d="M17.4997 17.5034L13.8831 13.8867"
+      stroke="currentColor"
+      strokeWidth="1.66667"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M9.16728 15.8333C12.8492 15.8333 15.8339 12.8486 15.8339 9.16667C15.8339 5.48477 12.8492 2.5 9.16728 2.5C5.48538 2.5 2.50061 5.48477 2.50061 9.16667C2.50061 12.8486 5.48538 15.8333 9.16728 15.8333Z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 
 const AcademicsHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
     { label: "Academics", path: "/academics" },
@@ -91,33 +121,32 @@ const AcademicsHeader = () => {
 
             {/* DESKTOP NAV */}
             <div className="hidden md:flex items-center gap-[32px]">
-              {navItems.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.path}
-                  className={`
-                    ${T.font.family}
-                    ${T.font.weight.semibold}
-                    text-[15px]
-                    leading-[20px]
-                    text-[#4A5565]
-                    hover:text-[${T.color.text.secondary}]
-                    transition whitespace-nowrap
-                  `}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map((item, index) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <Link
+                    key={index}
+                    to={item.path}
+                    className={`
+                      ${T.font.family}
+                      ${T.font.weight.semibold}
+                      text-[15px]
+                      leading-[20px]
+                      transition whitespace-nowrap
+                      ${isActive ? `text-[${T.color.text.secondary}] font-bold` : "text-[#4A5565] hover:text-[#223F7F]"}
+                    `}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </div>
 
             {/* SEARCH ICON */}
-            <button className="flex items-center justify-center md:ml-[10px]">
-              <img loading="lazy" decoding="async"
-                src={SearchIcon}
-                alt="Search"
-                className="h-[18px] w-[18px]"
-              />
+            <button className="flex items-center justify-center md:ml-[10px] text-[#4A5565] hover:text-[${T.color.text.secondary}] transition">
+              <SearchSvgIcon className="w-[20px] h-[20px]" />
             </button>
+
           </div>
         </div>
 
@@ -129,9 +158,9 @@ const AcademicsHeader = () => {
           ></div>
         )}
 
-       {/* ================= MOBILE SLIDE-IN MENU (LEFT DRAWER) ================= */}
-<div
-  className={`
+        {/* ================= MOBILE SLIDE-IN MENU (LEFT DRAWER) ================= */}
+        <div
+          className={`
     fixed top-0 left-0 
     h-full w-[78%] max-w-[320px]
     bg-[#223F7F]             /* NEW drawer background */
@@ -142,69 +171,71 @@ const AcademicsHeader = () => {
     transform transition-transform duration-300 ease-out
     ${menuOpen ? "translate-x-0" : "-translate-x-full"}
   `}
->
+        >
 
-  {/* LOGO SMALL */}
-<div className="flex items-center mb-6 w-full justify-center">
-  <img
-    src={AsramLogo}
-    alt="ASRAM Logo"
-    className="
+          {/* LOGO SMALL */}
+          <div className="flex items-center mb-6 w-full justify-center">
+            <img
+              src={AsramLogo}
+              alt="ASRAM Logo"
+              className="
       h-[54px] w-[54px]
       sm:h-[60px] sm:w-[60px]
       object-contain
     "
-  />
+            />
 
-  <span
-    className={`text-white
+            <span
+              className={`text-white
       text-[36px]
       sm:text-[34px]
       font-semibold
       tracking-wide
       leading-none
       ml-[-2px] ${T.font.family}`}
-  >
-    Asram
-  </span>
-</div>
+            >
+              Asram
+            </span>
+          </div>
 
 
-  {/* NAV LINKS */}
-  <div className="flex flex-col gap-[20px] mt-[10px]">
-    {navItems.map((item, index) => (
-      <Link
-        key={index}
-        to={item.path}
-        onClick={() => setMenuOpen(false)}
-        className={`
-          ${T.font.family}
-          ${T.font.weight.semibold}
-          text-[18px]
-          leading-[24px]
-          text-white                /* NEW link color */
-          hover:text-gray-200
-        `}
-      >
-        {item.label}
-      </Link>
-    ))}
-  </div>
+          {/* NAV LINKS */}
+          <div className="flex flex-col gap-[20px] mt-[10px]">
+            {navItems.map((item, index) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <Link
+                  key={index}
+                  to={item.path}
+                  onClick={() => setMenuOpen(false)}
+                  className={`
+                    ${T.font.family}
+                    ${T.font.weight.semibold}
+                    text-[18px]
+                    leading-[24px]
+                    ${isActive ? "text-yellow-400 font-bold" : "text-white hover:text-gray-200"}
+                  `}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
 
-  {/* FOOTER INSIDE DRAWER */}
-  <div className="mt-auto pt-[20px] border-t border-white/20">
-    <p
-      className={`
+          {/* FOOTER INSIDE DRAWER */}
+          <div className="mt-auto pt-[20px] border-t border-white/20">
+            <p
+              className={`
         ${T.font.family}
         text-[14px]
         leading-[20px]
         text-white/70            /* NEW footer text color */
       `}
-    >
-      © ASRAM School of Nursing
-    </p>
-  </div>
-</div>
+            >
+              © ASRAM School of Nursing
+            </p>
+          </div>
+        </div>
 
       </nav>
     </>

@@ -1,14 +1,14 @@
 // src/components/header/AsramMainHeader.jsx
 import React, { useEffect, useRef, useState } from "react";
-import Logo from "../../assets/asram/mainasramlogo.svg";
-import AsramLogo from "../../assets/asram/asramcolredlogo.png";
+import Logo from "@/assets/asram/mainasramlogo.svg";
+import AsramLogo from "@/assets/asram/asramcolredlogo.png";
 
-import StudentIcon from "../../assets/asram/studentcentericon.svg";
-import LibraryIcon from "../../assets/asram/libraryicon.svg";
-import PayIcon from "../../assets/asram/payonlineicon.svg";
-import ContactIcon from "../../assets/asram/contacticon.svg";
-import { Link } from "react-router-dom";
-import { T } from "../../theme";
+import StudentIcon from "@/assets/asram/studentcentericon.svg";
+import LibraryIcon from "@/assets/asram/libraryicon.svg";
+import PayIcon from "@/assets/asram/payonlineicon.svg";
+import ContactIcon from "@/assets/asram/contacticon.svg";
+import { Link, useLocation } from "react-router-dom";
+import { T } from "@/theme";
 
 const utilityLinks = [
   { label: "Student Center", icon: StudentIcon },
@@ -55,6 +55,7 @@ const megaMenuContent = {
 const AsramMainHeader = () => {
   const [openMenu, setOpenMenu] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -121,7 +122,7 @@ const AsramMainHeader = () => {
                     ${T.font.family}
                   `}
                 >
-                  <img loading="lazy" decoding="async"
+                  <img loading="eager" decoding="async"
                     src={item.icon}
                     className="w-[12px] h-[12px] sm:w-[16px] sm:h-[16px]"
                   />
@@ -152,8 +153,9 @@ const AsramMainHeader = () => {
             <Link
               to="/academics"
               onClick={() => setOpenMenu(null)}
-              className={`${T.font.family} ${T.font.weight.medium} text-[18px] leading-[26px]`}
-              style={{ color: T.color.dark }}
+              className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px] ${location.pathname.startsWith("/academics") ? `text-[${T.color.text.secondary}] font-bold` : ""
+                }`}
+              style={{ color: location.pathname.startsWith("/academics") ? T.color.secondary : T.color.dark }}
             >
               Academics
             </Link>
@@ -165,7 +167,7 @@ const AsramMainHeader = () => {
                   e.stopPropagation();
                   setOpenMenu((prev) => (prev === label ? null : label));
                 }}
-                className={`${T.font.family} ${T.font.weight.medium} text-[18px] leading-[26px]`}
+                className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px]`}
                 style={{ color: T.color.dark }}
               >
                 {label}
@@ -182,6 +184,9 @@ const AsramMainHeader = () => {
             className="h-[42px] w-[170px] sm:h-[46px] sm:w-[189px] object-contain mx-auto lg:mx-0"
           />
 
+
+
+
           {/* RIGHT NAV */}
           <nav className={`${T.font.family} hidden lg:flex items-center gap-[40px]`}>
             {["Healthcare", "Campus Life", "About"].map((label) => (
@@ -191,7 +196,7 @@ const AsramMainHeader = () => {
                   e.stopPropagation();
                   setOpenMenu((prev) => (prev === label ? null : label));
                 }}
-                className={`${T.font.family} ${T.font.weight.medium} text-[18px] leading-[26px]`}
+                className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px]`}
                 style={{ color: T.color.dark }}
               >
                 {label}
@@ -213,7 +218,7 @@ const AsramMainHeader = () => {
 
             {/* DRAWER */}
             <div
-            className={`
+              className={`
         fixed top-0 left-0
         h-full w-[78%] max-w-[320px]
         z-[100]
@@ -223,35 +228,35 @@ const AsramMainHeader = () => {
         transform transition-transform duration-300 ease-out
         ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"}
       `}
-            style={{
-              backgroundColor: T.color.surface.drawer,
-              color: T.color.text.light,
-            }}
+              style={{
+                backgroundColor: T.color.surface.drawer,
+                color: T.color.text.light,
+              }}
             >
 
-<div className="flex items-center mb-6 w-full justify-center">
-  <img
-    src={AsramLogo}
-    alt="ASRAM Logo"
-    className="
+              <div className="flex items-center mb-6 w-full justify-center">
+                <img loading="lazy" decoding="async"
+                  src={AsramLogo}
+                  alt="ASRAM Logo"
+                  className="
       h-[54px] w-[54px]
       sm:h-[60px] sm:w-[60px]
       object-contain
     "
-  />
+                />
 
-  <span
-    className={`text-white
+                <span
+                  className={`text-white
       text-[36px]
       sm:text-[34px]
       font-semibold
       tracking-wide
       leading-none
       ml-[-2px] ${T.font.family}`}
-  >
-    Asram
-  </span>
-</div>
+                >
+                  Asram
+                </span>
+              </div>
 
 
 

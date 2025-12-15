@@ -1,14 +1,12 @@
 import React from "react";
 
-import locationIcon from "../../assets/nursing/locationicon.svg";
-import phoneIcon from "../../assets/nursing/contactphone.svg";
-import mailIcon from "../../assets/nursing/contactemail.svg";
-import { T } from "../../theme";
+import { T } from "@/theme";
+import { LocationIcon, MailIcon, PhoneIcon } from "@/assets/icons/FooterIcons";
 
 export default function Footer() {
   return (
     <footer className="w-full bg-[#F7F9FC] flex justify-center">
-      
+
       {/* OUTER WRAPPER */}
       <div
         className="
@@ -160,8 +158,7 @@ export default function Footer() {
 
                 {/* Address */}
                 <div className="flex gap-[10px]">
-                  <img loading="lazy" decoding="async" src={locationIcon} className="w-[20px] h-[20px]" />
-                  <p
+<LocationIcon size={20} color="#191919" className="shrink-0" />                  <p
                     className={`
                       ${T.font.family} 
                       text-[15px] lg:text-[15.79px]
@@ -177,7 +174,7 @@ export default function Footer() {
 
                 {/* Contact */}
                 <div className="flex gap-[10px]">
-                  <img loading="lazy" decoding="async" src={phoneIcon} className="w-[20px] h-[20px]" />
+                  <PhoneIcon size={20} color="#191919" className="shrink-0" />
                   <p
                     className={`
                       ${T.font.family}
@@ -192,7 +189,7 @@ export default function Footer() {
 
                 {/* Email */}
                 <div className="flex gap-[10px]">
-                  <img loading="lazy" decoding="async" src={mailIcon} className="w-[20px] h-[20px]" />
+                 <MailIcon size={20} color="#191919" className="shrink-0" />
                   <p
                     className={`
                       ${T.font.family}

@@ -1,5 +1,5 @@
 import React from "react";
-import { T } from "../../theme";
+import { T } from "@/theme";
 
 export default function Button({
   children,
@@ -10,14 +10,14 @@ export default function Button({
 
   size = "md",
   radius = "md",
-  rounded, 
+  rounded,
 
   width,
   height,
 
   px,
   py,
-  customPadding,  
+  customPadding,
 
   textSize,
   leading,

@@ -1,6 +1,6 @@
 // src/components/header/ShortcutLinks.jsx
 import React from "react";
-import { T } from "../../theme";
+import { T } from "@/theme";
 
 const ShortcutLinks = () => {
   const links = ["Faculty", "Students", "Admissions", "About"];

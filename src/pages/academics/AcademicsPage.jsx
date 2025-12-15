@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import LoadingScreen from "../../components/loader/LoadingScreen";
+import LoadingScreen from "@/components/loader/LoadingScreen";
 import ProgramsOffered from "./ProgramsOffered";
 import NursingCareerSection from "./NursingCareerSection";
 import WhyChooseNursingSchool from "./WhyChooseNursingSchool";
@@ -13,8 +13,8 @@ import AcademicsHero from "./AcademicsHero";
 
 const AcademicsPage = () => {
   return (
-   <>
-    <AcademicsHero />
+    <>
+      <AcademicsHero />
       <ProgramsOffered />
       <NursingCareerSection />
       <WhyChooseNursingSchool />
@@ -23,7 +23,7 @@ const AcademicsPage = () => {
       <StudentVoices />
       <FinancialAidScholarships />
       <JoinOurNursingCommunity />
-   </>
+    </>
   );
 };
 

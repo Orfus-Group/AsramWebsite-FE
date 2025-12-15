@@ -1,16 +1,16 @@
 // src/sections/academics/ExperienceDrivenEducation.jsx
 import React, { useEffect, useRef, useState } from "react";
-import { T } from "../../theme";
+import { T } from "@/theme";
 
-import PageSection from "../../features/common/layout/PageContainer";
+import PageSection from "@/features/common/layout/PageContainer";
 
 export default function ExperienceDrivenEducation() {
   return (
     <PageSection
-  bg="transparent"
-  sectionClassName="flex justify-center"
-  paddingClass="pb-[80px]"
->
+      bg="transparent"
+      sectionClassName="flex justify-center"
+      paddingClass="pb-[80px]"
+    >
 
 
       {/* ⭐ MAIN FIXED-WIDTH CARD */}

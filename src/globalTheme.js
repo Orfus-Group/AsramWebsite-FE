@@ -66,6 +66,7 @@ export const theme = {
     // Legacy alias for backward compatibility
     background: {
       white: "#FFFFFF",
+      grey: "#D8DFEF",
       soft: "#F9FAFB",
       section: "#F7FAFF",
       programCard: "#F7F9FC",
@@ -80,6 +81,8 @@ export const theme = {
     // Opacity variants
     extra: {
       dark80: "#191919CC",
+         borderResearch: "rgba(7,7,7,0.2)",
+
       dark75: "#191919BF",
       dark10: "rgba(25,25,25,0.10)",
     },
@@ -93,6 +96,7 @@ export const theme = {
  bg: {
     white: "bg-white",
     soft: "bg-[#F9FAFB]",
+    greybg: "#D8DFEF",
     section: "bg-[#F7FAFF]",
     programCard: "bg-[#F7F9FC]",
     brand: "bg-[#223F7F]",

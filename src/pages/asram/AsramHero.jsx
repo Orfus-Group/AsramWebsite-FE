@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import heroBg from "../../assets/asram/asramherobanner.svg";
-import PageSection from "../../features/common/layout/PageContainer";
-import LoadingScreen from "../../components/loader/LoadingScreen";
+import heroBg from "@/assets/asram/asramherobanner.svg";
+import PageSection from "@/features/common/layout/PageContainer";
+
 
 const AsramHero = () => {
   const [loaded, setLoaded] = useState(false);
@@ -21,11 +21,9 @@ const AsramHero = () => {
       {/* BG CONTAINER WITH LOADER ONLY */}
       {/* ============================= */}
       <div className="absolute inset-0 w-full h-full">
-        
+
         {/* LOADER ONLY FOR BG IMAGE */}
-        {!loaded && (
-          <LoadingScreen />
-        )}
+
 
         {/* BACKGROUND IMAGE */}
         <img

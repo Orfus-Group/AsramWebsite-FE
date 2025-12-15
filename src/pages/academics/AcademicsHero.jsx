@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import heroBg from "../../assets/academics/academicsbg.svg";
-import { theme as T } from "../../globalTheme";
-import LoadingScreen from "../../components/loader/LoadingScreen";
+import heroBg from "@/assets/academics/academicsbg.svg";
+import { theme as T } from "@/globalTheme";
+
 
 const AcademicsHero = () => {
   const [loaded, setLoaded] = useState(false);
@@ -21,11 +21,7 @@ const AcademicsHero = () => {
       <div className="absolute inset-0 w-full h-full">
 
         {/* Loader visible only until BG loads */}
-        {!loaded && (
-          <div className="absolute inset-0 flex items-center justify-center bg-white z-[5]">
-            <LoadingScreen />
-          </div>
-        )}
+
 
         {/* Background Image */}
         <img

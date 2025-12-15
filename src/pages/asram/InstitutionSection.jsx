@@ -1,21 +1,39 @@
-// src/sections/home/InstitutionsSection.jsx
 import React from "react";
 
-// Icons
-import medicalIcon from "../../assets/asram/medical.svg";
-import nursingIcon from "../../assets/asram/nursing.svg";
-import paramedIcon from "../../assets/asram/paramedical.svg";
-import ArrowRight from "../../assets/asram/arrow-right.svg";
 
 import { Link } from "react-router";
-import { T } from "../../theme";
+import { T } from "@/theme";
 
-import PageSection from "../../features/common/layout/PageContainer";
+import PageSection from "@/features/common/layout/PageContainer";
+import IconFullArrowRight from "@/assets/icons/IconFullArrow";
+import MedicalIcon from "@/assets/icons/MedicalIcon";
+import HeartCareIcon from "@/assets/icons/HeartCareIcon";
+
+
+
+
+
+const ParamedicalIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.6665 2.66675V5.33341" stroke="#A66E00" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.66675 2.66675V5.33341" stroke="#A66E00" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.66675 4H5.33341C4.62617 4 3.94789 4.28095 3.4478 4.78105C2.9477 5.28115 2.66675 5.95942 2.66675 6.66667V12C2.66675 14.1217 3.5096 16.1566 5.00989 17.6569C6.51018 19.1571 8.54502 20 10.6667 20C12.7885 20 14.8233 19.1571 16.3236 17.6569C17.8239 16.1566 18.6667 14.1217 18.6667 12V6.66667C18.6667 5.95942 18.3858 5.28115 17.8857 4.78105C17.3856 4.28095 16.7073 4 16.0001 4H14.6667" stroke="#A66E00" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.6667 20C10.6667 22.1217 11.5096 24.1566 13.0099 25.6569C14.5102 27.1571 16.545 28 18.6667 28C20.7885 28 22.8233 27.1571 24.3236 25.6569C25.8239 24.1566 26.6667 22.1217 26.6667 20V16" stroke="#A66E00" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26.6665 16.0001C28.1393 16.0001 29.3332 14.8062 29.3332 13.3334C29.3332 11.8607 28.1393 10.6667 26.6665 10.6667C25.1938 10.6667 23.9999 11.8607 23.9999 13.3334C23.9999 14.8062 25.1938 16.0001 26.6665 16.0001Z" stroke="#A66E00" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+);
+
 
 const institutions = [
   {
     id: 1,
-    icon: medicalIcon,
+    icon: <MedicalIcon
+  size={32}
+  color="#C0392B"
+  strokeWidth={2.66667}
+/>
+,
     name: "ASRAM Medical College",
     tagline: "Shaping Future Doctors",
     description:
@@ -24,7 +42,7 @@ const institutions = [
   },
   {
     id: 2,
-    icon: nursingIcon,
+    icon: (<HeartCareIcon size={32} color="#008C8C" />),
     name: "ASRAM College of Nursing",
     tagline: "Precision-Driven Cancer Care",
     description:
@@ -33,7 +51,7 @@ const institutions = [
   },
   {
     id: 3,
-    icon: paramedIcon,
+    icon: <ParamedicalIcon />,
     name: "ASRAM Paramedical Institute",
     tagline: "Technical Excellence in Healthcare",
     description:
@@ -134,7 +152,8 @@ const InstitutionsSection = () => {
                 "
                 style={{ backgroundColor: iconBgColors[item.id] }}
               >
-                <img loading="lazy" decoding="async" src={item.icon} className="w-[32px] h-[32px]" alt="" />
+                {item.icon}
+                {/* <img loading="lazy" decoding="async" src={item.icon} className="w-[32px] h-[32px]" alt="" /> */}
               </div>
 
               {/* TITLE */}
@@ -155,17 +174,20 @@ const InstitutionsSection = () => {
               </h3>
 
               {/* TAGLINE */}
-              <p
-                className={`
-                   ${T.font.weight.bold}
-                  text-[#223F7F]
-                  text-[16px] sm:text-[18px]
-                  leading-[26px] sm:leading-[28px]
-                  mt-[8px] mb-[10px]
-                `}
-              >
-                {item.tagline}
-              </p>
+             <p
+  className={`
+    ${T.font.weight.bold}
+    text-[#223F7F]
+    text-[16px] sm:text-[18px]
+    leading-[26px] sm:leading-[28px]
+    mt-[8px] mb-[10px]
+    min-h-[52px]        /* ⭐ force equal height */
+    flex items-end      /* ⭐ align text to bottom like Figma */
+  `}
+>
+  {item.tagline}
+</p>
+
 
               {/* DESCRIPTION */}
               <p
@@ -181,36 +203,44 @@ const InstitutionsSection = () => {
               </p>
 
               {/* CTA BUTTON */}
-              <Link
-                to={item.id === 2 ? "/nursing" : "#"}
-                className="
-                  mt-auto 
-                  w-full h-[46px]
-                  rounded-[6px]
-                  px-[12px] md:px-[10px] lg:px-[14px]
-                  flex items-center justify-between
-                  gap-[8px]
-                "
-                style={{ backgroundColor: ctaColors[item.id] }}
-              >
-                <span
-                  className={`
-                     ${T.font.weight.semibold}
-                    text-[15px] sm:text-[16px]
-                    text-[#191919]
-                    whitespace-nowrap
-                    flex-shrink-0
-                  `}
-                >
-                  {item.cta}
-                </span>
+   <Link
+  to={item.id === 2 ? "/nursing" : "#"}
+  className="
+    mt-auto
+    w-full
+    min-h-[46px]                 /* allow growth */
+    rounded-[6px]
+    px-[12px] sm:px-[14px] lg:px-[16px]
+    flex items-center justify-center
+    gap-[8px]
+    text-center
+  "
+  style={{ backgroundColor: ctaColors[item.id] }}
+>
+  <span
+    className={`
+      ${T.font.weight.bold}
+      text-[14px] sm:text-[15px] lg:text-[16px]
+      text-[#191919]
+      leading-[18px] sm:leading-[20px]
+      break-words                /* ✅ allow wrap */
+      text-center
+    `}
+  >
+    {item.cta}
+  </span>
 
-                <img loading="lazy" decoding="async"
-                  src={ArrowRight}
-                  className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px] flex-none"
-                  alt=""
-                />
-              </Link>
+  <IconFullArrowRight
+    size={18}
+    className="sm:w-[20px] sm:h-[20px]"
+    stroke="#191919"
+    strokeWidth={2}
+  />
+</Link>
+
+
+
+
             </div>
           ))}
         </div>

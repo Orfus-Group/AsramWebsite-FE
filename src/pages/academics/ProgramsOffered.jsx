@@ -1,13 +1,16 @@
 // src/sections/academics/ProgramsOffered.jsx
 import React from "react";
-import { T } from "../../theme";
+import { T } from "@/theme";
 
-import PageSection from "../../features/common/layout/PageContainer";
+import PageSection from "@/features/common/layout/PageContainer";
 
-import checkIcon from "../../assets/nursing/checkicon.svg";
-import ArrowRight from "../../assets/academics/rightbluearrow.svg";
-import timeperiodicon from "../../assets/academics/timeperiodicon.svg";
-import seatsicon from "../../assets/academics/seatsicon.svg";
+import checkIcon from "@/assets/nursing/checkicon.svg";
+import ArrowRight from "@/assets/academics/rightbluearrow.svg";
+import timeperiodicon from "@/assets/academics/timeperiodicon.svg";
+import seatsicon from "@/assets/academics/seatsicon.svg";
+import IconArrowRight from "@/assets/icons/IconFullArrow";
+import CheckMarkIcon from "@/assets/icons/CheckMarkIcon";
+
 
 const programs = [
   {
@@ -112,7 +115,7 @@ export default function ProgramsOffered() {
                   text-[14px]
                 `}
                 style={{
-                    backgroundColor: "rgba(25, 25, 25, 0.10)",
+                  backgroundColor: "rgba(25, 25, 25, 0.10)",
                   color: T.color.dark,
                 }}
               >
@@ -140,7 +143,7 @@ export default function ProgramsOffered() {
                 style={{ color: T.color.text.muted }}
               >
                 <div className="flex items-center gap-[6px]">
-                    <img loading="lazy" decoding="async" src={timeperiodicon} className="w-[16px] h-[16px]" />
+                  <img loading="lazy" decoding="async" src={timeperiodicon} className="w-[16px] h-[16px]" />
                   <span
                     className={`${T.font.family}`}
                     style={{ color: T.color.dark + "BF" }}
@@ -150,7 +153,7 @@ export default function ProgramsOffered() {
                 </div>
 
                 <div className="flex items-center gap-[6px]">
-                    <img loading="lazy" decoding="async" src={seatsicon} className="w-[16px] h-[16px]" />
+                  <img loading="lazy" decoding="async" src={seatsicon} className="w-[16px] h-[16px]" />
                   <span
                     className={`${T.font.family}`}
                     style={{ color: T.color.dark + "BF" }}
@@ -199,16 +202,23 @@ export default function ProgramsOffered() {
                 </h4>
 
                 <ul className="flex flex-col gap-[10px]">
-                  {program.highlights.map((item, i) => (
-                    <li
-                      key={i}
-                      className="flex gap-[10px] text-[13px]"
-                      style={{ color: T.color.text.muted }}
-                    >
-                        <img loading="lazy" decoding="async" src={checkIcon} className="w-[16px] h-[16px]" />
-                      <span className={`${T.font.family}`}>{item}</span>
-                    </li>
-                  ))}
+                 {program.highlights.map((item, i) => (
+  <li
+    key={i}
+    className="
+      flex items-start gap-[10px]
+      text-[13px]
+      whitespace-nowrap
+    "
+    style={{ color: T.color.text.muted }}
+  >
+    <CheckMarkIcon className="shrink-0 mt-[2px]" />
+    <span className={`${T.font.family} leading-[18px]`}>
+      {item}
+    </span>
+  </li>
+))}
+
                 </ul>
               </div>
 
@@ -224,8 +234,14 @@ export default function ProgramsOffered() {
                 `}
               >
                 Learn More
-                  <img loading="lazy" decoding="async" src={ArrowRight} className="w-[14px] h-[14px]" />
-              </button>
+<IconArrowRight
+                  size={18}
+                  className="sm:w-[20px] sm:h-[20px]"
+                  stroke="#223F7F"
+                  strokeWidth={2}
+                />
+                
+                              </button>
             </div>
           </div>
         ))}

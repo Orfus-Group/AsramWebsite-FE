@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import heroBg from "../../assets/nursing/herobgimage.svg";
-import { T } from "../../theme";
-import PixelsSliderDots from "../PixelSliderDots";
-import LoadingScreen from "../../components/loader/LoadingScreen";
+import heroBg from "@/assets/nursing/herobgimage.svg";
+import { T } from "@/theme";
+
+import CarouselSlideIcon from "@/assets/icons/CarouselSlideIcon";
 
 const NursingHero = () => {
   const [loaded, setLoaded] = useState(false);
@@ -29,11 +29,7 @@ const NursingHero = () => {
       <div className="absolute inset-0 w-full h-full">
 
         {/* Loader only for background image */}
-        {!loaded && (
-          <div className="absolute inset-0 flex items-center justify-center bg-white z-[5]">
-            <LoadingScreen />
-          </div>
-        )}
+
 
         {/* Background Image */}
         <img
@@ -120,18 +116,11 @@ const NursingHero = () => {
       {/* ============================= */}
       {/* SLIDER DOTS (ALWAYS VISIBLE) */}
       {/* ============================= */}
-      <div
-        className="
-          absolute
-          w-full flex justify-center
-          bottom-[20px]
-          sm:bottom-[30px]
-          md:bottom-[40px]
-          z-[10]
-        "
-      >
-        <PixelsSliderDots total={5} activeIndex={0} />
-      </div>
+
+
+      {/* SLIDER DOTS */}
+      <CarouselSlideIcon activeIndex={0} />
+
     </section>
   );
 };

@@ -1,15 +1,15 @@
 // src/sections/home/AsramNewsEventsLat.jsx
 import React from "react";
 
-import img1 from "../../assets/asram/newsart1.svg";
-import img2 from "../../assets/asram/newsart2.svg";
-import img3 from "../../assets/asram/newsart3.svg";
-import img4 from "../../assets/asram/newsart4.svg";
-import img5 from "../../assets/asram/newsart5.svg";
-import usericon from "../../assets/asram/username.svg";
-import calicon from "../../assets/asram/cal.svg";
-import notificationicon from "../../assets/asram/notific.svg";
-import { T } from "../../theme";
+import img1 from "@/assets/asram/newsart1.svg";
+import img2 from "@/assets/asram/newsart2.svg";
+import img3 from "@/assets/asram/newsart3.svg";
+import img4 from "@/assets/asram/newsart4.svg";
+import img5 from "@/assets/asram/newsart5.svg";
+import usericon from "@/assets/asram/username.svg";
+import calicon from "@/assets/asram/cal.svg";
+import notificationicon from "@/assets/asram/notific.svg";
+import { T } from "@/theme";
 
 const AsramNewsEventsLat = () => {
   return (
@@ -58,8 +58,8 @@ const AsramNewsEventsLat = () => {
 
           {/* LEFT COLUMN */}
           <div className="flex flex-col gap-4">
-            {[{img:img1,text:"Advanced Oncology & Precision Treatment"},
-              {img:img2,text:"Comprehensive Healthcare for Every Patient"},
+            {[{ img: img1, text: "Advanced Oncology & Precision Treatment" },
+            { img: img2, text: "Comprehensive Healthcare for Every Patient" },
             ].map((item, i) => (
               <div
                 key={i}
@@ -135,8 +135,8 @@ const AsramNewsEventsLat = () => {
 
           {/* RIGHT COLUMN */}
           <div className="flex flex-col gap-4">
-            {[{img:img4,text:"Shaping Skilled & Compassionate Nurses"},
-              {img:img5,text:"Training Professionals for Modern Healthcare"},
+            {[{ img: img4, text: "Shaping Skilled & Compassionate Nurses" },
+            { img: img5, text: "Training Professionals for Modern Healthcare" },
             ].map((item, i) => (
               <div
                 key={i}

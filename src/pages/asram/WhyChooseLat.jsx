@@ -1,15 +1,15 @@
 import React from "react";
 
-import academicsIcon from "../../assets/asram/academic.svg";
-import facultyIcon from "../../assets/asram/expertfac.svg";
-import infraIcon from "../../assets/asram/worldclass.svg";
-import careerIcon from "../../assets/asram/careeropp.svg";
-import globalIcon from "../../assets/asram/globalrec.svg";
-import holisticIcon from "../../assets/asram/holisticdev.svg";
+import academicsIcon from "@/assets/asram/academic.svg";
+import facultyIcon from "@/assets/asram/expertfac.svg";
+import infraIcon from "@/assets/asram/worldclass.svg";
+import careerIcon from "@/assets/asram/careeropp.svg";
+import globalIcon from "@/assets/asram/globalrec.svg";
+import holisticIcon from "@/assets/asram/holisticdev.svg";
 
-import { T } from "../../theme";
-import InfoCard from "../infoCard";
-import Button from "../../components/ui/button";
+import { T } from "@/theme";
+import InfoCard from "@/features/common/cards/InfoCard";
+import Button from "@/components/ui/button";
 
 export default function WhyChooseAsramLat() {
   const features = [

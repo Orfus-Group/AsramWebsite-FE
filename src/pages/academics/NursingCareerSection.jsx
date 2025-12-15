@@ -1,15 +1,58 @@
 // src/sections/academics/NursingCareerSection.jsx
-import React, { useEffect, useRef, useState } from "react";
-import { T } from "../../theme";
+import React from "react";
+import { T } from "@/theme";
 
-import PageSection from "../../features/common/layout/PageContainer";
+import PageSection from "@/features/common/layout/PageContainer";
+import StatCard from "@/features/common/cards/StatCard";
 
-import nursingcareer from "../../assets/academics/nursingcareer.svg";
+import nursingcareer from "@/assets/academics/nursingcareer.svg";
 
-import excellence from "../../assets/academics/excellence.svg";
-import activestudents from "../../assets/academics/activestudents.svg";
-import performancesuccess from "../../assets/academics/performancesuccess.svg";
-import approvedprograms from "../../assets/academics/approvedprograms.svg";
+/* ------------------------------------------
+   YEARS OF EXCELLENCE
+------------------------------------------- */
+export const ExcellenceIcon = ({ className = "" }) => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20.3638 16.9609L22.3572 28.1794C22.3796 28.3115 22.361 28.4472 22.3041 28.5685C22.2472 28.6898 22.1546 28.7908 22.0387 28.858C21.9228 28.9253 21.7892 28.9555 21.6557 28.9448C21.5221 28.934 21.3951 28.8827 21.2914 28.7978L16.5809 25.2623C16.3535 25.0924 16.0773 25.0006 15.7934 25.0006C15.5096 25.0006 15.2333 25.0924 15.0059 25.2623L10.2875 28.7965C10.184 28.8812 10.0571 28.9324 9.92368 28.9432C9.7903 28.954 9.65681 28.9239 9.54101 28.8568C9.42521 28.7898 9.3326 28.689 9.27555 28.568C9.21851 28.4469 9.19972 28.3114 9.22171 28.1794L11.2138 16.9609" stroke="#223F7F" stroke-width="2.63158" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M15.7894 18.4213C20.1495 18.4213 23.6841 14.8867 23.6841 10.5266C23.6841 6.16643 20.1495 2.63184 15.7894 2.63184C11.4292 2.63184 7.89465 6.16643 7.89465 10.5266C7.89465 14.8867 11.4292 18.4213 15.7894 18.4213Z" stroke="#223F7F" stroke-width="2.63158" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+
+);
+
+/* ------------------------------------------
+   ACTIVE STUDENTS
+------------------------------------------- */
+export const ActiveStudentsIcon = ({ className = "" }) => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.0534 27.6318V25.0002C21.0534 23.6043 20.4989 22.2656 19.5118 21.2786C18.5248 20.2916 17.1861 19.7371 15.7902 19.7371H7.89548C6.49961 19.7371 5.1609 20.2916 4.17387 21.2786C3.18683 22.2656 2.63232 23.6043 2.63232 25.0002V27.6318" stroke="#223F7F" stroke-width="2.63158" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M21.052 4.11597C22.1806 4.40856 23.1802 5.06763 23.8937 5.98973C24.6072 6.91184 24.9944 8.04477 24.9944 9.2107C24.9944 10.3766 24.6072 11.5096 23.8937 12.4317C23.1802 13.3538 22.1806 14.0128 21.052 14.3054" stroke="#223F7F" stroke-width="2.63158" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M28.9466 27.6316V25.0001C28.9458 23.8339 28.5576 22.7011 27.8432 21.7794C27.1287 20.8578 26.1284 20.1995 24.9993 19.908" stroke="#223F7F" stroke-width="2.63158" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M11.8429 14.4738C14.7496 14.4738 17.106 12.1174 17.106 9.21067C17.106 6.30391 14.7496 3.94751 11.8429 3.94751C8.93611 3.94751 6.57971 6.30391 6.57971 9.21067C6.57971 12.1174 8.93611 14.4738 11.8429 14.4738Z" stroke="#223F7F" stroke-width="2.63158" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+
+);
+
+/* ------------------------------------------
+   PLACEMENT SUCCESS
+------------------------------------------- */
+export const PlacementSuccessIcon = ({ className = "" }) => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.0521 9.21069H28.9469V17.1054" stroke="#223F7F" stroke-width="2.63158" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M28.9482 9.21069L17.764 20.3949L11.1851 13.816L2.63245 22.3686" stroke="#223F7F" stroke-width="2.63158" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+
+);
+
+/* ------------------------------------------
+   APPROVED PROGRAMS
+------------------------------------------- */
+export const ApprovedProgramsIcon = ({ className = "" }) => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.7905 28.9476C23.0574 28.9476 28.9484 23.0566 28.9484 15.7897C28.9484 8.52283 23.0574 2.63184 15.7905 2.63184C8.52356 2.63184 2.63257 8.52283 2.63257 15.7897C2.63257 23.0566 8.52356 28.9476 15.7905 28.9476Z" stroke="#223F7F" stroke-opacity="0.8" stroke-width="2.63158" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M15.7905 2.63184C12.4119 6.17941 10.5273 10.8907 10.5273 15.7897C10.5273 20.6888 12.4119 25.4001 15.7905 28.9476C19.1691 25.4001 21.0537 20.6888 21.0537 15.7897C21.0537 10.8907 19.1691 6.17941 15.7905 2.63184Z" stroke="#223F7F" stroke-width="2.63158" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M2.63257 15.7898H28.9484" stroke="#223F7F" stroke-width="2.63158" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+
+);
 
 export default function NursingCareerSection() {
   return (
@@ -19,156 +62,79 @@ export default function NursingCareerSection() {
         className={`
           ${T.font.family}
           ${T.font.weight.bold}
-          text-[42px]
-          leading-[46px]
+          text-[34px] leading-[42px]
+          sm:text-[38px] sm:leading-[44px]
+          md:text-[42px] md:leading-[46px]
           text-[${T.color.secondary}]
-          mb-[60px]
+          mb-[50px]
         `}
       >
         Shape Your Career in Nursing
       </h2>
 
-      {/* MAIN LAYOUT */}
+      {/* MAIN LAYOUT — GRID INSTEAD OF FLEX */}
       <div
         className="
           w-full
-          flex 
-          flex-col lg:flex-row
-          justify-between
+          grid
+          grid-cols-1
+          lg:grid-cols-[1fr_1fr]
           gap-[30px]
           lg:gap-[40px]
+          items-stretch
         "
       >
-        {/* LEFT IMAGE */}
+        {/* LEFT IMAGE — RESPONSIVE + UNIFORM */}
         <div
           className="
-            w-full 
-            lg:w-[563px]
-            h-[260px] sm:h-[300px] md:h-[340px] lg:h-[367px]
+            w-full
             rounded-[8px]
             overflow-hidden
+            bg-[#E5E7EB]
+            aspect-[16/10]     /* 🔥 Figma equivalent */
           "
         >
-        <img loading="lazy" decoding="async"
-              src={nursingcareer}
-              alt="Nursing Career"
-              className="w-full h-full object-cover"
-            />
+          <img
+            src={nursingcareer}
+            alt="Nursing Career"
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover"
+          />
         </div>
 
-        {/* RIGHT GRID */}
+        {/* RIGHT GRID — EQUAL HEIGHT STATS */}
         <div
           className="
-            w-full 
-            lg:w-[590px]
-            grid 
-            grid-cols-2 
-            grid-rows-2 
-            gap-[10px]
+            w-full
+            grid
+            grid-cols-2
+            gap-[20px]
+            auto-rows-fr       /* 🔥 forces equal height */
           "
         >
-          <StatCard icon={excellence} value="20+" label="Years of Excellence" />
-          <StatCard icon={activestudents} value="377+" label="Active Students" />
-          <StatCard icon={performancesuccess} value="95%" label="Placement Success" />
-          <StatCard icon={approvedprograms} value="INC" label="Approved Programs" />
+          <StatCard
+            icon={ExcellenceIcon}
+            value="20+"
+            label="Years of Excellence"
+          />
+          <StatCard
+            icon={ActiveStudentsIcon}
+            value="377+"
+            label="Active Students"
+          />
+          <StatCard
+            icon={PlacementSuccessIcon}
+            value="95%"
+            label="Placement Success"
+          />
+          <StatCard
+            icon={ApprovedProgramsIcon}
+            value="INC"
+            label="Approved Programs"
+          />
         </div>
       </div>
     </PageSection>
-  );
-}
-
-/* ------------------------------------------
-    REUSABLE STAT CARD
-------------------------------------------- */
-function StatCard({ icon, value, label }) {
-  return (
-    <div
-      className={`
-        w-full
-        h-[171.66px]
-        ${T.bg.white} 
-        ${T.radius.md}
-        flex flex-col items-center justify-center gap-[6px]
-      `}
-    >
-      <img loading="lazy" decoding="async" src={icon} className="w-[31.58px] h-[31.58px]" />
-
-      {/* Animated Value */}
-      <AnimatedStatValue
-        value={value}
-        className={`
-          ${T.font.family}
-          ${T.font.weight.bold}
-          text-[29.61px]
-          leading-[35.53px]
-          text-[${T.color.secondary}]
-        `}
-      />
-
-      <p
-        className={`
-          ${T.font.family}
-          text-[15.79px]
-          leading-[23.68px]
-        `}
-        style={{ color: T.color.text.muted }}
-      >
-        {label}
-      </p>
-    </div>
-  );
-}
-
-/* ------------------------------------------
-    COUNT-UP ANIMATION
-------------------------------------------- */
-function AnimatedStatValue({ value, className, style }) {
-  const [displayValue, setDisplayValue] = useState("0");
-  const elementRef = useRef(null);
-  const hasAnimated = useRef(false);
-
-  useEffect(() => {
-    const el = elementRef.current;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true;
-          animateValue();
-        }
-      },
-      { threshold: 0.4 }
-    );
-
-    if (el) observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  const animateValue = () => {
-    const num = parseInt(value.replace(/\D/g, ""), 10);
-    const suffix = value.replace(/[0-9]/g, "");
-
-    if (isNaN(num)) {
-      setDisplayValue(value);
-      return;
-    }
-
-    const duration = 1200;
-    const start = performance.now();
-
-    const step = (timestamp) => {
-      const progress = Math.min((timestamp - start) / duration, 1);
-      const current = Math.floor(progress * num);
-      setDisplayValue(current + suffix);
-      if (progress < 1) requestAnimationFrame(step);
-    };
-
-    requestAnimationFrame(step);
-  };
-
-  return (
-    <h3 ref={elementRef} className={className} style={style}>
-      {displayValue}
-    </h3>
   );
 }

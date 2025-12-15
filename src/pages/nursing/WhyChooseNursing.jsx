@@ -1,7 +1,7 @@
 import React from "react";
-import checkIcon from "../../assets/nursing/checkicon.svg";
-import { T } from "../../theme";
-import PageSection from "../../features/common/layout/PageContainer";
+import { T } from "@/theme";
+import PageSection from "@/features/common/layout/PageContainer";
+import CheckMarkIcon from "@/assets/icons/CheckMarkIcon";
 
 export default function WhyChooseSection() {
   return (
@@ -63,15 +63,14 @@ export default function WhyChooseSection() {
                   "Robust infrastructure across the 10-acre campus",
                   "Recognized affiliations and regulatory approvals",
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-[10px]">
-                    <img loading="lazy" decoding="async"
-                      src={checkIcon}
-                      className="w-[16px] h-[16px] mt-[4px]"
-                      style={{
-                        filter:
-                          "brightness(0) saturate(100%) invert(44%) sepia(71%) saturate(406%) hue-rotate(112deg) brightness(93%) contrast(90%)",
-                      }}
-                    />
+                 <li key={idx} className="flex items-center gap-[10px]">
+  <CheckMarkIcon
+    width={14}
+    height={14}
+    color={T.color.primary}
+    className="shrink-0"
+  />
+
                     <p
                       className={`
                         ${T.font.family}
@@ -107,15 +106,15 @@ export default function WhyChooseSection() {
                   "Student-centered environment with strong mentoring",
                   "Practical orientation ensuring job readiness",
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-[10px]">
-                    <img loading="lazy" decoding="async"
-                      src={checkIcon}
-                      className="w-[16px] h-[16px] mt-[4px]"
-                      style={{
-                        filter:
-                          "brightness(0) saturate(100%) invert(44%) sepia(71%) saturate(406%) hue-rotate(112deg) brightness(93%) contrast(90%)",
-                      }}
-                    />
+                 <li key={idx} className="flex items-center gap-[10px]">
+  <CheckMarkIcon
+    width={14}
+    height={14}
+    color={T.color.primary}
+    className="shrink-0"
+  />
+
+  
                     <p
                       className={`
                         ${T.font.family}

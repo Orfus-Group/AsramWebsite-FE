@@ -1,6 +1,6 @@
 import React from "react";
 
-import NursingHero from "../nursing/NursingHero";
+import NursingHero from "@/pages/nursing/NursingHero";
 import AcademicProgramsSection from "./AcademicProgramsSection";
 import VisionMissionSection from "./VisionMission";
 import NewsEvents from "./NewsEvents";

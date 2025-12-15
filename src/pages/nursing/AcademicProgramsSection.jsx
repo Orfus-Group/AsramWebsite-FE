@@ -1,15 +1,19 @@
-import iconNursing from "../../assets/nursing/bscnursing.svg";
-import iconGeneral from "../../assets/nursing/generalnursing.svg";
-import iconMSc from "../../assets/nursing/mscnursing.svg";
 
-import PageSection from "../../features/common/layout/PageContainer";   // ✅ FIXED
-import { T } from "../../theme";
-import InfoCard from "../infoCard";
+import PageSection from "@/features/common/layout/PageContainer";   // ✅ FIXED
+import { T } from "@/theme";
+import InfoCard from "@/features/common/cards/InfoCard";
+import MedicalIcon from "@/assets/icons/MedicalIcon";
+import { AccreditedIcon, ArtFacilitiesIcon } from "../academics/WhyChooseNursingSchool";
 
 export default function AcademicProgramsSection() {
   const programs = [
     {
-      icon: iconNursing,
+      icon: (
+        <MedicalIcon
+          size={28}
+          className="text-white"
+        />
+      ),
       title: "B.Sc Nursing",
       years: "4 Years Full-Time",
       seats: "~100 Seats",
@@ -17,7 +21,7 @@ export default function AcademicProgramsSection() {
         "Flagship undergraduate programme integrating theoretical lectures, practical labs, simulation, and clinical postings. Prepares students for both patient care and professional advancement.",
     },
     {
-      icon: iconGeneral,
+      icon: (<ArtFacilitiesIcon />),
       title: "General Nursing",
       years: "3 Years Full-Time",
       seats: "~60 Seats",
@@ -25,7 +29,7 @@ export default function AcademicProgramsSection() {
         "Diploma level programme providing comprehensive training in nursing fundamentals and midwifery practices, preparing students for immediate clinical roles.",
     },
     {
-      icon: iconMSc,
+      icon: (<AccreditedIcon />),
       title: "M.Sc Nursing",
       years: "3 Years Full-Time",
       seats: "~60 Seats",
@@ -36,10 +40,10 @@ export default function AcademicProgramsSection() {
 
   return (
     <PageSection bg={T.bg.white} paddingClass="py-[80px]">
-      
+
       {/* ========================= HEADING ========================= */}
-   <h2
-  className={`
+      <h2
+        className={`
     ${T.font.family}
     ${T.font.weight.bold}
     text-[#223F7F]
@@ -55,9 +59,9 @@ export default function AcademicProgramsSection() {
 
     mb-[28px] sm:mb-[36px] md:mb-[52px]
   `}
->
-  Academic Programs
-</h2>
+      >
+        Academic Programs
+      </h2>
 
 
       {/* ========================= CARDS GRID ========================= */}
@@ -76,9 +80,9 @@ export default function AcademicProgramsSection() {
         "
       >
         {programs.map((p, i) => (
-          <InfoCard 
-            key={i} 
-            {...p} 
+          <InfoCard
+            key={i}
+            {...p}
             variant="program"
             className="w-full"
           />

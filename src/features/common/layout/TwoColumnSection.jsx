@@ -1,6 +1,6 @@
 import React from "react";
 import PageSection from "./PageContainer";
-import { T } from "../../../theme";
+import { T } from "@/theme";
 
 export default function TwoColumnSection({
   title,
@@ -15,7 +15,7 @@ export default function TwoColumnSection({
     <PageSection
       bg={bg}
       bgColor={bgColor}
-   paddingClass="py-[80px]"
+      paddingClass="py-[80px]"
     >
       {/* Top Heading */}
       {title && (

@@ -1,18 +1,18 @@
 import React from "react";
 
 // Faculty Images
-import faculty1 from "../../assets/nursing/faculty1.svg";
-import faculty2 from "../../assets/nursing/faculty2.svg";
-import faculty3 from "../../assets/nursing/faculty3.svg";
+import faculty1 from "@/assets/nursing/faculty1.svg";
+import faculty2 from "@/assets/nursing/faculty2.svg";
+import faculty3 from "@/assets/nursing/faculty3.svg";
 
 // Icons
-import expIcon from "../../assets/nursing/experience.svg";
-import calendarIcon from "../../assets/nursing/weekcal.svg";
-import timeIcon from "../../assets/nursing/timeperiod.svg";
+import expIcon from "@/assets/nursing/experience.svg";
+import calendarIcon from "@/assets/nursing/weekcal.svg";
+import timeIcon from "@/assets/nursing/timeperiod.svg";
 
-import { T } from "../../theme";
-import Button from "../../components/ui/button";
-import PageSection from "../../features/common/layout/PageContainer";
+import { T } from "@/theme";
+import Button from "@/components/ui/button";
+import PageSection from "@/features/common/layout/PageContainer";
 
 export default function FacultySpotlightSection() {
   const faculty = [

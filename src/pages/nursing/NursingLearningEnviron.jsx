@@ -1,7 +1,7 @@
 // src/components/nursing/NursingLearningEnvironment.jsx
 import React from "react";
-import labImage from "../../assets/nursing/nursing-lab.jpg";
-import hostelImage from "../../assets/nursing/nursing-hostel.jpg";
+import labImage from "@/assets/nursing/nursing-lab.jpg";
+import hostelImage from "@/assets/nursing/nursing-hostel.jpg";
 
 const NursingLearningEnvironment = () => {
   return (

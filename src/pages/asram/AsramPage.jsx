@@ -1,8 +1,8 @@
 import React from "react";
 
 // Icons
-import cancerIcon from "../../assets/asram/insideasram.svg";
-import ResearchIcon from "../../assets/asram/researchinnov.svg";
+import cancerIcon from "@/assets/asram/insideasram.svg";
+import ResearchIcon from "@/assets/asram/researchinnov.svg";
 
 // Normal Direct Imports (NO lazy loading)
 import AsramHero from "./AsramHero";

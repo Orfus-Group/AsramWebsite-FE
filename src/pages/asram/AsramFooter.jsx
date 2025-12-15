@@ -1,14 +1,134 @@
 // src/sections/home/AsramFooter.jsx
 import React from "react";
-import phoneIcon from "../../assets/asram/phone.svg";
-import addressIcon from "../../assets/asram/address.svg";
-import mailIcon from "../../assets/asram/mail.svg";
-import facebookIcon from "../../assets/asram/facebook.svg";
-import twitterIcon from "../../assets/asram/twitter.svg";
-import instaIcon from "../../assets/asram/insta.svg";
-import linkedincon from "../../assets/asram/linkedin.svg";
-import youtubeIcon from "../../assets/asram/youtube.svg";
-import { T } from "../../theme";
+import phoneIcon from "@/assets/asram/phone.svg";
+import addressIcon from "@/assets/asram/address.svg";
+import mailIcon from "@/assets/asram/mail.svg";
+import facebookIcon from "@/assets/asram/facebook.svg";
+import twitterIcon from "@/assets/asram/twitter.svg";
+import instaIcon from "@/assets/asram/insta.svg";
+import linkedincon from "@/assets/asram/linkedin.svg";
+import youtubeIcon from "@/assets/asram/youtube.svg";
+import { T } from "@/theme";
+
+
+const PhoneIcon = ({ className = "" }) => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    className={className}
+  >
+    <path
+      d="M8.72229 10.4485C8.85252 10.5084 8.99924 10.522 9.13828 10.4873C9.27732 10.4526 9.40038 10.3715 9.48719 10.2575L9.71105 9.96426C9.82852 9.80762 9.98085 9.68049 10.156 9.59293C10.3311 9.50537 10.5242 9.45979 10.72 9.45979H12.6117C12.9462 9.45979 13.267 9.59266 13.5035 9.82918C13.74 10.0657 13.8729 10.3865 13.8729 10.721V12.6127C13.8729 12.9472 13.74 13.268 13.5035 13.5045C13.267 13.741 12.9462 13.8739 12.6117 13.8739C9.60139 13.8739 6.71435 12.678 4.58571 10.5494C2.45708 8.42076 1.26123 5.53371 1.26123 2.52337C1.26123 2.18889 1.3941 1.86811 1.63062 1.63159C1.86713 1.39508 2.18791 1.26221 2.5224 1.26221H4.41415C4.74863 1.26221 5.06941 1.39508 5.30593 1.63159C5.54244 1.86811 5.67531 2.18889 5.67531 2.52337V4.41512C5.67531 4.61091 5.62973 4.80401 5.54217 4.97913C5.45461 5.15425 5.32748 5.30658 5.17085 5.42406L4.87573 5.64539C4.75997 5.73379 4.67837 5.85953 4.64481 6.00126C4.61124 6.14299 4.62778 6.29198 4.6916 6.4229C5.55341 8.17332 6.9708 9.58893 8.72229 10.4485Z"
+      stroke="#223F7F"
+      strokeWidth="1.26"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const MailIcon = ({ className = "" }) => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={className}>
+    <path
+      d="M13.8729 4.41321L8.20332 8.02456C8.01093 8.13631 7.79239 8.19517 7.5699 8.19517C7.34741 8.19517 7.12887 8.13631 6.93648 8.02456L1.26123 4.41321"
+      stroke="#223F7F"
+      strokeWidth="1.26"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12.6117 2.52136H2.5224C1.82587 2.52136 1.26123 3.08601 1.26123 3.78253V11.3495C1.26123 12.0461 1.82587 12.6107 2.5224 12.6107H12.6117C13.3083 12.6107 13.8729 12.0461 13.8729 11.3495V3.78253C13.8729 3.08601 13.3083 2.52136 12.6117 2.52136Z"
+      stroke="#223F7F"
+      strokeWidth="1.26"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const AddressIcon = ({ className = "" }) => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={className}>
+    <path
+      d="M12.6115 6.30687C12.6115 9.45538 9.11875 12.7344 7.94586 13.7471C7.8366 13.8293 7.70359 13.8737 7.56688 13.8737C7.43017 13.8737 7.29717 13.8293 7.1879 13.7471C6.01502 12.7344 2.52222 9.45538 2.52222 6.30687C2.52222 4.96894 3.05371 3.68581 3.99977 2.73976C4.94582 1.7937 6.22895 1.26221 7.56688 1.26221C8.90481 1.26221 10.1879 1.7937 11.134 2.73976C12.0801 3.68581 12.6115 4.96894 12.6115 6.30687Z"
+      stroke="#223F7F"
+      strokeWidth="1.26"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.56704 8.19671C8.61183 8.19671 9.45879 7.34974 9.45879 6.30496C9.45879 5.26017 8.61183 4.41321 7.56704 4.41321C6.52226 4.41321 5.67529 5.26017 5.67529 6.30496C5.67529 7.34974 6.52226 8.19671 7.56704 8.19671Z"
+      stroke="#223F7F"
+      strokeWidth="1.26"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+
+const FacebookIcon = () => (
+  <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 15.134C0 6.77572 6.77572 0 15.134 0C23.4923 0 30.268 6.77572 30.268 15.134C30.268 23.4923 23.4923 30.268 15.134 30.268C6.77572 30.268 0 23.4923 0 15.134Z" fill="#223F7F"/>
+<path d="M18.5392 9.45984H16.8366C16.084 9.45984 15.3622 9.7588 14.8301 10.291C14.2979 10.8231 13.999 11.5449 13.999 12.2975V14H12.2964V16.2701H13.999V20.8103H16.2691V16.2701H17.9716L18.5392 14H16.2691V12.2975C16.2691 12.1469 16.3289 12.0026 16.4353 11.8962C16.5417 11.7897 16.6861 11.7299 16.8366 11.7299H18.5392V9.45984Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+);
+
+const TwitterIcon = () => (
+  <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 15.134C0 6.77572 6.77572 0 15.134 0C23.4923 0 30.268 6.77572 30.268 15.134C30.268 23.4923 23.4923 30.268 15.134 30.268C6.77572 30.268 0 23.4923 0 15.134Z" fill="#223F7F"/>
+<path d="M20.8092 10.5933C20.8092 10.5933 20.412 11.7851 19.6742 12.5229C20.5822 18.1981 14.3395 22.3411 9.45874 19.1062C10.7073 19.1629 11.9559 18.7657 12.8639 17.9711C10.0263 17.1199 8.60745 13.7715 10.0263 11.1608C11.2748 12.6364 13.2044 13.4877 15.134 13.4309C14.6232 11.0473 17.4041 9.68527 19.1067 11.2743C19.7309 11.2743 20.8092 10.5933 20.8092 10.5933Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+);
+
+const InstagramIcon = () => (
+ <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 15.134C0 6.77572 6.77572 0 15.134 0C23.4923 0 30.268 6.77572 30.268 15.134C30.268 23.4923 23.4923 30.268 15.134 30.268C6.77572 30.268 0 23.4923 0 15.134Z" fill="#223F7F"/>
+<g clip-path="url(#clip0_1_1717)">
+<path d="M17.9716 9.45984H12.2964C10.7292 9.45984 9.45874 10.7303 9.45874 12.2975V17.9727C9.45874 19.5399 10.7292 20.8103 12.2964 20.8103H17.9716C19.5388 20.8103 20.8092 19.5399 20.8092 17.9727V12.2975C20.8092 10.7303 19.5388 9.45984 17.9716 9.45984Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.4041 14.7784C17.4741 15.2507 17.3934 15.7331 17.1735 16.157C16.9536 16.5808 16.6057 16.9245 16.1791 17.1391C15.7526 17.3538 15.2693 17.4285 14.7979 17.3527C14.3265 17.2768 13.891 17.0542 13.5533 16.7166C13.2157 16.379 12.9931 15.9435 12.9173 15.4721C12.8414 15.0006 12.9161 14.5173 13.1308 14.0908C13.3455 13.6643 13.6892 13.3163 14.113 13.0964C14.5368 12.8765 15.0192 12.7958 15.4915 12.8659C15.9733 12.9373 16.4193 13.1618 16.7637 13.5062C17.1081 13.8506 17.3326 14.2966 17.4041 14.7784Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.2554 12.0137H18.261" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_1_1717">
+<rect width="13.6206" height="13.6206" fill="white" transform="translate(8.32373 8.32373)"/>
+</clipPath>
+</defs>
+</svg>
+
+);
+
+const LinkedinIcon = () => (
+ <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 15.134C0 6.77572 6.77572 0 15.134 0C23.4923 0 30.268 6.77572 30.268 15.134C30.268 23.4923 23.4923 30.268 15.134 30.268C6.77572 30.268 0 23.4923 0 15.134Z" fill="#223F7F"/>
+<g clip-path="url(#clip0_1_1722)">
+<path d="M17.4042 12.865C18.3073 12.865 19.1734 13.2237 19.812 13.8623C20.4506 14.5009 20.8093 15.367 20.8093 16.2701V20.2428H18.5392V16.2701C18.5392 15.9691 18.4196 15.6804 18.2068 15.4675C17.9939 15.2547 17.7052 15.1351 17.4042 15.1351C17.1031 15.1351 16.8144 15.2547 16.6016 15.4675C16.3887 15.6804 16.2691 15.9691 16.2691 16.2701V20.2428H13.999V16.2701C13.999 15.367 14.3578 14.5009 14.9964 13.8623C15.635 13.2237 16.5011 12.865 17.4042 12.865Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.7288 13.4325H9.45874V20.2428H11.7288V13.4325Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.5938 11.7299C11.2207 11.7299 11.7288 11.2218 11.7288 10.5949C11.7288 9.96802 11.2207 9.45984 10.5938 9.45984C9.96692 9.45984 9.45874 9.96802 9.45874 10.5949C9.45874 11.2218 9.96692 11.7299 10.5938 11.7299Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_1_1722">
+<rect width="13.6206" height="13.6206" fill="white" transform="translate(8.32373 8.32373)"/>
+</clipPath>
+</defs>
+</svg>
+
+);
+
+const YoutubeIcon = () => (
+  <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 15.134C0 6.77572 6.77572 0 15.134 0C23.4923 0 30.268 6.77572 30.268 15.134C30.268 23.4923 23.4923 30.268 15.134 30.268C6.77572 30.268 0 23.4923 0 15.134Z" fill="#223F7F"/>
+<path d="M9.74241 17.9719C9.34595 16.1009 9.34595 14.1676 9.74241 12.2966C9.79451 12.1066 9.89516 11.9335 10.0345 11.7942C10.1738 11.6548 10.3469 11.5542 10.5369 11.5021C13.5808 10.9978 16.687 10.9978 19.7309 11.5021C19.9209 11.5542 20.094 11.6548 20.2333 11.7942C20.3726 11.9335 20.4733 12.1066 20.5254 12.2966C20.9218 14.1676 20.9218 16.1009 20.5254 17.9719C20.4733 18.1619 20.3726 18.3351 20.2333 18.4744C20.094 18.6137 19.9209 18.7143 19.7309 18.7664C16.687 19.2708 13.5808 19.2708 10.5369 18.7664C10.3469 18.7143 10.1738 18.6137 10.0345 18.4744C9.89516 18.3351 9.79451 18.1619 9.74241 17.9719Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.999 16.8376L16.8366 15.1351L13.999 13.4325V16.8376Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+);
+
+
+
 
 const AsramFooter = () => {
   return (
@@ -25,13 +145,15 @@ const AsramFooter = () => {
             py-[12.866px]
           "
         >
-          {[ 
-            { icon: phoneIcon, text: "+91 8812 345678" },
-            { icon: phoneIcon, text: "+91 8812 345678" },
-            { icon: mailIcon, text: "info@asram.edu.in" },
-            { icon: mailIcon, text: "info@asram.edu.in" },
-            { icon: addressIcon, text: "Eluru, Andhra Pradesh, India – 534005" },
-          ].map((item, i) => (
+
+          
+
+          {[
+  { icon: <PhoneIcon />, text: "+91 8812 345678" },
+  { icon: <PhoneIcon />, text: "+91 8812 345678" },
+  { icon: <MailIcon />, text: "info@asram.edu.in" },
+  { icon: <MailIcon />, text: "info@asram.edu.in" },
+  { icon: <AddressIcon />, text: "Eluru, Andhra Pradesh, India – 534005" }].map((item, i) => (
             <div key={i} className="flex items-center gap-[10px] whitespace-nowrap">
               <div
                 className="flex items-center justify-center"
@@ -42,9 +164,10 @@ const AsramFooter = () => {
                   background: "white",
                 }}
               >
-                <img loading="lazy" decoding="async" src={item.icon} style={{ width: "40.13px", height: "40.13px" }} />
-              </div>
-              <span className={`${T.font.family} text-white text-[14px] font-medium`}>
+<span className="w-[16px] h-[16px] flex items-center justify-center">
+    {item.icon}
+  </span>              </div>
+              <span className={`${T.font.family} text-[#FFF] text-[14px] font-regular`}>
                 {item.text}
               </span>
             </div>
@@ -62,18 +185,18 @@ const AsramFooter = () => {
               About ASRAM
             </h3>
 
-            <p className={`${T.font.family} text-[12px] leading-[19.67px] text-[#595959] w-[244.41px] mb-[20px]`}>
+            <p className={`${T.font.family} ${T.font.weight.regular} text-[12px] leading-[19.67px] text-[#595959] w-[244.41px] mb-[20px]`}>
               A Legacy of Healing and Education. Empowering healthcare
               professionals and serving communities with compassion and
               excellence since our foundation.
             </p>
 
             <div className="flex items-center gap-[10px]">
-              <img loading="lazy" decoding="async" src={facebookIcon} className="w-[30.3px] h-[30.3px]" />
-              <img loading="lazy" decoding="async" src={twitterIcon} className="w-[30.3px] h-[30.3px]" />
-              <img loading="lazy" decoding="async" src={instaIcon} className="w-[30.3px] h-[30.3px]" />
-              <img loading="lazy" decoding="async" src={linkedincon} className="w-[30.3px] h-[30.3px]" />
-              <img loading="lazy" decoding="async" src={youtubeIcon} className="w-[30.3px] h-[30.3px]" />
+              <FacebookIcon />
+              <TwitterIcon />
+              <InstagramIcon />
+              <LinkedinIcon />
+              <YoutubeIcon />
             </div>
           </div>
 
@@ -157,7 +280,7 @@ const AsramFooter = () => {
 
       {/* COPYRIGHT ROW */}
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px] pb-[20px]">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-[10px] text-[12px] text-[#191919] opacity-[0.8]">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-[10px] font-medium text-[12px] text-[#191919] opacity-[0.8]">
 
           <span className={`${T.font.family}`}>
             © {new Date().getFullYear()} Alluri Sitarama Raju Academy of Medical Sciences.

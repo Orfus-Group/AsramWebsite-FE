@@ -1,6 +1,6 @@
 import React from "react";
-import { T } from "../../theme";
-import PageSection from "../../features/common/layout/PageContainer";
+import { T } from "@/theme";
+import PageSection from "@/features/common/layout/PageContainer";
 
 const NewsCard = ({
   image,
@@ -13,7 +13,7 @@ const NewsCard = ({
 }) => (
   <div className={`relative overflow-hidden rounded-xl ${height} ${className}`}>
     <img loading="lazy" decoding="async" src={image} className="w-full h-full object-cover" alt={title} />
-    <div className={`absolute inset-0 bg-gradient-to-t ${overlayStrength} to-transparent`}></div>
+    <div className={`absolute inset-0 ${overlayStrength} to-transparent`}></div>
 
     <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6">
       <h3 className="text-white font-semibold text-lg sm:text-xl leading-snug mb-3">{title}</h3>
@@ -22,6 +22,7 @@ const NewsCard = ({
         <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-white/90 text-xs sm:text-sm">
           {meta.map((item) => (
             <span key={item.label} className="flex items-center gap-1">
+               {/* {item.icon} */}
               {item.icon && <img loading="lazy" decoding="async" src={item.icon} className="w-4 h-4 sm:w-[16px] sm:h-[16px]" alt="" />}
               {item.label}
             </span>
@@ -46,7 +47,7 @@ const NewsSection = ({
 }) => {
   return (
     <PageSection bg={bg} id={id} paddingClass="py-[80px]">
-      <h2 
+      <h2
         className={`
           ${T.font.weight.bold}
           text-[28px] sm:text-[36px] lg:text-[42px]
@@ -123,6 +124,7 @@ const NewsSection = ({
             onClick={onCta}
             className={`
               w-[170px] sm:w-[182px]
+              font-bold
               h-[44px] sm:h-[46px]
               text-white rounded-[9px]
             `}

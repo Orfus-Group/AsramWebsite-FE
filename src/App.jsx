@@ -10,10 +10,10 @@ const App = () => {
     <Suspense fallback={<LoadingScreen />}>
       <Routes>
         <Route path="/*" element={<LayoutSwitcher />}>
-          {routesConfig.map(({ path, element }) => (
+          {routesConfig.map(({ path = "", element }, index) => (
             <Route
-              key={path}
-              path={path === "/" ? "" : path.slice(1)}
+              key={index}
+              path={path === "/" ? "" : path.replace(/^\//, "")}
               element={element}
             />
           ))}
