@@ -9,6 +9,7 @@ const layoutByPath = (pathname) => {
   if (pathname.startsWith("/nursing")) return "nursing";
   if (pathname.startsWith("/academics")) return "academics";
   if (pathname.startsWith("/research")) return "research";
+  if (pathname.startsWith("/news")) return "news";
   return "main";
 };
 
@@ -17,6 +18,7 @@ const headerMap = {
   nursing: AcademicsHeader,
   academics: AcademicsHeader,
   research: AcademicsHeader,
+  news: AcademicsHeader, // Defaulting to Main Header for News
 };
 
 const footerMap = {
@@ -24,7 +26,7 @@ const footerMap = {
   nursing: NursingFooter,
   academics: NursingFooter,
   research: NursingFooter,
-
+  news: NursingFooter, // Defaulting to Main Footer for News
 };
 
 const LayoutSwitcher = () => {

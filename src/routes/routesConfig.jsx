@@ -5,6 +5,7 @@ const HomePage = lazy(() => import("@/pages/asram/AsramHome"));
 const NursingPage = lazy(() => import("@/pages/nursing/NursingPage"));
 const AcademicsPage = lazy(() => import("@/pages/academics/AcademicsPage"));
 const ResearchPage = lazy(() => import("@/pages/research/ResearchPage"));
+const NewsPage = lazy(() => import("@/pages/news/NewsPage"));
 
 const routesConfig = [
   {
@@ -36,6 +37,12 @@ const routesConfig = [
     label: "Research",
     element: <ResearchPage />,
     layout: "research",
+  },
+  {
+    path: "/news",
+    label: "News",
+    element: <NewsPage />,
+    layout: "news",
   },
 ];
 
