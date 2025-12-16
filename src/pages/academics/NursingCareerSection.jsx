@@ -90,7 +90,7 @@ export default function NursingCareerSection() {
             w-full
             rounded-[8px]
             overflow-hidden
-            bg-[#E5E7EB]
+            bg-gray-200
             aspect-[16/10]     /* 🔥 Figma equivalent */
           "
         >

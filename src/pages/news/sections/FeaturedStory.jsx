@@ -15,7 +15,7 @@ const FeaturedStory = () => {
             <div className="bg-[#D8DFEF] rounded-[8px] border-[0.9px] border-[rgba(7,7,7,0.2)] overflow-hidden flex flex-col lg:flex-row shadow-sm min-h-[400px]">
 
                 {/* Image Side - Left */}
-                <div className="w-full lg:w-[40%] relative">
+                <div className="w-full lg:w-[40%] relative bg-gray-200">
                     <img
                         src={Featuredimg}
                         alt="Featured"

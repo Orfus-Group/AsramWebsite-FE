@@ -135,16 +135,18 @@ export default function ClinicalPracticumSection() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <img loading="lazy" decoding="async"
-            src={doctorImg}
-            alt="Clinical Hub"
-            className="
-              w-[576px]
-              h-[384px]
-              rounded-[8px]
-              object-cover
-            "
-          />
+          <div className="w-[576px] h-[384px] rounded-[8px] bg-gray-200">
+            <img loading="lazy" decoding="async"
+              src={doctorImg}
+              alt="Clinical Hub"
+              className="
+                w-full
+                h-full
+                rounded-[8px]
+                object-cover
+              "
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -49,18 +49,18 @@ const ResearchInnovation = ({ title, description1, image }) => {
         </div>
 
         {/* RIGHT IMAGE */}
-        <img loading="lazy" decoding="async"
-          src={image}
-          alt=""
-          className="
-            rounded-[8px]
-            object-cover
-            w-full
-            max-w-[523px]
-            h-[240px] sm:h-[280px] md:h-[300px] lg:h-[343px]
-            flex-shrink-0
-          "
-        />
+        <div className="rounded-[8px] bg-gray-200 w-full max-w-[523px] h-[240px] sm:h-[280px] md:h-[300px] lg:h-[343px] flex-shrink-0">
+          <img loading="lazy" decoding="async"
+            src={image}
+            alt=""
+            className="
+              rounded-[8px]
+              object-cover
+              w-full
+              h-full
+            "
+          />
+        </div>
       </div>
 
       {/* BUTTON — unchanged design */}

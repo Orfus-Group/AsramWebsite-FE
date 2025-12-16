@@ -84,15 +84,16 @@ export default function FacultySpotlightSection() {
               "
             >
               {/* Image */}
-              <img loading="lazy" decoding="async"
-                src={f.img}
-                alt={f.name}
-                className="
-                  w-full 
-                  h-[260px] sm:h-[280px] md:h-[300px] 
-                  object-cover rounded-t-[10px]
-                "
-              />
+              <div className="w-full h-[260px] sm:h-[280px] md:h-[300px] bg-gray-200 rounded-t-[10px]">
+                <img loading="lazy" decoding="async"
+                  src={f.img}
+                  alt={f.name}
+                  className="
+                    w-full h-full
+                    object-cover rounded-t-[10px]
+                  "
+                />
+              </div>
 
               {/* Content */}
               <div className="px-[24px] py-[26px] flex flex-col gap-[14px]">

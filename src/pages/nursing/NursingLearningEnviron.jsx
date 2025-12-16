@@ -63,6 +63,7 @@ const NursingLearningEnvironment = () => {
               rounded-[22px]
               overflow-hidden
               shadow-[0_16px_40px_rgba(15,23,42,0.22)]
+              bg-gray-200
             "
           >
             <img loading="lazy" decoding="async"
@@ -79,6 +80,7 @@ const NursingLearningEnvironment = () => {
               rounded-[22px]
               overflow-hidden
               shadow-[0_16px_40px_rgba(15,23,42,0.22)]
+              bg-gray-200
             "
           >
             <img loading="lazy" decoding="async"

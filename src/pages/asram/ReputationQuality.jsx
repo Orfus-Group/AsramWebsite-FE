@@ -75,7 +75,7 @@ const ReputationQuality = () => {
             md:w-[52%]
             rounded-[8px]
             overflow-hidden
-            bg-[#D9D9D9]
+            bg-gray-200
             flex-shrink-0
           "
         >

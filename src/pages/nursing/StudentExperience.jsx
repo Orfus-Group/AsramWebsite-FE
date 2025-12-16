@@ -209,7 +209,7 @@ export default function StudentExperience() {
       {/* Top — Image + Content */}
       <div className="flex flex-col xl:flex-row items-start justify-between gap-[24px] md:gap-[32px] xl:gap-[40px] w-full mb-[32px] md:mb-[40px]">
         {/* Left Image */}
-        <div className="w-full xl:w-[578px] flex-shrink-0">
+        <div className="w-full xl:w-[578px] flex-shrink-0 bg-gray-200 rounded-[8px]">
           <img loading="lazy" decoding="async"
             src={studentExpMain}
             alt="Student Experience"

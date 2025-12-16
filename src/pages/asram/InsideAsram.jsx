@@ -61,6 +61,10 @@ const InsideASRAM = ({ title, image, quote }) => {
             w-full
             lg:w-[60%]
             flex-shrink-0
+            rounded-[8px]
+            bg-gray-200
+            aspect-[16/9]
+            lg:aspect-[704/412]
           "
         >
           <img
@@ -70,13 +74,9 @@ const InsideASRAM = ({ title, image, quote }) => {
             alt=""
             className="
               w-full
-              h-auto
+              h-full
               rounded-[8px]
               object-cover
-
-              /* Responsive aspect ratios */
-              aspect-[16/9]
-              lg:aspect-[704/412]
             "
           />
         </div>
@@ -112,7 +112,7 @@ const InsideASRAM = ({ title, image, quote }) => {
           </p>
         </div>
       </div>
-    </PageSection>
+    </PageSection >
   );
 };
 
