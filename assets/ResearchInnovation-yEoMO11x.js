@@ -1,4 +1,4 @@
-import{j as e,T as l}from"./index-MfgKf5CB.js";import"./vendor-k9dDiao6.js";import{P as r}from"./PageContainer-wktwbziA.js";const d="/AsramWebsite-FE/assets/insideasram-Dfnt98k_.svg",m="/AsramWebsite-FE/assets/researchinnov-CVjGdoJq.svg",a="/AsramWebsite-FE/assets/asramherobanner-COH59IT3.svg",g=()=>e.jsxs("section",{className:`\r
+import{j as e,T as l}from"./index-Ta0Zh5jB.js";import"./vendor-k9dDiao6.js";import{P as r}from"./PageContainer-DfdpRbos.js";const p="/AsramWebsite-FE/assets/insideasram-Dfnt98k_.svg",m="/AsramWebsite-FE/assets/researchinnov-CVjGdoJq.svg",a="/AsramWebsite-FE/assets/asramherobanner-COH59IT3.svg",g=()=>e.jsxs("section",{className:`\r
         relative w-full\r
         h-[65vh]\r
         sm:h-[60vh]\r
@@ -53,7 +53,7 @@ import{j as e,T as l}from"./index-MfgKf5CB.js";import"./vendor-k9dDiao6.js";impo
             md:w-[52%]\r
             rounded-[8px]\r
             overflow-hidden\r
-            bg-[#D9D9D9]\r
+            bg-gray-200\r
             flex-shrink-0\r
           `,children:e.jsx("img",{loading:"lazy",decoding:"async",src:x,alt:"Reputation Built on Quality",className:`\r
               w-full\r
@@ -81,15 +81,15 @@ import{j as e,T as l}from"./index-MfgKf5CB.js";import"./vendor-k9dDiao6.js";impo
             w-full\r
             lg:w-[60%]\r
             flex-shrink-0\r
+            rounded-[8px]\r
+            bg-gray-200\r
+            aspect-[16/9]\r
+            lg:aspect-[704/412]\r
           `,children:e.jsx("img",{loading:"lazy",decoding:"async",src:s,alt:"",className:`\r
               w-full\r
-              h-auto\r
+              h-full\r
               rounded-[8px]\r
               object-cover\r
-\r
-              /* Responsive aspect ratios */\r
-              aspect-[16/9]\r
-              lg:aspect-[704/412]\r
             `})}),e.jsxs("div",{className:`\r
             w-full\r
             lg:w-[40%]\r
@@ -118,11 +118,9 @@ import{j as e,T as l}from"./index-MfgKf5CB.js";import"./vendor-k9dDiao6.js";impo
           justify-between\r
           items-start\r
           gap-[24px] sm:gap-[32px] md:gap-[48px] lg:gap-[80px] xl:gap-[120px] 2xl:gap-[170px]\r
-        `,children:[e.jsx("div",{className:"flex flex-col gap-[20px] w-full lg:w-[501.5px]",children:e.jsx("p",{className:l.font.family,style:{fontSize:"18px",lineHeight:"26px",textAlign:"justify",color:"#191919"},children:s})}),e.jsx("img",{loading:"lazy",decoding:"async",src:t,alt:"",className:`\r
-            rounded-[8px]\r
-            object-cover\r
-            w-full\r
-            max-w-[523px]\r
-            h-[240px] sm:h-[280px] md:h-[300px] lg:h-[343px]\r
-            flex-shrink-0\r
-          `})]}),e.jsx("div",{className:"w-full flex justify-center mt-[40px]",children:e.jsx("button",{className:l.font.family,style:{width:"187px",height:"46px",padding:"12px 24px",gap:"10px",backgroundColor:"#223F7F",color:"white",borderRadius:"9.4px",fontSize:"16px",fontWeight:600,lineHeight:"20px"},children:"View Research"})})]});export{g as A,f as I,h as R,u as a,m as b,d as c};
+        `,children:[e.jsx("div",{className:"flex flex-col gap-[20px] w-full lg:w-[501.5px]",children:e.jsx("p",{className:l.font.family,style:{fontSize:"18px",lineHeight:"26px",textAlign:"justify",color:"#191919"},children:s})}),e.jsx("div",{className:"rounded-[8px] bg-gray-200 w-full max-w-[523px] h-[240px] sm:h-[280px] md:h-[300px] lg:h-[343px] flex-shrink-0",children:e.jsx("img",{loading:"lazy",decoding:"async",src:t,alt:"",className:`\r
+              rounded-[8px]\r
+              object-cover\r
+              w-full\r
+              h-full\r
+            `})})]}),e.jsx("div",{className:"w-full flex justify-center mt-[40px]",children:e.jsx("button",{className:l.font.family,style:{width:"187px",height:"46px",padding:"12px 24px",gap:"10px",backgroundColor:"#223F7F",color:"white",borderRadius:"9.4px",fontSize:"16px",fontWeight:600,lineHeight:"20px"},children:"View Research"})})]});export{g as A,f as I,h as R,u as a,m as b,p as c};

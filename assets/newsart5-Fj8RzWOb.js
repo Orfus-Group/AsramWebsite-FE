@@ -1,4 +1,4 @@
-import{j as t,T as e}from"./index-MfgKf5CB.js";import"./vendor-k9dDiao6.js";function w({icon:r,title:s,description:n,years:i,seats:d,variant:a="program",buttonText:o,onClick:g}){const f=a==="program",l={program:{wrapper:`
+import{j as t,T as e}from"./index-Ta0Zh5jB.js";import"./vendor-k9dDiao6.js";function w({icon:r,title:s,description:n,years:i,seats:d,variant:a="program",buttonText:o,onClick:g}){const f=a==="program",l={program:{wrapper:`
       w-full             
     max-w-[380px]    
     min-w-[340px]       
