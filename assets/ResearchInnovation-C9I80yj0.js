@@ -1,15 +1,15 @@
-import{j as e,T as l}from"./index-D3q0sB5I.js";import"./vendor-k9dDiao6.js";import{P as r}from"./PageContainer-52JI0PRw.js";const d="/AsramWebsite-FE/assets/insideasram-Dfnt98k_.svg",m="/AsramWebsite-FE/assets/researchinnov-CVjGdoJq.svg",a="/AsramWebsite-FE/assets/asramherobanner-COH59IT3.svg",g=()=>e.jsxs("section",{className:`\r
+import{j as e,T as l}from"./index-MfgKf5CB.js";import"./vendor-k9dDiao6.js";import{P as r}from"./PageContainer-wktwbziA.js";const d="/AsramWebsite-FE/assets/insideasram-Dfnt98k_.svg",m="/AsramWebsite-FE/assets/researchinnov-CVjGdoJq.svg",a="/AsramWebsite-FE/assets/asramherobanner-COH59IT3.svg",g=()=>e.jsxs("section",{className:`\r
         relative w-full\r
         h-[65vh]\r
         sm:h-[60vh]\r
         md:h-[75vh]\r
         lg:h-[665px]\r
         overflow-hidden\r
-      `,children:[e.jsx("div",{className:"absolute inset-0 w-full h-full",children:e.jsx("img",{src:a,alt:"Asram Campus",loading:"eager",fetchPriority:"high",decoding:"sync",className:`\r
+      `,children:[e.jsxs("div",{className:"absolute inset-0 w-full h-full",children:[e.jsx("img",{src:a,alt:"Asram Campus",loading:"eager",fetchPriority:"high",decoding:"sync",className:`\r
             w-full h-full object-cover\r
             object-[50%_30%]\r
             sm:object-center\r
-          `})}),e.jsx("div",{className:"absolute inset-0 flex items-center justify-center z-[10]",children:e.jsx(r,{sectionClassName:"absolute inset-0 flex justify-center items-center",className:"!py-0",bg:"transparent",children:e.jsx("h1",{className:`\r
+          `}),e.jsx("div",{className:"absolute inset-0 bg-[rgba(0,0,0,0.3)]"})]}),e.jsx("div",{className:"absolute inset-0 flex items-center justify-center z-[10]",children:e.jsx(r,{sectionClassName:"absolute inset-0 flex justify-center items-center",className:"!py-0",bg:"transparent",children:e.jsx("h1",{className:`\r
               font-bold text-white text-center\r
               text-[38px] leading-[34px]\r
               sm:text-[48px] sm:leading-[46px]\r
