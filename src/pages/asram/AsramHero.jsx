@@ -2,9 +2,7 @@ import React from "react";
 import heroBg from "@/assets/asram/asramherobanner.svg";
 import PageSection from "@/features/common/layout/PageContainer";
 
-
 const AsramHero = () => {
-
   return (
     <section
       className="
@@ -17,14 +15,9 @@ const AsramHero = () => {
       "
     >
       {/* ============================= */}
-      {/* BG CONTAINER WITH LOADER ONLY */}
+      {/* BACKGROUND IMAGE             */}
       {/* ============================= */}
       <div className="absolute inset-0 w-full h-full">
-
-        {/* LOADER ONLY FOR BG IMAGE */}
-
-
-        {/* BACKGROUND IMAGE */}
         <img
           src={heroBg}
           alt="Asram Campus"
@@ -37,6 +30,8 @@ const AsramHero = () => {
             sm:object-center
           "
         />
+
+        <div className="absolute inset-0 bg-[rgba(0,0,0,0.3)]" />
       </div>
 
       <div className="absolute inset-0 flex items-center justify-center z-[10]">

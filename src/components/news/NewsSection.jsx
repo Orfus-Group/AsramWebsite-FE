@@ -9,21 +9,37 @@ const NewsCard = ({
   showMeta = false,
   meta = [],
   overlayStrength = "from-black/70",
+  flatOverlay = false, // ✅ NEW
   className = "",
 }) => (
   <div className={`relative overflow-hidden rounded-xl ${height} ${className}`}>
-    <img loading="lazy" decoding="async" src={image} className="w-full h-full object-cover" alt={title} />
+    <img
+      loading="lazy"
+      decoding="async"
+      src={image}
+      className="w-full h-full object-cover animate-fadeIn"
+      alt={title}
+    />
+
+    {/* ✅ Overlay */}
+    {flatOverlay ? (
+<div className="absolute inset-0 bg-[rgba(2,2,2,0.3)]" />
+    ) : (
     <div className={`absolute inset-0 ${overlayStrength} to-transparent`}></div>
+    )}
 
     <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6">
-      <h3 className="text-white font-semibold text-lg sm:text-xl leading-snug mb-3">{title}</h3>
+           <h3 className="text-white font-semibold text-lg sm:text-xl leading-snug mb-3">{title}</h3>
+
 
       {showMeta && (
         <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-dark/90 text-xs sm:text-sm">
           {meta.map((item) => (
-            <span key={item.label} className="flex font-medium text-[16px] items-center gap-1">
-               {item.icon}
-              {/* {item.icon && <img loading="lazy" decoding="async" src={item.icon} className="w-4 h-4 sm:w-[16px] sm:h-[16px]" alt="" />} */}
+            <span
+              key={item.label}
+              className="flex font-medium text-[16px] items-center gap-1"
+            >
+              {item.icon}
               {item.label}
             </span>
           ))}
@@ -32,6 +48,7 @@ const NewsCard = ({
     </div>
   </div>
 );
+
 
 const NewsSection = ({
   id = "news",
@@ -78,6 +95,7 @@ const NewsSection = ({
         {featured && (
           <NewsCard
             {...featured}
+            flatOverlay
             height="h-[340px] sm:h-[500px]"
             overlayStrength="from-black/85"
             showMeta
@@ -87,7 +105,7 @@ const NewsSection = ({
         {gallery.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-4">
             {gallery.map((item, i) => (
-              <NewsCard key={i} {...item} height="h-[180px] sm:h-[220px]" />
+              <NewsCard key={i} {...item} flatOverlay height="h-[180px] sm:h-[220px]" />
             ))}
           </div>
         )}
@@ -97,7 +115,7 @@ const NewsSection = ({
       <div className="hidden lg:grid grid-cols-[304.51px_1fr_304.51px] gap-4 mt-4">
         <div className="flex flex-col gap-4">
           {leftItems.map((item, i) => (
-            <NewsCard key={i} {...item} />
+            <NewsCard key={i} flatOverlay  {...item} />
           ))}
         </div>
 
@@ -105,7 +123,7 @@ const NewsSection = ({
           <NewsCard
             {...featured}
             height="h-[576px]"
-            overlayStrength="from-black/85"
+            flatOverlay
             showMeta
             className="rounded-xl"
           />
@@ -113,7 +131,7 @@ const NewsSection = ({
 
         <div className="flex flex-col gap-4">
           {rightItems.map((item, i) => (
-            <NewsCard key={i} {...item} />
+            <NewsCard key={i} flatOverlay {...item} />
           ))}
         </div>
       </div>
