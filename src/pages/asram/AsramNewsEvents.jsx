@@ -5,9 +5,6 @@ import img2 from "@/assets/asram/newsart2.svg";
 import img3 from "@/assets/asram/newsart3.svg";
 import img4 from "@/assets/asram/newsart4.svg";
 import img5 from "@/assets/asram/newsart5.svg";
-import usericon from "@/assets/asram/username.svg";
-import calicon from "@/assets/asram/cal.svg";
-import notificationicon from "@/assets/asram/notific.svg";
 import NewsSection from "@/components/news/NewsSection";
 
 const AsramNewsEvents = () => {
