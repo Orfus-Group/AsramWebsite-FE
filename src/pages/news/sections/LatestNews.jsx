@@ -131,13 +131,13 @@ const LatestNews = () => {
                     <div className="flex items-center gap-2 rounded-[9.4px] border border-[rgba(7,7,7,0.2)]
  px-6 py-4 bg-white w-full">
                         <FilterIcon />
-                        <span className={`${T.font.family} font-semibold text-[18px] text-[#1D2939]`}>Filters</span>
+                        <span className={`${T.font.family} font-medium text-[18px] text-[#191919]`}>Filters</span>
                     </div>
 
                     {/* College Filter Group */}
                     <div className="rounded-[9.4px] border border-[rgba(7,7,7,0.2)]
  p-5 bg-white">
-                        <h4 className={`${T.font.family} font-semibold text-[18px] text-[#1D2939] mb-4`}>
+                        <h4 className={`${T.font.family}  font-medium text-[18px] text-[#191919] mb-4`}>
                             College
                         </h4>
                         <div className="flex flex-col gap-3">
@@ -146,10 +146,10 @@ const LatestNews = () => {
                                     key={col.value}
                                     onClick={() => setActiveCollege(col.value)}
                                     className={`
-                                        text-left px-4 py-3 rounded-[8px] text-[15px] font-medium transition-colors
+                                        text-left px-4 py-3 rounded-[9.4px] text-[14px] font-regular transition-colors
                                         ${activeCollege === col.value
                                             ? "bg-[#008C8C] text-white"
-                                            : "bg-[#D8DFEF] text-[#344054] hover:bg-[#c0cbe6]"
+                                            : "bg-[#D8DFEF] text-[#191919] hover:bg-[#c0cbe6]"
                                         }
                                     `}
                                 >
@@ -162,7 +162,7 @@ const LatestNews = () => {
                     {/* Category Filter Group */}
                     <div className="rounded-[9.4px] border border-[rgba(7,7,7,0.2)]
  p-5 bg-white">
-                        <h4 className={`${T.font.family} font-semibold text-[18px] text-[#1D2939] mb-4`}>
+                        <h4 className={`${T.font.family}  font-medium text-[18px] text-[#191919] mb-4`}>
                             Category
                         </h4>
                         <div className="flex flex-col gap-3">
@@ -192,7 +192,7 @@ const LatestNews = () => {
                         <h2 className={`${T.font.family} font-bold text-[28px] lg:text-[32px] text-[#223F7F] mb-1`}>
                             Latest News
                         </h2>
-                        <p className={`${T.font.family} text-[16px] text-[#475467]`}>
+                        <p className={`${T.font.family} font-regular text-[20px] text-[#191919BF]`}>
                             Showing 9 articles
                         </p>
                     </div>
@@ -219,8 +219,8 @@ const LatestNews = () => {
                                             <span
                                                 key={idx}
                                                 className={`
-                                                    text-[12px] font-medium px-2.5 py-0.5 rounded-full
-                                                    ${idx === 0 ? "bg-[#E0F2F2] text-[#006B6B]" : "bg-[#D8DFEF] text-[#223F7F]"}
+                                                    text-[12px] font-regular px-2.5 py-0.5 rounded-[41943000px]
+                                                    ${idx === 0 ? "bg-[#008C8C1A] text-[#008C8C]" : "bg-[#D8DFEF] text-[#191919BF]"}
                                                 `}
                                             >
                                                 {tag}
@@ -229,12 +229,12 @@ const LatestNews = () => {
                                     </div>
 
                                     {/* Title */}
-                                    <h3 className={`${T.font.family} font-semibold text-[20px] text-[#223F7F] mb-3 leading-[1.4] line-clamp-2`}>
+                                    <h3 className={`${T.font.family} font-semibold text-[22px] text-[#223F7F] mb-3 leading-[1.4] line-clamp-3`}>
                                         {item.title}
                                     </h3>
 
                                     {/* Description */}
-                                    <p className={`${T.font.family} text-[16px] text-[#475467] leading-[1.5] mb-6 line-clamp-3 text-ellipsis`}>
+                                    <p className={`${T.font.family} font-regular text-[18px] text-[#191919BF] leading-[26px] mb-6 line-clamp-5 text-ellipsis`}>
                                         {item.desc}
                                     </p>
 
@@ -244,7 +244,7 @@ const LatestNews = () => {
                                             <CalendarIcon />
                                             <span>{item.date}</span>
                                         </div>
-                                        <button className="flex items-center gap-2 text-[#008C8C] text-[14px] font-semibold hover:text-[#007A7A] transition-colors">
+                                        <button className="flex items-center gap-2 text-[#008C8C] text-[14px] font-medium hover:text-[#008C8C] transition-colors">
                                             Read More
                                             <ArrowRightIcon />
                                         </button>
@@ -262,11 +262,11 @@ const LatestNews = () => {
                                 <ChevronLeft />
                             </button>
 
-                            <button className="w-10 h-10 flex items-center justify-center rounded-[8px] bg-[#223F7F] text-white font-semibold text-[14px] shadow-sm">
+                            <button className="w-10 h-10 flex items-center justify-center rounded-[8px] bg-[#223F7F] text-white font-regular text-[15.02px] shadow-sm">
                                 1
                             </button>
                             <button className="w-10 h-10 flex items-center justify-center rounded-[9.4px] border border-[rgba(7,7,7,0.2)]
- text-[#667085] font-semibold text-[14px] hover:bg-gray-50 transition-colors shadow-sm">
+ text-[#191919] font-regular text-[15.02px] hover:bg-gray-50 transition-colors shadow-sm">
                                 2
                             </button>
 

@@ -28,21 +28,21 @@ const FeaturedStory = () => {
 
                     {/* Tags */}
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="bg-[#008C8C] text-white text-[14px] font-medium px-4 py-1.5 rounded-full">
+                        <span className="bg-[#008C8C] text-white text-[14px] leading-[20px] font-regular px-4 py-1.5 rounded-[31498264px]">
                             Achievement
                         </span>
-                        <span className="bg-[#B9C4E0] text-[#191919E6] text-[14px] font-medium px-4 py-1.5 rounded-full">
+                        <span className="bg-[#223F7F1A] text-[#223F7F] text-[14px] leading-[20px] font-regular px-4 py-1.5 rounded-[31498264px]">
                             All Colleges
                         </span>
                     </div>
 
                     {/* Title */}
-                    <h3 className={`${T.font.family} font-semibold text-[28px] md:text-[32px] text-[#223F7F] mb-4 leading-tight`}>
+                    <h3 className={`${T.font.family} font-semibold text-[22px] md:text-[32px] text-[#223F7F] mb-4 leading-tight`}>
                         ASRAM Achieves NAAC A+ Accreditation for Academic Excellence
                     </h3>
 
                     {/* Description */}
-                    <p className={`${T.font.family} text-[18px] text-[#191919BF] mb-8 leading-[1.6] max-w-[90%]`}>
+                    <p className={`${T.font.family} text-[18px] text-[#191919BF] mb-8 leading-[26px] font-regular `}>
                         The National Assessment and Accreditation Council (NAAC) has awarded ASRAM the prestigious A+ grade, recognizing our commitment to quality education, research excellence, and recognizing our commitment to quality education, research excellence comprehensive healthcare services.
                     </p>
 
@@ -56,25 +56,34 @@ const FeaturedStory = () => {
                         <div className="flex items-center gap-4 text-[16px] text-[#555555] font-regular">
                             {/* Calendar Icon Placeholder */}
                             <div className="flex items-center gap-2">
-                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14 2H4C2.89543 2 2 2.89543 2 4V16C2 17.1046 2.89543 18 4 18H14C15.1046 18 16 17.1046 16 16V4C16 2.89543 15.1046 2 14 2Z" stroke="#555555" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                    <path d="M12 0V4" stroke="#555555" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                    <path d="M6 0V4" stroke="#555555" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                    <path d="M2 8H16" stroke="#555555" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                                <span>December 1, 2024</span>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_27_1337)">
+<path d="M5.00684 1.25195V3.75521" stroke="#191919" stroke-opacity="0.75" stroke-width="1.25163" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.0131 1.25195V3.75521" stroke="#191919" stroke-opacity="0.75" stroke-width="1.25163" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.8907 2.50195H3.12925C2.438 2.50195 1.87762 3.06233 1.87762 3.75358V12.515C1.87762 13.2062 2.438 13.7666 3.12925 13.7666H11.8907C12.5819 13.7666 13.1423 13.2062 13.1423 12.515V3.75358C13.1423 3.06233 12.5819 2.50195 11.8907 2.50195Z" stroke="#191919" stroke-opacity="0.75" stroke-width="1.25163" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.87762 6.25781H13.1423" stroke="#191919" stroke-opacity="0.75" stroke-width="1.25163" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_27_1337">
+<rect width="15.0196" height="15.0196" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
+                                <span className="text-[#191919BF] text-[14px] font-regular">December 1, 2024</span>
                             </div>
                             <span className="w-[4px] h-[4px] rounded-full bg-[#555555]"></span>
-                            <span>5 min read</span>
+                             <span className="text-[#191919BF] text-[14px] font-regular">5 min read</span>
                         </div>
 
                         {/* Button */}
-                        <button className="bg-[#223F7F] hover:bg-[#1a3163] text-white px-8 py-3 rounded-[8px] font-medium text-[16px] transition-colors flex items-center gap-2">
+                        <button className="bg-[#223F7F] hover:bg-[#1a3163] text-white px-8 py-3 rounded-[8px] font-regular text-[18px] transition-colors flex items-center leading-[26px] gap-2">
                             Read Full Story
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 12H19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                <path d="M12 5L19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
+                           <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.91124 9.38672H14.863" stroke="white" stroke-width="1.56454" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.38727 3.91016L14.8631 9.38604L9.38727 14.8619" stroke="white" stroke-width="1.56454" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
                         </button>
                     </div>
                 </div>
