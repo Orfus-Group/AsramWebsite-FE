@@ -43,7 +43,7 @@ const AcademicsHeader = () => {
   const navItems = [
     { label: "Academics", path: "/academics" },
     { label: "Research", path: "/research" },
-    { label: "Global & Community", path: "/community" },
+    { label: "Global & Community", path: "/community-health" },
     { label: "News", path: "/news" },
   ];
 

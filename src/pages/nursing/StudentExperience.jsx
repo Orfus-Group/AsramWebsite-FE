@@ -7,7 +7,7 @@ import curricularIcon from "@/assets/nursing/extracurriccular.svg";
 import amenitiesIcon from "@/assets/nursing/modernaminities.svg";
 import InfoCard from "@/features/common/cards/InfoCard";
 import PageSection from "@/features/common/layout/PageContainer";
-import { PublicHealthIcon } from "../research/sections/ResearchPriorities";
+import { IconPublicHealth as PublicHealthIcon } from "@/assets/icons";
 
 
 

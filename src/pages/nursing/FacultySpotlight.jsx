@@ -1,9 +1,9 @@
 import React from "react";
 
 // Faculty Images
-import faculty1 from "@/assets/nursing/faculty1.svg";
-import faculty2 from "@/assets/nursing/faculty2.svg";
-import faculty3 from "@/assets/nursing/faculty3.svg";
+import faculty1 from "@/assets/nursing/doctor_1.jpg";
+import faculty2 from "@/assets/nursing/doctor_2.jpg";
+import faculty3 from "@/assets/nursing/doctor_3.jpg";
 
 // Icons
 import expIcon from "@/assets/nursing/experience.svg";
@@ -24,6 +24,7 @@ export default function FacultySpotlightSection() {
       experience: "20+ Years Experience",
       days: "Mon - Fri",
       time: "9:00 AM - 5:00 PM",
+      imgPosition: "object-[50%_18%]", // Adjusted D1 slightly up sharing space
     },
     {
       img: faculty2,
@@ -33,6 +34,7 @@ export default function FacultySpotlightSection() {
       experience: "15+ Years Experience",
       days: "Mon - Sat",
       time: "10:00 AM - 6:00 PM",
+      imgPosition: "object-[50%_8%]", // Adjusted D1 slightly up sharing space
     },
     {
       img: faculty3,
@@ -42,19 +44,20 @@ export default function FacultySpotlightSection() {
       experience: "18+ Years Experience",
       days: "Tue - Sat",
       time: "11:00 AM - 7:00 PM",
+      imgPosition: "object-[50%_30%]", // Adjusted D3
     },
   ];
 
   return (
-    <PageSection bg={T.bg.section} paddingClass="py-[80px]">
-      <div className="flex flex-col gap-[50px]">
+    <PageSection bg={T.bg.section} paddingClass="py-[60px] md:py-[80px] xl:py-[100px]">
+      <div className="flex flex-col gap-[40px] md:gap-[50px] xl:gap-[60px]">
         {/* TOP HEADING */}
         <h2
           className={`
             ${T.font.family}
             ${T.font.weight.bold}
-            text-[28px] md:text-[32px] lg:text-[36px]
-            leading-[36px] md:leading-[44px] lg:leading-[48px]
+            text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[44px]
+            leading-[1.2]
           `}
           style={{ color: T.color.text.secondary }}
         >
@@ -66,9 +69,11 @@ export default function FacultySpotlightSection() {
           className="
             grid 
             grid-cols-1 
-            sm:grid-cols-2 
+            
+            md:grid-cols-2 
             lg:grid-cols-3
-            gap-[32px] md:gap-[40px]
+            xl:grid-cols-3
+            gap-[24px] sm:gap-[32px] md:gap-[30px] lg:gap-[40px] xl:gap-[50px]
             w-full
           "
         >
@@ -84,14 +89,15 @@ export default function FacultySpotlightSection() {
               "
             >
               {/* Image */}
-              <div className="w-full h-[260px] sm:h-[280px] md:h-[300px] bg-gray-200 rounded-t-[10px]">
+              <div className="w-full h-[280px] sm:h-[300px] md:h-[320px] lg:h-[340px] xl:h-[360px] bg-gray-200 rounded-t-[12px] overflow-hidden">
                 <img loading="lazy" decoding="async"
                   src={f.img}
                   alt={f.name}
-                  className="
+                  className={`
                     w-full h-full
-                    object-cover rounded-t-[10px]
-                  "
+                    object-cover ${f.imgPosition} rounded-t-[12px]
+                    transition-transform duration-500 hover:scale-105
+                  `}
                 />
               </div>
 
@@ -102,8 +108,8 @@ export default function FacultySpotlightSection() {
                     className={`
                       ${T.font.family}
                       ${T.font.weight.semibold}
-                      text-[18px] md:text-[20px]
-                      leading-[26px] md:leading-[28px]
+                      text-[20px] md:text-[22px] xl:text-[24px]
+                      leading-[1.3]
                     `}
                     style={{ color: T.color.text.secondary }}
                   >
@@ -113,8 +119,8 @@ export default function FacultySpotlightSection() {
                   <p
                     className={`
                       ${T.font.family}
-                      text-[16px] md:text-[18px]
-                      leading-[24px]
+                      text-[16px] md:text-[18px] xl:text-[19px]
+                      leading-[1.4]
                     `}
                     style={{ color: T.color.dark }}
                   >
@@ -124,7 +130,7 @@ export default function FacultySpotlightSection() {
                   <p
                     className={`
                       ${T.font.family}
-                      text-[14px] leading-[20px] mt-[6px]
+                      text-[14px] md:text-[15px] leading-[1.4] mt-[6px]
                     `}
                     style={{ color: T.color.dark }}
                   >
@@ -133,11 +139,11 @@ export default function FacultySpotlightSection() {
                 </div>
 
                 {/* Icons List */}
-                <div className="flex flex-col gap-[10px] mt-[6px]">
+                <div className="flex flex-col gap-[8px] md:gap-[10px] mt-[6px]">
                   <div className="flex items-center gap-[10px]">
                     <img loading="lazy" decoding="async" src={expIcon} className="w-[18px] h-[18px]" />
                     <span
-                      className={`${T.font.family} text-[14px] leading-[20px]`}
+                      className={`${T.font.family} text-[14px] md:text-[15px] leading-[1.4]`}
                       style={{ color: T.color.text.muted }}
                     >
                       {f.experience}
@@ -147,7 +153,7 @@ export default function FacultySpotlightSection() {
                   <div className="flex items-center gap-[10px]">
                     <img loading="lazy" decoding="async" src={calendarIcon} className="w-[18px] h-[18px]" />
                     <span
-                      className={`${T.font.family} text-[14px] leading-[20px]`}
+                      className={`${T.font.family} text-[14px] md:text-[15px] leading-[1.4]`}
                       style={{ color: T.color.text.muted }}
                     >
                       {f.days}
@@ -157,7 +163,7 @@ export default function FacultySpotlightSection() {
                   <div className="flex items-center gap-[10px]">
                     <img loading="lazy" decoding="async" src={timeIcon} className="w-[18px] h-[18px]" />
                     <span
-                      className={`${T.font.family} text-[14px] leading-[20px]`}
+                      className={`${T.font.family} text-[14px] md:text-[15px] leading-[1.4]`}
                       style={{ color: T.color.text.muted }}
                     >
                       {f.time}
@@ -166,8 +172,8 @@ export default function FacultySpotlightSection() {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex flex-wrap gap-[12px] mt-[16px]">
-                  <Button
+                <div className="flex flex-wrap gap-[10px] md:gap-[12px] mt-[12px] md:mt-[16px]">
+                    <Button
                     width="100%"
                     mdWidth="180px"
                     height="48px"
@@ -197,14 +203,15 @@ export default function FacultySpotlightSection() {
         </div>
 
         {/* BOTTOM CTA */}
-        <div className="flex justify-center mt-[10px]">
+        <div className="flex justify-center mt-[10px] md:mt-[20px]">
           <Button
             bg={T.color.primary}
             color="#FFFFFF"
-            textSize="text-[15px]"
+            textSize="text-[15px] md:text-[16px]"
             className="rounded-[10px]"
             width="200px"
             height="48px"
+            mdHeight="52px"
           >
             Meet All Faculty
           </Button>

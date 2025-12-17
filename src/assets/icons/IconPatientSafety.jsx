@@ -1,0 +1,36 @@
+import React from "react";
+
+const IconPatientSafety = ({
+    size = 24,
+    color = "currentColor",
+    strokeWidth = 2,
+    className = "",
+}) => {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="-1 -1 26 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={className}
+        >
+            <path
+                d="M15.477 12.8887L16.992 21.4147C17.009 21.5151 16.9949 21.6183 16.9516 21.7104C16.9084 21.8026 16.838 21.8794 16.7499 21.9305C16.6619 21.9816 16.5603 22.0046 16.4588 21.9964C16.3573 21.9882 16.2607 21.9492 16.182 21.8847L12.602 19.1977C12.4292 19.0686 12.2192 18.9988 12.0035 18.9988C11.7878 18.9988 11.5778 19.0686 11.405 19.1977L7.819 21.8837C7.74032 21.9481 7.64386 21.987 7.54249 21.9952C7.44112 22.0034 7.33967 21.9805 7.25166 21.9295C7.16365 21.8786 7.09327 21.802 7.04991 21.71C7.00656 21.618 6.99228 21.515 7.009 21.4147L8.523 12.8887"
+                stroke={color}
+                strokeWidth={strokeWidth}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M12 14C15.3137 14 18 11.3137 18 8C18 4.68629 15.3137 2 12 2C8.68629 2 6 4.68629 6 8C6 11.3137 8.68629 14 12 14Z"
+                stroke={color}
+                strokeWidth={strokeWidth}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+};
+
+export default IconPatientSafety;

@@ -6,7 +6,11 @@ import InfoCard from "@/features/common/cards/InfoCard";
 import Button from "@/components/ui/button";
 import PageSection from "@/features/common/layout/PageContainer";
 import HeartCareIcon from "@/assets/icons/HeartCareIcon";
-import { AiHealthIcon, NcdIcon, PublicHealthIcon } from "../research/sections/ResearchPriorities";
+import {
+  IconAiHealth as AiHealthIcon,
+  IconNcd as NcdIcon,
+  IconPublicHealth as PublicHealthIcon
+} from "@/assets/icons";
 
 
 const BaseIcon = ({

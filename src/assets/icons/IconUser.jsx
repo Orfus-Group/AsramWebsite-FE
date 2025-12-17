@@ -1,0 +1,36 @@
+import React from "react";
+
+const IconUser = ({
+    size = 17,
+    color = "#191919",
+    strokeWidth = 1.25,
+    className = "",
+}) => {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 17 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={className}
+        >
+            <path
+                d="M13.4596 14.875V13.4583C13.4596 12.7069 13.1611 11.9862 12.6298 11.4549C12.0984 10.9235 11.3777 10.625 10.6263 10.625H6.3763C5.62486 10.625 4.90419 10.9235 4.37283 11.4549C3.84148 11.9862 3.54297 12.7069 3.54297 13.4583V14.875"
+                stroke={color}
+                strokeWidth={strokeWidth}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M8.5013 7.79167C10.0661 7.79167 11.3346 6.52314 11.3346 4.95833C11.3346 3.39353 10.0661 2.125 8.5013 2.125C6.9365 2.125 5.66797 3.39353 5.66797 4.95833C5.66797 6.52314 6.9365 7.79167 8.5013 7.79167Z"
+                stroke={color}
+                strokeWidth={strokeWidth}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+};
+
+export default IconUser;

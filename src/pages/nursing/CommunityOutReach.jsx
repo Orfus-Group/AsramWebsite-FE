@@ -10,7 +10,7 @@ import { T } from "@/theme";
 import InfoCard from "@/features/common/cards/InfoCard";
 import TwoColumnSection from "@/features/common/layout/TwoColumnSection";
 import HeartCareIcon from "@/assets/icons/HeartCareIcon";
-import { PublicHealthIcon } from "../research/sections/ResearchPriorities";
+import { IconPublicHealth as PublicHealthIcon } from "@/assets/icons";
 import { ClinicalPracticeIcon } from "./ResearchSection";
 
 const BaseIcon = ({
