@@ -1,4 +1,4 @@
-import{j as e,T as s}from"./index-BRyYhS8U.js";import{b as n}from"./vendor-k9dDiao6.js";const i=({bgImage:a,title:t})=>{const[l,r]=n.useState(!1);return e.jsxs("section",{className:"relative w-full overflow-hidden",children:[e.jsxs("div",{className:`\r
+import{j as e,T as s}from"./index-CszHTlp4.js";import{b as n}from"./vendor-k9dDiao6.js";const i=({bgImage:a,title:t})=>{const[l,r]=n.useState(!1);return e.jsxs("section",{className:"relative w-full overflow-hidden",children:[e.jsxs("div",{className:`\r
           relative w-full\r
           h-[300px] md:h-[400px] lg:h-[492px]\r
           overflow-hidden\r
@@ -9,7 +9,7 @@ import{j as e,T as s}from"./index-BRyYhS8U.js";import{b as n}from"./vendor-k9dDi
             object-cover
             transition-opacity duration-500
             ${l?"opacity-100":"opacity-0"}
-          `}),e.jsx("div",{className:"absolute inset-0 bg-[rgba(0,0,0,0.35)] z-[2]"})]}),e.jsx("div",{className:"absolute inset-0 flex items-end lg:items-center z-[10]",children:e.jsx("div",{className:`\r
+          `}),e.jsx("div",{className:"absolute inset-0  z-[2]"})]}),e.jsx("div",{className:"absolute inset-0 flex items-end lg:items-center z-[10]",children:e.jsx("div",{className:`\r
             w-full\r
             max-w-[1440px]\r
             mx-auto\r
