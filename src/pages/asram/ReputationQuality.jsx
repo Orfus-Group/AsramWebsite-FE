@@ -1,7 +1,7 @@
 // src/sections/home/ReputationQuality.jsx
 import React from "react";
 import { T } from "@/theme";
-import repImage from "@/assets/asram/reputation.svg";
+import repImage from "@/assets/asram/reputationbuilt.png";
 import PageSection from "@/features/common/layout/PageContainer";
 
 const ReputationQuality = () => {
@@ -38,14 +38,20 @@ const ReputationQuality = () => {
             className="
               text-[16px] leading-[26px]
               md:text-[18px] md:leading-[29px]
-              text-[rgba(25,25,25,0.75)]
+              text-[#191919BF]
               mb-[30px]
             "
           >
-            ASRAM School of Nursing is widely respected for its high-quality
-            teaching, strong clinical training, and excellent student outcomes.
-            Our programs continue to earn strong recognition for academic
-            standards and hands-on learning.
+            ASRAM School of Nursing is widely respected for its high-quality teaching, strong clinical training, and excellent student outcomes. Our programs continue to earn strong recognition for academic standards and hands-on learning.
+          </p>
+          <p
+            className="
+              text-[16px] leading-[26px]
+              md:text-[18px] md:leading-[29px]
+              text-[#191919BF]
+            "
+          >
+            ASRAM School of Nursing is widely respected for its high-quality teaching, strong clinical training, and excellent student outcomes.
           </p>
 
           <button
