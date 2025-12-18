@@ -12,7 +12,7 @@ const ReputationQuality = () => {
       <div
         className="
           w-full
-          flex flex-col
+          flex flex-col-reverse
           lg:flex-row
           items-start
           justify-between
@@ -45,15 +45,6 @@ const ReputationQuality = () => {
             "
           >
             ASRAM School of Nursing is widely respected for its high-quality teaching, strong clinical training, and excellent student outcomes. Our programs continue to earn strong recognition for academic standards and hands-on learning.
-          </p>
-          <p
-            className="
-              text-[16px] leading-[26px]
-              md:text-[18px] md:leading-[29px]
-              text-[#191919BF]
-            "
-          >
-            ASRAM School of Nursing is widely respected for its high-quality teaching, strong clinical training, and excellent student outcomes.
           </p>
 
           <button

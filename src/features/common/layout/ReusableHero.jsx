@@ -32,13 +32,7 @@ const ReusableHero = ({ bgImage, title }) => {
             ${loaded ? "opacity-100" : "opacity-0"}
           `}
                 />
-                {/* Simple overlay if needed, though existing code had different strategies. 
-            AcademicsHero had a separate div for overlay. 
-            NewsHero didn't seem to have one explicit named overlay div but bg color on container.
-            ResearchHero had a named overlay.
-            I'll add a consistent overlay here.
-         */}
-                <div className="absolute inset-0 bg-[rgba(0,0,0,0.35)] z-[2]" />
+                <div className="absolute inset-0  z-[2]" />
             </div>
 
             {/* ============================= */}

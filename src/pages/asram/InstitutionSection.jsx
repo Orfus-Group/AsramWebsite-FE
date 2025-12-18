@@ -266,11 +266,14 @@ const InstitutionsSection = () => {
                   {item.cta}
                 </span>
 
-
-
                 <IconFullArrowRight
                   size={18}
-                  className="sm:w-[18px] sm:h-[18px] lg:w-[22px] lg:h-[22px]"
+                  className="
+                    w-[18px] h-[18px]
+                    sm:w-[18px] sm:h-[18px]
+                    lg:w-[22px] lg:h-[22px]
+                    flex-shrink-0
+                  "
                   stroke="#191919"
                   strokeWidth={2}
                 />

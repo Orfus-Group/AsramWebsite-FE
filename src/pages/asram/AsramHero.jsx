@@ -20,7 +20,7 @@ const AsramHero = () => {
       {/* ============================= */}
       {/* BACKGROUND IMAGE             */}
       {/* ============================= */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full bg-[rgba(0,0,0,0.35)]">
         <img
           src={heroBg}
           alt="Asram Campus"

@@ -26,7 +26,7 @@ const NursingHero = () => {
       {/* ============================= */}
       {/* BG IMAGE WRAPPER + LOADER     */}
       {/* ============================= */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full bg-[rgba(0,0,0,0.35)]">
 
         {/* Loader only for background image */}
 
@@ -51,7 +51,6 @@ const NursingHero = () => {
       {/* ============================= */}
       <div
         className="absolute inset-0"
-        style={{ backgroundColor: "rgba(0,0,0,0.30)" }}
       ></div>
 
       {/* ============================= */}
@@ -116,9 +115,9 @@ const NursingHero = () => {
 
 
       {/* SLIDER DOTS */}
-      <div className="hidden md:block">
+      {/* <div className="hidden md:block">
         <CarouselSlideIcon activeIndex={0} />
-      </div>
+      </div> */}
     </section>
   );
 };
