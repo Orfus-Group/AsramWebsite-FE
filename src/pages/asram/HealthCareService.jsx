@@ -10,16 +10,14 @@ import HeartCareIcon from "@/assets/icons/HeartCareIcon";
 
 const HospitalIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M16 6V8M16 8V10M16 8H18M16 8H14" stroke="#223F7F" stroke-width="2.5" stroke-linecap="round"/>
-<path d="M11.4478 3.44767C10.6667 4.22872 10.6667 5.4858 10.6667 7.99996C10.6667 10.5141 10.6667 11.7712 11.4478 12.5522C12.2288 13.3333 13.4859 13.3333 16.0001 13.3333C18.5142 13.3333 19.7713 13.3333 20.5524 12.5522C21.3334 11.7712 21.3334 10.5141 21.3334 7.99996C21.3334 5.4858 21.3334 4.22872 20.5524 3.44767C19.7713 2.66663 18.5142 2.66663 16.0001 2.66663C13.4859 2.66663 12.2288 2.66663 11.4478 3.44767Z" fill="#223F7F" stroke="#223F7F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M5.33325 29.3333V15.9609C5.33325 11.5483 5.33325 9.34194 6.70009 7.97111C7.56879 7.09986 8.77399 6.78234 10.6666 6.66663M26.6666 29.3333V15.9609C26.6666 11.5483 26.6666 9.34194 25.2998 7.97111C24.431 7.09986 23.2258 6.78234 21.3333 6.66663" stroke="#223F7F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 29.3334H28" stroke="#223F7F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12.6667 29.3333V26C12.6667 24.7538 12.6667 24.1307 12.9347 23.6666C13.1102 23.3626 13.3627 23.1101 13.6667 22.9346C14.1308 22.6666 14.7539 22.6666 16.0001 22.6666C17.2462 22.6666 17.8693 22.6666 18.3334 22.9346C18.6375 23.1101 18.8899 23.3626 19.0655 23.6666C19.3334 24.1307 19.3334 24.7538 19.3334 26V29.3333" stroke="#223F7F" stroke-width="2.5" stroke-linecap="round"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M10.6787 17.3334H10.6667H10.6787Z" fill="#223F7F"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M16.0001 17.3334H15.9881H16.0001Z" fill="#223F7F"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M21.3349 17.3334H21.323H21.3349Z" fill="#223F7F"/>
-<path d="M10.6787 17.3334H10.6667M16.0001 17.3334H15.9881M21.3349 17.3334H21.323" stroke="#223F7F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+    <path d="M16 6V8M16 8V10M16 8H18M16 8H14" stroke="#223F7F" stroke-width="2.5" stroke-linecap="round" />
+    <path d="M11.448 3.44706C10.667 4.22811 10.667 5.48519 10.667 7.99935C10.667 10.5135 10.667 11.7706 11.448 12.5516C12.2291 13.3327 13.4862 13.3327 16.0003 13.3327C18.5145 13.3327 19.7716 13.3327 20.5526 12.5516C21.3337 11.7706 21.3337 10.5135 21.3337 7.99935C21.3337 5.48519 21.3337 4.22811 20.5526 3.44706C19.7716 2.66602 18.5145 2.66602 16.0003 2.66602C13.4862 2.66602 12.2291 2.66602 11.448 3.44706Z" stroke="#223F7F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M5.33301 29.3327V15.9603C5.33301 11.5477 5.33301 9.34133 6.69984 7.9705C7.56855 7.09925 8.77375 6.78173 10.6663 6.66602M26.6663 29.3327V15.9603C26.6663 11.5477 26.6663 9.34133 25.2995 7.9705C24.4308 7.09925 23.2256 6.78173 21.333 6.66602" stroke="#223F7F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M4 29.332H28" stroke="#223F7F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M12.667 29.3327V25.9993C12.667 24.7532 12.667 24.1301 12.9349 23.666C13.1105 23.362 13.363 23.1095 13.667 22.934C14.1311 22.666 14.7542 22.666 16.0003 22.666C17.2465 22.666 17.8696 22.666 18.3337 22.934C18.6377 23.1095 18.8902 23.362 19.0657 23.666C19.3337 24.1301 19.3337 24.7532 19.3337 25.9993V29.3327" stroke="#223F7F" stroke-width="2.5" stroke-linecap="round" />
+    <path d="M10.6789 17.332H10.667M16.0003 17.332H15.9884M21.3352 17.332H21.3232" stroke="#223F7F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+
 
 );
 
@@ -60,7 +58,7 @@ const HealthcareServices = () => {
   return (
     <PageSection
       bg="transparent"
-      paddingClass="py-[80px]"   // ⭐ Padding fully controlled here
+      paddingClass="py-[40px] md:py-[60px] lg:py-[80px]"   // ⭐ Padding fully controlled here
     >
 
       {/* SECTION TITLE */}
@@ -76,16 +74,16 @@ const HealthcareServices = () => {
       </h1>
 
       {/* SUBTITLE */}
-      <p
+      <h6
         className="
-          font-medium text-[#191919]
+          font-medium text-[#6B6B6B]
           text-[18px] sm:text-[20px] lg:text-[22px]
           leading-[28px] sm:leading-[30px] lg:leading-[32px]
           mb-[30px] lg:mb-[40px]
         "
       >
         World-Class Care Backed by Cutting-Edge Technology.
-      </p>
+      </h6>
 
       {/* CARD GRID */}
       <div
@@ -100,12 +98,12 @@ const HealthcareServices = () => {
           <div
             key={item.id}
             className="
-              bg-white 
+              bg-[#EEF2F7] 
               rounded-[8px]
               flex flex-col
               px-[24px] sm:px-[28px] pt-[24px] pb-[28px]
               shadow-[0px_12px_28px_rgba(15,23,42,0.06)]
-              border
+              border border-[#B8C2D1]
             "
             style={{
               borderColor: CARD_BORDER,
@@ -117,23 +115,23 @@ const HealthcareServices = () => {
             <div
               className="
                 w-[64px] h-[64px] 
-                rounded-full 
+                rounded-[12px]
                 flex items-center justify-center 
                 mb-[30px]
               "
               style={{ backgroundColor: item.iconBg }}
             >
-               {item.icon}
+              {item.icon}
 
             </div>
 
             {/* TITLE */}
-            <h3
+            <h6
               className="
                 font-semibold text-[#191919]
                 text-[20px] sm:text-[22px]
                 leading-[26px] sm:leading-[27px]
-                mb-[6px] relative pb-[8px]
+                mb-[14px] relative pb-[8px]
               "
             >
               {item.name}
@@ -141,12 +139,12 @@ const HealthcareServices = () => {
                 className="absolute left-0 bottom-0 border-b-[2.5px]"
                 style={{ width: "84px", borderColor: item.underline }}
               />
-            </h3>
+            </h6>
 
             {/* TAGLINE */}
             <p
               className="
-                font-semibold 
+                font-mwedium 
                 text-[16px] sm:text-[18px]
                 leading-[22px] sm:leading-[24px]
                 mb-[16px]
@@ -180,19 +178,19 @@ const HealthcareServices = () => {
             >
               <span
                 className="
-                  font-semibold text-[16px] sm:text-[18px]
+                  font-medium text-[16px] sm:text-[18px]
                   text-[#191919]
                 "
               >
                 {item.ctatext}
               </span>
 
-                <IconFullArrowRight
-                  size={18}
-                  className="sm:w-[20px] sm:h-[20px]"
-                  stroke="#191919"
-                  strokeWidth={2}
-                />
+              <IconFullArrowRight
+                size={18}
+                className="sm:w-[20px] sm:h-[20px]"
+                stroke="#191919"
+                strokeWidth={2}
+              />
             </button>
           </div>
         ))}

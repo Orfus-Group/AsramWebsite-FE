@@ -27,7 +27,7 @@ const QuoteIcon = ({ className = "" }) => (
 ---------------------------------- */
 const InsideASRAM = ({ title, image, quote }) => {
   return (
-    <PageSection bg="bg-white" paddingClass="py-[80px]">
+    <PageSection bg="bg-white" paddingClass="py-[40px] md:py-[60px] lg:py-[80px]">
       {/* TITLE */}
       <h2
         className="
@@ -51,31 +51,32 @@ const InsideASRAM = ({ title, image, quote }) => {
           items-start
           lg:items-center
           gap-[30px]
-          md:gap-[40px]
+          md:gap-[80px]
           w-full
         "
       >
-        {/* IMAGE — RESPONSIVE */}
+        {/* IMAGE — Fixed Dimensions on Desktop */}
         <div
           className="
             w-full
-            lg:w-[60%]
+            lg:w-[600px]
+            lg:h-[411.5px]
             flex-shrink-0
-            rounded-[8px]
+            rounded-[12px]
+            overflow-hidden
             bg-gray-200
-            aspect-[16/9]
-            lg:aspect-[704/412]
+            aspect-[3/2]
+            lg:aspect-auto
           "
         >
           <img
             loading="lazy"
             decoding="async"
             src={image}
-            alt=""
+            alt="Inside ASRAM"
             className="
               w-full
               h-full
-              rounded-[8px]
               object-cover
             "
           />
@@ -85,31 +86,30 @@ const InsideASRAM = ({ title, image, quote }) => {
         <div
           className="
             w-full
-            lg:w-[40%]
+            flex-1
             flex flex-col
             items-start
-            justify-start
+            justify-center
+            h-full
           "
         >
-          <QuoteIcon className="w-[26px] h-[26px] sm:w-[30px] sm:h-[30px]" />
+          <QuoteIcon className="w-[26px] h-[26px] sm:w-[30px] sm:h-[30px] text-[#223F7F]" />
 
-          <p
+          <h5
             className="
-              mt-[16px]
+              mt-[24px]
               text-[18px]
               sm:text-[20px]
               md:text-[22px]
               lg:text-[24px]
               font-medium
+              text-[#191919]
+              leading-[1.4]
+              text-left
             "
-            style={{
-              color: "#191919",
-              lineHeight: "1.4",
-              textAlign: "justify",
-            }}
           >
             {quote}
-          </p>
+          </h5>
         </div>
       </div>
     </PageSection >

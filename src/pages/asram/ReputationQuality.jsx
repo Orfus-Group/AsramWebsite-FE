@@ -6,22 +6,24 @@ import PageSection from "@/features/common/layout/PageContainer";
 
 const ReputationQuality = () => {
   return (
-    <PageSection bg="bg-white" paddingClass="py-[80px]">
+    <PageSection bg="bg-white" paddingClass="py-[40px] md:py-[60px] lg:py-[80px]">
+
       {/* INNER LAYOUT */}
       <div
         className="
           w-full
           flex flex-col
-          md:flex-row
+          lg:flex-row
           items-start
           justify-between
-          gap-[40px]
-          md:gap-[80px]
+          gap-[30px]
+          md:gap-[50px]
+          lg:gap-[72px]
         "
       >
         {/* LEFT CONTENT */}
-        <div className="w-full md:w-[48%] flex flex-col">
-          <h2
+        <div className="w-full flex flex flex-col justify-center h-full">
+          <h3
             className="
               font-bold
               text-[#223F7F]
@@ -32,7 +34,7 @@ const ReputationQuality = () => {
             "
           >
             A Reputation Built on Quality
-          </h2>
+          </h3>
 
           <p
             className="
@@ -63,26 +65,30 @@ const ReputationQuality = () => {
               flex items-center justify-center
               rounded-[8px]
               text-white
-              font-semibold
+              font-medium
               text-[15px]
-              md:text-[16px]
+              md:text-[18px]
               bg-[#223F7F]
-              md:mt-[40px]
+              md:mt-[20px]
             "
           >
             Explore Our Achievements
           </button>
         </div>
 
-        {/* RIGHT IMAGE — RESPONSIVE */}
+        {/* RIGHT IMAGE */}
         <div
           className="
             w-full
-            md:w-[52%]
-            rounded-[8px]
+            lg:w-[580px]
+            lg:h-[355px]
+            rounded-[12px]
             overflow-hidden
             bg-gray-200
             flex-shrink-0
+             border border-[rgba(7,7,7,0.2)]
+                 shadow-[0_2px_4px_rgba(0,0,0,0.08),0_6px_6px_rgba(0,0,0,0.02)]
+
           "
         >
           <img
@@ -92,10 +98,9 @@ const ReputationQuality = () => {
             alt="Reputation Built on Quality"
             className="
               w-full
-              h-auto
+              h-full
               object-cover
-              aspect-[16/9]
-              md:aspect-[523/343]
+                  aspect-[16/9]
             "
           />
         </div>

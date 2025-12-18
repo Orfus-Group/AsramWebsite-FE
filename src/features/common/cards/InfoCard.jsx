@@ -108,7 +108,6 @@ export default function InfoCard({
     font-normal
     text-[18px]
     leading-[26px]
-    text-justify
   `,
         },
 
@@ -319,7 +318,7 @@ export default function InfoCard({
                         width: "55.26px",
                         height: "55.26px",
                         borderRadius: "16.18px",
-                        backgroundColor: "rgba(34,63,127,0.10)",
+                        backgroundColor: "#223F7F1A",
                     }}
                 >
                     {isSvgComponent ? (
@@ -376,12 +375,12 @@ export default function InfoCard({
             {renderIcon()}
 
             {/* TITLE */}
-            <h3
+            <h6
                 className={v.title}
                 style={{ color: T.color.text.secondary }}
             >
                 {title}
-            </h3>
+            </h6>
 
             {/* BADGES FOR PROGRAM VARIANT */}
             {isProgram && (

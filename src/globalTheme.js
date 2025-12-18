@@ -46,9 +46,10 @@ export const theme = {
     text: {
       main: "#1A2A44",
       dark: "#191919",
+      textdesc: "#6B6B6B",
       light: "#FFFFFF",
       secondary: "#223F7F",
-      muted: "#6B7280",
+      muted: "#191919BF",
       grayish: "#374151",
       researchMuted: "#4B5563",
     },
@@ -99,6 +100,7 @@ export const theme = {
     greybg: "#D8DFEF",
     section: "bg-[#F7FAFF]",
     programCard: "bg-[#F7F9FC]",
+    sectionCard: "bg-[#eef2f7]",
     brand: "bg-[#223F7F]",
   },
 

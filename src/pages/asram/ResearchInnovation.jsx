@@ -5,85 +5,88 @@ import PageSection from "@/features/common/layout/PageContainer";
 
 const ResearchInnovation = ({ title, description1, image }) => {
   return (
-    <PageSection bg="bg-white" paddingClass="py-[80px]">
-
-      {/* TITLE — preserved exactly */}
-      <h2
-        className={`
-          
-          font-bold
-          text-[42px] leading-[52px]
-          text-[#223F7F]
-          mb-[40px]
-          text-left
-        `}
-      >
-        Research & Innovation
-      </h2>
-
-      {/* MAIN ROW — perfectly centered inside 1440px & responsive */}
+    <PageSection bg="bg-[#FFF]" paddingClass="py-[40px] md:py-[60px] lg:py-[80px]">
       <div
         className="
           w-full
-          max-w-[1200px]
-          mx-auto
-          flex flex-col lg:flex-row
+          flex flex-col-reverse
+          lg:flex-row
+          items-center
           justify-between
-          items-start
-          gap-[24px] sm:gap-[32px] md:gap-[48px] lg:gap-[80px] xl:gap-[120px] 2xl:gap-[170px]
+          gap-[40px]
+          lg:gap-[106px]
         "
       >
-        {/* LEFT TEXT BLOCK */}
-        <div className="flex flex-col gap-[20px] w-full lg:w-[501.5px]">
+        {/* LEFT CONTENT */}
+        <div className="w-full flex-1 flex flex-col items-start">
+          <h2
+            className="
+              font-bold
+              text-[28px] leading-[36px]
+              lg:text-[32px] lg:leading-[42px]
+              text-[#223F7F]
+              mb-[24px]
+            "
+          >
+            {title}
+          </h2>
+
           <p
-            className={T.font.family}
-            style={{
-              fontSize: "18px",
-              lineHeight: "26px",
-              textAlign: "justify",
-              color: "#191919",
-            }}
+            className="
+              text-[#191919BF]
+              font-regular
+              text-[16px] leading-[26px]
+              lg:text-[18px] lg:leading-[28px]
+              mb-[40px]
+              text-justify
+            "
           >
             {description1}
           </p>
+
+          <button
+            className="
+              px-[32px]
+              h-[46px]
+              flex items-center justify-center
+              rounded-[8px]
+              bg-[#223f7f]
+              text-white
+              font-medium
+              text-[18px]
+              hover:bg-[#1a3163]
+              transition-colors
+            "
+          >
+            Explore Research
+          </button>
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="rounded-[8px] bg-gray-200 w-full max-w-[523px] h-[240px] sm:h-[280px] md:h-[300px] lg:h-[343px] flex-shrink-0">
-          <img loading="lazy" decoding="async"
+        <div
+          className="
+            w-full
+            lg:w-[546px]
+            lg:h-[330px]
+            flex-shrink-0
+            rounded-[12px]
+            overflow-hidden
+            shadow-lg
+          "
+        >
+          <img
+            loading="lazy"
+            decoding="async"
             src={image}
-            alt=""
+            alt="Research & Innovation"
             className="
-              rounded-[8px]
-              object-cover
               w-full
               h-full
+              object-cover
             "
           />
         </div>
       </div>
-
-      {/* BUTTON — unchanged design */}
-      <div className="w-full flex justify-center mt-[40px]">
-        <button
-          className={T.font.family}
-          style={{
-            width: "187px",
-            height: "46px",
-            padding: "12px 24px",
-            gap: "10px",
-            backgroundColor: "#223F7F",
-            color: "white",
-            borderRadius: "9.4px",
-            fontSize: "16px",
-            fontWeight: 600,
-            lineHeight: "20px",
-          }}
-        >
-          View Research
-        </button>
-      </div>
-
     </PageSection>
   );
 };

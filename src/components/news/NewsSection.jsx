@@ -60,7 +60,7 @@ const NewsSection = ({
   gallery = [],
   ctaText,
   onCta,
-  bg = T.bg.programCard,
+  bg = T.bg.sectionCard,
 }) => {
   return (
     <PageSection bg={bg} id={id} paddingClass="py-[80px]">
@@ -76,7 +76,7 @@ const NewsSection = ({
       </h2>
 
       {description && (
-        <p
+        <h6
           className={`
             ${T.font.family}
             ${T.font.weight.medium}
@@ -84,10 +84,10 @@ const NewsSection = ({
             mt-2 mb-6 sm:mb-8 lg:mb-10
             max-w-[800px]
           `}
-          style={{ color: T.color.dark }}
+          style={{ color: T.color.text.textdesc }}
         >
           {description}
-        </p>
+        </h6>
       )}
 
       {/* Mobile / tablet */}

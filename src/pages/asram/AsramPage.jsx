@@ -1,8 +1,8 @@
 import React from "react";
 
 // Icons
-import cancerIcon from "@/assets/asram/insideasram.svg";
-import ResearchIcon from "@/assets/asram/researchinnov.svg";
+import insideasramimg from "@/assets/asram/insideasram.png";
+import ResearchSectionimg from "@/assets/asram/researchinnov.png";
 
 // Normal Direct Imports (NO lazy loading)
 import AsramHero from "./AsramHero";
@@ -26,7 +26,7 @@ const AsramPage = () => {
 
       <InsideASRAM
         title="Inside ASRAM"
-        image={cancerIcon}
+        image={insideasramimg}
         quote="At ASRAM, education meets service through clinics, health camps, and meaningful community impact."
       />
 
@@ -34,8 +34,10 @@ const AsramPage = () => {
 
       <ResearchInnovation
         title="Research & Innovation"
-        description1="ASRAM drives research and innovation through collaborative projects, clinical studies, and evidence-based exploration. Students and faculty work together to develop new ideas, strengthen healthcare practices, and contribute meaningful advancements to the medical and nursing community."
-        image={ResearchIcon}
+        description1="
+        ASRAM drives research and innovation through collaborative projects, clinical studies, and evidence-based exploration. Students and faculty work together to develop new ideas, strengthen healthcare practices ASRAM drives research and innovation through collaborative projects, clinical studies, and evidence-based exploration.
+        "
+        image={ResearchSectionimg}
       />
 
     </>

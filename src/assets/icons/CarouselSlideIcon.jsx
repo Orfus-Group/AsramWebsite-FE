@@ -2,51 +2,50 @@
 import React from "react";
 
 const CarouselSlideIcon = ({ activeIndex = 0 }) => {
-  // Figma constants (DO NOT CHANGE)
-  const DOT_SIZE = 12.3077;
-  const DOT_RADIUS = 6.15385;
-  const X = 7.38464;
+  // Figma constants
+  const CONTAINER_WIDTH = 95.5;
+  const CONTAINER_HEIGHT = 27.1;
+  const DOT_SIZE = 13.1;
+  const DOT_RADIUS = 6.2;
+  const GAP = 5;
+  const PADDING_X = 5; // (95.5 - (5*13.1 + 4*5)) / 2 = 5
+  const PADDING_Y = 7; // (27.1 - 13.1) / 2 = 7
 
-  const Y_POSITIONS = [
-    7.38452,
-    24.6155,
-    41.8462,
-    59.0769,
-    76.3076,
-  ];
+  const DOTS = [0, 1, 2, 3, 4];
 
   return (
     <svg
-      width="27.0769"
-      height="96"
-      viewBox="0 0 28 96"
+      width={CONTAINER_WIDTH}
+      height={CONTAINER_HEIGHT}
+      viewBox={`0 0 ${CONTAINER_WIDTH} ${CONTAINER_HEIGHT}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="absolute z-[10]"
       style={{
-        left: "52.5px",
-        top: "332px",
+        bottom: "80px",
+        left: "50%",
+        transform: "translateX(-50%)",
       }}
     >
       {/* Background Pill */}
       <rect
-        width="27.0769"
-        height="96"
-        rx="12.3077"
+        width={CONTAINER_WIDTH}
+        height={CONTAINER_HEIGHT}
+        rx="12.3"
         fill="white"
         fillOpacity="0.3"
       />
 
       {/* Dots */}
-      {Y_POSITIONS.map((y, index) => (
+      {DOTS.map((index) => (
         <rect
           key={index}
-          x={X}
-          y={y}
+          x={PADDING_X + index * (DOT_SIZE + GAP)}
+          y={PADDING_Y}
           width={DOT_SIZE}
           height={DOT_SIZE}
           rx={DOT_RADIUS}
-          fill={index === activeIndex ? "#223F7F" : "#D9D9D9"}
+          fill={index === activeIndex ? "#223F7F" : "#FFFFFF"}
         />
       ))}
     </svg>
