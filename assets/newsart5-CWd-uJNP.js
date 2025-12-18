@@ -1,0 +1,1 @@
+const s="/AsramWebsite-FE/assets/newsart1-B-XhNjus.svg",a="/AsramWebsite-FE/assets/newsart2-DrNt1hDn.svg",t="/AsramWebsite-FE/assets/newsart3-DKaQ3uHv.svg",e="/AsramWebsite-FE/assets/newsart4-DCpna_T-.svg",r="/AsramWebsite-FE/assets/newsart5-C5xXprHv.svg";export{a,t as b,e as c,r as d,s as i};
