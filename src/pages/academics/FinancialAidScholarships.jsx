@@ -364,23 +364,26 @@ export default function FinancialAidScholarships() {
 
             {steps.map((step, i) => (
               <div key={i} className="flex gap-[10px] items-start">
-                <span
-                  className={`
-                    ${T.font.family}
-                    font-normal
-                    text-[13.82px]
-                    leading-[19.74px]
-                    flex items-center justify-center
-                    w-[31.58px] h-[31.58px]
-                    rounded-full
-                  `}
-                  style={{
-                    backgroundColor: T.color.background.programCard,
-                    color: T.color.dark,
-                  }}
-                >
-                  {i + 1}
-                </span>
+            <span
+  className={`
+    ${T.font.family}
+    inline-flex
+    items-center
+    justify-center
+    w-[32px] h-[32px]
+    aspect-square
+    rounded-full
+    text-[13.82px]
+    font-normal
+  `}
+  style={{
+    backgroundColor: "#EEF2F7",
+    color: T.color.dark,
+  }}
+>
+  {i + 1}
+</span>
+
 
                 <div className="flex flex-col">
                   <span

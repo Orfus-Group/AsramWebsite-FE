@@ -3,7 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import AsramMainHeader from "@/features/header/AsramMainHeader";
 import AcademicsHeader from "@/features/header/AcademicsHeader";
 import AsramFooter from "@/pages/asram/AsramFooter";
-import NursingFooter from "@/pages/nursing/NursingFooter";
+import NursingFooter from "@/pages/nursing/secondaryfooter";
 import { HeroProvider, useHero } from "@/context/HeroContext";
 import CommonHero from "@/pages/asram/CommonHero";
 

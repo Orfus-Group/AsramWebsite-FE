@@ -12,7 +12,7 @@ import CommunityOutreachSection from "./CommunityOutreach";
 import FacultySpotlightSection from "./FacultySpotlight";
 import KeyStrengthsSection from "./KeyStrenght";
 import WhyChooseSection from "./WhyChooseNursing";
-import Footer from "./NursingFooter";
+import Footer from "./secondaryfooter";
 
 const NursingPage = () => {
   const { setHero, hideHero } = useHero();

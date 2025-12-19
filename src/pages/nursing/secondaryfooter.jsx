@@ -5,7 +5,7 @@ import { LocationIcon, MailIcon, PhoneIcon } from "@/assets/icons/FooterIcons";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#F7F9FC] flex justify-center">
+    <footer className="w-full bg-[#008C8C33] flex justify-center">
 
       {/* OUTER WRAPPER */}
       <div
@@ -48,7 +48,7 @@ export default function Footer() {
                 className={`
                   ${T.font.family}
                   ${T.font.weight.bold}
-                  text-[18px] lg:text-[16px]
+                  text-[18px] lg:text-[18px]
                   leading-[26px]
                   text-[${T.color.text.dark}]
                 `}
@@ -59,7 +59,9 @@ export default function Footer() {
               <p
                 className={`
                   ${T.font.family}
-                  text-[15px] lg:text-[15.79px]
+                  text-[#191919BF]
+                  font-semibold
+                  text-[15px] lg:text-[16px]
                   leading-[24px] lg:leading-[26px]
                   opacity-70
                   mt-[12px] lg:mt-[16px]
@@ -77,8 +79,9 @@ export default function Footer() {
               <h3
                 className={`
                   ${T.font.family}
+                  text-[#191919]
                   ${T.font.weight.semibold}
-                  text-[18px] lg:text-[16px]
+                  text-[18px] lg:text-[19px]
                   leading-[26px]
                 `}
               >
@@ -92,6 +95,8 @@ export default function Footer() {
                       key={i}
                       className={`
                         ${T.font.family}
+                        text-[#191919BF]
+                        font-regular
                         text-[15px] lg:text-[15.79px]
                         leading-[22px] lg:leading-[23px]
                         opacity-70
@@ -111,8 +116,9 @@ export default function Footer() {
               <h3
                 className={`
                   ${T.font.family}
+                   text-[#191919]
                   ${T.font.weight.semibold}
-                  text-[18px] lg:text-[16px]
+                  text-[18px] lg:text-[19px]
                   leading-[26px]
                 `}
               >
@@ -129,7 +135,9 @@ export default function Footer() {
                   <p
                     key={i}
                     className={`
+                       text-[#191919BF]
                       ${T.font.family}
+                                             font-regular
                       text-[15px] lg:text-[15.79px]
                       leading-[22px] lg:leading-[23px]
                       opacity-70
@@ -146,8 +154,9 @@ export default function Footer() {
               <h3
                 className={`
                   ${T.font.family}
+                   text-[#191919]
                   ${T.font.weight.semibold}
-                  text-[18px] lg:text-[16px]
+                  text-[18px] lg:text-[19px]
                   leading-[26px]
                 `}
               >
@@ -161,6 +170,8 @@ export default function Footer() {
 <LocationIcon size={20} color="#191919" className="shrink-0" />                  <p
                     className={`
                       ${T.font.family} 
+                       text-[#191919BF]
+                       font-regular
                       text-[15px] lg:text-[15.79px]
                       leading-[22px] lg:leading-[23px]
                       opacity-70
@@ -178,6 +189,8 @@ export default function Footer() {
                   <p
                     className={`
                       ${T.font.family}
+                        text-[#191919BF]
+                       font-regular
                       text-[15px] lg:text-[15.79px]
                       leading-[22px] lg:leading-[23px]
                       opacity-70
@@ -193,6 +206,8 @@ export default function Footer() {
                   <p
                     className={`
                       ${T.font.family}
+                        text-[#191919BF]
+                       font-regular
                       text-[15px] lg:text-[15.79px]
                       leading-[22px] lg:leading-[23px]
                       opacity-70
@@ -207,7 +222,7 @@ export default function Footer() {
           </div>
 
           {/* ================= DIVIDER ================= */}
-          <div className="w-full border-t border-[#E5E7EB]"></div>
+          <div style={{ border: "1px solid #19191933" }} className="w-full"></div>
 
           {/* ================= BOTTOM BAR ================= */}
           <div
