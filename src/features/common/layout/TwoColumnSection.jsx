@@ -73,7 +73,7 @@ export default function TwoColumnSection({
                   text-[16px] md:text-[17px]
                   leading-[24px] md:leading-[26px]
                 `}
-                style={{ color: T.color.text.muted }}
+                style={{ color: "#191919BF" }}
               >
                 {p}
               </p>

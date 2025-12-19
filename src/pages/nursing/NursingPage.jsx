@@ -7,12 +7,13 @@ import VisionMissionSection from "./VisionMission";
 import NewsEvents from "./NewsEvents";
 import StudentExperience from "./StudentExperience";
 import ResearchSection from "./ResearchSection";
-import CommunityOutreachSection from "./CommunityOutreach";
+import SocialCommitment from "./SocialCommitment";
 // import ClinicalPracticumSection from "./ClinicalPracticumSection";
 import FacultySpotlightSection from "./FacultySpotlight";
 import KeyStrengthsSection from "./KeyStrenght";
 import WhyChooseSection from "./WhyChooseNursing";
 import Footer from "./secondaryfooter";
+import AsramNewsEvents from "../asram/AsramNewsEvents";
 
 const NursingPage = () => {
   const { setHero, hideHero } = useHero();
@@ -55,14 +56,12 @@ const NursingPage = () => {
     <>
       <AcademicProgramsSection />
       <VisionMissionSection />
-      <NewsEvents />
       <StudentExperience />
       <ResearchSection />
-      <CommunityOutreachSection />
-      {/* <ClinicalPracticumSection /> */}
+      <SocialCommitment />
+        <AsramNewsEvents />
       <FacultySpotlightSection />
       <KeyStrengthsSection />
-      <WhyChooseSection />
     </>
   );
 };

@@ -175,7 +175,15 @@ export default function ResearchSection() {
         "Transforming care delivery through technology and evidence-based practice improvements.",
     },
     {
-      icon: <PreciousHealthIcon size={38} color="#008C8C" strokeWidth={2.8} />,
+      icon: (<svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.5 28.5H22.1667" stroke="#008C8C" stroke-width="3.28947" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.75 34.832H33.25" stroke="#008C8C" stroke-width="3.28947" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.1673 34.8346C25.1068 34.8346 27.9259 33.6669 30.0044 31.5884C32.0829 29.5099 33.2507 26.6908 33.2507 23.7513C33.2507 20.8118 32.0829 17.9927 30.0044 15.9142C27.9259 13.8357 25.1068 12.668 22.1673 12.668H20.584" stroke="#008C8C" stroke-width="3.28947" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.25 22.168H17.4167" stroke="#008C8C" stroke-width="3.28947" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.2507 19C13.4108 19 12.6053 18.6664 12.0115 18.0725C11.4176 17.4786 11.084 16.6732 11.084 15.8333V9.5H20.584V15.8333C20.584 16.6732 20.2504 17.4786 19.6565 18.0725C19.0626 18.6664 18.2572 19 17.4173 19H14.2507Z" stroke="#008C8C" stroke-width="3.28947" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19.0013 9.5013V4.7513C19.0013 4.33138 18.8345 3.92865 18.5376 3.63172C18.2406 3.33478 17.8379 3.16797 17.418 3.16797H14.2513C13.8314 3.16797 13.4286 3.33478 13.1317 3.63172C12.8348 3.92865 12.668 4.33138 12.668 4.7513V9.5013" stroke="#008C8C" stroke-width="3.28947" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+),
       title: "Precision Health",
       description:
         "Utilizing genomics and personalized medicine to optimize patient outcomes.",
@@ -184,7 +192,7 @@ export default function ResearchSection() {
 
   return (
     <PageSection
-      bg="bg-white"
+      bg="bg-[#EEF2F7]"
       paddingClass="py-[80px]"
     >
       {/* Heading */}

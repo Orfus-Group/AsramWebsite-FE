@@ -1,10 +1,6 @@
 import React from "react";
 
-import studentExpMain from "@/assets/nursing/studentexp.svg";
-import favourableIcon from "@/assets/nursing/favourablefac.svg";
-import learningIcon from "@/assets/nursing/practicallearning.svg";
-import curricularIcon from "@/assets/nursing/extracurriccular.svg";
-import amenitiesIcon from "@/assets/nursing/modernaminities.svg";
+import studentExpMain from "@/assets/nursing/studentexp.png";
 import InfoCard from "@/features/common/cards/InfoCard";
 import PageSection from "@/features/common/layout/PageContainer";
 import { IconPublicHealth as PublicHealthIcon } from "@/assets/icons";
@@ -219,15 +215,15 @@ export default function StudentExperience() {
 
         {/* Right Text */}
         <div className="flex flex-col gap-[16px] md:gap-[20px] lg:gap-[24px] w-full xl:max-w-[578px]">
-          <h3 className="font-montserrat font-semibold text-[24px] md:text-[28px] lg:text-[32px] leading-[32px] md:leading-[38px] lg:leading-[42px] text-[#223F7F] max-w-full xl:max-w-[461px]">
+          <h3 className="font-regular font-semibold text-[24px] md:text-[28px] lg:text-[32px] leading-[32px] md:leading-[38px] lg:leading-[42px] text-[#223F7F] max-w-full xl:max-w-[461px]">
             Comprehensive Learning Environment
           </h3>
 
-          <p className="font-montserrat text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[28px] text-[#6B7280]">
-            At ASRAM School of Nursing, we prioritize creating an environment
-            where students can thrive academically, professionally, and
-            personally. Our approach combines rigorous academics with practical
-            exposure and holistic development.
+          <p className="font-regular text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[28px] text-[#191919BF]">
+          At ASRAM School of Nursing, we prioritize creating an environment where students can thrive academically, professionally, and personally. Our approach combines rigorous academics with practical exposure and holistic development.
+          </p>
+                <p className="font-regular text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[28px] text-[#191919BF]">
+          At ASRAM School of Nursing, we prioritize creating an environment where students can thrive academically, professionally, and personally. Our approach combines rigorous academics with practical exposure and holistic development.
           </p>
         </div>
       </div>

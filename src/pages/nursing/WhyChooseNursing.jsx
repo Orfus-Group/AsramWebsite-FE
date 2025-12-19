@@ -1,19 +1,19 @@
 import React from "react";
 import { T } from "@/theme";
-import PageSection from "@/features/common/layout/PageContainer";
 import CheckMarkIcon from "@/assets/icons/CheckMarkIcon";
 
 export default function WhyChooseSection() {
   return (
-    <PageSection bg="bg-white" paddingClass="py-[40px] mb-[40px]">
+    // Removed PageSection to avoid nested container padding and width constraints
+    <div className="w-full mt-[50px] mb-[80px]">
       {/* Centered outer box as per Figma */}
       <div className="w-full flex flex-col items-center">
         <div
           className="
-            w-full max-w-[1200px]
+            w-full
             rounded-[10px]
             flex flex-col items-center
-            bg-[#F7F9FC]
+            bg-[#FFF]
             px-[24px] md:px-[40px]
             py-[30px] md:py-[40px]
           "
@@ -63,13 +63,13 @@ export default function WhyChooseSection() {
                   "Robust infrastructure across the 10-acre campus",
                   "Recognized affiliations and regulatory approvals",
                 ].map((item, idx) => (
-                 <li key={idx} className="flex items-center gap-[10px]">
-  <CheckMarkIcon
-    width={14}
-    height={14}
-    color={T.color.primary}
-    className="shrink-0"
-  />
+                  <li key={idx} className="flex items-center gap-[10px]">
+                    <CheckMarkIcon
+                      width={14}
+                      height={14}
+                      color={T.color.primary}
+                      className="shrink-0"
+                    />
 
                     <p
                       className={`
@@ -106,15 +106,15 @@ export default function WhyChooseSection() {
                   "Student-centered environment with strong mentoring",
                   "Practical orientation ensuring job readiness",
                 ].map((item, idx) => (
-                 <li key={idx} className="flex items-center gap-[10px]">
-  <CheckMarkIcon
-    width={14}
-    height={14}
-    color={T.color.primary}
-    className="shrink-0"
-  />
+                  <li key={idx} className="flex items-center gap-[10px]">
+                    <CheckMarkIcon
+                      width={14}
+                      height={14}
+                      color={T.color.primary}
+                      className="shrink-0"
+                    />
 
-  
+
                     <p
                       className={`
                         ${T.font.family}
@@ -132,6 +132,6 @@ export default function WhyChooseSection() {
           </div>
         </div>
       </div>
-    </PageSection>
+    </div>
   );
 }

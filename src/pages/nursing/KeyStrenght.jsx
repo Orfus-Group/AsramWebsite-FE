@@ -5,6 +5,7 @@ import React from "react";
 import { T } from "@/theme";
 import InfoCard from "@/features/common/cards/InfoCard";
 import PageSection from "@/features/common/layout/PageContainer";
+import WhyChooseSection from "./WhyChooseNursing";
 
 export const HospitalIntegrationIcon = ({
   size = 28,
@@ -216,7 +217,7 @@ export default function KeyStrengthsSection() {
 
 
   return (
-    <PageSection bg={T.bg.white} paddingClass="py-[80px] pb-[40px]">
+    <PageSection bg="bg-[#EEF2F7]" paddingClass="py-[80px] pb-[40px]">
       <div className="flex flex-col gap-[50px]">
         {/* TITLE */}
         <h2
@@ -253,7 +254,9 @@ export default function KeyStrengthsSection() {
             />
           ))}
         </div>
+
       </div>
+        <WhyChooseSection />
     </PageSection>
   );
 }

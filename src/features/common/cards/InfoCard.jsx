@@ -24,11 +24,11 @@ export default function InfoCard({
     min-w-[340px]       
     h-[422.37px]
     flex flex-col items-start justify-start
-    rounded-[9.87px]
+    rounded-[12px]
       `,
             wrapperStyle: {
-                backgroundColor: "#F7F9FC",   // your card BG
-                border: "none",               // remove default border
+                backgroundColor: "#EEF2F7",   // your card BG
+                 border: "1px solid #07070733",
                 paddingTop: "23.7px",
                 paddingLeft: "23.7px",
                 paddingRight: "23.7px",
@@ -117,8 +117,8 @@ export default function InfoCard({
         max-w-[282.2px]
         min-h-[296.1px]
         flex flex-col items-start justify-start
-        rounded-[9.87px]
-        bg-white
+        rounded-[12px]
+        bg-[#EEF2F7]
         mx-auto
       `,
             wrapperStyle: {
@@ -140,7 +140,8 @@ export default function InfoCard({
       `,
             paragraph: `
         ${T.font.family}
-        text-[16px] leading-[24px]
+        font-regular
+        text-[18px] leading-[24px]
         text-left
         w-full
       `,
@@ -189,7 +190,7 @@ export default function InfoCard({
     bg-[#F7F9FC]
   `,
             wrapperStyle: {
-                backgroundColor: "#F7F9FC",
+                backgroundColor: "#FFF",
                 paddingTop: "23.7px",
                 paddingLeft: "23.7px",
                 paddingRight: "23.7px",
@@ -197,7 +198,7 @@ export default function InfoCard({
                 gap: "16.8px",
 
                 /* ⭐ Only bottom stroke */
-                borderBottom: "3.95px solid #223F7F",
+                borderBottom: "4px solid #008C8C",
 
                 /* ⭐ Ensure NO borders anywhere else */
                 borderTop: "none",
@@ -218,7 +219,7 @@ export default function InfoCard({
 
             paragraph: `
     ${T.font.family}
-    text-[15.79px] leading-[27px]
+    text-[15.79px] leading-[27.6px]
     text-left w-full
   `,
         },
@@ -246,7 +247,7 @@ export default function InfoCard({
             paragraph: `
     ${T.font.family}
     ${T.font.weight.regular}
-    text-[16px] leading-[24px]
+    text-[18px] leading-[26px]
     text-left
     w-full
   `,
@@ -397,7 +398,7 @@ export default function InfoCard({
                         {years}
                     </span>
 
-                    <span
+                    {/* <span
                         className="
               flex items-center justify-center
               w-[97.4px] h-[29.61px]
@@ -410,7 +411,7 @@ export default function InfoCard({
                         }}
                     >
                         {seats}
-                    </span>
+                    </span> */}
                 </div>
             )}
 
@@ -422,8 +423,8 @@ export default function InfoCard({
                         variant === "whychoose"
                             ? "rgba(25, 25, 25, 0.75)"
                             : variant === "research"
-                                ? T.color.text.researchMuted
-                                : T.color.text.muted,
+                                ? "#191919BF"  : variant === "program" ? "#6B7280"
+                                : "#6B7280",
                 }}
             >
                 {description}

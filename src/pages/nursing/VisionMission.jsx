@@ -34,7 +34,7 @@ export default function VisionMissionSection() {
 
   return (
     <PageSection
-      bg="bg-[#F7F9FC]"
+      bg="bg-[#EEF2F7]"
       /* Responsive vertical rhythm */
       paddingClass="
         py-[60px]
