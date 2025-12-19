@@ -1,4 +1,4 @@
-import{j as e,T as s}from"./index-CszHTlp4.js";import{b as n}from"./vendor-k9dDiao6.js";const i=({bgImage:a,title:t})=>{const[l,r]=n.useState(!1);return e.jsxs("section",{className:"relative w-full overflow-hidden",children:[e.jsxs("div",{className:`\r
+import{j as e,T as s}from"./index-C5rHOwJy.js";import{b as n}from"./vendor-k9dDiao6.js";const i=({bgImage:a,title:t})=>{const[l,r]=n.useState(!1);return e.jsxs("section",{className:"relative w-full overflow-hidden",children:[e.jsxs("div",{className:`\r
           relative w-full\r
           h-[300px] md:h-[400px] lg:h-[492px]\r
           overflow-hidden\r
