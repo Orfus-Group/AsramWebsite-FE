@@ -91,7 +91,7 @@ const ReputationQuality = () => {
               w-full
               h-full
               object-cover
-                  aspect-[16/9]
+              aspect-[3.5/4] md:aspect-[16/9] lg:aspect-auto
             "
           />
         </div>

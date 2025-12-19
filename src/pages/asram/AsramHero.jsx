@@ -10,8 +10,8 @@ const AsramHero = () => {
     <section
       className="
         relative w-full
-        h-[65vh]
-        sm:h-[60vh]
+        h-[335px]
+        sm:h-[450px]
         md:h-[75vh]
         lg:h-[760px]
         overflow-hidden
@@ -29,20 +29,26 @@ const AsramHero = () => {
           decoding="sync"
           className="
             w-full h-full object-cover
-            object-[50%_30%]
+            object-[50%_15%]
             sm:object-center
           "
         />
 
         {/* Gradient Overlay */}
+        {/* Mobile Gradient Overlay */}
         <div
-          className="
-            absolute inset-0
-          "
+          className="absolute inset-0 block md:hidden"
+          style={{
+            background: "linear-gradient(90deg, #223F7F 0%, rgba(34, 63, 127, 0.85) 35%, rgba(34, 63, 127, 0.1) 100%)"
+          }}
+        />
+
+        {/* Desktop Gradient Overlay */}
+        <div
+          className="absolute inset-0 hidden md:block"
           style={{
             background: "linear-gradient(289deg, rgba(255, 255, 255, 0) 100%, rgba(210, 212, 221, 0.33) 59%, #223f7f 30%)"
           }}
-         
         />
       </div>
 
@@ -52,11 +58,11 @@ const AsramHero = () => {
           className="!py-0 !lg:pl-[120px] !lg:pr-[120px]"
           bg="transparent"
         >
-          <div className="max-w-[700px] text-white">
+          <div className="w-full md:max-w-[700px] text-white flex flex-col items-center text-center md:block md:text-left">
             <h1
               className="
                 text-white
-                text-[40px] leading-[1.1]
+                text-[28px] sm:text-[40px] leading-[1.1]
                 md:text-[50px]
                 lg:text-[60px] lg:leading-[54px]
                 mb-6
@@ -67,10 +73,11 @@ const AsramHero = () => {
             </h1>
 
             <p className="
-              text-[22px] leading-[1.6]
+              text-[16px] sm:text-[18px] leading-[1.5]
               md:text-[18px] md:leading-[1.6]
-              mb-8 opacity-90 font-medium
-              max-w-[500px]
+              lg:text-[22px]
+              mb-6 opacity-90 font-medium
+              max-w-[320px] sm:max-w-[500px]
             ">
               At Asram, we prepare you to thrive in the ever-evolving world of health sciences.
             </p>
@@ -80,9 +87,9 @@ const AsramHero = () => {
                 bg-[#191919] 
                 hover:bg-[#27272a] 
                 text-white 
-                px-8 py-3 
+                px-6 py-2 md:px-8 md:py-3
                 rounded-[8px] 
-                text-[22px] font-medium 
+                text-[16px] md:text-[22px] font-medium 
                 transition-colors
               "
             >

@@ -256,7 +256,7 @@ const InstitutionsSection = () => {
                 <span
                   className={`
                     ${T.font.weight.medium}
-                    text-[13px] xs:text-[14px] md:text-[12px] lg:text-[13.5px] xl:text-[15px]
+                    text-[13px] xs:text-[14px] md:text-[12px] lg:text-[13.5px] xl:text-[15px] min-[1390px]:text-[18px]
                     text-[#191919]
                     leading-tight
                     whitespace-nowrap
