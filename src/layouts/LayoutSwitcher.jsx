@@ -4,6 +4,8 @@ import AsramMainHeader from "@/features/header/AsramMainHeader";
 import AcademicsHeader from "@/features/header/AcademicsHeader";
 import AsramFooter from "@/pages/asram/AsramFooter";
 import NursingFooter from "@/pages/nursing/NursingFooter";
+import { HeroProvider, useHero } from "@/context/HeroContext";
+import CommonHero from "@/pages/asram/CommonHero";
 
 const layoutByPath = (pathname) => {
   if (pathname.startsWith("/nursing")) return "nursing";
@@ -17,10 +19,10 @@ const layoutByPath = (pathname) => {
 
 const headerMap = {
   main: AsramMainHeader,
-  nursing: AcademicsHeader,
+   nursing: AcademicsHeader,
   academics: AcademicsHeader,
   research: AcademicsHeader,
-  news: AcademicsHeader,
+  news: AsramMainHeader,
   faculty: AcademicsHeader,
 };
 
@@ -33,8 +35,9 @@ const footerMap = {
   faculty: NursingFooter,
 };
 
-const LayoutSwitcher = () => {
+const InnerLayout = () => {
   const { pathname } = useLocation();
+  const { heroData } = useHero();
   const layoutKey = layoutByPath(pathname);
   const Header = headerMap[layoutKey] || React.Fragment;
   const Footer = footerMap[layoutKey] || React.Fragment;
@@ -42,11 +45,24 @@ const LayoutSwitcher = () => {
   return (
     <>
       <Header />
+      {heroData.isVisible && (
+        <CommonHero title={heroData.title} bgImage={heroData.bgImage}>
+          {heroData.children}
+        </CommonHero>
+      )}
       <main>
         <Outlet />
       </main>
       <Footer />
     </>
+  );
+};
+
+const LayoutSwitcher = () => {
+  return (
+    <HeroProvider>
+      <InnerLayout />
+    </HeroProvider>
   );
 };
 

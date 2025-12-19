@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
-import NewsHerobg from "@/assets/news/newsherobanner.svg";
+import HealthHerobg from "@/assets/news/asramhealthbanner.png";
 import Globalhealthimg from "@/assets/faculty/globalhealth.png";
 import GlobalTeam1 from "@/assets/faculty/globalteam1.png";
 import GlobalTeam2 from "@/assets/faculty/globalteam2.png";
@@ -15,7 +15,7 @@ import {
     IconVision,
     IconClinicalTrials
 } from "@/assets/icons"; // Importing some potentially useful icons
-import ReusableHero from "@/features/common/layout/ReusableHero";
+import { useHero } from "@/context/HeroContext";
 
 // Initial Icons - Generic SVG placeholders for specific needs if assets don't match exactly
 const IconRuralHealth = (props) => (
@@ -68,10 +68,19 @@ const IconPeople = (props) => (
 // Formerly IconTelemedicine - kept for compatibility
 
 const GlobalCommunityHealthPage = () => {
+    const { setHero, hideHero } = useHero();
+
+    useLayoutEffect(() => {
+        setHero({
+            // title: "Global and Community Health",
+            bgImage: HealthHerobg,
+        });
+        return () => hideHero();
+    }, [setHero, hideHero]);
+
     return (
         <div className="bg-white min-h-screen">
-            {/* ==================== HERO SECTION ==================== */}
-            <ReusableHero title="Global and Community Health" bgImage={NewsHerobg} />
+            {/* ==================== HERO SECTION REMOVED (Handled by Layout) ==================== */}
 
 
             {/* ==================== OVERVIEW ==================== */}
@@ -99,8 +108,8 @@ const GlobalCommunityHealthPage = () => {
                         <div className="bg-white rounded-[14.14px] border-[0.86px] border-t-[3.45px] border-[#E5E5E5] p-8 shadow-sm hover:shadow-md transition-all duration-300">
                             <div className="w-12 h-12 bg-[#E0F2F1] rounded-[8px] flex items-center justify-center text-[#008C8C] mb-6">
                                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_145_1293)">
-                                        <path d="M18.9662 10.3459H16.8282C16.4514 10.3451 16.0847 10.4677 15.7842 10.695C15.4837 10.9224 15.266 11.2418 15.1642 11.6046L13.1382 18.812C13.1252 18.8568 13.098 18.8961 13.0606 18.9241C13.0233 18.9521 12.978 18.9672 12.9313 18.9672C12.8847 18.9672 12.8393 18.9521 12.802 18.9241C12.7647 18.8961 12.7375 18.8568 12.7244 18.812L7.96546 1.87979C7.9524 1.83502 7.92517 1.7957 7.88786 1.76772C7.85056 1.73973 7.80518 1.72461 7.75854 1.72461C7.71191 1.72461 7.66653 1.73973 7.62923 1.76772C7.59192 1.7957 7.56469 1.83502 7.55163 1.87979L5.52563 9.0872C5.4243 9.44857 5.20783 9.76701 4.90909 9.99417C4.61034 10.2213 4.24564 10.3448 3.87034 10.3459H1.72363" stroke="#008C8C" stroke-width="1.72426" stroke-linecap="round" stroke-linejoin="round" />
+                                    <g clipPath="url(#clip0_145_1293)">
+                                        <path d="M18.9662 10.3459H16.8282C16.4514 10.3451 16.0847 10.4677 15.7842 10.695C15.4837 10.9224 15.266 11.2418 15.1642 11.6046L13.1382 18.812C13.1252 18.8568 13.098 18.8961 13.0606 18.9241C13.0233 18.9521 12.978 18.9672 12.9313 18.9672C12.8847 18.9672 12.8393 18.9521 12.802 18.9241C12.7647 18.8961 12.7375 18.8568 12.7244 18.812L7.96546 1.87979C7.9524 1.83502 7.92517 1.7957 7.88786 1.76772C7.85056 1.73973 7.80518 1.72461 7.75854 1.72461C7.71191 1.72461 7.66653 1.73973 7.62923 1.76772C7.59192 1.7957 7.56469 1.83502 7.55163 1.87979L5.52563 9.0872C5.4243 9.44857 5.20783 9.76701 4.90909 9.99417C4.61034 10.2213 4.24564 10.3448 3.87034 10.3459H1.72363" stroke="#008C8C" strokeWidth="1.72426" strokeLinecap="round" strokeLinejoin="round" />
                                     </g>
                                     <defs>
                                         <clipPath id="clip0_145_1293">
@@ -119,9 +128,9 @@ const GlobalCommunityHealthPage = () => {
                         <div className="bg-white rounded-[14.14px] border-[0.86px] border-t-[3.45px] border-[#E5E5E5] p-8 shadow-sm hover:shadow-md transition-all duration-300">
                             <div className="w-12 h-12 bg-[#E0F2F1] rounded-[8px] flex items-center justify-center text-[#008C8C] mb-6">
                                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_145_1302)">
-                                        <path d="M10.3467 6.03516V18.105" stroke="#008C8C" stroke-width="1.72426" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M2.58576 15.5198C2.35711 15.5198 2.13783 15.429 1.97614 15.2673C1.81446 15.1057 1.72363 14.8864 1.72363 14.6577V3.45002C1.72363 3.22137 1.81446 3.00208 1.97614 2.8404C2.13783 2.67872 2.35711 2.58789 2.58576 2.58789H6.89641C7.81102 2.58789 8.68816 2.95122 9.33489 3.59794C9.98161 4.24466 10.3449 5.12181 10.3449 6.03641C10.3449 5.12181 10.7083 4.24466 11.355 3.59794C12.0017 2.95122 12.8789 2.58789 13.7935 2.58789H18.1041C18.3328 2.58789 18.552 2.67872 18.7137 2.8404C18.8754 3.00208 18.9662 3.22137 18.9662 3.45002V14.6577C18.9662 14.8864 18.8754 15.1057 18.7137 15.2673C18.552 15.429 18.3328 15.5198 18.1041 15.5198H12.9313C12.2454 15.5198 11.5875 15.7923 11.1025 16.2774C10.6174 16.7624 10.3449 17.4203 10.3449 18.1062C10.3449 17.4203 10.0724 16.7624 9.5874 16.2774C9.10236 15.7923 8.4445 15.5198 7.75854 15.5198H2.58576Z" stroke="#008C8C" stroke-width="1.72426" stroke-linecap="round" stroke-linejoin="round" />
+                                    <g clipPath="url(#clip0_145_1302)">
+                                        <path d="M10.3467 6.03516V18.105" stroke="#008C8C" strokeWidth="1.72426" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M2.58576 15.5198C2.35711 15.5198 2.13783 15.429 1.97614 15.2673C1.81446 15.1057 1.72363 14.8864 1.72363 14.6577V3.45002C1.72363 3.22137 1.81446 3.00208 1.97614 2.8404C2.13783 2.67872 2.35711 2.58789 2.58576 2.58789H6.89641C7.81102 2.58789 8.68816 2.95122 9.33489 3.59794C9.98161 4.24466 10.3449 5.12181 10.3449 6.03641C10.3449 5.12181 10.7083 4.24466 11.355 3.59794C12.0017 2.95122 12.8789 2.58789 13.7935 2.58789H18.1041C18.3328 2.58789 18.552 2.67872 18.7137 2.8404C18.8754 3.00208 18.9662 3.22137 18.9662 3.45002V14.6577C18.9662 14.8864 18.8754 15.1057 18.7137 15.2673C18.552 15.429 18.3328 15.5198 18.1041 15.5198H12.9313C12.2454 15.5198 11.5875 15.7923 11.1025 16.2774C10.6174 16.7624 10.3449 17.4203 10.3449 18.1062C10.3449 17.4203 10.0724 16.7624 9.5874 16.2774C9.10236 15.7923 8.4445 15.5198 7.75854 15.5198H2.58576Z" stroke="#008C8C" strokeWidth="1.72426" strokeLinecap="round" strokeLinejoin="round" />
                                     </g>
                                     <defs>
                                         <clipPath id="clip0_145_1302">
@@ -164,9 +173,9 @@ const GlobalCommunityHealthPage = () => {
                                 <div className="flex gap-5">
                                     <div className="w-12 h-12 rounded-full bg-[#EEF2FF] flex items-center justify-center text-[#223F7F] shrink-0">
                                         <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.2652 20.6514C16.4496 20.6514 20.6524 16.4486 20.6524 11.2642C20.6524 6.07976 16.4496 1.87695 11.2652 1.87695C6.08073 1.87695 1.87793 6.07976 1.87793 11.2642C1.87793 16.4486 6.08073 20.6514 11.2652 20.6514Z" stroke="#223F7F" stroke-width="1.87744" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M11.2647 1.87695C8.85424 4.40789 7.50977 7.76907 7.50977 11.2642C7.50977 14.7593 8.85424 18.1205 11.2647 20.6514C13.6751 18.1205 15.0195 14.7593 15.0195 11.2642C15.0195 7.76907 13.6751 4.40789 11.2647 1.87695Z" stroke="#223F7F" stroke-width="1.87744" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M1.87793 11.2637H20.6524" stroke="#223F7F" stroke-width="1.87744" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M11.2652 20.6514C16.4496 20.6514 20.6524 16.4486 20.6524 11.2642C20.6524 6.07976 16.4496 1.87695 11.2652 1.87695C6.08073 1.87695 1.87793 6.07976 1.87793 11.2642C1.87793 16.4486 6.08073 20.6514 11.2652 20.6514Z" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M11.2647 1.87695C8.85424 4.40789 7.50977 7.76907 7.50977 11.2642C7.50977 14.7593 8.85424 18.1205 11.2647 20.6514C13.6751 18.1205 15.0195 14.7593 15.0195 11.2642C15.0195 7.76907 13.6751 4.40789 11.2647 1.87695Z" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M1.87793 11.2637H20.6524" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
 
                                     </div>
@@ -180,11 +189,11 @@ const GlobalCommunityHealthPage = () => {
                                 <div className="flex gap-5">
                                     <div className="w-12 h-12 rounded-full bg-[#EEF2FF] flex items-center justify-center text-[#223F7F] shrink-0">
                                         <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M10.3262 1.87695V3.7544" stroke="#223F7F" stroke-width="1.87744" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M4.69336 1.87695V3.7544" stroke="#223F7F" stroke-width="1.87744" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M4.6941 2.81641H3.75537C3.25745 2.81641 2.77991 3.01421 2.42782 3.3663C2.07573 3.71839 1.87793 4.19592 1.87793 4.69385V8.44874C1.87793 9.94253 2.47133 11.3751 3.5276 12.4314C4.58387 13.4877 6.01648 14.0811 7.51026 14.0811C9.00405 14.0811 10.4367 13.4877 11.4929 12.4314C12.5492 11.3751 13.1426 9.94253 13.1426 8.44874V4.69385C13.1426 4.19592 12.9448 3.71839 12.5927 3.3663C12.2406 3.01421 11.7631 2.81641 11.2652 2.81641H10.3264" stroke="#223F7F" stroke-width="1.87744" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M7.50977 14.0818C7.50977 15.5756 8.10317 17.0082 9.15944 18.0645C10.2157 19.1207 11.6483 19.7141 13.1421 19.7141C14.6359 19.7141 16.0685 19.1207 17.1248 18.0645C18.181 17.0082 18.7744 15.5756 18.7744 14.0818V11.2656" stroke="#223F7F" stroke-width="1.87744" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M18.7749 11.2647C19.8118 11.2647 20.6524 10.4241 20.6524 9.38721C20.6524 8.35033 19.8118 7.50977 18.7749 7.50977C17.738 7.50977 16.8975 8.35033 16.8975 9.38721C16.8975 10.4241 17.738 11.2647 18.7749 11.2647Z" stroke="#223F7F" stroke-width="1.87744" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M10.3262 1.87695V3.7544" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M4.69336 1.87695V3.7544" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M4.6941 2.81641H3.75537C3.25745 2.81641 2.77991 3.01421 2.42782 3.3663C2.07573 3.71839 1.87793 4.19592 1.87793 4.69385V8.44874C1.87793 9.94253 2.47133 11.3751 3.5276 12.4314C4.58387 13.4877 6.01648 14.0811 7.51026 14.0811C9.00405 14.0811 10.4367 13.4877 11.4929 12.4314C12.5492 11.3751 13.1426 9.94253 13.1426 8.44874V4.69385C13.1426 4.19592 12.9448 3.71839 12.5927 3.3663C12.2406 3.01421 11.7631 2.81641 11.2652 2.81641H10.3264" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M7.50977 14.0818C7.50977 15.5756 8.10317 17.0082 9.15944 18.0645C10.2157 19.1207 11.6483 19.7141 13.1421 19.7141C14.6359 19.7141 16.0685 19.1207 17.1248 18.0645C18.181 17.0082 18.7744 15.5756 18.7744 14.0818V11.2656" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M18.7749 11.2647C19.8118 11.2647 20.6524 10.4241 20.6524 9.38721C20.6524 8.35033 19.8118 7.50977 18.7749 7.50977C17.738 7.50977 16.8975 8.35033 16.8975 9.38721C16.8975 10.4241 17.738 11.2647 18.7749 11.2647Z" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
 
                                     </div>
@@ -198,10 +207,10 @@ const GlobalCommunityHealthPage = () => {
                                 <div className="flex gap-5">
                                     <div className="w-12 h-12 rounded-full bg-[#EEF2FF] flex items-center justify-center text-[#223F7F] shrink-0">
                                         <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.02 19.7124V17.835C15.02 16.8391 14.6244 15.884 13.9203 15.1799C13.2161 14.4757 12.261 14.0801 11.2652 14.0801H5.63282C4.63696 14.0801 3.68189 14.4757 2.97771 15.1799C2.27353 15.884 1.87793 16.8391 1.87793 17.835V19.7124" stroke="#223F7F" stroke-width="1.87744" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M15.0195 2.93555C15.8247 3.14429 16.5378 3.61449 17.0469 4.27235C17.5559 4.9302 17.8321 5.73847 17.8321 6.57028C17.8321 7.40209 17.5559 8.21036 17.0469 8.86821C16.5378 9.52607 15.8247 9.99627 15.0195 10.205" stroke="#223F7F" stroke-width="1.87744" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M20.6521 19.7134V17.836C20.6515 17.004 20.3746 16.1958 19.8649 15.5383C19.3551 14.8807 18.6415 14.4111 17.8359 14.2031" stroke="#223F7F" stroke-width="1.87744" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M8.44825 10.3262C10.522 10.3262 12.2031 8.64506 12.2031 6.5713C12.2031 4.49753 10.522 2.81641 8.44825 2.81641C6.37448 2.81641 4.69336 4.49753 4.69336 6.5713C4.69336 8.64506 6.37448 10.3262 8.44825 10.3262Z" stroke="#223F7F" stroke-width="1.87744" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M15.02 19.7124V17.835C15.02 16.8391 14.6244 15.884 13.9203 15.1799C13.2161 14.4757 12.261 14.0801 11.2652 14.0801H5.63282C4.63696 14.0801 3.68189 14.4757 2.97771 15.1799C2.27353 15.884 1.87793 16.8391 1.87793 17.835V19.7124" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M15.0195 2.93555C15.8247 3.14429 16.5378 3.61449 17.0469 4.27235C17.5559 4.9302 17.8321 5.73847 17.8321 6.57028C17.8321 7.40209 17.5559 8.21036 17.0469 8.86821C16.5378 9.52607 15.8247 9.99627 15.0195 10.205" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M20.6521 19.7134V17.836C20.6515 17.004 20.3746 16.1958 19.8649 15.5383C19.3551 14.8807 18.6415 14.4111 17.8359 14.2031" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M8.44825 10.3262C10.522 10.3262 12.2031 8.64506 12.2031 6.5713C12.2031 4.49753 10.522 2.81641 8.44825 2.81641C6.37448 2.81641 4.69336 4.49753 4.69336 6.5713C4.69336 8.64506 6.37448 10.3262 8.44825 10.3262Z" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
 
                                     </div>

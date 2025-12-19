@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 
 // Icons
 import insideasramimg from "@/assets/asram/insideasram.png";
 import ResearchSectionimg from "@/assets/asram/researchinnov.png";
 
 // Normal Direct Imports (NO lazy loading)
-import AsramHero from "./AsramHero";
+import heroBg from "@/assets/asram/asramherobanner.png";
 import ReputationQuality from "./ReputationQuality";
 import InstitutionsSection from "./InstitutionSection";
 import AsramHealthcareServices from "./HealthCareService";
@@ -14,11 +14,54 @@ import InsideASRAM from "./InsideAsram";
 import AsramNewsEvents from "./AsramNewsEvents";
 import ResearchInnovation from "./ResearchInnovation";
 import AsramFooter from "./AsramFooter";
+import { useHero } from "@/context/HeroContext";
 
 const AsramPage = () => {
+  const { setHero, hideHero } = useHero();
+
+  useLayoutEffect(() => {
+    setHero({
+      title: (
+        <>
+          <span className="font-regular">DISCOVER </span>
+          <span className="font-bold">ASRAM</span>
+        </>
+      ),
+      bgImage: heroBg,
+      children: (
+        <>
+          <p
+            className="
+              text-[16px] sm:text-[18px] leading-[1.5]
+              md:text-[18px] md:leading-[1.6]
+              lg:text-[22px]
+              mb-6 opacity-90 font-medium
+              max-w-[320px] sm:max-w-[500px]
+            "
+          >
+            At Asram, we prepare you to thrive in the ever-evolving world of health sciences.
+          </p>
+
+          <button
+            className="
+                bg-[#191919] 
+                hover:bg-[#27272a] 
+                text-white 
+                px-6 py-2 md:px-8 md:py-3
+                rounded-[8px] 
+                text-[16px] md:text-[22px] font-medium 
+                transition-colors
+            "
+          >
+            Explore Programs
+          </button>
+        </>
+      ),
+    });
+  }, [setHero]);
+
   return (
     <>
-      <AsramHero />
       <ReputationQuality />
       <InstitutionsSection />
       <AsramHealthcareServices />

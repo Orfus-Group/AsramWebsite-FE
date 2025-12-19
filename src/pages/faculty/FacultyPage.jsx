@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
 import Facultyimg from "@/assets/faculty/faculty.png";
@@ -11,8 +11,8 @@ import {
     IconUser,
     IconTag
 } from "@/assets/icons";
-import ReusableHero from "@/features/common/layout/ReusableHero";
-import NewsHerobg from "@/assets/news/newsherobanner.svg";
+import { useHero } from "@/context/HeroContext";
+import NewsHerobg from "@/assets/faculty/asramfacultybanner.png";
 
 // Placeholder icons for Contact/Awards since they might not be in assets
 const IconEmail = (props) => (
@@ -60,10 +60,19 @@ const IconGraduation = (props) => (
 );
 
 const FacultyPage = () => {
+    const { setHero, hideHero } = useHero();
+
+    useLayoutEffect(() => {
+        setHero({
+            // title: "Faculty Page",
+            bgImage: NewsHerobg,
+        });
+        return () => hideHero();
+    }, [setHero, hideHero]);
+
     return (
         <div className="bg-[#F9FAFB] min-h-screen">
-            {/* ==================== HERO SECTION ==================== */}
-            <ReusableHero title="Faculty Page" bgImage={NewsHerobg} />
+            {/* ==================== HERO SECTION REMOVED ==================== */}
 
 
             <PageSection paddingClass="py-[40px] md:py-[60px]">
