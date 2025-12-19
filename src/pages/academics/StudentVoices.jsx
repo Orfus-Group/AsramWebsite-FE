@@ -134,8 +134,9 @@ export default function StudentVoices() {
                   <p
                     className={`
                       ${T.font.family}
-                      ${T.font.weight.bold}
-                      text-[18px]
+                      ${T.font.weight.medium}
+                      text-[18px] 
+                      text-[#111827]
                       leading-[22px]
                     `}
                     style={{ color: T.color.text.dark }}
@@ -148,6 +149,7 @@ export default function StudentVoices() {
                     className={`
                       ${T.font.family}
                       text-[14px]
+                      font-regular
                       leading-[20px]
                     `}
                     style={{ color: T.color.dark + "BF" }}

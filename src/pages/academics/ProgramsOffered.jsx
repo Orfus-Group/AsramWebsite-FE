@@ -99,7 +99,7 @@ export default function ProgramsOffered() {
             <div
               className="
                 h-[206px]
-                bg-[rgba(0,140,140,0.10)]
+                bg-[#008C8C33]
                 px-[24px] pt-[18px] pb-[16px]
                 flex flex-col
               "
@@ -146,13 +146,13 @@ export default function ProgramsOffered() {
                   <img loading="lazy" decoding="async" src={timeperiodicon} className="w-[16px] h-[16px]" />
                   <span
                     className={`${T.font.family}`}
-                    style={{ color: T.color.dark + "BF" }}
+                    style={{ color: "#191919BF" }}
                   >
                     {program.years}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-[6px]">
+                {/* <div className="flex items-center gap-[6px]">
                   <img loading="lazy" decoding="async" src={seatsicon} className="w-[16px] h-[16px]" />
                   <span
                     className={`${T.font.family}`}
@@ -160,7 +160,7 @@ export default function ProgramsOffered() {
                   >
                     {program.seats}
                   </span>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -168,7 +168,7 @@ export default function ProgramsOffered() {
             <div
               className={`
                 h-[413px]
-                ${T.bg.programCard}
+                ${T.bg.sectionCard}
                 p-[30px]
                 flex flex-col
               `}
@@ -178,7 +178,9 @@ export default function ProgramsOffered() {
                 <p
                   className={`
                     ${T.font.family}
+                    font-regular
                     text-[18px]
+                    text-[#6B7280]
                     leading-[26px]
                     w-full
                   `}
@@ -210,7 +212,7 @@ export default function ProgramsOffered() {
       text-[13px]
       whitespace-nowrap
     "
-    style={{ color: T.color.text.muted }}
+    style={{ color: "#191919BF" }}
   >
     <CheckMarkIcon className="shrink-0 mt-[2px]" />
     <span className={`${T.font.family} leading-[18px]`}>
@@ -228,7 +230,7 @@ export default function ProgramsOffered() {
                   mt-[24px]
                   flex items-center gap-[6px]
                   ${T.font.family}
-                  ${T.font.weight.bold}
+                  ${T.font.weight.medium}
                   text-[18px]
                   text-[${T.color.secondary}]
                 `}

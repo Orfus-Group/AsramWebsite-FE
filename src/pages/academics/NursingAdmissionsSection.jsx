@@ -4,7 +4,7 @@ import { T } from "@/theme";
 
 import PageSection from "@/features/common/layout/PageContainer";
 
-import nursingcareer from "@/assets/academics/readytoapply.svg";
+import readytoapply from "@/assets/academics/readytoapply.png";
 import Button from "@/components/ui/button";
 
 
@@ -193,7 +193,7 @@ const dates = [
 export default function NursingAdmissionsSection() {
   return (
     <PageSection
-      bg={T.bg.programCard}
+      bg={T.bg.sectionCard}
       paddingClass="py-[80px]"
       className="flex flex-col gap-[40px]"
     >
@@ -243,7 +243,7 @@ export default function NursingAdmissionsSection() {
                 grid-rows-[auto_auto_auto_1fr_auto]
                 h-full
               "
-              style={{ borderColor: T.color.border }}
+              style={{ border: "1px solid #07070733" }}
             >
               <item.Icon className="w-[31.58px] h-[31.58px]" />
 
@@ -293,7 +293,7 @@ export default function NursingAdmissionsSection() {
                   text-[${T.color.secondary}]
                 `}
               >
-                <span className={T.font.weight.bold}>{item.timeline}</span>{" "}
+                <span className={`${T.font.weight.medium} `}>{item.timeline}</span>{" "}
                 {item.timelinedescription}
               </p>
             </div>
@@ -333,7 +333,7 @@ export default function NursingAdmissionsSection() {
                 gap-[12px]
                 h-full
               "
-              style={{ borderColor: T.color.border }}
+              style={{ border: "1px solid #07070733" }}
             >
               <h4
                 className={`
@@ -363,10 +363,11 @@ export default function NursingAdmissionsSection() {
                   <span
                       className={`
                         ${T.font.family}
+                        font-regular
                         text-[14px]
                         leading-[19.74px]
                       `}
-                      style={{ color: T.color.text.muted }}
+                      style={{ color: "#6B7280" }}
                     >
                       {item}
                     </span>
@@ -379,7 +380,7 @@ export default function NursingAdmissionsSection() {
       </div>
 
       {/* -------------------- IMPORTANT DATES -------------------- */}
-      <div className="w-full flex justify-center my-[20px]">
+      <div className="w-full flex justify-center my-[40px]">
         <div className="w-full max-w-[1200px] bg-white rounded-[8px] py-[30px] px-[30px]">
           <h2
             className={`
@@ -401,12 +402,12 @@ export default function NursingAdmissionsSection() {
                 <p
                   className={`
                     ${T.font.family}
-                    ${T.font.weight.bold}
+                    ${T.font.weight.medium}
+                    text-[#191919]
                     text-[18px]
                     leading-[22px]
                     mb-[10px]
                   `}
-                  style={{ color: T.color.dark }}
                 >
                   {item.date}
                 </p>
@@ -434,7 +435,7 @@ export default function NursingAdmissionsSection() {
     flex flex-col lg:flex-row
     items-start
     gap-[32px]
-    mt-[40px] mb-[80px]
+   mb-[80px]
   "
       >
         {/* LEFT IMAGE */}
@@ -452,7 +453,7 @@ export default function NursingAdmissionsSection() {
         >
 
           <img loading="lazy" decoding="async"
-            src={nursingcareer}
+            src={readytoapply}
             className="w-full h-[389px] object-cover rounded-[12px]"
           />
         </div>
@@ -484,9 +485,18 @@ export default function NursingAdmissionsSection() {
       `}
             style={{ color: T.color.text.researchMuted }}
           >
-            Start your application today and take the first step toward an exceptional
-            nursing education. Our admissions team is here to support you throughout
-            the process.
+          Start your application today and take the first step toward an exceptional nursing education. Our admissions team is here to support you throughout the process.
+          </p>
+
+  <p
+            className={`
+        ${T.font.family}
+        text-[16px]
+        leading-[24px]
+      `}
+            style={{ color: T.color.text.researchMuted }}
+          >
+          Start your application today and take the first step toward an exceptional nursing education. Our admissions team is here to support you throughout the process.
           </p>
 
           {/* Buttons */}

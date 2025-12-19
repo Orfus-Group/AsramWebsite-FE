@@ -100,7 +100,7 @@ export const theme = {
     greybg: "#D8DFEF",
     section: "bg-[#F7FAFF]",
     programCard: "bg-[#F7F9FC]",
-    sectionCard: "bg-[#eef2f7]",
+    sectionCard: "bg-[#EEF2F7]",
     brand: "bg-[#223F7F]",
   },
 

@@ -105,7 +105,7 @@ export default function JoinOurNursingCommunity() {
 
         <Button
           customPadding="px-[39.47px] py-[15.79px]"
-          bg={T.color.background.programCard}
+          bg="#EEF2F7"
           color={T.color.secondary}
           rounded="9.87px"
           textSize="text-[15.79px]"
@@ -117,11 +117,11 @@ export default function JoinOurNursingCommunity() {
 
         <Button
           customPadding="px-[39.47px] py-[15.79px]"
-          bg={T.color.extra.dark10}
-          color={T.color.dark}
+          bg="#EEF2F7"
+          color={T.color.secondary}
           rounded="9.87px"
-          borderColor={T.color.extra.dark10}
-          borderWidth="2px"
+          // borderColor={T.color.extra.dark10}
+          // borderWidth="2px"
           textSize="text-[15.79px]"
           leading="leading-[23.68px]"
           height="59.21px"
@@ -165,7 +165,7 @@ export default function JoinOurNursingCommunity() {
       </div>
 
       {/* LINE DIVIDER */}
-      <div className="w-full mt-[40px] border-t" style={{ borderColor: "#E5E5E5" }} />
+      <div className="w-full mt-[40px]" style={{ border: "1px solid #19191933" }} />
 
       {/* ---------------- STATISTICS (EXACT SPACING) ---------------- */}
       <div
@@ -201,7 +201,7 @@ function ContactCard({ icon, title, subtitle1, subtitle2 }) {
         w-[321px]
         h-[195px]
       "
-      style={{ backgroundColor: "#F7F9FC" }}
+      style={{ backgroundColor: "#EEF2F7" }}
     >
       <div
         className="
@@ -228,7 +228,7 @@ function ContactCard({ icon, title, subtitle1, subtitle2 }) {
 
       <p
         className="text-[14px] leading-[20px] mt-[6px]"
-        style={{ color: T.color.extra.dark80 }}
+        style={{ color: "#191919BF" }}
       >
         {subtitle1}
         <br />
@@ -297,6 +297,7 @@ function StatBlock({ count, label }) {
           ${T.font.weight.bold}
           text-[35.53px]
           leading-[39.47px]
+          mb-[10px]
           text-[${T.color.secondary}]
         `}
       >
@@ -308,8 +309,9 @@ function StatBlock({ count, label }) {
           ${T.font.family}
           text-[15.79px]
           leading-[23.68px]
+          font-regular
         `}
-        style={{ color: T.color.extra.dark80 }}
+        style={{ color: "#191919BF" }}
       >
         {label}
       </span>

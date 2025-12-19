@@ -18,7 +18,7 @@ export default function ExperienceDrivenEducation() {
         className="
           w-full
           max-w-[1200px]
-          bg-[#F7F9FC]
+          bg-[#EEF2F7]
           rounded-[16.18px]
           px-[39.47px]
           py-[39.47px]
@@ -51,7 +51,7 @@ export default function ExperienceDrivenEducation() {
               leading-[27.63px]
               w-full lg:w-[534.87px]
             `}
-            style={{ color: T.color.dark + "BF" }}
+            style={{ color: "text-[#191919BF]" }}
           >
             At ASRAM, we believe in learning by doing. Our students don't just
             read about nursing—they practice in real clinical settings, work
@@ -74,7 +74,7 @@ export default function ExperienceDrivenEducation() {
                   text-[13.82px]
                   leading-[19.74px]
                 `}
-                style={{ color: T.color.dark + "BF" }}
+            style={{ color: "text-[#191919BF]" }}
               >
                 <span
                   className="w-[6px] h-[6px] rounded-full"
@@ -118,7 +118,7 @@ export default function ExperienceDrivenEducation() {
                   text-[32px]
                   leading-[35.53px]
                 `}
-                style={{ color: T.color.dark }}
+                style={{ color: T.color.secondary }}
               />
 
               <span

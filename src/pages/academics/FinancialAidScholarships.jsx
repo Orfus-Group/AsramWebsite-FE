@@ -81,9 +81,9 @@ export const EducationLoanIcon = ({ className = "" }) => (
 
 export const ApplyAidIcon = ({ className = "" }) => (
  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.8417 21.7105C17.2919 21.7105 21.7101 17.2922 21.7101 11.8421C21.7101 6.39187 17.2919 1.97363 11.8417 1.97363C6.39151 1.97363 1.97327 6.39187 1.97327 11.8421C1.97327 17.2922 6.39151 21.7105 11.8417 21.7105Z" stroke="#191919" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8.96985 8.88118C9.20186 8.22164 9.6598 7.66549 10.2626 7.31124C10.8653 6.95699 11.574 6.8275 12.2631 6.9457C12.9522 7.06389 13.5772 7.42216 14.0275 7.95703C14.4777 8.4919 14.7242 9.16886 14.7231 9.86802C14.7231 11.8417 11.7626 12.8285 11.7626 12.8285" stroke="#191919" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.8417 16.7761H11.8517" stroke="#191919" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.8417 21.7105C17.2919 21.7105 21.7101 17.2922 21.7101 11.8421C21.7101 6.39187 17.2919 1.97363 11.8417 1.97363C6.39151 1.97363 1.97327 6.39187 1.97327 11.8421C1.97327 17.2922 6.39151 21.7105 11.8417 21.7105Z" stroke="#FFF" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.96985 8.88118C9.20186 8.22164 9.6598 7.66549 10.2626 7.31124C10.8653 6.95699 11.574 6.8275 12.2631 6.9457C12.9522 7.06389 13.5772 7.42216 14.0275 7.95703C14.4777 8.4919 14.7242 9.16886 14.7231 9.86802C14.7231 11.8417 11.7626 12.8285 11.7626 12.8285" stroke="#FFF" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.8417 16.7761H11.8517" stroke="#FFF" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
 );
@@ -141,7 +141,7 @@ export default function FinancialAidScholarships() {
   ];
 
   return (
-    <section className={`${T.bg.programCard} w-full py-[80px] flex justify-center`}>
+    <section className={`${T.bg.sectionCard} w-full py-[80px] flex justify-center`}>
       {/* ⭐ UNIFIED BASELINE CONTAINER (Matches Hero + Header) */}
       <div
         className="
@@ -174,6 +174,7 @@ export default function FinancialAidScholarships() {
             gap-[23.68px]
             w-full
           "
+          
         >
           {stats.map((item, i) => (
             <div
@@ -184,7 +185,7 @@ export default function FinancialAidScholarships() {
                 rounded-[9.87px]
                 flex flex-col items-center justify-center gap-[6px]
               "
-              style={{ border: `1px solid ${T.color.border}` }}
+              style={{ border: "1px solid #07070733" }}
             >
               <p
                 className={`
@@ -199,8 +200,7 @@ export default function FinancialAidScholarships() {
               </p>
 
               <p
-                className={`${T.font.family} text-[13.82px] leading-[19.74px]`}
-                style={{ color: T.color.text.muted }}
+                className={`${T.font.family} text-[#191919BF] font-regular text-[13.82px] leading-[19.74px]`}
               >
                 {item.label}
               </p>
@@ -225,21 +225,21 @@ export default function FinancialAidScholarships() {
           />
 
           <Card
-            icon={<ReservedCategoryIcon className="w-[23.68px] h-[23.68px] text-white" />}
+            icon={<MeritBasedIcon className="w-[23.68px] h-[23.68px] text-white" />}
             title="Reserved Category Benefits"
             desc="Fee concessions and special provisions for SC/ST/OBC and other reserved categories as per government norms."
             eligibility="Students from reserved categories with valid certificates"
           />
 
           <Card
-  icon={<ScholarIcon className="w-[23.68px] h-[23.68px] text-white" />}
+  icon={<MeritBasedIcon className="w-[23.68px] h-[23.68px] text-white" />}
             title="Government Scholarships"
             desc="Various state and central government scholarship schemes available for eligible students."
             eligibility="Based on family income and category"
           />
 
           <Card
-  icon={<EducationLoanIcon className="w-[23.68px] h-[23.68px] text-white" />}
+  icon={<MeritBasedIcon className="w-[23.68px] h-[23.68px] text-white" />}
             title="Education Loans"
             desc="Tie-ups with leading banks for easy education loan processing at competitive interest rates."
             eligibility="All admitted students"
@@ -343,7 +343,7 @@ export default function FinancialAidScholarships() {
                   rounded-[9.87px]
                   flex items-center justify-center shrink-0
                 "
-                style={{ backgroundColor: T.color.dark + "1A" }}
+                style={{ backgroundColor: T.color.primary}}
               >
                 <ApplyAidIcon className="w-[23.68px] h-[23.68px]" />
 
@@ -450,7 +450,7 @@ function Card({ icon, title, desc, eligibility }) {
 
           <p
             className={`${T.font.family} text-[14px] leading-[20px] max-w-[420px]`}
-            style={{ color: T.color.text.muted }}
+            style={{ color: "#6B7280" }}
           >
             {desc}
           </p>
@@ -466,7 +466,7 @@ function Card({ icon, title, desc, eligibility }) {
                 Eligibility:
               </span>
               &nbsp;
-              <span style={{ color: T.color.text.muted }}>{eligibility}</span>
+              <span style={{ color: "#6B7280" }}>{eligibility}</span>
             </p>
           </div>
         </div>

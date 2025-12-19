@@ -5,7 +5,7 @@ import { T } from "@/theme";
 import PageSection from "@/features/common/layout/PageContainer";
 import StatCard from "@/features/common/cards/StatCard";
 
-import nursingcareer from "@/assets/academics/nursingcareer.svg";
+import nursingcareer from "@/assets/academics/nursingcareer.png";
 
 /* ------------------------------------------
    YEARS OF EXCELLENCE
@@ -56,7 +56,7 @@ export const ApprovedProgramsIcon = ({ className = "" }) => (
 
 export default function NursingCareerSection() {
   return (
-    <PageSection bg={T.bg.programCard} paddingClass="py-[80px]">
+    <PageSection bg={T.bg.sectionCard} paddingClass="py-[80px]">
       {/* SECTION TITLE */}
       <h2
         className={`
