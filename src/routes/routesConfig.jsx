@@ -1,6 +1,5 @@
 import React, { lazy } from "react";
 
-const AsramHomePage = lazy(() => import("@/pages/asram/AsramLatestHome"));
 const HomePage = lazy(() => import("@/pages/asram/AsramHome"));
 const NursingPage = lazy(() => import("@/pages/nursing/NursingPage"));
 const AcademicsPage = lazy(() => import("@/pages/academics/AcademicsPage"));
@@ -14,12 +13,6 @@ const routesConfig = [
     path: "/",
     label: "Home",
     element: <HomePage />,
-    layout: "main",
-  },
-  {
-    path: "/asram-home",
-    label: "AsramHome",
-    element: <AsramHomePage />,
     layout: "main",
   },
   {
