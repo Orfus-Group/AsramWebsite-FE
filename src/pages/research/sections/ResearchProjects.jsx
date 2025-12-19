@@ -26,7 +26,7 @@ const ResearchProjects = () => {
             </h2>
 
             {/* Featured Projects Card */}
-            <div className="bg-[#D8DFEF] rounded-[12px] p-[24px] md:p-[60px] mb-12">
+            <div className="bg-[#EEF2F7] rounded-[8px] p-[24px] md:p-[30px] mb-12">
                 <h3 className={`${T.font.family} font-semibold text-[32px] text-[#223F7F] mb-10`}>
                     Featured Projects
                 </h3>
@@ -61,7 +61,7 @@ const ResearchProjects = () => {
 
             {/* Footer Button */}
             <div className="flex justify-center">
-                <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-8 py-3 rounded-[6px] font-medium text-[18px] flex items-center gap-2 transition-colors">
+                <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-8 py-3 rounded-[12px] font-medium text-[18px] flex items-center gap-2 transition-colors">
                     Explore Research Portfolio
                     <span><IconArrowRight
                         size={20}

@@ -74,7 +74,7 @@ const recentPubs = [
 
 const ResearchPublications = () => {
   return (
-    <PageSection bgColor="#D8DFEF" paddingClass="py-[80px]">
+    <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]">
       <h2 className={`${T.font.family} font-bold text-[42px] text-[#223F7F] mb-10`}>
         Publications
       </h2>
@@ -82,7 +82,7 @@ const ResearchPublications = () => {
       {/* 1. Stats Row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-[20px] mb-10">
         {stats.map((stat, index) => (
-          <div key={index} className="bg-white rounded-[12px] p-6 flex flex-col items-center text-center shadow-sm">
+          <div style={{ border: "1px solid #07070733" }} key={index} className="bg-white rounded-[9.3px] p-6 flex flex-col items-center text-center shadow-sm">
             <div className="w-[44px] h-[44px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-4">
               {stat.icon}
             </div>
@@ -98,12 +98,12 @@ const ResearchPublications = () => {
       </div>
 
       {/* 2. Recent Publications Card */}
-      <div className="bg-white rounded-[12px] p-[24px] md:p-[40px] shadow-sm mb-10">
+      <div style={{ border: "1px solid #07070733" }} className="bg-white rounded-[9.3px] p-[24px] md:p-[40px] shadow-sm mb-10">
         <h3 className={`${T.font.family} font-semibold text-[22px] text-[#223F7F] mb-6`}>
           Recent Publications (2024)
         </h3>
 
-        <div className="flex flex-col gap-6 mb-8">
+        <div className="flex flex-col gap-6 mb-8" >
           {recentPubs.map((pub, index) => (
             <div key={index} className="border-b-[0.9px] border-[rgba(7,7,7,0.2)] pb-6 last:border-0 last:pb-0">
               <h4 className={`${T.font.family} font-regular text-[20px] text-[#191919] mb-1 leading-snug`}>
@@ -137,6 +137,7 @@ const ResearchPublications = () => {
 
       {/* 3. Access Database Card */}
       <div
+       style={{ border: "1px solid #07070733" }}
         className="
     bg-white
     rounded-[12px]

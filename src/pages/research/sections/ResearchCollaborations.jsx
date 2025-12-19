@@ -9,13 +9,14 @@ const stats = [
         value: "25+",
         label: "National Institutions",
         icon: (
-            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.7742 22.5293H26.2839" stroke="#008C8C" stroke-width="3.75489" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M18.7742 15.0195H26.2839" stroke="#008C8C" stroke-width="3.75489" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M26.2839 39.4263V33.794C26.2839 32.7981 25.8883 31.843 25.1842 31.1388C24.48 30.4347 23.5249 30.0391 22.5291 30.0391C21.5332 30.0391 20.5781 30.4347 19.874 31.1388C19.1698 31.843 18.7742 32.7981 18.7742 33.794V39.4263" stroke="#008C8C" stroke-width="3.75489" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M11.2644 18.7749H7.50953C6.51367 18.7749 5.5586 19.1705 4.85442 19.8747C4.15024 20.5789 3.75464 21.5339 3.75464 22.5298V35.6719C3.75464 36.6678 4.15024 37.6228 4.85442 38.327C5.5586 39.0312 6.51367 39.4268 7.50953 39.4268H37.5486C38.5445 39.4268 39.4996 39.0312 40.2037 38.327C40.9079 37.6228 41.3035 36.6678 41.3035 35.6719V16.8975C41.3035 15.9016 40.9079 14.9465 40.2037 14.2424C39.4996 13.5382 38.5445 13.1426 37.5486 13.1426H33.7938" stroke="#008C8C" stroke-width="3.75489" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M11.2644 39.4268V9.3877C11.2644 8.39184 11.66 7.43677 12.3642 6.73259C13.0684 6.02842 14.0234 5.63281 15.0193 5.63281H30.0389C31.0347 5.63281 31.9898 6.02842 32.694 6.73259C33.3981 7.43677 33.7937 8.39184 33.7937 9.3877V39.4268" stroke="#008C8C" stroke-width="3.75489" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
+           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.334 16H18.6673" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13.334 10.668H18.6673" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.6673 27.9987V23.9987C18.6673 23.2915 18.3864 22.6132 17.8863 22.1131C17.3862 21.613 16.7079 21.332 16.0007 21.332C15.2934 21.332 14.6151 21.613 14.115 22.1131C13.6149 22.6132 13.334 23.2915 13.334 23.9987V27.9987" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.99935 13.332H5.33268C4.62544 13.332 3.94716 13.613 3.44706 14.1131C2.94697 14.6132 2.66602 15.2915 2.66602 15.9987V25.332C2.66602 26.0393 2.94697 26.7176 3.44706 27.2176C3.94716 27.7177 4.62544 27.9987 5.33268 27.9987H26.666C27.3733 27.9987 28.0515 27.7177 28.5516 27.2176C29.0517 26.7176 29.3327 26.0393 29.3327 25.332V11.9987C29.3327 11.2915 29.0517 10.6132 28.5516 10.1131C28.0515 9.61298 27.3733 9.33203 26.666 9.33203H23.9993" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 28V6.66667C8 5.95942 8.28095 5.28115 8.78105 4.78105C9.28115 4.28095 9.95942 4 10.6667 4H21.3333C22.0406 4 22.7189 4.28095 23.219 4.78105C23.719 5.28115 24 5.95942 24 6.66667V28" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
 
         ) // Building
     },
@@ -23,11 +24,12 @@ const stats = [
         value: "12",
         label: "International Partners",
         icon: (
-            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22.5293 41.3048C32.8982 41.3048 41.3038 32.8991 41.3038 22.5303C41.3038 12.1615 32.8982 3.75586 22.5293 3.75586C12.1605 3.75586 3.75488 12.1615 3.75488 22.5303C3.75488 32.8991 12.1605 41.3048 22.5293 41.3048Z" stroke="#008C8C" stroke-width="3.75489" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M22.5293 3.75586C17.7085 8.81774 15.0195 15.5401 15.0195 22.5303C15.0195 29.5205 17.7085 36.2429 22.5293 41.3048C27.3501 36.2429 30.0391 29.5205 30.0391 22.5303C30.0391 15.5401 27.3501 8.81774 22.5293 3.75586Z" stroke="#008C8C" stroke-width="3.75489" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M3.75488 22.5293H41.3038" stroke="#008C8C" stroke-width="3.75489" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
+         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.9993 29.3346C23.3631 29.3346 29.3327 23.3651 29.3327 16.0013C29.3327 8.63751 23.3631 2.66797 15.9993 2.66797C8.63555 2.66797 2.66602 8.63751 2.66602 16.0013C2.66602 23.3651 8.63555 29.3346 15.9993 29.3346Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15.9993 2.66797C12.5757 6.26284 10.666 11.037 10.666 16.0013C10.666 20.9656 12.5757 25.7398 15.9993 29.3346C19.423 25.7398 21.3327 20.9656 21.3327 16.0013C21.3327 11.037 19.423 6.26284 15.9993 2.66797Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2.66602 16H29.3327" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
 
         ) // Globe
     },
@@ -35,13 +37,15 @@ const stats = [
         value: "18",
         label: "Industry Collaborations",
         icon: (
-            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20.6521 31.9165L24.407 35.6714C24.7768 36.0412 25.2159 36.3346 25.6991 36.5347C26.1823 36.7349 26.7001 36.8379 27.2232 36.8379C27.7462 36.8379 28.2641 36.7349 28.7473 36.5347C29.2305 36.3346 29.6695 36.0412 30.0393 35.6714C30.4091 35.3016 30.7025 34.8625 30.9027 34.3793C31.1028 33.8961 31.2058 33.3782 31.2058 32.8552C31.2058 32.3322 31.1028 31.8143 30.9027 31.3311C30.7025 30.8479 30.4091 30.4089 30.0393 30.0391" stroke="#008C8C" stroke-width="3.75489" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M26.2842 26.2856L30.9778 30.9793C31.7247 31.7262 32.7377 32.1458 33.794 32.1458C34.8502 32.1458 35.8632 31.7262 36.6101 30.9793C37.357 30.2324 37.7766 29.2194 37.7766 28.1631C37.7766 27.1068 37.357 26.0938 36.6101 25.3469L29.3257 18.0624C28.2696 17.0077 26.838 16.4152 25.3455 16.4152C23.8529 16.4152 22.4214 17.0077 21.3653 18.0624L19.7131 19.7146C18.9662 20.4615 17.9532 20.8811 16.897 20.8811C15.8407 20.8811 14.8277 20.4615 14.0808 19.7146C13.3339 18.9677 12.9143 17.9547 12.9143 16.8984C12.9143 15.8422 13.3339 14.8292 14.0808 14.0823L19.3564 8.80664C21.0691 7.09844 23.3026 6.01028 25.7034 5.71444C28.1042 5.41859 30.535 5.93195 32.6112 7.17326L33.4936 7.69895C34.293 8.18143 35.2434 8.34876 36.1596 8.16831L39.4263 7.5112" stroke="#008C8C" stroke-width="3.75489" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M39.4265 5.63281L41.304 26.2847H37.5491" stroke="#008C8C" stroke-width="3.75489" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M5.63233 5.63281L3.75488 26.2847L15.9583 38.4881C16.7052 39.235 17.7182 39.6546 18.7744 39.6546C19.8307 39.6546 20.8437 39.235 21.5906 38.4881C22.3375 37.7412 22.7571 36.7282 22.7571 35.6719C22.7571 34.6157 22.3375 33.6027 21.5906 32.8558" stroke="#008C8C" stroke-width="3.75489" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M5.63232 7.50977H20.6519" stroke="#008C8C" stroke-width="3.75489" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.666 22.6654L17.3327 25.332C17.5953 25.5947 17.9071 25.803 18.2503 25.9452C18.5935 26.0873 18.9612 26.1605 19.3327 26.1605C19.7041 26.1605 20.0719 26.0873 20.4151 25.9452C20.7582 25.803 21.07 25.5947 21.3327 25.332C21.5953 25.0694 21.8037 24.7576 21.9458 24.4144C22.088 24.0713 22.1611 23.7035 22.1611 23.332C22.1611 22.9606 22.088 22.5928 21.9458 22.2496C21.8037 21.9065 21.5953 21.5947 21.3327 21.332" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.667 18.6673L22.0003 22.0007C22.5307 22.5311 23.2502 22.8291 24.0003 22.8291C24.7504 22.8291 25.4699 22.5311 26.0003 22.0007C26.5307 21.4702 26.8287 20.7508 26.8287 20.0007C26.8287 19.2505 26.5307 18.5311 26.0003 18.0007L20.827 12.8273C20.077 12.0783 19.0603 11.6575 18.0003 11.6575C16.9403 11.6575 15.9236 12.0783 15.1736 12.8273L14.0003 14.0007C13.4699 14.5311 12.7504 14.8291 12.0003 14.8291C11.2502 14.8291 10.5307 14.5311 10.0003 14.0007C9.46987 13.4702 9.17188 12.7508 9.17188 12.0007C9.17188 11.2505 9.46987 10.5311 10.0003 10.0007L13.747 6.254C14.9633 5.04086 16.5495 4.26807 18.2545 4.05797C19.9595 3.84786 21.6859 4.21245 23.1603 5.094L23.787 5.46734C24.3547 5.80999 25.0297 5.92883 25.6803 5.80067L28.0003 5.334" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27.9993 4L29.3327 18.6667H26.666" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.99935 4L2.66602 18.6667L11.3327 27.3333C11.8631 27.8638 12.5825 28.1618 13.3327 28.1618C14.0828 28.1618 14.8022 27.8638 15.3327 27.3333C15.8631 26.8029 16.1611 26.0835 16.1611 25.3333C16.1611 24.5832 15.8631 23.8638 15.3327 23.3333" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 5.33203H14.6667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
 
         ) // Handshake
     }
@@ -63,7 +67,7 @@ const internationalCollabs = [
 
 const ResearchCollaborations = () => {
     return (
-        <PageSection bgColor="#D8DFEF" paddingClass="py-[80px]">
+        <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]">
             <h2 className={`${T.font.family} font-bold text-[40px] text-[#223F7F] mb-10`}>
                 Collaborations & MoUs
             </h2>
@@ -71,8 +75,8 @@ const ResearchCollaborations = () => {
             {/* 1. Stats Row */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px] mb-10">
                 {stats.map((stat, index) => (
-                    <div key={index} className="bg-white rounded-[12px] p-[24px] md:p-[30px] flex flex-col items-center text-center shadow-sm">
-                        <div className="w-[48px] h-[48px] mb-4 flex items-center justify-center">
+                    <div  style={{ border: "1px solid #07070733" }} key={index} className="bg-white rounded-[12px] p-[24px] md:p-[30px] flex flex-col items-center text-center shadow-sm">
+                        <div className="w-[56px] h-[56px] mb-4 bg-[#008C8C] rounded-[8px] text-[#FFF] flex items-center justify-center">
                             {stat.icon}
                         </div>
                         <AnimatedStatValue
@@ -90,14 +94,14 @@ const ResearchCollaborations = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mb-12">
 
                 {/* National */}
-                <div className="bg-white rounded-[12px] p-[24px] md:p-[40px] shadow-sm flex flex-col">
+                <div style={{ border: "1px solid #07070733" }} className="bg-white rounded-[10px] p-[24px] md:p-[40px] shadow-sm flex flex-col">
                     <h3 className={`${T.font.family} font-semibold text-[24px] text-[#223F7F] mb-8`}>
                         National Collaborations
                     </h3>
 
                     <div className="flex flex-col gap-6 mb-8 flex-grow">
                         {nationalCollabs.map((item, index) => (
-                            <div key={index} className="flex justify-between items-center border-b border-gray-100 pb-4 last:border-0 last:pb-0">
+                            <div key={index}  style={{ borderBottom: "1px solid #E5E7EB" }} className="flex justify-between items-center pb-4 last:border-0 last:pb-0">
                                 <span className={`${T.font.family} font-medium text-[14px] text-[#191919]`}>
                                     {item.name}
                                 </span>
@@ -120,14 +124,14 @@ const ResearchCollaborations = () => {
                 </div>
 
                 {/* International */}
-                <div className="bg-white rounded-[12px] p-[24px] md:p-[40px] shadow-sm flex flex-col">
+                <div style={{ border: "1px solid #07070733" }} className="bg-white rounded-[10px] p-[24px] md:p-[40px] shadow-sm flex flex-col">
                     <h3 className={`${T.font.family} font-semibold text-[24px] text-[#223F7F] mb-8`}>
                         International Collaborations
                     </h3>
 
                     <div className="flex flex-col gap-6 mb-8 flex-grow">
                         {internationalCollabs.map((item, index) => (
-                            <div key={index} className="border-b border-gray-100 pb-4 last:border-0 last:pb-0">
+                            <div  style={{ borderBottom: "1px solid #E5E7EB" }} key={index} className=" pb-4 last:border-0 last:pb-0">
                                 <h4 className={`${T.font.family} font-medium text-[18px] text-[#191919] mb-1`}>
                                     {item.name}
                                 </h4>

@@ -68,7 +68,7 @@ const ResearchGrantsAndFunds = () => {
             {/* 1. Stats Row */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px] mb-12">
                 {stats.map((stat, index) => (
-                    <div key={index} className="bg-[#D8DFEF] rounded-[12px] p-[24px] md:p-[40px] flex flex-col items-center text-center">
+                    <div style={{ border: "1px solid #07070733" }} key={index} className="bg-[#EEF2F7] rounded-[10.42px] p-[24px] md:p-[40px] flex flex-col items-center text-center">
                         <div className="w-[40px] h-[40px] mb-4 text-[#333] flex items-center justify-center">
                             {/* Rendering icon directly with specific styling if needed */}
                             {stat.icon}
@@ -88,7 +88,7 @@ const ResearchGrantsAndFunds = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mb-12">
 
                 {/* Extramural Funding */}
-                <div className="bg-[#D8DFEF] rounded-[12px] p-[24px] md:p-[40px]">
+                <div style={{ border: "1px solid #07070733" }} className="bg-[#EEF2F7] rounded-[8px] p-[24px] md:p-[40px]">
                     <h3 className={`${T.font.family} font-semibold text-[24px] text-[#223F7F] mb-8`}>
                         Extramural Funding
                     </h3>
@@ -123,7 +123,7 @@ const ResearchGrantsAndFunds = () => {
                 </div>
 
                 {/* Internal Funding Schemes */}
-                <div className="bg-[#D8DFEF] rounded-[12px] p-[24px] md:p-[40px]">
+                <div style={{ border: "1px solid #07070733" }} className="bg-[#EEF2F7] rounded-[8px] p-[24px] md:p-[40px]">
                     <h3 className={`${T.font.family} font-bold text-[22px] text-[#1E3A8A] mb-8`}>
                         Internal Funding Schemes
                     </h3>

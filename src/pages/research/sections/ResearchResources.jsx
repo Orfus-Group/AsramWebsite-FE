@@ -47,7 +47,7 @@ const resources = [
 
 const ResearchResources = () => {
     return (
-        <PageSection bgColor="#D8DFEF" paddingClass="py-[80px]">
+        <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]">
             <h2 className={`${T.font.family} font-bold text-[40px] text-[#223F7F] mb-10`}>
                 Research Resources
             </h2>
@@ -55,7 +55,7 @@ const ResearchResources = () => {
             {/* 1. Resources Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px] mb-10">
                 {resources.map((item, index) => (
-                    <div key={index} className="bg-white rounded-[12px] p-[24px] md:p-[30px] flex flex-col items-start h-full shadow-sm hover:shadow-md transition-shadow">
+                    <div style={{ border: "1px solid #07070733" }} key={index} className="bg-white rounded-[12px] p-[24px] md:p-[30px] flex flex-col items-start h-full shadow-sm hover:shadow-md transition-shadow">
                         <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-5 shrink-0">
                             {item.icon}
                         </div>
@@ -81,7 +81,7 @@ const ResearchResources = () => {
             </div>
 
             {/* 2. Book Resources Card */}
-            <div className="bg-white rounded-[12px] p-[24px] md:p-[40px] shadow-sm">
+            <div style={{ border: "1px solid #07070733" }} className="bg-white rounded-[12px] p-[24px] md:p-[40px] shadow-sm">
                 <h3 className={`${T.font.family} font-semibold text-[24px] text-[#223F7F] mb-4`}>
                     Book Resources & Training
                 </h3>

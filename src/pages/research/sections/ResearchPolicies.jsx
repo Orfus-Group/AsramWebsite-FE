@@ -70,14 +70,14 @@ const policies = [
 
 const ResearchPolicies = () => {
     return (
-        <PageSection bgColor="#DEE4F2" paddingClass="py-[80px]">
+        <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]">
             <h2 className={`${T.font.family} font-bold text-[42px] text-[#1E3A8A] mb-10`}>
                 Research Policies
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] md:gap-[30px] mb-12">
                 {policies.map((item, index) => (
-                    <div key={index} className="bg-white p-[24px] md:p-[30px] rounded-[12px] flex flex-col items-start gap-4">
+                    <div key={index}   style={{ border: "1px solid #07070733" }} className="bg-white p-[24px] md:p-[30px] rounded-[10px] flex flex-col items-start gap-4">
 
                         {/* Icon */}
                         <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center text-white">

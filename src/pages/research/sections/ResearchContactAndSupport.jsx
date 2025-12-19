@@ -80,7 +80,7 @@ const ResearchContactAndSupport = () => {
             {/* 1. Contact Info Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] mb-12">
                 {contactInfo.map((item, index) => (
-                    <div key={index} className="bg-[#D8DFEF] rounded-[12px] p-[24px] md:p-[30px] flex flex-col items-center text-center">
+                    <div key={index} style={{ border: "1px solid #07070733" }} className="bg-[#EEF2F7] rounded-[9.3px] p-[24px] md:p-[30px] flex flex-col items-center text-center">
                         <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-4">
                             {item.icon}
                         </div>
@@ -98,7 +98,7 @@ const ResearchContactAndSupport = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mb-12">
 
                 {/* Helpdesk */}
-                <div className="bg-[#D8DFEF] rounded-[12px] p-[24px] md:p-[40px] flex flex-col items-start">
+                <div className="bg-[#EEF2F7] rounded-[9.3px] p-[24px] md:p-[40px] flex flex-col items-start">
                     <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-5 text-white">
                         <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20.6519 15.9585C20.6519 16.4564 20.4541 16.934 20.102 17.2861C19.7499 17.6382 19.2724 17.836 18.7744 17.836H6.40959C5.9117 17.8361 5.43425 18.0339 5.08224 18.3861L3.01517 20.4531C2.92196 20.5463 2.80321 20.6098 2.67394 20.6355C2.54466 20.6612 2.41067 20.648 2.28889 20.5976C2.16711 20.5471 2.06303 20.4617 1.98979 20.3521C1.91656 20.2425 1.87746 20.1137 1.87744 19.9819V4.69385C1.87744 4.19592 2.07524 3.71839 2.42733 3.3663C2.77942 3.01421 3.25696 2.81641 3.75489 2.81641H18.7744C19.2724 2.81641 19.7499 3.01421 20.102 3.3663C20.4541 3.71839 20.6519 4.19592 20.6519 4.69385V15.9585Z" stroke="white" stroke-width="1.87744" stroke-linecap="round" stroke-linejoin="round" />
@@ -126,7 +126,7 @@ const ResearchContactAndSupport = () => {
                 </div>
 
                 {/* Share Feedback */}
-                <div className="bg-[#D8DFEF] rounded-[12px] p-[24px] md:p-[40px] flex flex-col items-start">
+                <div className="bg-[#EEF2F7] rounded-[9.3px] p-[24px] md:p-[40px] flex flex-col items-start">
                     <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-5 text-white">
                         <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.6448 20.357C13.6805 20.4459 13.7425 20.5218 13.8225 20.5744C13.9025 20.627 13.9967 20.6539 14.0925 20.6515C14.1882 20.649 14.2809 20.6173 14.3581 20.5607C14.4353 20.504 14.4934 20.4251 14.5244 20.3345L20.6261 2.49878C20.6562 2.4156 20.6619 2.32559 20.6426 2.23927C20.6234 2.15296 20.58 2.07391 20.5174 2.01137C20.4549 1.94884 20.3758 1.90541 20.2895 1.88616C20.2032 1.86691 20.1132 1.87265 20.03 1.90269L2.1943 8.00439C2.10371 8.03545 2.02479 8.09349 1.96814 8.1707C1.91148 8.24791 1.8798 8.34061 1.87735 8.43635C1.8749 8.53208 1.90179 8.62628 1.95442 8.70629C2.00705 8.78631 2.08289 8.8483 2.17177 8.88397L9.61584 11.8691C9.85117 11.9633 10.065 12.1042 10.2444 12.2833C10.4238 12.4624 10.5651 12.6759 10.6597 12.9111L13.6448 20.357Z" stroke="white" stroke-width="1.87744" stroke-linecap="round" stroke-linejoin="round" />
@@ -157,7 +157,7 @@ const ResearchContactAndSupport = () => {
             </div>
 
             {/* 3. Footer Banner */}
-            <div className="bg-[#D8DFEF] rounded-[12px] p-[24px] md:p-[40px] text-center">
+            <div className="bg-[#EEF2F7] rounded-[9.3px] p-[24px] md:p-[40px] text-center">
                 <h3 className={`${T.font.family} font-semibold text-[24px] text-[#223F7F] mb-4`}>
                     R&D Cell Contact Information
                 </h3>

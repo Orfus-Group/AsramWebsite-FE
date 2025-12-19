@@ -14,9 +14,9 @@ const ResearchConferences = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mb-8">
 
                 {/* Card 1 */}
-                <div className="bg-[#D8DFEF] rounded-[12px] p-[24px] md:p-[30px] flex flex-col items-start min-h-[240px] relative">
+                <div style={{ border: "1px solid #07070733" }} className="bg-[#EEF2F7] rounded-[10.42px] p-[24px] md:p-[30px] flex flex-col items-start min-h-[240px] relative">
                     <div className="flex items-start gap-4 mb-4">
-                        <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center shrink-0">
+                        <div className="w-[50px] h-[50px] bg-[#008C8C] rounded-[8px] flex items-center justify-center shrink-0">
                             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.3335 2.08203V6.2487" stroke="white" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M16.6667 2.08203V6.2487" stroke="white" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" />
@@ -47,9 +47,9 @@ const ResearchConferences = () => {
                 </div>
 
                 {/* Card 2 */}
-                <div className="bg-[#D8DFEF] rounded-[12px] p-[24px] md:p-[30px] flex flex-col items-start min-h-[240px] relative">
+                <div style={{ border: "1px solid #07070733" }} className="bg-[#EEF2F7] rounded-[10.42px] p-[24px] md:p-[30px] flex flex-col items-start min-h-[240px] relative">
                     <div className="flex items-start gap-4 mb-4">
-                        <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center shrink-0">
+                        <div className="w-[50px] h-[50px] bg-[#008C8C] rounded-[8px] flex items-center justify-center shrink-0">
                             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.33301 2.08203V6.2487" stroke="white" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M16.6663 2.08203V6.2487" stroke="white" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" />
@@ -82,12 +82,13 @@ const ResearchConferences = () => {
             </div>
 
             {/* Row 2: Annual Research Week Banner */}
-            <div className="bg-[#D8DFEF] rounded-[12px] p-[24px] md:p-[30px] flex flex-col md:flex-row items-start gap-6 mb-12">
-                <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center shrink-0">
-                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21.4961 17.9043L23.6003 29.746C23.6239 29.8854 23.6043 30.0287 23.5442 30.1567C23.4841 30.2847 23.3864 30.3914 23.2641 30.4623C23.1418 30.5333 23.0007 30.5653 22.8598 30.5539C22.7188 30.5425 22.5847 30.4884 22.4753 30.3987L17.5031 26.6668C17.263 26.4875 16.9715 26.3906 16.6718 26.3906C16.3722 26.3906 16.0806 26.4875 15.8406 26.6668L10.86 30.3974C10.7508 30.4868 10.6168 30.5409 10.476 30.5523C10.3352 30.5637 10.1943 30.5318 10.0721 30.4611C9.94983 30.3903 9.85208 30.2839 9.79186 30.1562C9.73164 30.0284 9.71182 29.8853 9.73503 29.746L11.8378 17.9043" stroke="white" stroke-width="2.77778" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M16.6668 19.4421C21.2692 19.4421 25.0002 15.7111 25.0002 11.1087C25.0002 6.50635 21.2692 2.77539 16.6668 2.77539C12.0645 2.77539 8.3335 6.50635 8.3335 11.1087C8.3335 15.7111 12.0645 19.4421 16.6668 19.4421Z" stroke="white" stroke-width="2.77778" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+            <div className="bg-[#EEF2F7] rounded-[10.42px] p-[24px] md:p-[30px] flex flex-col md:flex-row items-start gap-6 mb-12">
+                <div className="w-[64px] h-[64px] bg-[#008C8C] rounded-[8px] flex items-center justify-center shrink-0">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.6357 17.1875L22.6557 28.5555C22.6783 28.6894 22.6595 28.8269 22.6018 28.9498C22.5442 29.0727 22.4503 29.1751 22.3329 29.2432C22.2155 29.3114 22.0801 29.342 21.9447 29.3311C21.8094 29.3202 21.6807 29.2682 21.5757 29.1822L16.8023 25.5995C16.5719 25.4273 16.292 25.3343 16.0043 25.3343C15.7167 25.3343 15.4368 25.4273 15.2063 25.5995L10.425 29.1808C10.3201 29.2667 10.1915 29.3186 10.0563 29.3296C9.92117 29.3405 9.7859 29.3099 9.66855 29.242C9.55121 29.174 9.45737 29.0719 9.39956 28.9493C9.34175 28.8266 9.32272 28.6893 9.345 28.5555L11.3637 17.1875" stroke="white" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16 18.6641C20.4183 18.6641 24 15.0823 24 10.6641C24 6.24578 20.4183 2.66406 16 2.66406C11.5817 2.66406 8 6.24578 8 10.6641C8 15.0823 11.5817 18.6641 16 18.6641Z" stroke="white" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
 
                 </div>
 

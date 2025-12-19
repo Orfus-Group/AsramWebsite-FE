@@ -15,13 +15,13 @@ const ResearchOverview = () => {
         Research Overview
       </h2>
 
-      <div className="flex flex-col gap-[30px]">
+      <div className="flex flex-col gap-[40px]">
         {/* Row 1: Vision & Mission */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
           {/* Vision Card */}
           <div
-            className="p-[30px] sm:p-[40px] rounded-[16px]"
-            style={{ background: T.color.background.grey }}
+            className="p-[30px] sm:p-[40px] rounded-[8px]"
+            style={{ background: "#EEF2F7", border: "1px solid rgba(7, 7, 7, 0.2)"}}
           >
             {/* Icon */}
             <div
@@ -34,7 +34,9 @@ const ResearchOverview = () => {
     mb-5 sm:mb-6
   "
             >
-              <IconVision />
+              <IconVision size={30} />
+
+              
 
             </div>
 
@@ -44,8 +46,8 @@ const ResearchOverview = () => {
             </h3>
 
             <p
-              className={`${T.font.family} text-[16px] sm:text-[18px] leading-[26px]`}
-              style={{ color: "rgba(25, 25, 25, 0.75)" }}
+              className={`${T.font.family} font-regular text-[16px] sm:text-[18px] leading-[26px]`}
+              style={{ color: "#191919BF" }}
             >
               To be a globally recognized research institution advancing healthcare through transformative
               discoveries, innovative technologies, and evidence-based practices that improve patient outcomes
@@ -55,8 +57,8 @@ const ResearchOverview = () => {
 
           {/* Mission Card */}
           <div
-            className="p-[30px] sm:p-[40px] rounded-[16px]"
-            style={{ background: T.color.background.grey }}
+            className="p-[30px] sm:p-[40px] rounded-[8px]"
+            style={{ background: "#EEF2F7", border: "1px solid rgba(7, 7, 7, 0.2)" }}
           >
             {/* Icon */}
             <div
@@ -69,7 +71,7 @@ const ResearchOverview = () => {
     mb-5 sm:mb-6
   "
             >
-              <IconMission />
+              <IconMission size={30} />
 
             </div>
 
@@ -80,7 +82,7 @@ const ResearchOverview = () => {
 
             <p
               className={`${T.font.family} text-[16px] sm:text-[18px] leading-[26px]`}
-              style={{ color: "rgba(25, 25, 25, 0.75)" }}
+              style={{ color: "#191919BF" }}
             >
               To foster a culture of scientific inquiry, promote interdisciplinary collaboration, support
               faculty and student research excellence, and translate discoveries into practical solutions for
@@ -91,8 +93,9 @@ const ResearchOverview = () => {
 
         {/* Row 2: Dean Message */}
         <div
-          className="p-[30px] sm:p-[40px] rounded-[16px]"
-          style={{ background: T.color.background.grey }}
+          className="p-[30px] sm:p-[40px] rounded-[10px]"
+                      style={{ background: "#EEF2F7", border: "1px solid rgba(7, 7, 7, 0.2)"}}
+
         >
           <h3 className={`${T.font.family} font-bold text-[28px] sm:text-[32px] text-[#223F7F] mb-6`}>
             Message from Dean of Research
@@ -100,7 +103,7 @@ const ResearchOverview = () => {
 
           <div
             className={`${T.font.family} text-[16px] sm:text-[18px] space-y-4 mb-10 leading-[26px]`}
-            style={{ color: "rgba(25, 25, 25, 0.75)" }}
+            style={{ color: "#191919BF" }}
           >
             <p>
               Welcome to the Research & Innovation wing of ASRAM. Our institution has a proud legacy of
@@ -115,10 +118,10 @@ const ResearchOverview = () => {
           {/* Bottom Row */}
           <div
             className="h-auto sm:h-[78px] flex flex-col sm:flex-row justify-between items-start sm:items-center border-t border-solid pt-6 sm:pt-0"
-            style={{ borderColor: T.color.extra.borderResearch }}
+            style={{ borderColor: "#ABABAB" }}
           >
             <div className="mb-6 sm:mb-0">
-              <h4 className="font-bold text-[18px] text-[#223F7F]">Dr. Arun Sharma</h4>
+              <h4 className="font-medium text-[18px] text-[#191919]">Dr. Arun Sharma</h4>
               <p className="text-[#008C8C] text-[14px] font-medium">
                 Dean, Research & Innovation
               </p>

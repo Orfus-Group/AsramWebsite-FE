@@ -47,7 +47,7 @@ const priorities = [
 
 const ResearchPriorities = () => {
   return (
-    <PageSection bgColor="#d8dfef" paddingClass="py-[80px]">
+    <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]">
       <div className="flex flex-col items-start mb-10">
         <h2 className={`${T.font.family} font-bold text-[42px] text-[#223f7f]`}>
           Research Priorities
@@ -58,7 +58,9 @@ const ResearchPriorities = () => {
         {priorities.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col items-start bg-white p-[24px] md:p-[30px] rounded-[12px] shadow-sm hover:shadow-md transition-shadow h-full"
+                                  style={{ border: "1px solid rgba(7, 7, 7, 0.2)"}}
+
+            className="flex flex-col items-start bg-white p-[24px] md:p-[30px] rounded-[8px] shadow-sm hover:shadow-md transition-shadow h-full"
           >
             {/* Icon Box */}
             <div className="w-[50px] h-[50px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-5 shrink-0">
@@ -71,7 +73,7 @@ const ResearchPriorities = () => {
             </h3>
 
             {/* Description */}
-            <p className={`${T.font.family} max-w-[344px] text-[18px] leading-[1.44]`} style={{ color: "rgba(25, 25, 25, 0.75)" }}>
+            <p className={`${T.font.family} max-w-[344px] text-[18px] leading-[1.44]`} style={{ color: "#191919BF" }}>
               {item.desc}
             </p>
           </div>

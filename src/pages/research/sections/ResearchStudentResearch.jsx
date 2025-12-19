@@ -56,7 +56,7 @@ const programs = [
 
 const ResearchStudentResearch = () => {
   return (
-    <PageSection bgColor="#D8DFEF" paddingClass="py-[80px]">
+    <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]">
       <h2 className={`${T.font.family} font-bold text-[40px] text-[#223F7F] mb-10`}>
         Student Research
       </h2>
@@ -64,7 +64,7 @@ const ResearchStudentResearch = () => {
       {/* Row 1: Programs Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] mb-10">
         {programs.map((item, index) => (
-          <div key={index} className="bg-white rounded-[12px] p-[24px] md:p-[30px] flex flex-col items-start h-full shadow-sm hover:shadow-md transition-shadow">
+          <div style={{ border: "1px solid #07070733" }} key={index} className="bg-white rounded-[9.3px] p-[24px] md:p-[30px] flex flex-col items-start h-full shadow-sm hover:shadow-md transition-shadow">
             <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-5 shrink-0">
               {item.icon}
             </div>
