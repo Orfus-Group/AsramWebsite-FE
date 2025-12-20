@@ -136,7 +136,7 @@ const AsramMainHeader = () => {
 
       {/* ----------------------- MAIN HEADER ----------------------- */}
       <header className="w-full bg-white relative z-[100] shadow-[0_4px_20px_rgba(0,0,0,0.25)]">
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px] h-[70px] lg:h-[84px] flex items-center justify-between">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px] h-[66px] py-[10px] flex items-center justify-between relative">
 
           {/* Hamburger */}
           <button
@@ -149,40 +149,45 @@ const AsramMainHeader = () => {
           </button>
 
           {/* LEFT NAV */}
-          <nav className={`${T.font.family} hidden lg:flex items-center gap-[40px]`}>
+          <nav className={`${T.font.family} hidden lg:flex flex-1 items-center justify-between gap-[40px] mr-[84px]`}>
             {/* About (Mega Menu) */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setOpenMenu((prev) => (prev === "About" ? null : "About"));
-              }}
+            {/* About (Link - No Mega Menu) */}
+            <Link
+              to="#"
+              onClick={() => setOpenMenu(null)}
               className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px]`}
               style={{ color: T.color.dark }}
             >
               About
-            </button>
+            </Link>
 
             {/* Academics (Link) */}
-            <Link
-              to="/academics"
-              onClick={() => setOpenMenu(null)}
+            {/* Academics (Mega Menu) */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setOpenMenu((prev) => (prev === "Academics" ? null : "Academics"));
+              }}
               className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px] ${location.pathname.startsWith("/academics") ? `text-[${T.color.text.secondary}] font-bold` : ""
                 }`}
               style={{ color: location.pathname.startsWith("/academics") ? T.color.secondary : T.color.dark }}
             >
               Academics
-            </Link>
+            </button>
 
             {/* Research (Link) */}
-            <Link
-              to="/research"
-              onClick={() => setOpenMenu(null)}
+            {/* Research (Mega Menu) */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setOpenMenu((prev) => (prev === "Research" ? null : "Research"));
+              }}
               className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px] ${location.pathname.startsWith("/research") ? `text-[${T.color.text.secondary}] font-bold` : ""
                 }`}
               style={{ color: location.pathname.startsWith("/research") ? T.color.secondary : T.color.dark }}
             >
               Research
-            </Link>
+            </button>
           </nav>
 
           {/* LOGO */}
@@ -191,11 +196,11 @@ const AsramMainHeader = () => {
             fetchPriority="high"
             decoding="async"
             src={Logo}
-            className="h-[42px] w-[170px] sm:h-[46px] sm:w-[189px] object-contain mx-auto lg:mx-0"
+            className="h-[42px] w-[170px] sm:h-[46px] sm:w-[189px] object-contain absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:translate-x-0 lg:translate-y-0 lg:mx-0"
           />
 
           {/* RIGHT NAV */}
-          <nav className={`${T.font.family} hidden lg:flex items-center gap-[40px]`}>
+          <nav className={`${T.font.family} hidden lg:flex flex-1 items-center justify-between gap-[40px] ml-[84px]`}>
             {/* Healthcare (Mega Menu) */}
             <button
               onClick={(e) => {
@@ -297,9 +302,9 @@ const AsramMainHeader = () => {
 
                   // which items have direct navigation?
                   const routeMap = {
-                    About: null,
-                    Academics: "/academics",
-                    Research: "/research",
+                    About: "#",
+                    Academics: null,
+                    Research: null,
                     Healthcare: null,
                     "Campus Life": null,
                     News: "/news",
@@ -371,8 +376,8 @@ const AsramMainHeader = () => {
                           <div className="flex justify-center px-2">
                             <button
                               className="
-    w-auto
-    px-6
+    w-full
+    px-4
     py-2.5
     rounded-md
     bg-white
@@ -382,7 +387,6 @@ const AsramMainHeader = () => {
     leading-[20px]
     text-[14px]
     sm:text-[16px]
-    whitespace-nowrap
     flex items-center justify-center
     mt-2
   "
@@ -443,7 +447,7 @@ const AsramMainHeader = () => {
       {openMenu && megaMenuContent[openMenu] && (
         <div
           ref={menuRef}
-          className="absolute left-0 top-[124px] w-full z-[40] border-t border-[#E5E7EB] hidden lg:block"
+          className="absolute left-0 top-[106px] w-full z-[40] border-t border-[#E5E7EB] hidden lg:block"
           style={{ backgroundColor: T.color.background.section }}
         >
           <div

@@ -58,6 +58,31 @@ const relatedArticles = [
   },
 ];
 
+const FilterGroup = ({ title, items, activeValue, onSelect }) => (
+  <div className="rounded-[9.4px] border border-[rgba(7,7,7,0.2)] p-5 bg-white">
+    <h4 className={`${T.font.family} font-semibold text-[18px] text-[#1D2939] mb-4`}>
+      {title}
+    </h4>
+    <div className="flex flex-col gap-3">
+      {items.map((item) => (
+        <button
+          key={item.value}
+          onClick={() => onSelect(item.value)}
+          className={`
+            text-left px-4 py-3 rounded-[9.4px] text-[14px] font-regular transition-colors
+            ${activeValue === item.value
+              ? "bg-[#008C8C] text-white"
+              : "bg-[#D8DFEF] text-[#191919] hover:bg-[#c0cbe6]"
+            }
+          `}
+        >
+          {item.label}
+        </button>
+      ))}
+    </div>
+  </div>
+);
+
 const NewsArticleDetail = ({
   article,
   activeCollege,
@@ -91,53 +116,19 @@ const NewsArticleDetail = ({
             <span className={`${T.font.family} font-semibold text-[18px] text-[#1D2939]`}>Filters</span>
           </div>
 
-          {/* College Filter Group */}
-          <div className="rounded-[9.4px] border border-[rgba(7,7,7,0.2)] p-5 bg-white">
-            <h4 className={`${T.font.family} font-semibold text-[18px] text-[#1D2939] mb-4`}>
-              College
-            </h4>
-            <div className="flex flex-col gap-3">
-              {colleges.map((col) => (
-                <button
-                  key={col.value}
-                  onClick={() => setActiveCollege(col.value)}
-                  className={`
-                                        text-left px-4 py-3 rounded-[9.4px] text-[14px] font-regular transition-colors
-                                        ${activeCollege === col.value
-                      ? "bg-[#008C8C] text-white"
-                      : "bg-[#D8DFEF] text-[#191919] hover:bg-[#c0cbe6]"
-                    }
-                                    `}
-                >
-                  {col.label}
-                </button>
-              ))}
-            </div>
-          </div>
+          <FilterGroup
+            title="College"
+            items={colleges}
+            activeValue={activeCollege}
+            onSelect={setActiveCollege}
+          />
 
-          {/* Category Filter Group */}
-          <div className="rounded-[9.4px] border border-[rgba(7,7,7,0.2)] p-5 bg-white">
-            <h4 className={`${T.font.family} font-semibold text-[18px] text-[#1D2939] mb-4`}>
-              Category
-            </h4>
-            <div className="flex flex-col gap-3">
-              {categories.map((cat) => (
-                <button
-                  key={cat.value}
-                  onClick={() => setActiveCategory(cat.value)}
-                  className={`
-                                        text-left px-4 py-3 rounded-[9.4px] text-[14px] font-regular transition-colors
-                                        ${activeCategory === cat.value
-                      ? "bg-[#008C8C] text-white"
-                      : "bg-[#D8DFEF] text-[#191919] hover:bg-[#c0cbe6]"
-                    }
-                                    `}
-                >
-                  {cat.label}
-                </button>
-              ))}
-            </div>
-          </div>
+          <FilterGroup
+            title="Category"
+            items={categories}
+            activeValue={activeCategory}
+            onSelect={setActiveCategory}
+          />
         </div>
 
         {/* ==================== MAIN CONTENT ==================== */}
@@ -249,7 +240,7 @@ const NewsArticleDetail = ({
               </p>
 
               {/* Quote Block */}
-              <div className="bg-[#F9FAFB] border-l-4 border-[#008C8C] pl-6 pr-6 py-5 mb-8 ">
+              <div className="bg-[#EEF2F7] border-l-4 border-[#008C8C] pl-6 pr-6 py-5 mb-8 ">
                 <p className="text-[18px] leading-[26px] italic text-[#191919]">
                   "This achievement is not just a recognition of our past efforts, but a commitment to continuously improve and set new benchmarks in medical education."
                 </p>
@@ -325,31 +316,31 @@ const NewsArticleDetail = ({
           </div>
 
           {/* Related Articles - Separate Border */}
-          <div className="border border-[rgba(0,0,0,0.15)] rounded-[12px] bg-white px-10 py-8 mt-6">
+          <div className="border border-[rgba(0,0,0,0.15)] rounded-[12px] bg-white px-[40px] py-[30px] mt-6">
             {/* Heading */}
             <h3
-              className={`${T.font.family} font-bold text-[32px] leading-[40px] text-[#223f7f] mb-[20px]`}
+              className={`${T.font.family} font-bold text-[32px] leading-[40px] text-[#223f7f] mb-[30px]`}
             >
               Related Articles
             </h3>
 
             {/* Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[22.5px]">
               {relatedArticles.map((article) => (
                 <div
                   key={article.id}
                   className="
-          bg-white
-          border border-[rgba(0,0,0,0.12)]
-          rounded-[14px]
-          overflow-hidden
-          cursor-pointer
-          transition-all
-          hover:shadow-[0_6px_18px_rgba(0,0,0,0.08)]
-        "
+                    bg-white
+                    border border-[rgba(7,7,7,0.2)]
+                    rounded-[9.4px]
+                    overflow-hidden
+                    cursor-pointer
+                    transition-all
+                    flex flex-col
+                  "
                 >
                   {/* ================= IMAGE ================= */}
-                  <div className="relative h-[200px] w-full overflow-hidden">
+                  <div className="relative h-[180px] w-full shrink-0 overflow-hidden">
                     <img
                       src={article.image}
                       alt={article.title}
@@ -359,25 +350,25 @@ const NewsArticleDetail = ({
                     {/* Tag on Image */}
                     <span
                       className="
-              absolute
-              top-4 left-4
-              bg-[#223F7F]
-              text-white
-              text-[10px]
-              font-regular
-              px-[14px]
-              py-[6px]
-              rounded-[9.4px]
-            "
+                        absolute
+                        top-4 left-4
+                        bg-[#223F7F]
+                        text-white
+                        text-[10px]
+                        font-regular
+                        px-[14px]
+                        py-[6px]
+                        rounded-[9.4px]
+                      "
                     >
                       {article.tag}
                     </span>
                   </div>
 
                   {/* ================= CONTENT ================= */}
-                  <div className="px-5 pt-4 pb-6">
+                  <div className="p-[20px] flex flex-col grow">
                     {/* Meta */}
-                    <div className="flex items-center gap-2 mb-3">
+                    <div className="flex items-center gap-2 mb-[12px]">
                       <span
                         className={`${T.font.family} text-[13.1px] font-regular text-[#008c8c]`}
                       >
@@ -394,16 +385,14 @@ const NewsArticleDetail = ({
                     {/* Title */}
                     <h4
                       className={`
-    ${T.font.family}
-    font-semibold
-    text-[22.5px]
-    leading-[31.5px]
-    line-clamp-4
-    text-[#223f7f]
-    min-h-[84px]
-  `}
+                        ${T.font.family}
+                        font-semibold
+                        text-[22.5px]
+                        leading-[31.5px]
+                        text-[#223f7f]
+                        line-clamp-3
+                      `}
                     >
-
                       {article.title}
                     </h4>
                   </div>

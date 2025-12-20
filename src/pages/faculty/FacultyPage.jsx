@@ -12,7 +12,7 @@ import {
     IconTag
 } from "@/assets/icons";
 import { useHero } from "@/context/HeroContext";
-import NewsHerobg from "@/assets/faculty/asramfacultybanner.png";
+import FacultyHerobg from "@/assets/faculty/asramfacultyherobanner.png";
 
 // Placeholder icons for Contact/Awards since they might not be in assets
 const IconEmail = (props) => (
@@ -65,16 +65,27 @@ const FacultyPage = () => {
     useLayoutEffect(() => {
         setHero({
             // title: "Faculty Page",
-            bgImage: NewsHerobg,
+            bgImage: FacultyHerobg,
         });
         return () => hideHero();
     }, [setHero, hideHero]);
 
+    const SectionCard = ({ title, children, className = "" }) => (
+        <div className={`bg-white rounded-[9.4px] border border-[#07070733] p-[30px] ${className}`}>
+            {title && <h3 className={`${T.font.family} font-semibold text-[32px] text-[#223F7F] mb-4`}>{title}</h3>}
+            {children}
+        </div>
+    );
+
+    const WidgetCard = ({ title, children, className = "" }) => (
+        <div className={`bg-white rounded-[9.4px] border border-[#07070733] p-[20px] ${className}`}>
+            <h6 className={`${T.font.family} font-semibold text-[22px] text-[#223F7F] mb-4`}>{title}</h6>
+            {children}
+        </div>
+    );
+
     return (
         <div className="bg-[#F9FAFB] min-h-screen">
-            {/* ==================== HERO SECTION REMOVED ==================== */}
-
-
             <PageSection paddingClass="py-[40px] md:py-[60px]">
 
                 {/* ==================== BREADCRUMB ==================== */}
@@ -85,7 +96,7 @@ const FacultyPage = () => {
                 </div>
 
                 {/* ==================== PROFILE HEADER CARD ==================== */}
-                <div className="bg-[#e3e8f0] rounded-[9.4px] border border-[#07070733] p-[30px] mb-8 shadow-sm">
+                <div className="bg-[#EEF2F7] rounded-[9.4px] border border-[#07070733] p-[30px] mb-8 shadow-sm">
                     <div className="flex flex-col md:flex-row gap-[30px] items-start">
                         {/* Image - Exact Figma Dimensions */}
                         <div className="w-full md:w-[330px] h-auto md:h-[322px] rounded-[9.4px] overflow-hidden shrink-0">
@@ -96,7 +107,7 @@ const FacultyPage = () => {
                         <div className="flex-1 w-full md:h-[322px] flex flex-col justify-between">
                             <div>
                                 <div className="flex flex-wrap items-center gap-3 mb-[12px]">
-                                    <span className="bg-[#D0E8E8] text-[#00796B] font-medium text-[12px] px-3 py-1 rounded-[4px]">
+                                    <span className="bg-[#008C8C1A] text-[#00796B] font-medium text-[12px] px-3 py-1 rounded-[4px]">
                                         Department of General Medicine
                                     </span>
                                 </div>
@@ -186,16 +197,14 @@ const FacultyPage = () => {
                     <div className="flex-1 space-y-8">
 
                         {/* About */}
-                        <div className="bg-white rounded-[9.4px] border border-[#07070733] p-[30px]">
-                            <h3 className={`${T.font.family} font-semibold text-[32px] text-[#223F7F] mb-4`}>About</h3>
+                        <SectionCard title="About">
                             <p className={`${T.font.family} font-regular text-[18px] leading-[26px] text-[#191919BF]`}>
                                 Dr. Rajesh Kumar is a distinguished cardiologist with over 25 years of clinical and academic experience. He specializes in interventional cardiology and has performed over 5,000 cardiac catheterization procedures. His expertise includes coronary angiography, angioplasty, pacemaker implantation, and management of complex cardiac conditions.
                             </p>
-                        </div>
+                        </SectionCard>
 
                         {/* Education */}
-                        <div className="bg-white rounded-[9.4px] border border-[#07070733] p-[30px]">
-                            <h3 className={`${T.font.family} font-semibold text-[32px] text-[#223F7F] mb-4`}>Education</h3>
+                        <SectionCard title="Education">
                             <div className="space-y-6">
                                 {[
                                     { degree: "DM (Cardiology)", college: "All India Institute of Medical Sciences (AIIMS), New Delhi", year: "2005" },
@@ -223,11 +232,10 @@ const FacultyPage = () => {
                                     </div>
                                 ))}
                             </div>
-                        </div>
+                        </SectionCard>
 
                         {/* Research Interests */}
-                        <div className="bg-white rounded-[9.4px] border border-[#07070733] p-[30px]">
-                            <h3 className={`${T.font.family} font-semibold text-[32px] text-[#223F7F] mb-6`}>Research Interests</h3>
+                        <SectionCard title="Research Interests">
                             <div className="flex flex-wrap gap-3">
                                 {["Acute Coronary Syndrome Management", "Cardiac Imaging and Diagnostics", "Preventive Cardiology", "Heart Failure Management", "Cardiac Rehabilitation"].map((tag, i) => (
                                     <span key={i} className="bg-[#e3e8f0] text-[#191919BF] px-4 py-2 rounded-[9.4px] text-[15px] font-regular border border-gray-200">
@@ -235,11 +243,10 @@ const FacultyPage = () => {
                                     </span>
                                 ))}
                             </div>
-                        </div>
+                        </SectionCard>
 
                         {/* Recent Publications */}
-                        <div className="bg-white rounded-[9.4px] border border-[#07070733] p-[30px]">
-                            <h3 className={`${T.font.family} font-semibold text-[32px] text-[#223F7F] mb-6`}>Recent Publications</h3>
+                        <SectionCard title="Recent Publications">
                             <div className="space-y-4">
                                 {[
                                     { title: "Novel Approaches in Primary PCI for STEMI Patients", journal: "Indian Heart Journal", year: "2023", type: "Research Article" },
@@ -267,11 +274,10 @@ const FacultyPage = () => {
                                     </div>
                                 ))}
                             </div>
-                        </div>
+                        </SectionCard>
 
                         {/* Teaching Responsibilities */}
-                        <div className="bg-white rounded-[9.4px] border border-[#07070733] p-[30px]">
-                            <h3 className={`${T.font.family} font-semibold text-[32px] text-[#223F7F] mb-6`}>Teaching Responsibilities</h3>
+                        <SectionCard title="Teaching Responsibilities">
                             <ul className="space-y-3">
                                 {[
                                     "Clinical Cardiology for MBBS students",
@@ -286,7 +292,7 @@ const FacultyPage = () => {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
+                        </SectionCard>
 
                     </div>
 
@@ -294,8 +300,7 @@ const FacultyPage = () => {
                     <div className="w-full lg:w-[399px] shrink-0 space-y-6">
 
                         {/* Contact Info Widget */}
-                        <div className="bg-white rounded-[9.4px] border border-[#07070733] p-[20px]">
-                            <h6 className={`${T.font.family} font-semibold text-[22px] text-[#223F7F] mb-4`}>Contact Information</h6>
+                        <WidgetCard title="Contact Information">
                             <div className="space-y-4">
                                 <div className="mb-[12px]">
                                     <p className="text-[14px] font-medium text-[#191919] mb-[4px]">Email</p>
@@ -315,13 +320,10 @@ const FacultyPage = () => {
                                     <p className="text-[#191919BF] text-[14px]">Sat: 9:00 AM - 1:00 PM</p>
                                 </div>
                             </div>
-                        </div>
+                        </WidgetCard>
 
                         {/* Awards Widget */}
-
-                        <div className="bg-white rounded-[9.4px] border border-[#07070733] p-[20px]">
-                            <h6 className={`${T.font.family} font-semibold text-[22px] text-[#223F7F] mb-4`}>Awards & Recognition</h6>
-
+                        <WidgetCard title="Awards & Recognition">
                             <div className="space-y-4">
                                 {[
                                     { name: "Best Teacher Award", org: "ASRAM Medical College", year: "2023" },
@@ -339,11 +341,10 @@ const FacultyPage = () => {
                                     </div>
                                 ))}
                             </div>
-                        </div>
+                        </WidgetCard>
 
                         {/* Memberships Widget */}
-                        <div className="bg-white rounded-[9.4px] border border-[#07070733] p-[20px]">
-                            <h6 className={`${T.font.family} font-semibold text-[22px] text-[#223F7F] mb-4`}>Professional Memberships</h6>
+                        <WidgetCard title="Professional Memberships">
                             <ul className="space-y-2">
                                 {[
                                     "Fellow of American College of Cardiology (FACC)",
@@ -358,11 +359,10 @@ const FacultyPage = () => {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
+                        </WidgetCard>
 
                         {/* Quick Actions Widget */}
-                        <div className="bg-[#F3F4F6] rounded-[9.4px] p-[20px] border border-[#07070733]">
-                            <h6 className={`${T.font.family} font-semibold text-[22.53px] text-[#223F7F] mb-4`}>Quick Actions</h6>
+                        <WidgetCard title="Quick Actions" className="bg-[#F3F4F6]">
                             <div className="space-y-3">
                                 <button
                                     className="
@@ -403,7 +403,7 @@ const FacultyPage = () => {
                                 </button>
                             </div>
 
-                        </div>
+                        </WidgetCard>
 
                     </div>
 
