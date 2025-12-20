@@ -119,7 +119,7 @@ const LatestNews = ({
                                         text-left px-4 py-3 rounded-[9.4px] text-[14px] font-regular transition-colors
                                         ${activeCollege === col.value
                                             ? "bg-[#008C8C] text-white"
-                                            : "bg-[#D8DFEF] text-[#191919] hover:bg-[#c0cbe6]"
+                                            : "bg-[#EEF2F7] text-[#191919] hover:bg-[#c0cbe6]"
                                         }
                                     `}
                                 >
@@ -144,7 +144,7 @@ const LatestNews = ({
                                         text-left px-4 py-3 rounded-[9.4px] text-[14px] font-regular transition-colors
                                         ${activeCategory === cat.value
                                             ? "bg-[#008C8C] text-white"
-                                            : "bg-[#D8DFEF] text-[#191919] hover:bg-[#c0cbe6]"
+                                            : "bg-[#EEF2F7] text-[#191919] hover:bg-[#c0cbe6]"
                                         }
                                     `}
                                 >
@@ -172,7 +172,7 @@ const LatestNews = ({
                         {mockNews.map((item) => (
                             <div
                                 key={item.id}
-                                className="bg-white rounded-[9.4px] border border-[rgba(7,7,7,0.2)] overflow-hidden flex flex-col hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                                className="bg-[#EEF2F7] rounded-[12.5px] border border-[#E5E7EB] overflow-hidden flex flex-col transition-shadow duration-300 cursor-pointer"
                                 onClick={() => onArticleClick && onArticleClick(item)}
                             >
                                 {/* Image */}
@@ -212,8 +212,8 @@ const LatestNews = ({
                                     </p>
 
                                     {/* Footer (Date + Read More) */}
-                                    <div className="flex items-center justify-between mt-auto pt-5 border-t border-[#EAECF0]">
-                                        <div className="flex items-center gap-2 text-[#475467] text-[14px] font-medium">
+                                    <div style={{ borderTop: "1.3px solid #07070733" }} className="flex items-center justify-between mt-auto pt-5">
+                                        <div className="flex items-center gap-2 text-[#ABABAB] text-[14px] font-medium">
                                             <IconCalendar />
                                             <span>{item.date}</span>
                                         </div>
@@ -225,7 +225,7 @@ const LatestNews = ({
                                             }}
                                         >
                                             Read More
-                                            <IconArrowRight />
+                                            <IconArrowRight stroke="#008C8C" />
                                         </button>
                                     </div>
                                 </div>

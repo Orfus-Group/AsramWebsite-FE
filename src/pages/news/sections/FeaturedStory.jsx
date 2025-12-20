@@ -13,45 +13,44 @@ const FeaturedStory = () => {
             </h2>
 
             {/* Card Container */}
-            <div className="bg-[#D8DFEF] rounded-[8px] border-[0.9px] border-[rgba(7,7,7,0.2)] overflow-hidden flex flex-col lg:flex-row shadow-sm min-h-[400px]">
+            <div className="flex flex-col lg:flex-row shadow-sm rounded-[8px] overflow-hidden">
 
                 {/* Image Side - Left */}
-                <div className="w-full lg:w-[40%] relative bg-gray-200">
+                <div className="w-full lg:flex-1 relative bg-gray-200 min-h-[300px] lg:min-h-full">
                     <img
                         src={Featuredimg}
                         alt="Featured"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover absolute inset-0"
                     />
                 </div>
 
                 {/* Content Side - Right */}
-                <div className="flex-1 w-full lg:w-[60%] p-[30px] md:p-[60px] flex flex-col justify-center">
+                <div className="w-full lg:w-[730.6px] lg:h-[377.9px] bg-[#EEF2F7] p-[30px] flex flex-col justify-between">
 
-                    {/* Tags */}
-                    <div className="flex items-center gap-3 mb-6">
-                        <span className="bg-[#008C8C] text-white text-[14px] leading-[20px] font-regular px-4 py-1.5 rounded-[31498264px]">
-                            Achievement
-                        </span>
-                        <span className="bg-[#223F7F1A] text-[#223F7F] text-[14px] leading-[20px] font-regular px-4 py-1.5 rounded-[31498264px]">
-                            All Colleges
-                        </span>
+                    <div>
+                        {/* Tags */}
+                        <div className="flex items-center gap-3 mb-6">
+                            <span className="bg-[#008C8C] text-white text-[14px] leading-[20px] font-regular px-4 py-1.5 rounded-[31498264px]">
+                                Achievement
+                            </span>
+                            <span className="bg-[#223F7F1A] text-[#223F7F] text-[14px] leading-[20px] font-regular px-4 py-1.5 rounded-[31498264px]">
+                                All Colleges
+                            </span>
+                        </div>
+
+                        {/* Title */}
+                        <h3 className={`${T.font.family} font-semibold text-[22px] md:text-[32px] text-[#223F7F] mb-4 leading-tight`}>
+                            ASRAM Achieves NAAC A+ Accreditation for Academic Excellence
+                        </h3>
+
+                        {/* Description */}
+                        <p className={`${T.font.family} text-[18px] text-[#191919BF] mb-8 leading-[26px] font-regular line-clamp-3`}>
+                            The National Assessment and Accreditation Council (NAAC) has awarded ASRAM the prestigious A+ grade, recognizing our commitment to quality education, research excellence, and recognizing our commitment to quality education, research excellence comprehensive healthcare services.
+                        </p>
                     </div>
 
-                    {/* Title */}
-                    <h3 className={`${T.font.family} font-semibold text-[22px] md:text-[32px] text-[#223F7F] mb-4 leading-tight`}>
-                        ASRAM Achieves NAAC A+ Accreditation for Academic Excellence
-                    </h3>
-
-                    {/* Description */}
-                    <p className={`${T.font.family} text-[18px] text-[#191919BF] mb-8 leading-[26px] font-regular `}>
-                        The National Assessment and Accreditation Council (NAAC) has awarded ASRAM the prestigious A+ grade, recognizing our commitment to quality education, research excellence, and recognizing our commitment to quality education, research excellence comprehensive healthcare services.
-                    </p>
-
-                    {/* Divider LINE */}
-                    <div className="w-full h-[1px] bg-[#19191933] mb-6"></div>
-
                     {/* Footer Row */}
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="border-t border-[#19191933] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
 
                         {/* Date & Read Time */}
                         <div className="flex items-center gap-4 text-[16px] text-[#555555] font-regular">
@@ -67,7 +66,11 @@ const FeaturedStory = () => {
                         {/* Button */}
                         <button className="bg-[#223F7F] hover:bg-[#1a3163] text-white px-8 py-3 rounded-[8px] font-regular text-[18px] transition-colors flex items-center leading-[26px] gap-2">
                             Read Full Story
-                            <IconArrowRight size={19} color="white" />
+                            <IconArrowRight
+                                size={19}
+                                stroke="white"
+                                strokeWidth={1}
+                            />
                         </button>
                     </div>
                 </div>
