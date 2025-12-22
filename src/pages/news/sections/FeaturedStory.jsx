@@ -25,12 +25,12 @@ const FeaturedStory = () => {
                 </div>
 
                 {/* Content Side - Right */}
-                <div className="w-full lg:w-[730.6px] lg:h-[377.9px] bg-[#EEF2F7] p-[30px] flex flex-col justify-between">
+                <div className="w-full lg:w-[730.6px] lg:h-[377.9px] bg-[#EEF2F7] p-[30px] flex flex-col justify-between border border-[rgba(7,7,7,0.2)]">
 
-                    <div>
+                    <div className="flex-1 flex flex-col justify-start">
                         {/* Tags */}
                         <div className="flex flex-wrap items-center gap-3 mb-6">
-                            <span className="bg-[#008C8C] text-white text-[14px] leading-[20px] font-regular px-4 py-1.5 rounded-[31498264px]">
+                            <span className="bg-[#223F7F1A] text-[#223F7F] text-[14px] leading-[20px] font-regular px-4 py-1.5 rounded-[31498264px]">
                                 Achievement
                             </span>
                             <span className="bg-[#223F7F1A] text-[#223F7F] text-[14px] leading-[20px] font-regular px-4 py-1.5 rounded-[31498264px]">
@@ -44,13 +44,13 @@ const FeaturedStory = () => {
                         </h3>
 
                         {/* Description */}
-                        <p className={`${T.font.family} text-[18px] text-[#191919BF] mb-8 leading-[26px] font-regular line-clamp-3`}>
+                        <p className={`${T.font.family} text-[18px] text-[#191919BF] mb-0 leading-[26px] font-regular line-clamp-3`}>
                             The National Assessment and Accreditation Council (NAAC) has awarded ASRAM the prestigious A+ grade, recognizing our commitment to quality education, research excellence, and recognizing our commitment to quality education, research excellence comprehensive healthcare services.
                         </p>
                     </div>
 
                     {/* Footer Row */}
-                    <div className="border-t border-[#19191933] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="h-[70px] border-t-[0.9px] border-[rgba(7,7,7,0.2)] flex flex-col sm:flex-row items-center justify-between gap-4 mt-auto">
 
                         {/* Date & Read Time */}
                         <div className="flex items-center gap-4 text-[16px] text-[#555555] font-regular">

@@ -6,6 +6,8 @@ import FeaturedStory from "./sections/FeaturedStory";
 import LatestNews from "./sections/LatestNews";
 import NewsArticleDetail from "./sections/NewsArticleDetail";
 
+import CampusEventsSection from "./sections/CampusEventsSection";
+
 const NewsPage = () => {
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [activeCollege, setActiveCollege] = useState("All");
@@ -58,6 +60,7 @@ const NewsPage = () => {
   return (
     <>
 
+      <CampusEventsSection />
       <FeaturedStory />
 
       {/* Main News Section with Shared Filters */}

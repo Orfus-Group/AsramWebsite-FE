@@ -95,14 +95,14 @@ export default function StudentVoices() {
             <div
               key={index}
               className="
-                rounded-[8px]
+                rounded-[16px]
                 p-[30px]
                 flex flex-col
                 h-full
               "
               style={{
-                backgroundColor: T.color.background.programCard,
-                border: `1px solid ${T.color.border}`,
+                backgroundColor: "#eef2f7",
+                border: "solid 1px rgba(7, 7, 7, 0.2)"
               }}
             >
               {/* QUOTE ICON */}
@@ -117,9 +117,9 @@ export default function StudentVoices() {
                   leading-[26px]
                   mb-[20px]
                 `}
-                style={{ color: T.color.text.grayish }}
+                style={{ color: "#191919BF" }}
               >
-                “{item.text}”
+                "{item.text}"
               </p>
 
               {/* NAME & PROGRAM */}
@@ -135,11 +135,10 @@ export default function StudentVoices() {
                     className={`
                       ${T.font.family}
                       ${T.font.weight.medium}
-                      text-[18px] 
-                      text-[#111827]
+                      text-[20px] 
+                      text-[#223F7F]
                       leading-[22px]
                     `}
-                    style={{ color: T.color.text.dark }}
                   >
                     {item.name}
                   </p>

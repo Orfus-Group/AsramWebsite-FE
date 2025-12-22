@@ -48,7 +48,7 @@ const AcademicsHeader = () => {
   ];
 
   return (
-    <>
+    <div className="sticky -top-[46px] z-[100] w-full">
       {/* ================= TOP BLUE BAR ================= */}
       <div style={{ backgroundColor: T.color.text.secondary }}>
         <div
@@ -238,7 +238,7 @@ const AcademicsHeader = () => {
         </div>
 
       </nav>
-    </>
+    </div>
   );
 };
 

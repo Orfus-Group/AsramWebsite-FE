@@ -13,6 +13,8 @@ import WhyChooseAsramSection from "./WhyChoose";
 import InsideASRAM from "./InsideAsram";
 import AsramNewsEvents from "./AsramNewsEvents";
 import ResearchInnovation from "./ResearchInnovation";
+import LaboratoriesTrainingSection from "./LaboratoriesTrainingSection";
+import ClinicalExposureSection from "./ClinicalExposureSection";
 import AsramFooter from "./AsramFooter";
 import { useHero } from "@/context/HeroContext";
 import MotionSection from "@/components/common/MotionSection";
@@ -100,6 +102,14 @@ const AsramPage = () => {
         "
           image={ResearchSectionimg}
         />
+      </MotionSection>
+
+      <MotionSection delay={0.2}>
+        <LaboratoriesTrainingSection />
+      </MotionSection>
+
+      <MotionSection delay={0.2}>
+        <ClinicalExposureSection />
       </MotionSection>
     </>
   );

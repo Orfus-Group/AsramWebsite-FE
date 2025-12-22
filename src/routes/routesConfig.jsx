@@ -7,6 +7,8 @@ const ResearchPage = lazy(() => import("@/pages/research/ResearchPage"));
 const NewsPage = lazy(() => import("@/pages/news/NewsPage"));
 const FacultyPage = lazy(() => import("@/pages/faculty/FacultyPage"));
 const GlobalCommunityHealthPage = lazy(() => import("@/pages/faculty/GlobalCommunityHealthPage"));
+const CampusLifePage = lazy(() => import("@/pages/campus-life/CampusLifePage"));
+const AboutAsramPage = lazy(() => import("@/pages/about-asram/AboutAsramPage"));
 
 const routesConfig = [
   {
@@ -14,6 +16,12 @@ const routesConfig = [
     label: "Home",
     element: <HomePage />,
     layout: "main",
+  },
+  {
+    path: "/about-asram",
+    label: "About ASRAM",
+    element: <AboutAsramPage />,
+    layout: "aboutasram",
   },
   {
     path: "/academics",
@@ -38,6 +46,12 @@ const routesConfig = [
     label: "News",
     element: <NewsPage />,
     layout: "news",
+  },
+  {
+    path: "/campus-life",
+    label: "Campus Life",
+    element: <CampusLifePage />,
+    layout: "main",
   },
   {
     path: "/faculty",

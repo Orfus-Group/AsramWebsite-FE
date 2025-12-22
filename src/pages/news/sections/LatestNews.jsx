@@ -118,7 +118,7 @@ const LatestNews = ({
                                     className={`
                                         text-left px-4 py-3 rounded-[9.4px] text-[14px] font-regular transition-colors
                                         ${activeCollege === col.value
-                                            ? "bg-[#008C8C] text-white"
+                                            ? "bg-[#223F7F] text-white"
                                             : "bg-[#EEF2F7] text-[#191919] hover:bg-[#c0cbe6]"
                                         }
                                     `}
@@ -143,7 +143,7 @@ const LatestNews = ({
                                     className={`
                                         text-left px-4 py-3 rounded-[9.4px] text-[14px] font-regular transition-colors
                                         ${activeCategory === cat.value
-                                            ? "bg-[#008C8C] text-white"
+                                            ? "bg-[#223F7F] text-white"
                                             : "bg-[#EEF2F7] text-[#191919] hover:bg-[#c0cbe6]"
                                         }
                                     `}
@@ -162,9 +162,7 @@ const LatestNews = ({
                         <h2 className={`${T.font.family} font-bold text-[28px] lg:text-[32px] text-[#223F7F] mb-1`}>
                             Latest News
                         </h2>
-                        <p className={`${T.font.family} font-regular text-[20px] text-[#191919BF]`}>
-                            Showing 9 articles
-                        </p>
+                        
                     </div>
 
                     {/* News Grid */}

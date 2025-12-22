@@ -15,7 +15,9 @@ const layoutByPath = (pathname) => {
   if (pathname.startsWith("/research")) return "research";
   if (pathname.startsWith("/news")) return "news";
   if (pathname.startsWith("/faculty")) return "faculty";
-  if (pathname.startsWith("/community-health")) return "faculty";
+  if (pathname.startsWith("/community-health")) return "communityhealth";
+  if (pathname.startsWith("/campus-life")) return "campuslife";
+  if (pathname.startsWith("/about-asram")) return "aboutasram";
   return "main";
 };
 
@@ -24,17 +26,23 @@ const headerMap = {
   nursing: AcademicsHeader,
   academics: AcademicsHeader,
   research: AcademicsHeader,
+  communityhealth: AcademicsHeader,
   news: AsramMainHeader,
   faculty: AcademicsHeader,
+  campuslife: AsramMainHeader,
+  aboutasram: AsramMainHeader,
 };
 
 const footerMap = {
   main: AsramFooter,
   nursing: NursingFooter,
   academics: NursingFooter,
+  communityhealth: NursingFooter,
   research: NursingFooter,
-  news: NursingFooter,
+  news: AsramFooter,
   faculty: NursingFooter,
+  campuslife: AsramFooter,
+  aboutasram: AsramFooter,
 };
 
 const InnerLayout = () => {

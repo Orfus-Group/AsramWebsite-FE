@@ -49,23 +49,3 @@
   animation: pingSlow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-/* ===========================
-   CUSTOM SCROLLBAR
-=========================== */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #EEF2F7;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #223F7F;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #1a3366;
-}

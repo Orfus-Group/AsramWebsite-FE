@@ -153,10 +153,10 @@ const AsramMainHeader = () => {
             {/* About (Mega Menu) */}
             {/* About (Link - No Mega Menu) */}
             <Link
-              to="#"
+              to="/about-asram"
               onClick={() => setOpenMenu(null)}
-              className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px]`}
-              style={{ color: T.color.dark }}
+              className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px] ${location.pathname.startsWith("/about-asram") ? `text-[${T.color.text.secondary}] font-bold` : ""}`}
+              style={{ color: location.pathname.startsWith("/about-asram") ? T.color.secondary : T.color.dark }}
             >
               About
             </Link>
@@ -213,17 +213,15 @@ const AsramMainHeader = () => {
               Healthcare
             </button>
 
-            {/* Campus Life (Mega Menu) */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setOpenMenu((prev) => (prev === "Campus Life" ? null : "Campus Life"));
-              }}
-              className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px]`}
-              style={{ color: T.color.dark }}
+            {/* Campus Life (Link) */}
+            <Link
+              to="/campus-life"
+              onClick={() => setOpenMenu(null)}
+              className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px] ${location.pathname.startsWith("/campus-life") ? `text-[${T.color.text.secondary}] font-bold` : ""}`}
+              style={{ color: location.pathname.startsWith("/campus-life") ? T.color.secondary : T.color.dark }}
             >
               Campus Life
-            </button>
+            </Link>
 
             {/* News (Link) */}
             <Link
@@ -302,7 +300,7 @@ const AsramMainHeader = () => {
 
                   // which items have direct navigation?
                   const routeMap = {
-                    About: "#",
+                    About: "/about-asram",
                     Academics: null,
                     Research: null,
                     Healthcare: null,

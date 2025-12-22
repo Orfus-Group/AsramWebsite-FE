@@ -132,7 +132,7 @@ const YoutubeIcon = () => (
 
 const AsramFooter = () => {
   return (
-    <footer className="w-full bg-[#F7F8FA]">
+    <footer className="w-full bg-[#c5cfdf]">
 
       {/* TOP CONTACT BAR */}
       <div className="w-full bg-[#223F7F] border-t" style={{ borderTop: "0.76px solid rgba(25,25,25,0.10)" }}>
@@ -185,7 +185,7 @@ const AsramFooter = () => {
               About ASRAM
             </h3>
 
-            <p className={`${T.font.family} ${T.font.weight.regular} text-[12.11px] leading-[19.67px] text-[#595959] w-[244.41px] mb-[20px]`}>
+            <p className={`${T.font.family} ${T.font.weight.regular} text-[14px] leading-[20px] text-[#191919BF] w-[244.41px] mb-[20px]`}>
               A Legacy of Healing and Education. Empowering healthcare
               professionals and serving communities with compassion and
               excellence since our foundation.
@@ -218,7 +218,7 @@ const AsramFooter = () => {
             ].map((text) => (
               <span
                 key={text}
-                className={`${T.font.family} font-medium text-[12px] leading-[22px] text-[#595959BF]`}
+                className={`${T.font.family} font-regular text-[14px] leading-[22px] text-[#191919BF]`}
               >
                 {text}
               </span>
@@ -243,7 +243,7 @@ const AsramFooter = () => {
             ].map((text) => (
               <span
                 key={text}
-                className={`${T.font.family} font-medium text-[12px] leading-[22px] text-[#595959BF]`}
+                className={`${T.font.family} font-regular text-[14px] leading-[22px] text-[#191919BF]`}
               >
                 {text}
               </span>
@@ -268,7 +268,7 @@ const AsramFooter = () => {
             ].map((text) => (
               <span
                 key={text}
-                className={`${T.font.family} font-medium text-[12px] leading-[22px] text-[#595959BF]`}
+                className={`${T.font.family} font-regular text-[14px] leading-[22px] text-[#191919BF]`}
               >
                 {text}
               </span>
