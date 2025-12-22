@@ -2,6 +2,7 @@
 import React from "react";
 import { T } from "@/theme";
 import PageSection from "@/features/common/layout/PageContainer";
+import ParallaxImage from "@/components/common/ParallaxImage";
 
 /* ----------------------------------
    Quote Icon
@@ -67,18 +68,13 @@ const InsideASRAM = ({ title, image, quote }) => {
             bg-gray-200
             aspect-[3/2]
             lg:aspect-auto
+            relative
           "
         >
-          <img
-            loading="lazy"
-            decoding="async"
+          <ParallaxImage
             src={image}
             alt="Inside ASRAM"
-            className="
-              w-full
-              h-full
-              object-cover
-            "
+            className="w-full h-full object-cover"
           />
         </div>
 

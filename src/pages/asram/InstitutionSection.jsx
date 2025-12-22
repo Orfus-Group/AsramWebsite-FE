@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router";
+import { motion } from "framer-motion";
 import { T } from "@/theme";
+import StaggerContainer, { itemVariants } from "@/components/common/StaggerContainer";
+import HoverCard from "@/components/common/HoverCard";
 
 import PageSection from "@/features/common/layout/PageContainer";
 import IconFullArrowRight from "@/assets/icons/IconFullArrow";
@@ -143,7 +146,7 @@ const InstitutionsSection = () => {
         </p>
 
         {/* CARD GRID */}
-        <div
+        <StaggerContainer
           className="
             grid
             grid-cols-1
@@ -153,7 +156,8 @@ const InstitutionsSection = () => {
           "
         >
           {institutions.map((item) => (
-            <div
+            <HoverCard
+              variants={itemVariants}
               key={item.id}
               className="
                 group 
@@ -168,7 +172,6 @@ const InstitutionsSection = () => {
                 pt-[24px] pb-[24px]
                 flex flex-col 
                 transition-all duration-200 
-                hover:-translate-y-[4px] 
                 hover:shadow-[0px_20px_42px_rgba(15,23,42,0.12)]
               "
             >
@@ -278,9 +281,9 @@ const InstitutionsSection = () => {
                   strokeWidth={2}
                 />
               </Link>
-            </div>
+            </HoverCard>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </PageSection>
   );

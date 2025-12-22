@@ -2,6 +2,7 @@ import React, { useLayoutEffect } from "react";
 
 import { useHero } from "@/context/HeroContext";
 import heroBg from "@/assets/nursing/asramnursingbanner.png";
+import MotionSection from "@/components/common/MotionSection";
 import AcademicProgramsSection from "./AcademicProgramsSection";
 import VisionMissionSection from "./VisionMission";
 import NewsEvents from "./NewsEvents";
@@ -21,14 +22,14 @@ const NursingPage = () => {
   useLayoutEffect(() => {
     setHero({
       title: (
-        <span className="font-montserrat font-bold text-[40px] leading-[1.35] text-white">
+        <span className="font-montserrat font-bold text-[32px] md:text-[40px] leading-[1.2] text-white">
           Excellence in Nursing Education
         </span>
       ),
       bgImage: heroBg,
       children: (
         <>
-          <p className="font-montserrat font-medium text-[22px] leading-[1.36] text-white max-w-[520px] mb-6">
+          <p className="font-montserrat font-medium text-[16px] md:text-[22px] leading-[1.4] text-white max-w-[520px] mb-6">
             ASRAM School of Nursing prepares skilled, ethical, and globally competent nurses through accredited programs and real-world clinical exposure.
           </p>
 
@@ -37,9 +38,9 @@ const NursingPage = () => {
                       bg-[#191919] 
                       hover:bg-[#27272a] 
                       text-white 
-                      px-6 py-2 md:px-8 md:py-3
+                      px-5 py-2.5 md:px-8 md:py-3
                       rounded-[8px] 
-                      text-[16px] md:text-[22px] font-medium 
+                      text-[15px] md:text-[22px] font-medium 
                       transition-colors
                   "
           >
@@ -54,14 +55,30 @@ const NursingPage = () => {
 
   return (
     <>
-      <AcademicProgramsSection />
-      <VisionMissionSection />
-      <StudentExperience />
-      <ResearchSection />
-      <SocialCommitment />
+      <MotionSection>
+        <AcademicProgramsSection />
+      </MotionSection>
+      <MotionSection delay={0.1}>
+        <VisionMissionSection />
+      </MotionSection>
+      <MotionSection delay={0.1}>
+        <StudentExperience />
+      </MotionSection>
+      <MotionSection delay={0.2}>
+        <ResearchSection />
+      </MotionSection>
+      <MotionSection delay={0.2}>
+        <SocialCommitment />
+      </MotionSection>
+      <MotionSection delay={0.3}>
         <AsramNewsEvents />
-      <FacultySpotlightSection />
-      <KeyStrengthsSection />
+      </MotionSection>
+      <MotionSection delay={0.3}>
+        <FacultySpotlightSection />
+      </MotionSection>
+      <MotionSection delay={0.3}>
+        <KeyStrengthsSection />
+      </MotionSection>
     </>
   );
 };

@@ -62,7 +62,7 @@ export default function NursingCareerSection() {
         className={`
           ${T.font.family}
           ${T.font.weight.bold}
-          text-[34px] leading-[42px]
+          text-[32px] leading-[40px]
           sm:text-[38px] sm:leading-[44px]
           md:text-[42px] md:leading-[46px]
           text-[${T.color.secondary}]

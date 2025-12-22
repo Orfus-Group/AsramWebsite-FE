@@ -96,7 +96,7 @@ const LatestNews = ({
             <div className="flex flex-col lg:flex-row gap-[24px] lg:gap-[40px]">
 
                 {/* ==================== SIDEBAR ==================== */}
-                <div className="w-full lg:w-[280px] shrink-0 space-y-6 lg:sticky lg:top-[20px] lg:self-start">
+                <div className="w-full lg:w-[280px] shrink-0 space-y-6 lg:sticky lg:top-[20px] lg:self-start flex flex-col md:flex-row lg:flex-col gap-4 md:gap-6">
                     {/* Filters Header */}
                     <div className="flex items-center gap-2 rounded-[9.4px] border border-[rgba(7,7,7,0.2)]
  px-6 py-4 bg-white w-full">
@@ -168,7 +168,7 @@ const LatestNews = ({
                     </div>
 
                     {/* News Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] md:gap-[30px] mb-8 md:mb-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-[24px] md:gap-[30px] mb-8 md:mb-12">
                         {mockNews.map((item) => (
                             <div
                                 key={item.id}

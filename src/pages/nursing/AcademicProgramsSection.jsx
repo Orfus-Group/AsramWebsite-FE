@@ -68,13 +68,13 @@ export default function AcademicProgramsSection() {
       <div
         className="
           grid 
-          grid-cols-1            /* Mobile */
-          gap-[22px]             /* Mobile gap improved */
-
+          grid-cols-1            /* Mobile: Force single column */
+          gap-[24px]             /* Mobile: Force gap */
+          
           sm:grid-cols-2         /* Tablet */
-          sm:gap-[26px]
+          md:gap-[26px]
 
-          lg:grid-cols-3         /* Desktop (untouched) */
+          lg:grid-cols-3         /* Desktop */
           lg:gap-[28.95px]
           lg:justify-between
         "

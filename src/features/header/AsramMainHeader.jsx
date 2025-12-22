@@ -86,7 +86,7 @@ const AsramMainHeader = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <div className="asram-font">
+    <div className="sticky -top-[40px] z-[100] asram-font w-full">
       {/* ----------------------- TOP BAR ----------------------- */}
       <div className="w-full" style={{ backgroundColor: T.color.secondary }}>
         <div className="w-full max-w-[1440px] mx-auto h-[40px] flex justify-center px-4 sm:px-6 md:px-10 lg:px-[120px]">
@@ -98,7 +98,7 @@ const AsramMainHeader = () => {
               h-full
               flex items-center
               justify-center lg:justify-end
-              overflow-x-hidden
+              justify-center lg:justify-end
               gap-[20px]
               scrollbar-none
             "
@@ -135,7 +135,7 @@ const AsramMainHeader = () => {
       </div>
 
       {/* ----------------------- MAIN HEADER ----------------------- */}
-      <header className="w-full bg-white relative z-[100] shadow-[0_4px_20px_rgba(0,0,0,0.25)]">
+      <header className="w-full bg-white relative z-[100] shadow-[0_4px_20px_rgba(0,0,0,0.1)] sticky top-0">
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px] h-[66px] py-[10px] flex items-center justify-between relative">
 
           {/* Hamburger */}

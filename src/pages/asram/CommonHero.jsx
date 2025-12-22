@@ -7,7 +7,8 @@ const CommonHero = ({ title, bgImage, children }) => {
         <section
             className="
         relative w-full
-        h-[335px]
+        relative w-full
+        min-h-[335px] h-auto
         sm:h-[450px]
         md:h-[75vh]
         lg:h-[760px]

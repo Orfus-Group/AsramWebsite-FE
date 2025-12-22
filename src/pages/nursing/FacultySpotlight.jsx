@@ -47,7 +47,7 @@ export default function FacultySpotlightSection() {
   ];
 
   return (
-    <PageSection bg={T.bg.section} paddingClass="py-[80px]">
+    <PageSection bg={T.bg.section} paddingClass="py-[40px] md:py-[80px]">
       <div className="flex flex-col gap-[50px]">
         {/* TOP HEADING */}
         <h2

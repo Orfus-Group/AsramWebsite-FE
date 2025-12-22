@@ -58,7 +58,7 @@ const ResearchPriorities = () => {
         {priorities.map((item, index) => (
           <div
             key={index}
-                                  style={{ border: "1px solid rgba(7, 7, 7, 0.2)"}}
+            style={{ border: "1px solid rgba(7, 7, 7, 0.2)" }}
 
             className="flex flex-col items-start bg-white p-[24px] md:p-[30px] rounded-[8px] shadow-sm hover:shadow-md transition-shadow h-full"
           >

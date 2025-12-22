@@ -6,6 +6,8 @@ import AsramFooter from "@/pages/asram/AsramFooter";
 import NursingFooter from "@/pages/nursing/secondaryfooter";
 import { HeroProvider, useHero } from "@/context/HeroContext";
 import CommonHero from "@/pages/asram/CommonHero";
+import { AnimatePresence } from "framer-motion";
+import PageWrapper from "@/components/common/PageWrapper";
 
 const layoutByPath = (pathname) => {
   if (pathname.startsWith("/nursing")) return "nursing";
@@ -19,7 +21,7 @@ const layoutByPath = (pathname) => {
 
 const headerMap = {
   main: AsramMainHeader,
-   nursing: AcademicsHeader,
+  nursing: AcademicsHeader,
   academics: AcademicsHeader,
   research: AcademicsHeader,
   news: AsramMainHeader,
@@ -51,7 +53,11 @@ const InnerLayout = () => {
         </CommonHero>
       )}
       <main>
-        <Outlet />
+        <AnimatePresence mode="wait">
+          <PageWrapper key={pathname}>
+            <Outlet />
+          </PageWrapper>
+        </AnimatePresence>
       </main>
       <Footer />
     </>

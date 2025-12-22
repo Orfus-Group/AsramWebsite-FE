@@ -21,14 +21,14 @@ export default function InfoCard({
             wrapper: `
       w-full             
     max-w-[380px]    
-    min-w-[340px]       
-    h-[422.37px]
+    min-w-0 md:min-w-[340px]       
+    h-auto md:h-[422.37px]
     flex flex-col items-start justify-start
     rounded-[12px]
       `,
             wrapperStyle: {
                 backgroundColor: "#EEF2F7",   // your card BG
-                 border: "1px solid #07070733",
+                border: "1px solid #07070733",
                 paddingTop: "23.7px",
                 paddingLeft: "23.7px",
                 paddingRight: "23.7px",
@@ -58,8 +58,8 @@ export default function InfoCard({
             wrapper: `
     w-full                 /* allow responsive width */
     max-w-[380px]    
-    min-w-[340px]   
-    h-[330px]
+    min-w-0 md:min-w-[340px]   
+    h-auto md:h-[330px]
     flex flex-col items-start justify-start
     rounded-[9.87px]
     bg-white
@@ -423,8 +423,8 @@ export default function InfoCard({
                         variant === "whychoose"
                             ? "rgba(25, 25, 25, 0.75)"
                             : variant === "research"
-                                ? "#191919BF"  : variant === "program" ? "#6B7280"
-                                : "#6B7280",
+                                ? "#191919BF" : variant === "program" ? "#6B7280"
+                                    : "#6B7280",
                 }}
             >
                 {description}

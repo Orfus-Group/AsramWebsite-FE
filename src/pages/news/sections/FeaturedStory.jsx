@@ -29,7 +29,7 @@ const FeaturedStory = () => {
 
                     <div>
                         {/* Tags */}
-                        <div className="flex items-center gap-3 mb-6">
+                        <div className="flex flex-wrap items-center gap-3 mb-6">
                             <span className="bg-[#008C8C] text-white text-[14px] leading-[20px] font-regular px-4 py-1.5 rounded-[31498264px]">
                                 Achievement
                             </span>

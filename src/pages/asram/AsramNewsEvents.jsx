@@ -1,6 +1,6 @@
 // src/sections/home/AsramNewsEvents.jsx
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { T } from "@/theme";
 import PageSection from "@/features/common/layout/PageContainer";
 import IconFullArrowRight from "@/assets/icons/IconFullArrow";

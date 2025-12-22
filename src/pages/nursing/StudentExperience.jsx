@@ -203,7 +203,7 @@ export default function StudentExperience() {
       </div>
 
       {/* Top — Image + Content */}
-      <div className="flex flex-col xl:flex-row items-start justify-between gap-[24px] md:gap-[32px] xl:gap-[40px] w-full mb-[32px] md:mb-[40px]">
+      <div className="flex flex-col-reverse xl:flex-row items-center justify-between gap-[24px] md:gap-[32px] xl:gap-[40px] w-full mb-[32px] md:mb-[40px]">
         {/* Left Image */}
         <div className="w-full xl:w-[578px] flex-shrink-0 bg-gray-200 rounded-[8px]">
           <img loading="lazy" decoding="async"
@@ -220,16 +220,16 @@ export default function StudentExperience() {
           </h3>
 
           <p className="font-regular text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[28px] text-[#191919BF]">
-          At ASRAM School of Nursing, we prioritize creating an environment where students can thrive academically, professionally, and personally. Our approach combines rigorous academics with practical exposure and holistic development.
+            At ASRAM School of Nursing, we prioritize creating an environment where students can thrive academically, professionally, and personally. Our approach combines rigorous academics with practical exposure and holistic development.
           </p>
-                <p className="font-regular text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[28px] text-[#191919BF]">
-          At ASRAM School of Nursing, we prioritize creating an environment where students can thrive academically, professionally, and personally. Our approach combines rigorous academics with practical exposure and holistic development.
+          <p className="font-regular text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[28px] text-[#191919BF]">
+            At ASRAM School of Nursing, we prioritize creating an environment where students can thrive academically, professionally, and personally. Our approach combines rigorous academics with practical exposure and holistic development.
           </p>
         </div>
       </div>
 
       {/* Bottom — 4 Feature Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-[16px] md:gap-[20px] lg:gap-[24px] w-full justify-items-center xl:justify-items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[16px] md:gap-[20px] lg:gap-[24px] w-full justify-items-center xl:justify-items-stretch">
         {features.map((item, i) => (
           <InfoCard
             key={i}

@@ -204,22 +204,22 @@ export default function ProgramsOffered() {
                 </h4>
 
                 <ul className="flex flex-col gap-[10px]">
-                 {program.highlights.map((item, i) => (
-  <li
-    key={i}
-    className="
+                  {program.highlights.map((item, i) => (
+                    <li
+                      key={i}
+                      className="
       flex items-start gap-[10px]
       text-[13px]
       whitespace-nowrap
     "
-    style={{ color: "#191919BF" }}
-  >
-    <CheckMarkIcon className="shrink-0 mt-[2px]" />
-    <span className={`${T.font.family} leading-[18px]`}>
-      {item}
-    </span>
-  </li>
-))}
+                      style={{ color: "#191919BF" }}
+                    >
+                      <CheckMarkIcon className="shrink-0 mt-[2px]" />
+                      <span className={`${T.font.family} leading-[18px]`}>
+                        {item}
+                      </span>
+                    </li>
+                  ))}
 
                 </ul>
               </div>
@@ -236,14 +236,14 @@ export default function ProgramsOffered() {
                 `}
               >
                 Learn More
-<IconArrowRight
+                <IconArrowRight
                   size={18}
                   className="sm:w-[20px] sm:h-[20px]"
                   stroke="#223F7F"
                   strokeWidth={2}
                 />
-                
-                              </button>
+
+              </button>
             </div>
           </div>
         ))}

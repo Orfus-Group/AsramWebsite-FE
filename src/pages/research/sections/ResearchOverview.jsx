@@ -17,11 +17,11 @@ const ResearchOverview = () => {
 
       <div className="flex flex-col gap-[40px]">
         {/* Row 1: Vision & Mission */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
+        <div className="grid grid-cols-1 gap-[30px] md:grid-cols-2">
           {/* Vision Card */}
           <div
             className="p-[30px] sm:p-[40px] rounded-[8px]"
-            style={{ background: "#EEF2F7", border: "1px solid rgba(7, 7, 7, 0.2)"}}
+            style={{ background: "#EEF2F7", border: "1px solid rgba(7, 7, 7, 0.2)" }}
           >
             {/* Icon */}
             <div
@@ -36,7 +36,7 @@ const ResearchOverview = () => {
             >
               <IconVision size={30} />
 
-              
+
 
             </div>
 
@@ -94,7 +94,7 @@ const ResearchOverview = () => {
         {/* Row 2: Dean Message */}
         <div
           className="p-[30px] sm:p-[40px] rounded-[10px]"
-                      style={{ background: "#EEF2F7", border: "1px solid rgba(7, 7, 7, 0.2)"}}
+          style={{ background: "#EEF2F7", border: "1px solid rgba(7, 7, 7, 0.2)" }}
 
         >
           <h3 className={`${T.font.family} font-bold text-[28px] sm:text-[32px] text-[#223F7F] mb-6`}>
