@@ -1,0 +1,1 @@
+import{j as e,a}from"./animations-Gi-_RhDr.js";const r=({children:i,className:t="",delay:o=0})=>e.jsx(a.div,{initial:{opacity:0,y:50},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-100px"},transition:{duration:.8,ease:"easeOut",delay:o},className:t,children:i});export{r as M};
