@@ -1,5 +1,6 @@
 // src/sections/home/ResearchInnovation.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import { T } from "@/theme";
 import PageSection from "@/features/common/layout/PageContainer";
 
@@ -44,7 +45,8 @@ const ResearchInnovation = ({ title, description1, image }) => {
             {description1}
           </p>
 
-          <button
+          <Link
+            to="/research"
             className="
               px-[32px]
               h-[46px]
@@ -56,10 +58,11 @@ const ResearchInnovation = ({ title, description1, image }) => {
               text-[18px]
               hover:bg-[#1a3163]
               transition-colors
+              w-fit
             "
           >
             Explore Research
-          </button>
+          </Link>
         </div>
 
         {/* RIGHT IMAGE */}

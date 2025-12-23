@@ -1,5 +1,6 @@
 import React from "react";
 import { T } from "@/theme";
+import AnimatedStatValue from "@/features/common/ui/AnimatedStatValue";
 import placeholderImg from "@/assets/asram/lab1.png"; // Placeholder
 import placeholderImg2 from "@/assets/asram/lab2.png"; // Placeholder
 import placeholderImg3 from "@/assets/asram/lab3.png"; // Placeholder
@@ -97,7 +98,8 @@ const LaboratoriesTrainingSection = () => {
                   h-[100px]
                 "
                             >
-                                <h5
+                                <AnimatedStatValue
+                                    value={stat.value}
                                     className={`
                     ${T.font.family}
                     ${T.font.weight.bold}
@@ -106,9 +108,7 @@ const LaboratoriesTrainingSection = () => {
                     leading-[32px]
                     mb-[8px]
                   `}
-                                >
-                                    {stat.value}
-                                </h5>
+                                />
                                 <p
                                     className={`
                     ${T.font.family}
