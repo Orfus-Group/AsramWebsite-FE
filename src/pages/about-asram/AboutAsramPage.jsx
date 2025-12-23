@@ -68,7 +68,7 @@ const AboutAsramPage = () => {
                 <WhoWeAre />
             </MotionSection>
 
-            {/* <MotionSection>
+            <MotionSection>
                 <OurCoreValues />
             </MotionSection>
 
@@ -82,7 +82,7 @@ const AboutAsramPage = () => {
 
             <MotionSection>
                 <GlobalPartnerships />
-            </MotionSection> */}
+            </MotionSection>
         </div>
     );
 };
