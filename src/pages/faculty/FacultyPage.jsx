@@ -79,12 +79,19 @@ const FacultyPage = () => {
         </div>
     );
 
-    const WidgetCard = ({ title, children, className = "" }) => (
-        <div className={`bg-white rounded-[9.4px] border border-[#07070733] p-[20px] ${className}`}>
-            <h6 className={`${T.font.family} font-semibold text-[22px] text-[#223F7F] mb-4`}>{title}</h6>
-            {children}
-        </div>
-    );
+const WidgetCard = ({ title, children, className = "" }) => (
+  <div
+    className={`rounded-[9.4px] border border-[#07070733] p-[20px] ${className}`}
+  >
+    <h6
+      className={`${T.font.family} font-semibold text-[22px] text-[#223F7F] mb-4`}
+    >
+      {title}
+    </h6>
+    {children}
+  </div>
+);
+
 
     return (
         <div className="bg-[#F9FAFB] min-h-screen">
