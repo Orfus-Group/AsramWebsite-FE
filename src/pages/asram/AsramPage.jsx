@@ -104,13 +104,15 @@ const AsramPage = () => {
         />
       </MotionSection>
 
-      <MotionSection delay={0.2}>
-        <LaboratoriesTrainingSection />
-      </MotionSection>
 
       <MotionSection delay={0.2}>
         <ClinicalExposureSection />
       </MotionSection>
+      
+      <MotionSection delay={0.2}>
+        <LaboratoriesTrainingSection />
+      </MotionSection>
+
     </>
   );
 };

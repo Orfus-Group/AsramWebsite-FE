@@ -31,7 +31,7 @@ const AcademicsPage = () => {
             Structured medical education supported by experienced faculty, advanced laboratories, and real-world clinical exposure.
           </p>
 
-          <button
+          {/* <button
             className="
                       bg-[#191919] 
                       hover:bg-[#27272a] 
@@ -43,7 +43,7 @@ const AcademicsPage = () => {
                   "
           >
             Explore Programs
-          </button>
+          </button> */}
         </>
       ),
     });

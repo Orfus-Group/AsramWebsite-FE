@@ -30,7 +30,7 @@ const NewsPage = () => {
             Updates and announcements from across academics, healthcare, and campus life.
           </p>
 
-          <button
+          {/* <button
             className="
                     bg-[#191919] 
                     hover:bg-[#27272a] 
@@ -42,7 +42,7 @@ const NewsPage = () => {
                 "
           >
             Explore News
-          </button>
+          </button> */}
         </>
       ),
     });

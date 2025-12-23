@@ -33,7 +33,7 @@ const NursingPage = () => {
             ASRAM School of Nursing prepares skilled, ethical, and globally competent nurses through accredited programs and real-world clinical exposure.
           </p>
 
-          <button
+          {/* <button
             className="
                       bg-[#191919] 
                       hover:bg-[#27272a] 
@@ -45,7 +45,7 @@ const NursingPage = () => {
                   "
           >
             Explore Programs
-          </button>
+          </button> */}
         </>
       ),
     });

@@ -509,7 +509,7 @@ const AsramMainHeader = () => {
                     style={{ width: col.heading === "Colleges" ? "286px" : "301px" }}
                   >
                     <h3
-                      className={`${T.font.family} ${T.font.weight.bold} text-[28px] leading-[34px]`}
+                      className={`${T.font.family} ${T.font.weight.bold} text-[22px] leading-[34px]`}
                       style={{
                         color: T.color.extra.dark75,
                         marginBottom: "20px",
