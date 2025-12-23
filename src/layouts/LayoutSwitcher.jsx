@@ -40,7 +40,7 @@ const footerMap = {
   communityhealth: NursingFooter,
   research: NursingFooter,
   news: AsramFooter,
-  faculty: NursingFooter,
+  faculty: AsramFooter,
   campuslife: AsramFooter,
   aboutasram: AsramFooter,
 };

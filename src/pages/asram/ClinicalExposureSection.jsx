@@ -135,61 +135,34 @@ const ClinicalExposureSection = () => {
                 </div>
 
                 {/* STATS BAR */}
-                <div
-                    className="
-            w-full
-            bg-white
-            rounded-[12px]
-            p-[20px]
-            mt-[60px]
-            flex flex-col md:flex-row
-            justify-between
-            items-center
-            gap-[30px] md:gap-0
-            shadow-sm
-          "
-                >
-                    {/* Loop stats */}
-                 {stats.map((stat, i) => (
-  <div
-    key={i}
-    className="
-      flex
-      flex-col
-      items-center
-      text-center
-    "
-  >
-    {/* VALUE */}
-    <h3
+             
+
+
+                      <div
+                                style={{ border: "solid 1px rgba(7, 7, 7, 0.2)" }}
+                                className="bg-[#FFF] rounded-[12px] p-[20px]   mt-[60px]"
+                            >
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px] items-center text-center">
+                                    {stats.map((stat, index) => (
+                                        <div key={index} className="flex flex-col items-center justify-center">
+ <h3
       className="
       font-montserrat
         font-semibold
         text-[32px]
+        mb-[10px]
         leading-[39px]
         text-[#223F7F]
       "
-    >
-      {stat.value}
-    </h3>
-
-    {/* LABEL */}
-    <span
-      className="
-       font-montserrat
-        mt-[8px]
-        font-regular
-        text-[18px]
-        leading-[26px]
-       text-[#191919BF]
-      "
-    >
-      {stat.label}
-    </span>
-  </div>
-))}
-
-                </div>
+    >                                                {stat.value}
+                                            </h3>
+                                            <p className={`${T.font.family} text-[18px] text-[#191919BF] font-regular leading-[26px]`}>
+                                                {stat.label}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
             </div>
         </section>
     );
