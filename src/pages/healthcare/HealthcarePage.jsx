@@ -53,13 +53,13 @@ A well-structured campus environment that supports academic focus, personal grow
             <CareAtAsram />
             <SpecialtiesDepartments />
             <ExperiencedDoctors />
-            {/* <PatientCareFacilities />
+            <PatientCareFacilities />
             <DiagnosticServices />
             <SafetyAccreditation />
             <PatientSupportServices />
-            <HealthCampsOutreach /> */}
-            {/* <EmergencyCriticalCare />
-            <HospitalInfrastructureGallery /> */}
+            <HealthCampsOutreach />
+            <EmergencyCriticalCare />
+            <HospitalInfrastructureGallery />
         </div>
     );
 };

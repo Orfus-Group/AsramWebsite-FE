@@ -5,7 +5,7 @@ import CareImg from "@/assets/healthcare/careatAsram.png";
 
 const CareAtAsram = () => {
     return (
-        <PageSection bg="bg-white" paddingClass="py-[60px] md:py-[80px]">
+        <PageSection bg="bg-white" paddingClass="py-[60px] md:py-[80px] px-[20px] lg:px-[120px]">
             <div className="flex flex-col lg:flex-row gap-[40px] lg:gap-[60px] items-center">
                 {/* Text Content */}
                 <div className="w-full lg:w-1/2">

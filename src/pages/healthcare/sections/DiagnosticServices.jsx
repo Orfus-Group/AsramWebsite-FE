@@ -70,7 +70,7 @@ const services = [
 
 const DiagnosticServices = () => {
     return (
-        <PageSection bg="bg-[#fff]" paddingClass="py-[80px]">
+        <PageSection bg="bg-[#fff]" paddingClass="py-[80px] px-[20px] lg:px-[120px]">
             <h1 className={`${T.font.family} font-bold text-[42px] text-[#223F7F] mb-[40px]`}>
                 Diagnostic Services
             </h1>
