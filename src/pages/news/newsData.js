@@ -1,0 +1,108 @@
+import News1 from "@/assets/news/newsarticlesherobg.jpg";
+import News2 from "@/assets/news/News2.svg";
+import News3 from "@/assets/news/News3.svg";
+import News4 from "@/assets/news/News4.svg";
+import News5 from "@/assets/news/News5.svg";
+import News6 from "@/assets/news/News6.svg";
+import RelatedArticleImg from "@/assets/news/relatedart.svg";
+
+export const relatedArticles = [
+    {
+        id: 1,
+        image: RelatedArticleImg,
+        tag: "Infrastructure",
+        title: "New Advanced CT Scanner Inaugurated at ASRAM Hospital",
+        date: "December 1, 2024",
+        category: "Technology"
+    },
+    {
+        id: 2,
+        image: RelatedArticleImg,
+        tag: "Achievement",
+        title: "ASRAM Nursing Students Win National Clinical",
+        date: "November 28, 2024",
+        category: "Technology"
+    },
+    {
+        id: 3,
+        image: RelatedArticleImg,
+        tag: "Events",
+        title: "International Conference on Healthcare Innov..",
+        date: "November 25, 2024",
+        category: "Technology"
+    },
+];
+
+export const mockNews = [
+    {
+        id: 1,
+        image: News1,
+        tags: ["Nursing", "Event"],
+        title: "College of Nursing Hosts International Conference on Patient Care Excellence",
+        desc: "Over 500 delegates from 15 countries participated in the three-day conference featuring renowned speakers and hands-on workshops on advanced nursing practices.",
+        date: "November 28, 2024",
+        category: "Events" // inferred
+    },
+    {
+        id: 2,
+        image: News2,
+        tags: ["Medical Sciences", "Achievement"],
+        title: "Medical College Students Secure Top Ranks in NEET PG Examinations",
+        desc: "15 students from ASRAM College of Medical Sciences achieved All India ranks within top 100, showcasing exceptional academic performance and dedicated preparation.",
+        date: "November 25, 2024",
+        category: "Achievements"
+    },
+    {
+        id: 3,
+        image: News3,
+        tags: ["Paramedical Sciences", "Announcement"],
+        title: "New State-of-the-Art Simulation Lab Inaugurated at Paramedical College",
+        desc: "The advanced simulation laboratory equipped with latest medical technology will provide hands-on training for paramedical students in emergency care and diagnostic procedures.",
+        date: "November 22, 2024",
+        category: "Announcements"
+    },
+    {
+        id: 4,
+        image: News4,
+        tags: ["Nursing", "Research"],
+        title: "ASRAM Nursing Faculty Publishes Groundbreaking Research in Lancet",
+        desc: "Dr. Meera Krishnan's research on nurse-led community health interventions featured in prestigious medical journal, highlighting innovative approaches to rural healthcare.",
+        date: "November 22, 2024",
+        category: "Research"
+    },
+    {
+        id: 5,
+        image: News5,
+        tags: ["Paramedical Sciences", "Placement"],
+        title: "100% Placement Record for Medical Lab Technology Batch 2024",
+        desc: "All graduating students of MLT program secured positions in leading hospitals and diagnostic centers across India and abroad, with average salary package of ₹4.5 lakhs.",
+        date: "November 18, 2024",
+        category: "Placements"
+    },
+    {
+        id: 6,
+        image: News6,
+        tags: ["Medical Sciences", "Admission"],
+        title: "Admissions Open for MBBS Program 2025-26 Academic Year",
+        desc: "ASRAM announces 150 MBBS seats for upcoming academic year. Application process begins December 1st. Merit-based selection with reservation as per government norms.",
+        date: "November 15, 2024",
+        category: "Admissions"
+    },
+];
+
+export const colleges = [
+    { label: "All Colleges", value: "All" },
+    { label: "College of Medical Sciences", value: "Medical" },
+    { label: "College of Nursing", value: "Nursing" },
+    { label: "College of Paramedical Sciences", value: "Paramedical" },
+];
+
+export const categories = [
+    { label: "All Categories", value: "All" },
+    { label: "Achievements", value: "Achievements" },
+    { label: "Events", value: "Events" },
+    { label: "Admissions", value: "Admissions" },
+    { label: "Research", value: "Research" },
+    { label: "Placements", value: "Placements" },
+    { label: "Announcements", value: "Announcements" },
+];

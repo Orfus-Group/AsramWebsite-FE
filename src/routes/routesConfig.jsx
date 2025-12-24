@@ -5,10 +5,13 @@ const NursingPage = lazy(() => import("@/pages/nursing/NursingPage"));
 const AcademicsPage = lazy(() => import("@/pages/academics/AcademicsPage"));
 const ResearchPage = lazy(() => import("@/pages/research/ResearchPage"));
 const NewsPage = lazy(() => import("@/pages/news/NewsPage"));
-const FacultyPage = lazy(() => import("@/pages/faculty/FacultyPage"));
+const FacultyChildPage = lazy(() => import("@/pages/faculty/FacultyChildPage"));
+const FacultyProfilePage = lazy(() => import("@/pages/faculty/FacultyProfilePage"));
 const GlobalCommunityHealthPage = lazy(() => import("@/pages/faculty/GlobalCommunityHealthPage"));
 const CampusLifePage = lazy(() => import("@/pages/campus-life/CampusLifePage"));
 const AboutAsramPage = lazy(() => import("@/pages/about-asram/AboutAsramPage"));
+const HealthcarePage = lazy(() => import("@/pages/healthcare/HealthcarePage"));
+const NewsArticlePage = lazy(() => import("@/pages/news/NewsArticlePage"));
 
 const routesConfig = [
   {
@@ -48,6 +51,12 @@ const routesConfig = [
     layout: "news",
   },
   {
+    path: "/news/:id",
+    label: "News Detail",
+    element: <NewsArticlePage />,
+    layout: "news",
+  },
+  {
     path: "/campus-life",
     label: "Campus Life",
     element: <CampusLifePage />,
@@ -56,7 +65,13 @@ const routesConfig = [
   {
     path: "/faculty",
     label: "Faculty",
-    element: <FacultyPage />,
+    element: <FacultyChildPage />, 
+    layout: "faculty",
+  },
+  {
+    path: "/faculty/:id",
+    label: "Faculty Profile",
+    element: <FacultyProfilePage />,
     layout: "faculty",
   },
   {
@@ -64,6 +79,12 @@ const routesConfig = [
     label: "Global Community Health",
     element: <GlobalCommunityHealthPage />,
     layout: "faculty",
+  },
+  {
+    path: "/healthcare",
+    label: "Healthcare",
+    element: <HealthcarePage />,
+    layout: "Healthcare",
   },
 ];
 

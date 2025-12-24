@@ -97,13 +97,13 @@ const NewsArticleDetail = ({
       <div className="mb-[32px]">
         <button
           onClick={onBackToNews}
-          className="flex items-center gap-2 text-[#223F7F] text-[14px] font-regular hover:underline"
+          className="flex items-center gap-2 text-[#223F7F] text-[20px] font-medium hover:underline"
         >
           <IconBack />
           Back to News
         </button>
-        <p className={`${T.font.family} text-[12px] text-[#6B7280] mt-2`}>
-          News &gt; {article?.tags?.[0] || "College of Nursing"}
+        <p className={`${T.font.family} text-[14px] text-[#4A5565] mt-2`}>
+          Home / News / <span className="text-[14px] text-[#223F7F] leading-[20px] font-regular">{article?.tags?.[0]}</span> 
         </p>
       </div>
 

@@ -201,17 +201,15 @@ const AsramMainHeader = () => {
 
           {/* RIGHT NAV */}
           <nav className={`${T.font.family} hidden lg:flex flex-1 items-center justify-between gap-[40px] ml-[84px]`}>
-            {/* Healthcare (Mega Menu) */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setOpenMenu((prev) => (prev === "Healthcare" ? null : "Healthcare"));
-              }}
-              className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px]`}
-              style={{ color: T.color.dark }}
+            {/* Healthcare (Link) */}
+            <Link
+              to="/healthcare"
+              onClick={() => setOpenMenu(null)}
+              className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px] ${location.pathname.startsWith("/healthcare") ? `text-[${T.color.text.secondary}] font-bold` : ""}`}
+              style={{ color: location.pathname.startsWith("/healthcare") ? T.color.secondary : T.color.dark }}
             >
               Healthcare
-            </button>
+            </Link>
 
             {/* Campus Life (Link) */}
             <Link
