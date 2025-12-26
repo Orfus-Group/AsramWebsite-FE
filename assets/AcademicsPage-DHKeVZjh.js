@@ -1,0 +1,373 @@
+import{j as e}from"./animations-D3tOYQY4.js";import{r as l}from"./vendor-CEFHwVPC.js";import{P as f,T as t,u as F}from"./index-B2QZ1gNH.js";import{I as A}from"./IconFullArrow-l6J0f89Q.js";import{b as M,W as L}from"./CheckMarkIcon-Czpup9oL.js";import{B as m}from"./button-D7zFJ1f5.js";import{S as H}from"./StudentVoices-DM_ENL8L.js";import{I as B}from"./IconArrowRight-C_dN895v.js";import{M as c}from"./MotionSection-BH0xkWDy.js";const I="data:image/svg+xml,%3csvg%20width='18'%20height='18'%20viewBox='0%200%2018%2018'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8.88135%204.44043V8.88122L11.8419%2010.3615'%20stroke='%23191919'%20stroke-opacity='0.75'%20stroke-width='1.48026'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M8.8813%2016.2831C12.9689%2016.2831%2016.2826%2012.9694%2016.2826%208.88178C16.2826%204.79415%2012.9689%201.48047%208.8813%201.48047C4.79366%201.48047%201.47998%204.79415%201.47998%208.88178C1.47998%2012.9694%204.79366%2016.2831%208.8813%2016.2831Z'%20stroke='%23191919'%20stroke-opacity='0.75'%20stroke-width='1.48026'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e",P=[{tag:"Undergraduate",title:"B.Sc Nursing",years:"4 Years",seats:"100 Seats",description:"Comprehensive undergraduate program combining theoretical knowledge with extensive clinical practice. Perfect for students seeking a professional nursing career.",highlights:["Clinical rotations in multispeciality hospital","Research opportunities","International nursing standards"]},{tag:"Diploma",title:"General Nursing & Midwifery",years:"3 Years",seats:"60 Seats",description:"Intensive diploma program focused on nursing fundamentals and midwifery. Ideal for those wanting to enter the nursing profession quickly.",highlights:["Hands-on clinical training","Obstetrics & gynecological focus","Community health experience"]},{tag:"Postgraduate",title:"M.Sc Nursing",years:"2 Years",seats:"30 Seats",description:"Advanced nursing education with specializations in Medical-Surgical, Obstetrics, Pediatrics, Community Health, and Psychiatric Nursing.",highlights:["Research & thesis work","Leadership development","Academic & clinical roles"]}];function E(){return e.jsxs(f,{bg:t.bg.white,paddingClass:"py-[80px]",children:[e.jsx("h2",{className:`
+          ${t.font.family}
+          ${t.font.weight.bold}
+          text-[42px]
+          leading-[42px]
+          text-[${t.color.secondary}]
+          mb-[40px]
+        `,children:"Programs Offered"}),e.jsx("div",{className:`\r
+          grid\r
+          grid-cols-1\r
+          md:grid-cols-2\r
+          lg:grid-cols-3\r
+          gap-[40px]\r
+          w-full\r
+        `,children:P.map((s,r)=>e.jsxs("div",{className:`
+              w-full
+              h-[619.74px]
+              ${t.radius.lg}
+              overflow-hidden
+              ${t.bg.white}
+              flex flex-col
+              border border-[#1A18181A]
+            `,children:[e.jsxs("div",{className:`\r
+                h-[206px]\r
+                bg-[#008C8C33]\r
+                px-[24px] pt-[18px] pb-[16px]\r
+                flex flex-col\r
+              `,children:[e.jsx("span",{className:`
+                  inline-flex items-center justify-center
+                  w-[130px] h-[28px]
+                  ${t.radius.sm}
+                  ${t.font.family}
+                  ${t.font.weight.regular}
+                  text-[14px]
+                `,style:{backgroundColor:"rgba(25, 25, 25, 0.10)",color:t.color.dark},children:s.tag}),e.jsx("div",{className:"mt-[10px] h-[64px] overflow-hidden",children:e.jsx("h3",{className:`
+                    ${t.font.family}
+                    ${t.font.weight.semibold}
+                    text-[24px]
+                    leading-[32px]
+                    text-[${t.color.secondary}]
+                  `,children:s.title})}),e.jsx("div",{className:"mt-auto flex gap-[18px] items-center text-[14px]",style:{color:t.color.text.muted},children:e.jsxs("div",{className:"flex items-center gap-[6px]",children:[e.jsx("img",{loading:"lazy",decoding:"async",src:I,className:"w-[16px] h-[16px]"}),e.jsx("span",{className:`${t.font.family}`,style:{color:"#191919BF"},children:s.years})]})})]}),e.jsxs("div",{className:`
+                h-[413px]
+                ${t.bg.sectionCard}
+                p-[30px]
+                flex flex-col
+              `,children:[e.jsx("div",{className:"h-[182px]",children:e.jsx("p",{className:`
+                    ${t.font.family}
+                    font-regular
+                    text-[18px]
+                    text-[#6B7280]
+                    leading-[26px]
+                    w-full
+                  `,style:{color:t.color.text.muted},children:s.description})}),e.jsxs("div",{className:"mt-auto flex flex-col gap-[16px]",children:[e.jsx("h4",{className:`
+                    ${t.font.family}
+                    ${t.font.weight.semibold}
+                    text-[18px]
+                    text-[${t.color.secondary}]
+                  `,children:"Program Highlights"}),e.jsx("ul",{className:"flex flex-col gap-[10px]",children:s.highlights.map((n,i)=>e.jsxs("li",{className:`\r
+      flex items-start gap-[10px]\r
+      text-[13px]\r
+      whitespace-nowrap\r
+    `,style:{color:"#191919BF"},children:[e.jsx(M,{className:"shrink-0 mt-[2px]"}),e.jsx("span",{className:`${t.font.family} leading-[18px]`,children:n})]},i))})]}),e.jsxs("button",{className:`
+                  mt-[24px]
+                  flex items-center gap-[6px]
+                  ${t.font.family}
+                  ${t.font.weight.medium}
+                  text-[18px]
+                  text-[${t.color.secondary}]
+                `,children:["Learn More",e.jsx(A,{size:18,className:"sm:w-[20px] sm:h-[20px]",stroke:"#223F7F",strokeWidth:2})]})]})]},r))})]})}const W="/AsramWebsite-FE/assets/nursingcareer-CmHHnQwP.png",R=({className:s=""})=>e.jsxs("svg",{width:"32",height:"32",viewBox:"0 0 32 32",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[e.jsx("path",{d:"M20.3638 16.9609L22.3572 28.1794C22.3796 28.3115 22.361 28.4472 22.3041 28.5685C22.2472 28.6898 22.1546 28.7908 22.0387 28.858C21.9228 28.9253 21.7892 28.9555 21.6557 28.9448C21.5221 28.934 21.3951 28.8827 21.2914 28.7978L16.5809 25.2623C16.3535 25.0924 16.0773 25.0006 15.7934 25.0006C15.5096 25.0006 15.2333 25.0924 15.0059 25.2623L10.2875 28.7965C10.184 28.8812 10.0571 28.9324 9.92368 28.9432C9.7903 28.954 9.65681 28.9239 9.54101 28.8568C9.42521 28.7898 9.3326 28.689 9.27555 28.568C9.21851 28.4469 9.19972 28.3114 9.22171 28.1794L11.2138 16.9609",stroke:"#223F7F","stroke-width":"2.63158","stroke-linecap":"round","stroke-linejoin":"round"}),e.jsx("path",{d:"M15.7894 18.4213C20.1495 18.4213 23.6841 14.8867 23.6841 10.5266C23.6841 6.16643 20.1495 2.63184 15.7894 2.63184C11.4292 2.63184 7.89465 6.16643 7.89465 10.5266C7.89465 14.8867 11.4292 18.4213 15.7894 18.4213Z",stroke:"#223F7F","stroke-width":"2.63158","stroke-linecap":"round","stroke-linejoin":"round"})]}),V=({className:s=""})=>e.jsxs("svg",{width:"32",height:"32",viewBox:"0 0 32 32",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[e.jsx("path",{d:"M21.0534 27.6318V25.0002C21.0534 23.6043 20.4989 22.2656 19.5118 21.2786C18.5248 20.2916 17.1861 19.7371 15.7902 19.7371H7.89548C6.49961 19.7371 5.1609 20.2916 4.17387 21.2786C3.18683 22.2656 2.63232 23.6043 2.63232 25.0002V27.6318",stroke:"#223F7F","stroke-width":"2.63158","stroke-linecap":"round","stroke-linejoin":"round"}),e.jsx("path",{d:"M21.052 4.11597C22.1806 4.40856 23.1802 5.06763 23.8937 5.98973C24.6072 6.91184 24.9944 8.04477 24.9944 9.2107C24.9944 10.3766 24.6072 11.5096 23.8937 12.4317C23.1802 13.3538 22.1806 14.0128 21.052 14.3054",stroke:"#223F7F","stroke-width":"2.63158","stroke-linecap":"round","stroke-linejoin":"round"}),e.jsx("path",{d:"M28.9466 27.6316V25.0001C28.9458 23.8339 28.5576 22.7011 27.8432 21.7794C27.1287 20.8578 26.1284 20.1995 24.9993 19.908",stroke:"#223F7F","stroke-width":"2.63158","stroke-linecap":"round","stroke-linejoin":"round"}),e.jsx("path",{d:"M11.8429 14.4738C14.7496 14.4738 17.106 12.1174 17.106 9.21067C17.106 6.30391 14.7496 3.94751 11.8429 3.94751C8.93611 3.94751 6.57971 6.30391 6.57971 9.21067C6.57971 12.1174 8.93611 14.4738 11.8429 14.4738Z",stroke:"#223F7F","stroke-width":"2.63158","stroke-linecap":"round","stroke-linejoin":"round"})]}),z=({className:s=""})=>e.jsxs("svg",{width:"32",height:"32",viewBox:"0 0 32 32",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[e.jsx("path",{d:"M21.0521 9.21069H28.9469V17.1054",stroke:"#223F7F","stroke-width":"2.63158","stroke-linecap":"round","stroke-linejoin":"round"}),e.jsx("path",{d:"M28.9482 9.21069L17.764 20.3949L11.1851 13.816L2.63245 22.3686",stroke:"#223F7F","stroke-width":"2.63158","stroke-linecap":"round","stroke-linejoin":"round"})]}),D=({className:s=""})=>e.jsxs("svg",{width:"32",height:"32",viewBox:"0 0 32 32",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[e.jsx("path",{d:"M15.7905 28.9476C23.0574 28.9476 28.9484 23.0566 28.9484 15.7897C28.9484 8.52283 23.0574 2.63184 15.7905 2.63184C8.52356 2.63184 2.63257 8.52283 2.63257 15.7897C2.63257 23.0566 8.52356 28.9476 15.7905 28.9476Z",stroke:"#223F7F","stroke-opacity":"0.8","stroke-width":"2.63158","stroke-linecap":"round","stroke-linejoin":"round"}),e.jsx("path",{d:"M15.7905 2.63184C12.4119 6.17941 10.5273 10.8907 10.5273 15.7897C10.5273 20.6888 12.4119 25.4001 15.7905 28.9476C19.1691 25.4001 21.0537 20.6888 21.0537 15.7897C21.0537 10.8907 19.1691 6.17941 15.7905 2.63184Z",stroke:"#223F7F","stroke-width":"2.63158","stroke-linecap":"round","stroke-linejoin":"round"}),e.jsx("path",{d:"M2.63257 15.7898H28.9484",stroke:"#223F7F","stroke-width":"2.63158","stroke-linecap":"round","stroke-linejoin":"round"})]});function O(){return e.jsxs(f,{bg:t.bg.sectionCard,paddingClass:"py-[80px]",children:[e.jsx("h2",{className:`
+          ${t.font.family}
+          ${t.font.weight.bold}
+          text-[32px] leading-[40px]
+          sm:text-[38px] sm:leading-[44px]
+          md:text-[42px] md:leading-[46px]
+          text-[${t.color.secondary}]
+          mb-[50px]
+        `,children:"Shape Your Career in Nursing"}),e.jsxs("div",{className:"w-full h-auto lg:h-[367px] flex flex-col lg:flex-row items-center justify-start gap-[90px]",children:[e.jsx("div",{className:`\r
+            flex-shrink-0\r
+            rounded-[8px]\r
+            overflow-hidden\r
+          `,style:{width:"563px",height:"367px"},children:e.jsx("img",{src:W,alt:"Nursing Career",loading:"lazy",decoding:"async",className:"w-full h-full object-cover"})}),e.jsxs("div",{className:`\r
+            grid\r
+            grid-cols-2\r
+          `,style:{width:"588px",height:"367px",gap:"23.7px"},children:[e.jsxs("div",{className:"bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow",style:{width:"282.2px",height:"171.7px",borderRadius:"9.9px"},children:[e.jsx(R,{}),e.jsx("span",{className:"mt-[15px] text-[#223F7F] font-bold font-montserrat text-center",style:{fontSize:"29.6px",lineHeight:"1.2"},children:"20+"}),e.jsx("span",{className:"mt-[5px] text-center font-montserrat font-medium",style:{fontSize:"14px",color:"#555555"},children:"Years of Excellence"})]}),e.jsxs("div",{className:"bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow",style:{width:"282.2px",height:"171.7px",borderRadius:"9.9px"},children:[e.jsx(V,{}),e.jsx("span",{className:"mt-[15px] text-[#223F7F] font-bold font-montserrat text-center",style:{fontSize:"29.6px",lineHeight:"1.2"},children:"377+"}),e.jsx("span",{className:"mt-[5px] text-center font-montserrat font-medium",style:{fontSize:"14px",color:"#555555"},children:"Active Students"})]}),e.jsxs("div",{className:"bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow",style:{width:"282.2px",height:"171.7px",borderRadius:"9.9px"},children:[e.jsx(z,{}),e.jsx("span",{className:"mt-[15px] text-[#223F7F] font-bold font-montserrat text-center",style:{fontSize:"29.6px",lineHeight:"1.2"},children:"95%"}),e.jsx("span",{className:"mt-[5px] text-center font-montserrat font-medium",style:{fontSize:"14px",color:"#555555"},children:"Placement Success"})]}),e.jsxs("div",{className:"bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow",style:{width:"282.2px",height:"171.7px",borderRadius:"9.9px"},children:[e.jsx(D,{}),e.jsx("span",{className:"mt-[15px] text-[#223F7F] font-bold font-montserrat text-center",style:{fontSize:"29.6px",lineHeight:"1.2"},children:"INC"}),e.jsx("span",{className:"mt-[5px] text-center font-montserrat font-medium",style:{fontSize:"14px",color:"#555555"},children:"Approved Programs"})]})]})]})]})}function q(){return e.jsx(f,{bg:"transparent",sectionClassName:"flex justify-center",paddingClass:"pb-[80px]",children:e.jsxs("div",{className:`\r
+          bg-[#EEF2F7]\r
+          rounded-[16.2px]\r
+          flex flex-col lg:flex-row\r
+          items-start\r
+          justify-between\r
+        `,style:{width:"100%",height:"365.1px",padding:"39.5px"},children:[e.jsxs("div",{className:"flex flex-col",style:{width:"534.9px"},children:[e.jsx("h3",{className:`
+              ${t.font.family}
+              ${t.font.weight.semibold}
+              text-[${t.color.secondary}]
+            `,style:{fontSize:"29.6px",lineHeight:"41.5px",color:"#223F7F",marginBottom:"15px"},children:"Experience-Driven Education"}),e.jsx("p",{className:`${t.font.family}`,style:{fontSize:"15.8px",lineHeight:"27.6px",color:"rgba(25, 25, 25, 0.75)",marginBottom:"15px"},children:"At ASRAM, we believe in learning by doing. Our students don't just read about nursing—they practice in real clinical settings, work with actual patients, and develop skills that translate immediately to professional practice."}),e.jsx("ul",{className:"flex flex-col",style:{gap:"11.8px"},children:["20+ years of educational excellence in nursing","Graduates serving in top hospitals across India","Strong alumni network and mentorship programs"].map((s,r)=>e.jsxs("li",{className:`flex items-center gap-[10px] ${t.font.family}`,style:{fontSize:"13.8px",lineHeight:"19.7px",color:"rgba(25, 25, 25, 0.75)"},children:[e.jsx("span",{className:"w-[6px] h-[6px] rounded-full",style:{backgroundColor:t.color.secondary,flexShrink:0}}),s]},r))})]}),e.jsx("div",{className:"grid grid-cols-2",style:{width:"544.7px",height:"244.7px",gap:"15.8px",margin:"20.7px 0 20.7px 0"},children:[{value:"100+",label:"B.Sc Seats"},{value:"60+",label:"GNM Seats"},{value:"30+",label:"M.Sc Seats"},{value:"56+",label:"Faculty Members"}].map((s,r)=>e.jsxs("div",{className:`\r
+                bg-white\r
+                rounded-[8px]\r
+                flex flex-col items-center justify-center\r
+              `,style:{width:"264.5px",height:"114.5px"},children:[e.jsx(Z,{value:s.value,className:`
+                  ${t.font.family}
+                  ${t.font.weight.bold}
+                  text-[${t.color.secondary}]
+                `,style:{fontSize:"32px",lineHeight:"39px",color:"#223F7F",marginBottom:"5.5px"}}),e.jsx("span",{className:`${t.font.family}`,style:{fontSize:"18px",lineHeight:"26px",color:"rgba(25, 25, 25, 0.75)",fontWeight:400},children:s.label})]},r))})]})})}function Z({value:s,className:r,style:n}){const[i,x]=l.useState("0"),p=l.useRef(null),g=l.useRef(!1);l.useEffect(()=>{const o=p.current,a=new IntersectionObserver(h=>{h[0].isIntersecting&&!g.current&&(g.current=!0,d())},{threshold:.4});return o&&a.observe(o),()=>a.disconnect()},[]);const d=()=>{const o=parseInt(s.replace(/\D/g,""),10),a=s.replace(/[0-9]/g,"");if(isNaN(o)){x(s);return}const h=1200,u=performance.now(),j=y=>{const w=Math.min((y-u)/h,1),S=Math.floor(w*o);x(S+a),w<1&&requestAnimationFrame(j)};requestAnimationFrame(j)};return e.jsx("span",{ref:p,className:r,style:n,children:i})}const T="/AsramWebsite-FE/assets/readytoapply-fmaaruOF.png",N={width:32,height:32,viewBox:"0 0 32 32",fill:"none",xmlns:"http://www.w3.org/2000/svg"},G=({className:s=""})=>e.jsxs("svg",{...N,className:s,children:[e.jsx("path",{d:"M7.89495 28.9476C7.19701 28.9476 6.52765 28.6703 6.03414 28.1768C5.54062 27.6833 5.26337 27.0139 5.26337 26.316V5.26336C5.26337 4.56542 5.54062 3.89607 6.03414 3.40255C6.52765 2.90903 7.19701 2.63178 7.89495 2.63178H18.4213C18.8378 2.6311 19.2503 2.71283 19.6351 2.87226C20.0199 3.03169 20.3694 3.26567 20.6634 3.56073L25.3844 8.28178C25.6803 8.57587 25.9149 8.92565 26.0748 9.31094C26.2347 9.69622 26.3167 10.1094 26.316 10.5265V26.316C26.316 27.0139 26.0387 27.6833 25.5452 28.1768C25.0517 28.6703 24.3824 28.9476 23.6844 28.9476H7.89495Z",stroke:"#008C8C",strokeWidth:"2.63158",strokeLinecap:"round",strokeLinejoin:"round"}),e.jsx("path",{d:"M18.4216 2.63177V9.21072C18.4216 9.55969 18.5602 9.89437 18.807 10.1411C19.0537 10.3879 19.3884 10.5265 19.7374 10.5265H26.3163",stroke:"#008C8C",strokeWidth:"2.63158",strokeLinecap:"round",strokeLinejoin:"round"}),e.jsx("path",{d:"M13.1584 11.8426H10.5269",stroke:"#008C8C",strokeWidth:"2.63158",strokeLinecap:"round"}),e.jsx("path",{d:"M21.0532 17.1056H10.5269",stroke:"#008C8C",strokeWidth:"2.63158",strokeLinecap:"round"}),e.jsx("path",{d:"M21.0532 22.3686H10.5269",stroke:"#008C8C",strokeWidth:"2.63158",strokeLinecap:"round"})]}),Y=({className:s=""})=>e.jsxs("svg",{...N,className:s,children:[e.jsx("path",{d:"M19.7375 2.63177H11.8428C11.1161 2.63177 10.527 3.22087 10.527 3.94756V6.57914C10.527 7.30583 11.1161 7.89493 11.8428 7.89493H19.7375C20.4642 7.89493 21.0533 7.30583 21.0533 6.57914V3.94756C21.0533 3.22087 20.4642 2.63177 19.7375 2.63177Z",stroke:"#008C8C",strokeWidth:"2.63158",strokeLinecap:"round",strokeLinejoin:"round"}),e.jsx("path",{d:"M21.053 5.26352H23.6846C24.3825 5.26352 25.0519 5.54077 25.5454 6.03429C26.0389 6.52781 26.3162 7.19716 26.3162 7.8951V26.3162C26.3162 27.0141 26.0389 27.6834 25.5454 28.177C25.0519 28.6705 24.3825 28.9477 23.6846 28.9477H7.89513C7.19719 28.9477 6.52784 28.6705 6.03432 28.177C5.5408 27.6834 5.26355 27.0141 5.26355 26.3162V7.8951C5.26355 7.19716 5.5408 6.52781 6.03432 6.03429C6.52784 5.54077 7.19719 5.26352 7.89513 5.26352H10.5267",stroke:"#008C8C",strokeWidth:"2.63158",strokeLinecap:"round",strokeLinejoin:"round"}),e.jsx("path",{d:"M11.842 18.4216L14.4736 21.0531L19.7368 15.79",stroke:"#008C8C",strokeWidth:"2.63158",strokeLinecap:"round",strokeLinejoin:"round"})]}),_=({className:s=""})=>e.jsxs("svg",{...N,className:s,children:[e.jsx("path",{d:"M10.5271 2.63177V7.89493",stroke:"#008C8C",strokeWidth:"2.63158",strokeLinecap:"round"}),e.jsx("path",{d:"M21.0531 2.63177V7.89493",stroke:"#008C8C",strokeWidth:"2.63158",strokeLinecap:"round"}),e.jsx("path",{d:"M25.0001 5.26352H6.57909C5.12571 5.26352 3.94751 6.44172 3.94751 7.8951V26.3162C3.94751 27.7695 5.12571 28.9477 6.57909 28.9477H25.0001C26.4535 28.9477 27.6317 27.7695 27.6317 26.3162V7.8951C27.6317 6.44172 26.4535 5.26352 25.0001 5.26352Z",stroke:"#008C8C",strokeWidth:"2.63158",strokeLinecap:"round",strokeLinejoin:"round"}),e.jsx("path",{d:"M3.94751 13.1582H27.6317",stroke:"#008C8C",strokeWidth:"2.63158",strokeLinecap:"round"})]}),$=({className:s=""})=>e.jsxs("svg",{...N,className:s,children:[e.jsx("path",{d:"M28.6865 13.158C29.2874 16.107 28.8591 19.173 27.4731 21.8445C26.0871 24.5161 23.8271 26.6317 21.0701 27.8386C18.313 29.0456 15.2255 29.2708 12.3224 28.4769C9.41934 27.6829 6.87621 25.9177 5.11711 23.4756C3.35801 21.0336 2.48928 18.0622 2.65578 15.0572C2.82228 12.0521 4.01396 9.19493 6.03208 6.96214C8.0502 4.72935 10.7728 3.2559 13.7458 2.78751C16.7188 2.31912 19.7625 2.8841 22.3694 4.38823",stroke:"#008C8C",strokeWidth:"2.63158",strokeLinecap:"round",strokeLinejoin:"round"}),e.jsx("path",{d:"M11.8424 14.474L15.7898 18.4214L28.9477 5.26352",stroke:"#008C8C",strokeWidth:"2.63158",strokeLinecap:"round",strokeLinejoin:"round"})]}),J=[{step:"Step 1",title:"Submit Application",desc:"Complete your online application and submit required documents including transcripts and test scores.",timeline:"Timeline:",timelinedescription:"Rolling Admissions",Icon:G},{step:"Step 2",title:"Application Review",desc:"Our admissions committee carefully reviews your academic achievements and experience.",timeline:"Timeline:",timelinedescription:"2–4 Weeks",Icon:Y},{step:"Step 3",title:"Interview & Decision",desc:"Selected candidates are invited for an interview. Admission decisions typically follow within two weeks.",timeline:"Timeline:",timelinedescription:"As Scheduled",Icon:_},{step:"Step 4",title:"Enrollment",desc:"Accept your offer, submit enrollment deposit, and prepare for orientation and course registration.",timeline:"Timeline:",timelinedescription:"Before Start Date",Icon:$}],U=[{title:"BSN Programs",items:["High school diploma or equivalent","Minimum 3.0 GPA","SAT/ACT scores (if applicable)","Prerequisites: Biology, Chemistry","Letters of recommendation","Personal statement"]},{title:"Graduate Programs",items:["Bachelor’s degree in nursing (BSN)","Active RN license","Minimum 3.2 GPA","GRE scores (program dependent)","Clinical experience (varies)","Professional references"]},{title:"Doctoral Programs",items:["Master’s degree in nursing","Active RN license","Minimum 3.5 GPA","Advanced practice experience","Research statement or project proposal","Academic references"]}],K=[{date:"November 1",label:"Early Decision Deadline"},{date:"January 15",label:"Regular Decision Deadline"},{date:"March 1",label:"Transfer Deadline"},{date:"April 15",label:"Graduate Programs Deadline"}];function Q(){return e.jsxs(f,{bg:t.bg.sectionCard,paddingClass:"py-[80px]",className:"flex flex-col gap-[40px]",children:[e.jsx("h2",{className:`
+          ${t.font.family}
+          ${t.font.weight.bold}
+          text-[42px]
+          leading-[54px]
+          text-[${t.color.secondary}]
+        `,children:"Nursing Program Admissions"}),e.jsxs("div",{className:"flex flex-col gap-[24px]",children:[e.jsx("h3",{className:`
+            ${t.font.family}
+            ${t.font.weight.semibold}
+            text-[32px]
+            text-[${t.color.secondary}]
+          `,children:"Application Process"}),e.jsx("div",{className:`\r
+            grid\r
+            grid-cols-1 sm:grid-cols-2 lg:grid-cols-4\r
+            gap-[23.68px]\r
+          `,children:J.map((s,r)=>e.jsxs("div",{className:`\r
+                w-full\r
+                bg-white\r
+                rounded-[10px]\r
+                border\r
+                p-[20px]\r
+                grid\r
+                grid-rows-[auto_auto_auto_1fr_auto]\r
+                h-full\r
+              `,style:{border:"1px solid #07070733"},children:[e.jsx(s.Icon,{className:"w-[31.58px] h-[31.58px]"}),e.jsx("span",{className:`
+                  ${t.font.family}
+                  text-[12px]
+                  py-[8px]
+                `,style:{color:t.color.primary},children:s.step}),e.jsx("h4",{className:`
+                  ${t.font.family}
+                  ${t.font.weight.semibold}
+                  text-[20px]
+                  leading-[26px]
+                  pb-[10px]
+                  text-[${t.color.secondary}]
+                `,children:s.title}),e.jsx("p",{className:`
+                  ${t.font.family}
+                  text-[14px]
+                  leading-[20px]
+                  mb-[20px]
+                `,style:{color:t.color.text.muted},children:s.desc}),e.jsxs("p",{className:`
+                  ${t.font.family}
+                  text-[14px]
+                  leading-[20px]
+                  self-end
+                  text-[${t.color.secondary}]
+                `,children:[e.jsx("span",{className:`${t.font.weight.medium} `,children:s.timeline})," ",s.timelinedescription]})]},r))})]}),e.jsxs("div",{className:"flex flex-col gap-[24px]",children:[e.jsx("h3",{className:`
+            ${t.font.family}
+            ${t.font.weight.bold}
+            text-[32px]
+            text-[${t.color.secondary}]
+          `,children:"Admission Requirements"}),e.jsx("div",{className:`\r
+            grid\r
+            grid-cols-1 sm:grid-cols-2 lg:grid-cols-3\r
+            gap-[31.58px]\r
+          `,children:U.map((s,r)=>e.jsxs("div",{className:`\r
+                bg-white\r
+                rounded-[12px]\r
+                border\r
+                p-[20px]\r
+                flex flex-col\r
+                gap-[12px]\r
+                h-full\r
+              `,style:{border:"1px solid #07070733"},children:[e.jsx("h4",{className:`
+                  ${t.font.family}
+                  ${t.font.weight.semibold}
+                  text-[24px]
+                  mb-[5px]
+                  leading-[24px]
+                  text-[${t.color.secondary}]
+                `,children:s.title}),e.jsx("ul",{className:"flex flex-col gap-[8px]",children:s.items.map((n,i)=>e.jsxs("li",{className:`
+                      flex gap-[8px]
+                      text-[14px]
+                      ${t.font.family}
+                    `,style:{color:t.color.text.muted},children:[e.jsx($,{className:"w-[17.76px] h-[17.76px] shrink-0"}),e.jsx("span",{className:`
+                        ${t.font.family}
+                        font-regular
+                        text-[14px]
+                        leading-[19.74px]
+                      `,style:{color:"#6B7280"},children:n})]},i))})]},r))})]}),e.jsx("div",{className:"w-full flex justify-center my-[40px]",children:e.jsxs("div",{className:"w-full bg-white rounded-[8px] py-[30px] px-[30px]",children:[e.jsx("h2",{className:`
+              w-full text-center
+              ${t.font.family}
+              ${t.font.weight.bold}
+              text-[32px]
+              leading-[39px]
+              mb-[30px]
+              text-[${t.color.secondary}]
+            `,children:"Important Dates"}),e.jsx("div",{className:"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-[23.68px] gap-y-[20px]",children:K.map((s,r)=>e.jsxs("div",{className:"flex flex-col items-center text-center",children:[e.jsx("p",{className:`
+                    ${t.font.family}
+                    ${t.font.weight.medium}
+                    text-[#191919]
+                    text-[18px]
+                    leading-[22px]
+                    mb-[10px]
+                  `,children:s.date}),e.jsx("p",{className:`
+                    ${t.font.family}
+                    text-[14px]
+                    leading-[20px]
+                  `,style:{color:t.color.dark+"BF"},children:s.label})]},r))})]})}),e.jsxs("div",{className:`\r
+          w-full\r
+          flex flex-col lg:flex-row\r
+          items-start\r
+          gap-[40px]\r
+          mb-[80px]\r
+        `,children:[e.jsx("div",{className:`\r
+            w-full lg:w-auto\r
+            flex-shrink-0\r
+            rounded-[12px] \r
+            overflow-hidden\r
+          `,children:e.jsx("img",{loading:"lazy",decoding:"async",src:T,className:"w-full lg:w-[589px] h-[389px] object-cover rounded-[12px]"})}),e.jsxs("div",{className:`\r
+            flex-1\r
+            flex flex-col\r
+            gap-[20px]\r
+          `,children:[e.jsx("h3",{className:`
+        ${t.font.family}
+        ${t.font.weight.semibold}
+        text-[26px]
+        leading-[34px]
+        text-[${t.color.secondary}]
+      `,children:"Ready to Apply?"}),e.jsx("p",{className:`
+        ${t.font.family}
+        text-[16px]
+        leading-[24px]
+      `,style:{color:t.color.text.researchMuted},children:"Start your application today and take the first step toward an exceptional nursing education. Our admissions team is here to support you throughout the process."}),e.jsx("p",{className:`
+        ${t.font.family}
+        text-[16px]
+        leading-[24px]
+      `,style:{color:t.color.text.researchMuted},children:"Start your application today and take the first step toward an exceptional nursing education. Our admissions team is here to support you throughout the process."}),e.jsxs("div",{className:"flex flex-wrap gap-[16px]",children:[e.jsx(m,{bg:t.color.primary,color:"white",rounded:"8px",textSize:"text-[14px]",leading:"leading-[20px]",width:"206px",height:"44px",customPadding:"px-[22px] py-[12px]",weight:t.font.weight.bold,children:"Start Your Application"}),e.jsx(m,{bg:t.color.background.white,color:t.color.secondary,rounded:"8px",textSize:"text-[14px]",leading:"leading-[20px]",width:"206px",height:"44px",customPadding:"px-[22px] py-[12px]",borderColor:t.color.secondary,borderWidth:"1px",weight:t.font.weight.bold,children:"Contact Admissions"})]})]})]})]})}const C=({className:s=""})=>e.jsxs("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[e.jsx("path",{d:"M15.2734 12.7196L16.7684 21.1334C16.7852 21.2325 16.7713 21.3343 16.7286 21.4253C16.6859 21.5162 16.6165 21.592 16.5296 21.6424C16.4427 21.6929 16.3424 21.7156 16.2423 21.7075C16.1421 21.6994 16.0468 21.6609 15.9691 21.5972L12.4362 18.9456C12.2657 18.8182 12.0585 18.7493 11.8456 18.7493C11.6327 18.7493 11.4255 18.8182 11.255 18.9456L7.71615 21.5962C7.6385 21.6598 7.54331 21.6982 7.44328 21.7063C7.34325 21.7144 7.24313 21.6918 7.15627 21.6415C7.06942 21.5912 6.99997 21.5157 6.95718 21.4249C6.9144 21.3341 6.90031 21.2324 6.9168 21.1334L8.41088 12.7196",stroke:"white","stroke-width":"1.97368","stroke-linecap":"round","stroke-linejoin":"round"}),e.jsx("path",{d:"M11.8424 13.8154C15.1125 13.8154 17.7634 11.1644 17.7634 7.89432C17.7634 4.62421 15.1125 1.97327 11.8424 1.97327C8.57227 1.97327 5.92133 4.62421 5.92133 7.89432C5.92133 11.1644 8.57227 13.8154 11.8424 13.8154Z",stroke:"white","stroke-width":"1.97368","stroke-linecap":"round","stroke-linejoin":"round"})]}),X=({className:s=""})=>e.jsxs("svg",{viewBox:"0 0 24 24",fill:"none",className:s,children:[e.jsx("path",{d:"M11.8423 1.97339V21.7102",stroke:"currentColor",strokeWidth:"1.97368",strokeLinecap:"round",strokeLinejoin:"round"}),e.jsx("path",{d:"M16.7766 4.93384H9.37527C8.45923 4.93384 7.5807 5.29774 6.93296 5.94548C6.28522 6.59322 5.92133 7.47174 5.92133 8.38779C5.92133 9.30383 6.28522 10.1824 6.93296 10.8301C7.5807 11.4778 8.45923 11.8417 9.37527 11.8417H14.3095C15.2255 11.8417 16.1041 12.2056 16.7518 12.8534C17.3995 13.5011 17.7634 14.3796 17.7634 15.2957C17.7634 16.2117 17.3995 17.0902 16.7518 17.738C16.1041 18.3857 15.2255 18.7496 14.3095 18.7496H5.92133",stroke:"currentColor",strokeWidth:"1.97368",strokeLinecap:"round",strokeLinejoin:"round"})]}),ee=({className:s=""})=>e.jsxs("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[e.jsx("path",{d:"M11.8417 21.7105C17.2919 21.7105 21.7101 17.2922 21.7101 11.8421C21.7101 6.39187 17.2919 1.97363 11.8417 1.97363C6.39151 1.97363 1.97327 6.39187 1.97327 11.8421C1.97327 17.2922 6.39151 21.7105 11.8417 21.7105Z",stroke:"#FFF","stroke-width":"1.97368","stroke-linecap":"round","stroke-linejoin":"round"}),e.jsx("path",{d:"M8.96985 8.88118C9.20186 8.22164 9.6598 7.66549 10.2626 7.31124C10.8653 6.95699 11.574 6.8275 12.2631 6.9457C12.9522 7.06389 13.5772 7.42216 14.0275 7.95703C14.4777 8.4919 14.7242 9.16886 14.7231 9.86802C14.7231 11.8417 11.7626 12.8285 11.7626 12.8285",stroke:"#FFF","stroke-width":"1.97368","stroke-linecap":"round","stroke-linejoin":"round"}),e.jsx("path",{d:"M11.8417 16.7761H11.8517",stroke:"#FFF","stroke-width":"1.97368","stroke-linecap":"round","stroke-linejoin":"round"})]}),te=[{value:"90%",label:"Students Receive Aid"},{value:"$12M+",label:"Annual Scholarships"},{value:"$15K",label:"Average Award"},{value:"100+",label:"Scholarship Programs"}];function se(){const s=[{title:"Check Eligibility",description:"Review the eligibility criteria for different scholarship and aid programs."},{title:"Gather Documents",description:"Prepare income certificates, caste certificates, mark sheets, and other required documents."},{title:"Submit Application",description:"Fill out the financial aid application form during or after the admission process."},{title:"Await Approval",description:"The committee will review your application and notify you of the decision."}];return e.jsx("section",{className:`${t.bg.sectionCard} w-full py-[80px] flex justify-center`,children:e.jsxs("div",{className:`\r
+          w-full\r
+          w-full\r
+          mx-auto\r
+          px-4 sm:px-6 md:px-10 lg:px-[120px]\r
+          flex flex-col\r
+          gap-[40px]\r
+        `,children:[e.jsx("h2",{className:`
+            ${t.font.family}
+            ${t.font.weight.bold}
+            text-[42px]
+            leading-[42px]
+            text-[${t.color.secondary}]
+          `,children:"Financial Aid & Scholarships"}),e.jsx("div",{className:`\r
+            grid\r
+            grid-cols-1 sm:grid-cols-2 lg:grid-cols-4\r
+            gap-[23.68px]\r
+            w-full\r
+          `,children:te.map((r,n)=>e.jsxs("div",{className:`\r
+                bg-white\r
+                h-[100.66px]\r
+                rounded-[9.87px]\r
+                flex flex-col items-center justify-center gap-[6px]\r
+              `,style:{border:"1px solid #07070733"},children:[e.jsx("p",{className:`
+                  ${t.font.family}
+                  text-[15.79px]
+                  leading-[23.68px]
+                  ${t.font.weight.semibold}
+                `,style:{color:t.color.primary},children:r.value}),e.jsx("p",{className:`${t.font.family} text-[#191919BF] font-regular text-[13.82px] leading-[19.74px]`,children:r.label})]},n))}),e.jsxs("div",{className:`\r
+            grid\r
+            grid-cols-1 md:grid-cols-2\r
+            gap-[31.58px]\r
+            w-full\r
+          `,children:[e.jsx(k,{icon:e.jsx(C,{className:"w-[23.68px] h-[23.68px] text-white"}),title:"Merit-Based Scholarships",desc:"Scholarships awarded to students based on academic excellence in qualifying examinations.",eligibility:"Top performers in 10+2 or entrance exams"}),e.jsx(k,{icon:e.jsx(C,{className:"w-[23.68px] h-[23.68px] text-white"}),title:"Reserved Category Benefits",desc:"Fee concessions and special provisions for SC/ST/OBC and other reserved categories as per government norms.",eligibility:"Students from reserved categories with valid certificates"}),e.jsx(k,{icon:e.jsx(C,{className:"w-[23.68px] h-[23.68px] text-white"}),title:"Government Scholarships",desc:"Various state and central government scholarship schemes available for eligible students.",eligibility:"Based on family income and category"}),e.jsx(k,{icon:e.jsx(C,{className:"w-[23.68px] h-[23.68px] text-white"}),title:"Education Loans",desc:"Tie-ups with leading banks for easy education loan processing at competitive interest rates.",eligibility:"All admitted students"})]}),e.jsxs("div",{className:`\r
+            grid\r
+            grid-cols-1 md:grid-cols-2\r
+            gap-[31.58px]\r
+            w-full\r
+          `,children:[e.jsxs("div",{className:"bg-white rounded-[9.87px] p-[31.58px] flex flex-col gap-[16px]",style:{border:`1px solid ${t.color.border}`},children:[e.jsxs("div",{className:"flex items-center gap-[15.79px]",children:[e.jsx("div",{className:`\r
+                  w-[47.37px] h-[47.37px]\r
+                  rounded-[9.87px]\r
+                  flex items-center justify-center shrink-0\r
+                `,style:{backgroundColor:t.color.primary},children:e.jsx(X,{className:"w-[23.68px] h-[23.68px] text-white"})}),e.jsx("h3",{className:`
+                  ${t.font.family}
+                  ${t.font.weight.bold}
+                  text-[23.68px]
+                  leading-[33.16px]
+                  text-[${t.color.secondary}]
+                `,children:"Fee Structure"})]}),e.jsx("p",{className:`${t.font.family} text-[15.79px] leading-[27.63px]`,style:{color:t.color.text.muted},children:"ASRAM School of Nursing offers competitive and transparent fee structures for all programs. Fees are set in accordance with university and regulatory body guidelines."}),e.jsx("p",{className:`
+                ${t.font.family}
+                ${t.font.weight.semibold}
+                text-[19.74px]
+                leading-[29.61px]
+                text-[${t.color.secondary}]
+              `,children:"Payment Options"}),e.jsx("ul",{className:"flex flex-col gap-[10px]",children:["Semester-wise fee payment structure","Installment options available","Online payment gateway for convenience","Fee refund policy as per university norms"].map((r,n)=>e.jsxs("li",{className:"flex items-start gap-[8px]",children:[e.jsx("span",{className:"w-[7.89px] h-[7.89px] rounded-full mt-[10px]",style:{backgroundColor:t.color.primary}}),e.jsx("span",{className:`${t.font.family} text-[15.79px] leading-[27.63px]`,style:{color:t.color.text.muted},children:r})]},n))})]}),e.jsxs("div",{className:"bg-white rounded-[9.87px] p-[31.58px] flex flex-col gap-[18px]",style:{border:`1px solid ${t.color.border}`},children:[e.jsxs("div",{className:"flex items-center gap-[15.79px]",children:[e.jsx("div",{className:`\r
+                  w-[47.37px] h-[47.37px]\r
+                  rounded-[9.87px]\r
+                  flex items-center justify-center shrink-0\r
+                `,style:{backgroundColor:t.color.primary},children:e.jsx(ee,{className:"w-[23.68px] h-[23.68px]"})}),e.jsx("h3",{className:`
+                  ${t.font.family}
+                  ${t.font.weight.semibold}
+                  text-[23.68px]
+                  leading-[33.16px]
+                  text-[${t.color.secondary}]
+                `,children:"How to Apply for Aid"})]}),s.map((r,n)=>e.jsxs("div",{className:"flex gap-[10px] items-start",children:[e.jsx("span",{className:`
+    ${t.font.family}
+    inline-flex
+    items-center
+    justify-center
+    w-[32px] h-[32px]
+    aspect-square
+    rounded-full
+    text-[13.82px]
+    font-normal
+  `,style:{backgroundColor:"#EEF2F7",color:t.color.dark},children:n+1}),e.jsxs("div",{className:"flex flex-col",children:[e.jsx("span",{className:`
+                      ${t.font.family}
+                      ${t.font.weight.semibold}
+                      text-[15.79px]
+                      leading-[23.68px]
+                      text-[${t.color.dark}]
+                    `,children:r.title}),e.jsx("p",{className:`
+                      ${t.font.family}
+                      text-[15.79px]
+                      leading-[23.68px]
+                      mt-[2px]
+                    `,style:{color:t.color.dark+"BF"},children:r.description})]})]},n))]})]})]})})}function k({icon:s,title:r,desc:n,eligibility:i}){return e.jsx("div",{className:"bg-white rounded-[9.87px] p-[30px] border flex flex-col gap-[12px]",style:{borderColor:t.color.border},children:e.jsxs("div",{className:"flex gap-[15.79px] items-start",children:[e.jsx("div",{className:`\r
+            w-[55.26px] h-[55.26px] rounded-[9.87px]\r
+            flex items-center justify-center shrink-0\r
+          `,style:{backgroundColor:t.color.primary},children:s}),e.jsxs("div",{className:"flex flex-col gap-[8px]",children:[e.jsx("h3",{className:`
+              ${t.font.family}
+              ${t.font.weight.bold}
+              text-[23.68px]
+              leading-[33.16px]
+              text-[${t.color.secondary}]
+            `,children:r}),e.jsx("p",{className:`${t.font.family} text-[14px] leading-[20px] max-w-[420px]`,style:{color:"#6B7280"},children:n}),e.jsxs("div",{className:"flex gap-[8px] pt-[4px] items-start",children:[e.jsx($,{className:"w-[17.76px] h-[17.76px] shrink-0"}),e.jsxs("p",{className:`${t.font.family} text-[13.82px] leading-[19.74px]`,children:[e.jsx("span",{className:`${t.font.weight.semibold}`,style:{color:t.color.text.grayish},children:"Eligibility:"})," ",e.jsx("span",{style:{color:"#6B7280"},children:i})]})]})]})]})})}const re=({className:s=""})=>e.jsxs("svg",{viewBox:"0 0 24 24",fill:"none",className:s,children:[e.jsx("path",{d:"M19.7367 9.86788C19.7367 14.7952 14.2706 19.9268 12.4351 21.5116C12.2641 21.6402 12.0559 21.7097 11.842 21.7097C11.6281 21.7097 11.4199 21.6402 11.2489 21.5116C9.41338 19.9268 3.94727 14.7952 3.94727 9.86788C3.94727 7.77407 4.77903 5.76601 6.25958 4.28546C7.74013 2.80491 9.74819 1.97314 11.842 1.97314C13.9358 1.97314 15.9439 2.80491 17.4244 4.28546C18.905 5.76601 19.7367 7.77407 19.7367 9.86788Z",stroke:"currentColor",strokeWidth:"1.97368",strokeLinecap:"round",strokeLinejoin:"round"}),e.jsx("path",{d:"M11.8418 12.828C13.4768 12.828 14.8023 11.5026 14.8023 9.86751C14.8023 8.23246 13.4768 6.90698 11.8418 6.90698C10.2067 6.90698 8.88123 8.23246 8.88123 9.86751C8.88123 11.5026 10.2067 12.828 11.8418 12.828Z",stroke:"currentColor",strokeWidth:"1.97368",strokeLinecap:"round",strokeLinejoin:"round"})]}),ne=({className:s=""})=>e.jsx("svg",{viewBox:"0 0 24 24",fill:"none",className:s,children:e.jsx("path",{d:"M13.6493 16.3495C13.8531 16.4431 14.0828 16.4644 14.3004 16.4101C14.5179 16.3557 14.7105 16.2289 14.8464 16.0504L15.1967 15.5916C15.3805 15.3464 15.6189 15.1475 15.893 15.0105C16.1671 14.8734 16.4692 14.8021 16.7757 14.8021H19.7362C20.2596 14.8021 20.7616 15.01 21.1318 15.3802C21.5019 15.7503 21.7099 16.2523 21.7099 16.7758V19.7363C21.7099 20.2598 21.5019 20.7618 21.1318 21.1319C20.7616 21.502 20.2596 21.71 19.7362 21.71C15.0251 21.71 10.507 19.8385 7.17573 16.5073C3.84449 13.176 1.97302 8.65791 1.97302 3.94683C1.97302 3.42338 2.18096 2.92136 2.5511 2.55122C2.92124 2.18109 3.42325 1.97314 3.94671 1.97314H6.90723C7.43069 1.97314 7.9327 2.18109 8.30284 2.55122C8.67298 2.92136 8.88092 3.42338 8.88092 3.94683V6.90736C8.88092 7.21376 8.80958 7.51596 8.67255 7.79001C8.53552 8.06407 8.33657 8.30246 8.09144 8.4863L7.6296 8.83268C7.44843 8.97102 7.32074 9.1678 7.26821 9.38961C7.21568 9.61142 7.24156 9.84457 7.34144 10.0495C8.69014 12.7888 10.9083 15.0042 13.6493 16.3495Z",stroke:"currentColor",strokeWidth:"1.97368",strokeLinecap:"round",strokeLinejoin:"round"})}),ie=({className:s=""})=>e.jsxs("svg",{viewBox:"0 0 24 24",fill:"none",className:s,children:[e.jsx("path",{d:"M21.7097 6.90698L12.837 12.5586C12.536 12.7335 12.194 12.8256 11.8458 12.8256C11.4976 12.8256 11.1556 12.7335 10.8545 12.5586L1.9729 6.90698",stroke:"currentColor",strokeWidth:"1.97368",strokeLinecap:"round",strokeLinejoin:"round"}),e.jsx("path",{d:"M19.7361 3.94727H3.94658C2.85655 3.94727 1.9729 4.83091 1.9729 5.92095V17.7631C1.9729 18.8531 2.85655 19.7367 3.94658 19.7367H19.7361C20.8261 19.7367 21.7097 18.8531 21.7097 17.7631V5.92095C21.7097 4.83091 20.8261 3.94727 19.7361 3.94727Z",stroke:"currentColor",strokeWidth:"1.97368",strokeLinecap:"round",strokeLinejoin:"round"})]});function oe(){return e.jsxs(f,{bg:t.bg.white,paddingClass:"py-[80px]",className:"flex flex-col gap-[40px]",children:[e.jsx("h2",{className:`
+          ${t.font.family}
+          ${t.font.weight.bold}
+          text-[42px]
+          leading-[52px]
+          text-[${t.color.secondary}]
+        `,children:"Join Our Nursing Community"}),e.jsxs("div",{className:"flex flex-wrap justify-center gap-[18px] mt-[40px]",children:[e.jsx(m,{customPadding:"px-[39px] py-[18px]",bg:t.color.primary,color:"white",rounded:"9.87px",textSize:"text-[15.79px]",leading:"leading-[23.68px]",height:"60px",icon:e.jsx(B,{size:19,stroke:"white",strokeWidth:1}),children:"Start Your Application"}),e.jsx(m,{customPadding:"px-[39.47px] py-[15.79px]",bg:"#EEF2F7",color:t.color.secondary,rounded:"9.87px",textSize:"text-[15.79px]",leading:"leading-[23.68px]",height:"59.21px",children:"Explore Programs"}),e.jsx(m,{customPadding:"px-[39.47px] py-[15.79px]",bg:"#EEF2F7",color:t.color.secondary,rounded:"9.87px",textSize:"text-[15.79px]",leading:"leading-[23.68px]",height:"59.21px",children:"Visit Website"})]}),e.jsxs("div",{className:`\r
+          grid\r
+          grid-cols-1\r
+          sm:grid-cols-2\r
+          lg:grid-cols-3\r
+          mt-[40px]\r
+          place-items-center\r
+        `,children:[e.jsx(v,{icon:e.jsx(re,{className:"w-[23.68px] h-[23.68px] text-white"}),title:"Visit Campus",subtitle1:"ASRAM Campus",subtitle2:"Eluru, Andhra Pradesh"}),e.jsx(v,{icon:e.jsx(ne,{className:"w-[23.68px] h-[23.68px] text-white"}),title:"Call Us",subtitle1:"Admissions Office",subtitle2:"Contact via asram.in"}),e.jsx(v,{icon:e.jsx(ie,{className:"w-[23.68px] h-[23.68px] text-white"}),title:"Email Us",subtitle1:"For admission inquiries",subtitle2:"See official website"})]}),e.jsx("div",{className:"w-full mt-[40px]",style:{border:"1px solid #19191933"}}),e.jsxs("div",{className:`\r
+          grid\r
+          grid-cols-4\r
+          text-center\r
+          gap-[24px]\r
+          place-items-center\r
+        `,children:[e.jsx(b,{count:"20+",label:"Years of Excellence"}),e.jsx(b,{count:"190+",label:"Total Seats"}),e.jsx(b,{count:"56+",label:"Expert Faculty"}),e.jsx(b,{count:"INC",label:"Approved"})]})]})}function v({icon:s,title:r,subtitle1:n,subtitle2:i}){return e.jsxs("div",{className:`\r
+        flex flex-col\r
+        items-center justify-center\r
+        text-center\r
+        rounded-[9.87px]\r
+        p-[20px]\r
+        w-[321px]\r
+        h-[195px]\r
+      `,style:{backgroundColor:"#EEF2F7"},children:[e.jsxs("div",{className:`\r
+          w-[55.26px] h-[55.26px]\r
+          rounded-full\r
+          flex items-center justify-center\r
+          mb-[16px]\r
+        `,style:{backgroundColor:t.color.primary},children:[s,"      "]}),e.jsx("h3",{className:`
+          ${t.font.family}
+          ${t.font.weight.semibold}
+          text-[19.74px]
+          leading-[29.61px]
+          text-[${t.color.secondary}]
+        `,children:r}),e.jsxs("p",{className:"text-[14px] leading-[20px] mt-[6px]",style:{color:"#191919BF"},children:[n,e.jsx("br",{}),i]})]})}function b({count:s,label:r}){const[n,i]=l.useState("0"),x=l.useRef(null),p=l.useRef(!1);l.useEffect(()=>{const d=x.current,o=new IntersectionObserver(a=>{a[0].isIntersecting&&!p.current&&(p.current=!0,g())},{threshold:.4});return d&&o.observe(d),()=>o.disconnect()},[]);const g=()=>{const d=parseInt(s.replace(/\D/g,""),10),o=s.replace(/[0-9]/g,"");if(isNaN(d)){i(s);return}const a=1200,h=performance.now(),u=j=>{const y=Math.min((j-h)/a,1),w=Math.floor(y*d);i(w+o),y<1&&requestAnimationFrame(u)};requestAnimationFrame(u)};return e.jsxs("div",{className:"flex flex-col items-center text-center",ref:x,children:[e.jsx("span",{className:`
+          ${t.font.family}
+          ${t.font.weight.bold}
+          text-[35.53px]
+          leading-[39.47px]
+          mb-[10px]
+          text-[${t.color.secondary}]
+        `,children:n}),e.jsx("span",{className:`
+          ${t.font.family}
+          text-[15.79px]
+          leading-[23.68px]
+          font-regular
+        `,style:{color:"#191919BF"},children:r})]})}const le="/AsramWebsite-FE/assets/asramacademicsbanner-Rp9-HRkA.png",ue=()=>{const{setHero:s,hideHero:r}=F();return l.useLayoutEffect(()=>(s({title:e.jsx("span",{className:"font-montserrat font-bold text-[32px] md:text-[40px] leading-[1.2] text-white",children:"Build a Career in Healthcare"}),bgImage:le,children:e.jsx(e.Fragment,{children:e.jsx("p",{className:"font-montserrat font-medium text-[16px] md:text-[22px] leading-[1.4] text-white max-w-[520px] mb-6",children:"Structured medical education supported by experienced faculty, advanced laboratories, and real-world clinical exposure."})})}),()=>r()),[s,r]),e.jsx(e.Fragment,{children:e.jsxs(e.Fragment,{children:[e.jsx(c,{children:e.jsx(E,{})}),e.jsx(c,{delay:.1,children:e.jsx(O,{})}),e.jsx(c,{delay:.1,children:e.jsx(L,{})}),e.jsx(c,{delay:.2,children:e.jsx(q,{})}),e.jsx(c,{delay:.2,children:e.jsx(Q,{})}),e.jsx(c,{delay:.3,children:e.jsx(H,{})}),e.jsx(c,{delay:.3,children:e.jsx(se,{})}),e.jsx(c,{delay:.4,children:e.jsx(oe,{})})]})})};export{ue as default};
