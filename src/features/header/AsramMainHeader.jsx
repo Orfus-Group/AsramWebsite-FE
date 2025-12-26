@@ -134,7 +134,7 @@ const AsramMainHeader = () => {
     <div className="sticky -top-[40px] z-[100] asram-font w-full">
       {/* ----------------------- TOP BAR ----------------------- */}
       <div className="w-full" style={{ backgroundColor: T.color.secondary }}>
-        <div className="w-full h-[40px] flex justify-center px-4 sm:px-6 md:px-10 lg:px-[120px]">
+        <div className="w-full max-w-[1440px] mx-auto h-[40px] flex justify-center px-5 sm:px-6 md:px-10 lg:px-[120px]">
           <div
             className="
               w-full
@@ -180,7 +180,7 @@ const AsramMainHeader = () => {
 
       {/* ----------------------- MAIN HEADER ----------------------- */}
       <header className="w-full bg-white relative z-[100] shadow-[0_4px_20px_rgba(0,0,0,0.1)] sticky top-0">
-        <div className="w-full px-4 sm:px-6 md:px-10 lg:px-[120px] h-[66px] py-[10px] flex items-center justify-between relative">
+        <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10 lg:px-[120px] h-[66px] py-[10px] flex items-center justify-between relative">
 
           {/* Hamburger */}
           <button
@@ -252,7 +252,7 @@ const AsramMainHeader = () => {
           <>
             {/* BACKDROP */}
             <div
-              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[90]"
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[110]"
               onClick={() => {
                 setMobileMenuOpen(false);
                 setOpenMenu(null);
@@ -264,7 +264,7 @@ const AsramMainHeader = () => {
               className={`
         fixed top-0 left-0
         h-full w-[85%] max-w-[320px]
-        z-[100]
+        z-[120]
         flex flex-col
         px-6 py-8
         overflow-y-auto
@@ -445,7 +445,7 @@ const AsramMainHeader = () => {
             style={{ backgroundColor: T.color.background.white }}
           />
 
-          <div className="w-full mx-auto flex relative">
+          <div className="w-full max-w-[1440px] mx-auto flex relative">
 
             {/* LEFT PANEL */}
             <div

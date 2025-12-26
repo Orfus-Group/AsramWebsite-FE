@@ -1,5 +1,6 @@
 import React from "react";
 import { T } from "@/theme";
+import PageSection from "@/features/common/layout/PageContainer";
 
 
 
@@ -57,17 +58,8 @@ const voices = [
 
 export default function StudentVoices() {
   return (
-    <section className={`${T.bg.white} w-full py-[80px] flex justify-center`}>
-      {/* ⭐ UNIFIED BASELINE CONTAINER (Matches Hero, Header, Everything) */}
-      <div
-        className="
-          w-full
-          w-full
-          px-4 sm:px-6 md:px-10 lg:px-[120px]
-          flex flex-col
-          gap-[32px]
-        "
-      >
+    <PageSection bg={T.bg.white} sectionClassName="py-[80px]">
+      <div className="flex flex-col gap-[32px]">
         {/* SECTION TITLE */}
         <h2
           className={`
@@ -160,6 +152,6 @@ export default function StudentVoices() {
           ))}
         </div>
       </div>
-    </section>
+    </PageSection>
   );
 }

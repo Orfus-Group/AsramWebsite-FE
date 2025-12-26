@@ -84,9 +84,9 @@ const GlobalCommunityHealthPage = () => {
 
 
             {/* ==================== OVERVIEW ==================== */}
-            <PageSection paddingClass="py-[60px] md:py-[80px]">
-                <div>
-                    <h3 className={`${T.font.family} font-bold text-[32px] text-[#223F7F] mb-[40px]`}>Overview</h3>
+            <PageSection sectionClassName="py-[60px] md:py-[80px]">
+                <div className="flex flex-col gap-[40px]">
+                    <h3 className={`${T.font.family} font-bold text-[42px] leading-[42px] text-[#223F7F] mb-[40px]`}>Overview</h3>
                     <div className="space-y-6 text-[rgba(25,25,25,0.75)] text-[18px] leading-[1.44] font-normal">
                         <p>
                             The Office of Global and Community Health Initiatives (OGCHI) at ASRAM is dedicated to reducing health disparities and improving health outcomes for underserved populations. We believe that health is a fundamental human right, and our mission extends beyond the hospital walls into the communities we serve.
@@ -99,9 +99,9 @@ const GlobalCommunityHealthPage = () => {
             </PageSection>
 
             {/* ==================== COMMUNITY HEALTH INITIATIVES ==================== */}
-            <PageSection bg="bg-[#EDF1F6]" paddingClass="py-[60px] md:py-[80px]">
-                <div className="mb-0">
-                    <h2 className={`${T.font.family} font-bold text-[33px] text-[#223F7F] mb-8`}>Community Health Initiatives</h2>
+            <PageSection bg="bg-[#EDF1F6]" sectionClassName="py-[60px] md:py-[80px]">
+                <div className="flex flex-col gap-[40px]">
+                    <h2 className={`${T.font.family} font-bold text-[42px] leading-[42px] text-[#223F7F] mb-[40px]`}>Community Health Initiatives</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
                         {/* Card 1 */}
@@ -164,133 +164,136 @@ const GlobalCommunityHealthPage = () => {
             </PageSection>
 
             {/* ==================== GLOBAL HEALTH INITIATIVES & TEAM ==================== */}
-            <PageSection bg="bg-white" paddingClass="py-[80px] md:py-[80px]">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-[52px] items-center">
-                    {/* Content Side */}
-                    <div className="flex flex-col">
-                        <h2 className={`${T.font.family} font-bold text-[33px] text-[#223F7F] mb-[28px]`}>Global Health Initiatives</h2>
+            <PageSection bg="bg-white" sectionClassName="py-[60px] md:py-[80px]">
+                <div className="flex flex-col gap-[40px]">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-[52px] items-center">
+                        {/* Content Side */}
+                        <div className="flex flex-col">
+                            <h2 className={`${T.font.family} font-bold text-[42px] leading-[42px] text-[#223F7F] mb-[40px]`}>Global Health Initiatives</h2>
 
-                        <div className="flex flex-col gap-[28px]">
-                            {/* Item 1 */}
-                            <div className="flex gap-5 items-start">
-                                <div className="w-12 h-12 rounded-full bg-[#223F7F1A] flex items-center justify-center text-[#223F7F] shrink-0">
-                                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.2652 20.6514C16.4496 20.6514 20.6524 16.4486 20.6524 11.2642C20.6524 6.07976 16.4496 1.87695 11.2652 1.87695C6.08073 1.87695 1.87793 6.07976 1.87793 11.2642C1.87793 16.4486 6.08073 20.6514 11.2652 20.6514Z" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M11.2647 1.87695C8.85424 4.40789 7.50977 7.76907 7.50977 11.2642C7.50977 14.7593 8.85424 18.1205 11.2647 20.6514C13.6751 18.1205 15.0195 14.7593 15.0195 11.2642C15.0195 7.76907 13.6751 4.40789 11.2647 1.87695Z" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M1.87793 11.2637H20.6524" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
+                            <div className="flex flex-col gap-[28px]">
+                                {/* Item 1 */}
+                                <div className="flex gap-5 items-start">
+                                    <div className="w-12 h-12 rounded-full bg-[#223F7F1A] flex items-center justify-center text-[#223F7F] shrink-0">
+                                        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.2652 20.6514C16.4496 20.6514 20.6524 16.4486 20.6524 11.2642C20.6524 6.07976 16.4496 1.87695 11.2652 1.87695C6.08073 1.87695 1.87793 6.07976 1.87793 11.2642C1.87793 16.4486 6.08073 20.6514 11.2652 20.6514Z" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M11.2647 1.87695C8.85424 4.40789 7.50977 7.76907 7.50977 11.2642C7.50977 14.7593 8.85424 18.1205 11.2647 20.6514C13.6751 18.1205 15.0195 14.7593 15.0195 11.2642C15.0195 7.76907 13.6751 4.40789 11.2647 1.87695Z" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M1.87793 11.2637H20.6524" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-[20px] font-bold text-[#223F7F] mb-1">International Electives</h3>
+                                        <p className="text-[#4B5563] text-[15px] leading-relaxed">Exchange programs allowing students to gain global perspectives by training at partner institutions worldwide.</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 className="text-[20px] font-bold text-[#223F7F] mb-1">International Electives</h3>
-                                    <p className="text-[#4B5563] text-[15px] leading-relaxed">Exchange programs allowing students to gain global perspectives by training at partner institutions worldwide.</p>
-                                </div>
-                            </div>
 
-                            {/* Item 2 */}
-                            <div className="flex gap-5 items-start">
-                                <div className="w-12 h-12 rounded-full bg-[#223F7F1A] flex items-center justify-center text-[#223F7F] shrink-0">
-                                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10.3262 1.87695V3.7544" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M4.69336 1.87695V3.7544" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M4.6941 2.81641H3.75537C3.25745 2.81641 2.77991 3.01421 2.42782 3.3663C2.07573 3.71839 1.87793 4.19592 1.87793 4.69385V8.44874C1.87793 9.94253 2.47133 11.3751 3.5276 12.4314C4.58387 13.4877 6.01648 14.0811 7.51026 14.0811C9.00405 14.0811 10.4367 13.4877 11.4929 12.4314C12.5492 11.3751 13.1426 9.94253 13.1426 8.44874V4.69385C13.1426 4.19592 12.9448 3.71839 12.5927 3.3663C12.2406 3.01421 11.7631 2.81641 11.2652 2.81641H10.3264" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M7.50977 14.0818C7.50977 15.5756 8.10317 17.0082 9.15944 18.0645C10.2157 19.1207 11.6483 19.7141 13.1421 19.7141C14.6359 19.7141 16.0685 19.1207 17.1248 18.0645C18.181 17.0082 18.7744 15.5756 18.7744 14.0818V11.2656" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M18.7749 11.2647C19.8118 11.2647 20.6524 10.4241 20.6524 9.38721C20.6524 8.35033 19.8118 7.50977 18.7749 7.50977C17.738 7.50977 16.8975 8.35033 16.8975 9.38721C16.8975 10.4241 17.738 11.2647 18.7749 11.2647Z" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
+                                {/* Item 2 */}
+                                <div className="flex gap-5 items-start">
+                                    <div className="w-12 h-12 rounded-full bg-[#223F7F1A] flex items-center justify-center text-[#223F7F] shrink-0">
+                                        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.3262 1.87695V3.7544" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M4.69336 1.87695V3.7544" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M4.6941 2.81641H3.75537C3.25745 2.81641 2.77991 3.01421 2.42782 3.3663C2.07573 3.71839 1.87793 4.19592 1.87793 4.69385V8.44874C1.87793 9.94253 2.47133 11.3751 3.5276 12.4314C4.58387 13.4877 6.01648 14.0811 7.51026 14.0811C9.00405 14.0811 10.4367 13.4877 11.4929 12.4314C12.5492 11.3751 13.1426 9.94253 13.1426 8.44874V4.69385C13.1426 4.19592 12.9448 3.71839 12.5927 3.3663C12.2406 3.01421 11.7631 2.81641 11.2652 2.81641H10.3264" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M7.50977 14.0818C7.50977 15.5756 8.10317 17.0082 9.15944 18.0645C10.2157 19.1207 11.6483 19.7141 13.1421 19.7141C14.6359 19.7141 16.0685 19.1207 17.1248 18.0645C18.181 17.0082 18.7744 15.5756 18.7744 14.0818V11.2656" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M18.7749 11.2647C19.8118 11.2647 20.6524 10.4241 20.6524 9.38721C20.6524 8.35033 19.8118 7.50977 18.7749 7.50977C17.738 7.50977 16.8975 8.35033 16.8975 9.38721C16.8975 10.4241 17.738 11.2647 18.7749 11.2647Z" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-[20px] font-bold text-[#223F7F] mb-1">Global Research Partnerships</h3>
+                                        <p className="text-[#4B5563] text-[15px] leading-relaxed">Collaborative research projects focusing on tropical diseases, public health, and epidemiology with international universities.</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 className="text-[20px] font-bold text-[#223F7F] mb-1">Global Research Partnerships</h3>
-                                    <p className="text-[#4B5563] text-[15px] leading-relaxed">Collaborative research projects focusing on tropical diseases, public health, and epidemiology with international universities.</p>
-                                </div>
-                            </div>
 
-                            {/* Item 3 */}
-                            <div className="flex gap-5 items-start">
-                                <div className="w-12 h-12 rounded-full bg-[#223F7F1A] flex items-center justify-center text-[#223F7F] shrink-0">
-                                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15.02 19.7124V17.835C15.02 16.8391 14.6244 15.884 13.9203 15.1799C13.2161 14.4757 12.261 14.0801 11.2652 14.0801H5.63282C4.63696 14.0801 3.68189 14.4757 2.97771 15.1799C2.27353 15.884 1.87793 16.8391 1.87793 17.835V19.7124" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M15.0195 2.93555C15.8247 3.14429 16.5378 3.61449 17.0469 4.27235C17.5559 4.9302 17.8321 5.73847 17.8321 6.57028C17.8321 7.40209 17.5559 8.21036 17.0469 8.86821C16.5378 9.52607 15.8247 9.99627 15.0195 10.205" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M20.6521 19.7134V17.836C20.6515 17.004 20.3746 16.1958 19.8649 15.5383C19.3551 14.8807 18.6415 14.4111 17.8359 14.2031" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M8.44825 10.3262C10.522 10.3262 12.2031 8.64506 12.2031 6.5713C12.2031 4.49753 10.522 2.81641 8.44825 2.81641C6.37448 2.81641 4.69336 4.49753 4.69336 6.5713C4.69336 8.64506 6.37448 10.3262 8.44825 10.3262Z" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 className="text-[20px] font-bold text-[#223F7F] mb-1">Telemedicine Network</h3>
-                                    <p className="text-[#4B5563] text-[15px] leading-relaxed">Connecting local patients with global specialists for expert consultations and second opinions.</p>
+                                {/* Item 3 */}
+                                <div className="flex gap-5 items-start">
+                                    <div className="w-12 h-12 rounded-full bg-[#223F7F1A] flex items-center justify-center text-[#223F7F] shrink-0">
+                                        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.02 19.7124V17.835C15.02 16.8391 14.6244 15.884 13.9203 15.1799C13.2161 14.4757 12.261 14.0801 11.2652 14.0801H5.63282C4.63696 14.0801 3.68189 14.4757 2.97771 15.1799C2.27353 15.884 1.87793 16.8391 1.87793 17.835V19.7124" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M15.0195 2.93555C15.8247 3.14429 16.5378 3.61449 17.0469 4.27235C17.5559 4.9302 17.8321 5.73847 17.8321 6.57028C17.8321 7.40209 17.5559 8.21036 17.0469 8.86821C16.5378 9.52607 15.8247 9.99627 15.0195 10.205" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M20.6521 19.7134V17.836C20.6515 17.004 20.3746 16.1958 19.8649 15.5383C19.3551 14.8807 18.6415 14.4111 17.8359 14.2031" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M8.44825 10.3262C10.522 10.3262 12.2031 8.64506 12.2031 6.5713C12.2031 4.49753 10.522 2.81641 8.44825 2.81641C6.37448 2.81641 4.69336 4.49753 4.69336 6.5713C4.69336 8.64506 6.37448 10.3262 8.44825 10.3262Z" stroke="#223F7F" strokeWidth="1.87744" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-[20px] font-bold text-[#223F7F] mb-1">Telemedicine Network</h3>
+                                        <p className="text-[#4B5563] text-[15px] leading-relaxed">Connecting local patients with global specialists for expert consultations and second opinions.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Image Side */}
-                    <div className="h-[353px] w-full flex justify-center lg:justify-end">
-                        <img
-                            src={Globalhealthimg}
-                            alt="International Vaccination Certificate"
-                            className="h-full w-auto object-cover rounded-[14px] shadow-lg"
-                        />
+                        {/* Image Side */}
+                        <div className="h-[353px] w-full flex justify-center lg:justify-end">
+                            <img
+                                src={Globalhealthimg}
+                                alt="International Vaccination Certificate"
+                                className="h-full w-auto object-cover rounded-[14px] shadow-lg"
+                            />
+                        </div>
                     </div>
                 </div>
             </PageSection>
 
-            {/* <PageSection>
-  <div className="pb-20 lg:pb-[120px] pt-[60px]">
-    <h2
-      className={`${T.font.family} font-bold text-[30.6px] text-[#223F7F] mb-10 text-center md:text-left`}
-    >
-      The Office of Global and Community Health Initiatives Team
-    </h2>
+            {/* ==================== TEAM SECTION ==================== */}
+            {/* <PageSection sectionClassName="py-[60px] md:py-[80px]">
+                <div className="flex flex-col gap-[40px]">
+                    <h2
+                        className={`${T.font.family} font-bold text-[42px] leading-[42px] text-[#223F7F] mb-[40px]`}
+                    >
+                        The Office of Global and Community Health Initiatives Team
+                    </h2>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div className="flex flex-col">
-        <div className="h-[400px] lg:h-[501.61px] w-full lg:w-[376.21px] rounded-[8.5px] overflow-hidden bg-gray-200 mb-[20px]">
-          <img
-            src={GlobalTeam1}
-            alt="Dr. Rajesh Kumar"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <h3 className="text-[17px] font-semibold text-[#223F7F] my-[20px]">
-          Dr. Rajesh Kumar
-        </h3>
-        <p className="text-[#008C8C] text-[13.6px] font-medium">
-          Director, Global Health
-        </p>
-      </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="flex flex-col">
+                            <div className="h-[400px] lg:h-[501.61px] w-full rounded-[8.5px] overflow-hidden bg-gray-200 mb-[20px]">
+                                <img
+                                    src={GlobalTeam1}
+                                    alt="Dr. Rajesh Kumar"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <h3 className="text-[17px] font-semibold text-[#223F7F] my-[20px]">
+                                Dr. Rajesh Kumar
+                            </h3>
+                            <p className="text-[#008C8C] text-[13.6px] font-medium">
+                                Director, Global Health
+                            </p>
+                        </div>
 
-      <div className="flex flex-col">
-        <div className="h-[400px] lg:h-[501.61px] w-full lg:w-[376.21px] rounded-[8.5px] overflow-hidden bg-gray-200 mb-[20px]">
-          <img
-            src={GlobalTeam2}
-            alt="Dr. Sarah Smith"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <h3 className="text-[17px] font-semibold text-[#223F7F] my-[20px]">
-          Dr. Sarah Smith
-        </h3>
-        <p className="text-[#008C8C] text-[13.6px] font-medium">
-          Coordinator, Community Outreach
-        </p>
-      </div>
+                        <div className="flex flex-col">
+                            <div className="h-[400px] lg:h-[501.61px] w-full rounded-[8.5px] overflow-hidden bg-gray-200 mb-[20px]">
+                                <img
+                                    src={GlobalTeam2}
+                                    alt="Dr. Sarah Smith"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <h3 className="text-[17px] font-semibold text-[#223F7F] my-[20px]">
+                                Dr. Sarah Smith
+                            </h3>
+                            <p className="text-[#008C8C] text-[13.6px] font-medium">
+                                Coordinator, Community Outreach
+                            </p>
+                        </div>
 
-      <div className="flex flex-col">
-        <div className="h-[400px] lg:h-[501.61px] w-full lg:w-[376.21px] rounded-[8.5px] overflow-hidden bg-gray-200 mb-[20px]">
-          <img
-            src={GlobalTeam3}
-            alt="Mr. Amit Patel"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <h3 className="text-[17px] font-semibold text-[#223F7F] my-[20px]">
-          Mr. Amit Patel
-        </h3>
-        <p className="text-[#008C8C] text-[13.6px] font-medium">
-          Program Manager
-        </p>
-      </div>
-    </div>
-  </div>
-</PageSection> */}
+                        <div className="flex flex-col">
+                            <div className="h-[400px] lg:h-[501.61px] w-full rounded-[8.5px] overflow-hidden bg-gray-200 mb-[20px]">
+                                <img
+                                    src={GlobalTeam3}
+                                    alt="Mr. Amit Patel"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <h3 className="text-[17px] font-semibold text-[#223F7F] my-[20px]">
+                                Mr. Amit Patel
+                            </h3>
+                            <p className="text-[#008C8C] text-[13.6px] font-medium">
+                                Program Manager
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </PageSection> */}
 
         </div>
     );

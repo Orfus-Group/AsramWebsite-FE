@@ -36,6 +36,34 @@ const SearchSvgIcon = ({ className = "" }) => (
 );
 
 
+/* =======================
+   NAV ITEM COMPONENT
+======================= */
+const NavItem = ({ label, to, isActive, onClick }) => {
+  const baseClasses = `${T.font.family} text-[15px] leading-[20px] transition-all duration-300 relative group cursor-pointer h-full flex items-center select-none`;
+  const activeClasses = `text-[#223F7F] ${T.font.weight.bold}`;
+  const inactiveClasses = `${T.font.weight.semibold} text-[#4A5565] hover:text-[#223F7F]`;
+
+  return (
+    <Link
+      to={to}
+      onClick={onClick}
+      className={`${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
+    >
+      <span className="relative py-1">
+        {label}
+        <span
+          className={`
+            absolute bottom-0 left-0 h-[2px] bg-[#223F7F] transition-all duration-300 ease-out
+            w-0 group-hover:w-full
+          `}
+        />
+      </span>
+    </Link>
+  );
+};
+
+
 const AcademicsHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
@@ -54,7 +82,9 @@ const AcademicsHeader = () => {
         <div
           className="
             w-full
-            px-4 sm:px-6 md:px-10 lg:px-[120px]
+            max-w-[1440px]
+            mx-auto
+            px-5 sm:px-6 md:px-10 lg:px-[120px]
             flex justify-end items-center
             h-[46px]
           "
@@ -68,7 +98,9 @@ const AcademicsHeader = () => {
         <div
           className="
             w-full
-            px-4 sm:px-6 md:px-10 lg:px-[120px]
+            max-w-[1440px]
+            mx-auto
+            px-5 sm:px-6 md:px-10 lg:px-[120px]
             h-[66px]
             flex items-center justify-between
           "
@@ -120,26 +152,15 @@ const AcademicsHeader = () => {
           <div className="flex items-center gap-[20px]">
 
             {/* DESKTOP NAV */}
-            <div className="hidden md:flex items-center gap-[32px]">
-              {navItems.map((item, index) => {
-                const isActive = location.pathname === item.path;
-                return (
-                  <Link
-                    key={index}
-                    to={item.path}
-                    className={`
-                      ${T.font.family}
-                      ${T.font.weight.semibold}
-                      text-[15px]
-                      leading-[20px]
-                      transition whitespace-nowrap
-                      ${isActive ? `text-[${T.color.text.secondary}] font-bold` : "text-[#4A5565] hover:text-[#223F7F]"}
-                    `}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
+            <div className="hidden md:flex items-center gap-[32px] h-full">
+              {navItems.map((item, index) => (
+                <NavItem
+                  key={index}
+                  label={item.label}
+                  to={item.path}
+                  isActive={location.pathname === item.path}
+                />
+              ))}
             </div>
 
             {/* SEARCH ICON */}
@@ -153,7 +174,7 @@ const AcademicsHeader = () => {
         {/* ================= MOBILE MENU OVERLAY ================= */}
         {menuOpen && (
           <div
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[80]"
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[110]"
             onClick={() => setMenuOpen(false)}
           ></div>
         )}
@@ -165,7 +186,7 @@ const AcademicsHeader = () => {
     h-full w-[78%] max-w-[320px]
     bg-[#223F7F]             /* NEW drawer background */
     shadow-lg 
-    z-[90]
+    z-[120]
     p-[24px]
     flex flex-col gap-[20px]
     transform transition-transform duration-300 ease-out

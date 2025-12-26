@@ -1,6 +1,7 @@
 import React from "react";
 import { T } from "@/theme";
 import CheckMarkIcon from "@/assets/icons/CheckMarkIcon";
+import PageSection from "@/features/common/layout/PageContainer";
 import { EnrollmentIcon } from "./NursingAdmissionsSection";
 
 /* ICONS */
@@ -141,18 +142,8 @@ export default function FinancialAidScholarships() {
   ];
 
   return (
-    <section className={`${T.bg.sectionCard} w-full py-[80px] flex justify-center`}>
-      {/* ⭐ UNIFIED BASELINE CONTAINER (Matches Hero + Header) */}
-      <div
-        className="
-          w-full
-          w-full
-          mx-auto
-          px-4 sm:px-6 md:px-10 lg:px-[120px]
-          flex flex-col
-          gap-[40px]
-        "
-      >
+    <PageSection bg={T.bg.sectionCard} sectionClassName="py-[60px] md:py-[80px]">
+      <div className="flex flex-col gap-[40px]">
         {/* SECTION TITLE */}
         <h2
           className={`
@@ -161,6 +152,7 @@ export default function FinancialAidScholarships() {
             text-[42px]
             leading-[42px]
             text-[${T.color.secondary}]
+            mb-[40px]
           `}
         >
           Financial Aid & Scholarships
@@ -415,7 +407,7 @@ export default function FinancialAidScholarships() {
           </div>
         </div>
       </div>
-    </section>
+    </PageSection>
   );
 }
 

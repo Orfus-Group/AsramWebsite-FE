@@ -26,7 +26,7 @@ const NursingHeader = () => {
             w-full 
             max-w-[1440px] 
             mx-auto 
-            px-4 sm:px-6 md:px-10 lg:px-[120px]
+            px-5 sm:px-6 md:px-10 lg:px-[120px]
             flex justify-end items-center
             h-[46px]
           "
@@ -40,7 +40,7 @@ const NursingHeader = () => {
         <div
           className="
             w-full max-w-[1440px] mx-auto 
-            px-4 sm:px-6 md:px-10 lg:px-[120px]
+            px-5 sm:px-6 md:px-10 lg:px-[120px]
             h-[66px]
             flex items-center justify-between
           "

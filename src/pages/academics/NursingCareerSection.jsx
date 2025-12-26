@@ -56,7 +56,7 @@ export const ApprovedProgramsIcon = ({ className = "" }) => (
 
 export default function NursingCareerSection() {
   return (
-    <PageSection bg={T.bg.sectionCard} paddingClass="py-[80px]">
+    <PageSection bg={T.bg.sectionCard} sectionClassName="py-[60px] md:py-[80px]">
       {/* SECTION TITLE */}
       <h2
         className={`
@@ -66,26 +66,25 @@ export default function NursingCareerSection() {
           sm:text-[38px] sm:leading-[44px]
           md:text-[42px] md:leading-[46px]
           text-[${T.color.secondary}]
-          mb-[50px]
+          mb-[40px]
         `}
       >
         Shape Your Career in Nursing
       </h2>
 
       {/* MAIN LAYOUT */}
-      <div className="w-full h-auto lg:h-[367px] flex flex-col lg:flex-row items-center justify-start gap-[90px]">
+      <div className="w-full flex flex-col lg:flex-row items-center justify-start gap-[40px] lg:gap-[90px]">
 
         {/* LEFT IMAGE */}
         <div
           className="
-            flex-shrink-0
+            flex-1
+            w-full
+            lg:max-w-[563px]
+            aspect-[563/367]
             rounded-[8px]
             overflow-hidden
           "
-          style={{
-            width: "563px",
-            height: "367px",
-          }}
         >
           <img
             src={nursingcareer}
@@ -99,23 +98,17 @@ export default function NursingCareerSection() {
         {/* RIGHT GRID */}
         <div
           className="
+            flex-1
+            w-full
+            lg:max-w-[588px]
             grid
             grid-cols-2
+            gap-[23.7px]
           "
-          style={{
-            width: "588px",
-            height: "367px",
-            gap: "23.7px",
-          }}
         >
           {/* Custom Card 1 */}
           <div
-            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow"
-            style={{
-              width: "282.2px",
-              height: "171.7px",
-              borderRadius: "9.9px",
-            }}
+            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow aspect-[282/171] rounded-[9.9px]"
           >
             <ExcellenceIcon />
             <span
@@ -137,12 +130,7 @@ export default function NursingCareerSection() {
 
           {/* Custom Card 2 */}
           <div
-            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow"
-            style={{
-              width: "282.2px",
-              height: "171.7px",
-              borderRadius: "9.9px",
-            }}
+            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow aspect-[282/171] rounded-[9.9px]"
           >
             <ActiveStudentsIcon />
             <span
@@ -164,12 +152,7 @@ export default function NursingCareerSection() {
 
           {/* Custom Card 3 */}
           <div
-            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow"
-            style={{
-              width: "282.2px",
-              height: "171.7px",
-              borderRadius: "9.9px",
-            }}
+            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow aspect-[282/171] rounded-[9.9px]"
           >
             <PlacementSuccessIcon />
             <span
@@ -191,12 +174,7 @@ export default function NursingCareerSection() {
 
           {/* Custom Card 4 */}
           <div
-            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow"
-            style={{
-              width: "282.2px",
-              height: "171.7px",
-              borderRadius: "9.9px",
-            }}
+            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow aspect-[282/171] rounded-[9.9px]"
           >
             <ApprovedProgramsIcon />
             <span

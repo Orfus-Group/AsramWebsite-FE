@@ -2,6 +2,7 @@ import React from "react";
 import { T } from "@/theme";
 import { motion } from "framer-motion";
 import AnimatedStatValue from "@/features/common/ui/AnimatedStatValue";
+import PageSection from "@/features/common/layout/PageContainer";
 
 // Icons (react-icons/hi or similar suitable icons)
 import clinicalexposure from "@/assets/asram/clinicalexposure.png"; // Fallback image, user can replace
@@ -63,91 +64,90 @@ const ClinicalExposureSection = () => {
     ];
 
     return (
-        <section className="w-full bg-[#EEF2F7] py-[60px] md:py-[80px]">
-            <div className="w-full px-4 sm:px-6 md:px-10 lg:px-[120px]">
-                {/* TITLE */}
-                <h1
-                    className={`
+        <PageSection bg="bg-[#EEF2F7]" sectionClassName="py-[60px] md:py-[80px]">
+            {/* TITLE */}
+            <h1
+                className={`
             ${T.font.family}
             ${T.font.weight.bold}
             text-[28px] md:text-[42px]
             text-[#223F7F]
             mb-[40px]
           `}
-                >
-                    Clinical Exposure & Hospital Access
-                </h1>
+            >
+                Clinical Exposure & Hospital Access
+            </h1>
 
-                {/* MAIN CONTENT ROW */}
-                <div className="flex flex-col lg:flex-row gap-[40px] items-stretch">
-                    {/* LEFT: FEATURES LIST */}
-                    <div className="flex-1 flex flex-col justify-start gap-[20px]">
-                        {features.map((item, index) => (
-                            <div key={index} className="flex gap-[20px] items-start">
-                                {/* ICON BOX */}
-                                <div
-                                    className="
-                    flex-shrink-0
-                    w-[48px] h-[48px]
-                    bg-[#DCE4F2]
-                    text-[#223F7F]
-                    rounded-[8px]
-                    flex items-center justify-center
-                  "
-                                >
-                                    {item.icon}
-                                </div>
-
-                                {/* TEXT */}
-                                <div className="flex flex-col gap-[4px]">
-                                    <h3
-                                        className={`
-                      ${T.font.family}
-                      ${T.font.weight.medium}
-                      text-[18px] md:text-[18px]
-                      text-[#223F7F]
-                    `}
-                                    >
-                                        {item.title}
-                                    </h3>
-                                    <p
-                                        className={`
-                      ${T.font.family}
-                      text-[14px] md:text-[15px]
-                      leading-[1.5]
-                      text-[#191919BF]
-                    `}
-                                    >
-                                        {item.description}
-                                    </p>
-                                </div>
+            {/* MAIN CONTENT ROW */}
+            <div className="flex flex-col lg:flex-row gap-[40px] items-stretch">
+                {/* LEFT: FEATURES LIST */}
+                <div className="flex-1 flex flex-col justify-start gap-[20px]">
+                    {features.map((item, index) => (
+                        <div key={index} className="flex gap-[20px] items-start">
+                            {/* ICON BOX */}
+                            <div
+                                className="
+                flex-shrink-0
+                w-[48px] h-[48px]
+                bg-[#DCE4F2]
+                text-[#223F7F]
+                rounded-[8px]
+                flex items-center justify-center
+              "
+                            >
+                                {item.icon}
                             </div>
-                        ))}
-                    </div>
 
-                    {/* RIGHT: IMAGE */}
-                    <div className="w-full lg:w-[580px] flex-shrink-0">
-                        <img
-                            src={clinicalexposure} // Using existing image as placeholder, user can swap
-                            alt="Clinical Exposure"
-                            className="w-full h-full min-h-[300px] lg:min-h-[355px] object-cover rounded-[12px] shadow-sm"
-                        />
-                    </div>
+                            {/* TEXT */}
+                            <div className="flex flex-col gap-[4px]">
+                                <h3
+                                    className={`
+                  ${T.font.family}
+                  ${T.font.weight.medium}
+                  text-[18px] md:text-[18px]
+                  text-[#223F7F]
+                `}
+                                >
+                                    {item.title}
+                                </h3>
+                                <p
+                                    className={`
+                  ${T.font.family}
+                  text-[14px] md:text-[15px]
+                  leading-[1.5]
+                  text-[#191919BF]
+                `}
+                                >
+                                    {item.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
 
-                {/* STATS BAR */}
+                {/* RIGHT: IMAGE */}
+                <div className="w-full lg:w-[580px] flex-shrink-0">
+                    <img
+                        src={clinicalexposure} // Using existing image as placeholder, user can swap
+                        alt="Clinical Exposure"
+                        className="w-full h-full min-h-[300px] lg:min-h-[355px] object-cover rounded-[12px] shadow-sm"
+                    />
+                </div>
+            </div>
+
+            {/* STATS BAR */}
 
 
-                <div
-                    style={{ border: "solid 1px rgba(7, 7, 7, 0.2)" }}
-                    className="bg-[#FFF] rounded-[12px] p-[20px]   mt-[60px]"
-                >
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px] items-center text-center">
-                        {stats.map((stat, index) => (
-                            <div key={index} className="flex flex-col items-center justify-center">
-                                <AnimatedStatValue
-                                    value={stat.value}
-                                    className={`
+            <div
+                style={{ border: "solid 1px rgba(7, 7, 7, 0.2)" }}
+                className="bg-[#FFF] rounded-[12px] p-[20px]   mt-[60px]"
+            >
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px] items-center text-center">
+                    {stats.map((stat, index) => (
+                        <div key={index} className="flex flex-col items-center justify-center">
+                            <AnimatedStatValue
+                                value={stat.value}
+                                className={`
       font-montserrat
         font-semibold
         text-[32px]
@@ -155,16 +155,15 @@ const ClinicalExposureSection = () => {
         leading-[39px]
         text-[#223F7F]
       `}
-                                />
-                                <p className={`${T.font.family} text-[18px] text-[#191919BF] font-regular leading-[26px]`}>
-                                    {stat.label}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
+                            />
+                            <p className={`${T.font.family} text-[18px] text-[#191919BF] font-regular leading-[26px]`}>
+                                {stat.label}
+                            </p>
+                        </div>
+                    ))}
                 </div>
             </div>
-        </section>
+        </PageSection>
     );
 };
 

@@ -13,6 +13,8 @@ import ConferencesSection from "./sections/ConferencesSection";
 import FacultySection from "./sections/FacultySection";
 import ResearchSection from "./sections/ResearchSection";
 
+import MotionSection from "@/components/common/MotionSection";
+
 const GeneralSurgeryPage = () => {
     const { setHero, hideHero } = useHero();
 
@@ -42,15 +44,34 @@ const GeneralSurgeryPage = () => {
     }, [setHero, hideHero]);
 
     return (
-        <div className="flex flex-col">
-            {/* Sections will be added here as they are implemented */}
-            <DepartmentOverview />
-            <AcademicsSection />
-            <FacilitiesSection />
-            <ServicesSection />
-            <ConferencesSection />
-            <FacultySection />
-            <ResearchSection />
+        <div className="flex flex-col ">
+            <MotionSection>
+                <DepartmentOverview />
+            </MotionSection>
+
+            <MotionSection delay={0.1}>
+                <AcademicsSection />
+            </MotionSection>
+
+            <MotionSection delay={0.1}>
+                <FacilitiesSection />
+            </MotionSection>
+
+            <MotionSection delay={0.1}>
+                <ServicesSection />
+            </MotionSection>
+
+            <MotionSection delay={0.2}>
+                <ConferencesSection />
+            </MotionSection>
+
+            <MotionSection delay={0.2}>
+                <FacultySection />
+            </MotionSection>
+
+            <MotionSection delay={0.2}>
+                <ResearchSection />
+            </MotionSection>
         </div>
     );
 };

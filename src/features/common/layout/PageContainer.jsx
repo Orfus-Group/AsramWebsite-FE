@@ -17,10 +17,9 @@ export default function PageSection({
       <div
         className={`
           w-full
-          w-full
-
-
-          px-4
+           max-w-[1440px]
+          mx-auto
+          px-5     
           sm:px-6
           md:px-10
           lg:px-[120px]
