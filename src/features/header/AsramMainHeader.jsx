@@ -54,7 +54,7 @@ const megaMenuContent = {
 
 const NavItem = ({ label, to, isActive, hasMegaMenu, onClick, onHover }) => {
   const baseClasses = `${T.font.family} text-[18px] leading-[26px] transition-all duration-300 relative group cursor-pointer h-full flex items-center select-none`;
-  const activeClasses = `text-[#223F7F] font-bold`;
+  const activeClasses = `text-[#223F7F] ${T.font.weight.medium}`;
   const inactiveClasses = `${T.font.weight.regular} text-[#191919] hover:text-[#223F7F]`;
 
   return (
