@@ -11,7 +11,8 @@ export default function Footer() {
       <div
         className="
           w-full
-          px-4 sm:px-6 md:px-10 lg:px-[120px]
+          max-w-[1440px] mx-auto
+          px-5 sm:px-6 md:px-10 lg:px-[120px]
           pt-[60px] pb-[60px] lg:pt-[80px] lg:pb-[80px]
           flex flex-col 
           items-center

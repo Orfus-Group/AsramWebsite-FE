@@ -25,6 +25,7 @@ const ParamedicalIcon = ({
     className={className}
   >
     <path
+      className="transition-all duration-700"
       d="M14.6665 2.66675V5.33341"
       stroke={color}
       strokeWidth={strokeWidth}
@@ -32,6 +33,7 @@ const ParamedicalIcon = ({
       strokeLinejoin="round"
     />
     <path
+      className="transition-all duration-700"
       d="M6.66675 2.66675V5.33341"
       stroke={color}
       strokeWidth={strokeWidth}
@@ -39,6 +41,7 @@ const ParamedicalIcon = ({
       strokeLinejoin="round"
     />
     <path
+      className="transition-all duration-700"
       d="M6.66675 4H5.33341C4.62617 4 3.94789 4.28095 3.4478 4.78105C2.9477 5.28115 2.66675 5.95942 2.66675 6.66667V12C2.66675 14.1217 3.5096 16.1566 5.00989 17.6569C6.51018 19.1571 8.54502 20 10.6667 20C12.7885 20 14.8233 19.1571 16.3236 17.6569C17.8239 16.1566 18.6667 14.1217 18.6667 12V6.66667C18.6667 5.95942 18.3858 5.28115 17.8857 4.78105C17.3856 4.28095 16.7073 4 16.0001 4H14.6667"
       stroke={color}
       strokeWidth={strokeWidth}
@@ -46,6 +49,7 @@ const ParamedicalIcon = ({
       strokeLinejoin="round"
     />
     <path
+      className="transition-all duration-700"
       d="M10.6667 20C10.6667 22.1217 11.5096 24.1566 13.0099 25.6569C14.5102 27.1571 16.545 28 18.6667 28C20.7885 28 22.8233 27.1571 24.3236 25.6569C25.8239 24.1566 26.6667 22.1217 26.6667 20V16"
       stroke={color}
       strokeWidth={strokeWidth}
@@ -53,6 +57,7 @@ const ParamedicalIcon = ({
       strokeLinejoin="round"
     />
     <path
+      className="transition-all duration-700"
       d="M26.6665 16.0001C28.1393 16.0001 29.3332 14.8062 29.3332 13.3334C29.3332 11.8607 28.1393 10.6667 26.6665 10.6667C25.1938 10.6667 23.9999 11.8607 23.9999 13.3334C23.9999 14.8062 25.1938 16.0001 26.6665 16.0001Z"
       stroke={color}
       strokeWidth={strokeWidth}
@@ -205,6 +210,7 @@ const InstitutionsSection = () => {
                   w-[64px] h-[64px] 
                   rounded-[12px] flex items-center justify-center 
                   mb-[22px]
+                  group-hover:[&_path]:stroke-[#223F7F]
                 "
                 style={{ backgroundColor: iconBgColors[item.id] }}
               >
