@@ -52,6 +52,56 @@ const megaMenuContent = {
   News: academicsContent,
 };
 
+const NavItem = ({ label, to, isActive, hasMegaMenu, onClick, onHover }) => {
+  const baseClasses = `${T.font.family} text-[18px] leading-[26px] transition-all duration-300 relative group cursor-pointer h-full flex items-center select-none`;
+  const activeClasses = `text-[#223F7F] font-bold`;
+  const inactiveClasses = `${T.font.weight.regular} text-[#191919] hover:text-[#223F7F]`;
+
+  return (
+    <>
+      {to ? (
+        <Link
+          to={to}
+          onClick={onClick}
+          onMouseEnter={onHover}
+          className={`${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
+          style={{ color: isActive ? T.color.secondary : undefined }}
+        >
+          <span className="relative py-1">
+            {label}
+            <span
+              className={`
+                absolute bottom-0 left-0 h-[2px] bg-[#223F7F] transition-all duration-300 ease-out
+                w-0 group-hover:w-full
+              `}
+            />
+          </span>
+        </Link>
+      ) : (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onClick && onClick(e);
+          }}
+          onMouseEnter={onHover}
+          className={`${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
+          style={{ color: isActive ? T.color.secondary : undefined }}
+        >
+          <span className="relative py-1">
+            {label}
+            <span
+              className={`
+                absolute bottom-0 left-0 h-[2px] bg-[#223F7F] transition-all duration-300 ease-out
+                w-0 group-hover:w-full
+              `}
+            />
+          </span>
+        </button>
+      )}
+    </>
+  );
+};
+
 const AsramMainHeader = () => {
   const [openMenu, setOpenMenu] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -60,26 +110,21 @@ const AsramMainHeader = () => {
 
   useEffect(() => {
     function handleClickOutside(event) {
-      // If mobile menu is active, ignore global clicks intended for desktop dropdown closure
       if (mobileMenuOpen) return;
-
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setOpenMenu(null);
       }
     }
     if (openMenu) document.addEventListener("mousedown", handleClickOutside);
-
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [openMenu, mobileMenuOpen]);
 
-  // Disable page scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
-
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -97,7 +142,6 @@ const AsramMainHeader = () => {
               lg:max-w-full
               h-full
               flex items-center
-              justify-center lg:justify-end
               justify-center lg:justify-end
               gap-[20px]
               scrollbar-none
@@ -149,90 +193,58 @@ const AsramMainHeader = () => {
           </button>
 
           {/* LEFT NAV */}
-          <nav className={`${T.font.family} hidden lg:flex flex-1 items-center justify-between gap-[40px] mr-[84px]`}>
-            {/* About (Mega Menu) */}
-            {/* About (Link - No Mega Menu) */}
-            <Link
+          <nav className={`${T.font.family} hidden lg:flex flex-1 items-center justify-between gap-[40px] mr-[84px] h-full`}>
+            <NavItem
+              label="About"
               to="/about-asram"
+              isActive={location.pathname.startsWith("/about-asram")}
               onClick={() => setOpenMenu(null)}
-              className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px] ${location.pathname.startsWith("/about-asram") ? `text-[${T.color.text.secondary}] font-bold` : ""}`}
-              style={{ color: location.pathname.startsWith("/about-asram") ? T.color.secondary : T.color.dark }}
-            >
-              About
-            </Link>
-
-            {/* Academics (Link) */}
-            {/* Academics (Mega Menu) */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setOpenMenu((prev) => (prev === "Academics" ? null : "Academics"));
-              }}
-              className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px] ${location.pathname.startsWith("/academics") ? `text-[${T.color.text.secondary}] font-bold` : ""
-                }`}
-              style={{ color: location.pathname.startsWith("/academics") ? T.color.secondary : T.color.dark }}
-            >
-              Academics
-            </button>
-
-            {/* Research (Link) */}
-            {/* Research (Mega Menu) */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setOpenMenu((prev) => (prev === "Research" ? null : "Research"));
-              }}
-              className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px] ${location.pathname.startsWith("/research") ? `text-[${T.color.text.secondary}] font-bold` : ""
-                }`}
-              style={{ color: location.pathname.startsWith("/research") ? T.color.secondary : T.color.dark }}
-            >
-              Research
-            </button>
+            />
+            <NavItem
+              label="Academics"
+              isActive={location.pathname.startsWith("/academics")}
+              onClick={() => setOpenMenu((prev) => (prev === "Academics" ? null : "Academics"))}
+              hasMegaMenu
+            />
+            <NavItem
+              label="Research"
+              isActive={location.pathname.startsWith("/research")}
+              onClick={() => setOpenMenu((prev) => (prev === "Research" ? null : "Research"))}
+              hasMegaMenu
+            />
           </nav>
 
           {/* LOGO */}
-          <Link to="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:translate-x-0 lg:translate-y-0 lg:mx-0">
+          <Link to="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:translate-x-0 lg:translate-y-0 lg:mx-0 z-[101]">
             <img
               loading="eager"
               fetchPriority="high"
               decoding="async"
               src={Logo}
-              className="h-[42px] w-[170px] sm:h-[46px] sm:w-[189px] object-contain"
+              className="h-[42px] w-[170px] sm:h-[46px] sm:w-[189px] object-contain transition-transform duration-300 hover:scale-[1.02]"
             />
           </Link>
 
           {/* RIGHT NAV */}
-          <nav className={`${T.font.family} hidden lg:flex flex-1 items-center justify-between gap-[40px] ml-[84px]`}>
-            {/* Healthcare (Link) */}
-            <Link
+          <nav className={`${T.font.family} hidden lg:flex flex-1 items-center justify-between gap-[40px] ml-[84px] h-full`}>
+            <NavItem
+              label="Healthcare"
               to="/healthcare"
+              isActive={location.pathname.startsWith("/healthcare")}
               onClick={() => setOpenMenu(null)}
-              className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px] ${location.pathname.startsWith("/healthcare") ? `text-[${T.color.text.secondary}] font-bold` : ""}`}
-              style={{ color: location.pathname.startsWith("/healthcare") ? T.color.secondary : T.color.dark }}
-            >
-              Healthcare
-            </Link>
-
-            {/* Campus Life (Link) */}
-            <Link
+            />
+            <NavItem
+              label="Campus Life"
               to="/campus-life"
+              isActive={location.pathname.startsWith("/campus-life")}
               onClick={() => setOpenMenu(null)}
-              className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px] ${location.pathname.startsWith("/campus-life") ? `text-[${T.color.text.secondary}] font-bold` : ""}`}
-              style={{ color: location.pathname.startsWith("/campus-life") ? T.color.secondary : T.color.dark }}
-            >
-              Campus Life
-            </Link>
-
-            {/* News (Link) */}
-            <Link
+            />
+            <NavItem
+              label="News"
               to="/news"
+              isActive={location.pathname.startsWith("/news")}
               onClick={() => setOpenMenu(null)}
-              className={`${T.font.family} ${T.font.weight.regular} text-[18px] leading-[26px] ${location.pathname.startsWith("/news") ? `text-[${T.color.text.secondary}] font-bold` : ""
-                }`}
-              style={{ color: location.pathname.startsWith("/news") ? T.color.secondary : T.color.dark }}
-            >
-              News
-            </Link>
+            />
           </nav>
         </div>
 
