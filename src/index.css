@@ -54,32 +54,38 @@
   animation: pingSlow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-/* CUSTOM SCROLLBAR */
+/* 
+  CUSTOM SCROLLBAR (Webkit) 
+  IMPORTANT: Do not use 'scrollbar-color' or 'scrollbar-width' globally 
+  as they will disable these webkit styles in modern Chrome.
+*/
+
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 19.3px !important;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f1f1f1 !important;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #223F7F !important;
   border-radius: 20px !important;
   border: 5px solid #f1f1f1 !important;
-  min-height: 250px !important;
+  background-clip: padding-box !important;
 }
 
+/* Force minimum height for the vertical thumb */
 ::-webkit-scrollbar-thumb:vertical {
-  min-height: 250px !important;
+  min-height: 150px !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #1a3163 !important;
 }
 
-/* Firefox */
-* {
-  /* scrollbar-width: thin; */
-  scrollbar-color: #223F7F #f1f1f1;
+/* Ensure body doesn't override with standard props */
+html,
+body {
+  scrollbar-width: auto !important;
 }
