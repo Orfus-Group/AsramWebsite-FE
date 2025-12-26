@@ -53,11 +53,29 @@ const InnerLayout = () => {
   const Header = headerMap[layoutKey] || React.Fragment;
   const Footer = footerMap[layoutKey] || React.Fragment;
 
+  // Paths that should show hero pagination dots
+  const allowedHeroPaginationPaths = [
+    "/",
+    "/campus-life",
+    "/about-asram",
+    "/healthcare",
+    "/healthcare/departments/general-surgery",
+    "/academics",
+    "/nursing",
+    "/research",
+  ];
+
+  const showPagination = allowedHeroPaginationPaths.includes(pathname);
+
   return (
     <>
       <Header />
       {heroData.isVisible && (
-        <CommonHero title={heroData.title} bgImage={heroData.bgImage}>
+        <CommonHero
+          title={heroData.title}
+          bgImage={heroData.bgImage}
+          showPagination={showPagination}
+        >
           {heroData.children}
         </CommonHero>
       )}

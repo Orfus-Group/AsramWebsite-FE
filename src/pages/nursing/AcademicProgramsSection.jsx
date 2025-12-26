@@ -77,7 +77,6 @@ export default function AcademicProgramsSection() {
           lg:grid-cols-3
           lg:gap-[30px]
           
-          items-start
           w-full
         "
       >

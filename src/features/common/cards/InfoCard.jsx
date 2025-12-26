@@ -50,7 +50,7 @@ export default function InfoCard({
         vmv: {
             wrapper: `
     w-full                 /* allow responsive width */
-    h-auto md:h-[360px]    /* Fixed height from Figma */
+    h-full
     flex flex-col items-start justify-start
     rounded-[12px]
     bg-white
@@ -175,7 +175,7 @@ export default function InfoCard({
         keystrength: {
             wrapper: `
     w-full
-    min-h-[277px]
+    h-full
     flex flex-col items-start justify-start
     rounded-[9.87px]
     bg-[#F7F9FC]
@@ -218,7 +218,7 @@ export default function InfoCard({
         research: {
             wrapper: `
     w-full
-    h-[214.5px]
+    h-full
     flex flex-col justify-start items-start
     rounded-[12px]
     bg-white
@@ -248,7 +248,7 @@ export default function InfoCard({
         socialCommitment: {
             wrapper: `
     w-full
-    h-[258.6px]
+    h-full
     flex flex-col items-start justify-start
     rounded-[12px]
     bg-[#EEF2F7]
@@ -281,7 +281,7 @@ export default function InfoCard({
         studentExperience: {
             wrapper: `
     w-full
-    h-[296.1px]
+    h-full
     flex flex-col items-start justify-start
     rounded-[12px]
     bg-[#EEF2F7]

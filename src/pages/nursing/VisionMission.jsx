@@ -68,7 +68,6 @@ export default function VisionMissionSection() {
           gap-y-[32px]
           lg:gap-x-[46px]
 
-          items-start
           w-full
         "
       >

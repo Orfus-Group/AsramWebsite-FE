@@ -2,11 +2,10 @@ import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import CarouselSlideIcon from "@/assets/icons/CarouselSlideIcon";
 
-const CommonHero = ({ title, bgImage, children }) => {
+const CommonHero = ({ title, bgImage, children, showPagination = false }) => {
     return (
         <section
             className="
-        relative w-full
         relative w-full
         min-h-[335px] h-auto
         sm:h-[450px]
@@ -74,14 +73,12 @@ const CommonHero = ({ title, bgImage, children }) => {
                 </PageSection>
             </div>
 
-            {/* Optional: Only show carousel icon if specifically needed or just keep it? 
-          User said "use the same...". AsramHero had it. 
-          But for generic pages (News/Faculty), a slide icon implies multiple slides which don't exist.
-          I'll leave it here as it was in AsramHero. If needed I can hide it via CSS or prop later.
-      */}
-            <div className="hidden md:block">
-                <CarouselSlideIcon activeIndex={0} />
-            </div>
+            {/* Pagination Dots (Only show on specific pages) */}
+            {showPagination && (
+                <div className="hidden md:block">
+                    <CarouselSlideIcon activeIndex={0} />
+                </div>
+            )}
         </section>
     );
 };
