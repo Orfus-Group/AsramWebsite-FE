@@ -193,7 +193,7 @@ export default function ResearchSection() {
   return (
     <PageSection
       bg="bg-[#EEF2F7]"
-      paddingClass="py-[40px] md:py-[80px]"
+      paddingClass="py-[80px]"
     >
       {/* Heading */}
       <h2
@@ -202,7 +202,7 @@ export default function ResearchSection() {
           ${T.font.weight.bold}
           text-[28px] sm:text-[36px] md:text-[42px] leading-[1.2]
           text-[${T.color.secondary}]
-          w-full mb-[30px] md:mb-[50px]
+          w-full mb-[40px]
         `}
       >
         Research
@@ -215,7 +215,7 @@ export default function ResearchSection() {
           grid-cols-1 
           sm:grid-cols-2 
           lg:grid-cols-3
-          gap-[32px]
+          gap-[30px]
           w-full
         "
       >
@@ -231,7 +231,7 @@ export default function ResearchSection() {
       </div>
 
       {/* CTA */}
-      <div className="mt-[50px] flex justify-center">
+      <div className="mt-[40px] flex justify-center">
         <Button>Explore Our Research</Button>
       </div>
 

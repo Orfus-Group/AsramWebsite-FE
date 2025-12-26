@@ -203,40 +203,40 @@ export default function StudentExperience() {
       </div>
 
       {/* Top — Image + Content */}
-      <div className="flex flex-col-reverse xl:flex-row items-center justify-between gap-[24px] md:gap-[32px] xl:gap-[40px] w-full mb-[32px] md:mb-[40px]">
-        {/* Left Image */}
-        <div className="w-full xl:w-[578px] flex-shrink-0 bg-gray-200 rounded-[8px]">
-          <img loading="lazy" decoding="async"
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[40px] items-start mb-[60px]">
+        {/* Left: Image */}
+        <div className="w-full">
+          <img
             src={studentExpMain}
-            alt="Student Experience"
-            className="w-full h-[250px] sm:h-[320px] md:h-[360px] xl:h-[394px] object-cover rounded-[8px]"
+            alt="Nursing Student Experience"
+            className="w-full xl:h-[368px] h-auto block object-cover rounded-[12px]"
           />
         </div>
 
-        {/* Right Text */}
-        <div className="flex flex-col gap-[16px] md:gap-[20px] lg:gap-[24px] w-full xl:max-w-[578px]">
-          <h3 className="font-regular font-semibold text-[24px] md:text-[28px] lg:text-[32px] leading-[32px] md:leading-[38px] lg:leading-[42px] text-[#223F7F] max-w-full xl:max-w-[461px]">
+        {/* Right: Content */}
+        <div className="w-full flex flex-col items-start justify-center">
+          <h3 className="font-regular font-semibold text-[24px] md:text-[28px] lg:text-[32px] leading-[32px] md:leading-[38px] lg:leading-[42px] text-[#223F7F] max-w-full">
             Comprehensive Learning Environment
           </h3>
 
-          <p className="font-regular text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[28px] text-[#191919BF]">
+          <p className="font-regular text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[26px] text-justify text-[#191919BF] mt-[20px]">
             At ASRAM School of Nursing, we prioritize creating an environment where students can thrive academically, professionally, and personally. Our approach combines rigorous academics with practical exposure and holistic development.
           </p>
-          <p className="font-regular text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[28px] text-[#191919BF]">
+          <p className="font-regular text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[26px] text-justify text-[#191919BF] mt-[20px]">
             At ASRAM School of Nursing, we prioritize creating an environment where students can thrive academically, professionally, and personally. Our approach combines rigorous academics with practical exposure and holistic development.
           </p>
         </div>
       </div>
 
       {/* Bottom — 4 Feature Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[16px] md:gap-[20px] lg:gap-[24px] w-full justify-items-center xl:justify-items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[20px] xl:gap-x-[23.7px] xl:gap-y-[24px] w-full justify-items-center xl:justify-items-stretch">
         {features.map((item, i) => (
           <InfoCard
             key={i}
             icon={item.icon}
             title={item.title}
             description={item.desc}
-            variant="feature"
+            variant="studentExperience"
           />
         ))}
       </div>

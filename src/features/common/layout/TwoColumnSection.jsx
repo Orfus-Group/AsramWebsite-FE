@@ -33,19 +33,20 @@ export default function TwoColumnSection({
         </h2>
       )}
 
-      <div className="flex flex-col lg:flex-row gap-[40px] w-full">
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[47px] w-full">
 
         {/* LEFT: Image */}
-        <div className="w-full lg:w-[50%] flex-shrink-0">
+        <div className="w-full">
           <img loading="lazy" decoding="async"
             src={image}
             alt={title}
-            className="w-full h-auto rounded-[10px] object-cover"
+            className="w-full h-auto block object-cover rounded-[10px]"
           />
         </div>
 
         {/* RIGHT: Content */}
-        <div className="w-full lg:w-[50%] flex flex-col gap-[24px]">
+        <div className="w-full flex flex-col gap-[24px]">
 
           {/* Sub heading */}
           {innerHeading && (

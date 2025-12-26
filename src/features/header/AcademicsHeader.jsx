@@ -50,12 +50,10 @@ const AcademicsHeader = () => {
   return (
     <div className="sticky -top-[46px] z-[100] w-full">
       {/* ================= TOP BLUE BAR ================= */}
-      <div style={{ backgroundColor: T.color.text.secondary }}>
+      <div className="w-full" style={{ backgroundColor: T.color.text.secondary }}>
         <div
           className="
-            w-full 
-            max-w-[1440px] 
-            mx-auto 
+            w-full
             px-4 sm:px-6 md:px-10 lg:px-[120px]
             flex justify-end items-center
             h-[46px]
@@ -69,7 +67,7 @@ const AcademicsHeader = () => {
       <nav className="w-full bg-white border-b border-gray-100 relative z-[100]">
         <div
           className="
-            w-full max-w-[1440px] mx-auto 
+            w-full
             px-4 sm:px-6 md:px-10 lg:px-[120px]
             h-[66px]
             flex items-center justify-between
@@ -102,18 +100,20 @@ const AcademicsHeader = () => {
 
           {/* ================= CENTER LOGO (Mobile) ================= */}
           <div className="flex-1 flex justify-center md:justify-start">
-            <img
-              loading="eager"
-              decoding="async"
-              src={LogoFull}
-              alt="Asram Logo"
-              className="
+            <Link to="/nursing">
+              <img
+                loading="eager"
+                decoding="async"
+                src={LogoFull}
+                alt="Asram Logo"
+                className="
                 h-[40px] 
                 w-auto 
                 md:h-[46px] 
                 md:w-[191px]
               "
-            />
+              />
+            </Link>
           </div>
 
           {/* ================= RIGHT SIDE — SEARCH + DESKTOP NAV ================= */}

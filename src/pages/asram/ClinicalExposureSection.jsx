@@ -64,7 +64,7 @@ const ClinicalExposureSection = () => {
 
     return (
         <section className="w-full bg-[#EEF2F7] py-[60px] md:py-[80px]">
-            <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px]">
+            <div className="w-full px-4 sm:px-6 md:px-10 lg:px-[120px]">
                 {/* TITLE */}
                 <h1
                     className={`

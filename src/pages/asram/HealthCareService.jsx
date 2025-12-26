@@ -57,6 +57,28 @@ const services = [
 
 const CARD_BORDER = "rgba(26, 24, 24, 0.10)";
 
+const buttonAnim = {
+  rest: { scale: 1 },
+  hover: {
+    scale: 1.02,
+    filter: "brightness(0.96)",
+    transition: { duration: 0.2 }
+  },
+  tap: { scale: 0.98 }
+};
+
+const arrowAnim = {
+  rest: { x: 0 },
+  hover: {
+    x: 5,
+    transition: {
+      type: "spring",
+      stiffness: 400,
+      damping: 10
+    }
+  }
+};
+
 const HealthcareServices = () => {
   return (
     <PageSection
@@ -112,7 +134,6 @@ const HealthcareServices = () => {
             style={{
               borderColor: CARD_BORDER,
               width: "100%",
-              maxWidth: "585px",
             }}
           >
             {/* ICON CIRCLE */}
@@ -171,7 +192,7 @@ const HealthcareServices = () => {
             </p>
 
             {/* CTA BUTTON */}
-            <button
+            <motion.button
               className="
                 flex items-center justify-center gap-[6px]
                 rounded-[6px]
@@ -179,6 +200,10 @@ const HealthcareServices = () => {
                 w-full
               "
               style={{ backgroundColor: item.buttonBg }}
+              initial="rest"
+              whileHover="hover"
+              whileTap="tap"
+              variants={buttonAnim}
             >
               <span
                 className="
@@ -189,13 +214,15 @@ const HealthcareServices = () => {
                 {item.ctatext}
               </span>
 
-              <IconFullArrowRight
-                size={18}
-                className="sm:w-[20px] sm:h-[20px]"
-                stroke="#191919"
-                strokeWidth={2}
-              />
-            </button>
+              <motion.div variants={arrowAnim}>
+                <IconFullArrowRight
+                  size={18}
+                  className="sm:w-[20px] sm:h-[20px]"
+                  stroke="#191919"
+                  strokeWidth={2}
+                />
+              </motion.div>
+            </motion.button>
           </HoverCard>
         ))}
       </StaggerContainer>

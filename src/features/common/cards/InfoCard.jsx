@@ -10,6 +10,7 @@ export default function InfoCard({
     variant = "program",
     buttonText,
     onClick,
+    className = "",
 }) {
     const isProgram = variant === "program";
 
@@ -20,25 +21,17 @@ export default function InfoCard({
         program: {
             wrapper: `
       w-full             
-    max-w-[380px]    
-    min-w-0 md:min-w-[340px]       
-    h-auto md:h-[422.37px]
-    flex flex-col items-start justify-start
-    rounded-[12px]
+      h-full
+      flex flex-col items-start justify-start
+      rounded-[12px]
+      ${className}
       `,
             wrapperStyle: {
-                backgroundColor: "#EEF2F7",   // your card BG
-                border: "1px solid #07070733",
-                paddingTop: "23.7px",
-                paddingLeft: "23.7px",
-                paddingRight: "23.7px",
-                paddingBottom: "23.7px",
-                gap: "16.8px",
-
-                /* 🔹 Figma bottom curved stroke */
-                borderRadius: "9.87px",
-
-                /* 🔹 Create the curved bottom effect */
+                backgroundColor: "#EEF2F7",
+                border: "1px solid rgba(7, 7, 7, 0.2)",
+                padding: "30px", // Uniform padding as per Figma
+                gap: "20px",     // Gap between elements as per Figma
+                borderRadius: "12px",
             },
 
             title: `
@@ -48,7 +41,7 @@ export default function InfoCard({
         text-left
       `,
             paragraph: `
-        w-[293.1px] h-[144px]
+        w-full
         ${T.font.family} text-[16px] leading-[24px] text-left
       `,
         },
@@ -57,16 +50,15 @@ export default function InfoCard({
         vmv: {
             wrapper: `
     w-full                 /* allow responsive width */
-    max-w-[380px]    
-    min-w-0 md:min-w-[340px]   
-    h-auto md:h-[330px]
+    h-auto md:h-[360px]    /* Fixed height from Figma */
     flex flex-col items-start justify-start
-    rounded-[9.87px]
+    rounded-[12px]
     bg-white
+    ${className}
   `,
             wrapperStyle: {
-                border: `1px solid ${T.color.border}`,
-                padding: "33px",
+                border: "1px solid rgba(7, 7, 7, 0.2)",
+                padding: "30px",
                 gap: "20px",
             },
             title: `
@@ -76,8 +68,8 @@ export default function InfoCard({
   `,
             paragraph: `
     w-full
-    max-w-[304.93px]
-    ${T.font.family} text-[16px] leading-[24px] text-left
+    ${T.font.family} text-[18px] leading-[26px] text-justify
+    text-[rgba(25, 25, 25, 0.75)]
   `,
         },
 
@@ -183,7 +175,6 @@ export default function InfoCard({
         keystrength: {
             wrapper: `
     w-full
-    max-w-[390px]        /* FIX: Prevents breaking on smaller laptops */
     min-h-[277px]
     flex flex-col items-start justify-start
     rounded-[9.87px]
@@ -227,22 +218,22 @@ export default function InfoCard({
         research: {
             wrapper: `
     w-full
-    max-w-[390px]        /* FIX: Prevents breaking on smaller laptops */
-    min-h-[220px]
+    h-[214.5px]
     flex flex-col justify-start items-start
-    rounded-[10px]
+    rounded-[12px]
+    bg-white
   `,
             wrapperStyle: {
-                backgroundColor: T.color.background.soft,
-                border: `1px solid ${T.color.border}`,
-                padding: "26px",
-                gap: "16px",
+                border: "1px solid #e5e7eb",
+                padding: "20px",
+                gap: "14px",
             },
             title: `
     ${T.font.family}
     ${T.font.weight.semibold}
     text-[20px] leading-[28px]
     text-left
+    text-[#223f7f]
   `,
             paragraph: `
     ${T.font.family}
@@ -250,6 +241,75 @@ export default function InfoCard({
     text-[18px] leading-[26px]
     text-left
     w-full
+    text-[#191919BF]
+  `,
+        },
+
+        socialCommitment: {
+            wrapper: `
+    w-full
+    h-[258.6px]
+    flex flex-col items-start justify-start
+    rounded-[12px]
+    bg-[#EEF2F7]
+  `,
+            wrapperStyle: {
+                backgroundColor: "#EEF2F7",
+                padding: "24px",
+                gap: "12px",
+                /* No border, using shadow matching image snippet */
+                boxShadow: "0px 8px 16px 0px rgba(0, 140, 140, 0.04), 0px 0px 4px 0px rgba(0, 140, 140, 0.04), 0px 0px 4px 0px rgba(0, 140, 140, 0.08)",
+            },
+            title: `
+    ${T.font.family}
+    ${T.font.weight.semibold}
+    text-[20px] leading-[28px]
+    text-left
+    w-full
+    text-[#223f7f]
+  `,
+            paragraph: `
+    ${T.font.family}
+    font-normal
+    text-[16px] leading-[24px]
+    text-left
+    w-full
+    text-[rgba(25,25,25,0.75)]
+  `,
+        },
+
+        studentExperience: {
+            wrapper: `
+    w-full
+    h-[296.1px]
+    flex flex-col items-start justify-start
+    rounded-[12px]
+    bg-[#EEF2F7]
+  `,
+            wrapperStyle: {
+                padding: "24px",
+                backgroundColor: "#EEF2F7",
+                // border: "1px solid rgba(7, 7, 7, 0.2)",
+
+                gap: "12px",
+                /* No border as per visual/snippet, relying on shadow/bg */
+                boxShadow: "0px 8px 16px 0px rgba(0, 140, 140, 0.04), 0px 0px 4px 0px rgba(0, 140, 140, 0.04), 0px 0px 4px 0px rgba(0, 140, 140, 0.08)",
+            },
+            title: `
+    ${T.font.family}
+    ${T.font.weight.semibold}
+    text-[22px] leading-[1.2]
+    text-left
+    w-full
+    text-[#223f7f]
+  `,
+            paragraph: `
+    ${T.font.family}
+    font-normal
+    text-[18px] leading-[1.44]
+    text-left
+    w-full
+    text-[rgba(25,25,25,0.75)]
   `,
         },
 
@@ -343,10 +403,10 @@ export default function InfoCard({
         return (
             <div
                 className="
-          w-[55.26px]
-          h-[55.26px]
+          w-[55.3px]
+          h-[55.3px]
           flex items-center justify-center
-          rounded-[9.87px]
+          rounded-[9.9px]
           shrink-0
         "
                 style={{ backgroundColor: T.color.primary }}
@@ -385,33 +445,18 @@ export default function InfoCard({
 
             {/* BADGES FOR PROGRAM VARIANT */}
             {isProgram && (
-                <div className="flex items-center gap-[10px] mb-[26px]">
+                <div className="flex items-center gap-[10px]">
                     <span
                         className="
               flex items-center justify-center
-              w-[141.26px] h-[29.61px]
-              rounded-[3.95px]
-              font-montserrat text-[13.8px] leading-[1.43]
+              px-[12px] h-[30px]
+              rounded-[4px]
+              font-montserrat text-[14px] leading-[1.43]
             "
                         style={{ backgroundColor: T.color.primary, color: "#FFFFFF" }}
                     >
                         {years}
                     </span>
-
-                    {/* <span
-                        className="
-              flex items-center justify-center
-              w-[97.4px] h-[29.61px]
-              bg-white border rounded-[3.95px]
-              font-montserrat text-[13.8px] leading-[1.43]
-            "
-                        style={{
-                            borderColor: T.color.text.secondary,
-                            color: T.color.text.secondary,
-                        }}
-                    >
-                        {seats}
-                    </span> */}
                 </div>
             )}
 

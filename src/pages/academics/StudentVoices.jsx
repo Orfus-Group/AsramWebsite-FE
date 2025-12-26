@@ -62,8 +62,7 @@ export default function StudentVoices() {
       <div
         className="
           w-full
-          max-w-[1440px]
-          mx-auto
+          w-full
           px-4 sm:px-6 md:px-10 lg:px-[120px]
           flex flex-col
           gap-[32px]
@@ -106,7 +105,7 @@ export default function StudentVoices() {
               }}
             >
               {/* QUOTE ICON */}
-             <QuoteIcon className="w-[39.47px] h-[39.47px] mb-[12px]" />
+              <QuoteIcon className="w-[39.47px] h-[39.47px] mb-[12px]" />
 
 
               {/* TESTIMONIAL */}

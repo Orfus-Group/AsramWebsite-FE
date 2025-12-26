@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from "react";
 import { useHero } from "@/context/HeroContext";
 import { T } from "@/theme";
+import MotionSection from "@/components/common/MotionSection";
 import CareAtAsram from "./sections/CareAtAsram";
 import SpecialtiesDepartments from "./sections/SpecialtiesDepartments";
 import ExperiencedDoctors from "./sections/ExpertMedicalTeams";
@@ -14,21 +15,21 @@ import HospitalInfrastructureGallery from "./sections/HospitalInfrastructureGall
 import HeroBg from "@/assets/healthcare/healthcareherobg.png";
 
 const HealthcarePage = () => {
-    const { setHero } = useHero();
+  const { setHero } = useHero();
 
-    useLayoutEffect(() => {
-        setHero({
-            title: (
-                          <span className="font-montserrat font-bold text-[32px] md:text-[60px] leading-[54px] text-white">
-         Healthcare
+  useLayoutEffect(() => {
+    setHero({
+      title: (
+        <span className="font-montserrat font-bold text-[32px] md:text-[60px] leading-[54px] text-white">
+          Healthcare
         </span>
-                       ),
-            bgImage: HeroBg,
-            isVisible: true,
-                children: (
+      ),
+      bgImage: HeroBg,
+      isVisible: true,
+      children: (
         <>
           <p className="font-montserrat font-medium text-[16px] md:text-[22px] leading-[1.4] text-white max-w-[520px] mb-6">
-A well-structured campus environment that supports academic focus, personal growth, and student well-being.          </p>
+            A well-structured campus environment that supports academic focus, personal growth, and student well-being.          </p>
 
           {/* <button
             className="
@@ -45,23 +46,43 @@ A well-structured campus environment that supports academic focus, personal grow
           </button> */}
         </>
       ),
-        });
-    }, [setHero]);
+    });
+  }, [setHero]);
 
-    return (
-        <div className="w-full bg-white">
-            <CareAtAsram />
-            <SpecialtiesDepartments />
-            <ExperiencedDoctors />
-            <PatientCareFacilities />
-            <DiagnosticServices />
-            <SafetyAccreditation />
-            <PatientSupportServices />
-            <HealthCampsOutreach />
-            <EmergencyCriticalCare />
-            <HospitalInfrastructureGallery />
-        </div>
-    );
+  return (
+    <div className="w-full bg-white">
+      <MotionSection>
+        <CareAtAsram />
+      </MotionSection>
+      <MotionSection delay={0.1}>
+        <SpecialtiesDepartments />
+      </MotionSection>
+      <MotionSection delay={0.1}>
+        <ExperiencedDoctors />
+      </MotionSection>
+      <MotionSection delay={0.2}>
+        <PatientCareFacilities />
+      </MotionSection>
+      <MotionSection delay={0.2}>
+        <DiagnosticServices />
+      </MotionSection>
+      <MotionSection delay={0.2}>
+        <SafetyAccreditation />
+      </MotionSection>
+      <MotionSection delay={0.3}>
+        <PatientSupportServices />
+      </MotionSection>
+      <MotionSection delay={0.3}>
+        <HealthCampsOutreach />
+      </MotionSection>
+      <MotionSection delay={0.3}>
+        <EmergencyCriticalCare />
+      </MotionSection>
+      <MotionSection delay={0.3}>
+        <HospitalInfrastructureGallery />
+      </MotionSection>
+    </div>
+  );
 };
 
 export default HealthcarePage;

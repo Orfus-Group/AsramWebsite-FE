@@ -72,27 +72,20 @@ export default function NursingCareerSection() {
         Shape Your Career in Nursing
       </h2>
 
-      {/* MAIN LAYOUT — GRID INSTEAD OF FLEX */}
-      <div
-        className="
-          w-full
-          grid
-          grid-cols-1
-          lg:grid-cols-[1fr_1fr]
-          gap-[30px]
-          lg:gap-[40px]
-          items-stretch
-        "
-      >
-        {/* LEFT IMAGE — RESPONSIVE + UNIFORM */}
+      {/* MAIN LAYOUT */}
+      <div className="w-full h-auto lg:h-[367px] flex flex-col lg:flex-row items-center justify-start gap-[90px]">
+
+        {/* LEFT IMAGE */}
         <div
           className="
-            w-full
+            flex-shrink-0
             rounded-[8px]
             overflow-hidden
-            bg-gray-200
-            aspect-[16/10]     /* 🔥 Figma equivalent */
           "
+          style={{
+            width: "563px",
+            height: "367px",
+          }}
         >
           <img
             src={nursingcareer}
@@ -103,36 +96,125 @@ export default function NursingCareerSection() {
           />
         </div>
 
-        {/* RIGHT GRID — EQUAL HEIGHT STATS */}
+        {/* RIGHT GRID */}
         <div
           className="
-            w-full
             grid
             grid-cols-2
-            gap-[20px]
-            auto-rows-fr       /* 🔥 forces equal height */
           "
+          style={{
+            width: "588px",
+            height: "367px",
+            gap: "23.7px",
+          }}
         >
-          <StatCard
-            icon={ExcellenceIcon}
-            value="20+"
-            label="Years of Excellence"
-          />
-          <StatCard
-            icon={ActiveStudentsIcon}
-            value="377+"
-            label="Active Students"
-          />
-          <StatCard
-            icon={PlacementSuccessIcon}
-            value="95%"
-            label="Placement Success"
-          />
-          <StatCard
-            icon={ApprovedProgramsIcon}
-            value="INC"
-            label="Approved Programs"
-          />
+          {/* Custom Card 1 */}
+          <div
+            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow"
+            style={{
+              width: "282.2px",
+              height: "171.7px",
+              borderRadius: "9.9px",
+            }}
+          >
+            <ExcellenceIcon />
+            <span
+              className="mt-[15px] text-[#223F7F] font-bold font-montserrat text-center"
+              style={{
+                fontSize: "29.6px",
+                lineHeight: "1.2",
+              }}
+            >
+              20+
+            </span>
+            <span
+              className="mt-[5px] text-center font-montserrat font-medium"
+              style={{ fontSize: "14px", color: "#555555" }}
+            >
+              Years of Excellence
+            </span>
+          </div>
+
+          {/* Custom Card 2 */}
+          <div
+            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow"
+            style={{
+              width: "282.2px",
+              height: "171.7px",
+              borderRadius: "9.9px",
+            }}
+          >
+            <ActiveStudentsIcon />
+            <span
+              className="mt-[15px] text-[#223F7F] font-bold font-montserrat text-center"
+              style={{
+                fontSize: "29.6px",
+                lineHeight: "1.2",
+              }}
+            >
+              377+
+            </span>
+            <span
+              className="mt-[5px] text-center font-montserrat font-medium"
+              style={{ fontSize: "14px", color: "#555555" }}
+            >
+              Active Students
+            </span>
+          </div>
+
+          {/* Custom Card 3 */}
+          <div
+            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow"
+            style={{
+              width: "282.2px",
+              height: "171.7px",
+              borderRadius: "9.9px",
+            }}
+          >
+            <PlacementSuccessIcon />
+            <span
+              className="mt-[15px] text-[#223F7F] font-bold font-montserrat text-center"
+              style={{
+                fontSize: "29.6px",
+                lineHeight: "1.2",
+              }}
+            >
+              95%
+            </span>
+            <span
+              className="mt-[5px] text-center font-montserrat font-medium"
+              style={{ fontSize: "14px", color: "#555555" }}
+            >
+              Placement Success
+            </span>
+          </div>
+
+          {/* Custom Card 4 */}
+          <div
+            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow"
+            style={{
+              width: "282.2px",
+              height: "171.7px",
+              borderRadius: "9.9px",
+            }}
+          >
+            <ApprovedProgramsIcon />
+            <span
+              className="mt-[15px] text-[#223F7F] font-bold font-montserrat text-center"
+              style={{
+                fontSize: "29.6px",
+                lineHeight: "1.2",
+              }}
+            >
+              INC
+            </span>
+            <span
+              className="mt-[5px] text-center font-montserrat font-medium"
+              style={{ fontSize: "14px", color: "#555555" }}
+            >
+              Approved Programs
+            </span>
+          </div>
         </div>
       </div>
     </PageSection>

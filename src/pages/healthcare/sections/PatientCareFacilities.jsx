@@ -1,6 +1,7 @@
 import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
+import InfoCardGrid from "@/components/common/InfoCardGrid";
 
 const IconWards = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -102,34 +103,15 @@ const PatientCareFacilities = () => {
                 Patient Care & Facilities
             </h1>
 
-            {/* Top Grid: 3 columns, 6 items */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] mb-[40px]">
-                {facilitiesTop.map((item, index) => (
-                    <div
-                        key={index}
-                        className="
-                            bg-white 
-                            w-full h-auto md:h-[237px] 
-                            p-[30px] 
-                            rounded-[8px] 
-                            border-[0.9px] border-[#E0E0E0]
-                            flex flex-col items-start gap-[16px]
-                        "
-                    >
-                        <div className="w-[48px] h-[48px] bg-[#EEF2FF] rounded-[6.9px] flex items-center justify-center text-[#223F7F] shrink-0">
-                            {item.icon}
-                        </div>
-                        <div>
-                            <h4 className={`${T.font.family} font-medium text-[24px] leading-[1.33] text-[#223F7F] mb-[8px]`}>
-                                {item.title}
-                            </h4>
-                            <p className={`${T.font.family} font-regular text-[18px] text-[rgba(75,75,75,0.75)] leading-[1.44]`}>
-                                {item.desc}
-                            </p>
-                        </div>
-                    </div>
-                ))}
-            </div>
+            {/* Top Grid: 6 items using InfoCardGrid */}
+            <InfoCardGrid
+                items={facilitiesTop.map(item => ({ ...item, description: item.desc }))}
+                gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] mb-[40px]"
+                cardClassName="bg-white rounded-[8px] p-[30px] border-[0.9px] border-[#E0E0E0] h-full flex flex-col items-start gap-[12px] hover:shadow-md transition-shadow"
+                iconContainerClassName="w-[48px] h-[48px] bg-[rgba(34,63,127,0.1)] rounded-[8px] flex items-center justify-center text-[#223F7F] shrink-0"
+                titleClassName="text-[#223F7F] font-medium text-[22px] leading-[1.2] font-montserrat"
+                descriptionClassName="text-[rgba(25,25,25,0.75)] text-[18px] leading-[1.44] font-montserrat flex-1"
+            />
 
             {/* Bottom Grid: 2 columns, 2 items */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">

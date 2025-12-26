@@ -89,12 +89,12 @@ const AsramMainHeader = () => {
     <div className="sticky -top-[40px] z-[100] asram-font w-full">
       {/* ----------------------- TOP BAR ----------------------- */}
       <div className="w-full" style={{ backgroundColor: T.color.secondary }}>
-        <div className="w-full max-w-[1440px] mx-auto h-[40px] flex justify-center px-4 sm:px-6 md:px-10 lg:px-[120px]">
+        <div className="w-full h-[40px] flex justify-center px-4 sm:px-6 md:px-10 lg:px-[120px]">
           <div
             className="
               w-full
               max-w-full
-              lg:max-w-[1440px]
+              lg:max-w-full
               h-full
               flex items-center
               justify-center lg:justify-end
@@ -136,7 +136,7 @@ const AsramMainHeader = () => {
 
       {/* ----------------------- MAIN HEADER ----------------------- */}
       <header className="w-full bg-white relative z-[100] shadow-[0_4px_20px_rgba(0,0,0,0.1)] sticky top-0">
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px] h-[66px] py-[10px] flex items-center justify-between relative">
+        <div className="w-full px-4 sm:px-6 md:px-10 lg:px-[120px] h-[66px] py-[10px] flex items-center justify-between relative">
 
           {/* Hamburger */}
           <button
@@ -191,13 +191,15 @@ const AsramMainHeader = () => {
           </nav>
 
           {/* LOGO */}
-          <img
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            src={Logo}
-            className="h-[42px] w-[170px] sm:h-[46px] sm:w-[189px] object-contain absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:translate-x-0 lg:translate-y-0 lg:mx-0"
-          />
+          <Link to="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:translate-x-0 lg:translate-y-0 lg:mx-0">
+            <img
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              src={Logo}
+              className="h-[42px] w-[170px] sm:h-[46px] sm:w-[189px] object-contain"
+            />
+          </Link>
 
           {/* RIGHT NAV */}
           <nav className={`${T.font.family} hidden lg:flex flex-1 items-center justify-between gap-[40px] ml-[84px]`}>
@@ -249,10 +251,10 @@ const AsramMainHeader = () => {
             <div
               className={`
         fixed top-0 left-0
-        h-full w-[78%] max-w-[320px]
+        h-full w-[85%] max-w-[320px]
         z-[100]
         flex flex-col
-        px-5 py-6
+        px-6 py-8
         overflow-y-auto
         transform transition-transform duration-300 ease-out
         ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"}
@@ -263,7 +265,15 @@ const AsramMainHeader = () => {
               }}
             >
 
-              <div className="flex items-center mb-6 w-full justify-center">
+
+              <Link
+                to="/"
+                className="flex items-center mb-6 w-full justify-center"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  setOpenMenu(null);
+                }}
+              >
                 <img loading="lazy" decoding="async"
                   src={AsramLogo}
                   alt="ASRAM Logo"
@@ -285,42 +295,43 @@ const AsramMainHeader = () => {
                 >
                   Asram
                 </span>
-              </div>
-
-
-
-
-
+              </Link>
               {/* MAIN MENU */}
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-4">
 
                 {Object.keys(megaMenuContent).map((item) => {
+                  // Configuration based on screenshot observation
+                  // About: Link, No Arrow
+                  // Academics: Accordion, Arrow
+                  // Research: Accordion, Arrow
+                  // Healthcare: Accordion, Arrow
+                  // Campus Life: Accordion, Arrow
+                  // News: Link, No Arrow
 
-                  // which items have direct navigation?
                   const routeMap = {
                     About: "/about-asram",
                     Academics: null,
                     Research: null,
                     Healthcare: null,
-                    "Campus Life": null,
+                    "Campus Life": "/campus-life",
                     News: "/news",
                   };
                   const hasRoute = routeMap[item] !== null;
                   const isOpen = openMenu === item;
 
                   return (
-                    <div key={item} className="w-full">
+                    <div key={item} className="w-full border-b border-white/10 pb-2 last:border-0">
 
                       {/* MAIN MENU BUTTON / LINK */}
                       {hasRoute ? (
                         <Link
                           to={routeMap[item]}
                           className={`
-    w-full flex justify-between items-center
-    py-3 text-left
-    text-[18px] font-semibold
-    ${T.font.family}
-  `}
+                            w-full flex justify-between items-center
+                            py-2 text-left
+                            text-[18px] font-bold text-white
+                            ${T.font.family}
+                          `}
                           onClick={() => {
                             setMobileMenuOpen(false);
                             setOpenMenu(null);
@@ -331,27 +342,25 @@ const AsramMainHeader = () => {
                       ) : (
                         <button
                           className={`
-    w-full flex justify-between items-center
-    py-3 text-left
-    text-[18px] font-semibold
-    ${T.font.family}
-  `}
+                            w-full flex justify-between items-center
+                            py-2 text-left
+                            text-[18px] font-bold text-white
+                            ${T.font.family}
+                          `}
                           onClick={() => {
-                            // Toggle accordion open/close
                             setOpenMenu(prev => (prev === item ? null : item));
                           }}
                         >
                           <span>{item}</span>
-
-                          {/* Chevron Icon */}
-                          <span
-                            className={`
-        transition-transform duration-300
-        ${openMenu === item ? "rotate-90" : ""}
-      `}
+                          {/* Triangle Arrow */}
+                          <svg
+                            width="10" height="10"
+                            viewBox="0 0 10 10"
+                            fill="currentColor"
+                            className={`transition-transform duration-200 ${isOpen ? "rotate-90" : ""}`}
                           >
-                            ▶
-                          </span>
+                            <path d="M0 0L10 5L0 10V0Z" />
+                          </svg>
                         </button>
                       )}
 
@@ -359,53 +368,26 @@ const AsramMainHeader = () => {
                       {/* SUBMENU ACCORDION */}
                       {!hasRoute && isOpen && (
                         <div
-                          className="pl-4 py-3 flex flex-col gap-4 rounded-md animate-slideDown"
-                          style={{ backgroundColor: T.color.surface.drawerSub }}
+                          className="pl-4 py-3 flex flex-col gap-4 animate-slideDown border-l border-white/20 ml-2 mt-2"
                         >
-
                           {/* SECTION TEXT */}
                           <p className="text-white/80 text-[14px] leading-[20px]">
                             {megaMenuContent[item].leftText}
                           </p>
 
-                          {/* CTA BUTTON (mobile drawer) */}
-                          <div className="flex justify-center px-2">
-                            <button
-                              className="
-    w-full
-    px-4
-    py-2.5
-    rounded-md
-    bg-white
-    text-[#223F7F]
-    text-center
-    font-semibold
-    leading-[20px]
-    text-[14px]
-    sm:text-[16px]
-    flex items-center justify-center
-    mt-2
-  "
-                            >
-                              {megaMenuContent[item].button}
-                            </button>
-                          </div>
-
-
                           {/* SUBMENU LINKS */}
                           <div className="flex flex-col gap-4">
                             {megaMenuContent[item].columns.map((col) => (
                               <div key={col.heading}>
-                                <h3 className="text-[16px] font-bold text-white mb-2">
+                                <h3 className="text-[15px] font-bold text-white/90 mb-2 uppercase tracking-wide opacity-80">
                                   {col.heading}
                                 </h3>
-
                                 <div className="flex flex-col gap-2">
                                   {col.links.map((link) => (
                                     <Link
                                       key={link}
                                       to={link === "College of Nursing" ? "/nursing" : "#"}
-                                      className="text-white/90 text-[15px]"
+                                      className="text-white text-[15px] font-medium hover:underline"
                                       onClick={() => {
                                         setMobileMenuOpen(false);
                                         setOpenMenu(null);
@@ -426,7 +408,7 @@ const AsramMainHeader = () => {
               </div>
 
               {/* FOOTER INSIDE DRAWER */}
-              <div className="mt-auto pt-6 border-t border-white/20">
+              <div className="mt-auto pt-8 border-t border-white/20">
                 <p className="text-white/70 text-[14px]">
                   © ASRAM School of Nursing
                 </p>
@@ -451,7 +433,7 @@ const AsramMainHeader = () => {
             style={{ backgroundColor: T.color.background.white }}
           />
 
-          <div className="w-full max-w-[1440px] mx-auto flex relative">
+          <div className="w-full mx-auto flex relative">
 
             {/* LEFT PANEL */}
             <div

@@ -8,9 +8,9 @@ import { EnrollmentIcon } from "./NursingAdmissionsSection";
 
 export const MeritBasedIcon = ({ className = "" }) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15.2734 12.7196L16.7684 21.1334C16.7852 21.2325 16.7713 21.3343 16.7286 21.4253C16.6859 21.5162 16.6165 21.592 16.5296 21.6424C16.4427 21.6929 16.3424 21.7156 16.2423 21.7075C16.1421 21.6994 16.0468 21.6609 15.9691 21.5972L12.4362 18.9456C12.2657 18.8182 12.0585 18.7493 11.8456 18.7493C11.6327 18.7493 11.4255 18.8182 11.255 18.9456L7.71615 21.5962C7.6385 21.6598 7.54331 21.6982 7.44328 21.7063C7.34325 21.7144 7.24313 21.6918 7.15627 21.6415C7.06942 21.5912 6.99997 21.5157 6.95718 21.4249C6.9144 21.3341 6.90031 21.2324 6.9168 21.1334L8.41088 12.7196" stroke="white" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.8424 13.8154C15.1125 13.8154 17.7634 11.1644 17.7634 7.89432C17.7634 4.62421 15.1125 1.97327 11.8424 1.97327C8.57227 1.97327 5.92133 4.62421 5.92133 7.89432C5.92133 11.1644 8.57227 13.8154 11.8424 13.8154Z" stroke="white" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+    <path d="M15.2734 12.7196L16.7684 21.1334C16.7852 21.2325 16.7713 21.3343 16.7286 21.4253C16.6859 21.5162 16.6165 21.592 16.5296 21.6424C16.4427 21.6929 16.3424 21.7156 16.2423 21.7075C16.1421 21.6994 16.0468 21.6609 15.9691 21.5972L12.4362 18.9456C12.2657 18.8182 12.0585 18.7493 11.8456 18.7493C11.6327 18.7493 11.4255 18.8182 11.255 18.9456L7.71615 21.5962C7.6385 21.6598 7.54331 21.6982 7.44328 21.7063C7.34325 21.7144 7.24313 21.6918 7.15627 21.6415C7.06942 21.5912 6.99997 21.5157 6.95718 21.4249C6.9144 21.3341 6.90031 21.2324 6.9168 21.1334L8.41088 12.7196" stroke="white" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M11.8424 13.8154C15.1125 13.8154 17.7634 11.1644 17.7634 7.89432C17.7634 4.62421 15.1125 1.97327 11.8424 1.97327C8.57227 1.97327 5.92133 4.62421 5.92133 7.89432C5.92133 11.1644 8.57227 13.8154 11.8424 13.8154Z" stroke="white" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
 
 );
 
@@ -80,11 +80,11 @@ export const EducationLoanIcon = ({ className = "" }) => (
 
 
 export const ApplyAidIcon = ({ className = "" }) => (
- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.8417 21.7105C17.2919 21.7105 21.7101 17.2922 21.7101 11.8421C21.7101 6.39187 17.2919 1.97363 11.8417 1.97363C6.39151 1.97363 1.97327 6.39187 1.97327 11.8421C1.97327 17.2922 6.39151 21.7105 11.8417 21.7105Z" stroke="#FFF" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8.96985 8.88118C9.20186 8.22164 9.6598 7.66549 10.2626 7.31124C10.8653 6.95699 11.574 6.8275 12.2631 6.9457C12.9522 7.06389 13.5772 7.42216 14.0275 7.95703C14.4777 8.4919 14.7242 9.16886 14.7231 9.86802C14.7231 11.8417 11.7626 12.8285 11.7626 12.8285" stroke="#FFF" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.8417 16.7761H11.8517" stroke="#FFF" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11.8417 21.7105C17.2919 21.7105 21.7101 17.2922 21.7101 11.8421C21.7101 6.39187 17.2919 1.97363 11.8417 1.97363C6.39151 1.97363 1.97327 6.39187 1.97327 11.8421C1.97327 17.2922 6.39151 21.7105 11.8417 21.7105Z" stroke="#FFF" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M8.96985 8.88118C9.20186 8.22164 9.6598 7.66549 10.2626 7.31124C10.8653 6.95699 11.574 6.8275 12.2631 6.9457C12.9522 7.06389 13.5772 7.42216 14.0275 7.95703C14.4777 8.4919 14.7242 9.16886 14.7231 9.86802C14.7231 11.8417 11.7626 12.8285 11.7626 12.8285" stroke="#FFF" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M11.8417 16.7761H11.8517" stroke="#FFF" stroke-width="1.97368" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
 
 );
 
@@ -146,7 +146,7 @@ export default function FinancialAidScholarships() {
       <div
         className="
           w-full
-          max-w-[1440px]
+          w-full
           mx-auto
           px-4 sm:px-6 md:px-10 lg:px-[120px]
           flex flex-col
@@ -174,7 +174,7 @@ export default function FinancialAidScholarships() {
             gap-[23.68px]
             w-full
           "
-          
+
         >
           {stats.map((item, i) => (
             <div
@@ -232,14 +232,14 @@ export default function FinancialAidScholarships() {
           />
 
           <Card
-  icon={<MeritBasedIcon className="w-[23.68px] h-[23.68px] text-white" />}
+            icon={<MeritBasedIcon className="w-[23.68px] h-[23.68px] text-white" />}
             title="Government Scholarships"
             desc="Various state and central government scholarship schemes available for eligible students."
             eligibility="Based on family income and category"
           />
 
           <Card
-  icon={<MeritBasedIcon className="w-[23.68px] h-[23.68px] text-white" />}
+            icon={<MeritBasedIcon className="w-[23.68px] h-[23.68px] text-white" />}
             title="Education Loans"
             desc="Tie-ups with leading banks for easy education loan processing at competitive interest rates."
             eligibility="All admitted students"
@@ -343,7 +343,7 @@ export default function FinancialAidScholarships() {
                   rounded-[9.87px]
                   flex items-center justify-center shrink-0
                 "
-                style={{ backgroundColor: T.color.primary}}
+                style={{ backgroundColor: T.color.primary }}
               >
                 <ApplyAidIcon className="w-[23.68px] h-[23.68px]" />
 
@@ -364,8 +364,8 @@ export default function FinancialAidScholarships() {
 
             {steps.map((step, i) => (
               <div key={i} className="flex gap-[10px] items-start">
-            <span
-  className={`
+                <span
+                  className={`
     ${T.font.family}
     inline-flex
     items-center
@@ -376,13 +376,13 @@ export default function FinancialAidScholarships() {
     text-[13.82px]
     font-normal
   `}
-  style={{
-    backgroundColor: "#EEF2F7",
-    color: T.color.dark,
-  }}
->
-  {i + 1}
-</span>
+                  style={{
+                    backgroundColor: "#EEF2F7",
+                    color: T.color.dark,
+                  }}
+                >
+                  {i + 1}
+                </span>
 
 
                 <div className="flex flex-col">
@@ -459,7 +459,7 @@ function Card({ icon, title, desc, eligibility }) {
           </p>
 
           <div className="flex gap-[8px] pt-[4px] items-start">
-             <EnrollmentIcon className="w-[17.76px] h-[17.76px] shrink-0" />
+            <EnrollmentIcon className="w-[17.76px] h-[17.76px] shrink-0" />
 
             <p className={`${T.font.family} text-[13.82px] leading-[19.74px]`}>
               <span

@@ -67,11 +67,11 @@ const ExperiencedDoctors = () => {
     return (
         <PageSection bg="bg-white" paddingClass="py-[80px] px-[20px] lg:px-[120px]">
             {/* Main Flex Wrapper: Responsive layout matching other sections */}
-            <div className="flex flex-col lg:flex-row justify-between items-center gap-[60px] lg:gap-[40px] xl:gap-[120px] 2xl:gap-[160px]">
+            <div className="flex flex-col lg:flex-row justify-between items-center gap-[30px] lg:gap-[60px]">
 
                 {/* Left Column: Heading and List */}
                 {/* Fluid width on large screens (lg/xl), max-width restored on 2xl */}
-                <div className="w-full lg:flex-1 2xl:max-w-[460px] flex-shrink-0 flex flex-col items-start">
+                <div className="w-full lg:flex-1 flex-shrink-0 flex flex-col items-start">
                     <h3 className={`font-montserrat font-bold text-[32px] text-[#223F7F] mb-[40px] leading-tight`}>
                         Experienced Doctors
                     </h3>
@@ -91,7 +91,7 @@ const ExperiencedDoctors = () => {
                                         {item.title}
                                     </h4>
                                     {/* Desc: Max-width strictly for 2xl, fluid otherwise */}
-                                    <p className={`font-montserrat font-normal text-[14px] text-[#191919BF] leading-[20px] w-full 2xl:max-w-[402.9px]`}>
+                                    <p className={`font-montserrat font-normal text-[14px] text-[#191919BF] leading-[20px] w-full`}>
                                         {item.desc}
                                     </p>
                                 </div>
@@ -102,7 +102,7 @@ const ExperiencedDoctors = () => {
 
                 {/* Right Column: Image */}
                 {/* Responsive width and fluid height management */}
-                <div className="w-full lg:w-[45%] 2xl:w-[580px] h-[300px] lg:h-[386.7px] flex-shrink-0">
+                <div className="w-full lg:flex-1 h-[300px] lg:h-[386.7px] flex-shrink-0">
                     <img
                         src={TeamImg}
                         alt="Experienced Doctors"

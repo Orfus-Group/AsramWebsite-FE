@@ -1,6 +1,7 @@
 import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
+import InfoCardGrid from "@/components/common/InfoCardGrid";
 import AnimatedStatValue from "@/features/common/ui/AnimatedStatValue";
 
 // Icons matching the design
@@ -75,37 +76,18 @@ const DiagnosticServices = () => {
                 Diagnostic Services
             </h1>
 
-            {/* Grid Layout: 3 Columns, 2 Rows */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] mb-[60px]">
-                {services.map((item, index) => (
-                    <div
-                        key={index}
-                        className="
-                            bg-[#EEF2F7] 
-                            rounded-[12px] 
-                            p-[30px] 
-                            border border-[#07070733] 
-                            flex flex-col items-start gap-[16px]
-                        "
-                    >
-                        {/* Icon Container: Standardized white box for icon */}
-                        <div className="w-[48px] h-[48px] bg-white rounded-[8px] flex items-center justify-center text-[#223F7F] shadow-sm">
-                            {item.icon}
-                        </div>
-                        <div>
-                            <h6 className={`${T.font.family} font-medium text-[22px] text-[#223F7F] mb-[8px]`}>
-                                {item.title}
-                            </h6>
-                            <p className={`${T.font.family} text-[18px] text-[#191919BF] leading-[26px]`}>
-                                {item.desc}
-                            </p>
-                        </div>
-                    </div>
-                ))}
-            </div>
+            {/* Grid Layout: Using InfoCardGrid */}
+            <InfoCardGrid
+                items={services.map(item => ({ ...item, description: item.desc }))}
+                gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] mb-[40px]"
+                cardClassName="bg-[#EEF2F7] rounded-[11.3px] p-[30px] border border-[rgba(7,7,7,0.2)] h-full flex flex-col items-start gap-[12px] hover:shadow-md transition-shadow"
+                iconContainerClassName="w-[48px] h-[48px] bg-white rounded-[8px] flex items-center justify-center text-[#223F7F] shadow-sm shrink-0"
+                titleClassName="text-[#223F7F] font-medium text-[22px] leading-[1.2] font-montserrat"
+                descriptionClassName="text-[rgba(25,25,25,0.75)] text-[18px] leading-[1.44] font-montserrat flex-1"
+            />
 
             {/* Bottom Stats Banner */}
-            <div className="w-full bg-[#EEF2F7] border border-[#07070733] rounded-[12px] py-[40px] px-[20px] lg:px-[80px] flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
+            <div className="w-full bg-[#EEF2F7] border border-[#07070733] rounded-[12px] py-[40px] px-[20px] lg:px-[40px] flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
                 <div className="flex flex-col items-center gap-[8px]">
                     <AnimatedStatValue value="150+" className={`${T.font.family} font-bold text-[32px] text-[#223F7F]`} />
                     <span className={`${T.font.family} text-[18px] leading-[26px] text-[#191919BF]`}>Diagnostic Tests Available</span>

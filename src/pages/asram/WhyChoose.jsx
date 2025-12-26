@@ -1,15 +1,8 @@
 // src/sections/home/WhyChooseAsram.jsx
 import React from "react";
 
-import academicsIcon from "@/assets/asram/academic.svg";
-import facultyIcon from "@/assets/asram/expertfac.svg";
-import infraIcon from "@/assets/asram/worldclass.svg";
-import careerIcon from "@/assets/asram/careeropp.svg";
-import globalIcon from "@/assets/asram/globalrec.svg";
-import holisticIcon from "@/assets/asram/holisticdev.svg";
-
 import { T } from "@/theme";
-import InfoCard from "@/features/common/cards/InfoCard";
+import InfoCardGrid from "@/components/common/InfoCardGrid";
 import Button from "@/components/ui/button";
 import PageSection from "@/features/common/layout/PageContainer";
 
@@ -147,28 +140,15 @@ export default function WhyChooseAsram() {
         Why Choose ASRAM
       </h2>
 
-      {/* Cards Grid (unchanged layout) */}
-      <div
-        className="
-          grid
-          grid-cols-1
-          sm:grid-cols-2
-          lg:grid-cols-3
-          gap-x-[28px] gap-y-[32px]
-          w-full
-          mb-[40px]       /* space before CTA */
-        "
-      >
-        {features.map((item, index) => (
-          <InfoCard
-            key={index}
-            icon={item.icon}
-            title={item.title}
-            description={item.description}
-            variant="whychoose"
-          />
-        ))}
-      </div>
+      {/* Cards Grid */}
+      <InfoCardGrid
+        items={features}
+        gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full mb-[40px]"
+        cardClassName="bg-white rounded-[8px] p-[30px] border border-[rgba(7,7,7,0.2)] h-full flex flex-col items-start hover:shadow-md transition-shadow"
+        iconContainerClassName="w-[55.3px] h-[55.3px] bg-[rgba(34,63,127,0.1)] rounded-[16.2px] flex items-center justify-center text-[#223F7F] mb-[12px] flex-shrink-0"
+        titleClassName="text-[#223F7F] font-bold text-[20px] leading-[1.2] mb-[12px] font-montserrat"
+        descriptionClassName="text-[rgba(25,25,25,0.75)] text-[18px] leading-[1.44] font-montserrat flex-1"
+      />
 
       {/* Centered CTA (Figma correct placement) */}
       <div className="flex justify-center w-full">

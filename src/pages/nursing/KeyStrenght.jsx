@@ -217,7 +217,7 @@ export default function KeyStrengthsSection() {
 
 
   return (
-    <PageSection bg="bg-[#EEF2F7]" paddingClass="py-[40px] md:py-[80px] pb-[40px]">
+    <PageSection bg="bg-[#EEF2F7]" paddingClass="py-[80px]">
       <div className="flex flex-col gap-[50px]">
         {/* TITLE */}
         <h2
@@ -239,8 +239,7 @@ export default function KeyStrengthsSection() {
             grid-cols-1 
             sm:grid-cols-2 
             lg:grid-cols-3
-            gap-x-[28px] 
-            gap-y-[24px] md:gap-y-[32px]
+            gap-[40px]
             w-full
           "
         >

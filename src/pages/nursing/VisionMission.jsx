@@ -35,12 +35,7 @@ export default function VisionMissionSection() {
   return (
     <PageSection
       bg="bg-[#EEF2F7]"
-      /* Responsive vertical rhythm */
-      paddingClass="
-        py-[60px]
-        md:py-[70px]
-        lg:py-[80px]
-      "
+      paddingClass="py-[80px]"
     >
       {/* Heading */}
       <h2
@@ -70,8 +65,8 @@ export default function VisionMissionSection() {
           sm:grid-cols-2
           lg:grid-cols-3
 
-          gap-y-[24px]
-          gap-x-[28px]
+          gap-y-[32px]
+          lg:gap-x-[46px]
 
           items-start
           w-full
@@ -82,6 +77,7 @@ export default function VisionMissionSection() {
             key={index}
             {...item}
             variant="vmv"
+            className="w-full max-w-none"
           />
         ))}
       </div>

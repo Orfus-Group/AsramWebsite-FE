@@ -70,7 +70,9 @@ const IconRibbon = () => (
 );
 
 
-const FacultyChildPage = () => {
+import MotionSection from "@/components/common/MotionSection";
+
+const FacultyPage = () => {
     const { setHero, hideHero } = useHero();
     const navigate = useNavigate();
 
@@ -88,79 +90,85 @@ const FacultyChildPage = () => {
     return (
         <PageSection bg="bg-white" paddingClass="py-[80px] px-[120px]">
             {/* Header */}
-            <div className="mb-[40px]">
-                {/* Breadcrumb */}
-                <div className="mb-4">
-                    <p className={`${T.font.family} text-[14px] text-[#191919BF]`}>
-                        Home / <span className="text-[#223F7F] font-medium">Faculty</span>
+            <MotionSection>
+                <div className="mb-[40px]">
+                    {/* Breadcrumb */}
+                    <div className="mb-4">
+                        <p className={`${T.font.family} text-[14px] text-[#191919BF]`}>
+                            Home / <span className="text-[#223F7F] font-medium">Faculty</span>
+                        </p>
+                    </div>
+
+                    <h1 className={`${T.font.family} font-bold text-[32px] md:text-[42px] leading-[1.2] text-[#223F7F] mb-[20px]`}>
+                        Meet Our Distinguished Faculty
+                    </h1>
+                    <p className={`${T.font.family} text-[18px] font-regular text-[#4A5565] leading-[28px] max-w-[1440px]`}>
+                        ASRAM's faculty comprises highly qualified educators, researchers, and practitioners who are committed to excellence in teaching and advancing healthcare knowledge. Our team brings together decades of clinical experience, research expertise, and a passion for nurturing the next generation of healthcare professionals.
                     </p>
                 </div>
 
-                <h1 className={`${T.font.family} font-bold text-[32px] md:text-[42px] leading-[1.2] text-[#223F7F] mb-[20px]`}>
-                    Meet Our Distinguished Faculty
-                </h1>
-                <p className={`${T.font.family} text-[18px] font-regular text-[#4A5565] leading-[28px] max-w-[1440px]`}>
-                    ASRAM's faculty comprises highly qualified educators, researchers, and practitioners who are committed to excellence in teaching and advancing healthcare knowledge. Our team brings together decades of clinical experience, research expertise, and a passion for nurturing the next generation of healthcare professionals.
-                </p>
-            </div>
-
-            {/* Search */}
-            <div className="relative w-full mb-[40px]">
-                <div className="
-                        relative 
-                        w-full 
-                        h-[44px] 
-                        rounded-[10px] 
-                        border border-[rgba(7,7,7,0.2)] 
-                        flex items-center 
-                        px-[20px] 
-                        gap-[8px]
-                    ">
-                    <div className="flex-shrink-0">
-                        <IconSearch />
+                {/* Search */}
+                <div className="relative w-full mb-[40px]">
+                    <div className="
+                            relative 
+                            w-full 
+                            h-[44px] 
+                            rounded-[10px] 
+                            border border-[rgba(7,7,7,0.2)] 
+                            flex items-center 
+                            px-[20px] 
+                            gap-[8px]
+                        ">
+                        <div className="flex-shrink-0">
+                            <IconSearch />
+                        </div>
+                        <input
+                            type="text"
+                            placeholder="Search faculty by name, specialization, or department..."
+                            className="
+                                w-full
+                                h-full
+                                bg-transparent
+                                text-[#191919]
+                                placeholder-[#9CA3AF]
+                                focus:outline-none
+                                focus:ring-0
+                                border-none
+                                text-[14px]
+                                font-regular
+                            "
+                        />
                     </div>
-                    <input
-                        type="text"
-                        placeholder="Search faculty by name, specialization, or department..."
-                        className="
-                            w-full
-                            h-full
-                            bg-transparent
-                            text-[#191919]
-                            placeholder-[#9CA3AF]
-                            focus:outline-none
-                            focus:ring-0
-                            border-none
-                            text-[14px]
-                            font-regular
-                        "
-                    />
                 </div>
-            </div>
+            </MotionSection>
 
             {/* Leadership Section */}
-            <div className="mb-[60px]">
-                <h2 className={`${T.font.family} font-bold text-[43px] text-[#223F7F] mb-[40px]`}>
-                    Leadership
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[18px]">
-                    {leadershipData.map((member) => (
-                        <FacultyCard key={member.id} member={member} type="Leadership" onViewProfile={() => handleViewProfile(member.id)} />
-                    ))}
+            <MotionSection delay={0.1}>
+                <div className="mb-[60px]">
+                    <h2 className={`${T.font.family} font-bold text-[43px] text-[#223F7F] mb-[40px]`}>
+                        Leadership
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[18px]">
+                        {leadershipData.map((member) => (
+                            <FacultyCard key={member.id} member={member} type="Leadership" onViewProfile={() => handleViewProfile(member.id)} />
+                        ))}
+                    </div>
                 </div>
-            </div>
+            </MotionSection>
 
             {/* Faculty Members Section */}
-            <div>
-                <h2 className={`${T.font.family} font-bold text-[43px] text-[#223F7F] mb-[40px]`}>
-                    Faculty Members
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[18px]">
-                    {facultyMembersData.map((member) => (
-                        <FacultyCard key={member.id} member={member} onViewProfile={() => handleViewProfile(member.id)} />
-                    ))}
+            <MotionSection delay={0.2}>
+                <div>
+                    <h2 className={`${T.font.family} font-bold text-[43px] text-[#223F7F] mb-[40px]`}>
+                        Faculty Members
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[18px]">
+                        {facultyMembersData.map((member) => (
+                            <FacultyCard key={member.id} member={member} onViewProfile={() => handleViewProfile(member.id)} />
+                        ))}
+                    </div>
                 </div>
-            </div>
+            </MotionSection>
 
         </PageSection>
     );
@@ -253,4 +261,4 @@ const FacultyCard = ({ member, onViewProfile, type }) => {
     );
 };
 
-export default FacultyChildPage;
+export default FacultyPage;

@@ -10,16 +10,8 @@ export default function Footer() {
       {/* OUTER WRAPPER */}
       <div
         className="
-          w-full 
-          max-w-[1440px] 
-          mx-auto 
-
-          /* RESPONSIVE PADDING */
-          px-4
-          sm:px-6
-          md:px-10
-          lg:px-[120px]
-
+          w-full
+          px-4 sm:px-6 md:px-10 lg:px-[120px]
           pt-[60px] pb-[60px] lg:pt-[80px] lg:pb-[80px]
           flex flex-col 
           items-center
@@ -27,7 +19,7 @@ export default function Footer() {
       >
 
         {/* --------------------------- INNER 1200PX CONTENT --------------------------- */}
-        <div className="w-full max-w-[1200px] flex flex-col gap-[45px]">
+        <div className="w-full flex flex-col gap-[45px]">
 
           {/* ======================= TOP GRID (Mobile Responsive) ======================= */}
           <div
@@ -167,7 +159,7 @@ export default function Footer() {
 
                 {/* Address */}
                 <div className="flex gap-[10px]">
-<LocationIcon size={20} color="#191919" className="shrink-0" />                  <p
+                  <LocationIcon size={20} color="#191919" className="shrink-0" />                  <p
                     className={`
                       ${T.font.family} 
                        text-[#191919BF]
@@ -202,7 +194,7 @@ export default function Footer() {
 
                 {/* Email */}
                 <div className="flex gap-[10px]">
-                 <MailIcon size={20} color="#191919" className="shrink-0" />
+                  <MailIcon size={20} color="#191919" className="shrink-0" />
                   <p
                     className={`
                       ${T.font.family}

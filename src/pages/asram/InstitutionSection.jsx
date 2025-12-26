@@ -110,6 +110,30 @@ const ctaColors = {
   3: "#A66E001A",
 };
 
+const MotionLink = motion(Link);
+
+const buttonAnim = {
+  rest: { scale: 1 },
+  hover: {
+    scale: 1.02,
+    filter: "brightness(0.96)",
+    transition: { duration: 0.2 }
+  },
+  tap: { scale: 0.98 }
+};
+
+const arrowAnim = {
+  rest: { x: 0 },
+  hover: {
+    x: 5,
+    transition: {
+      type: "spring",
+      stiffness: 400,
+      damping: 10
+    }
+  }
+};
+
 const InstitutionsSection = () => {
   return (
     <PageSection
@@ -190,8 +214,9 @@ const InstitutionsSection = () => {
               {/* TITLE */}
               {/* Force rigid height to align next element. 
                   Title is 22px with 32px leading. 2 lines = 64px. 
-                  Setting min-h-[70px] to accommodate 2 lines + underline comfortably. */}
-              <div className="min-h-[30px] mb-[10px] flex items-start">
+                  Setting min-h-[64px] to accommodate 2 lines + underline comfortably.
+                  Resetting on large screens (1440px+) where text likely doesn't wrap. */}
+              <div className="min-h-[64px] min-[1440px]:min-h-0 mb-[10px] flex items-start">
                 <h6
                   className={`
                     ${T.font.weight.semibold} 
@@ -211,8 +236,8 @@ const InstitutionsSection = () => {
               </div>
 
               {/* TAGLINE */}
-              {/* Reserved height for uniform positioning */}
-              <div className="min-h-[30px] mb-[24px] flex items-center">
+              {/* Reserved height for uniform positioning - 2 lines approx 56px */}
+              <div className="min-h-[56px] min-[1440px]:min-h-0 mb-[24px] flex items-center">
                 <p
                   className={`
                     ${T.font.weight.medium}
@@ -228,7 +253,7 @@ const InstitutionsSection = () => {
               {/* DESCRIPTION */}
               {/* Reserved height for description to push button down consistently.
                   4 lines * 26px = ~104px. Setting 100px. */}
-              <div className="min-h-[100px] mb-[24px]">
+              <div className="min-h-[100px] min-[1440px]:min-h-0 mb-[24px]">
                 <p
                   className={`
                     ${T.font.weight.normal}
@@ -242,7 +267,7 @@ const InstitutionsSection = () => {
               </div>
 
               {/* CTA BUTTON */}
-              <Link
+              <MotionLink
                 to={item.id === 2 ? "/nursing" : "#"}
                 className="
                   mt-auto
@@ -255,6 +280,10 @@ const InstitutionsSection = () => {
                   text-center
                 "
                 style={{ backgroundColor: ctaColors[item.id] }}
+                initial="rest"
+                whileHover="hover"
+                whileTap="tap"
+                variants={buttonAnim}
               >
                 <span
                   className={`
@@ -269,18 +298,20 @@ const InstitutionsSection = () => {
                   {item.cta}
                 </span>
 
-                <IconFullArrowRight
-                  size={18}
-                  className="
-                    w-[18px] h-[18px]
-                    sm:w-[18px] sm:h-[18px]
-                    lg:w-[22px] lg:h-[22px]
-                    flex-shrink-0
-                  "
-                  stroke="#191919"
-                  strokeWidth={2}
-                />
-              </Link>
+                <motion.div variants={arrowAnim}>
+                  <IconFullArrowRight
+                    size={18}
+                    className="
+                      w-[18px] h-[18px]
+                      sm:w-[18px] sm:h-[18px]
+                      lg:w-[22px] lg:h-[22px]
+                      flex-shrink-0
+                    "
+                    stroke="#191919"
+                    strokeWidth={2}
+                  />
+                </motion.div>
+              </MotionLink>
             </HoverCard>
           ))}
         </StaggerContainer>

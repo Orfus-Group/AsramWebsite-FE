@@ -36,9 +36,9 @@ export const SubmitApplicationIcon = ({ className = "" }) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    <path d="M13.1584 11.8426H10.5269" stroke="#008C8C" strokeWidth="2.63158" strokeLinecap="round"/>
-    <path d="M21.0532 17.1056H10.5269" stroke="#008C8C" strokeWidth="2.63158" strokeLinecap="round"/>
-    <path d="M21.0532 22.3686H10.5269" stroke="#008C8C" strokeWidth="2.63158" strokeLinecap="round"/>
+    <path d="M13.1584 11.8426H10.5269" stroke="#008C8C" strokeWidth="2.63158" strokeLinecap="round" />
+    <path d="M21.0532 17.1056H10.5269" stroke="#008C8C" strokeWidth="2.63158" strokeLinecap="round" />
+    <path d="M21.0532 22.3686H10.5269" stroke="#008C8C" strokeWidth="2.63158" strokeLinecap="round" />
   </svg>
 );
 
@@ -76,8 +76,8 @@ export const ApplicationReviewIcon = ({ className = "" }) => (
 ================================ */
 export const InterviewDecisionIcon = ({ className = "" }) => (
   <svg {...baseProps} className={className}>
-    <path d="M10.5271 2.63177V7.89493" stroke="#008C8C" strokeWidth="2.63158" strokeLinecap="round"/>
-    <path d="M21.0531 2.63177V7.89493" stroke="#008C8C" strokeWidth="2.63158" strokeLinecap="round"/>
+    <path d="M10.5271 2.63177V7.89493" stroke="#008C8C" strokeWidth="2.63158" strokeLinecap="round" />
+    <path d="M21.0531 2.63177V7.89493" stroke="#008C8C" strokeWidth="2.63158" strokeLinecap="round" />
     <path
       d="M25.0001 5.26352H6.57909C5.12571 5.26352 3.94751 6.44172 3.94751 7.8951V26.3162C3.94751 27.7695 5.12571 28.9477 6.57909 28.9477H25.0001C26.4535 28.9477 27.6317 27.7695 27.6317 26.3162V7.8951C27.6317 6.44172 26.4535 5.26352 25.0001 5.26352Z"
       stroke="#008C8C"
@@ -85,7 +85,7 @@ export const InterviewDecisionIcon = ({ className = "" }) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    <path d="M3.94751 13.1582H27.6317" stroke="#008C8C" strokeWidth="2.63158" strokeLinecap="round"/>
+    <path d="M3.94751 13.1582H27.6317" stroke="#008C8C" strokeWidth="2.63158" strokeLinecap="round" />
   </svg>
 );
 
@@ -360,7 +360,7 @@ export default function NursingAdmissionsSection() {
                     style={{ color: T.color.text.muted }}
                   >
                     <EnrollmentIcon className="w-[17.76px] h-[17.76px] shrink-0" />
-                  <span
+                    <span
                       className={`
                         ${T.font.family}
                         font-regular
@@ -381,7 +381,7 @@ export default function NursingAdmissionsSection() {
 
       {/* -------------------- IMPORTANT DATES -------------------- */}
       <div className="w-full flex justify-center my-[40px]">
-        <div className="w-full max-w-[1200px] bg-white rounded-[8px] py-[30px] px-[30px]">
+        <div className="w-full bg-white rounded-[8px] py-[30px] px-[30px]">
           <h2
             className={`
               w-full text-center
@@ -428,42 +428,37 @@ export default function NursingAdmissionsSection() {
         </div>
       </div>
 
-      {/* READY TO APPLY — fill available space & respect PageSection padding */}
+      {/* READY TO APPLY */}
       <div
         className="
-    w-full
-    flex flex-col lg:flex-row
-    items-start
-    gap-[32px]
-   mb-[80px]
-  "
+          w-full
+          flex flex-col lg:flex-row
+          items-start
+          gap-[40px]
+          mb-[80px]
+        "
       >
         {/* LEFT IMAGE */}
         <div
           className="
-    w-full lg:w-[40%] 
-    h-[360px]
-    rounded-[12px] 
-    overflow-hidden
-    shadow-[0px_4px_12px_rgba(0,0,0,0.08)]
-  "
-          style={{
-            flexShrink: 0
-          }}
+            w-full lg:w-auto
+            flex-shrink-0
+            rounded-[12px] 
+            overflow-hidden
+          "
         >
-
           <img loading="lazy" decoding="async"
             src={readytoapply}
-            className="w-full h-[389px] object-cover rounded-[12px]"
+            className="w-full lg:w-[589px] h-[389px] object-cover rounded-[12px]"
           />
         </div>
-        {/* RIGHT CONTENT — stretches fully to right edge */}
+        {/* RIGHT CONTENT */}
         <div
           className="
-      flex-1
-      flex flex-col
-      gap-[20px]
-    "
+            flex-1
+            flex flex-col
+            gap-[20px]
+          "
         >
           <h3
             className={`
@@ -485,10 +480,10 @@ export default function NursingAdmissionsSection() {
       `}
             style={{ color: T.color.text.researchMuted }}
           >
-          Start your application today and take the first step toward an exceptional nursing education. Our admissions team is here to support you throughout the process.
+            Start your application today and take the first step toward an exceptional nursing education. Our admissions team is here to support you throughout the process.
           </p>
 
-  <p
+          <p
             className={`
         ${T.font.family}
         text-[16px]
@@ -496,7 +491,7 @@ export default function NursingAdmissionsSection() {
       `}
             style={{ color: T.color.text.researchMuted }}
           >
-          Start your application today and take the first step toward an exceptional nursing education. Our admissions team is here to support you throughout the process.
+            Start your application today and take the first step toward an exceptional nursing education. Our admissions team is here to support you throughout the process.
           </p>
 
           {/* Buttons */}

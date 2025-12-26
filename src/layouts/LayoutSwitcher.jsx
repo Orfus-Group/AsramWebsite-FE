@@ -8,6 +8,7 @@ import { HeroProvider, useHero } from "@/context/HeroContext";
 import CommonHero from "@/pages/asram/CommonHero";
 import { AnimatePresence } from "framer-motion";
 import PageWrapper from "@/components/common/PageWrapper";
+import ScrollToTop from "@/components/common/ScrollToTop";
 
 const layoutByPath = (pathname) => {
   if (pathname.startsWith("/nursing")) return "nursing";
@@ -68,6 +69,7 @@ const InnerLayout = () => {
         </AnimatePresence>
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 };

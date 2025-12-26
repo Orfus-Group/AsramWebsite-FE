@@ -138,7 +138,7 @@ const AsramFooter = () => {
       <div className="w-full bg-[#223F7F] border-t" style={{ borderTop: "0.76px solid rgba(25,25,25,0.10)" }}>
         <div
           className="
-            w-full max-w-[1440px] mx-auto
+            w-full
             grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:flex
             items-center gap-y-[18px] gap-x-[38px]
             px-4 sm:px-6 md:px-10 lg:px-[120px]
@@ -176,7 +176,7 @@ const AsramFooter = () => {
       </div>
 
       {/* FOOTER GRID */}
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px] pt-[40px] pb-[60px]">
+      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-[120px] pt-[40px] pb-[60px]">
         <div className="grid gap-[24.2px] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
           {/* COLUMN 1 */}
@@ -192,11 +192,19 @@ const AsramFooter = () => {
             </p>
 
             <div className="flex items-center gap-[10px]">
-              <FacebookIcon />
+              <a href="https://www.facebook.com/asramshospital?rdid=UihplfDYzumCZWJO&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1A89QayTp9%2F#" target="_blank" rel="noreferrer">
+                <FacebookIcon />
+              </a>
               <TwitterIcon />
-              <InstagramIcon />
-              <LinkedinIcon />
-              <YoutubeIcon />
+              <a href="https://www.instagram.com/asram_hospitals/?igsh=MXd0dXl5ZjZjdXV1NA%3D%3D#" target="_blank" rel="noreferrer">
+                <InstagramIcon />
+              </a>
+              <a href="https://www.linkedin.com/company/alluri-sitarama-raju-academy-of-medical-science/" target="_blank" rel="noreferrer">
+                <LinkedinIcon />
+              </a>
+              <a href="https://www.youtube.com/@Asramhospital" target="_blank" rel="noreferrer">
+                <YoutubeIcon />
+              </a>
             </div>
           </div>
 
@@ -280,7 +288,7 @@ const AsramFooter = () => {
 
       {/* COPYRIGHT ROW */}
       <div className="w-full border-t border-[rgba(25,25,25,0.10)]">
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-[120px] py-[20px]">
+        <div className="w-full px-4 sm:px-6 md:px-10 lg:px-[120px] py-[20px]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-[10px] font-regular text-[12.11px] text-[#191919BF]">
 
             <span className={`${T.font.family} text-[#191919BF] font-regular`}>

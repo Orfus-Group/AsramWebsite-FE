@@ -68,15 +68,17 @@ export default function AcademicProgramsSection() {
       <div
         className="
           grid 
-          grid-cols-1            /* Mobile: Force single column */
-          gap-[24px]             /* Mobile: Force gap */
+          grid-cols-1
+          gap-[24px]
           
-          sm:grid-cols-2         /* Tablet */
+          sm:grid-cols-2
           md:gap-[26px]
 
-          lg:grid-cols-3         /* Desktop */
-          lg:gap-[28.95px]
-          lg:justify-between
+          lg:grid-cols-3
+          lg:gap-[30px]
+          
+          items-start
+          w-full
         "
       >
         {programs.map((p, i) => (
@@ -84,7 +86,7 @@ export default function AcademicProgramsSection() {
             key={i}
             {...p}
             variant="program"
-            className="w-full"
+            className="w-full max-w-none"
           />
         ))}
       </div>

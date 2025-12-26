@@ -132,12 +132,12 @@ export default function SocialCommitment() {
           sm:grid-cols-2 
           lg:grid-cols-2 
           xl:grid-cols-4
-          gap-[28px]
+          gap-[20px]
           w-full
         "
       >
         {features.map((item, i) => (
-          <InfoCard key={i} {...item} variant="feature" />
+          <InfoCard key={i} {...item} variant="socialCommitment" />
         ))}
       </div>
     </TwoColumnSection>

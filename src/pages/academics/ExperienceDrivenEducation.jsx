@@ -16,42 +16,52 @@ export default function ExperienceDrivenEducation() {
       {/* ⭐ MAIN FIXED-WIDTH CARD */}
       <div
         className="
-          w-full
-          max-w-[1200px]
           bg-[#EEF2F7]
-          rounded-[16.18px]
-          px-[39.47px]
-          py-[39.47px]
+          rounded-[16.2px]
           flex flex-col lg:flex-row
-          gap-[32px]
+          items-start
+          justify-between
         "
-        style={{ minHeight: "365.13px" }}
+        style={{
+          width: "100%", // Adapts to parent 120px padding (1200px on 1440px screen)
+          height: "365.1px",
+          padding: "39.5px",
+        }}
       >
         {/* LEFT CONTENT */}
-        <div className="w-full lg:w-[544.74px] flex flex-col gap-[18px]">
-
+        <div
+          className="flex flex-col"
+          style={{
+            width: "534.9px",
+            // Removed marginRight, now handled by grid's marginLeft
+          }}
+        >
           {/* TITLE */}
           <h3
             className={`
               ${T.font.family}
               ${T.font.weight.semibold}
-              text-[29.61px]
-              leading-[41.45px]
               text-[${T.color.secondary}]
             `}
+            style={{
+              fontSize: "29.6px",
+              lineHeight: "41.5px",
+              color: "#223F7F", // Explicit color from previous context/theme
+              marginBottom: "15px" // Visual estimation or standard
+            }}
           >
             Experience-Driven Education
           </h3>
 
           {/* PARAGRAPH */}
           <p
-            className={`
-              ${T.font.family}
-              text-[15.79px]
-              leading-[27.63px]
-              w-full lg:w-[534.87px]
-            `}
-            style={{ color: "text-[#191919BF]" }}
+            className={`${T.font.family}`}
+            style={{
+              fontSize: "15.8px",
+              lineHeight: "27.6px",
+              color: "rgba(25, 25, 25, 0.75)", // #191919BF
+              marginBottom: "15px"
+            }}
           >
             At ASRAM, we believe in learning by doing. Our students don't just
             read about nursing—they practice in real clinical settings, work
@@ -60,7 +70,7 @@ export default function ExperienceDrivenEducation() {
           </p>
 
           {/* BULLETS */}
-          <ul className="flex flex-col gap-[10px] mt-[6px]">
+          <ul className="flex flex-col" style={{ gap: "11.8px" }}>
             {[
               "20+ years of educational excellence in nursing",
               "Graduates serving in top hospitals across India",
@@ -68,17 +78,16 @@ export default function ExperienceDrivenEducation() {
             ].map((item, index) => (
               <li
                 key={index}
-                className={`
-                  flex items-center gap-[10px]
-                  ${T.font.family}
-                  text-[13.82px]
-                  leading-[19.74px]
-                `}
-            style={{ color: "text-[#191919BF]" }}
+                className={`flex items-center gap-[10px] ${T.font.family}`}
+                style={{
+                  fontSize: "13.8px",
+                  lineHeight: "19.7px",
+                  color: "rgba(25, 25, 25, 0.75)",
+                }}
               >
                 <span
                   className="w-[6px] h-[6px] rounded-full"
-                  style={{ backgroundColor: T.color.secondary }}
+                  style={{ backgroundColor: T.color.secondary, flexShrink: 0 }}
                 />
                 {item}
               </li>
@@ -88,12 +97,13 @@ export default function ExperienceDrivenEducation() {
 
         {/* RIGHT GRID */}
         <div
-          className="
-            w-full
-            lg:w-[544.74px]
-            grid grid-cols-2 grid-rows-2
-            gap-[15.79px]
-          "
+          className="grid grid-cols-2"
+          style={{
+            width: "544.7px",
+            height: "244.7px",
+            gap: "15.8px",
+            margin: "20.7px 0 20.7px 0", // Left margin removed, handled by justify-between
+          }}
         >
           {[
             { value: "100+", label: "B.Sc Seats" },
@@ -106,28 +116,36 @@ export default function ExperienceDrivenEducation() {
               className="
                 bg-white
                 rounded-[8px]
-                p-[20px]
-                flex flex-col items-center justify-center gap-[8px]
+                flex flex-col items-center justify-center
               "
+              style={{
+                width: "264.5px",   // Exact Card Width
+                height: "114.5px",  // Exact Card Height
+              }}
             >
               <AnimatedStatValue
                 value={stat.value}
                 className={`
                   ${T.font.family}
                   ${T.font.weight.bold}
-                  text-[32px]
-                  leading-[35.53px]
+                  text-[${T.color.secondary}]
                 `}
-                style={{ color: T.color.secondary }}
+                style={{
+                  fontSize: "32px",
+                  lineHeight: "39px",
+                  color: "#223F7F",
+                  marginBottom: "5.5px"
+                }}
               />
 
               <span
-                className={`
-                  ${T.font.family}
-                  text-[13.82px]
-                  leading-[19.74px]
-                  text-[${T.color.secondary}]
-                `}
+                className={`${T.font.family}`}
+                style={{
+                  fontSize: "18px",     // Corrected to 18px from 13.8px
+                  lineHeight: "26px",
+                  color: "rgba(25, 25, 25, 0.75)",
+                  fontWeight: 400,
+                }}
               >
                 {stat.label}
               </span>

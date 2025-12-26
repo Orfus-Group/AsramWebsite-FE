@@ -1,6 +1,7 @@
 import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
+import InfoCardGrid from "@/components/common/InfoCardGrid";
 
 const IconAppointment = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,24 +96,14 @@ const PatientSupportServices = () => {
                 Patient Support Services
             </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[35px] gap-y-[29px]">
-                {servicesData.map((service, index) => (
-                    <div
-                        key={index}
-                        className="bg-[#EEF2F7] w-full h-auto md:h-[237px] p-[30px] rounded-[11.3px] border border-[rgba(7,7,7,0.2)] flex flex-col items-start gap-[12px]"
-                    >
-                        <div className="w-[48px] h-[48px] bg-[#FFF] rounded-[6.9px] flex items-center justify-center shrink-0">
-                            {service.icon}
-                        </div>
-                        <h4 className={`${T.font.family} font-medium text-[22px] text-[#223F7F]`}>
-                            {service.title}
-                        </h4>
-                        <p className={`${T.font.family} font-regular text-[18px] text-[rgba(25,25,25,0.75)] leading-[1.44]`}>
-                            {service.desc}
-                        </p>
-                    </div>
-                ))}
-            </div>
+            <InfoCardGrid
+                items={servicesData.map(item => ({ ...item, description: item.desc }))}
+                gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]"
+                cardClassName="bg-[#EEF2F7] rounded-[11.3px] p-[30px] border border-[rgba(7,7,7,0.2)] h-full flex flex-col items-start gap-[12px] hover:shadow-md transition-shadow"
+                iconContainerClassName="w-[48px] h-[48px] bg-white rounded-[8px] flex items-center justify-center text-[#223F7F] shrink-0"
+                titleClassName="text-[#223F7F] font-medium text-[22px] leading-[1.2] font-montserrat"
+                descriptionClassName="text-[rgba(25,25,25,0.75)] text-[18px] leading-[1.44] font-montserrat flex-1"
+            />
         </PageSection>
     );
 };

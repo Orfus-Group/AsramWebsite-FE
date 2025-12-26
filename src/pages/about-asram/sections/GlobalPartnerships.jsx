@@ -107,9 +107,9 @@ const GlobalPartnerships = () => {
       </h1>
 
       {/* Image + Content */}
-      <div className="flex flex-col lg:flex-row gap-[24px] lg:gap-[41.8px] mb-[30px] lg:mb-[40px] items-stretch">
+      <div className="flex flex-col lg:flex-row gap-[24px] lg:gap-[40px] mb-[30px] lg:mb-[40px] items-stretch w-full">
         {/* Image */}
-        <div className="w-full lg:w-1/2 flex-shrink-0">
+        <div className="w-full lg:flex-1 flex-shrink-0">
           <img
             src={PartnershipImg}
             alt="International Collaboration"
@@ -118,7 +118,7 @@ const GlobalPartnerships = () => {
         </div>
 
         {/* Text */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-between">
+        <div className="w-full lg:flex-1 flex flex-col justify-start gap-[30px]">
           <div>
             <h2 className={`${T.font.family} font-semibold text-[22px] text-[#223F7F] mb-4`}>
               International Collaboration
