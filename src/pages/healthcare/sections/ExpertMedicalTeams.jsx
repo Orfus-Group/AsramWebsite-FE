@@ -65,33 +65,32 @@ const features = [
 
 const ExperiencedDoctors = () => {
     return (
-        <PageSection bg="bg-white" paddingClass="py-[80px] px-[20px] lg:px-[120px]">
-            {/* Main Flex Wrapper: Responsive layout matching other sections */}
-            <div className="flex flex-col lg:flex-row justify-between items-center gap-[30px] lg:gap-[60px]">
+        <PageSection bg="bg-white" paddingClass="py-[80px] px-8 lg:px-[120px]">
+            {/* Main Flex Wrapper: Pixel-perfect layout matching Figma design */}
+            <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-start justify-between gap-10 lg:gap-[160px]">
 
-                {/* Left Column: Heading and List */}
-                {/* Fluid width on large screens (lg/xl), max-width restored on 2xl */}
-                <div className="w-full lg:flex-1 flex-shrink-0 flex flex-col items-start">
-                    <h3 className={`font-montserrat font-bold text-[32px] text-[#223F7F] mb-[40px] leading-tight`}>
+                {/* Left Column: Heading and List (Width: 460px) */}
+                <div className="w-full lg:w-[460px] flex-shrink-0 flex flex-col items-start bg-white">
+                    <h2 className="font-montserrat font-bold text-[32px] sm:text-[36px] lg:text-[42px] text-[#223F7F] mb-[40px] leading-[1.1]">
                         Experienced Doctors
-                    </h3>
+                    </h2>
 
-                    {/* List Items Container */}
+                    {/* List Items Container: 12px gap as per Figma Parent (Flex) */}
                     <div className="flex flex-col gap-[12px] w-full">
                         {features.map((item, index) => (
                             // List Item Row
                             <div key={index} className="flex items-start gap-[12px] w-full">
-                                {/* Icon Box */}
-                                <div className="w-[45.1px] h-[45.1px] rounded-[7.5px] bg-[#223F7F]/10 flex items-center justify-center flex-shrink-0 text-[#223F7F]">
+                                {/* Icon Box: 45.1px square with 7.5px radius */}
+                                <div className="w-[45.1px] h-[45.1px] rounded-[7.5px] bg-[#223F7F1A] flex items-center justify-center flex-shrink-0 text-[#223F7F]">
                                     {item.icon}
                                 </div>
-                                <div className="flex flex-col gap-[2px] w-full">
-                                    {/* Title */}
-                                    <h4 className={`font-montserrat font-medium text-[18px] text-[#223F7F]`}>
+                                <div className="flex flex-col gap-[4px] w-full">
+                                    {/* Title: 18px, 500 weight, #223f7f */}
+                                    <h4 className="font-montserrat font-medium text-[18px] text-[#223F7F] leading-snug">
                                         {item.title}
                                     </h4>
-                                    {/* Desc: Max-width strictly for 2xl, fluid otherwise */}
-                                    <p className={`font-montserrat font-normal text-[14px] text-[#191919BF] leading-[20px] w-full`}>
+                                    {/* Desc: 14px, 1.43 line-height, rgba(25, 25, 25, 0.75) */}
+                                    <p className="font-montserrat font-normal text-[14px] text-[#191919]/75 leading-[1.43] w-full">
                                         {item.desc}
                                     </p>
                                 </div>
@@ -100,13 +99,13 @@ const ExperiencedDoctors = () => {
                     </div>
                 </div>
 
-                {/* Right Column: Image */}
-                {/* Responsive width and fluid height management */}
-                <div className="w-full lg:flex-1 h-[300px] lg:h-[386.7px] flex-shrink-0">
+                {/* Right Column: Image (Width: 580px, Height: 386.7px) */}
+                {/* Updated lg:mt-[12px] for precise visual top alignment with the heading's cap height */}
+                <div className="w-full lg:w-[580px] h-auto lg:h-[386.7px] flex-shrink-0 lg:mt-[12px]">
                     <img
                         src={TeamImg}
                         alt="Experienced Doctors"
-                        className="w-full h-full object-cover rounded-[10.7px]"
+                        className="w-full h-full object-cover rounded-[10.7px] shadow-sm"
                     />
                 </div>
             </div>

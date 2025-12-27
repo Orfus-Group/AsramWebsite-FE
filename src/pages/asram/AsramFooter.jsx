@@ -9,6 +9,9 @@ import instaIcon from "@/assets/asram/insta.svg";
 import linkedincon from "@/assets/asram/linkedin.svg";
 import youtubeIcon from "@/assets/asram/youtube.svg";
 import { T } from "@/theme";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { FiChevronDown, FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 
 
 const PhoneIcon = ({ className = "" }) => (
@@ -122,12 +125,82 @@ const YoutubeIcon = () => (
   </svg>
 );
 
+const FooterAccordion = ({ title, children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="md:hidden border-b border-[rgba(25,25,25,0.05)] last:border-none">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between py-[18px] focus:outline-none"
+      >
+        <span className={`${T.font.family} text-[16px] font-semibold text-[#191919]`}>
+          {title}
+        </span>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="text-[#223F7F]"
+        >
+          <FiChevronDown size={20} />
+        </motion.div>
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="flex flex-col gap-[12px] pb-[18px]">
+              {children}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+const MobileContactCard = ({ icon: Icon, title, value, href }) => {
+  const isLink = !!href;
+  const Component = isLink ? motion.a : motion.div;
+
+  return (
+    <Component
+      href={href}
+      target={isLink && href.startsWith("http") ? "_blank" : undefined}
+      rel={isLink && href.startsWith("http") ? "noopener noreferrer" : undefined}
+      whileTap={isLink ? { scale: 0.96 } : undefined}
+      className={`
+        flex items-center gap-[12px] 
+        bg-white/80 backdrop-blur-md 
+        p-[14px] rounded-[16px] 
+        border border-white/40 
+        shadow-[0_8px_20px_rgba(0,0,0,0.04)]
+        w-full md:hidden
+        ${isLink ? "cursor-pointer" : ""}
+      `}
+    >
+      <div className="w-[40px] h-[40px] bg-[#223F7F]/10 rounded-[12px] flex items-center justify-center text-[#223F7F]">
+        <Icon size={20} />
+      </div>
+      <div className="flex flex-col">
+        <span className={`${T.font.family} text-[12px] mb-[3px] text-[#6B6B6B] leading-tight`}>{title}</span>
+        <span className={`${T.font.family} text-[14px] font-semibold text-[#191919] leading-tight`}>{value}</span>
+      </div>
+    </Component>
+  );
+};
+
 const AsramFooter = () => {
   return (
     <footer className="w-full bg-[#c5cfdf]">
 
-      {/* TOP CONTACT BAR */}
-      <div className="w-full bg-[#223F7F]" style={{ borderTop: "0.8px solid rgba(25,25,25,0.10)" }}>
+      {/* DESKTOP TOP CONTACT BAR */}
+      <div className="hidden md:block w-full bg-[#223F7F]" style={{ borderTop: "0.8px solid rgba(25,25,25,0.10)" }}>
         <div
           className="
             w-full
@@ -167,8 +240,51 @@ const AsramFooter = () => {
         </div>
       </div>
 
-      {/* FOOTER GRID */}
-      <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10 lg:px-[120px] py-[40px]">
+      {/* MOBILE CONTENT (Hidden on MD+) */}
+      <div className="md:hidden w-full px-5 pt-[30px] pb-[20px]">
+        <div className="flex flex-col items-center text-center mb-[40px]">
+          <h2 className={`${T.font.family} text-[22px] font-bold text-[#223F7F] mb-[12px]`}>ASRAM</h2>
+          <p className={`${T.font.family} text-[14px] text-[#6B6B6B] leading-[22px] max-w-[280px]`}>
+            A Legacy of Healing and Education. Empowering healthcare professionals with compassion.
+          </p>
+          <div className="flex items-center gap-[18px] mt-[24px]">
+            <a href="https://www.facebook.com/asramshospital" target="_blank" rel="noreferrer" className="group"><FacebookIcon /></a>
+            <a href="#" target="_blank" rel="noreferrer" className="group"><TwitterIcon /></a>
+            <a href="https://www.instagram.com/asram_hospitals/" target="_blank" rel="noreferrer" className="group"><InstagramIcon /></a>
+            <a href="https://www.linkedin.com/company/alluri-sitarama-raju-academy-of-medical-science/" target="_blank" rel="noreferrer" className="group"><LinkedinIcon /></a>
+            <a href="https://www.youtube.com/@Asramhospital" target="_blank" rel="noreferrer" className="group"><YoutubeIcon /></a>
+          </div>
+        </div>
+
+        {/* Contact Quick-Actions */}
+        <div className="flex flex-col gap-[12px] mb-[40px]">
+          <MobileContactCard icon={FiPhone} title="Emergency Support" value="+91 8812 345678" href="tel:+918812345678" />
+          <MobileContactCard icon={FiMail} title="Email Inquiry" value="info@asram.edu.in" href="mailto:info@asram.edu.in" />
+          <MobileContactCard icon={FiMapPin} title="Visit Campus" value="Eluru, AP, India" href="https://www.google.com/maps/dir//Alluri+Sitarama+Raju+Academy+of+Medical+Sciences,+Malkapuram,+Eluru,+Andhra+Pradesh+534005" />
+        </div>
+
+        {/* Smart Accordions */}
+        <div className="flex flex-col mb-[30px]">
+          <FooterAccordion title="Quick Links">
+            {["About ASRAM", "Admissions", "Academic Programs", "Research", "Faculty", "Campus Life"].map(text => (
+              <span key={text} className={`${T.font.family} text-[15px] text-[#191919BF]`}>{text}</span>
+            ))}
+          </FooterAccordion>
+          <FooterAccordion title="Patient Services">
+            {["Book Appointment", "Patient Portal", "Emergency Services", "Visitor Information", "Health Packages"].map(text => (
+              <span key={text} className={`${T.font.family} text-[15px] text-[#191919BF]`}>{text}</span>
+            ))}
+          </FooterAccordion>
+          <FooterAccordion title="Academic Life">
+            {["Medical College", "Nursing College", "Paramedical College", "Student Portal", "Library", "Placement Cell"].map(text => (
+              <span key={text} className={`${T.font.family} text-[15px] text-[#191919BF]`}>{text}</span>
+            ))}
+          </FooterAccordion>
+        </div>
+      </div>
+
+      {/* DESKTOP FOOTER GRID (Hidden on Mobile) */}
+      <div className="hidden md:block w-full max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10 lg:px-[120px] py-[40px]">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[24.2px] gap-y-[24.7px]">
 
           {/* COLUMN 1 */}
@@ -281,19 +397,19 @@ const AsramFooter = () => {
       </div>
 
       {/* COPYRIGHT ROW */}
-      <div className="w-full" style={{ borderTop: "0.8px solid rgba(25,25,25,0.10)" }}>
-        <div className="w-full max-w-[1440px] h-[68.9px] mx-auto px-5 sm:px-6 md:px-10 lg:px-[120px] pt-[10px] pb-[40px] flex flex-col md:flex-row justify-between items-center">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-[10px] font-regular text-[12.11px] text-[#191919BF]">
+      <div className="w-full bg-[#c5cfdf] md:bg-transparent" style={{ borderTop: "0.8px solid rgba(25,25,25,0.10)" }}>
+        <div className="w-full max-w-[1440px] md:h-[68.9px] mx-auto px-5 sm:px-6 md:px-10 lg:px-[120px] pt-[20px] md:pt-[10px] pb-[40px] flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-[16px] md:gap-[10px] font-regular text-[12.11px] text-[#191919BF]">
 
             <span className={`${T.font.family} text-[#191919BF] font-regular`}>
               © {new Date().getFullYear()} Alluri Sitarama Raju Academy of Medical Sciences.
               All rights reserved.
             </span>
 
-            <div className={`${T.font.family}  text-[#191919BF] font-regular flex gap-[20px]`}>
-              <span>Privacy Policy</span>
-              <span>Terms of Service</span>
-              <span>Sitemap</span>
+            <div className={`${T.font.family} text-[#191919BF] font-regular flex flex-wrap justify-center gap-[12px] md:gap-[20px] mt-[10px] md:mt-0`}>
+              <span className="cursor-pointer hover:text-[#223F7F]">Privacy Policy</span>
+              <span className="cursor-pointer hover:text-[#223F7F]">Terms of Service</span>
+              <span className="cursor-pointer hover:text-[#223F7F]">Sitemap</span>
             </div>
 
           </div>

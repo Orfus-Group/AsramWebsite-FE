@@ -48,13 +48,14 @@ const AsramPage = () => {
 
           <button
             className="
-                bg-[#191919] 
+                bg-[#191919]
                 hover:bg-[#27272a] 
                 text-white 
                 px-6 py-2 md:px-8 md:py-3
                 rounded-[8px] 
                 text-[16px] md:text-[22px] font-medium 
-                transition-colors
+                transition-all duration-300
+                premium-shadow-hover
             "
           >
             Explore Programs
@@ -108,7 +109,7 @@ const AsramPage = () => {
       <MotionSection delay={0.2}>
         <ClinicalExposureSection />
       </MotionSection>
-      
+
       <MotionSection delay={0.2}>
         <LaboratoriesTrainingSection />
       </MotionSection>

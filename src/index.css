@@ -89,3 +89,49 @@ html,
 body {
   scrollbar-width: auto !important;
 }
+
+/* UTILITIES */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* PREMIUM DESIGN TOKENS */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-morphism-dark {
+  background: rgba(34, 63, 127, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.vibrant-mesh {
+  background-color: #f8faff;
+  background-image:
+    radial-gradient(at 0% 0%, hsla(222, 60%, 94%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(180, 100%, 98%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(222, 60%, 94%, 1) 0, transparent 50%);
+}
+
+.premium-shadow {
+  box-shadow: 0 10px 40px -10px rgba(34, 63, 127, 0.12);
+}
+
+.premium-shadow-hover {
+  transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.premium-shadow-hover:hover {
+  box-shadow: 0 20px 60px -15px rgba(34, 63, 127, 0.2);
+  transform: translateY(-5px);
+}

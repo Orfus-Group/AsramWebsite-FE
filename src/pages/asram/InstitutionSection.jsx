@@ -194,22 +194,24 @@ const InstitutionsSection = () => {
                 h-full
                 min-h-[388px]
                 bg-white 
-                rounded-[14px] 
+                rounded-[20px] 
                 border border-[#E1E6EF] 
-                shadow-[0px_12px_28px_rgba(15,23,42,0.06)]
                 px-[24px] sm:px-[28px]
                 pt-[24px] pb-[24px]
                 flex flex-col 
-                transition-all duration-200 
-                hover:shadow-[0px_20px_42px_rgba(15,23,42,0.12)]
+                transition-all duration-300 
+                premium-shadow-hover
               "
             >
               {/* ICON */}
               <div
                 className="
                   w-[64px] h-[64px] 
-                  rounded-[12px] flex items-center justify-center 
+                  rounded-[16px] flex items-center justify-center 
                   mb-[22px]
+                  transition-all duration-300
+                  group-hover:scale-110
+                  group-hover:shadow-[0_8px_20px_-6px_rgba(0,0,0,0.1)]
                   group-hover:[&_path]:stroke-[#223F7F]
                 "
                 style={{ backgroundColor: iconBgColors[item.id] }}

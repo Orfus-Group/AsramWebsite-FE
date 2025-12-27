@@ -13,7 +13,7 @@ const FeaturedStory = () => {
             </h2>
 
             {/* Card Container */}
-            <div className="flex flex-col lg:flex-row shadow-sm rounded-[8px] overflow-hidden">
+            <div className="flex flex-col lg:flex-row shadow-sm rounded-[8px] overflow-hidden border border-[rgba(7,7,7,0.2)]">
 
                 {/* Image Side - Left */}
                 <div className="w-full lg:flex-1 relative bg-gray-200 min-h-[300px] lg:min-h-full">
@@ -25,49 +25,47 @@ const FeaturedStory = () => {
                 </div>
 
                 {/* Content Side - Right */}
-                <div className="w-full lg:w-[730.6px] lg:h-[377.9px] bg-[#EEF2F7] p-[30px] flex flex-col justify-between border border-[rgba(7,7,7,0.2)]">
-
+                <div className="w-full lg:w-[730.6px] bg-[#EEF2F7] p-[24px] sm:p-[30px] flex flex-col justify-between lg:border-l border-[rgba(7,7,7,0.2)] lg:min-h-[377.9px]">
                     <div className="flex-1 flex flex-col justify-start">
                         {/* Tags */}
-                        <div className="flex flex-wrap items-center gap-3 mb-6">
-                            <span className="bg-[#223F7F1A] text-[#223F7F] text-[14px] leading-[20px] font-regular px-4 py-1.5 rounded-[31498264px]">
+                        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                            <span className="bg-[#223F7F1A] text-[#223F7F] text-[12px] sm:text-[14px] leading-[20px] font-regular px-3 sm:px-4 py-1 sm:py-1.5 rounded-full">
                                 Achievement
                             </span>
-                            <span className="bg-[#223F7F1A] text-[#223F7F] text-[14px] leading-[20px] font-regular px-4 py-1.5 rounded-[31498264px]">
+                            <span className="bg-[#223F7F1A] text-[#223F7F] text-[12px] sm:text-[14px] leading-[20px] font-regular px-3 sm:px-4 py-1 sm:py-1.5 rounded-full">
                                 All Colleges
                             </span>
                         </div>
 
                         {/* Title */}
-                        <h3 className={`${T.font.family} font-semibold text-[22px] md:text-[32px] text-[#223F7F] mb-4 leading-tight`}>
+                        <h3 className={`${T.font.family} font-semibold text-[20px] sm:text-[28px] lg:text-[32px] text-[#223F7F] mb-3 sm:mb-4 leading-tight`}>
                             ASRAM Achieves NAAC A+ Accreditation for Academic Excellence
                         </h3>
 
                         {/* Description */}
-                        <p className={`${T.font.family} text-[18px] text-[#191919BF] mb-0 leading-[26px] font-regular line-clamp-3`}>
-                            The National Assessment and Accreditation Council (NAAC) has awarded ASRAM the prestigious A+ grade, recognizing our commitment to quality education, research excellence, and recognizing our commitment to quality education, research excellence comprehensive healthcare services.
+                        <p className={`${T.font.family} text-[15px] sm:text-[18px] text-[#191919BF] mb-6 sm:mb-0 leading-[22px] sm:leading-[26px] font-regular line-clamp-4 lg:line-clamp-3`}>
+                            The National Assessment and Accreditation Council (NAAC) has awarded ASRAM the prestigious A+ grade, recognizing our commitment to quality education, research excellence, and comprehensive healthcare services.
                         </p>
                     </div>
 
                     {/* Footer Row */}
-                    <div className="h-[70px] border-t-[0.9px] border-[rgba(7,7,7,0.2)] flex flex-col sm:flex-row items-center justify-between gap-4 mt-auto">
-
+                    <div className="pt-5 border-t-[0.9px] border-[rgba(7,7,7,0.2)] flex flex-col sm:flex-row items-center justify-between gap-4 mt-auto">
                         {/* Date & Read Time */}
-                        <div className="flex items-center gap-4 text-[16px] text-[#555555] font-regular">
+                        <div className="flex items-center gap-3 sm:gap-4 text-[13px] sm:text-[16px] text-[#555555] font-regular">
                             {/* Calendar Icon */}
                             <div className="flex items-center gap-2">
-                                <IconCalendar size={16} />
-                                <span className="text-[#191919BF] text-[14px] font-regular">December 1, 2024</span>
+                                <IconCalendar size={14} className="sm:w-[16px] sm:h-[16px]" />
+                                <span className="text-[#191919BF] text-[13px] sm:text-[14px] font-regular">Dec 1, 2024</span>
                             </div>
-                            <span className="w-[4px] h-[4px] rounded-full bg-[#555555]"></span>
-                            <span className="text-[#191919BF] text-[14px] font-regular">5 min read</span>
+                            <span className="w-[3px] h-[3px] sm:w-[4px] sm:h-[4px] rounded-full bg-[#555555]"></span>
+                            <span className="text-[#191919BF] text-[13px] sm:text-[14px] font-regular">5 min read</span>
                         </div>
 
                         {/* Button */}
-                        <button className="bg-[#223F7F] hover:bg-[#1a3163] text-white px-8 py-3 rounded-[8px] font-regular text-[18px] transition-colors flex items-center leading-[26px] gap-2">
+                        <button className="w-full sm:w-fit bg-[#223F7F] hover:bg-[#1a3163] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-[8px] font-regular text-[15px] sm:text-[18px] transition-colors flex items-center justify-center leading-[26px] gap-2">
                             Read Full Story
                             <IconArrowRight
-                                size={19}
+                                size={18}
                                 stroke="white"
                                 strokeWidth={1}
                             />

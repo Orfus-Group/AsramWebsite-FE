@@ -69,15 +69,15 @@ import MotionSection from "@/components/common/MotionSection";
 
 // Define missing components locally
 const SectionCard = ({ title, children, className = "" }) => (
-    <div className={`bg-white rounded-[9.4px] border border-[#070707]/20 p-[30px] ${className}`}>
-        {title && <h2 className={`${T.font.family} font-semibold text-[32px] text-[#223F7F] mb-[20px] leading-normal`}>{title}</h2>}
+    <div className={`bg-white rounded-[9.4px] border border-[#070707]/20 p-5 md:p-[30px] ${className}`}>
+        {title && <h2 className={`${T.font.family} font-semibold text-[24px] md:text-[32px] text-[#223F7F] mb-4 md:mb-[20px] leading-normal`}>{title}</h2>}
         {children}
     </div>
 );
 
 const WidgetCard = ({ title, children, className = "" }) => (
-    <div className={`bg-white rounded-[9.4px] border border-[#d1d5db] p-[24px] ${className}`}>
-        {title && <h6 className={`${T.font.family} font-semibold text-[22px] text-[#223F7F] mb-[20px] leading-[26px]`}>{title}</h6>}
+    <div className={`bg-white rounded-[9.4px] border border-[#d1d5db] p-5 md:p-[24px] ${className}`}>
+        {title && <h6 className={`${T.font.family} font-semibold text-[18px] md:text-[22px] text-[#223F7F] mb-4 md:mb-[20px] leading-tight md:leading-[26px]`}>{title}</h6>}
         {children}
     </div>
 );
@@ -91,14 +91,14 @@ const FacultyProfilePage = () => {
 
                 {/* ==================== BREADCRUMB ==================== */}
                 <MotionSection>
-                    <div className="mb-[32px]">
+                    <div className="mb-6 md:mb-[32px]">
                         <p className={`${T.font.family} text-[14px] text-[#191919BF]`}>
                             Home / <span className="text-[#223F7F] font-medium">Faculty</span>
                         </p>
                     </div>
 
                     {/* ==================== PROFILE HEADER CARD ==================== */}
-                    <div className="bg-[#EEF2F7] rounded-[9.4px] border border-[#070707]/20 p-[30px] mb-8 shadow-sm">
+                    <div className="bg-[#EEF2F7] rounded-[9.4px] border border-[#070707]/20 p-5 md:p-[30px] mb-8 shadow-sm">
                         {/* ... existing header content ... */}
                         <div className="flex flex-col md:flex-row gap-[30px] items-start">
                             {/* Image - Exact Figma Dimensions */}
@@ -115,10 +115,10 @@ const FacultyProfilePage = () => {
                                         </span>
                                     </div>
 
-                                    <h1 className={`${T.font.family} font-semibold text-[32px] text-[#223F7F] text-[32px] leading-tight mb-[12px]`}>
+                                    <h1 className={`${T.font.family} font-semibold text-[28px] md:text-[32px] text-[#223F7F] leading-tight mb-[12px]`}>
                                         Dr. Rajesh Kumar
                                     </h1>
-                                    <p className={`${T.font.family} text-[18px] font-medium text-[#191919BF] mb-[12px]`}>
+                                    <p className={`${T.font.family} text-[16px] md:text-[18px] font-medium text-[#191919BF] mb-[12px]`}>
                                         Professor & Head of Department
                                     </p>
                                     <p className={`${T.font.family} text-[14px] font-regular text-[#4a5565]`}>
@@ -220,7 +220,7 @@ const FacultyProfilePage = () => {
                                                 <IconGraduation className="w-[20px] h-[20px] text-white" />
                                             </div>
                                             <div>
-                                                <h4 className="text-[24px] font-semibold text-[#223F7F]">{edu.degree}</h4>
+                                                <h4 className="text-[20px] md:text-[24px] font-semibold text-[#223F7F]">{edu.degree}</h4>
                                                 <p className="text-[#191919BF] font-regular text-[14px]">{edu.college}</p>
                                                 <span className="text-[#191919BF] text-[14px]">{edu.year}</span>
                                             </div>
@@ -244,7 +244,7 @@ const FacultyProfilePage = () => {
                                                 <IconFile width={24} height={24} />
                                             </div>
                                             <div className="flex flex-col gap-[7.5px]">
-                                                <h4 className={`${T.font.family} text-[22px] font-semibold text-[#223F7F] leading-[1.3]`}>{pub.title}</h4>
+                                                <h4 className={`${T.font.family} text-[18px] md:text-[22px] font-semibold text-[#223F7F] leading-[1.3]`}>{pub.title}</h4>
                                                 <div className={`${T.font.family} text-[14px] font-medium text-[#191919BF]`}>
                                                     {pub.journal}
                                                 </div>

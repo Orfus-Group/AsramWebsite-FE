@@ -88,10 +88,10 @@ const FacultyPage = () => {
     };
 
     return (
-        <PageSection bg="bg-white" paddingClass="py-[80px] px-[120px]">
+        <PageSection bg="bg-white" paddingClass="py-10 md:py-[80px] px-6 md:px-[60px] lg:px-[120px]">
             {/* Header */}
             <MotionSection>
-                <div className="mb-[40px]">
+                <div className="mb-8 md:mb-[40px]">
                     {/* Breadcrumb */}
                     <div className="mb-4">
                         <p className={`${T.font.family} text-[14px] text-[#191919BF]`}>
@@ -99,10 +99,10 @@ const FacultyPage = () => {
                         </p>
                     </div>
 
-                    <h1 className={`${T.font.family} font-bold text-[32px] md:text-[42px] leading-[1.2] text-[#223F7F] mb-[20px]`}>
+                    <h1 className={`${T.font.family} font-bold text-[28px] sm:text-[32px] md:text-[42px] leading-[1.2] text-[#223F7F] mb-4 md:mb-[20px]`}>
                         Meet Our Distinguished Faculty
                     </h1>
-                    <p className={`${T.font.family} text-[18px] font-regular text-[#4A5565] leading-[28px] max-w-[1440px]`}>
+                    <p className={`${T.font.family} text-[16px] md:text-[18px] font-regular text-[#4A5565] leading-[1.5] md:leading-[28px] max-w-[1440px]`}>
                         ASRAM's faculty comprises highly qualified educators, researchers, and practitioners who are committed to excellence in teaching and advancing healthcare knowledge. Our team brings together decades of clinical experience, research expertise, and a passion for nurturing the next generation of healthcare professionals.
                     </p>
                 </div>
@@ -144,11 +144,11 @@ const FacultyPage = () => {
 
             {/* Leadership Section */}
             <MotionSection delay={0.1}>
-                <div className="mb-[60px]">
-                    <h2 className={`${T.font.family} font-bold text-[43px] text-[#223F7F] mb-[40px]`}>
+                <div className="mb-[40px] md:mb-[60px]">
+                    <h2 className={`${T.font.family} font-bold text-[28px] sm:text-[34px] md:text-[43px] text-[#223F7F] mb-6 md:mb-[40px]`}>
                         Leadership
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[18px]">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[18px]">
                         {leadershipData.map((member) => (
                             <FacultyCard key={member.id} member={member} type="Leadership" onViewProfile={() => handleViewProfile(member.id)} />
                         ))}
@@ -159,10 +159,10 @@ const FacultyPage = () => {
             {/* Faculty Members Section */}
             <MotionSection delay={0.2}>
                 <div>
-                    <h2 className={`${T.font.family} font-bold text-[43px] text-[#223F7F] mb-[40px]`}>
+                    <h2 className={`${T.font.family} font-bold text-[28px] sm:text-[34px] md:text-[43px] text-[#223F7F] mb-6 md:mb-[40px]`}>
                         Faculty Members
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[18px]">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[18px]">
                         {facultyMembersData.map((member) => (
                             <FacultyCard key={member.id} member={member} onViewProfile={() => handleViewProfile(member.id)} />
                         ))}
@@ -178,7 +178,7 @@ const FacultyCard = ({ member, onViewProfile, type }) => {
     return (
         <div className="bg-white border border-[#E5E7EB] rounded-[9.4px] overflow-hidden flex flex-col transition-shadow relative">
             {/* Image */}
-            <div className="h-[310px] w-full bg-gray-100 overflow-hidden relative">
+            <div className="h-[280px] sm:h-[310px] w-full bg-gray-100 overflow-hidden relative">
                 {member.image ? (
                     <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
                 ) : (
@@ -186,21 +186,21 @@ const FacultyCard = ({ member, onViewProfile, type }) => {
                 )}
                 {/* Tag */}
                 {type === 'Leadership' && (
-                    <div className="absolute top-[18px] right-[18px] bg-[#223F7F] text-white text-[12px] font-regular px-[18.09px] py-[7.23px] rounded-[9.04px] uppercase tracking-wider">
+                    <div className="absolute top-4 sm:top-[18px] right-4 sm:right-[18px] bg-[#223F7F] text-white text-[11px] sm:text-[12px] font-regular px-4 sm:px-[18.09px] py-1.5 sm:py-[7.23px] rounded-[9.04px] uppercase tracking-wider">
                         Leadership
                     </div>
                 )}
             </div>
 
             {/* Content */}
-            <div className="p-[27px] flex flex-col flex-1">
-                <h3 className={`${T.font.family} font-semibold text-[25px] leading-[26px] text-[#223F7F] mb-[4px]`}>
+            <div className="p-5 sm:p-[27px] flex flex-col flex-1">
+                <h3 className={`${T.font.family} font-semibold text-[22px] sm:text-[25px] leading-tight sm:leading-[26px] text-[#223F7F] mb-[4px]`}>
                     {member.name}
                 </h3>
-                <p className={`${T.font.family} text-[15.5px] leading-[24.8px] font-regular text-[#223F7F] mb-[2px]`}>
+                <p className={`${T.font.family} text-[14px] sm:text-[15.5px] leading-snug sm:leading-[24.8px] font-regular text-[#223F7F] mb-[2px]`}>
                     {member.role}
                 </p>
-                <p className={`${T.font.family} text-[16.28px] leading-[23.5px] text-[#4A5565] mb-[12px]`}>
+                <p className={`${T.font.family} text-[15px] sm:text-[16.28px] leading-relaxed sm:leading-[23.5px] text-[#4A5565] mb-[12px]`}>
                     {member.department}
                 </p>
 
@@ -244,15 +244,15 @@ const FacultyCard = ({ member, onViewProfile, type }) => {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex items-center gap-[12px] mt-auto">
+                <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-[12px] mt-auto">
                     <button
-                        className="flex-1 flex items-center justify-center gap-[7px] border border-[rgba(7,7,7,0.2)] bg-[#EEF2F7] hover:bg-[#E5E7EB] text-[#364153] h-[50px] rounded-[9px] text-[16.28px] leading-[16.3px] font-regular transition-colors">
+                        className="w-full sm:flex-1 flex items-center justify-center gap-[7px] border border-[rgba(7,7,7,0.2)] bg-[#EEF2F7] hover:bg-[#E5E7EB] text-[#364153] h-[46px] sm:h-[50px] rounded-[9px] text-[15px] sm:text-[16.28px] leading-[16.3px] font-regular transition-colors">
                         <IconEmailLocal />
                         Email
                     </button>
                     <button
                         onClick={onViewProfile}
-                        className="flex-1 flex items-center justify-center gap-[7px] bg-[#223F7F] hover:bg-[#1a3266] text-[#FFF] h-[50px] rounded-[9px] text-[16.28px] leading-[16.3px] font-regular transition-colors"  >
+                        className="w-full sm:flex-1 flex items-center justify-center gap-[7px] bg-[#223F7F] hover:bg-[#1a3266] text-[#FFF] h-[46px] sm:h-[50px] rounded-[9px] text-[15px] sm:text-[16.28px] leading-[16.3px] font-regular transition-colors"  >
                         View Profile
                     </button>
                 </div>
