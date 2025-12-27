@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
@@ -27,6 +27,13 @@ const IconSearch = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M21 21L16.65 16.65" stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+const IconClose = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M6 6L18 18" stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );
 
@@ -75,6 +82,7 @@ import MotionSection from "@/components/common/MotionSection";
 const FacultyPage = () => {
     const { setHero, hideHero } = useHero();
     const navigate = useNavigate();
+    const [searchQuery, setSearchQuery] = useState("");
 
     useLayoutEffect(() => {
         setHero({
@@ -86,6 +94,24 @@ const FacultyPage = () => {
     const handleViewProfile = (id) => {
         navigate(`/faculty/${id}`);
     };
+
+    // Unified filtering logic matching: name, specialization, department, or role
+    const filterFaculty = (data) => {
+        if (!searchQuery.trim()) return data;
+
+        const query = searchQuery.toLowerCase();
+        return data.filter(member =>
+            member.name?.toLowerCase().includes(query) ||
+            member.specialty?.toLowerCase().includes(query) ||
+            member.department?.toLowerCase().includes(query) ||
+            member.role?.toLowerCase().includes(query)
+        );
+    };
+
+    const filteredLeadership = useMemo(() => filterFaculty(leadershipData), [searchQuery]);
+    const filteredFaculty = useMemo(() => filterFaculty(facultyMembersData), [searchQuery]);
+
+    const hasResults = filteredLeadership.length > 0 || filteredFaculty.length > 0;
 
     return (
         <PageSection bg="bg-white" paddingClass="py-10 md:py-[80px] px-6 md:px-[60px] lg:px-[120px]">
@@ -124,6 +150,8 @@ const FacultyPage = () => {
                         </div>
                         <input
                             type="text"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
                             placeholder="Search faculty by name, specialization, or department..."
                             className="
                                 w-full
@@ -138,37 +166,68 @@ const FacultyPage = () => {
                                 font-regular
                             "
                         />
+                        {searchQuery && (
+                            <button
+                                onClick={() => setSearchQuery("")}
+                                className="flex-shrink-0 hover:bg-gray-100 p-1 rounded-full transition-colors"
+                            >
+                                <IconClose />
+                            </button>
+                        )}
                     </div>
                 </div>
             </MotionSection>
 
-            {/* Leadership Section */}
-            <MotionSection delay={0.1}>
-                <div className="mb-[40px] md:mb-[60px]">
-                    <h2 className={`${T.font.family} font-bold text-[28px] sm:text-[34px] md:text-[43px] text-[#223F7F] mb-6 md:mb-[40px]`}>
-                        Leadership
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[18px]">
-                        {leadershipData.map((member) => (
-                            <FacultyCard key={member.id} member={member} type="Leadership" onViewProfile={() => handleViewProfile(member.id)} />
-                        ))}
+            {/* Search Results / Sections */}
+            {!hasResults ? (
+                <MotionSection>
+                    <div className="py-20 text-center">
+                        <p className={`${T.font.family} text-[20px] text-[#4A5565] mb-4`}>
+                            No faculty members found matching your search.
+                        </p>
+                        <button
+                            onClick={() => setSearchQuery("")}
+                            className="text-[#223F7F] font-semibold hover:underline"
+                        >
+                            Clear search and show all
+                        </button>
                     </div>
-                </div>
-            </MotionSection>
+                </MotionSection>
+            ) : (
+                <>
+                    {/* Leadership Section */}
+                    {filteredLeadership.length > 0 && (
+                        <MotionSection delay={0.1}>
+                            <div className="mb-[40px] md:mb-[60px]">
+                                <h2 className={`${T.font.family} font-bold text-[28px] sm:text-[34px] md:text-[43px] text-[#223F7F] mb-6 md:mb-[40px]`}>
+                                    Leadership
+                                </h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[18px]">
+                                    {filteredLeadership.map((member) => (
+                                        <FacultyCard key={member.id} member={member} type="Leadership" onViewProfile={() => handleViewProfile(member.id)} />
+                                    ))}
+                                </div>
+                            </div>
+                        </MotionSection>
+                    )}
 
-            {/* Faculty Members Section */}
-            <MotionSection delay={0.2}>
-                <div>
-                    <h2 className={`${T.font.family} font-bold text-[28px] sm:text-[34px] md:text-[43px] text-[#223F7F] mb-6 md:mb-[40px]`}>
-                        Faculty Members
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[18px]">
-                        {facultyMembersData.map((member) => (
-                            <FacultyCard key={member.id} member={member} onViewProfile={() => handleViewProfile(member.id)} />
-                        ))}
-                    </div>
-                </div>
-            </MotionSection>
+                    {/* Faculty Members Section */}
+                    {filteredFaculty.length > 0 && (
+                        <MotionSection delay={0.2}>
+                            <div>
+                                <h2 className={`${T.font.family} font-bold text-[28px] sm:text-[34px] md:text-[43px] text-[#223F7F] mb-6 md:mb-[40px]`}>
+                                    Faculty Members
+                                </h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[18px]">
+                                    {filteredFaculty.map((member) => (
+                                        <FacultyCard key={member.id} member={member} onViewProfile={() => handleViewProfile(member.id)} />
+                                    ))}
+                                </div>
+                            </div>
+                        </MotionSection>
+                    )}
+                </>
+            )}
 
         </PageSection>
     );

@@ -5,11 +5,13 @@ import { LazyMotion, domAnimation } from "framer-motion";
 import LoadingScreen from "./components/loader/LoadingScreen";
 import routesConfig from "./routes/routesConfig";
 import LayoutSwitcher from "./layouts/LayoutSwitcher";
+import ScrollToReset from "./components/common/ScrollToReset";
 
 const App = () => {
   return (
     <LazyMotion features={domAnimation}>
       <Suspense fallback={<LoadingScreen />}>
+        <ScrollToReset />
         <Routes>
           <Route path="/*" element={<LayoutSwitcher />}>
             {routesConfig.map(({ path = "", element }, index) => (

@@ -1,5 +1,5 @@
-// src/sections/home/AsramFooter.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import phoneIcon from "@/assets/asram/phone.svg";
 import addressIcon from "@/assets/asram/address.svg";
 import mailIcon from "@/assets/asram/mail.svg";
@@ -214,29 +214,37 @@ const AsramFooter = () => {
           "
         >
           {[
-            { icon: <PhoneIcon />, text: "+91 8812 345678" },
-            { icon: <PhoneIcon />, text: "+91 8812 345678" },
-            { icon: <MailIcon />, text: "info@asram.edu.in" },
-            { icon: <MailIcon />, text: "info@asram.edu.in" },
-            { icon: <AddressIcon />, text: "Eluru, Andhra Pradesh, India – 534005" }].map((item, i) => (
-              <div key={i} className="flex items-center gap-[6px] whitespace-nowrap">
-                <div
-                  className="flex items-center justify-center"
-                  style={{
-                    width: "30.27px",
-                    height: "30.27px",
-                    borderRadius: "6.05px",
-                    background: "white",
-                  }}
-                >
-                  <span className="w-[16px] h-[16px] flex items-center justify-center">
-                    {item.icon}
-                  </span>              </div>
-                <span className={`${T.font.family} text-[#FFF] text-[12px] font-regular`}>
-                  {item.text}
+            { icon: <PhoneIcon />, text: "+91 8812 345678", href: "tel:+918812345678" },
+            { icon: <PhoneIcon />, text: "+91 8812 345678", href: "tel:+918812345678" },
+            { icon: <MailIcon />, text: "info@asram.edu.in", href: "mailto:info@asram.edu.in" },
+            { icon: <MailIcon />, text: "info@asram.edu.in", href: "mailto:info@asram.edu.in" },
+            { icon: <AddressIcon />, text: "Eluru, Andhra Pradesh, India – 534005", href: "https://www.google.com/maps/dir//Alluri+Sitarama+Raju+Academy+of+Medical+Sciences,+Malkapuram,+Eluru,+Andhra+Pradesh+534005" }
+          ].map((item, i) => (
+            <a
+              key={i}
+              href={item.href}
+              target={item.href.startsWith("http") ? "_blank" : undefined}
+              rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="flex items-center gap-[6px] whitespace-nowrap group hover:opacity-80 transition-all duration-300"
+            >
+              <div
+                className="flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                style={{
+                  width: "30.27px",
+                  height: "30.27px",
+                  borderRadius: "6.05px",
+                  background: "white",
+                }}
+              >
+                <span className="w-[16px] h-[16px] flex items-center justify-center">
+                  {item.icon}
                 </span>
               </div>
-            ))}
+              <span className={`${T.font.family} text-[#FFF] text-[12px] font-regular group-hover:underline underline-offset-4 decoration-white/30`}>
+                {item.text}
+              </span>
+            </a>
+          ))}
         </div>
       </div>
 
@@ -266,18 +274,59 @@ const AsramFooter = () => {
         {/* Smart Accordions */}
         <div className="flex flex-col mb-[30px]">
           <FooterAccordion title="Quick Links">
-            {["About ASRAM", "Admissions", "Academic Programs", "Research", "Faculty", "Campus Life"].map(text => (
-              <span key={text} className={`${T.font.family} text-[15px] text-[#191919BF]`}>{text}</span>
+            {[
+              { text: "About ASRAM", path: "/about-asram" },
+              { text: "Admissions", path: "/admissions" },
+              { text: "Healthcare Services", path: "/healthcare" },
+              { text: "Academic Programs", path: "/academics" },
+              { text: "Research", path: "/research" },
+              { text: "Faculty", path: "/faculty" },
+              { text: "Campus Life", path: "/campus-life" }
+            ].map(item => (
+              <Link
+                key={item.text}
+                to={item.path}
+                className={`${T.font.family} text-[15px] text-[#191919BF] hover:text-[#223F7F] hover:translate-x-[6px] transition-all duration-300 inline-block`}
+              >
+                {item.text}
+              </Link>
             ))}
           </FooterAccordion>
           <FooterAccordion title="Patient Services">
             {["Book Appointment", "Patient Portal", "Emergency Services", "Visitor Information", "Health Packages"].map(text => (
-              <span key={text} className={`${T.font.family} text-[15px] text-[#191919BF]`}>{text}</span>
+              <span
+                key={text}
+                className={`${T.font.family} text-[15px] text-[#191919BF] hover:text-[#223F7F] hover:translate-x-[6px] transition-all duration-300 inline-block cursor-pointer`}
+              >
+                {text}
+              </span>
             ))}
           </FooterAccordion>
           <FooterAccordion title="Academic Life">
-            {["Medical College", "Nursing College", "Paramedical College", "Student Portal", "Library", "Placement Cell"].map(text => (
-              <span key={text} className={`${T.font.family} text-[15px] text-[#191919BF]`}>{text}</span>
+            {[
+              { text: "Medical College", path: "/academics/medical-college" },
+              { text: "Nursing College", path: "/nursing" },
+              { text: "Paramedical College", path: "/academics/paramedical-college" },
+              { text: "Student Portal", path: null },
+              { text: "Library", path: null },
+              { text: "Placement Cell", path: null }
+            ].map(item => (
+              item.path ? (
+                <Link
+                  key={item.text}
+                  to={item.path}
+                  className={`${T.font.family} text-[15px] text-[#191919BF] hover:text-[#223F7F] hover:translate-x-[6px] transition-all duration-300 inline-block`}
+                >
+                  {item.text}
+                </Link>
+              ) : (
+                <span
+                  key={item.text}
+                  className={`${T.font.family} text-[15px] text-[#191919BF] hover:text-[#223F7F] hover:translate-x-[6px] transition-all duration-300 inline-block cursor-pointer`}
+                >
+                  {item.text}
+                </span>
+              )
             ))}
           </FooterAccordion>
         </div>
@@ -325,21 +374,22 @@ const AsramFooter = () => {
             </h3>
 
             {[
-              "About ASRAM",
-              "Admissions",
-              "Healthcare Services",
-              "Academic Programs",
-              "Research",
-              "Faculty",
-              "Campus Life",
-              "News & Events",
-            ].map((text) => (
-              <span
-                key={text}
-                className={`${T.font.family} font-regular text-[14px] leading-[22px] text-[#191919BF]`}
+              { text: "About ASRAM", path: "/about-asram" },
+              { text: "Admissions", path: "/admissions" },
+              { text: "Healthcare Services", path: "/healthcare" },
+              { text: "Academic Programs", path: "/academics" },
+              { text: "Research", path: "/research" },
+              { text: "Faculty", path: "/faculty" },
+              { text: "Campus Life", path: "/campus-life" },
+              { text: "News & Events", path: "/news" },
+            ].map((item) => (
+              <Link
+                key={item.text}
+                to={item.path}
+                className={`${T.font.family} font-regular text-[14px] leading-[22px] text-[#191919BF] hover:text-[#223F7F] hover:translate-x-[6px] transition-all duration-300 inline-block`}
               >
-                {text}
-              </span>
+                {item.text}
+              </Link>
             ))}
           </div>
 
@@ -361,7 +411,7 @@ const AsramFooter = () => {
             ].map((text) => (
               <span
                 key={text}
-                className={`${T.font.family} font-regular text-[14px] leading-[22px] text-[#191919BF]`}
+                className={`${T.font.family} font-regular text-[14px] leading-[22px] text-[#191919BF] hover:text-[#223F7F] hover:translate-x-[6px] transition-all duration-300 inline-block cursor-pointer`}
               >
                 {text}
               </span>
@@ -375,21 +425,31 @@ const AsramFooter = () => {
             </h3>
 
             {[
-              "Medical College",
-              "Nursing College",
-              "Paramedical College",
-              "Online Courses",
-              "Student Portal",
-              "Library",
-              "Scholarships",
-              "Placement Cell",
-            ].map((text) => (
-              <span
-                key={text}
-                className={`${T.font.family} font-regular text-[14px] leading-[22px] text-[#191919BF]`}
-              >
-                {text}
-              </span>
+              { text: "Medical College", path: "/academics/medical-college" },
+              { text: "Nursing College", path: "/nursing" },
+              { text: "Paramedical College", path: "/academics/paramedical-college" },
+              { text: "Online Courses", path: null },
+              { text: "Student Portal", path: null },
+              { text: "Library", path: null },
+              { text: "Scholarships", path: null },
+              { text: "Placement Cell", path: null },
+            ].map((item) => (
+              item.path ? (
+                <Link
+                  key={item.text}
+                  to={item.path}
+                  className={`${T.font.family} font-regular text-[14px] leading-[22px] text-[#191919BF] hover:text-[#223F7F] hover:translate-x-[6px] transition-all duration-300 inline-block`}
+                >
+                  {item.text}
+                </Link>
+              ) : (
+                <span
+                  key={item.text}
+                  className={`${T.font.family} font-regular text-[14px] leading-[22px] text-[#191919BF] hover:text-[#223F7F] hover:translate-x-[6px] transition-all duration-300 inline-block cursor-pointer`}
+                >
+                  {item.text}
+                </span>
+              )
             ))}
           </div>
 
