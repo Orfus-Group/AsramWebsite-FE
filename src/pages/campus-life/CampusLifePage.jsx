@@ -1,5 +1,6 @@
 import React, { useLayoutEffect } from 'react';
 import { useHero } from '@/context/HeroContext';
+import TypedText from '@/components/common/TypedText';
 import MotionSection from '@/components/common/MotionSection';
 
 // Sections
@@ -19,21 +20,24 @@ import HeroBg from "@/assets/campuslife/campuslifeherobg.png";
 import StudentVoices from '../academics/StudentVoices';
 
 const CampusLifePage = () => {
-    const { setHero } = useHero();
+    const { setHero, hideHero } = useHero();
 
     useLayoutEffect(() => {
         setHero({
-            title: (   <span className="font-montserrat font-bold text-[32px] md:text-[60px] leading-[54px] text-white">
-        Campus Life
-        </span>),
+            title: (
+                <TypedText
+                    text="Campus Life"
+                    className="font-montserrat font-bold text-[32px] md:text-[60px] leading-[54px] text-white"
+                />
+            ),
             bgImage: HeroBg,
             isVisible: true,
             children: (
                 <div className="max-w-[700px]">
                     <p className="font-montserrat font-medium text-[16px] md:text-[22px] leading-[30px] text-white/90 mb-8">
-A well-structured campus environment that supports academic focus, personal growth, and student well-being.                    </p>
+                        A well-structured campus environment that supports academic focus, personal growth, and student well-being.                    </p>
                     <button
-            className="
+                        className="
                 bg-[#191919] 
                 hover:bg-[#27272a] 
                 text-white 
@@ -42,13 +46,14 @@ A well-structured campus environment that supports academic focus, personal grow
                 text-[16px] md:text-[22px] font-medium 
                 transition-colors
             "
-          >
-            Explore Programs
-          </button>
+                    >
+                        Explore Programs
+                    </button>
                 </div>
             )
         });
-    }, [setHero]);
+        return () => hideHero();
+    }, [setHero, hideHero]);
 
     return (
         <div className="w-full">

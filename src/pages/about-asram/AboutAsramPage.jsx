@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from "react";
 import { useHero } from "@/context/HeroContext";
 import { T } from "@/theme";
+import TypedText from "@/components/common/TypedText";
 import WhoWeAre from "./sections/WhoWeAre";
 import OurCoreValues from "./sections/OurCoreValues";
 import AccreditationStandards from "./sections/AccreditationStandards";
@@ -28,13 +29,14 @@ const MotionSection = ({ children }) => (
 );
 
 const AboutAsramPage = () => {
-    const { setHero } = useHero();
+    const { setHero, hideHero } = useHero();
 
     useLayoutEffect(() => {
         setHero({
             title: (
                 <span className={`${T.font.family} font-normal text-[32px] md:text-[60px] leading-[40px] md:leading-[54px]`}>
-                    About <span className="font-bold">ASRAM</span>
+                    <TypedText text="About " className="font-normal" />
+                    <TypedText text="ASRAM" className="font-bold" delay={0.3} />
                 </span>
             ),
             bgImage: HeroBg,
@@ -60,7 +62,8 @@ const AboutAsramPage = () => {
                 </div>
             )
         });
-    }, [setHero]);
+        return () => hideHero();
+    }, [setHero, hideHero]);
 
     return (
         <div className="w-full bg-white">

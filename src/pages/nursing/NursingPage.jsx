@@ -2,6 +2,7 @@ import React, { useLayoutEffect } from "react";
 
 import { useHero } from "@/context/HeroContext";
 import heroBg from "@/assets/nursing/asramnursingbanner.png";
+import TypedText from "@/components/common/TypedText";
 import MotionSection from "@/components/common/MotionSection";
 import AcademicProgramsSection from "./AcademicProgramsSection";
 import VisionMissionSection from "./VisionMission";
@@ -22,9 +23,10 @@ const NursingPage = () => {
   useLayoutEffect(() => {
     setHero({
       title: (
-        <span className="font-montserrat font-bold text-[32px] md:text-[40px] leading-[1.2] text-white">
-          Excellence in Nursing Education
-        </span>
+        <TypedText
+          text="Excellence in Nursing Education"
+          className="font-montserrat font-bold text-[32px] md:text-[40px] leading-[1.2] text-white"
+        />
       ),
       bgImage: heroBg,
       children: (

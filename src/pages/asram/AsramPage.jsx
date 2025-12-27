@@ -18,7 +18,7 @@ import ClinicalExposureSection from "./ClinicalExposureSection";
 import AsramFooter from "./AsramFooter";
 import { useHero } from "@/context/HeroContext";
 import MotionSection from "@/components/common/MotionSection";
-import TextReveal from "@/components/common/TextReveal";
+import TypedText from "@/components/common/TypedText";
 
 const AsramPage = () => {
   const { setHero, hideHero } = useHero();
@@ -26,10 +26,10 @@ const AsramPage = () => {
   useLayoutEffect(() => {
     setHero({
       title: (
-        <TextReveal>
-          <span className="font-regular">DISCOVER </span>
-          <span className="font-bold">ASRAM</span>
-        </TextReveal>
+        <>
+          <TypedText text="DISCOVER " className="font-regular" />
+          <TypedText text="ASRAM" className="font-bold" delay={0.5} />
+        </>
       ),
       bgImage: heroBg,
       children: (
@@ -63,7 +63,8 @@ const AsramPage = () => {
         </>
       ),
     });
-  }, [setHero]);
+    return () => hideHero();
+  }, [setHero, hideHero]);
 
   return (
     <>

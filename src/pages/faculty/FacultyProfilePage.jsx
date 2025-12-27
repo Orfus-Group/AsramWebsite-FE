@@ -83,7 +83,15 @@ const WidgetCard = ({ title, children, className = "" }) => (
 );
 
 const FacultyProfilePage = () => {
-    // ... existing hooks ...
+    const { setHero, hideHero } = useHero();
+
+    useLayoutEffect(() => {
+        setHero({
+            // title: "Faculty Page",
+            bgImage: FacultyHerobg,
+        });
+        return () => hideHero();
+    }, [setHero, hideHero]);
 
     return (
         <div className="bg-[#F9FAFB] min-h-screen">
@@ -186,11 +194,10 @@ const FacultyProfilePage = () => {
 
                 {/* ==================== CONTENT GRID ==================== */}
                 <MotionSection delay={0.2}>
-                    <div className="flex flex-col lg:flex-row gap-[30px]">
+                    <div className="flex flex-col lg:flex-row gap-[30px] items-stretch">
 
                         {/* ==================== LEFT COLUMN (MAIN INFO) ==================== */}
-                        <div className="flex-1 space-y-8">
-                            {/* ... existing content cards ... */}
+                        <div className="flex-1 flex flex-col gap-8">
                             {/* About */}
                             <SectionCard title="About">
                                 <p className={`${T.font.family} font-regular text-[18px] leading-[26px] text-[#191919BF]`}>
@@ -229,9 +236,8 @@ const FacultyProfilePage = () => {
                                 </div>
                             </SectionCard>
 
-
                             {/* Recent Publications */}
-                            <SectionCard title="Recent Publications">
+                            <SectionCard title="Recent Publications" className="flex-grow h-full">
                                 <div className="flex flex-col">
                                     {[
                                         { title: "Novel Approaches in Primary PCI for STEMI Patients", journal: "Indian Heart Journal", year: "2023", type: "Research Article" },
@@ -262,7 +268,6 @@ const FacultyProfilePage = () => {
 
                         {/* ==================== RIGHT COLUMN (SIDEBAR) ==================== */}
                         <div className="w-full lg:w-[399px] shrink-0 flex flex-col gap-[20px]">
-                            {/* ... existing widgets ... */}
                             {/* Contact Info Widget */}
                             <WidgetCard title="Contact Information">
                                 <div className="space-y-4">
@@ -309,51 +314,6 @@ const FacultyProfilePage = () => {
                                 </div>
                             </WidgetCard>
 
-
-                            {/* Quick Actions Widget */}
-                            {/* <WidgetCard title="Quick Actions" className="bg-[#F3F4F6]">
-                            <div className="space-y-3">
-                                <button
-                                    className="
-      w-full
-      bg-white
-      border border-[#D1D5DC]
-      text-left
-      hover:border-[#D1D5DC]
-      text-[#364153]
-      font-regular
-      py-3 px-4
-      rounded-[9.39px]
-      transition-colors
-      text-[15px] leading-[24px]
-      shadow-sm
-    "
-                                >
-                                    Schedule Appointment
-                                </button>
-
-                                <button
-                                    className="
-      w-full
-      bg-white
-      border border-[#D1D5DC]
-      text-left
-      hover:border-[#D1D5DC]
-      text-[#364153]
-      font-regular
-      py-3 px-4
-      rounded-[9.39px]
-      transition-colors
-      text-[15px] leading-[24px]
-      shadow-sm
-    "
-                                >
-                                    Request Consultation
-                                </button>
-                            </div>
-
-                        </WidgetCard> */}
-
                             {/* Memberships Widget */}
                             <WidgetCard title="Professional Memberships">
                                 <ul className="flex flex-col gap-[11.3px]">
@@ -374,10 +334,9 @@ const FacultyProfilePage = () => {
                                 </ul>
                             </WidgetCard>
 
-
                             {/* Research Interests (Moved to Sidebar) */}
-                            <WidgetCard title="Research Interests" className="bg-white">
-                                <div className="flex flex-col items-start gap-[12px]">
+                            <WidgetCard title="Research Interests" className="bg-white flex-grow h-full flex flex-col">
+                                <div className="flex flex-col items-start justify-between flex-grow mt-[15px]">
                                     {["Acute Coronary Syndrome Management", "Cardiac Imaging and Diagnostics", "Heart Failure Management", "Preventive Cardiology", "Cardiac Rehabilitation"].map((tag, i) => (
                                         <div key={i} className="bg-[#EEF2F7] border-[0.9px] border-[#07070733] rounded-[9.4px] pt-[8.4px] pr-[15.1px] pb-[7.5px] pl-[16px]">
                                             <span className="font-regular text-[15px] leading-[24px] text-[#191919BF]">
@@ -388,7 +347,6 @@ const FacultyProfilePage = () => {
                                 </div>
                             </WidgetCard>
                         </div>
-
                     </div>
                 </MotionSection>
 

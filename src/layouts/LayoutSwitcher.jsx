@@ -70,8 +70,9 @@ const InnerLayout = () => {
   return (
     <>
       <Header />
-      {heroData.isVisible && (
+      {heroData.isVisible && heroData.path === pathname && (
         <CommonHero
+          key={pathname}
           title={heroData.title}
           bgImage={heroData.bgImage}
           showPagination={showPagination}

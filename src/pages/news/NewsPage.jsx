@@ -1,6 +1,7 @@
 import React, { useState, useLayoutEffect } from "react";
 import { useHero } from "@/context/HeroContext";
 import NewsHerobg from "@/assets/news/asramnewsbanner.png";
+import TypedText from "@/components/common/TypedText";
 
 import FeaturedStory from "./sections/FeaturedStory";
 import LatestNews from "./sections/LatestNews";
@@ -17,9 +18,10 @@ const NewsPage = () => {
   useLayoutEffect(() => {
     setHero({
       title: (
-        <span className="font-montserrat font-bold text-[40px] leading-[1.35] text-white">
-          ASRAM News
-        </span>
+        <TypedText
+          text="ASRAM News"
+          className="font-montserrat font-bold text-[40px] leading-[1.35] text-white"
+        />
       ),
       bgImage: NewsHerobg,
       children: (

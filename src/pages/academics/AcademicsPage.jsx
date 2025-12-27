@@ -10,6 +10,7 @@ import FinancialAidScholarships from "./FinancialAidScholarships";
 import JoinOurNursingCommunity from "./JoiningNursingCommunity";
 import heroBg from "@/assets/academics/asramacademicsbanner.png";
 import { useHero } from "@/context/HeroContext";
+import TypedText from "@/components/common/TypedText";
 import MotionSection from "@/components/common/MotionSection";
 
 
@@ -20,9 +21,10 @@ const AcademicsPage = () => {
   useLayoutEffect(() => {
     setHero({
       title: (
-        <span className="font-montserrat font-bold text-[32px] md:text-[40px] leading-[1.2] text-white">
-          Build a Career in Healthcare
-        </span>
+        <TypedText
+          text="Build a Career in Healthcare"
+          className="font-montserrat font-bold text-[32px] md:text-[40px] leading-[1.2] text-white"
+        />
       ),
       bgImage: heroBg,
       children: (
@@ -52,32 +54,30 @@ const AcademicsPage = () => {
 
   return (
     <>
-      <>
-        <MotionSection>
-          <ProgramsOffered />
-        </MotionSection>
-        <MotionSection delay={0.1}>
-          <NursingCareerSection />
-        </MotionSection>
-        <MotionSection delay={0.1}>
-          <WhyChooseNursingSchool />
-        </MotionSection>
-        <MotionSection delay={0.2}>
-          <ExperienceDrivenEducation />
-        </MotionSection>
-        <MotionSection delay={0.2}>
-          <NursingAdmissionsSection />
-        </MotionSection>
-        <MotionSection delay={0.3}>
-          <StudentVoices />
-        </MotionSection>
-        <MotionSection delay={0.3}>
-          <FinancialAidScholarships />
-        </MotionSection>
-        <MotionSection delay={0.4}>
-          <JoinOurNursingCommunity />
-        </MotionSection>
-      </>
+      <MotionSection>
+        <ProgramsOffered />
+      </MotionSection>
+      <MotionSection delay={0.1}>
+        <NursingCareerSection />
+      </MotionSection>
+      <MotionSection delay={0.1}>
+        <WhyChooseNursingSchool />
+      </MotionSection>
+      <MotionSection delay={0.2}>
+        <ExperienceDrivenEducation />
+      </MotionSection>
+      <MotionSection delay={0.2}>
+        <NursingAdmissionsSection />
+      </MotionSection>
+      <MotionSection delay={0.3}>
+        <StudentVoices />
+      </MotionSection>
+      <MotionSection delay={0.3}>
+        <FinancialAidScholarships />
+      </MotionSection>
+      <MotionSection delay={0.4}>
+        <JoinOurNursingCommunity />
+      </MotionSection>
     </>
   );
 };

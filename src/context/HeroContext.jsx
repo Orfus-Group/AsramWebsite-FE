@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useCallback, useMemo } from "react";
+import { useLocation } from "react-router-dom";
 
 const HeroContext = createContext();
 
@@ -11,11 +12,13 @@ export const useHero = () => {
 };
 
 export const HeroProvider = ({ children }) => {
+    const { pathname } = useLocation();
     const [heroData, setHeroData] = useState({
         title: null,
         bgImage: null,
         children: null,
         isVisible: false,
+        path: "",
     });
 
     const setHero = useCallback((data) => {
@@ -25,8 +28,9 @@ export const HeroProvider = ({ children }) => {
             children: null,
             ...data,
             isVisible: true,
+            path: pathname,
         });
-    }, []);
+    }, [pathname]);
 
     const hideHero = useCallback(() => {
         setHeroData({
@@ -34,6 +38,7 @@ export const HeroProvider = ({ children }) => {
             bgImage: null,
             children: null,
             isVisible: false,
+            path: "",
         });
     }, []);
 

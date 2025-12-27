@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from "react";
 import { useHero } from "@/context/HeroContext";
 import { T } from "@/theme";
+import TypedText from "@/components/common/TypedText";
 import MotionSection from "@/components/common/MotionSection";
 import CareAtAsram from "./sections/CareAtAsram";
 import SpecialtiesDepartments from "./sections/SpecialtiesDepartments";
@@ -15,14 +16,15 @@ import HospitalInfrastructureGallery from "./sections/HospitalInfrastructureGall
 import HeroBg from "@/assets/healthcare/healthcareherobg.png";
 
 const HealthcarePage = () => {
-  const { setHero } = useHero();
+  const { setHero, hideHero } = useHero();
 
   useLayoutEffect(() => {
     setHero({
       title: (
-        <span className="font-montserrat font-bold text-[32px] md:text-[60px] leading-[54px] text-white">
-          Healthcare
-        </span>
+        <TypedText
+          text="Healthcare"
+          className="font-montserrat font-bold text-[32px] md:text-[60px] leading-[54px] text-white"
+        />
       ),
       bgImage: HeroBg,
       isVisible: true,
@@ -47,7 +49,8 @@ const HealthcarePage = () => {
         </>
       ),
     });
-  }, [setHero]);
+    return () => hideHero();
+  }, [setHero, hideHero]);
 
   return (
     <div className="w-full bg-white">

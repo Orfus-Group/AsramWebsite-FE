@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from "react";
 import { useHero } from "@/context/HeroContext";
 import ResearchHerobg from "@/assets/research/asramresearchbanner.png";
+import TypedText from "@/components/common/TypedText";
 import MotionSection from "@/components/common/MotionSection";
 import ResearchOverview from "./sections/ResearchOverview";
 import ResearchPriorities from "./sections/ResearchPriorities";
@@ -22,9 +23,10 @@ const ResearchPage = () => {
   useLayoutEffect(() => {
     setHero({
       title: (
-        <span className="font-montserrat font-bold text-[32px] md:text-[40px] leading-[1.2] text-white">
-          Build a Career in Healthcare
-        </span>
+        <TypedText
+          text="Research & Innovation"
+          className="font-montserrat font-bold text-[32px] md:text-[40px] leading-[1.2] text-white"
+        />
       ),
       bgImage: ResearchHerobg,
       children: (
