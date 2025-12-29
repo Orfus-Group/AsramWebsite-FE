@@ -84,8 +84,8 @@ const ServicesSection = () => {
     ];
 
     return (
-        <PageSection bg="bg-[#EEF2F7]" paddingClass="py-[60px] md:py-[80px]">
-            <h2 className={`${T.font.family} font-bold text-[32px] text-[#223F7F] mb-8`}>
+        <PageSection bg="bg-[#EEF2F7]" paddingClass="py-[40px] md:py-[80px]">
+            <h2 className={`${T.font.family} font-bold text-[24px] md:text-[32px] text-[#223F7F] mb-8`}>
                 Services Offered
             </h2>
             <InfoCardGrid

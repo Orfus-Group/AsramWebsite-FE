@@ -37,8 +37,8 @@ const ShortcutLinks = () => {
           >
             {item.label}
             <span className={`
-              absolute bottom-0 left-0 h-[1.5px] bg-white rounded-full transition-all duration-300
-              ${isActive ? "w-full" : "w-0 group-hover:w-full"}
+              absolute bottom-0 left-0 h-[1.5px] bg-[#008C8C] rounded-full transition-all duration-300
+              ${isActive ? "w-full" : "w-0 group-hover:w-3/4"}
             `} />
           </Link>
         ) : (
@@ -58,7 +58,7 @@ const ShortcutLinks = () => {
           `}
           >
             {item.label}
-            <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-white rounded-full transition-all duration-300 group-hover:w-full" />
+            <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#008C8C] rounded-full transition-all duration-300 group-hover:w-3/4" />
           </button>
         );
       })}

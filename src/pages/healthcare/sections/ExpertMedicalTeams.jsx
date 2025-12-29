@@ -1,7 +1,7 @@
 import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
-import TeamImg from "@/assets/healthcare/experienceddoctors.png";
+const TeamImg = "/AsramWebsite-FE/assets/healthcare/experienceddoctors.png";
 
 const IconQualified = () => (
     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,13 +65,13 @@ const features = [
 
 const ExperiencedDoctors = () => {
     return (
-        <PageSection bg="bg-white" paddingClass="py-[80px] px-8 lg:px-[120px]">
-            {/* Main Flex Wrapper: Pixel-perfect layout matching Figma design */}
-            <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-start justify-between gap-10 lg:gap-[160px]">
+        <PageSection bg="bg-white" paddingClass="py-[80px]">
+            {/* Main Flex Wrapper: Removed max-w constraint to fix alignment issues */}
+            <div className="w-full flex flex-col md:flex-row items-start justify-between gap-10 lg:gap-[160px]">
 
                 {/* Left Column: Heading and List (Width: 460px) */}
-                <div className="w-full lg:w-[460px] flex-shrink-0 flex flex-col items-start bg-white">
-                    <h2 className="font-montserrat font-bold text-[32px] sm:text-[36px] lg:text-[42px] text-[#223F7F] mb-[40px] leading-[1.1]">
+                <div className="w-full md:w-[460px] flex flex-col items-start bg-white">
+                    <h2 className="font-montserrat font-bold text-[32px] sm:text-[36px] lg:text-[36px] min-[1400px]:text-[42px] text-[#223F7F] mb-[40px] leading-[1.1]">
                         Experienced Doctors
                     </h2>
 
@@ -101,7 +101,7 @@ const ExperiencedDoctors = () => {
 
                 {/* Right Column: Image (Width: 580px, Height: 386.7px) */}
                 {/* Updated lg:mt-[12px] for precise visual top alignment with the heading's cap height */}
-                <div className="w-full lg:w-[580px] h-auto lg:h-[386.7px] flex-shrink-0 lg:mt-[12px]">
+                <div className="w-full md:w-[580px] h-auto lg:h-[386.7px] md:mt-[12px]">
                     <img
                         src={TeamImg}
                         alt="Experienced Doctors"

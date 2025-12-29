@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
-import Facultyimg from "@/assets/faculty/faculty.png";
+const Facultyimg = "/AsramWebsite-FE/assets/faculty/faculty.png";
 import {
     IconFilter,
     IconBack,
@@ -12,7 +12,7 @@ import {
     IconTag
 } from "@/assets/icons";
 import { useHero } from "@/context/HeroContext";
-import FacultyHerobg from "@/assets/faculty/asramfacultyherobanner.png";
+const FacultyHerobg = "/AsramWebsite-FE/assets/faculty/asramfacultyherobanner.png";
 
 // Placeholder icons for Contact/Awards since they might not be in assets
 const IconEmail = (props) => (

@@ -1,7 +1,10 @@
 import React from "react";
 
 import { T } from "@/theme";
-import { LocationIcon, MailIcon, PhoneIcon } from "@/assets/icons/FooterIcons";
+
+const LocationIcon = "/AsramWebsite-FE/assets/icons/LocationIcon.svg";
+const MailIcon = "/AsramWebsite-FE/assets/icons/MailIcon.svg";
+const PhoneIcon = "/AsramWebsite-FE/assets/icons/PhoneIcon.svg";
 
 export default function Footer() {
   return (
@@ -160,7 +163,8 @@ export default function Footer() {
 
                 {/* Address */}
                 <div className="flex gap-[10px]">
-                  <LocationIcon size={20} color="#191919" className="shrink-0" />                  <p
+                  <img src={LocationIcon} className="w-[20px] h-[20px] shrink-0" alt="" />
+                  <p
                     className={`
                       ${T.font.family} 
                        text-[#191919BF]
@@ -178,7 +182,7 @@ export default function Footer() {
 
                 {/* Contact */}
                 <div className="flex gap-[10px]">
-                  <PhoneIcon size={20} color="#191919" className="shrink-0" />
+                  <img src={PhoneIcon} className="w-[20px] h-[20px] shrink-0" alt="" />
                   <p
                     className={`
                       ${T.font.family}
@@ -195,7 +199,7 @@ export default function Footer() {
 
                 {/* Email */}
                 <div className="flex gap-[10px]">
-                  <MailIcon size={20} color="#191919" className="shrink-0" />
+                  <img src={MailIcon} className="w-[20px] h-[20px] shrink-0" alt="" />
                   <p
                     className={`
                       ${T.font.family}

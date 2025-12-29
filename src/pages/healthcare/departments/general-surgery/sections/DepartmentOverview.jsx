@@ -4,11 +4,11 @@ import { T } from "@/theme";
 
 const DepartmentOverview = () => {
     return (
-        <PageSection paddingClass="py-[60px] md:py-[80px]">
+        <PageSection paddingClass="py-[40px] md:py-[80px]">
             <div className="flex flex-col lg:flex-row gap-[40px] items-start justify-between">
                 {/* Left Content - Width 548px */}
                 <div className="w-full lg:max-w-[548px]">
-                    <h2 className={`${T.font.family} font-bold text-[32px] text-[#223F7F] mb-6 leading-[39px]`}>
+                    <h2 className={`${T.font.family} font-bold text-[24px] md:text-[32px] text-[#223F7F] mb-6 leading-[1.2] md:leading-[39px]`}>
                         Department Overview
                     </h2>
                     <div className="space-y-[20px] text-[#191919BF] text-[18px] leading-[26px] font-normal text-justify">

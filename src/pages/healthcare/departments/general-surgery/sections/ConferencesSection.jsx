@@ -1,7 +1,7 @@
 import React from "react";
 import ContentImageSection from "@/components/common/ContentImageSection";
 import PageSection from "@/features/common/layout/PageContainer";
-import ConferenceImg from "@/assets/departments/conferences.png";
+const ConferenceImg = "/AsramWebsite-FE/assets/departments/conferences.png";
 
 const ConferencesSection = () => {
     return (
@@ -19,8 +19,8 @@ const ConferencesSection = () => {
                 imageClassName="!border-none !shadow-none !bg-transparent rounded-[12px]"
             />
 
-            <PageSection bg="bg-white" paddingClass="pt-0 pb-[80px]">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-[56px]">
+            <PageSection bg="bg-white" paddingClass="pt-0 pb-[40px] md:pb-[80px]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px] md:gap-[56px]">
                     <div className="bg-[#EEF2F7] rounded-[12px] p-[20px] border-l-[4px] border-[#223F7F] flex flex-col gap-[8px]">
                         <h3 className="text-[#223F7F] font-normal text-[28px] font-montserrat leading-tight">Weekly</h3>
                         <p className="text-[#191919BF] text-[14px] leading-[1.43] font-montserrat">Grand Rounds</p>

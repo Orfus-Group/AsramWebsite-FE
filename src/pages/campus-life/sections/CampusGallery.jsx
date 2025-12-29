@@ -1,12 +1,12 @@
 import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
-import Img1 from "@/assets/campuslife/cg1.png"; // Laboratory Training Sessions
-import Img2 from "@/assets/campuslife/cg2.png"; // Clinical Training
-import Img3 from "@/assets/campuslife/cg3.png"; // Classroom Learning
-import Img4 from "@/assets/campuslife/cg4.png"; // Advanced Equipment
-import Img5 from "@/assets/campuslife/cg5.png"; // Nursing Skills Development
-import Img6 from "@/assets/campuslife/cg6.png"; // Professional Workshops
+const Img1 = "/AsramWebsite-FE/assets/campuslife/cg1.png"; // Laboratory Training Sessions
+const Img2 = "/AsramWebsite-FE/assets/campuslife/cg2.png"; // Clinical Training
+const Img3 = "/AsramWebsite-FE/assets/campuslife/cg3.png"; // Classroom Learning
+const Img4 = "/AsramWebsite-FE/assets/campuslife/cg4.png"; // Advanced Equipment
+const Img5 = "/AsramWebsite-FE/assets/campuslife/cg5.png"; // Nursing Skills Development
+const Img6 = "/AsramWebsite-FE/assets/campuslife/cg6.png"; // Professional Workshops
 
 const images = [
     { src: Img1, label: "Laboratory Training Sessions" },

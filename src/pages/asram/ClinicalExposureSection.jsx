@@ -5,7 +5,7 @@ import AnimatedStatValue from "@/features/common/ui/AnimatedStatValue";
 import PageSection from "@/features/common/layout/PageContainer";
 
 // Icons (react-icons/hi or similar suitable icons)
-import clinicalexposure from "@/assets/asram/clinicalexposure.png"; // Fallback image, user can replace
+const clinicalexposure = "/AsramWebsite-FE/assets/asram/clinicalexposure.png"; // Fallback image, user can replace
 
 const ClinicalExposureSection = () => {
 

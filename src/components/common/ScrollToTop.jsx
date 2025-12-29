@@ -34,13 +34,21 @@ const ScrollToTop = () => {
     };
 
     useEffect(() => {
-        window.addEventListener("scroll", toggleVisibility);
-        window.addEventListener("scroll", calculateScrollProgress);
+        let ticking = false;
 
-        return () => {
-            window.removeEventListener("scroll", toggleVisibility);
-            window.removeEventListener("scroll", calculateScrollProgress);
+        const handleScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    toggleVisibility();
+                    calculateScrollProgress();
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (

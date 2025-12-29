@@ -16,7 +16,7 @@ import EventsWorkshops from './sections/EventsWorkshops';
 import CampusGallery from './sections/CampusGallery';
 
 // Assets
-import HeroBg from "@/assets/campuslife/campuslifeherobg.png";
+const HeroBg = "/AsramWebsite-FE/assets/campuslife/campuslifeherobg.png";
 import StudentVoices from '../academics/StudentVoices';
 
 const CampusLifePage = () => {

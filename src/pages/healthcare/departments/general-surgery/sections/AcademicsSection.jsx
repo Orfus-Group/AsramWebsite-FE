@@ -83,8 +83,8 @@ const AcademicsSection = () => {
     ];
 
     return (
-        <PageSection bg="bg-[#EEF2F7]" paddingClass="py-[60px] md:py-[80px]">
-            <h2 className={`${T.font.family} font-bold text-[32px] text-[#223F7F] mb-8 leading-[39px]`}>
+        <PageSection bg="bg-[#EEF2F7]" paddingClass="py-[40px] md:py-[80px]">
+            <h2 className={`${T.font.family} font-bold text-[24px] md:text-[32px] text-[#223F7F] mb-8 leading-[1.2] md:leading-[39px]`}>
                 Academics in the Department
             </h2>
             <InfoCardGrid items={academicItems} />

@@ -1,7 +1,7 @@
 import React from "react";
 import { T } from "@/theme";
 
-import doctorImg from "@/assets/nursing/clinicalmain.svg";
+const doctorImg = "/AsramWebsite-FE/assets/nursing/clinicalmain.svg";
 import Button from "@/components/Button/Button";
 
 export default function ClinicalPracticumSection() {

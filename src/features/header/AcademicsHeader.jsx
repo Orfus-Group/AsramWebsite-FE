@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { T } from "@/theme";
-import LogoFull from "@/assets/nursing/asramlogo.svg";
-import SearchIcon from "@/assets/nursing/Search.svg";
+const AsramLogoFull = "/AsramWebsite-FE/assets/asram/ASymbol.png";
+
+const AsramLogo = "/AsramWebsite-FE/assets/asram/asramcolredlogo.png";
 import ShortcutLinks from "./ShortcutLinks";
-import AsramLogo from "@/assets/asram/asramcolredlogo.png";
+import ModernHamburger from "@/features/common/ui/ModernHamburger";
 
 import { Link, useLocation } from "react-router-dom";
 
@@ -40,8 +41,8 @@ const SearchSvgIcon = ({ className = "" }) => (
    NAV ITEM COMPONENT
 ======================= */
 const NavItem = ({ label, to, isActive, onClick }) => {
-  const baseClasses = `${T.font.family} text-[15px] leading-[20px] transition-all duration-300 relative group cursor-pointer h-full flex items-center select-none`;
-  const activeClasses = `text-[#223F7F] ${T.font.weight.bold}`;
+  const baseClasses = `${T.font.family} text-[16px] leading-[20px] transition-all duration-300 relative group cursor-pointer h-full flex items-center select-none`;
+  const activeClasses = `text-[#223F7F] ${T.font.weight.semibold}`;
   const inactiveClasses = `${T.font.weight.semibold} text-[#4A5565] hover:text-[#223F7F]`;
 
   return (
@@ -55,7 +56,7 @@ const NavItem = ({ label, to, isActive, onClick }) => {
         <span
           className={`
             absolute bottom-0 left-0 h-[2px] bg-[#223F7F] transition-all duration-300 ease-out
-            w-0 group-hover:w-full
+            w-0 group-hover:w-3/4
           `}
         />
       </span>
@@ -100,51 +101,39 @@ const AcademicsHeader = () => {
             w-full
             max-w-[1440px]
             mx-auto
-            px-5 sm:px-6 md:px-10 lg:px-[120px]
-            h-[66px]
+            px-4 sm:px-6 md:px-10 lg:px-[120px]
+            h-[70px] md:h-[84px]
             flex items-center justify-between
           "
         >
           {/* ================= MOBILE LEFT: HAMBURGER ================= */}
-          <button
-            className="md:hidden flex flex-col justify-center items-center gap-[4px] mr-[10px] transition-all duration-300"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <span
-              className={`
-                block w-[24px] h-[2.5px] bg-[#4A5565] rounded transition-all duration-300
-                ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}
-              `}
-            ></span>
-            <span
-              className={`
-                block w-[24px] h-[2.5px] bg-[#4A5565] rounded transition-all duration-300
-                ${menuOpen ? "opacity-0" : "opacity-100"}
-              `}
-            ></span>
-            <span
-              className={`
-                block w-[24px] h-[2.5px] bg-[#4A5565] rounded transition-all duration-300
-                ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}
-              `}
-            ></span>
-          </button>
+          <div className="md:hidden flex items-center mr-[10px]">
+            <ModernHamburger
+              isOpen={menuOpen}
+              onClick={() => setMenuOpen(!menuOpen)}
+            />
+          </div>
 
           {/* ================= CENTER LOGO (Mobile) ================= */}
-          <div className="flex-1 flex justify-center md:justify-start">
+          <div className="flex-1 flex justify-center md:justify-start overflow-hidden">
             <Link to="/nursing">
-              <img
-                loading="eager"
-                decoding="async"
-                src={LogoFull}
-                alt="Asram Logo"
-                className="
-                h-[40px] 
-                w-auto 
-                md:h-[46px] 
-                md:w-[191px]
-              "
-              />
+              <div className="flex items-center gap-[4px] md:gap-[5.6px]">
+                <img
+                  loading="eager"
+                  decoding="async"
+                  src={AsramLogoFull}
+                  alt="Asram Icon"
+                  className="w-[38px] h-[38px] md:w-[46.43px] md:h-[46px] object-contain flex-shrink-0 transition-all duration-300"
+                />
+                <div className="flex flex-col items-start justify-center">
+                  <span className={`${T.font.family} ${T.font.weight.medium} text-[12px] md:text-[14px] text-[#223F7F] leading-normal mb-[1px] md:mb-[1.2px] transition-all duration-300`}>
+                    Asram
+                  </span>
+                  <span className={`${T.font.family} ${T.font.weight.bold} text-[12.5px] md:text-[14.9px] text-[#223F7F] leading-[1.2] md:leading-[1.25] mt-[1px] md:mt-[1.2px] whitespace-nowrap transition-all duration-300`}>
+                    School of Nursing
+                  </span>
+                </div>
+              </div>
             </Link>
           </div>
 
@@ -152,7 +141,7 @@ const AcademicsHeader = () => {
           <div className="flex items-center gap-[20px]">
 
             {/* DESKTOP NAV */}
-            <div className="hidden md:flex items-center gap-[32px] h-full">
+            <div className="hidden md:flex items-center gap-[40px] h-full">
               {navItems.map((item, index) => (
                 <NavItem
                   key={index}
@@ -195,29 +184,32 @@ const AcademicsHeader = () => {
         >
 
           {/* LOGO SMALL */}
-          <div className="flex items-center mb-6 w-full justify-center">
+          <Link
+            to="/"
+            className="flex items-center mb-6 w-full justify-center"
+            onClick={() => setMenuOpen(false)}
+          >
             <img
               src={AsramLogo}
               alt="ASRAM Logo"
               className="
-      h-[54px] w-[54px]
-      sm:h-[60px] sm:w-[60px]
-      object-contain
-    "
+                h-[54px] w-[54px]
+                sm:h-[60px] sm:w-[60px]
+                object-contain
+              "
             />
-
             <span
               className={`text-white
-      text-[36px]
-      sm:text-[34px]
-      font-semibold
-      tracking-wide
-      leading-none
-      ml-[-2px] ${T.font.family}`}
+                text-[36px]
+                sm:text-[34px]
+                font-semibold
+                tracking-wide
+                leading-none
+                ml-[-2px] ${T.font.family}`}
             >
               Asram
             </span>
-          </div>
+          </Link>
 
 
           {/* NAV LINKS */}

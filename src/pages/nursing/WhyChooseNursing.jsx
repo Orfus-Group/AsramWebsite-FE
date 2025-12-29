@@ -1,6 +1,7 @@
 import React from "react";
 import { T } from "@/theme";
-import CheckMarkIcon from "@/assets/icons/CheckMarkIcon";
+
+const CheckMarkIcon = "/AsramWebsite-FE/assets/icons/CheckMarkIcon.svg";
 
 export default function WhyChooseSection() {
   return (
@@ -64,12 +65,7 @@ export default function WhyChooseSection() {
                   "Recognized affiliations and regulatory approvals",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-[10px]">
-                    <CheckMarkIcon
-                      width={14}
-                      height={14}
-                      color={T.color.primary}
-                      className="shrink-0"
-                    />
+                    <img src={CheckMarkIcon} className="w-[14px] h-[14px] shrink-0" alt="" />
 
                     <p
                       className={`
@@ -107,12 +103,7 @@ export default function WhyChooseSection() {
                   "Practical orientation ensuring job readiness",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-[10px]">
-                    <CheckMarkIcon
-                      width={14}
-                      height={14}
-                      color={T.color.primary}
-                      className="shrink-0"
-                    />
+                    <img src={CheckMarkIcon} className="w-[14px] h-[14px] shrink-0" alt="" />
 
 
                     <p

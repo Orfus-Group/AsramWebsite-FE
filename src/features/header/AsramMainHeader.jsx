@@ -1,14 +1,15 @@
 // src/components/header/AsramMainHeader.jsx
 import React, { useEffect, useRef, useState } from "react";
-import Logo from "@/assets/asram/mainasramlogo.svg";
-import AsramLogo from "@/assets/asram/asramcolredlogo.png";
-
-import StudentIcon from "@/assets/asram/studentcentericon.svg";
-import LibraryIcon from "@/assets/asram/libraryicon.svg";
-import PayIcon from "@/assets/asram/payonlineicon.svg";
-import ContactIcon from "@/assets/asram/contacticon.svg";
+const Logo = "/AsramWebsite-FE/assets/asram/mainasramlogo.svg";
+const AsramLogo = "/AsramWebsite-FE/assets/asram/asramcolredlogo.png";
+const AsramLogoFull = "/AsramWebsite-FE/assets/asram/ASymbol.png";
+const StudentIcon = "/AsramWebsite-FE/assets/asram/studentcentericon.svg";
+const LibraryIcon = "/AsramWebsite-FE/assets/asram/libraryicon.svg";
+const PayIcon = "/AsramWebsite-FE/assets/asram/payonlineicon.svg";
+const ContactIcon = "/AsramWebsite-FE/assets/asram/contacticon.svg";
 import { Link, useLocation } from "react-router-dom";
 import { T } from "@/theme";
+import ModernHamburger from "@/features/common/ui/ModernHamburger";
 
 const utilityLinks = [
   { label: "Student Center", icon: StudentIcon },
@@ -53,7 +54,7 @@ const megaMenuContent = {
 };
 
 const NavItem = ({ label, to, isActive, hasMegaMenu, onClick, onHover }) => {
-  const baseClasses = `${T.font.family} text-[18px] leading-[26px] transition-all duration-300 relative group cursor-pointer h-full flex items-center select-none`;
+  const baseClasses = `${T.font.family} text-[18px] leading-[26px] transition-all duration-300 relative group cursor-pointer h-full flex items-center select-none outline-none focus:outline-none`;
   const activeClasses = `text-[#223F7F] ${T.font.weight.medium}`;
   const inactiveClasses = `${T.font.weight.regular} text-[#191919] hover:text-[#223F7F]`;
 
@@ -72,7 +73,7 @@ const NavItem = ({ label, to, isActive, hasMegaMenu, onClick, onHover }) => {
             <span
               className={`
                 absolute bottom-0 left-0 h-[2px] bg-[#223F7F] transition-all duration-300 ease-out
-                w-0 group-hover:w-full
+                w-0 group-hover:w-3/4
               `}
             />
           </span>
@@ -92,7 +93,7 @@ const NavItem = ({ label, to, isActive, hasMegaMenu, onClick, onHover }) => {
             <span
               className={`
                 absolute bottom-0 left-0 h-[2px] bg-[#223F7F] transition-all duration-300 ease-out
-                w-0 group-hover:w-full
+                w-0 group-hover:w-3/4
               `}
             />
           </span>
@@ -182,15 +183,14 @@ const AsramMainHeader = () => {
       <header className="w-full bg-white relative z-[100] shadow-[0_4px_20px_rgba(0,0,0,0.1)] sticky top-0">
         <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10 lg:px-[120px] h-[66px] py-[10px] flex items-center justify-between relative">
 
+
           {/* Hamburger */}
-          <button
-            className="lg:hidden flex flex-col gap-[5px] group"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            <span className={`w-7 h-[3px] bg-black rounded transition-all ${mobileMenuOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
-            <span className={`w-7 h-[3px] bg-black rounded transition-all ${mobileMenuOpen ? "opacity-0" : ""}`} />
-            <span className={`w-7 h-[3px] bg-black rounded transition-all ${mobileMenuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
-          </button>
+          <div className="lg:hidden flex items-center absolute left-5 sm:left-6 md:left-10 top-1/2 -translate-y-1/2 z-[102]">
+            <ModernHamburger
+              isOpen={mobileMenuOpen}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            />
+          </div>
 
           {/* LEFT NAV */}
           <nav className={`${T.font.family} hidden lg:flex flex-1 items-center justify-between gap-[40px] mr-[84px] h-full`}>
@@ -216,13 +216,19 @@ const AsramMainHeader = () => {
 
           {/* LOGO */}
           <Link to="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:translate-x-0 lg:translate-y-0 lg:mx-0 z-[101]">
-            <img
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              src={Logo}
-              className="h-[42px] w-[170px] sm:h-[46px] sm:w-[189px] object-contain transition-transform duration-300 hover:scale-[1.02]"
-            />
+            <div className="flex items-center gap-[4px] justify-center md:w-[189.4px]">
+              <img
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                src={AsramLogoFull}
+                alt="Asram Icon"
+                className="w-[38px] h-[38px] sm:w-[46.4px] sm:h-[46px] object-contain flex-shrink-0 transition-all duration-300"
+              />
+              <span className={`${T.font.family} ${T.font.weight.semibold} text-[32px] sm:text-[42px] text-[#223F7F] leading-none transition-all duration-300`}>
+                Asram
+              </span>
+            </div>
           </Link>
 
           {/* RIGHT NAV */}
@@ -280,30 +286,21 @@ const AsramMainHeader = () => {
 
               <Link
                 to="/"
-                className="flex items-center mb-6 w-full justify-center"
+                className="flex items-center gap-[4px] justify-center mb-6 w-full"
                 onClick={() => {
                   setMobileMenuOpen(false);
                   setOpenMenu(null);
                 }}
               >
-                <img loading="lazy" decoding="async"
-                  src={AsramLogo}
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src={AsramLogoFull}
                   alt="ASRAM Logo"
-                  className="
-      h-[54px] w-[54px]
-      sm:h-[60px] sm:w-[60px]
-      object-contain
-    "
+                  className="w-[46.4px] h-[46px] object-contain"
                 />
-
                 <span
-                  className={`text-white
-      text-[36px]
-      sm:text-[34px]
-      font-semibold
-      tracking-wide
-      leading-none
-      ml-[-2px] ${T.font.family}`}
+                  className={`${T.font.family} ${T.font.weight.semibold} text-[36px] text-white leading-none ml-[-2px]`}
                 >
                   Asram
                 </span>
@@ -324,7 +321,7 @@ const AsramMainHeader = () => {
                     About: "/about-asram",
                     Academics: null,
                     Research: null,
-                    Healthcare: null,
+                    Healthcare: "/healthcare",
                     "Campus Life": "/campus-life",
                     News: "/news",
                   };
@@ -516,14 +513,22 @@ const AsramMainHeader = () => {
                         <Link
                           key={link}
                           to={link === "College of Nursing" ? "/nursing" : "#"}
-                          className={`${T.font.family} ${T.font.weight.semibold} text-[18px] leading-[22px] block`}
+                          className={`${T.font.family} ${T.font.weight.semibold} text-[18px] leading-[22px] block group w-fit`}
                           style={{
                             color: T.color.secondary,
                             letterSpacing: "-0.2px",
                             whiteSpace: "nowrap",
                           }}
                         >
-                          {link}
+                          <span className="relative py-1">
+                            {link}
+                            <span
+                              className={`
+                                absolute bottom-[-4px] left-0 h-[2px] bg-[#008C8C] transition-all duration-300 ease-out
+                                w-0 group-hover:w-3/4
+                              `}
+                            />
+                          </span>
                         </Link>
                       ))}
                     </ul>

@@ -4,32 +4,16 @@ import { motion } from "framer-motion";
 import { T } from "@/theme";
 import StaggerContainer, { itemVariants } from "@/components/common/StaggerContainer";
 import HoverCard from "@/components/common/HoverCard";
-
 import IconFullArrowRight from "@/assets/icons/IconFullArrow";
 
-import PageSection from "@/features/common/layout/PageContainer";
-import HeartCareIcon from "@/assets/icons/HeartCareIcon";
 
-
-const HospitalIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 6V8M16 8V10M16 8H18M16 8H14" stroke="#223F7F" strokeWidth="2.5" strokeLinecap="round" />
-    <path d="M11.448 3.44706C10.667 4.22811 10.667 5.48519 10.667 7.99935C10.667 10.5135 10.667 11.7706 11.448 12.5516C12.2291 13.3327 13.4862 13.3327 16.0003 13.3327C18.5145 13.3327 19.7716 13.3327 20.5526 12.5516C21.3337 11.7706 21.3337 10.5135 21.3337 7.99935C21.3337 5.48519 21.3337 4.22811 20.5526 3.44706C19.7716 2.66602 18.5145 2.66602 16.0003 2.66602C13.4862 2.66602 12.2291 2.66602 11.448 3.44706Z" stroke="#223F7F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M5.33301 29.3327V15.9603C5.33301 11.5477 5.33301 9.34133 6.69984 7.9705C7.56855 7.09925 8.77375 6.78173 10.6663 6.66602M26.6663 29.3327V15.9603C26.6663 11.5477 26.6663 9.34133 25.2995 7.9705C24.4308 7.09925 23.2256 6.78173 21.333 6.66602" stroke="#223F7F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M4 29.332H28" stroke="#223F7F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M12.667 29.3327V25.9993C12.667 24.7532 12.667 24.1301 12.9349 23.666C13.1105 23.362 13.363 23.1095 13.667 22.934C14.1311 22.666 14.7542 22.666 16.0003 22.666C17.2465 22.666 17.8696 22.666 18.3337 22.934C18.6377 23.1095 18.8902 23.362 19.0657 23.666C19.3337 24.1301 19.3337 24.7532 19.3337 25.9993V29.3327" stroke="#223F7F" strokeWidth="2.5" strokeLinecap="round" />
-    <path d="M10.6789 17.332H10.667M16.0003 17.332H15.9884M21.3352 17.332H21.3232" stroke="#223F7F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-
-
-);
-
-
+const HeartCareIcon = "/AsramWebsite-FE/assets/icons/HeartCareIcon.svg";
+const HospitalIcon = "/AsramWebsite-FE/assets/icons/IconHospital.svg";
 
 const services = [
   {
     id: 1,
-    icon: <HospitalIcon />,
+    icon: HospitalIcon,
     name: "ASRAM Multispecialty Hospital",
     tagline: "Trusted Healthcare for All",
     description:
@@ -42,7 +26,7 @@ const services = [
   },
   {
     id: 2,
-    icon: (<HeartCareIcon size={32} color="#6A1B9A" />),
+    icon: HeartCareIcon,
     name: "ASRAM Cancer Care",
     tagline: "Empowering Compassionate Nurses",
     description:
@@ -144,10 +128,25 @@ const HealthcareServices = () => {
                 flex items-center justify-center 
                 mb-[30px]
               "
-              style={{ backgroundColor: item.iconBg }}
+              style={{
+                backgroundColor: item.iconBg,
+                color: item.underline
+              }}
             >
-              {item.icon}
-
+              <div
+                className="w-[32px] h-[32px] transition-colors duration-300"
+                style={{
+                  backgroundColor: "currentColor",
+                  maskImage: `url(${item.icon})`,
+                  maskSize: "contain",
+                  maskRepeat: "no-repeat",
+                  maskPosition: "center",
+                  WebkitMaskImage: `url(${item.icon})`,
+                  WebkitMaskSize: "contain",
+                  WebkitMaskRepeat: "no-repeat",
+                  WebkitMaskPosition: "center",
+                }}
+              />
             </div>
 
             {/* TITLE */}
@@ -215,7 +214,7 @@ const HealthcareServices = () => {
               </span>
 
               <motion.div variants={arrowAnim}>
-                <IconFullArrowRight
+                   <IconFullArrowRight
                   size={18}
                   className="sm:w-[20px] sm:h-[20px]"
                   stroke="#191919"
@@ -231,3 +230,5 @@ const HealthcareServices = () => {
 };
 
 export default HealthcareServices;
+
+import PageSection from "@/features/common/layout/PageContainer";

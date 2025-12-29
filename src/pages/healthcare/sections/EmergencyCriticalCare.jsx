@@ -1,7 +1,7 @@
 import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
-import EmergencyImg from "@/assets/healthcare/emergency.png";
+const EmergencyImg = "/AsramWebsite-FE/assets/healthcare/emergency.png";
 
 const IconClock = () => (
     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">

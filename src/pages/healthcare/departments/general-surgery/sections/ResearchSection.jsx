@@ -71,17 +71,17 @@ const ResearchSection = () => {
     ];
 
     return (
-        <PageSection bg="bg-white" paddingClass="py-[80px]">
-            <div className="flex flex-col gap-[40px] w-full">
+        <PageSection bg="bg-white" paddingClass="py-[40px] md:py-[80px]">
+            <div className="flex flex-col gap-[30px] md:gap-[40px] w-full">
                 {/* Title */}
                 <div className="w-full">
-                    <h2 className={`${T.font.family} font-bold text-[32px] md:text-[42px] text-[#223F7F] text-center md:text-left`}>
+                    <h2 className={`${T.font.family} font-bold text-[24px] md:text-[42px] text-[#223F7F] text-center md:text-left`}>
                         Research & Publications
                     </h2>
                 </div>
 
                 {/* Stats Row */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[22.5px] w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] md:gap-[22.5px] w-full">
                     {stats.map((stat, index) => (
                         <div key={index} className="bg-[#EEF2F7] rounded-[11.3px] p-[20px] flex flex-col items-center justify-center text-center gap-[12px] h-[166px]">
                             <div className="w-[48px] h-[48px] bg-white rounded-[8px] flex items-center justify-center shadow-sm">
@@ -97,7 +97,7 @@ const ResearchSection = () => {
                 </div>
 
                 {/* Navigation Tabs */}
-                <div className="flex gap-[15px] border-b border-[#E0E0E0]">
+                <div className="flex gap-[15px] border-b border-[#E0E0E0] overflow-x-auto scrollbar-none pb-2 md:pb-0">
                     {["Ongoing Research", "Recent Publications", "Research Areas"].map((tab) => (
                         <button
                             key={tab}
@@ -105,7 +105,7 @@ const ResearchSection = () => {
                             className={`
                                 pt-[11.3px] pr-[21.7px] pb-[12.7px] pl-[22.5px]
                                 text-[15px] font-normal leading-[1.5] font-montserrat transition-colors outline-none focus:outline-none
-                                border-b-[1.9px]
+                                border-b-[1.9px] whitespace-nowrap
                                 ${activeTab === tab ? "text-[#223F7F] border-[#223F7F]" : "text-[#191919C0] border-transparent hover:text-[#223F7F]"}
                             `}
                         >

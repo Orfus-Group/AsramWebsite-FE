@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from "react";
 
 import { useHero } from "@/context/HeroContext";
-import heroBg from "@/assets/nursing/asramnursingbanner.png";
+const heroBg = "/AsramWebsite-FE/assets/nursing/asramnursingbanner.png";
 import TypedText from "@/components/common/TypedText";
 import MotionSection from "@/components/common/MotionSection";
 import AcademicProgramsSection from "./AcademicProgramsSection";
@@ -25,15 +25,17 @@ const NursingPage = () => {
       title: (
         <TypedText
           text="Excellence in Nursing Education"
-          className="font-montserrat font-bold text-[32px] md:text-[40px] leading-[1.2] text-white"
+          className="font-montserrat font-bold text-[24px] sm:text-[32px] md:text-[40px] leading-[1.36] text-white"
         />
       ),
       bgImage: heroBg,
       children: (
         <>
-          <p className="font-montserrat font-medium text-[16px] md:text-[22px] leading-[1.4] text-white max-w-[520px] mb-6">
-            ASRAM School of Nursing prepares skilled, ethical, and globally competent nurses through accredited programs and real-world clinical exposure.
-          </p>
+          <div className="max-w-[520px]">
+            <p className="font-montserrat font-medium text-[16px] md:text-[22px] leading-[1.36] text-white mb-6">
+              ASRAM School of Nursing prepares skilled, ethical, and globally competent nurses through accredited programs and real-world clinical exposure.
+            </p>
+          </div>
 
           {/* <button
             className="
@@ -50,6 +52,8 @@ const NursingPage = () => {
           </button> */}
         </>
       ),
+      className: "!py-12 md:!pt-[263.5px] !lg:pl-[120px] !lg:pr-[120px]",
+      alignmentClass: "items-center md:items-start",
     });
     return () => hideHero();
   }, [setHero, hideHero]);

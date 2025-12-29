@@ -1,10 +1,10 @@
-import News1 from "@/assets/news/newsarticlesherobg.jpg";
-import News2 from "@/assets/news/News2.svg";
-import News3 from "@/assets/news/News3.svg";
-import News4 from "@/assets/news/News4.svg";
-import News5 from "@/assets/news/News5.svg";
-import News6 from "@/assets/news/News6.svg";
-import RelatedArticleImg from "@/assets/news/relatedart.svg";
+const News1 = "/AsramWebsite-FE/assets/news/newsarticlesherobg.jpg";
+const News2 = "/AsramWebsite-FE/assets/news/News2.svg";
+const News3 = "/AsramWebsite-FE/assets/news/News3.svg";
+const News4 = "/AsramWebsite-FE/assets/news/News4.svg";
+const News5 = "/AsramWebsite-FE/assets/news/News5.svg";
+const News6 = "/AsramWebsite-FE/assets/news/News6.svg";
+const RelatedArticleImg = "/AsramWebsite-FE/assets/news/relatedart.svg";
 
 export const relatedArticles = [
     {

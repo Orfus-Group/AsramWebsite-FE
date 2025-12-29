@@ -1,11 +1,11 @@
 import React, { useLayoutEffect } from "react";
 
 // Icons
-import insideasramimg from "@/assets/asram/insideasram.png";
-import ResearchSectionimg from "@/assets/asram/researchinnov.png";
+const insideasramimg = "/AsramWebsite-FE/assets/asram/insideasram.png";
+const ResearchSectionimg = "/AsramWebsite-FE/assets/asram/researchinnov.png";
 
 // Normal Direct Imports (NO lazy loading)
-import heroBg from "@/assets/asram/asramherobanner.png";
+const heroBg = "/AsramWebsite-FE/assets/asram/asramherobanner.png";
 import ReputationQuality from "./ReputationQuality";
 import InstitutionsSection from "./InstitutionSection";
 import AsramHealthcareServices from "./HealthCareService";

@@ -1,6 +1,6 @@
 import React, { useState, useLayoutEffect } from "react";
 import { useHero } from "@/context/HeroContext";
-import NewsHerobg from "@/assets/news/asramnewsbanner.png";
+const NewsHerobg = "/AsramWebsite-FE/assets/news/asramnewsbanner.png";
 import TypedText from "@/components/common/TypedText";
 
 import FeaturedStory from "./sections/FeaturedStory";

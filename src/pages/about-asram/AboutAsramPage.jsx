@@ -8,7 +8,7 @@ import AccreditationStandards from "./sections/AccreditationStandards";
 import LeadershipGovernance from "./sections/LeadershipGovernance";
 import GlobalPartnerships from "./sections/GlobalPartnerships";
 import { motion } from "framer-motion";
-import HeroBg from "@/assets/about/aboutherobg.png";
+const HeroBg = "/AsramWebsite-FE/assets/about/aboutherobg.png";
 
 
 // Animation variants for sections
@@ -71,19 +71,19 @@ const AboutAsramPage = () => {
                 <WhoWeAre />
             </MotionSection>
 
-            <MotionSection>
+            <MotionSection delay={0.2}>
                 <OurCoreValues />
             </MotionSection>
 
-            <MotionSection>
+            <MotionSection delay={0.2}>
                 <AccreditationStandards />
             </MotionSection>
 
-            <MotionSection>
+            <MotionSection delay={0.2}>
                 <LeadershipGovernance />
             </MotionSection>
 
-            <MotionSection>
+            <MotionSection delay={0.2}>
                 <GlobalPartnerships />
             </MotionSection>
         </div>

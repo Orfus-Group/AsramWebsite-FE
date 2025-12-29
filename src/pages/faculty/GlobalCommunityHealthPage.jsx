@@ -1,20 +1,18 @@
 import React, { useLayoutEffect } from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
-import HealthHerobg from "@/assets/news/asramhealthbanner.png";
-import Globalhealthimg from "@/assets/faculty/globalhealth.png";
-import GlobalTeam1 from "@/assets/faculty/globalteam1.png";
-import GlobalTeam2 from "@/assets/faculty/globalteam2.png";
-import GlobalTeam3 from "@/assets/faculty/globalteam3.png";
+const HealthHerobg = "/AsramWebsite-FE/assets/news/asramhealthbanner.png";
+const Globalhealthimg = "/AsramWebsite-FE/assets/faculty/globalhealth.png";
+const GlobalTeam1 = "/AsramWebsite-FE/assets/faculty/globalteam1.png";
+const GlobalTeam2 = "/AsramWebsite-FE/assets/faculty/globalteam2.png";
+const GlobalTeam3 = "/AsramWebsite-FE/assets/faculty/globalteam3.png";
 
 
-import DoctorImg from "@/assets/news/doct.svg"; // Reuse for now
-import {
-    IconAiHealth,
-    IconPatientSafety,
-    IconVision,
-    IconClinicalTrials
-} from "@/assets/icons"; // Importing some potentially useful icons
+const DoctorImg = "/AsramWebsite-FE/assets/news/doct.svg";
+const IconAiHealth = "/AsramWebsite-FE/assets/icons/IconAiHealth.svg";
+const IconPatientSafety = "/AsramWebsite-FE/assets/icons/IconPatientSafety.svg";
+const IconVision = "/AsramWebsite-FE/assets/icons/IconVision.svg";
+const IconClinicalTrials = "/AsramWebsite-FE/assets/icons/IconClinicalTrials.svg";
 import { useHero } from "@/context/HeroContext";
 
 // Initial Icons - Generic SVG placeholders for specific needs if assets don't match exactly

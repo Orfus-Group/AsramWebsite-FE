@@ -1,13 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import phoneIcon from "@/assets/asram/phone.svg";
-import addressIcon from "@/assets/asram/address.svg";
-import mailIcon from "@/assets/asram/mail.svg";
-import facebookIcon from "@/assets/asram/facebook.svg";
-import twitterIcon from "@/assets/asram/twitter.svg";
-import instaIcon from "@/assets/asram/insta.svg";
-import linkedincon from "@/assets/asram/linkedin.svg";
-import youtubeIcon from "@/assets/asram/youtube.svg";
 import { T } from "@/theme";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";

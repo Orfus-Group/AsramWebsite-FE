@@ -1,15 +1,15 @@
 import React from "react";
 
 // Faculty Images
-import faculty1 from "@/assets/nursing/doctor_1.png";
-import faculty2 from "@/assets/nursing/doctor_2.png";
-import faculty3 from "@/assets/nursing/doctor_3.png";
+const faculty1 = "/AsramWebsite-FE/assets/nursing/doctor_1.png";
+const faculty2 = "/AsramWebsite-FE/assets/nursing/doctor_2.png";
+const faculty3 = "/AsramWebsite-FE/assets/nursing/doctor_3.png";
 
 
 // Icons
-import expIcon from "@/assets/nursing/experience.svg";
-import calendarIcon from "@/assets/nursing/weekcal.svg";
-import timeIcon from "@/assets/nursing/timeperiod.svg";
+const expIcon = "/AsramWebsite-FE/assets/nursing/experience.svg";
+const calendarIcon = "/AsramWebsite-FE/assets/nursing/weekcal.svg";
+const timeIcon = "/AsramWebsite-FE/assets/nursing/timeperiod.svg";
 
 import { T } from "@/theme";
 import Button from "@/components/ui/button";

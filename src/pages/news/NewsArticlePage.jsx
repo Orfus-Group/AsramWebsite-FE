@@ -3,12 +3,12 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
 import { useHero } from "@/context/HeroContext";
-import NewsHerobg from "@/assets/news/newsarticlesherobg.jpg";
+const NewsHerobg = "/AsramWebsite-FE/assets/news/newsarticlesherobg.jpg";
 import { mockNews, relatedArticles } from "./newsData"; // Use shared data
 
 // Images
-import RelatedArticleImg from "@/assets/news/relatedart.svg"
-import DoctorImg from "@/assets/news/doct.svg";
+const RelatedArticleImg = "/AsramWebsite-FE/assets/news/relatedart.svg"
+const DoctorImg = "/AsramWebsite-FE/assets/news/doct.svg";
 import {
 
   IconBack,

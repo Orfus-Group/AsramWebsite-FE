@@ -1,12 +1,12 @@
 import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
-import Img1 from "@/assets/healthcare/hg1.png";
-import Img2 from "@/assets/healthcare/hg2.png";
-import Img3 from "@/assets/healthcare/hg3.png";
-import Img4 from "@/assets/healthcare/hg4.png";
-import Img5 from "@/assets/healthcare/hg5.png";
-import Img6 from "@/assets/healthcare/hg6.png";
+const Img1 = "/AsramWebsite-FE/assets/healthcare/hg1.png";
+const Img2 = "/AsramWebsite-FE/assets/healthcare/hg2.png";
+const Img3 = "/AsramWebsite-FE/assets/healthcare/hg3.png";
+const Img4 = "/AsramWebsite-FE/assets/healthcare/hg4.png";
+const Img5 = "/AsramWebsite-FE/assets/healthcare/hg5.png";
+const Img6 = "/AsramWebsite-FE/assets/healthcare/hg6.png";
 
 const images = [
     { src: Img1, label: "Hospital Reception & Waiting Area" },

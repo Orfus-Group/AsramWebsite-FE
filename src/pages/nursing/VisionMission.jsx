@@ -1,31 +1,27 @@
 import React from "react";
 import InfoCard from "@/features/common/cards/InfoCard";
 import PageSection from "@/features/common/layout/PageContainer";
-import { AccreditedIcon, CareerReadyIcon } from "../academics/WhyChooseNursingSchool";
-import HeartCareIcon from "@/assets/icons/HeartCareIcon";
+
+const IconCareerReady = "/AsramWebsite-FE/assets/icons/IconCareerReady.svg";
+const IconHeartCare = "/AsramWebsite-FE/assets/icons/IconHeartCare.svg";
+const IconAccredited = "/AsramWebsite-FE/assets/icons/IconAccredited.svg";
 
 export default function VisionMissionSection() {
   const vmv = [
     {
-      icon: <CareerReadyIcon />,
+      icon: <img src={IconCareerReady} className="w-[28px] h-[28px]" alt="" />,
       title: "Vision",
       description:
         "To evolve into a premier institution of nursing education that cultivates skilled, ethical, compassionate nursing professionals capable of meeting national and global health care demands.",
     },
     {
-      icon: (
-        <HeartCareIcon
-          size={28}
-          color="white"
-          strokeWidth={2.30263}
-        />
-      ),
+      icon: <img src={IconHeartCare} className="w-[28px] h-[28px]" alt="" />,
       title: "Mission",
       description:
         "To evolve into a premier institution of nursing education that cultivates skilled, ethical, compassionate nursing professionals capable of meeting national and global health care demands.",
     },
     {
-      icon: <AccreditedIcon />,
+      icon: <img src={IconAccredited} className="w-[28px] h-[28px]" alt="" />,
       title: "Values",
       description:
         "Compassion, excellence, integrity, service, innovation—students are trained not only in technical proficiency but also in ethical and patient-centered care.",

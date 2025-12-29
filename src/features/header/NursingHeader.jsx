@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { T } from "@/theme";
-import LogoFull from "@/assets/nursing/asramlogo.svg";
-import SearchIcon from "@/assets/nursing/Search.svg";
+const LogoFull = "/AsramWebsite-FE/assets/nursing/asramlogo.svg";
+const SearchIcon = "/AsramWebsite-FE/assets/icons/IconSearch.svg";
+const AsramLogo = "/AsramWebsite-FE/assets/asram/asramcolredlogo.png";
 import ShortcutLinks from "./ShortcutLinks";
-import AsramLogo from "@/assets/asram/asramcolredlogo.png";
 import { Link, useLocation } from "react-router-dom";
 
 const NursingHeader = () => {

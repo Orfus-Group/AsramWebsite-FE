@@ -15,7 +15,11 @@ const InfoCardGrid = ({
                 <div key={index} className={cardClassName}>
                     {item.icon && (
                         <div className={iconContainerClassName}>
-                            {item.icon}
+                            {typeof item.icon === "string" ? (
+                                <img src={item.icon} className="w-[32px] h-[32px]" alt="" />
+                            ) : (
+                                item.icon
+                            )}
                         </div>
                     )}
                     <h3 className={titleClassName}>{item.title}</h3>

@@ -2,16 +2,19 @@
 import PageSection from "@/features/common/layout/PageContainer";   // ✅ FIXED
 import { T } from "@/theme";
 import InfoCard from "@/features/common/cards/InfoCard";
-import MedicalIcon from "@/assets/icons/MedicalIcon";
-import { AccreditedIcon, ArtFacilitiesIcon } from "../academics/WhyChooseNursingSchool";
+
+const IconMedical = "/AsramWebsite-FE/assets/icons/MedicalIcon.svg";
+const IconArtFacilities = "/AsramWebsite-FE/assets/icons/IconArtFacilities.svg";
+const IconAccredited = "/AsramWebsite-FE/assets/icons/IconAccredited.svg";
 
 export default function AcademicProgramsSection() {
   const programs = [
     {
       icon: (
-        <MedicalIcon
-          size={28}
-          className="text-white"
+        <img
+          src={IconMedical}
+          className="w-[28px] h-[28px] invert brightness-0"
+          alt=""
         />
       ),
       title: "B.Sc Nursing",
@@ -21,7 +24,7 @@ export default function AcademicProgramsSection() {
         "Flagship undergraduate programme integrating theoretical lectures, practical labs, simulation, and clinical postings. Prepares students for both patient care and professional advancement.",
     },
     {
-      icon: (<ArtFacilitiesIcon />),
+      icon: (<img src={IconArtFacilities} className="w-[28px] h-[28px]" alt="" />),
       title: "General Nursing",
       years: "3 Years Full-Time",
       seats: "~60 Seats",
@@ -29,7 +32,7 @@ export default function AcademicProgramsSection() {
         "Diploma level programme providing comprehensive training in nursing fundamentals and midwifery practices, preparing students for immediate clinical roles.",
     },
     {
-      icon: (<AccreditedIcon />),
+      icon: (<img src={IconAccredited} className="w-[28px] h-[28px]" alt="" />),
       title: "M.Sc Nursing",
       years: "3 Years Full-Time",
       seats: "~60 Seats",

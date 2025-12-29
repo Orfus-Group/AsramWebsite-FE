@@ -76,6 +76,7 @@ const InnerLayout = () => {
           title={heroData.title}
           bgImage={heroData.bgImage}
           showPagination={showPagination}
+          {...heroData}
         >
           {heroData.children}
         </CommonHero>

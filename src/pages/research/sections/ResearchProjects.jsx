@@ -1,7 +1,8 @@
 import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
-import { IconArrowRight } from "@/assets/icons";
+import IconArrowRightWhite from "@/assets/icons/IconArrowRightWhite";
+const IconArrowRight = "/AsramWebsite-FE/assets/icons/IconArrowRight.svg";
 
 const projects = [
     {
@@ -51,11 +52,7 @@ const ResearchProjects = () => {
 
                 <button className="flex items-center gap-2 text-[#223F7F] font-regular text-[18px] hover:underline">
                     View All Projects
-                    <span className="text-xl"><IconArrowRight
-                        size={16}
-                        stroke="#223F7F"
-                        strokeWidth={1.25163}
-                    /></span>
+                    <span className="text-xl"><img src={IconArrowRight} className="w-[16px] h-[16px]" alt="" /></span>
                 </button>
             </div>
 
@@ -63,11 +60,7 @@ const ResearchProjects = () => {
             <div className="flex justify-center">
                 <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-8 py-3 rounded-[12px] font-medium text-[18px] flex items-center gap-2 transition-colors">
                     Explore Research Portfolio
-                    <span><IconArrowRight
-                        size={20}
-                        stroke="white"
-                        strokeWidth={1.6}
-                    /></span>
+                    <span><IconArrowRightWhite size={19} /></span>
                 </button>
             </div>
 

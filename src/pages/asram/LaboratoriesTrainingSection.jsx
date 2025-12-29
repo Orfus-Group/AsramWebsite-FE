@@ -2,9 +2,9 @@ import React from "react";
 import { T } from "@/theme";
 import AnimatedStatValue from "@/features/common/ui/AnimatedStatValue";
 import PageSection from "@/features/common/layout/PageContainer";
-import placeholderImg from "@/assets/asram/lab1.png"; // Placeholder
-import placeholderImg2 from "@/assets/asram/lab2.png"; // Placeholder
-import placeholderImg3 from "@/assets/asram/lab3.png"; // Placeholder
+const placeholderImg = "/AsramWebsite-FE/assets/asram/lab1.png"; // Placeholder
+const placeholderImg2 = "/AsramWebsite-FE/assets/asram/lab2.png"; // Placeholder
+const placeholderImg3 = "/AsramWebsite-FE/assets/asram/lab3.png"; // Placeholder
 
 const LaboratoriesTrainingSection = () => {
     const labs = [

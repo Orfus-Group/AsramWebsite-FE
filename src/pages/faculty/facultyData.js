@@ -1,8 +1,8 @@
 
-import Facultyimg from "@/assets/faculty/faculty.png";
-import leadership1 from "@/assets/faculty/facultyleadership1.png";
-import leadership2 from "@/assets/faculty/facultyleadership2.png";
-import leadership3 from "@/assets/faculty/facultyleadership3.png";
+const Facultyimg = "/AsramWebsite-FE/assets/faculty/faculty.png";
+const leadership1 = "/AsramWebsite-FE/assets/faculty/facultyleadership1.png";
+const leadership2 = "/AsramWebsite-FE/assets/faculty/facultyleadership2.png";
+const leadership3 = "/AsramWebsite-FE/assets/faculty/facultyleadership3.png";
 
 // Mock Data for "Leadership"
 export const leadershipData = [

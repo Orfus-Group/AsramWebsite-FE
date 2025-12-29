@@ -1,6 +1,6 @@
 import React from "react";
 import ContentImageSection from "@/components/common/ContentImageSection";
-import CareImg from "@/assets/healthcare/careatAsram.png";
+const CareImg = "/AsramWebsite-FE/assets/healthcare/careatAsram.png";
 
 const CareAtAsram = () => {
     return (

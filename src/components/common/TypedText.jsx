@@ -39,7 +39,7 @@ const TypedText = ({ text, className = "", delay = 0, stagger = 0.05 }) => {
 
     return (
         <m.span
-            style={{ overflow: "hidden", display: "inline-block" }}
+            style={{ display: "inline-block" }}
             variants={container}
             initial="hidden"
             whileInView="visible"
@@ -47,8 +47,8 @@ const TypedText = ({ text, className = "", delay = 0, stagger = 0.05 }) => {
             className={className}
         >
             {characters.map((char, index) => (
-                <m.span variants={child} key={index}>
-                    {char === " " ? "\u00A0" : char}
+                <m.span variants={child} key={index} className="whitespace-pre-wrap">
+                    {char}
                 </m.span>
             ))}
         </m.span>

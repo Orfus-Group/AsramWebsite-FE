@@ -1,6 +1,6 @@
 import React from "react";
 import ContentImageSection from "@/components/common/ContentImageSection";
-import PlaceholderImg from "@/assets/campuslife/campuslifeatAsram.png";
+const PlaceholderImg = "/AsramWebsite-FE/assets/campuslife/campuslifeatAsram.png";
 
 const CampusOverview = () => {
     return (

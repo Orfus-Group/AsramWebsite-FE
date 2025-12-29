@@ -1,7 +1,10 @@
 import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
-import { IconArrowRight, IconVision, IconMission } from "@/assets/icons";
+import IconArrowRightWhite from "@/assets/icons/IconArrowRightWhite";
+
+const IconVision = "/AsramWebsite-FE/assets/icons/IconVision.svg";
+const IconMission = "/AsramWebsite-FE/assets/icons/IconMission.svg";
 
 
 const ResearchOverview = () => {
@@ -34,7 +37,7 @@ const ResearchOverview = () => {
     mb-5 sm:mb-6
   "
             >
-              <IconVision size={30} />
+              <img src={IconVision} className="w-[30px] h-[30px]" alt="" />
 
 
 
@@ -71,7 +74,7 @@ const ResearchOverview = () => {
     mb-5 sm:mb-6
   "
             >
-              <IconMission size={30} />
+              <img src={IconMission} className="w-[30px] h-[30px]" alt="" />
 
             </div>
 
@@ -147,11 +150,7 @@ const ResearchOverview = () => {
               "
             >
               Read Full Message
-              <IconArrowRight
-                size={19}
-                stroke="white"
-                strokeWidth={2}
-              />
+              <IconArrowRightWhite size={19} />
 
             </button>
           </div>

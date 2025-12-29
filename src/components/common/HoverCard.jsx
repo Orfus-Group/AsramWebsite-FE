@@ -8,10 +8,13 @@ const HoverCard = ({ children, className = "", ...props }) => {
 
     const handleMouseMove = (e) => {
         if (!ref.current) return;
-        const rect = ref.current.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        setPosition({ x, y });
+
+        window.requestAnimationFrame(() => {
+            const rect = ref.current.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            setPosition({ x, y });
+        });
     };
 
     return (

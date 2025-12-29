@@ -1,46 +1,28 @@
 import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
-import { IconArrowRight } from "@/assets/icons";
+const IconArrowRight = "/AsramWebsite-FE/assets/icons/IconArrowRight.svg";
+const IconMoney = "/AsramWebsite-FE/assets/icons/IconMoney.svg";
+const IconTrendUp = "/AsramWebsite-FE/assets/icons/IconTrendUp.svg";
+const IconDocGrants = "/AsramWebsite-FE/assets/icons/IconDocGrants.svg";
 import AnimatedStatValue from "@/features/common/ui/AnimatedStatValue";
+import IconArrowRightWhite from "@/assets/icons/IconArrowRightWhite";
 
 const stats = [
     {
         value: "₹11 Cr+",
         label: "Total Extramural Funding",
-        icon: (
-            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M41.6665 12.502H8.33317C6.03198 12.502 4.1665 14.3674 4.1665 16.6686V33.3353C4.1665 35.6365 6.03198 37.502 8.33317 37.502H41.6665C43.9677 37.502 45.8332 35.6365 45.8332 33.3353V16.6686C45.8332 14.3674 43.9677 12.502 41.6665 12.502Z" stroke="#191919" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M24.9997 29.1693C27.3009 29.1693 29.1663 27.3038 29.1663 25.0026C29.1663 22.7014 27.3009 20.8359 24.9997 20.8359C22.6985 20.8359 20.833 22.7014 20.833 25.0026C20.833 27.3038 22.6985 29.1693 24.9997 29.1693Z" stroke="#191919" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M12.4998 25H12.5206M37.4998 25H37.5206" stroke="#191919" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-
-        )
+        icon: <img src={IconMoney} className="w-[50px] h-[50px]" alt="" />
     },
     {
         value: "26",
         label: "Active Funded Projects",
-        icon: (
-            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M33.3333 14.584H45.8333V27.084" stroke="#191919" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M45.8334 14.584L28.1251 32.2923L17.7084 21.8757L4.16675 35.4173" stroke="#191919" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-
-        ) // Trend up
+        icon: <img src={IconTrendUp} className="w-[50px] h-[50px]" alt="" /> // Trend up
     },
     {
         value: "₹2.5 Cr",
         label: "Internal Research Fund",
-        icon: (
-            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.4999 45.8346C11.3948 45.8346 10.335 45.3957 9.55364 44.6143C8.77224 43.8329 8.33325 42.773 8.33325 41.668V8.33464C8.33325 7.22957 8.77224 6.16977 9.55364 5.38836C10.335 4.60696 11.3948 4.16798 12.4999 4.16798H29.1666C29.8261 4.16691 30.4793 4.29631 31.0885 4.54874C31.6978 4.80117 32.2511 5.17164 32.7166 5.63881L40.1916 13.1138C40.66 13.5794 41.0315 14.1333 41.2847 14.7433C41.5379 15.3533 41.6677 16.0075 41.6666 16.668V41.668C41.6666 42.773 41.2276 43.8329 40.4462 44.6143C39.6648 45.3957 38.605 45.8346 37.4999 45.8346H12.4999Z" stroke="#191919" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M29.1667 4.16797V14.5846C29.1667 15.1372 29.3862 15.6671 29.7769 16.0578C30.1676 16.4485 30.6975 16.668 31.2501 16.668H41.6667" stroke="#191919" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M20.8334 18.752H16.6667" stroke="#191919" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M33.3334 27.0859H16.6667" stroke="#191919" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M33.3334 35.418H16.6667" stroke="#191919" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-
-        ) // Document
+        icon: <img src={IconDocGrants} className="w-[50px] h-[50px]" alt="" /> // Document
     }
 ];
 
@@ -113,12 +95,7 @@ const ResearchGrantsAndFunds = () => {
 
                     <button className="flex items-center gap-2 text-[#223F7F] font-regular text-[16.67px] hover:text-[#1E3A8A] transition-colors">
                         View All Funding Sources
-                        <span><IconArrowRight
-                            size={17}
-                            className="sm:w-[20px] sm:h-[20px]"
-                            stroke="#223F7F"
-                            strokeWidth={1.3}
-                        /></span>
+                        <span><IconArrowRightWhite size={19} /></span>
                     </button>
                 </div>
 
@@ -143,12 +120,7 @@ const ResearchGrantsAndFunds = () => {
 
                     <button className="flex items-center gap-2 text-[#223F7F] font-regular text-[16.67px] hover:text-[#1E3A8A] transition-colors">
                         Apply for Internal Funding
-                        <span><IconArrowRight
-                            size={17}
-                            className="sm:w-[20px] sm:h-[20px]"
-                            stroke="#223F7F"
-                            strokeWidth={1.3}
-                        /></span>
+                        <span><img src={IconArrowRight} className="w-[17px] h-[17px] sm:w-[20px] sm:h-[20px] invert brightness-0" alt="" /></span>
                     </button>
                 </div>
 
@@ -158,11 +130,7 @@ const ResearchGrantsAndFunds = () => {
             <div className="flex justify-center">
                 <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-8 py-3 rounded-[6px] font-medium text-[18px] flex items-center gap-2 transition-colors">
                     View Funding Guidelines & Application Process
-                    <span> <IconArrowRight
-                        size={21}
-                        stroke="white"
-                        strokeWidth={1.7}
-                    /></span>
+                    <span><img src={IconArrowRight} className="w-[21px] h-[21px] invert brightness-0" alt="" /></span>
                 </button>
             </div>
 

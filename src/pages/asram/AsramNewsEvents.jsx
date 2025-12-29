@@ -3,13 +3,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { T } from "@/theme";
 import PageSection from "@/features/common/layout/PageContainer";
-import IconFullArrowRight from "@/assets/icons/IconFullArrow";
+const IconArrowRight = "/AsramWebsite-FE/assets/icons/IconArrowRight.svg";
 
 // Images
-import img1 from "@/assets/asram/newshighlight1.png"; // "College of Nursing..."
-import img2 from "@/assets/asram/newshighlight2.png"; // "Medical College Students..."
-import img3 from "@/assets/asram/newshighlight3.png"; // "New State-of-the-Art..."
-import { IconArrowRight } from "@/assets/icons";
+const img1 = "/AsramWebsite-FE/assets/asram/newshighlight1.png"; // "College of Nursing..."
+const img2 = "/AsramWebsite-FE/assets/asram/newshighlight2.png"; // "Medical College Students..."
+const img3 = "/AsramWebsite-FE/assets/asram/newshighlight3.png"; // "New State-of-the-Art..."
+// Icons are now referenced via constants below
 
 // Icons
 
@@ -173,7 +173,7 @@ const AsramNewsEvents = () => {
                     "
                   >
                     Read More
-                    <IconArrowRight size={16} stroke="#223F7F" />
+                    <img src={IconArrowRight} className="w-[16px] h-[16px]" alt="" />
                   </Link>
                 </div>
               </div>

@@ -13,7 +13,7 @@ import PatientSupportServices from "./sections/PatientSupportServices";
 import HealthCampsOutreach from "./sections/HealthCampsOutreach";
 import EmergencyCriticalCare from "./sections/EmergencyCriticalCare";
 import HospitalInfrastructureGallery from "./sections/HospitalInfrastructureGallery";
-import HeroBg from "@/assets/healthcare/healthcareherobg.png";
+const HeroBg = "/AsramWebsite-FE/assets/healthcare/healthcareherobg.png";
 
 const HealthcarePage = () => {
   const { setHero, hideHero } = useHero();

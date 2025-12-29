@@ -3,12 +3,14 @@ import { useNavigate } from "react-router-dom";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
 import { mockNews, colleges, categories } from "../newsData";
+const IconFilter = "/AsramWebsite-FE/assets/icons/IconFilter.svg";
+const IconCalendar = "/AsramWebsite-FE/assets/icons/IconCalendar.svg";
+const IconChevronLeft = "/AsramWebsite-FE/assets/icons/IconChevronLeft.svg";
+const IconChevronRight = "/AsramWebsite-FE/assets/icons/IconChevronRight.svg";
+
 import {
-    IconFilter,
-    IconCalendar,
     IconArrowRight,
-    IconChevronLeft,
-    IconChevronRight
+   
 } from "@/assets/icons";
 
 const LatestNews = ({
@@ -32,7 +34,7 @@ const LatestNews = ({
                 <div className="w-full lg:w-[280px] shrink-0 space-y-4 sm:space-y-6 lg:sticky lg:top-[20px] lg:self-start flex flex-col sm:flex-row lg:flex-col gap-0 sm:gap-4 lg:gap-6">
                     {/* Filters Header (Hidden on Mobile) */}
                     <div className="hidden lg:flex items-center gap-2 rounded-[9.4px] border border-[rgba(7,7,7,0.2)] px-6 py-4 bg-white w-full">
-                        <IconFilter />
+                        <img src={IconFilter} className="w-[22px] h-[22px]" alt="" />
                         <span className={`${T.font.family} font-medium text-[18px] text-[#191919]`}>Filters</span>
                     </div>
 
@@ -140,7 +142,7 @@ const LatestNews = ({
                                     {/* Footer (Date + Read More) */}
                                     <div style={{ borderTop: "1.3px solid #07070733" }} className="flex items-center justify-between mt-auto pt-5">
                                         <div className="flex items-center gap-2 text-[#ABABAB] text-[12px] sm:text-[14px] font-medium">
-                                            <IconCalendar size={14} className="sm:w-[16px] sm:h-[16px]" />
+                                            <img src={IconCalendar} className="w-[14px] h-[14px] sm:w-[16px] sm:h-[16px]" alt="" />
                                             <span>{item.date}</span>
                                         </div>
                                         <button
@@ -159,7 +161,7 @@ const LatestNews = ({
                     {/* Pagination */}
                     <div className="flex items-center justify-center gap-[8px] sm:gap-[12px] mt-[30px] md:mt-[60px]">
                         <button className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-[8px] sm:rounded-[9.4px] border border-[rgba(7,7,7,0.2)] hover:bg-[#EEF2F7] transition-all">
-                            <IconChevronLeft size={16} />
+                            <img src={IconChevronLeft} className="w-[16px] h-[16px]" alt="" />
                         </button>
 
                         <button className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-[8px] bg-[#223F7F] text-white font-medium text-[14px] sm:text-[15.02px] shadow-sm transform hover:scale-105 transition-transform">
@@ -170,7 +172,7 @@ const LatestNews = ({
                         </button>
 
                         <button className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-[8px] sm:rounded-[9.4px] border border-[rgba(7,7,7,0.2)] hover:bg-[#EEF2F7] transition-all">
-                            <IconChevronRight size={16} />
+                            <img src={IconChevronRight} className="w-[16px] h-[16px]" alt="" />
                         </button>
                     </div>
                 </div>

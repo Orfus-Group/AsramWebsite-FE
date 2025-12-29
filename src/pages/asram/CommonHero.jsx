@@ -2,16 +2,17 @@ import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import CarouselSlideIcon from "@/assets/icons/CarouselSlideIcon";
 
-const CommonHero = ({ title, bgImage, children, showPagination = false }) => {
+const CommonHero = ({ title, bgImage, children, showPagination = false, className = "!py-12 md:!py-0 !lg:pl-[120px] !lg:pr-[120px]", alignmentClass = "items-center" }) => {
     return (
         <section
             className="
         relative w-full
-        min-h-[335px] h-auto
+        min-h-[250px] h-auto
         sm:h-[450px]
         md:h-[75vh]
         lg:h-[760px]
         overflow-hidden
+        flex flex-col
       "
         >
             {/* ============================= */}
@@ -49,31 +50,28 @@ const CommonHero = ({ title, bgImage, children, showPagination = false }) => {
                 />
             </div>
 
-            <div className="absolute inset-0 flex items-center z-[10]">
-                <PageSection
-                    sectionClassName="absolute inset-0 flex items-center"
-                    className="!py-0 !lg:pl-[120px] !lg:pr-[120px]"
-                    bg="transparent"
-                >
-                    <div className="w-full md:max-w-[700px] text-white flex flex-col items-center text-center md:block md:text-left">
-                        <h1
-                            className="
+            <PageSection
+                sectionClassName={`relative z-10 h-full flex ${alignmentClass} min-h-[inherit]`}
+                className={className}
+                bg="transparent"
+            >
+                <div className="w-full text-white flex flex-col items-center text-center md:block md:text-left">
+                    <h1
+                        className="
                 text-white
                 text-[28px] sm:text-[40px] leading-[1.1]
                 md:text-[50px]
                 lg:text-[60px] lg:leading-[54px]
                 mb-6
               "
-                        >
-                            {title}
-                        </h1>
+                    >
+                        {title}
+                    </h1>
 
-                        {children}
-                    </div>
-                </PageSection>
-            </div>
+                    {children}
+                </div>
+            </PageSection>
 
-            {/* Pagination Dots (Only show on specific pages) */}
             {showPagination && (
                 <div className="hidden md:block">
                     <CarouselSlideIcon activeIndex={0} />

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
 import { useHero } from "@/context/HeroContext";
-import FacultyHerobg from "@/assets/faculty/asramfacultybanner.png";
+const FacultyHerobg = "/AsramWebsite-FE/assets/faculty/asramfacultybanner.png";
 import { leadershipData, facultyMembersData } from "./facultyData";
 
 

@@ -1,5 +1,6 @@
 import React from "react";
-import SearchIcon from "@/assets/icons/search.svg";
+
+const SearchIcon = "/AsramWebsite-FE/assets/icons/IconSearch.svg";
 
 const HeaderIcons = () => {
   return (

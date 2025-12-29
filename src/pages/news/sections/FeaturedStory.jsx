@@ -1,8 +1,10 @@
 import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
-import Featuredimg from "@/assets/news/featuredimg.svg";
-import { IconCalendar, IconArrowRight } from "@/assets/icons";
+const Featuredimg = "/AsramWebsite-FE/assets/news/featuredimg.svg";
+const IconCalendar = "/AsramWebsite-FE/assets/icons/IconCalendar.svg";
+const IconArrowRight = "/AsramWebsite-FE/assets/icons/IconArrowRight.svg";
+// Note: Using brightness filter for white arrows if needed, or separate SVG
 
 const FeaturedStory = () => {
     return (
@@ -54,7 +56,7 @@ const FeaturedStory = () => {
                         <div className="flex items-center gap-3 sm:gap-4 text-[13px] sm:text-[16px] text-[#555555] font-regular">
                             {/* Calendar Icon */}
                             <div className="flex items-center gap-2">
-                                <IconCalendar size={14} className="sm:w-[16px] sm:h-[16px]" />
+                                <img src={IconCalendar} className="w-[14px] h-[14px] sm:w-[16px] sm:h-[16px]" alt="" />
                                 <span className="text-[#191919BF] text-[13px] sm:text-[14px] font-regular">Dec 1, 2024</span>
                             </div>
                             <span className="w-[3px] h-[3px] sm:w-[4px] sm:h-[4px] rounded-full bg-[#555555]"></span>
@@ -64,11 +66,7 @@ const FeaturedStory = () => {
                         {/* Button */}
                         <button className="w-full sm:w-fit bg-[#223F7F] hover:bg-[#1a3163] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-[8px] font-regular text-[15px] sm:text-[18px] transition-colors flex items-center justify-center leading-[26px] gap-2">
                             Read Full Story
-                            <IconArrowRight
-                                size={18}
-                                stroke="white"
-                                strokeWidth={1}
-                            />
+                            <img src={IconArrowRight} className="w-[18px] h-[18px] invert brightness-0" alt="" />
                         </button>
                     </div>
                 </div>

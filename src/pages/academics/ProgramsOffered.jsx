@@ -3,13 +3,12 @@ import React from "react";
 import { T } from "@/theme";
 
 import PageSection from "@/features/common/layout/PageContainer";
+import IconTimePeriod from "@/assets/icons/IconTimePeriod";
+import IconCheckMark from "@/assets/icons/IconCheckMark";
 
-import checkIcon from "@/assets/nursing/checkicon.svg";
-import ArrowRight from "@/assets/academics/rightbluearrow.svg";
-import timeperiodicon from "@/assets/academics/timeperiodicon.svg";
-import seatsicon from "@/assets/academics/seatsicon.svg";
-import IconArrowRight from "@/assets/icons/IconFullArrow";
-import CheckMarkIcon from "@/assets/icons/CheckMarkIcon";
+const ArrowRight = "/AsramWebsite-FE/assets/academics/rightbluearrow.svg";
+const seatsicon = "/AsramWebsite-FE/assets/academics/seatsicon.svg";
+const IconFullArrow = "/AsramWebsite-FE/assets/icons/IconFullArrow.svg";
 
 
 const programs = [
@@ -142,15 +141,22 @@ export default function ProgramsOffered() {
                 className="mt-auto flex gap-[18px] items-center text-[14px]"
                 style={{ color: T.color.text.muted }}
               >
-                <div className="flex items-center gap-[6px]">
-                  <img loading="lazy" decoding="async" src={timeperiodicon} className="w-[16px] h-[16px]" />
+                <div className="flex items-center gap-[6px] leading-none">
+                  <IconTimePeriod
+                    size={16}
+                    className="flex-shrink-0 align-middle"
+                  />
                   <span
-                    className={`${T.font.family}`}
-                    style={{ color: "#191919BF" }}
+                    className={`${T.font.family} flex items-center`}
+                    style={{
+                      color: "#191919BF",
+                      lineHeight: "16px", // match icon size
+                    }}
                   >
                     {program.years}
                   </span>
                 </div>
+
 
                 {/* <div className="flex items-center gap-[6px]">
                   <img loading="lazy" decoding="async" src={seatsicon} className="w-[16px] h-[16px]" />
@@ -214,7 +220,7 @@ export default function ProgramsOffered() {
     "
                       style={{ color: "#191919BF" }}
                     >
-                      <CheckMarkIcon className="shrink-0 mt-[2px]" />
+                      <IconCheckMark size={11} className="shrink-0 mt-[2px]" />
                       <span className={`${T.font.family} leading-[18px]`}>
                         {item}
                       </span>
@@ -236,11 +242,10 @@ export default function ProgramsOffered() {
                 `}
               >
                 Learn More
-                <IconArrowRight
-                  size={18}
-                  className="sm:w-[20px] sm:h-[20px]"
-                  stroke="#223F7F"
-                  strokeWidth={2}
+                <img
+                  src={IconFullArrow}
+                  className="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px]"
+                  alt=""
                 />
 
               </button>

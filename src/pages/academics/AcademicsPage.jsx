@@ -8,7 +8,7 @@ import NursingAdmissionsSection from "./NursingAdmissionsSection";
 import StudentVoices from "./StudentVoices";
 import FinancialAidScholarships from "./FinancialAidScholarships";
 import JoinOurNursingCommunity from "./JoiningNursingCommunity";
-import heroBg from "@/assets/academics/asramacademicsbanner.png";
+const heroBg = "/AsramWebsite-FE/assets/academics/asramacademicsbanner.png";
 import { useHero } from "@/context/HeroContext";
 import TypedText from "@/components/common/TypedText";
 import MotionSection from "@/components/common/MotionSection";

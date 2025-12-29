@@ -2,7 +2,7 @@ import React from "react";
 import { T } from "@/theme";
 import { HiOutlineCalendar, HiOutlineLocationMarker } from "react-icons/hi";
 import PageSection from "@/features/common/layout/PageContainer";
-import campusEvents from "@/assets/news/campusevents.png"; // Fallback placeholder
+const campusEvents = "/AsramWebsite-FE/assets/news/campusevents.png"; // Fallback placeholder
 
 const CampusEventsSection = () => {
     const upcomingEvents = [

@@ -2,17 +2,15 @@ import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
 
-import RelatedArticleImg from "@/assets/news/relatedart.svg"
-import DoctorImg from "@/assets/news/doct.svg";
-import {
-  IconFilter,
-  IconBack,
-  IconCalendar,
-  IconClock,
-  IconShare,
-  IconUser,
-  IconTag
-} from "@/assets/icons";
+const RelatedArticleImg = "/AsramWebsite-FE/assets/news/relatedart.svg"
+const DoctorImg = "/AsramWebsite-FE/assets/news/doct.svg";
+const IconFilter = "/AsramWebsite-FE/assets/icons/IconFilter.svg";
+const IconBack = "/AsramWebsite-FE/assets/icons/IconBack.svg";
+const IconCalendar = "/AsramWebsite-FE/assets/icons/IconCalendar.svg";
+const IconClock = "/AsramWebsite-FE/assets/icons/IconClock.svg";
+const IconShare = "/AsramWebsite-FE/assets/icons/IconShare.svg";
+const IconUser = "/AsramWebsite-FE/assets/icons/IconUser.svg";
+const IconTag = "/AsramWebsite-FE/assets/icons/IconTag.svg";
 
 const colleges = [
   { label: "All Colleges", value: "All" },
@@ -99,7 +97,7 @@ const NewsArticleDetail = ({
           onClick={onBackToNews}
           className="flex items-center gap-2 text-[#223F7F] text-[18px] sm:text-[20px] font-medium hover:underline"
         >
-          <IconBack />
+          <img src={IconBack} className="w-[20px] h-[20px]" alt="" />
           Back to News
         </button>
         <p className={`${T.font.family} text-[13px] sm:text-[14px] text-[#4A5565] mt-2`}>
@@ -112,7 +110,7 @@ const NewsArticleDetail = ({
         <div className="w-full lg:w-[280px] shrink-0 space-y-4 sm:space-y-6 lg:sticky lg:top-[20px] lg:self-start flex flex-col sm:flex-row lg:flex-col gap-0 sm:gap-4 lg:gap-6">
           {/* Filters Header (Hidden on Mobile) */}
           <div className="hidden lg:flex items-center gap-2 rounded-[9.4px] border border-[rgba(7,7,7,0.2)] px-6 py-4 bg-white w-full">
-            <IconFilter />
+            <img src={IconFilter} className="w-[20px] h-[20px]" alt="" />
             <span className={`${T.font.family} font-semibold text-[18px] text-[#1D2939]`}>Filters</span>
           </div>
 
@@ -159,13 +157,13 @@ const NewsArticleDetail = ({
               <div className="flex items-center gap-4 sm:gap-6">
                 {/* Date */}
                 <div className="flex items-center gap-2">
-                  <IconCalendar size={15} />
+                  <img src={IconCalendar} className="w-[15px] h-[15px]" alt="" />
                   <span className={`${T.font.family} text-[13px] sm:text-[14px] font-medium text-[#191919BF]`}>Dec 5, 2024</span>
                 </div>
 
                 {/* Read Time */}
                 <div className="flex items-center gap-2">
-                  <IconClock size={15} />
+                  <img src={IconClock} className="w-[15px] h-[15px]" alt="" />
                   <span className={`${T.font.family} text-[13px] sm:text-[14px] font-medium text-[#191919BF]`}>5 min read</span>
                 </div>
               </div>
@@ -195,7 +193,7 @@ const NewsArticleDetail = ({
                     transition-all
                   "
                 >
-                  <IconShare size={16} />
+                  <img src={IconShare} className="w-[16px] h-[16px]" alt="" />
                   Share
                 </button>
               </div>
@@ -215,7 +213,7 @@ const NewsArticleDetail = ({
               {/* Text */}
               <div className="flex flex-col justify-center">
                 <div className="flex items-center gap-2">
-                  <IconUser size={14} className="relative top-[1px]" />
+                  <img src={IconUser} className="w-[14px] h-[14px] relative top-[1px]" alt="" />
                   <p className={`${T.font.family} font-medium text-[13px] sm:text-[14px] leading-tight text-[#191919]`}>
                     Dr. Rajesh Kumar
                   </p>
@@ -282,7 +280,7 @@ const NewsArticleDetail = ({
             <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#E5E7EB]">
               <div className="flex items-center gap-3 flex-wrap">
                 <div className="flex items-center gap-2 text-[#374151] font-medium">
-                  <IconTag size={16} />
+                  <img src={IconTag} className="w-[16px] h-[16px]" alt="" />
                   <span className="text-[#191919BF] text-[16px] sm:text-[18px] font-medium">Tags:</span>
                 </div>
                 {["Accreditation", "Medical Education", "NAAC", "Excellence"].map(

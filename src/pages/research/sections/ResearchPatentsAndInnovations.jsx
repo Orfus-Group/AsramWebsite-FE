@@ -1,85 +1,35 @@
 import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
-import { IconArrowRight } from "@/assets/icons";
+const IconArrowRight = "/AsramWebsite-FE/assets/icons/IconArrowRight.svg";
+const IconPatentGranted = "/AsramWebsite-FE/assets/icons/IconPatentGranted.svg";
+const IconPatentFiled = "/AsramWebsite-FE/assets/icons/IconPatentFiled.svg";
+const IconInnovation = "/AsramWebsite-FE/assets/icons/IconInnovation.svg";
+const IconPrototype = "/AsramWebsite-FE/assets/icons/IconPrototype.svg";
 import AnimatedStatValue from "@/features/common/ui/AnimatedStatValue";
+import IconArrowRightWhite from "@/assets/icons/IconArrowRightWhite";
 
 const stats = [
-  {
-    value: "8",
-    label: "Patents Granted",
-    icon: (
-      <svg width="26" height="26" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M26.8699 22.377L29.5001 37.179C29.5296 37.3533 29.5051 37.5325 29.43 37.6925C29.3549 37.8525 29.2328 37.9858 29.0799 38.0745C28.927 38.1632 28.7506 38.2032 28.5745 38.1889C28.3983 38.1747 28.2306 38.1071 28.0939 37.995L21.8786 33.3301C21.5786 33.1059 21.2141 32.9848 20.8395 32.9848C20.465 32.9848 20.1005 33.1059 19.8005 33.3301L13.5748 37.9933C13.4382 38.1051 13.2707 38.1727 13.0947 38.1869C12.9188 38.2011 12.7426 38.1614 12.5898 38.0729C12.437 37.9844 12.3149 37.8515 12.2396 37.6918C12.1643 37.5321 12.1395 37.3532 12.1685 37.179L14.797 22.377"
-          stroke="#FFF"
-          strokeWidth="3.47222"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M20.8332 24.3079C26.5861 24.3079 31.2498 19.6442 31.2498 13.8913C31.2498 8.13831 26.5861 3.47461 20.8332 3.47461C15.0802 3.47461 10.4165 8.13831 10.4165 13.8913C10.4165 19.6442 15.0802 24.3079 20.8332 24.3079Z"
-          stroke="#FFF"
-          strokeWidth="3.47222"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    value: "12",
-    label: "Patents Filed",
-    icon: (
-      <svg width="26" height="26" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M26.0415 24.3079C26.3887 22.5718 27.2568 21.3566 28.6457 19.9677C30.3818 18.4052 31.2498 16.1482 31.2498 13.8913C31.2498 11.1286 30.1524 8.47908 28.1989 6.52558C26.2454 4.57208 23.5958 3.47461 20.8332 3.47461C18.0705 3.47461 15.421 4.57208 13.4675 6.52558C11.514 8.47908 10.4165 11.1286 10.4165 13.8913C10.4165 15.6274 10.7637 17.7107 13.0207 19.9677C14.2359 21.1829 15.2776 22.5718 15.6248 24.3079"
-          stroke="#FFF"
-          strokeWidth="3.47222"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M15.625 31.25H26.0417"
-          stroke="#FFF"
-          strokeWidth="3.47222"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M17.3608 38.1953H24.3053"
-          stroke="#FFF"
-          strokeWidth="3.47222"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    value: "15+",
-    label: "Active Innovations",
-    icon: (
-      <svg width="26" height="26" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7.81226 5.20898H33.8539" stroke="#FFF" strokeWidth="3.47222" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M10.4165 5.20898V32.9868C10.4165 33.9077 10.7823 34.7908 11.4335 35.442C12.0847 36.0932 12.9678 36.459 13.8887 36.459H27.7776C28.6985 36.459 29.5817 36.0932 30.2328 35.442C30.884 34.7908 31.2498 33.9077 31.2498 32.9868V5.20898" stroke="#FFF" strokeWidth="3.47222" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M10.4165 24.3066H31.2498" stroke="#FFF" strokeWidth="3.47222" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    value: "5",
-    label: "Prototypes",
-    icon: (
-      <svg width="26" height="26" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20.834 34.7227V38.1949" stroke="white" strokeWidth="3.47222" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M20.834 3.47266V6.94488" stroke="white" strokeWidth="3.47222" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M29.5137 34.7227V38.1949" stroke="white" strokeWidth="3.47222" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M29.5137 3.47266V6.94488" stroke="white" strokeWidth="3.47222" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M31.2489 6.94531H10.4156C8.49793 6.94531 6.94336 8.49988 6.94336 10.4175V31.2509C6.94336 33.1685 8.49793 34.7231 10.4156 34.7231H31.2489C33.1666 34.7231 34.7211 33.1685 34.7211 31.2509V10.4175C34.7211 8.49988 33.1666 6.94531 31.2489 6.94531Z" stroke="white" strokeWidth="3.47222" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
+    {
+        value: "8",
+        label: "Patents Granted",
+        icon: <img src={IconPatentGranted} className="w-[26px] h-[26px]" alt="" />,
+    },
+    {
+        value: "12",
+        label: "Patents Filed",
+        icon: <img src={IconPatentFiled} className="w-[26px] h-[26px]" alt="" />,
+    },
+    {
+        value: "15+",
+        label: "Active Innovations",
+        icon: <img src={IconInnovation} className="w-[26px] h-[26px]" alt="" />,
+    },
+    {
+        value: "5",
+        label: "Prototypes",
+        icon: <img src={IconPrototype} className="w-[26px] h-[26px]" alt="" />,
+    },
 ];
 
 
@@ -151,7 +101,7 @@ const ResearchPatentsAndInnovations = () => {
 
 
             {/* 2. Main Content Grid */}
-            <div  className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mb-12">
 
                 {/* Featured Patents */}
                 <div style={{ border: "1px solid #07070733" }} className="bg-[#EEF2F7] rounded-[8px] p-[24px] md:p-[40px]">
@@ -177,12 +127,7 @@ const ResearchPatentsAndInnovations = () => {
 
                     <button className="flex items-center gap-2 text-[#223F7F] font-medium text-[14px] hover:text-[#1E3A8A] transition-colors">
                         View All Patents
-                        <span><IconArrowRight
-                            size={16}
-                            className="sm:w-[20px] sm:h-[20px]"
-                            stroke="#223F7F"
-                            strokeWidth={1.25}
-                        /></span>
+                        <span><img src={IconArrowRight} className="w-[16px] h-[16px] sm:w-[20px] sm:h-[20px]" alt="" /></span>
                     </button>
                 </div>
 
@@ -210,12 +155,7 @@ const ResearchPatentsAndInnovations = () => {
 
                     <button className="flex items-center gap-2 text-[#223F7F] font-medium text-[14px] hover:text-[#1E3A8A] transition-colors">
                         View All Innovations
-                        <span><IconArrowRight
-                            size={16}
-                            className="sm:w-[20px] sm:h-[20px]"
-                            stroke="#223F7F"
-                            strokeWidth={1.25}
-                        /></span>
+                        <span><img src={IconArrowRight} className="w-[16px] h-[16px] sm:w-[20px] sm:h-[20px]" alt="" /></span>
                     </button>
                 </div>
 
@@ -232,11 +172,7 @@ const ResearchPatentsAndInnovations = () => {
 
                 <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-6 py-3 rounded-[10.4px] font-medium text-[18px] flex items-center gap-2 transition-colors">
                     Learn About Incubation Support
-                    <span><IconArrowRight
-                        size={21}
-                        stroke="white"
-                        strokeWidth={1.7}
-                    /></span>
+                    <span><IconArrowRightWhite size={19} /></span>
                 </button>
             </div>
 
