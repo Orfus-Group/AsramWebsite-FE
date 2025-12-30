@@ -6,8 +6,11 @@ import LoadingScreen from "./components/loader/LoadingScreen";
 import routesConfig from "./routes/routesConfig";
 import LayoutSwitcher from "./layouts/LayoutSwitcher";
 import ScrollToReset from "./components/common/ScrollToReset";
+import usePageTitle from "./hooks/usePageTitle";
 
 const App = () => {
+  usePageTitle();
+
   return (
     <LazyMotion features={domAnimation}>
       <Suspense fallback={<LoadingScreen />}>
