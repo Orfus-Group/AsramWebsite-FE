@@ -126,6 +126,7 @@ const InstitutionsSection = () => {
             sm:grid-cols-2
             md:grid-cols-3
             gap-[26px]
+            items-stretch
           "
         >
           {institutions.map((item) => (
@@ -134,135 +135,131 @@ const InstitutionsSection = () => {
               key={item.id}
               className="
                 group 
-                w-full
                 h-full
-                min-h-[388px]
+                min-h-[399px]
                 bg-white 
-                rounded-[20px] 
+                rounded-[8px] 
                 border border-[#E1E6EF] 
-                px-[24px] sm:px-[28px]
-                pt-[24px] pb-[24px]
+                p-[30px]
                 flex flex-col 
                 transition-all duration-300 
                 premium-shadow-hover
               "
             >
-              {/* ICON */}
-              <div
-                className="
+              <div className="flex flex-col gap-[26px] h-full">
+                {/* ICON */}
+                <div
+                  className="
                   w-[64px] h-[64px] 
-                  rounded-[16px] flex items-center justify-center 
-                  mb-[22px]
+                  rounded-[12px] flex items-center justify-center 
+                  flex-shrink-0
                   transition-all duration-300
                   group-hover:scale-110
                   group-hover:shadow-[0_8px_20px_-6px_rgba(0,0,0,0.1)]
                 "
-                style={{ backgroundColor: iconBgColors[item.id] }}
-              >
-                <img src={item.icon} className="w-[32px] h-[32px]" alt="" />
-              </div>
+                  style={{ backgroundColor: iconBgColors[item.id] }}
+                >
+                  <img src={item.icon} className="w-[32px] h-[32px]" alt="" />
+                </div>
 
-              {/* TITLE */}
-              {/* Force rigid height to align next element. 
-                  Title is 22px with 32px leading. 2 lines = 64px. 
-                  Setting min-h-[64px] to accommodate 2 lines + underline comfortably.
-                  Resetting on large screens (1440px+) where text likely doesn't wrap. */}
-              < div className="min-h-[64px] min-[1440px]:min-h-0 mb-[10px] flex items-start" >
-                <h6
-                  className={`
+                {/* TITLE */}
+                <div className="flex items-start">
+                  <h6
+                    className={`
                     ${T.font.weight.semibold} 
                     text-[#191919]
-                    text-[20px] sm:text-[21.44px]
+                    text-[20px] sm:text-[18px] md:text-[16px] lg:text-[17px] xl:text-[17px] min-[1440px]:text-[21px]
                     leading-[28px] sm:leading-[32px]
                     relative pb-[8px]
                     w-full
                   `}
-                >
-                  {item.name}
-                  <span
-                    className="absolute left-0 bottom-0 w-[70px] sm:w-[84px] border-b-[2.5px]"
-                    style={{ borderColor: underlineColors[item.id] }}
-                  />
-                </h6>
-              </div>
+                  >
+                    {item.name}
+                    <span
+                      className="absolute left-0 bottom-0 w-[70px] sm:w-[84px] border-b-[2.5px]"
+                      style={{ borderColor: underlineColors[item.id] }}
+                    />
+                  </h6>
+                </div>
 
-              {/* TAGLINE */}
-              {/* Reserved height for uniform positioning - 2 lines approx 56px */}
-              <div className="min-h-[56px] min-[1440px]:min-h-0 mb-[24px] flex items-center">
-                <p
-                  className={`
+                {/* TAGLINE */}
+                <div className="flex items-center -mt-[14px]">
+                  <p
+                    className={`
                     ${T.font.weight.medium}
                     text-[#223F7F]
-                    text-[16px] sm:text-[18px]
+                    text-[16px] sm:text-[18px] md:text-[14px] lg:text-[15px] xl:text-[16px] min-[1400px]:text-[18px]
                     leading-[26px] sm:leading-[28px]
                   `}
-                >
-                  {item.tagline}
-                </p>
-              </div>
+                  >
+                    {item.tagline}
+                  </p>
+                </div>
 
-              {/* DESCRIPTION */}
-              {/* Reserved height for description to push button down consistently.
-                  4 lines * 26px = ~104px. Setting 100px. */}
-              <div className="min-h-[100px] min-[1440px]:min-h-0 mb-[24px]">
-                <p
-                  className={`
+                {/* DESCRIPTION */}
+                <div className="">
+                  <p
+                    className={`
                     ${T.font.weight.normal}
                     text-[#191919]
-                    text-[16px] sm:text-[18px]
+                    text-[16px] sm:text-[18px] md:text-[14px] lg:text-[15px] xl:text-[16px] min-[1400px]:text-[18px]
                     leading-[24px] sm:leading-[26px]
                   `}
-                >
-                  {item.description}
-                </p>
-              </div>
+                  >
+                    {item.description}
+                  </p>
+                </div>
 
-              {/* CTA BUTTON */}
-              <MotionLink
-                to={item.id === 2 ? "/nursing" : "#"}
-                className="
+                {/* CTA BUTTON */}
+                <MotionLink
+                  to={item.id === 2 ? "/nursing" : "#"}
+                  className="
                   mt-auto
                   w-full
-                  min-h-[46px]
+                  h-[46px]
                   rounded-[6px]
-                  px-[12px] sm:px-[14px] lg:px-[16px]
+                  py-[12px] px-[15px] pr-[5px]
                   flex items-center justify-center
-                  gap-[8px]
+                  gap-[6px] lg:gap-[8px]
                   text-center
                 "
-                style={{ backgroundColor: ctaColors[item.id] }}
-                initial="rest"
-                whileHover="hover"
-                whileTap="tap"
-                variants={buttonAnim}
-              >
-                <span
-                  className={`
+                  style={{ backgroundColor: ctaColors[item.id] }}
+                  initial="rest"
+                  whileHover="hover"
+                  whileTap="tap"
+                  variants={buttonAnim}
+                >
+                  <span
+                    className={`
                     ${T.font.weight.medium}
-                    text-[13px] xs:text-[14px] md:text-[12px] lg:text-[13.5px] xl:text-[15px] min-[1390px]:text-[18px]
+                    text-[13px] xs:text-[14px] md:text-[10px] lg:text-[12px] xl:text-[13.5px] min-[1400px]:text-[18px]
                     text-[#191919]
                     leading-tight
                     whitespace-nowrap
                     text-center
                   `}
-                >
-                  {item.cta}
-                </span>
+                  >
+                    {item.cta}
+                  </span>
 
-                <motion.div variants={arrowAnim}>
-                  <IconFullArrowRight
-                    size={18}
-                    className="
+                  <motion.div variants={arrowAnim} className="flex-shrink-0 flex items-center">
+                    <IconFullArrowRight
+                      size={18}
+                      className="
                       w-[18px] h-[18px]
                       sm:w-[18px] sm:h-[18px]
-                      lg:w-[22px] lg:h-[22px]
+                      md:w-[14px] md:h-[14px]
+                      lg:w-[15px] lg:h-[15px]
+                      xl:w-[17px] xl:h-[17px]
+                      min-[1400px]:w-[22px] min-[1400px]:h-[22px]
                       flex-shrink-0
                     "
-                    stroke="#191919"
-                    strokeWidth={2}
-                  />
-                </motion.div>
-              </MotionLink>
+                      stroke="#191919"
+                      strokeWidth={2}
+                    />
+                  </motion.div>
+                </MotionLink>
+              </div>
             </HoverCard>
           ))
           }
