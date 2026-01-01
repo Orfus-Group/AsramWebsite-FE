@@ -37,46 +37,88 @@ const policies = [
     }
 ];
 
-const ResearchPolicies = () => {
+const medicalPolicies = [
+    policies[0],
+    policies[1],
+    policies[2],
+    {
+        title: "Human Subject Research Policy",
+        desc: "Guidelines ensuring ethical conduct of medical research involving human participants and clinical studies.",
+        icon: <img src={IconPeopleGroup} className="w-[24px] h-[24px]" alt="" />
+    },
+    policies[4]
+];
+
+const ResearchPolicies = ({
+    iconConfig = { bg: "#008C8C", iconFilter: "brightness(0) invert(1)" },
+    buttonConfig = { bg: "#008C8C" },
+    linkColor = "#008C8C",
+    variant = "default", // 'default' | 'medical'
+}) => {
+    const displayPolicies = variant === "medical" ? medicalPolicies : policies;
+    const isMedical = variant === "medical";
+
     return (
         <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]">
             <h2 className={`${T.font.family} font-bold text-[42px] text-[#1E3A8A] mb-10`}>
                 Research Policies
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] md:gap-[30px] mb-12">
-                {policies.map((item, index) => (
-                    <div key={index} style={{ border: "1px solid #07070733" }} className="bg-white p-[24px] md:p-[30px] rounded-[10px] flex flex-col items-start gap-4">
+            <div className={`grid gap-[20px] md:gap-[30px] mb-12 ${isMedical ? "grid-cols-1 md:grid-cols-6" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}>
+                {displayPolicies.map((item, index) => {
+                    // Span Logic for Medical Variant
+                    // First 3 items: col-span-2 (in a 6-col grid) -> 3 items per row
+                    // Last 2 items: col-span-3 (in a 6-col grid) -> 2 items per row
+                    let spanClass = "";
+                    if (isMedical) {
+                        if (index < 3) spanClass = "md:col-span-2";
+                        else spanClass = "md:col-span-3";
+                    }
 
-                        {/* Icon */}
-                        <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center text-white">
-                            {item.icon}
+                    return (
+                        <div key={index} style={{ border: "1px solid #07070733" }} className={`bg-white p-[24px] md:p-[30px] rounded-[10px] flex flex-col items-start gap-4 ${spanClass}`}>
+
+                            {/* Icon */}
+                            <div
+                                className={`${iconConfig.sizeClass || "w-[48px] h-[48px]"} ${iconConfig.radiusClass || "rounded-[8px]"} flex items-center justify-center text-white`}
+                                style={{ backgroundColor: iconConfig.bg }}
+                            >
+                                {React.cloneElement(item.icon, {
+                                    style: { filter: iconConfig.iconFilter },
+                                    className: iconConfig.iconSizeClass || item.icon.props.className
+                                })}
+                            </div>
+
+                            {/* Content */}
+                            <div className="flex-grow">
+                                <h3 className={`${T.font.family} font-medium text-[20px] text-[#1E3A8A] mb-3`}>
+                                    {item.title}
+                                </h3>
+                                <p className={`${T.font.family} font-regular text-[18px] text-gray-600 leading-[26px]`}>
+                                    {item.desc}
+                                </p>
+                            </div>
+
+                            {/* Link */}
+                            <button
+                                className="flex items-center gap-2 font-medium text-[16px] hover:underline mt-2"
+                                style={{ color: linkColor }}
+                            >
+                                <img src={IconDownloadBlue} className="w-[16px] h-[16px]" alt="" style={{ filter: "brightness(0) saturate(100%) invert(18%) sepia(37%) saturate(3439%) hue-rotate(210deg) brightness(95%) contrast(93%)" }} />
+                                Download PDF
+                            </button>
+
                         </div>
-
-                        {/* Content */}
-                        <div className="flex-grow">
-                            <h3 className={`${T.font.family} font-medium text-[20px] text-[#1E3A8A] mb-3`}>
-                                {item.title}
-                            </h3>
-                            <p className={`${T.font.family} font-regular text-[18px] text-gray-600 leading-[26px]`}>
-                                {item.desc}
-                            </p>
-                        </div>
-
-                        {/* Link */}
-                        <button className="flex items-center gap-2 text-[#008C8C] font-medium text-[16px] hover:underline mt-2">
-                            <img src={IconDownloadBlue} className="w-[16px] h-[16px]" alt="" />
-
-                            Download PDF
-                        </button>
-
-                    </div>
-                ))}
+                    );
+                })}
             </div>
 
             {/* Footer Button */}
             <div className="flex justify-center">
-                <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-8 py-3 rounded-[6px] font-medium text-[16px] flex items-center gap-2 transition-colors">
+                <button
+                    className="hover:opacity-90 text-white px-8 py-3 rounded-[6px] font-medium text-[16px] flex items-center gap-2 transition-colors"
+                    style={{ backgroundColor: buttonConfig.bg }}
+                >
                     View All Policies & Guidelines
                     <span><img src={IconArrowRight} className="w-[20px] h-[20px] invert brightness-0" alt="" /></span>
                 </button>

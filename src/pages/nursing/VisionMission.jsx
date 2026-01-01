@@ -6,8 +6,13 @@ const IconCareerReady = "/AsramWebsite-FE/assets/icons/IconCareerReady.svg";
 const IconHeartCare = "/AsramWebsite-FE/assets/icons/IconHeartCare.svg";
 const IconAccredited = "/AsramWebsite-FE/assets/icons/IconAccredited.svg";
 
-export default function VisionMissionSection() {
-  const vmv = [
+export default function VisionMissionSection({
+  data,
+  iconBg,
+  cardBg,
+  iconContainerClassName,
+}) {
+  const defaultVmv = [
     {
       icon: <img src={IconCareerReady} className="w-[28px] h-[28px]" alt="" />,
       title: "Vision",
@@ -27,6 +32,8 @@ export default function VisionMissionSection() {
         "Compassion, excellence, integrity, service, innovation—students are trained not only in technical proficiency but also in ethical and patient-centered care.",
     },
   ];
+
+  const vmv = data || defaultVmv;
 
   return (
     <PageSection
@@ -73,6 +80,9 @@ export default function VisionMissionSection() {
             {...item}
             variant="vmv"
             className="w-full max-w-none"
+            iconBg={iconBg}
+            cardBg={cardBg}
+            iconContainerClassName={iconContainerClassName}
           />
         ))}
       </div>

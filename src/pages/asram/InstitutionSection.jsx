@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router";
-import { motion } from "framer-motion";
+
 import { T } from "@/theme";
-import StaggerContainer, { itemVariants } from "@/components/common/StaggerContainer";
-import HoverCard from "@/components/common/HoverCard";
+
 
 import PageSection from "@/features/common/layout/PageContainer";
 import IconFullArrowRight from "@/assets/icons/IconFullArrowRight";
@@ -59,29 +58,9 @@ const ctaColors = {
   3: "#A66E001A",
 };
 
-const MotionLink = motion(Link);
 
-const buttonAnim = {
-  rest: { scale: 1 },
-  hover: {
-    scale: 1.02,
-    filter: "brightness(0.96)",
-    transition: { duration: 0.2 }
-  },
-  tap: { scale: 0.98 }
-};
 
-const arrowAnim = {
-  rest: { x: 0 },
-  hover: {
-    x: 5,
-    transition: {
-      type: "spring",
-      stiffness: 400,
-      damping: 10
-    }
-  }
-};
+
 
 const InstitutionsSection = () => {
   return (
@@ -119,7 +98,7 @@ const InstitutionsSection = () => {
         </p>
 
         {/* CARD GRID */}
-        <StaggerContainer
+        <div
           className="
             grid
             grid-cols-1
@@ -130,8 +109,7 @@ const InstitutionsSection = () => {
           "
         >
           {institutions.map((item) => (
-            <HoverCard
-              variants={itemVariants}
+            <div
               key={item.id}
               className="
                 group 
@@ -141,9 +119,7 @@ const InstitutionsSection = () => {
                 rounded-[8px] 
                 border border-[#E1E6EF] 
                 p-[30px]
-                flex flex-col 
-                transition-all duration-300 
-                premium-shadow-hover
+                flex flex-col
               "
             >
               <div className="flex flex-col gap-[26px] h-full">
@@ -153,9 +129,6 @@ const InstitutionsSection = () => {
                   w-[64px] h-[64px] 
                   rounded-[12px] flex items-center justify-center 
                   flex-shrink-0
-                  transition-all duration-300
-                  group-hover:scale-110
-                  group-hover:shadow-[0_8px_20px_-6px_rgba(0,0,0,0.1)]
                 "
                   style={{ backgroundColor: iconBgColors[item.id] }}
                 >
@@ -211,8 +184,8 @@ const InstitutionsSection = () => {
                 </div>
 
                 {/* CTA BUTTON */}
-                <MotionLink
-                  to={item.id === 2 ? "/nursing" : "#"}
+                <Link
+                  to={item.id === 1 ? "/medical" : item.id === 2 ? "/nursing" : "#"}
                   className="
                   mt-auto
                   w-full
@@ -224,10 +197,6 @@ const InstitutionsSection = () => {
                   text-center
                 "
                   style={{ backgroundColor: ctaColors[item.id] }}
-                  initial="rest"
-                  whileHover="hover"
-                  whileTap="tap"
-                  variants={buttonAnim}
                 >
                   <span
                     className={`
@@ -242,7 +211,7 @@ const InstitutionsSection = () => {
                     {item.cta}
                   </span>
 
-                  <motion.div variants={arrowAnim} className="flex-shrink-0 flex items-center">
+                  <div className="flex-shrink-0 flex items-center">
                     <IconFullArrowRight
                       size={18}
                       className="
@@ -257,13 +226,13 @@ const InstitutionsSection = () => {
                       stroke="#191919"
                       strokeWidth={2}
                     />
-                  </motion.div>
-                </MotionLink>
+                  </div>
+                </Link>
               </div>
-            </HoverCard>
+            </div>
           ))
           }
-        </StaggerContainer >
+        </div >
       </div >
     </PageSection >
   );

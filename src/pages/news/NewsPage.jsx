@@ -8,7 +8,7 @@ import LatestNews from "./sections/LatestNews";
 
 
 import CampusEventsSection from "./sections/CampusEventsSection";
-import MotionSection from "@/components/common/MotionSection";
+
 
 const NewsPage = () => {
   const [activeCollege, setActiveCollege] = useState("All");
@@ -37,20 +37,14 @@ const NewsPage = () => {
 
   return (
     <>
-      <MotionSection>
-        <CampusEventsSection />
-      </MotionSection>
-      <MotionSection delay={0.1}>
-        <FeaturedStory />
-      </MotionSection>
-      <MotionSection delay={0.2}>
-        <LatestNews
-          activeCollege={activeCollege}
-          setActiveCollege={setActiveCollege}
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-        />
-      </MotionSection>
+      <CampusEventsSection />
+      <FeaturedStory />
+      <LatestNews
+        activeCollege={activeCollege}
+        setActiveCollege={setActiveCollege}
+        activeCategory={activeCategory}
+        setActiveCategory={setActiveCategory}
+      />
     </>
   );
 };

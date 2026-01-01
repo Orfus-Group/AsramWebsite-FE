@@ -9,8 +9,24 @@ const IconPracticalLearning = "/AsramWebsite-FE/assets/icons/IconPracticalLearni
 const IconExtraCurricular = "/AsramWebsite-FE/assets/icons/IconExtraCurricular.svg";
 const IconAmenities = "/AsramWebsite-FE/assets/icons/IconAmenities.svg";
 
-export default function StudentExperience() {
-  const features = [
+export default function StudentExperience({
+  data,
+  iconBg,
+  cardBg,
+  iconContainerClassName,
+  titleColor,
+  cardBorder,
+  titleClassName = "min-h-[54px]",
+  // Content Props with Nursing Defaults
+  imageSrc = studentExpMain,
+  heading = "Student Experience",
+  subHeading = "Comprehensive Learning Environment",
+  description = [
+    "At ASRAM School of Nursing, we prioritize creating an environment where students can thrive academically, professionally, and personally. Our approach combines rigorous academics with practical exposure and holistic development.",
+    "At ASRAM School of Nursing, we prioritize creating an environment where students can thrive academically, professionally, and personally. Our approach combines rigorous academics with practical exposure and holistic development."
+  ]
+}) {
+  const defaultFeatures = [
     {
       icon: (<img src={IconPublicHealth} className="w-[24px] h-[24px]" alt="" />),
       title: "Favorable Faculty Ratio",
@@ -36,12 +52,14 @@ export default function StudentExperience() {
     },
   ];
 
+  const features = data || defaultFeatures;
+
   return (
-    <PageSection bg="bg-[#F7F9FC]" paddingClass="py-[80px]">
+    <PageSection bg="bg-[#FFF]" paddingClass="py-[80px]">
       {/* Heading */}
       <div className="flex flex-col gap-[8px] w-full mb-[32px] md:mb-[40px]">
         <h2 className="font-montserrat font-bold text-[28px] md:text-[32px] lg:text-[36px] leading-[38px] md:leading-[44px] lg:leading-[48px] text-[#223F7F]">
-          Student Experience
+          {heading}
         </h2>
       </div>
 
@@ -50,24 +68,29 @@ export default function StudentExperience() {
         {/* Left: Image */}
         <div className="w-full">
           <img
-            src={studentExpMain}
-            alt="Nursing Student Experience"
+            src={imageSrc}
+            alt={heading}
             className="w-full xl:h-[368px] h-auto block object-cover rounded-[12px]"
           />
         </div>
 
         {/* Right: Content */}
         <div className="w-full flex flex-col items-start justify-center">
-          <h3 className="font-regular font-semibold text-[24px] md:text-[28px] lg:text-[32px] leading-[32px] md:leading-[38px] lg:leading-[42px] text-[#223F7F] max-w-full">
-            Comprehensive Learning Environment
-          </h3>
+          <h4 className="font-regular font-semibold text-[24px] md:text-[28px] lg:text-[32px] leading-[32px] md:leading-[38px] lg:leading-[42px] text-[#223F7F] max-w-full">
+            {subHeading}
+          </h4>
 
-          <p className="font-regular text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[26px] text-justify text-[#191919BF] mt-[20px]">
-            At ASRAM School of Nursing, we prioritize creating an environment where students can thrive academically, professionally, and personally. Our approach combines rigorous academics with practical exposure and holistic development.
-          </p>
-          <p className="font-regular text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[26px] text-justify text-[#191919BF] mt-[20px]">
-            At ASRAM School of Nursing, we prioritize creating an environment where students can thrive academically, professionally, and personally. Our approach combines rigorous academics with practical exposure and holistic development.
-          </p>
+          {Array.isArray(description) ? (
+            description.map((para, idx) => (
+              <p key={idx} className="font-regular text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[26px] text-justify text-[#191919BF] mt-[20px]">
+                {para}
+              </p>
+            ))
+          ) : (
+            <p className="font-regular text-[16px] md:text-[17px] lg:text-[18px] leading-[24px] md:leading-[26px] lg:leading-[26px] text-justify text-[#191919BF] mt-[20px]">
+              {description}
+            </p>
+          )}
         </div>
       </div>
 
@@ -80,6 +103,12 @@ export default function StudentExperience() {
             title={item.title}
             description={item.desc}
             variant="studentExperience"
+            iconBg={iconBg}
+            cardBg={cardBg}
+            iconContainerClassName={iconContainerClassName}
+            titleColor={titleColor}
+            cardBorder={cardBorder}
+            titleClassName={titleClassName}
           />
         ))}
       </div>

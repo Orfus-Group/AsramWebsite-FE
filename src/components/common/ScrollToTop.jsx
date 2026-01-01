@@ -58,7 +58,7 @@ const ScrollToTop = () => {
         >
             <div
                 onClick={scrollToTop}
-                className="relative flex items-center justify-center rounded-full cursor-pointer group shadow-lg transition-transform hover:scale-110"
+                className="relative flex items-center justify-center rounded-full cursor-pointer group shadow-lg transition-transform"
                 style={{
                     width: 40,
                     height: 40,

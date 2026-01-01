@@ -9,16 +9,9 @@ const variants = {
 
 const PageWrapper = ({ children }) => {
     return (
-        <motion.div
-            variants={variants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="w-full"
-        >
+        <div className="w-full">
             {children}
-        </motion.div>
+        </div>
     );
 };
 

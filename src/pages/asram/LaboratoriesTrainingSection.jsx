@@ -62,7 +62,7 @@ const LaboratoriesTrainingSection = () => {
                                 <img
                                     src={lab.image}
                                     alt={lab.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                    className="w-full h-full object-cover transition-transform duration-500"
                                 />
                             </div>
                             {/* TITLE BOX */}

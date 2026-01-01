@@ -11,7 +11,7 @@ import JoinOurNursingCommunity from "./JoiningNursingCommunity";
 const heroBg = "/AsramWebsite-FE/assets/academics/asramacademicsbanner.png";
 import { useHero } from "@/context/HeroContext";
 import TypedText from "@/components/common/TypedText";
-import MotionSection from "@/components/common/MotionSection";
+
 
 
 const AcademicsPage = () => {
@@ -54,30 +54,14 @@ const AcademicsPage = () => {
 
   return (
     <>
-      <MotionSection>
-        <ProgramsOffered />
-      </MotionSection>
-      <MotionSection delay={0.1}>
-        <NursingCareerSection />
-      </MotionSection>
-      <MotionSection delay={0.1}>
-        <WhyChooseNursingSchool />
-      </MotionSection>
-      <MotionSection delay={0.2}>
-        <ExperienceDrivenEducation />
-      </MotionSection>
-      <MotionSection delay={0.2}>
-        <NursingAdmissionsSection />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <StudentVoices />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <FinancialAidScholarships />
-      </MotionSection>
-      <MotionSection delay={0.4}>
-        <JoinOurNursingCommunity />
-      </MotionSection>
+      <ProgramsOffered />
+      <NursingCareerSection />
+      <WhyChooseNursingSchool />
+      <ExperienceDrivenEducation />
+      <NursingAdmissionsSection />
+      <StudentVoices />
+      <FinancialAidScholarships />
+      <JoinOurNursingCommunity />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { T } from "@/theme";
-import { motion, AnimatePresence } from "framer-motion";
+
 import { useState } from "react";
 import { FiChevronDown, FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 
@@ -129,43 +129,37 @@ const FooterAccordion = ({ title, children }) => {
         <span className={`${T.font.family} text-[16px] font-semibold text-[#191919]`}>
           {title}
         </span>
-        <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="text-[#223F7F]"
+        <div
+          className={`text-[#223F7F] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
         >
           <FiChevronDown size={20} />
-        </motion.div>
+        </div>
       </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
-            <div className="flex flex-col gap-[12px] pb-[18px]">
-              {children}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+      {isOpen && (
+        <div
+          className="overflow-hidden"
+        >
+          <div className="flex flex-col gap-[12px] pb-[18px]">
+            {children}
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };
 
 const MobileContactCard = ({ icon: Icon, title, value, href }) => {
   const isLink = !!href;
-  const Component = isLink ? motion.a : motion.div;
+  const Component = isLink ? 'a' : 'div';
 
   return (
     <Component
       href={href}
       target={isLink && href.startsWith("http") ? "_blank" : undefined}
       rel={isLink && href.startsWith("http") ? "noopener noreferrer" : undefined}
-      whileTap={isLink ? { scale: 0.96 } : undefined}
+
       className={`
         flex items-center gap-[12px] 
         bg-white/80 backdrop-blur-md 
@@ -220,7 +214,7 @@ const AsramFooter = () => {
               className="flex items-center gap-[6px] whitespace-nowrap group hover:opacity-80 transition-all duration-300"
             >
               <div
-                className="flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                className="flex items-center justify-center transition-transform duration-300"
                 style={{
                   width: "30.27px",
                   height: "30.27px",

@@ -1,50 +1,104 @@
 import React from "react";
+import { T } from "@/theme";
+import Button from "@/components/ui/button";
+import PageSection from "@/features/common/layout/PageContainer";
 
-// Faculty Images
+// Faculty Images (Default)
 const faculty1 = "/AsramWebsite-FE/assets/nursing/doctor_1.png";
 const faculty2 = "/AsramWebsite-FE/assets/nursing/doctor_2.png";
 const faculty3 = "/AsramWebsite-FE/assets/nursing/doctor_3.png";
-
 
 // Icons
 const expIcon = "/AsramWebsite-FE/assets/nursing/experience.svg";
 const calendarIcon = "/AsramWebsite-FE/assets/nursing/weekcal.svg";
 const timeIcon = "/AsramWebsite-FE/assets/nursing/timeperiod.svg";
 
-import { T } from "@/theme";
-import Button from "@/components/ui/button";
-import PageSection from "@/features/common/layout/PageContainer";
+export default function FacultySpotlightSection({
+  heading = "Faculty Spotlight",
+  facultyData,
+  iconConfig = {
+    color: "#223F7F",
+    width: "18",
+    height: "18",
+    strokeWidth: "2"
+  },
+  primaryButtonConfig = {
+    text: "Book Appointment",
+    className: "flex-1 h-[48.7px] rounded-[9.7px] text-[14px] font-medium bg-[#008C8C] text-white hover:bg-[#007A7A]"
+  },
+  secondaryButtonConfig = {
+    text: "View Profile",
+    className: "w-[120.2px] h-[48.7px] rounded-[9.7px] text-[14px] font-medium bg-white border border-[#D1D5DB] text-gray-700 hover:bg-gray-50"
+  },
+  roleConfig = {
+    color: T.color.dark,
+    fontSize: "text-[16px] md:text-[18px]",
+    fontWeight: "font-normal"
+  },
+  ctaConfig = {
+    bg: T.color.primary,
+    color: "#FFFFFF",
+    textSize: "text-[15px]",
+    className: "rounded-[10px]",
+    width: "200px",
+    height: "48px"
+  },
+  spacingConfig = {
+    paddingClass: "px-[24px] py-[26px]",
+    headerGap: "gap-[14px]",
+    nameMb: "mb-[10px]",
+    roleMb: "mb-[10px]",
+    qualificationMt: "mt-[6px]",
+    detailsMt: "mt-[6px]",
+    detailsGap: "gap-[10px]",
+    buttonsMt: "mt-[20px]",
+    buttonsPt: "pt-[20px]",
+    borderClass: "border-t border-[#E5E5E5]"
+  },
+  cardBorder = "border-[2px] border-[#D0D7E2]" // Default 2px for Nursing
+}) {
 
-export default function FacultySpotlightSection() {
-  const faculty = [
+  // Default Faculty Data (Nursing)
+  const defaultFaculty = [
     {
       img: faculty1,
       name: "Dr. Rajesh Kumar",
       role: "Cardiologist",
       qualification: "MBBS, MD, DM (Cardiology)",
-      experience: "20+ Years Experience",
-      days: "Mon - Fri",
-      time: "9:00 AM - 5:00 PM",
+      details: [
+        { icon: <img src={expIcon} className="w-[18px] h-[18px]" />, text: "20+ Years Experience" },
+        { icon: <img src={calendarIcon} className="w-[18px] h-[18px]" />, text: "Mon - Fri" },
+        { icon: <img src={timeIcon} className="w-[18px] h-[18px]" />, text: "9:00 AM - 5:00 PM" }
+      ],
+      badge: "Leadership"
     },
     {
       img: faculty2,
       name: "Dr. Priya Sharma",
       role: "Neurologist",
       qualification: "MBBS, MD, DM (Neurology)",
-      experience: "15+ Years Experience",
-      days: "Mon - Sat",
-      time: "10:00 AM - 6:00 PM",
+      details: [
+        { icon: <img src={expIcon} className="w-[18px] h-[18px]" />, text: "15+ Years Experience" },
+        { icon: <img src={calendarIcon} className="w-[18px] h-[18px]" />, text: "Mon - Sat" },
+        { icon: <img src={timeIcon} className="w-[18px] h-[18px]" />, text: "10:00 AM - 6:00 PM" }
+      ],
+      badge: "Leadership"
     },
     {
       img: faculty3,
       name: "Dr. Amit Patel",
       role: "Orthopedic Surgeon",
       qualification: "MBBS, MS (Orthopedics)",
-      experience: "18+ Years Experience",
-      days: "Tue - Sat",
-      time: "11:00 AM - 7:00 PM",
+      details: [
+        { icon: <img src={expIcon} className="w-[18px] h-[18px]" />, text: "18+ Years Experience" },
+        { icon: <img src={calendarIcon} className="w-[18px] h-[18px]" />, text: "Tue - Sat" },
+        { icon: <img src={timeIcon} className="w-[18px] h-[18px]" />, text: "11:00 AM - 7:00 PM" }
+      ],
+      badge: "Leadership"
     },
   ];
+
+  const data = facultyData || defaultFaculty;
 
   return (
     <PageSection bg={T.bg.section} paddingClass="py-[40px] md:py-[80px]">
@@ -59,7 +113,7 @@ export default function FacultySpotlightSection() {
           `}
           style={{ color: T.color.text.secondary }}
         >
-          Faculty Spotlight
+          {heading}
         </h2>
 
         {/* FACULTY CARDS */}
@@ -73,15 +127,17 @@ export default function FacultySpotlightSection() {
             w-full
           "
         >
-          {faculty.map((f, i) => (
+          {data.map((f, i) => (
             <div
               key={i}
-              className="
+              className={`
                 w-full
                 bg-white rounded-[20px]
-                border border-[#D0D7E2]
+                ${cardBorder}
                 flex flex-col
-              "
+                relative
+                overflow-hidden
+              `}
             >
               {/* Image */}
               <div className="w-full h-[260px] sm:h-[280px] md:h-[300px] bg-gray-200 rounded-t-[10px]">
@@ -93,17 +149,31 @@ export default function FacultySpotlightSection() {
                     object-cover rounded-t-[10px]
                   "
                 />
+                {f.badge && (
+                  <span
+                    className="
+                        absolute top-[16px] right-[16px] 
+                        px-[12px] py-[6px] 
+                        rounded-[4px] 
+                        text-[12px] font-medium 
+                        uppercase tracking-wider
+                        bg-[#223F7F] text-white
+                    "
+                  >
+                    {f.badge}
+                  </span>
+                )}
               </div>
 
               {/* Content */}
-              <div className="px-[24px] py-[26px] flex flex-col gap-[14px]">
+              <div className={`${spacingConfig.paddingClass} flex flex-col ${spacingConfig.headerGap}`}>
                 <div>
                   <h3
                     className={`
                       ${T.font.family}
                       ${T.font.weight.semibold}
                       text-[18px] md:text-[20px]
-                      mb-[10px]
+                      ${spacingConfig.nameMb}
                       leading-[26px] md:leading-[28px]
                     `}
                     style={{ color: T.color.text.secondary }}
@@ -114,94 +184,70 @@ export default function FacultySpotlightSection() {
                   <p
                     className={`
                       ${T.font.family}
-                      text-[16px] md:text-[18px]
-                       mb-[10px]
+                      ${roleConfig.fontSize}
+                      ${roleConfig.fontWeight}
+                      ${spacingConfig.roleMb}
                       leading-[24px]
                     `}
-                    style={{ color: T.color.dark }}
+                    style={{ color: roleConfig.color }}
                   >
                     {f.role}
                   </p>
 
-                  <p
-                    className={`
-                      ${T.font.family}
-                      text-[14px] leading-[20px] mt-[6px]
-                    `}
-                    style={{ color: T.color.dark }}
-                  >
-                    {f.qualification}
-                  </p>
+                  {f.qualification && (
+                    <p
+                      className={`
+                        ${T.font.family}
+                        text-[14px] leading-[20px]
+                        ${spacingConfig.qualificationMt}
+                      `}
+                      style={{ color: T.color.dark }}
+                    >
+                      {f.qualification}
+                    </p>
+                  )}
                 </div>
 
-                {/* Icons List */}
-                <div className="flex flex-col gap-[10px] mt-[6px]">
-                  <div className="flex items-center gap-[10px]">
-                    <img loading="lazy" decoding="async" src={expIcon} className="w-[18px] h-[18px]" />
-                    <span
-                      className={`${T.font.family} text-[14px] leading-[20px]`}
-                      style={{ color: T.color.text.muted }}
-                    >
-                      {f.experience}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-[10px]">
-                    <img loading="lazy" decoding="async" src={calendarIcon} className="w-[18px] h-[18px]" />
-                    <span
-                      className={`${T.font.family} text-[14px] leading-[20px]`}
-                      style={{ color: T.color.text.muted }}
-                    >
-                      {f.days}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-[10px]">
-                    <img loading="lazy" decoding="async" src={timeIcon} className="w-[18px] h-[18px]" />
-                    <span
-                      className={`${T.font.family} text-[14px] leading-[20px]`}
-                      style={{ color: T.color.text.muted }}
-                    >
-                      {f.time}
-                    </span>
-                  </div>
+                {/* Details List */}
+                <div className={`flex flex-col ${spacingConfig.detailsGap} ${spacingConfig.detailsMt}`}>
+                  {f.details && f.details.map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-[10px]">
+                      {item.icon}
+                      <span
+                        className={`${T.font.family} text-[14px] leading-[20px]`}
+                        style={{ color: T.color.text.muted }}
+                      >
+                        {item.text}
+                      </span>
+                    </div>
+                  ))}
                 </div>
 
                 {/* Buttons */}
-                <div className="flex flex-row gap-[12px] mt-[20px] pt-[20px] border-t border-[#E5E5E5]">
+                <div className={`flex flex-row gap-[12px] ${spacingConfig.buttonsMt} ${spacingConfig.buttonsPt} ${spacingConfig.borderClass}`}>
                   <button
-                    className="
-                      flex-1
-                      h-[48.7px]
-                      bg-[#008C8C]
-                      text-white
-                      text-[14px] font-medium
-                      rounded-[9.7px]
-                      hover:bg-[#007A7A]
+                    className={`
                       transition-colors
                       flex items-center justify-center
                       whitespace-nowrap
-                    "
+                      ${primaryButtonConfig.className}
+                    `}
                   >
-                    Book Appointment
+                    <div className="flex items-center gap-2">
+                      {primaryButtonConfig.icon}
+                      {primaryButtonConfig.text}
+                    </div>
                   </button>
 
                   <button
-                    className="
-                      w-[120.2px]
-                      h-[48.7px]
-                      bg-white
-                      border border-[#D1D5DB]
-                      text-gray-700
-                      text-[14px] font-medium
-                      rounded-[9.7px]
-                      hover:bg-gray-50
+                    className={`
                       transition-colors
                       flex items-center justify-center
                       whitespace-nowrap
-                    "
+                      ${secondaryButtonConfig.className}
+                    `}
                   >
-                    View Profile
+                    {secondaryButtonConfig.text}
                   </button>
                 </div>
               </div>
@@ -212,12 +258,13 @@ export default function FacultySpotlightSection() {
         {/* BOTTOM CTA */}
         <div className="flex justify-center mt-[10px]">
           <Button
-            bg={T.color.primary}
-            color="#FFFFFF"
-            textSize="text-[15px]"
-            className="rounded-[10px]"
-            width="200px"
-            height="48px"
+            bg={ctaConfig.bg}
+            color={ctaConfig.color}
+            textSize={ctaConfig.textSize}
+            className={ctaConfig.className}
+            width={ctaConfig.width}
+            height={ctaConfig.height}
+            fontWeight={ctaConfig.fontWeight}
           >
             Meet All Faculty
           </Button>

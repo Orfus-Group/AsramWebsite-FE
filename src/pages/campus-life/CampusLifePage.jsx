@@ -1,11 +1,11 @@
 import React, { useLayoutEffect } from 'react';
 import { useHero } from '@/context/HeroContext';
 import TypedText from '@/components/common/TypedText';
-import MotionSection from '@/components/common/MotionSection';
+
 
 // Sections
 import CampusOverview from './sections/CampusOverview';
-import AcademicEnvironment from './sections/AcademicEnvironment';
+import FeatureGridSection from './sections/FeatureGridSection';
 import StudentLifeCommunity from './sections/StudentLifeCommunity';
 import HostelAccommodation from './sections/HostelAccommodation';
 import ClubsActivities from './sections/ClubsActivities';
@@ -57,50 +57,18 @@ const CampusLifePage = () => {
 
     return (
         <div className="w-full">
-            <MotionSection>
-                <CampusOverview />
-            </MotionSection>
-
-            <MotionSection>
-                <AcademicEnvironment />
-            </MotionSection>
-
-            <MotionSection>
-                <StudentLifeCommunity />
-            </MotionSection>
-
-            <MotionSection>
-                <HostelAccommodation />
-            </MotionSection>
-
-            <MotionSection>
-                <ClubsActivities />
-            </MotionSection>
-
-            <MotionSection>
-                <SportsWellbeing />
-            </MotionSection>
-
+            <CampusOverview />
+            <FeatureGridSection />
+            <StudentLifeCommunity />
+            <HostelAccommodation />
+            <ClubsActivities />
+            <SportsWellbeing />
             {/* Reusing News Events Section */}
-            <MotionSection>
-                <CampusEventsSection />
-            </MotionSection>
-
-            <MotionSection>
-                <SafetyDiscipline />
-            </MotionSection>
-
-            <MotionSection>
-                <EventsWorkshops />
-            </MotionSection>
-
-            <MotionSection>
-                <CampusGallery />
-            </MotionSection>
-
-            <MotionSection>
-                <StudentVoices />
-            </MotionSection>
+            <CampusEventsSection />
+            <SafetyDiscipline />
+            <EventsWorkshops />
+            <CampusGallery />
+            <StudentVoices />
         </div>
     );
 };

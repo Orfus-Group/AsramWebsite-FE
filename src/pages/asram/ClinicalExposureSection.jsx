@@ -1,6 +1,6 @@
 import React from "react";
 import { T } from "@/theme";
-import { motion } from "framer-motion";
+
 import AnimatedStatValue from "@/features/common/ui/AnimatedStatValue";
 import PageSection from "@/features/common/layout/PageContainer";
 

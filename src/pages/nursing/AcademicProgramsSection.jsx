@@ -7,8 +7,17 @@ const IconMedical = "/AsramWebsite-FE/assets/icons/MedicalIcon.svg";
 const IconArtFacilities = "/AsramWebsite-FE/assets/icons/IconArtFacilities.svg";
 const IconAccredited = "/AsramWebsite-FE/assets/icons/IconAccredited.svg";
 
-export default function AcademicProgramsSection() {
-  const programs = [
+export default function AcademicProgramsSection({
+  programs,
+  iconBg,
+  cardBg,
+  ctafontweight,
+  badgeBg,
+  badgeClassName,
+  titleColor,
+  iconFilter // To control icon color (invert brightness-0 for white, none for colored)
+}) {
+  const defaultPrograms = [
     {
       icon: (
         <img
@@ -40,6 +49,8 @@ export default function AcademicProgramsSection() {
         "Specialization tracks include Medical-Surgical Nursing, Obstetrics & Gynaecological Nursing, Paediatric Nursing, Community Health Nursing, and Psychiatric Nursing.",
     },
   ];
+
+  const data = programs || defaultPrograms;
 
   return (
     <PageSection bg={T.bg.white} paddingClass="py-[80px]">
@@ -83,12 +94,17 @@ export default function AcademicProgramsSection() {
           w-full
         "
       >
-        {programs.map((p, i) => (
+        {data.map((p, i) => (
           <InfoCard
             key={i}
             {...p}
             variant="program"
+            ctafontweight={ctafontweight}
             className="w-full max-w-none"
+            iconBg={iconBg}
+            cardBg={cardBg}
+            badgeBg={badgeBg}
+            badgeClassName={badgeClassName || "h-[36px] px-[20px]"}
           />
         ))}
       </div>

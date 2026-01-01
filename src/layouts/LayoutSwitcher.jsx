@@ -92,12 +92,10 @@ const InnerLayout = () => {
           {heroData.children}
         </CommonHero>
       )}
-      <main>
-        <AnimatePresence mode="wait">
-          <PageWrapper key={pathname}>
-            <Outlet />
-          </PageWrapper>
-        </AnimatePresence>
+      <main className="flex-grow">
+        <PageWrapper key={pathname}>
+          <Outlet />
+        </PageWrapper>
       </main>
       <Footer
         {...(layoutKey === "medical"

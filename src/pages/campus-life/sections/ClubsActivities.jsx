@@ -82,7 +82,7 @@ const ClubsActivities = () => {
             <InfoCardGrid
                 items={items}
                 gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]"
-                cardClassName="bg-[#EEF2F7] rounded-[12px] p-[30px] border border-[rgba(7,7,7,0.2)] h-full flex flex-col items-start hover:shadow-md transition-shadow"
+                cardClassName="bg-[#EEF2F7] rounded-[12px] p-[30px] border border-[rgba(7,7,7,0.2)] h-full flex flex-col items-start transition-shadow"
                 iconContainerClassName="w-[55.2px] h-[55.2px] bg-white rounded-[12px] flex items-center justify-center text-[#223F7F] mb-[12px] flex-shrink-0"
                 titleClassName="text-[#223F7F] font-medium text-[22px] leading-[1.2] mb-[12px] font-montserrat"
                 descriptionClassName="text-[#4B5563] text-[18px] leading-[1.44] font-montserrat flex-1"

@@ -103,7 +103,7 @@ const GlobalCommunityHealthPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
                         {/* Card 1 */}
-                        <div className="bg-white rounded-[14.14px] border-[1px] border-[#E5E5E5] p-8 shadow-sm hover:shadow-md transition-all duration-300">
+                        <div className="bg-white rounded-[14.14px] border-[1px] border-[#E5E5E5] p-8 shadow-sm transition-all duration-300">
                             <div className="w-12 h-12 bg-[#E0F2F1] rounded-[8px] flex items-center justify-center text-[#008C8C] mb-6">
                                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M1.74805 8.31492C1.74806 7.34122 2.04344 6.39043 2.59516 5.58812C3.14689 4.78582 3.929 4.16974 4.8382 3.82126C5.74741 3.47279 6.74094 3.4083 7.68756 3.63633C8.63418 3.86435 9.48937 4.37416 10.1402 5.09842C10.186 5.14743 10.2414 5.1865 10.303 5.21322C10.3645 5.23993 10.4309 5.25371 10.498 5.25371C10.5652 5.25371 10.6315 5.23993 10.6931 5.21322C10.7547 5.1865 10.8101 5.14743 10.8559 5.09842C11.5047 4.36945 12.3601 3.85536 13.3082 3.62457C14.2564 3.39377 15.2524 3.45722 16.1636 3.80646C17.0748 4.15571 17.858 4.77419 18.409 5.57958C18.96 6.38497 19.2527 7.33908 19.248 8.31492C19.248 10.3187 17.9355 11.8149 16.623 13.1274L11.8175 17.7763C11.6545 17.9635 11.4535 18.114 11.2278 18.2176C11.0022 18.3211 10.7571 18.3755 10.5088 18.3771C10.2605 18.3787 10.0147 18.3274 9.7878 18.2267C9.56086 18.126 9.35795 17.9781 9.19255 17.7929L4.37305 13.1274C3.06055 11.8149 1.74805 10.3274 1.74805 8.31492Z" stroke="#008C8C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
@@ -117,7 +117,7 @@ const GlobalCommunityHealthPage = () => {
                         </div>
 
                         {/* Card 2 */}
-                        <div className="bg-white rounded-[14.14px] border-[1px] border-[#E5E5E5] p-8 shadow-sm hover:shadow-md transition-all duration-300">
+                        <div className="bg-white rounded-[14.14px] border-[1px] border-[#E5E5E5] p-8 shadow-sm transition-all duration-300">
                             <div className="w-12 h-12 bg-[#E0F2F1] rounded-[8px] flex items-center justify-center text-[#008C8C] mb-6">
                                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clipPath="url(#clip0_145_1293)">
@@ -137,7 +137,7 @@ const GlobalCommunityHealthPage = () => {
                         </div>
 
                         {/* Card 3 */}
-                        <div className="bg-white rounded-[14.14px] border-[1px] border-[#E5E5E5] border-[#E5E5E5] p-8 shadow-sm hover:shadow-md transition-all duration-300">
+                        <div className="bg-white rounded-[14.14px] border-[1px] border-[#E5E5E5] border-[#E5E5E5] p-8 shadow-sm transition-all duration-300">
                             <div className="w-12 h-12 bg-[#E0F2F1] rounded-[8px] flex items-center justify-center text-[#008C8C] mb-6">
                                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clipPath="url(#clip0_145_1302)">

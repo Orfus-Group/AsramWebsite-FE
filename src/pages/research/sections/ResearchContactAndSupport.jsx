@@ -32,7 +32,10 @@ const contactInfo = [
     }
 ];
 
-const ResearchContactAndSupport = () => {
+const ResearchContactAndSupport = ({
+    iconConfig = { bg: "#008C8C", iconFilter: "brightness(0) invert(1)" },
+    buttonConfig = { bg: "#008C8C" },
+}) => {
     return (
         <PageSection bg={T.bg.white} paddingClass="py-[80px]">
             <h2 className={`${T.font.family} font-bold text-[40px] text-[#223F7F] mb-10`}>
@@ -43,8 +46,11 @@ const ResearchContactAndSupport = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] mb-12">
                 {contactInfo.map((item, index) => (
                     <div key={index} style={{ border: "1px solid #07070733" }} className="bg-[#EEF2F7] rounded-[9.3px] p-[24px] md:p-[30px] flex flex-col items-center text-center">
-                        <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-4">
-                            {item.icon}
+                        <div
+                            className={`${iconConfig.sizeClass || "w-[48px] h-[48px]"} ${iconConfig.radiusClass || "rounded-[8px]"} flex items-center justify-center mb-4`}
+                            style={{ backgroundColor: iconConfig.bg }}
+                        >
+                            <img src={item.icon.props.src} className={iconConfig.iconSizeClass || "w-[23px] h-[23px]"} alt="" style={{ filter: iconConfig.iconFilter }} />
                         </div>
                         <p className={`${T.font.family} font-semibold text-[13px] text-[#ABABAB] mb-1`}>
                             {item.label}
@@ -61,8 +67,11 @@ const ResearchContactAndSupport = () => {
 
                 {/* Helpdesk */}
                 <div className="bg-[#EEF2F7] rounded-[9.3px] p-[24px] md:p-[40px] flex flex-col items-start">
-                    <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-5 text-white">
-                        <img src={IconHelpdesk} className="w-[23px] h-[23px]" alt="" />
+                    <div
+                        className={`${iconConfig.sizeClass || "w-[48px] h-[48px]"} ${iconConfig.radiusClass || "rounded-[8px]"} flex items-center justify-center mb-5 text-white`}
+                        style={{ backgroundColor: iconConfig.bg }}
+                    >
+                        <img src={IconHelpdesk} className={iconConfig.iconSizeClass || "w-[23px] h-[23px]"} alt="" style={{ filter: iconConfig.iconFilter }} />
                     </div>
 
                     <h3 className={`${T.font.family} font-semibold text-[24px] text-[#223F7F] mb-3`}>
@@ -81,8 +90,11 @@ const ResearchContactAndSupport = () => {
 
                 {/* Share Feedback */}
                 <div className="bg-[#EEF2F7] rounded-[9.3px] p-[24px] md:p-[40px] flex flex-col items-start">
-                    <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-5 text-white">
-                        <img src={IconFeedback} className="w-[23px] h-[23px]" alt="" />
+                    <div
+                        className={`${iconConfig.sizeClass || "w-[48px] h-[48px]"} ${iconConfig.radiusClass || "rounded-[8px]"} flex items-center justify-center mb-5 text-white`}
+                        style={{ backgroundColor: iconConfig.bg }}
+                    >
+                        <img src={IconFeedback} className={iconConfig.iconSizeClass || "w-[23px] h-[23px]"} alt="" style={{ filter: iconConfig.iconFilter }} />
                     </div>
 
                     <h3 className={`${T.font.family} font-semibold text-[24px] text-[#223F7F] mb-3`}>
@@ -111,10 +123,16 @@ const ResearchContactAndSupport = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-6 py-3 rounded-[9.4px] font-medium text-[18px] transition-colors">
+                    <button
+                        className="hover:opacity-90 text-white px-6 py-3 rounded-[9.4px] font-medium text-[18px] transition-colors"
+                        style={{ backgroundColor: buttonConfig.bg }}
+                    >
                         Meet Our Team
                     </button>
-                    <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-6 py-3 rounded-[9.4px] font-medium text-[18px] transition-colors">
+                    <button
+                        className="hover:opacity-90 text-white px-6 py-3 rounded-[9.4px] font-medium text-[18px] transition-colors"
+                        style={{ backgroundColor: buttonConfig.bg }}
+                    >
                         Schedule Consultation
                     </button>
                 </div>

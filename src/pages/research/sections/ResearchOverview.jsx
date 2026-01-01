@@ -7,7 +7,11 @@ const IconVision = "/AsramWebsite-FE/assets/icons/IconVision.svg";
 const IconMission = "/AsramWebsite-FE/assets/icons/IconMission.svg";
 
 
-const ResearchOverview = () => {
+const ResearchOverview = ({
+  iconConfig = { bg: "#008C8C", iconFilter: "brightness(0) invert(1)" },
+  buttonConfig = { bg: "#008C8C" },
+  accentColor = "#008C8C",
+}) => {
   return (
     <PageSection bg={T.bg.white} paddingClass="py-[80px]">
       {/* Section Heading */}
@@ -28,16 +32,15 @@ const ResearchOverview = () => {
           >
             {/* Icon */}
             <div
-              className="
-    w-[58px] h-[58px]
-    sm:w-[60px] sm:h-[60px]
-    bg-[#008C8C]
-    rounded-[12px]
+              className={`
+    ${iconConfig.sizeClass || "w-[58px] h-[58px] sm:w-[60px] sm:h-[60px]"}
+    ${iconConfig.radiusClass || "rounded-[12px]"}
     flex items-center justify-center
     mb-5 sm:mb-6
-  "
+  `}
+              style={{ backgroundColor: iconConfig.bg }}
             >
-              <img src={IconVision} className="w-[30px] h-[30px]" alt="" />
+              <img src={IconVision} className={iconConfig.iconSizeClass || "w-[30px] h-[30px]"} alt="" style={{ filter: iconConfig.iconFilter }} />
 
 
 
@@ -65,16 +68,15 @@ const ResearchOverview = () => {
           >
             {/* Icon */}
             <div
-              className="
-    w-[58px] h-[58px]
-    sm:w-[60px] sm:h-[60px]
-    bg-[#008C8C]
-    rounded-[12px]
+              className={`
+    ${iconConfig.sizeClass || "w-[58px] h-[58px] sm:w-[60px] sm:h-[60px]"}
+    ${iconConfig.radiusClass || "rounded-[12px]"}
     flex items-center justify-center
     mb-5 sm:mb-6
-  "
+  `}
+              style={{ backgroundColor: iconConfig.bg }}
             >
-              <img src={IconMission} className="w-[30px] h-[30px]" alt="" />
+              <img src={IconMission} className={iconConfig.iconSizeClass || "w-[30px] h-[30px]"} alt="" style={{ filter: iconConfig.iconFilter }} />
 
             </div>
 
@@ -125,7 +127,7 @@ const ResearchOverview = () => {
           >
             <div className="mb-6 sm:mb-0">
               <h4 className="font-medium text-[18px] text-[#191919]">Dr. Arun Sharma</h4>
-              <p className="text-[#008C8C] text-[14px] font-medium">
+              <p className="text-[14px] font-medium" style={{ color: accentColor }}>
                 Dean, Research & Innovation
               </p>
             </div>
@@ -133,8 +135,6 @@ const ResearchOverview = () => {
             {/* Button */}
             <button
               className="
-                bg-[#008C8C]
-                hover:bg-[#007A7A]
                 text-white
                 flex items-center justify-center
                 gap-[4px]
@@ -147,7 +147,9 @@ const ResearchOverview = () => {
                 leading-normal
                 w-full sm:w-[243px]
                 transition-colors
+                hover:opacity-90
               "
+              style={{ backgroundColor: buttonConfig.bg }}
             >
               Read Full Message
               <IconArrowRightWhite size={19} />

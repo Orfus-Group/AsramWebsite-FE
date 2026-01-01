@@ -1,31 +1,17 @@
 import React from "react";
 import { T } from "@/theme";
 
-import { motion } from "framer-motion";
+
 
 const InfoCard = ({ icon, title, description, variant = "vertical-white", className = "" }) => {
     // Styles for Vertical White Card (Academic, Hostel)
     if (variant === "vertical-white") {
         return (
-            <motion.div
-                whileHover={{
-                    scale: 1.03,
-                    backdropFilter: "blur(12px)",
-                    borderColor: "rgba(255, 255, 255, 0.8)",
-                    transition: { duration: 0.3 }
-                }}
-                style={{ border: "solid 1px #e0e0e0" }}
-                className={`bg-white p-[30px] rounded-[16px] flex flex-col items-start shadow-sm border border-gray-100 relative overflow-hidden cursor-pointer group ${className}`}
-            >
-                {/* Glass Shine Effect on Hover */}
-                <motion.div
-                    className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/40 to-transparent pointer-events-none"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                />
 
-                <div className="bg-[#223F7F]/10 p-2.5 rounded-[8px] mb-4 flex items-center justify-center relative z-10 transition-colors duration-300 group-hover:bg-[#223F7F]/20">
+            <div
+                className="group relative bg-white rounded-2xl p-8 h-full border border-gray-100 hover:border-blue-100 transition-colors shadow-sm"
+            >
+                <div className="mb-6 inline-block p-4 rounded-xl bg-blue-50 text-blue-900 transition-colors duration-300">
                     {icon}
                 </div>
                 <h6 className={`${T.font.family} font-semibold text-[22px] text-[#223F7F] mb-3 relative z-10`}>
@@ -34,7 +20,7 @@ const InfoCard = ({ icon, title, description, variant = "vertical-white", classN
                 <p className={`${T.font.family} text-[18px] text-[#191919BF] font-regular leading-[26px] relative z-10`}>
                     {description}
                 </p>
-            </motion.div>
+            </div>
         );
     }
 

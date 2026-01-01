@@ -19,7 +19,12 @@ const projects = [
     }
 ];
 
-const ResearchProjects = () => {
+const ResearchProjects = ({
+    bulletColor = "#008C8C",
+    headerColor = "#223F7F",
+    titleColor = "#191919",
+    buttonConfig = { bg: "#008C8C" },
+}) => {
     return (
         <PageSection bg={T.bg.white} paddingClass="py-[80px]">
             <h2 className={`${T.font.family} font-bold text-[42px] text-[#1E3A8A] mb-10`}>
@@ -28,7 +33,7 @@ const ResearchProjects = () => {
 
             {/* Featured Projects Card */}
             <div className="bg-[#EEF2F7] rounded-[8px] p-[24px] md:p-[30px] mb-12">
-                <h3 className={`${T.font.family} font-semibold text-[32px] text-[#223F7F] mb-10`}>
+                <h3 className={`${T.font.family} font-semibold text-[32px] mb-10`} style={{ color: headerColor }}>
                     Featured Projects
                 </h3>
 
@@ -36,10 +41,10 @@ const ResearchProjects = () => {
                     {projects.map((project, index) => (
                         <div key={index} className="flex gap-4 items-start">
                             {/* Bullet Point */}
-                            <div className="mt-2.5 w-2 h-2 rounded-full bg-[#008C8C] shrink-0"></div>
+                            <div className="mt-2.5 w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: bulletColor }}></div>
 
                             <div className="flex flex-col gap-1">
-                                <h4 className={`${T.font.family} font-medium text-[22px] text-[#191919]`}>
+                                <h4 className={`${T.font.family} font-medium text-[22px]`} style={{ color: titleColor }}>
                                     {project.title}
                                 </h4>
                                 <p className={`${T.font.family} font-medium text-[14px] text-[#191919BF]`}>
@@ -58,7 +63,10 @@ const ResearchProjects = () => {
 
             {/* Footer Button */}
             <div className="flex justify-center">
-                <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-8 py-3 rounded-[12px] font-medium text-[18px] flex items-center gap-2 transition-colors">
+                <button
+                    className="hover:opacity-90 text-white px-8 py-3 rounded-[12px] font-medium text-[18px] flex items-center gap-2 transition-colors"
+                    style={{ backgroundColor: buttonConfig.bg }}
+                >
                     Explore Research Portfolio
                     <span><IconArrowRightWhite size={19} /></span>
                 </button>

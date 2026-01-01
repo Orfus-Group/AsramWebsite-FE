@@ -17,7 +17,7 @@ import LaboratoriesTrainingSection from "./LaboratoriesTrainingSection";
 import ClinicalExposureSection from "./ClinicalExposureSection";
 import AsramFooter from "./AsramFooter";
 import { useHero } from "@/context/HeroContext";
-import MotionSection from "@/components/common/MotionSection";
+
 import TypedText from "@/components/common/TypedText";
 
 const AsramPage = () => {
@@ -27,7 +27,7 @@ const AsramPage = () => {
     setHero({
       title: (
         <>
-          <TypedText text="DISCOVER " className="font-regular" />
+          <TypedText text="DISCOVER" className="font-regular" />{" "}
           <TypedText text="ASRAM" className="font-bold" delay={0.5} />
         </>
       ),
@@ -68,52 +68,25 @@ const AsramPage = () => {
 
   return (
     <>
-      <MotionSection>
-        <ReputationQuality />
-      </MotionSection>
-
-      <MotionSection delay={0.1}>
-        <InstitutionsSection />
-      </MotionSection>
-
-      <MotionSection delay={0.1}>
-        <AsramHealthcareServices />
-      </MotionSection>
-
-      <MotionSection delay={0.1}>
-        <WhyChooseAsramSection />
-      </MotionSection>
-
-      <MotionSection delay={0.2}>
-        <InsideASRAM
-          title="Inside ASRAM"
-          image={insideasramimg}
-          quote="At ASRAM, education meets service through clinics, health camps, and meaningful community impact."
-        />
-      </MotionSection>
-
-      <MotionSection delay={0.2}>
-        <AsramNewsEvents />
-      </MotionSection>
-
-      <MotionSection delay={0.2}>
-        <ResearchInnovation
-          title="Research & Innovation"
-          description1="
+      <ReputationQuality />
+      <InstitutionsSection />
+      <AsramHealthcareServices />
+      <WhyChooseAsramSection />
+      <InsideASRAM
+        title="Inside ASRAM"
+        image={insideasramimg}
+        quote="At ASRAM, education meets service through clinics, health camps, and meaningful community impact."
+      />
+      <AsramNewsEvents />
+      <ResearchInnovation
+        title="Research & Innovation"
+        description1="
         ASRAM drives research and innovation through collaborative projects, clinical studies, and evidence-based exploration. Students and faculty work together to develop new ideas, strengthen healthcare practices ASRAM drives research and innovation through collaborative projects, clinical studies, and evidence-based exploration.
         "
-          image={ResearchSectionimg}
-        />
-      </MotionSection>
-
-
-      <MotionSection delay={0.2}>
-        <ClinicalExposureSection />
-      </MotionSection>
-
-      <MotionSection delay={0.2}>
-        <LaboratoriesTrainingSection />
-      </MotionSection>
+        image={ResearchSectionimg}
+      />
+      <ClinicalExposureSection />
+      <LaboratoriesTrainingSection />
 
     </>
   );

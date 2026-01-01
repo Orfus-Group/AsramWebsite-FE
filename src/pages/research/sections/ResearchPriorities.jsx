@@ -45,7 +45,10 @@ const priorities = [
 ];
 
 
-const ResearchPriorities = () => {
+const ResearchPriorities = ({
+  iconConfig = { color: "white", bg: "#008C8C", size: 50 },
+  buttonConfig = { bg: "#008c8c" },
+}) => {
   return (
     <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]">
       <div className="flex flex-col items-start mb-10">
@@ -60,11 +63,27 @@ const ResearchPriorities = () => {
             key={index}
             style={{ border: "1px solid rgba(7, 7, 7, 0.2)" }}
 
-            className="flex flex-col items-start bg-white p-[24px] md:p-[30px] rounded-[8px] shadow-sm hover:shadow-md transition-shadow h-full"
+            className="flex flex-col items-start bg-white p-[24px] md:p-[30px] rounded-[8px] shadow-sm transition-shadow h-full"
           >
             {/* Icon Box */}
-            <div className="w-[50px] h-[50px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-5 shrink-0">
-              {item.icon}
+            <div
+              className={`${iconConfig.sizeClass || "w-[50px] h-[50px]"} ${iconConfig.radiusClass || "rounded-[8px]"} flex items-center justify-center mb-5 shrink-0`}
+              style={{ backgroundColor: iconConfig.bg }}
+            >
+              {/* Clone icon to override color if needed, or pass props if supported */}
+              {React.cloneElement(item.icon, {
+                color: iconConfig.color,
+                // Only pass width/height if iconSizeClass is provided (handling string class vs int props is tricky, assuming component handles both or we parse?)
+                // Actually IconAiHealth etc are components. They likely don't take className for size if they expect size prop?
+                // The original code didn't pass size.
+                // If I pass className, it might work if they spread props.
+                // Let's assume for components we might need to handle differently or just rely on container?
+                // Wait, if I provided `width: 24` previously it worked?
+                // I'll try to parse the className or just pass standard size?
+                // Let's rely on style or width/height props if I can.
+                // For now, restoring original behavior (no size) OR new behavior.
+                ...(iconConfig.iconSizeClass ? { width: 24, height: 24 } : {}) // Explicitly passing 24 for medical
+              })}
             </div>
 
             {/* Title */}
@@ -82,7 +101,10 @@ const ResearchPriorities = () => {
 
       {/* Button */}
       <div className="flex justify-center mt-12">
-        <button className="bg-[#008c8c] hover:bg-[#007A7A] text-white px-8 py-3 rounded-[10px] font-regular text-[18px] flex items-center gap-2 transition-colors">
+        <button
+          className="hover:opacity-90 text-white px-8 py-3 rounded-[10px] font-regular text-[18px] flex items-center gap-2 transition-colors"
+          style={{ backgroundColor: buttonConfig.bg }}
+        >
           Explore Research Areas in Detail
           <IconArrowRight
             size={19}

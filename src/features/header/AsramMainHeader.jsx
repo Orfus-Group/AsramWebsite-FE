@@ -4,6 +4,7 @@ const Logo = "/AsramWebsite-FE/assets/asram/mainasramlogo.svg";
 const AsramLogo = "/AsramWebsite-FE/assets/asram/asramcolredlogo.png";
 const AsramLogoFull = "/AsramWebsite-FE/assets/asram/ASymbol.png";
 const AsramBlueLogo = "/AsramWebsite-FE/assets/asram/asrambluelogo.png";
+const AsramLatestLogo = "/AsramWebsite-FE/assets/asram/asramlatestlogo.svg";
 const StudentIcon = "/AsramWebsite-FE/assets/asram/studentcentericon.svg";
 const LibraryIcon = "/AsramWebsite-FE/assets/asram/libraryicon.svg";
 const PayIcon = "/AsramWebsite-FE/assets/asram/payonlineicon.svg";
@@ -133,7 +134,7 @@ const AsramMainHeader = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <div className="sticky -top-[40px] z-[100] asram-font w-full">
+    <div className="sticky top-0 z-[100] asram-font w-full">
       {/* ----------------------- TOP BAR ----------------------- */}
       <div className="w-full" style={{ backgroundColor: T.color.secondary }}>
         <div className="w-full max-w-[1440px] mx-auto h-[40px] flex justify-center px-5 sm:px-6 md:px-10 lg:px-[120px]">
@@ -223,8 +224,8 @@ const AsramMainHeader = () => {
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
-                  src={AsramBlueLogo}
-                  alt="Asram Blue Logo"
+                  src={AsramLatestLogo}
+                  alt="Asram Latest Logo"
                   className="h-[46px] object-contain flex-shrink-0 transition-all duration-300 rounded-[8px]"
                 />
               ) : (

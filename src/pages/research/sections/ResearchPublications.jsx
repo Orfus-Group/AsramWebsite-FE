@@ -53,7 +53,11 @@ const recentPubs = [
   }
 ];
 
-const ResearchPublications = () => {
+const ResearchPublications = ({
+  iconConfig = { bg: "#008C8C", iconFilter: "brightness(0) invert(1)" },
+  buttonConfig = { bg: "#008C8C" },
+  accentColor = "#008C8C",
+}) => {
   return (
     <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]">
       <h2 className={`${T.font.family} font-bold text-[42px] text-[#223F7F] mb-10`}>
@@ -64,8 +68,14 @@ const ResearchPublications = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-[20px] mb-10">
         {stats.map((stat, index) => (
           <div style={{ border: "1px solid #07070733" }} key={index} className="bg-white rounded-[9.3px] p-6 flex flex-col items-center text-center shadow-sm">
-            <div className="w-[44px] h-[44px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-4">
-              {stat.icon}
+            <div
+              className={`${iconConfig.sizeClass || "w-[44px] h-[44px]"} ${iconConfig.radiusClass || "rounded-[8px]"} flex items-center justify-center mb-4`}
+              style={{ backgroundColor: iconConfig.bg }}
+            >
+              {React.cloneElement(stat.icon, {
+                style: { filter: iconConfig.iconFilter },
+                className: iconConfig.iconSizeClass || stat.icon.props.className
+              })}
             </div>
             <AnimatedStatValue
               value={stat.value}
@@ -94,7 +104,10 @@ const ResearchPublications = () => {
                 {pub.authors}
               </p>
               <div className="flex items-center gap-3">
-                <span className="text-[#008C8C] text-[14px] font-regular">
+                <span
+                  className="text-[14px] font-regular"
+                  style={{ color: accentColor }}
+                >
                   {pub.journal}
                 </span>
                 <span className="bg-[#E9ECEF] text-[#223F7F] text-[12px] px-2 py-0.5 rounded-[31498264px] font-regular">
@@ -173,13 +186,13 @@ const ResearchPublications = () => {
           h-[40px]
           px-[18px]
           rounded-[6px]
-          bg-[#008C8C]
           text-white
           font-regular
           text-[15px]
-          hover:bg-[#007A7A]
           transition-colors
+          hover:opacity-90
         "
+              style={{ backgroundColor: buttonConfig.bg }}
             >
               <img src={IconExternalLinkWhite} className="w-[19px] h-[19px]" alt="" />
 

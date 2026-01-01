@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from "react";
 import { useHero } from "@/context/HeroContext";
 const ResearchHerobg = "/AsramWebsite-FE/assets/research/asramresearchbanner.png";
 import TypedText from "@/components/common/TypedText";
-import MotionSection from "@/components/common/MotionSection";
+
 import ResearchOverview from "./sections/ResearchOverview";
 import ResearchPriorities from "./sections/ResearchPriorities";
 import ResearchGovernance from "./sections/ResearchGovernance";
@@ -56,45 +56,19 @@ const ResearchPage = () => {
 
   return (
     <>
-      <MotionSection>
-        <ResearchOverview />
-      </MotionSection>
-      <MotionSection delay={0.1}>
-        <ResearchPriorities />
-      </MotionSection>
-      <MotionSection delay={0.1}>
-        <ResearchGovernance />
-      </MotionSection>
-      <MotionSection delay={0.1}>
-        <ResearchPolicies />
-      </MotionSection>
-      <MotionSection delay={0.2}>
-        <ResearchProjects />
-      </MotionSection>
-      <MotionSection delay={0.2}>
-        <ResearchPublications />
-      </MotionSection>
-      <MotionSection delay={0.2}>
-        <ResearchGrantsAndFunds />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <ResearchStudentResearch />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <ResearchConferences />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <ResearchCollaborations />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <ResearchPatentsAndInnovations />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <ResearchResources />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <ResearchContactAndSupport />
-      </MotionSection>
+      <ResearchOverview />
+      <ResearchPriorities />
+      <ResearchGovernance />
+      <ResearchPolicies />
+      <ResearchProjects />
+      <ResearchPublications />
+      <ResearchGrantsAndFunds />
+      <ResearchStudentResearch />
+      <ResearchConferences />
+      <ResearchCollaborations />
+      <ResearchPatentsAndInnovations />
+      <ResearchResources />
+      <ResearchContactAndSupport />
     </>
   );
 };

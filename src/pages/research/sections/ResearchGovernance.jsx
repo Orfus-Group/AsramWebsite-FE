@@ -47,7 +47,12 @@ const governanceData = [
    COMPONENT
 ===================================================== */
 
-const ResearchGovernance = () => {
+const ResearchGovernance = ({
+  iconConfig = { bg: "#008C8C", iconFilter: "brightness(0) invert(1)" },
+  headerBg = "#008C8C33",
+  accentColor = "#008C8C",
+  buttonConfig = { bg: "#008C8C" },
+}) => {
   return (
     <PageSection bg={T.bg.white} paddingClass="py-[80px]">
       <h2 className={`${T.font.family} font-bold text-[42px] text-[#223f7f] mb-10`}>
@@ -62,9 +67,15 @@ const ResearchGovernance = () => {
             style={{ border: "1px solid rgba(7, 7, 7, 0.2)" }}
           >
             {/* Header */}
-            <div className="p-[24px] md:p-[30px] pb-6" style={{ background: "#008C8C33" }}>
-              <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-5">
-                {item.icon}
+            <div className="p-[24px] md:p-[30px] pb-6" style={{ background: headerBg }}>
+              <div
+                className={`${iconConfig.sizeClass || "w-[48px] h-[48px]"} ${iconConfig.radiusClass || "rounded-[8px]"} flex items-center justify-center mb-5`}
+                style={{ backgroundColor: iconConfig.bg }}
+              >
+                {React.cloneElement(item.icon, {
+                  style: { filter: iconConfig.iconFilter },
+                  className: iconConfig.iconSizeClass || item.icon.props.className
+                })}
               </div>
 
               <h3 className="text-[20px] text-[#223F7F] font-semibold min-h-[56px]">
@@ -86,7 +97,10 @@ const ResearchGovernance = () => {
                 <p className="text-[14px] text-[rgba(25,25,25,0.75)] mb-1">
                   Committee Size
                 </p>
-                <p className="text-[#008C8C] text-[16px] mb-6">
+                <p
+                  className="text-[16px] mb-6 font-medium"
+                  style={{ color: accentColor }}
+                >
                   {item.members}
                 </p>
 
@@ -103,9 +117,12 @@ const ResearchGovernance = () => {
 
       {/* Footer CTA */}
       <div className="flex justify-center">
-        <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-8 py-3 rounded-[6px] font-medium text-[16px] flex items-center gap-2 transition-colors">
+        <button
+          className="text-white px-8 py-3 rounded-[6px] font-medium text-[16px] flex items-center gap-2 transition-colors hover:opacity-90"
+          style={{ backgroundColor: buttonConfig.bg }}
+        >
           View Complete Governance Structure
-                       <IconArrowRightWhite size={19} />       </button>
+          <IconArrowRightWhite size={19} />       </button>
       </div>
     </PageSection>
   );

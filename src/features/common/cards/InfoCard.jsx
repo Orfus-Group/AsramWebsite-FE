@@ -5,12 +5,22 @@ export default function InfoCard({
     icon,
     title,
     description,
+    ctafontweight,
     years,
     seats,
     variant = "program",
     buttonText,
     onClick,
     className = "",
+    iconBg,
+    cardBg,
+    badgeBg,
+    badgeClassName,
+    iconContainerClassName,
+    cardBorder,
+    borderColor,
+    titleClassName = "",
+    titleColor,
 }) {
     const isProgram = variant === "program";
 
@@ -27,7 +37,7 @@ export default function InfoCard({
       ${className}
       `,
             wrapperStyle: {
-                backgroundColor: "#EEF2F7",
+                backgroundColor: cardBg || "#EEF2F7",
                 border: "1px solid rgba(7, 7, 7, 0.2)",
                 padding: "30px", // Uniform padding as per Figma
                 gap: "20px",     // Gap between elements as per Figma
@@ -37,7 +47,7 @@ export default function InfoCard({
             title: `
         ${T.font.family}
         ${T.font.weight.semibold}
-        text-[26px] leading-[34px]
+        text-[28px] leading-[34px]
         text-left
       `,
             paragraph: `
@@ -53,18 +63,18 @@ export default function InfoCard({
     h-full
     flex flex-col items-start justify-start
     rounded-[12px]
-    bg-white
     ${className}
   `,
             wrapperStyle: {
+                backgroundColor: cardBg || "#FFFFFF",
                 border: "1px solid rgba(7, 7, 7, 0.2)",
                 padding: "30px",
                 gap: "20px",
             },
             title: `
     ${T.font.family}
-    ${T.font.weight.bold}
-    text-[20px] leading-[28px] text-left
+    ${T.font.weight.semibold}
+    text-[28px] leading-[28px] text-left
   `,
             paragraph: `
     w-full
@@ -182,14 +192,11 @@ export default function InfoCard({
   `,
             wrapperStyle: {
                 backgroundColor: "#FFF",
-                paddingTop: "23.7px",
-                paddingLeft: "23.7px",
-                paddingRight: "23.7px",
-                paddingBottom: "23.7px",
-                gap: "16.8px",
+                padding: "30px",
+                gap: "12px",
 
                 /* ⭐ Only bottom stroke */
-                borderBottom: "4px solid #008C8C",
+                borderBottom: `4px solid ${borderColor || "#008C8C"}`,
 
                 /* ⭐ Ensure NO borders anywhere else */
                 borderTop: "none",
@@ -197,14 +204,14 @@ export default function InfoCard({
                 borderRight: "none",
 
                 /* ⭐ Smooth rounded inner look like Figma */
-                borderRadius: "9.87px",
-                // boxShadow: "0px 4px 0px -2px #223F7F inset"
+                borderRadius: "12px",
+                boxShadow: "0px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px 1px 3px 0px rgba(0, 0, 0, 0.1)"
             },
 
             title: `
     ${T.font.family}
     ${T.font.weight.semibold}
-    text-[23.68px] leading-[33.2px]
+    text-[22px] leading-[33.2px]
     text-left w-full
   `,
 
@@ -280,18 +287,16 @@ export default function InfoCard({
 
         studentExperience: {
             wrapper: `
-    w-full
-    h-full
-    flex flex-col items-start justify-start
-    rounded-[12px]
-    bg-[#EEF2F7]
-  `,
+            w-full
+            flex flex-col items-start justify-start 
+            ${className}
+            `,
             wrapperStyle: {
+                backgroundColor: cardBg || "#FFFFFF",
+                borderRadius: "12px",
                 padding: "24px",
-                backgroundColor: "#EEF2F7",
-                // border: "1px solid rgba(7, 7, 7, 0.2)",
-
                 gap: "12px",
+                border: cardBorder || "none",
                 /* No border as per visual/snippet, relying on shadow/bg */
                 boxShadow: "0px 8px 16px 0px rgba(0, 140, 140, 0.04), 0px 0px 4px 0px rgba(0, 140, 140, 0.04), 0px 0px 4px 0px rgba(0, 140, 140, 0.08)",
             },
@@ -301,7 +306,7 @@ export default function InfoCard({
     text-[22px] leading-[1.2]
     text-left
     w-full
-    text-[#223f7f]
+    ${titleClassName}
   `,
             paragraph: `
     ${T.font.family}
@@ -309,7 +314,6 @@ export default function InfoCard({
     text-[18px] leading-[1.44]
     text-left
     w-full
-    text-[rgba(25,25,25,0.75)]
   `,
         },
 
@@ -350,8 +354,11 @@ export default function InfoCard({
         if (variant === "keystrength") {
             return (
                 <div
-                    className="w-[55.26px] h-[55.26px] flex items-center justify-center rounded-[9.87px] shrink-0"
-                    style={{ backgroundColor: T.color.primary }}
+                    className={`
+                        flex items-center justify-center shrink-0
+                        ${iconContainerClassName || "w-[55.26px] h-[55.26px] rounded-[9.87px]"}
+                    `}
+                    style={{ backgroundColor: iconBg || T.color.primary }}
                 >
                     {isSvgComponent ? (
                         icon
@@ -402,14 +409,13 @@ export default function InfoCard({
         // =====================
         return (
             <div
-                className="
-          w-[55.3px]
-          h-[55.3px]
+                className={`
           flex items-center justify-center
           rounded-[9.9px]
           shrink-0
-        "
-                style={{ backgroundColor: T.color.primary }}
+          ${iconContainerClassName || "w-[55.3px] h-[55.3px]"}
+        `}
+                style={{ backgroundColor: iconBg || T.color.primary }}
             >
                 {isSvgComponent ? (
                     icon
@@ -431,34 +437,43 @@ export default function InfoCard({
     // RENDER COMPONENT
     // -------------------------
     return (
-        <div className={v.wrapper} style={v.wrapperStyle}>
+        <div
+            className={v.wrapper}
+            style={{
+                ...v.wrapperStyle,
+                ...(cardBg ? { backgroundColor: cardBg } : {}),
+                ...(cardBorder ? { border: cardBorder, boxShadow: 'none' } : {})
+            }}
+        >
             {/* ICON */}
             {renderIcon()}
 
             {/* TITLE */}
-            <h6
+            <h4
                 className={v.title}
-                style={{ color: T.color.text.secondary }}
+                style={{ color: titleColor || T.color.text.secondary }}
             >
                 {title}
-            </h6>
+            </h4>
 
             {/* BADGES FOR PROGRAM VARIANT */}
             {isProgram && (
                 <div className="flex items-center gap-[10px]">
                     <span
-                        className="
+                        className={`
               flex items-center justify-center
-              px-[12px] h-[30px]
               rounded-[4px]
+              ${ctafontweight}
               font-montserrat text-[14px] leading-[1.43]
-            "
-                        style={{ backgroundColor: T.color.primary, color: "#FFFFFF" }}
+              ${badgeClassName || "h-[30px] px-[12px]"}
+            `}
+                        style={{ backgroundColor: badgeBg || T.color.primary, color: "#FFFFFF" }}
                     >
                         {years}
                     </span>
                 </div>
-            )}
+            )
+            }
 
             {/* DESCRIPTION */}
             <p
@@ -476,14 +491,16 @@ export default function InfoCard({
             </p>
 
             {/* BUTTON (Added for Research Variant compatibility) */}
-            {buttonText && (
-                <button
-                    onClick={onClick}
-                    className="mt-4 flex items-center gap-2 text-[#008C8C] font-semibold text-[14px] hover:underline"
-                >
-                    {buttonText} <span>→</span>
-                </button>
-            )}
-        </div>
+            {
+                buttonText && (
+                    <button
+                        onClick={onClick}
+                        className="mt-4 flex items-center gap-2 text-[#008C8C] font-semibold text-[14px] hover:underline"
+                    >
+                        {buttonText} <span>→</span>
+                    </button>
+                )
+            }
+        </div >
     );
 }

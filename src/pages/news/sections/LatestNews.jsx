@@ -10,7 +10,7 @@ const IconChevronRight = "/AsramWebsite-FE/assets/icons/IconChevronRight.svg";
 
 import {
     IconArrowRight,
-   
+
 } from "@/assets/icons";
 
 const LatestNews = ({
@@ -101,14 +101,14 @@ const LatestNews = ({
                         {mockNews.map((item) => (
                             <div
                                 key={item.id}
-                                className="group bg-[#EEF2F7] rounded-[12.5px] border border-[#E5E7EB] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-xl hover:bg-[#e8edff] hover:border-[#223F7F33]"
+                                className="group bg-[#EEF2F7] rounded-[12.5px] border border-[#E5E7EB] overflow-hidden flex flex-col transition-all duration-300"
                             >
                                 {/* Image */}
                                 <div className="h-[200px] sm:h-[240px] w-full bg-gray-100 overflow-hidden">
                                     <img
                                         src={item.image}
                                         alt={item.title}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        className="w-full h-full object-cover transition-transform duration-500"
                                     />
                                 </div>
 
@@ -164,7 +164,7 @@ const LatestNews = ({
                             <img src={IconChevronLeft} className="w-[16px] h-[16px]" alt="" />
                         </button>
 
-                        <button className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-[8px] bg-[#223F7F] text-white font-medium text-[14px] sm:text-[15.02px] shadow-sm transform hover:scale-105 transition-transform">
+                        <button className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-[8px] bg-[#223F7F] text-white font-medium text-[14px] sm:text-[15.02px] shadow-sm transform transition-transform">
                             1
                         </button>
                         <button className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-[8px] sm:rounded-[9.4px] border border-[rgba(7,7,7,0.2)] text-[#191919] font-medium text-[14px] sm:text-[15.02px] hover:bg-[#EEF2F7] transition-all shadow-sm">

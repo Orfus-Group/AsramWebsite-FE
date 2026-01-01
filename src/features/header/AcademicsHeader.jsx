@@ -68,8 +68,14 @@ const NavItem = ({ label, to, isActive, onClick }) => {
 const AcademicsHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const isMedical = location.pathname.startsWith("/medical");
 
-  const navItems = [
+  const navItems = isMedical ? [
+    { label: "Academics", path: "/medical-academics" },
+    { label: "Research", path: "/medical-research" },
+    { label: "Global & Community", path: "/community-health" },
+    { label: "News", path: "/news" },
+  ] : [
     { label: "Academics", path: "/academics" },
     { label: "Research", path: "/research" },
     { label: "Global & Community", path: "/community-health" },
@@ -77,7 +83,7 @@ const AcademicsHeader = () => {
   ];
 
   return (
-    <div className="sticky -top-[46px] z-[100] w-full">
+    <div className="sticky top-0 z-[100] w-full">
       {/* ================= TOP BLUE BAR ================= */}
       <div className="w-full" style={{ backgroundColor: T.color.text.secondary }}>
         <div
@@ -116,7 +122,7 @@ const AcademicsHeader = () => {
 
           {/* ================= CENTER LOGO (Mobile) ================= */}
           <div className="flex-1 flex justify-center md:justify-start overflow-hidden">
-            <Link to="/nursing">
+            <Link to={isMedical ? "/medical" : "/nursing"}>
               <div className="flex items-center gap-[4px] md:gap-[5.6px]">
                 <img
                   loading="eager"
@@ -130,7 +136,7 @@ const AcademicsHeader = () => {
                     Asram
                   </span>
                   <span className={`${T.font.family} ${T.font.weight.bold} text-[12.5px] md:text-[14.9px] text-[#223F7F] leading-[1.2] md:leading-[1.25] mt-[1px] md:mt-[1.2px] whitespace-nowrap transition-all duration-300`}>
-                    School of Nursing
+                    {isMedical ? "College of Medicine" : "School of Nursing"}
                   </span>
                 </div>
               </div>
@@ -245,7 +251,7 @@ const AcademicsHeader = () => {
         text-white/70            /* NEW footer text color */
       `}
             >
-              © ASRAM School of Nursing
+              © ASRAM {isMedical ? "College of Medicine" : "School of Nursing"}
             </p>
           </div>
         </div>

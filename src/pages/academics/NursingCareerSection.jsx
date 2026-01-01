@@ -64,7 +64,7 @@ export default function NursingCareerSection() {
         >
           {/* Custom Card 1 */}
           <div
-            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow aspect-[282/171] rounded-[9.9px]"
+            className="bg-white flex flex-col items-center justify-center border border-transparent transition-shadow aspect-[282/171] rounded-[9.9px]"
           >
             <img src={IconExcellence} className="w-[32px] h-[32px]" alt="" />
             <span
@@ -86,7 +86,7 @@ export default function NursingCareerSection() {
 
           {/* Custom Card 2 */}
           <div
-            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow aspect-[282/171] rounded-[9.9px]"
+            className="bg-white flex flex-col items-center justify-center border border-transparent transition-shadow aspect-[282/171] rounded-[9.9px]"
           >
             <img src={IconActiveStudents} className="w-[32px] h-[32px]" alt="" />
             <span
@@ -108,7 +108,7 @@ export default function NursingCareerSection() {
 
           {/* Custom Card 3 */}
           <div
-            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow aspect-[282/171] rounded-[9.9px]"
+            className="bg-white flex flex-col items-center justify-center border border-transparent transition-shadow aspect-[282/171] rounded-[9.9px]"
           >
             <img src={IconPlacementSuccess} className="w-[32px] h-[32px]" alt="" />
             <span
@@ -130,7 +130,7 @@ export default function NursingCareerSection() {
 
           {/* Custom Card 4 */}
           <div
-            className="bg-white flex flex-col items-center justify-center border border-transparent hover:shadow-md transition-shadow aspect-[282/171] rounded-[9.9px]"
+            className="bg-white flex flex-col items-center justify-center border border-transparent transition-shadow aspect-[282/171] rounded-[9.9px]"
           >
             <img src={IconApprovedPrograms} className="w-[32px] h-[32px]" alt="" />
             <span

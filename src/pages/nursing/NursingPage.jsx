@@ -3,7 +3,7 @@ import React, { useLayoutEffect } from "react";
 import { useHero } from "@/context/HeroContext";
 const heroBg = "/AsramWebsite-FE/assets/nursing/asramnursingbanner.png";
 import TypedText from "@/components/common/TypedText";
-import MotionSection from "@/components/common/MotionSection";
+
 import AcademicProgramsSection from "./AcademicProgramsSection";
 import VisionMissionSection from "./VisionMission";
 import NewsEvents from "./NewsEvents";
@@ -61,30 +61,14 @@ const NursingPage = () => {
 
   return (
     <>
-      <MotionSection>
-        <AcademicProgramsSection />
-      </MotionSection>
-      <MotionSection delay={0.1}>
-        <VisionMissionSection />
-      </MotionSection>
-      <MotionSection delay={0.1}>
-        <StudentExperience />
-      </MotionSection>
-      <MotionSection delay={0.2}>
-        <ResearchSection />
-      </MotionSection>
-      <MotionSection delay={0.2}>
-        <SocialCommitment />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <AsramNewsEvents />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <FacultySpotlightSection />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <KeyStrengthsSection />
-      </MotionSection>
+      <AcademicProgramsSection />
+      <VisionMissionSection />
+      <StudentExperience cardBg="#eef2f7" />
+      <ResearchSection />
+      <SocialCommitment />
+      <AsramNewsEvents />
+      <FacultySpotlightSection />
+      <KeyStrengthsSection />
     </>
   );
 };

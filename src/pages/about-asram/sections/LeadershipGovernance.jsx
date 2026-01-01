@@ -44,7 +44,7 @@ const LeadershipGovernance = () => {
             {/* Leaders Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[28px] gap-y-[28px] mb-[60px]">
                 {leaders.map((leader, index) => (
-                    <div key={index} className="bg-white rounded-[12px] border border-[#E5E5E5] overflow-hidden flex flex-col h-full hover:shadow-[0px_4px_12px_rgba(34,63,127,0.08)] transition-all duration-300">
+                    <div key={index} className="bg-white rounded-[12px] border border-[#E5E5E5] overflow-hidden flex flex-col h-full transition-all duration-300">
                         <div className="h-[279px] w-full bg-gray-200">
                             <img src={leader.img} className="w-full h-full object-cover" alt={leader.name} />
                         </div>

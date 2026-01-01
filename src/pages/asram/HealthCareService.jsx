@@ -1,9 +1,8 @@
 // src/sections/home/HealthcareServices.jsx
 import React from "react";
-import { motion } from "framer-motion";
+
 import { T } from "@/theme";
-import StaggerContainer, { itemVariants } from "@/components/common/StaggerContainer";
-import HoverCard from "@/components/common/HoverCard";
+
 import IconFullArrowRight from "@/assets/icons/IconFullArrow";
 
 
@@ -41,27 +40,7 @@ const services = [
 
 const CARD_BORDER = "rgba(26, 24, 24, 0.10)";
 
-const buttonAnim = {
-  rest: { scale: 1 },
-  hover: {
-    scale: 1.02,
-    filter: "brightness(0.96)",
-    transition: { duration: 0.2 }
-  },
-  tap: { scale: 0.98 }
-};
 
-const arrowAnim = {
-  rest: { x: 0 },
-  hover: {
-    x: 5,
-    transition: {
-      type: "spring",
-      stiffness: 400,
-      damping: 10
-    }
-  }
-};
 
 const HealthcareServices = () => {
   return (
@@ -95,7 +74,7 @@ const HealthcareServices = () => {
       </h6>
 
       {/* CARD GRID */}
-      <StaggerContainer
+      <div
         className="
           grid 
           grid-cols-1
@@ -104,8 +83,7 @@ const HealthcareServices = () => {
         "
       >
         {services.map((item) => (
-          <HoverCard
-            variants={itemVariants}
+          <div
             key={item.id}
             className="
               bg-[#EEF2F7] 
@@ -191,7 +169,7 @@ const HealthcareServices = () => {
             </p>
 
             {/* CTA BUTTON */}
-            <motion.button
+            <button
               className="
                 flex items-center justify-center gap-[6px]
                 rounded-[6px]
@@ -199,10 +177,6 @@ const HealthcareServices = () => {
                 w-full
               "
               style={{ backgroundColor: item.buttonBg }}
-              initial="rest"
-              whileHover="hover"
-              whileTap="tap"
-              variants={buttonAnim}
             >
               <span
                 className="
@@ -213,18 +187,18 @@ const HealthcareServices = () => {
                 {item.ctatext}
               </span>
 
-              <motion.div variants={arrowAnim}>
-                   <IconFullArrowRight
+              <div>
+                <IconFullArrowRight
                   size={18}
                   className="sm:w-[20px] sm:h-[20px]"
                   stroke="#191919"
                   strokeWidth={2}
                 />
-              </motion.div>
-            </motion.button>
-          </HoverCard>
+              </div>
+            </button>
+          </div>
         ))}
-      </StaggerContainer>
+      </div>
     </PageSection>
   );
 };

@@ -6,9 +6,30 @@ const LocationIcon = "/AsramWebsite-FE/assets/icons/LocationIcon.svg";
 const MailIcon = "/AsramWebsite-FE/assets/icons/MailIcon.svg";
 const PhoneIcon = "/AsramWebsite-FE/assets/icons/PhoneIcon.svg";
 
-export default function Footer() {
+export default function Footer({
+  bgClass = "bg-[#008C8C33]",
+  className = "",
+  data = {}
+}) {
+  const {
+    description = "Premier institution for nursing education in Andhra Pradesh, offering comprehensive programmes from undergraduate to postgraduate levels.",
+    quickLinks = ["About Us", "Programs", "Infrastructure", "Admissions"],
+    programs = [
+      "B.Sc Nursing (4 Years)",
+      "GNM (3 Years)",
+      "M.Sc Nursing (Post-Graduate)",
+      "Various Specializations",
+    ],
+    contact = {
+      address: <>ASRAM Campus, Eluru,<br />Andhra Pradesh, India</>,
+      phone: "Contact: Visit asram.in",
+      email: "For admission inquiries"
+    },
+    copyright = "© 2025 ASRAM School of Nursing. All rights reserved."
+  } = data;
+
   return (
-    <footer className="w-full bg-[#008C8C33] flex justify-center">
+    <footer className={`w-full ${bgClass} flex justify-center ${className}`}>
 
       {/* OUTER WRAPPER */}
       <div
@@ -64,9 +85,7 @@ export default function Footer() {
                   max-w-[280px]
                 `}
               >
-                Premier institution for nursing education in Andhra Pradesh,
-                offering comprehensive programmes from undergraduate to
-                postgraduate levels.
+                {description}
               </p>
             </div>
 
@@ -85,7 +104,7 @@ export default function Footer() {
               </h3>
 
               <div className="flex flex-col mt-[12px] lg:mt-[16px] gap-[10px]">
-                {["About Us", "Programs", "Infrastructure", "Admissions"].map(
+                {quickLinks.map(
                   (item, i) => (
                     <p
                       key={i}
@@ -112,7 +131,7 @@ export default function Footer() {
               <h3
                 className={`
                   ${T.font.family}
-                   text-[#191919]
+                  text-[#191919]
                   ${T.font.weight.semibold}
                   text-[18px] lg:text-[19px]
                   leading-[26px]
@@ -122,12 +141,7 @@ export default function Footer() {
               </h3>
 
               <div className="flex flex-col mt-[12px] lg:mt-[16px] gap-[10px]">
-                {[
-                  "B.Sc Nursing (4 Years)",
-                  "GNM (3 Years)",
-                  "M.Sc Nursing (Post-Graduate)",
-                  "Various Specializations",
-                ].map((item, i) => (
+                {programs.map((item, i) => (
                   <p
                     key={i}
                     className={`
@@ -150,7 +164,7 @@ export default function Footer() {
               <h3
                 className={`
                   ${T.font.family}
-                   text-[#191919]
+                  text-[#191919]
                   ${T.font.weight.semibold}
                   text-[18px] lg:text-[19px]
                   leading-[26px]
@@ -174,9 +188,7 @@ export default function Footer() {
                       opacity-70
                     `}
                   >
-                    ASRAM Campus, Eluru,
-                    <br />
-                    Andhra Pradesh, India
+                    {contact.address}
                   </p>
                 </div>
 
@@ -193,7 +205,7 @@ export default function Footer() {
                       opacity-70
                     `}
                   >
-                    Contact: Visit asram.in
+                    {contact.phone}
                   </p>
                 </div>
 
@@ -210,8 +222,14 @@ export default function Footer() {
                       opacity-70
                     `}
                   >
-                    For admission inquiries
+                    {contact.email}
                   </p>
+                </div>
+
+                {/* Social Media Link */}
+                <div className="flex gap-[10px] items-center mt-[4px]">
+                  <a href="https://www.linkedin.com/company/alluri-sitarama-raju-academy-of-medical-science/" target="_blank" rel="noreferrer" className="flex items-center gap-[6px] opacity-70 hover:opacity-100 transition-opacity">
+                  </a>
                 </div>
 
               </div>
@@ -242,7 +260,7 @@ export default function Footer() {
                 text-center sm:text-left
               `}
             >
-              © 2025 ASRAM School of Nursing. All rights reserved.
+              {copyright}
             </p>
 
             {/* RIGHT GROUP */}

@@ -144,7 +144,7 @@ export default function WhyChooseAsram() {
       <InfoCardGrid
         items={features}
         gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] w-full mb-[40px]"
-        cardClassName="bg-white rounded-[8px] p-[30px] border border-[rgba(7,7,7,0.2)] h-full flex flex-col items-start hover:shadow-md transition-shadow"
+        cardClassName="bg-white rounded-[8px] p-[30px] border border-[rgba(7,7,7,0.2)] h-full flex flex-col items-start transition-shadow"
         iconContainerClassName="w-[55.3px] h-[55.3px] bg-[rgba(34,63,127,0.1)] rounded-[16.2px] flex items-center justify-center text-[#223F7F] mb-[12px] flex-shrink-0"
         titleClassName="text-[#223F7F] font-bold text-[20px] leading-[1.2] mb-[12px] font-montserrat"
         descriptionClassName="text-[rgba(25,25,25,0.75)] text-[18px] leading-[1.44] font-montserrat flex-1"

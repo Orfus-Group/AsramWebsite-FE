@@ -72,7 +72,10 @@ const innovations = [
     }
 ];
 
-const ResearchPatentsAndInnovations = () => {
+const ResearchPatentsAndInnovations = ({
+    iconConfig = { bg: "#008C8C", iconFilter: "brightness(0) invert(1)" },
+    buttonConfig = { bg: "#008C8C" },
+}) => {
     return (
         <PageSection bg={T.bg.white} paddingClass="py-[80px]">
             <h2 className={`${T.font.family} font-bold text-[40px] text-[#223F7F] mb-10`}>
@@ -85,8 +88,14 @@ const ResearchPatentsAndInnovations = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-[20px] mb-12">
                 {stats.map((stat, index) => (
                     <div style={{ border: "1px solid #07070733" }} key={index} className="bg-[#EEF2F7] rounded-[10.4px] p-[24px] md:p-[30px] flex flex-col items-center text-center">
-                        <div className="w-[48px] h-[48px] mb-4 bg-[#008C8C] rounded-[12px] text-[#FFF] flex items-center justify-center">
-                            {stat.icon}
+                        <div
+                            className={`${iconConfig.sizeClass || "w-[48px] h-[48px]"} mb-4 ${iconConfig.radiusClass || "rounded-[12px]"} flex items-center justify-center`}
+                            style={{ backgroundColor: iconConfig.bg }}
+                        >
+                            {React.cloneElement(stat.icon, {
+                                style: { filter: iconConfig.iconFilter },
+                                className: iconConfig.iconSizeClass || stat.icon.props.className
+                            })}
                         </div>
                         <AnimatedStatValue
                             value={stat.value}
@@ -146,7 +155,7 @@ const ResearchPatentsAndInnovations = () => {
                                 <p className={`${T.font.family} text-[14px] font-regular leading-[20px] text-[#191919BF] mb-2`}>
                                     {item.category}
                                 </p>
-                                <span className="bg-[#008C8C1A] text-[#008C8C] text-[12.5px] px-3 py-1 rounded-[34952500px] font-regular inline-block">
+                                <span className="text-[#008C8C] text-[12.5px] px-3 py-1 rounded-[34952500px] font-regular inline-block" style={{ backgroundColor: "#008C8C1A" }}>
                                     {item.badge}
                                 </span>
                             </div>
@@ -170,7 +179,10 @@ const ResearchPatentsAndInnovations = () => {
                     ASRAM's Innovation Center supports researchers in translating discoveries into market-ready products through mentorship, funding, legal support, and industry connections.
                 </p>
 
-                <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-6 py-3 rounded-[10.4px] font-medium text-[18px] flex items-center gap-2 transition-colors">
+                <button
+                    className="hover:opacity-90 text-white px-6 py-3 rounded-[10.4px] font-medium text-[18px] flex items-center gap-2 transition-colors"
+                    style={{ backgroundColor: buttonConfig.bg }}
+                >
                     Learn About Incubation Support
                     <span><IconArrowRightWhite size={19} /></span>
                 </button>

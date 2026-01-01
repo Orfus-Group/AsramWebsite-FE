@@ -40,7 +40,11 @@ const internationalCollabs = [
     { name: "National University of Singapore", focus: "Digital Health" },
 ];
 
-const ResearchCollaborations = () => {
+const ResearchCollaborations = ({
+    iconConfig = { bg: "#008C8C", iconFilter: "brightness(0) invert(1)" },
+    buttonConfig = { bg: "#008C8C" },
+    accentColor = "#008C8C",
+}) => {
     return (
         <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]">
             <h2 className={`${T.font.family} font-bold text-[40px] text-[#223F7F] mb-10`}>
@@ -51,8 +55,14 @@ const ResearchCollaborations = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px] mb-10">
                 {stats.map((stat, index) => (
                     <div style={{ border: "1px solid #07070733" }} key={index} className="bg-white rounded-[12px] p-[24px] md:p-[30px] flex flex-col items-center text-center shadow-sm">
-                        <div className="w-[56px] h-[56px] mb-4 bg-[#008C8C] rounded-[8px] text-[#FFF] flex items-center justify-center">
-                            {stat.icon}
+                        <div
+                            className={`${iconConfig.sizeClass || "w-[56px] h-[56px]"} mb-4 ${iconConfig.radiusClass || "rounded-[8px]"} text-[#FFF] flex items-center justify-center`}
+                            style={{ backgroundColor: iconConfig.bg }}
+                        >
+                            {React.cloneElement(stat.icon, {
+                                style: { filter: iconConfig.iconFilter },
+                                className: iconConfig.iconSizeClass || stat.icon.props.className
+                            })}
                         </div>
                         <AnimatedStatValue
                             value={stat.value}
@@ -80,7 +90,10 @@ const ResearchCollaborations = () => {
                                 <span className={`${T.font.family} font-medium text-[14px] text-[#191919]`}>
                                     {item.name}
                                 </span>
-                                <span className={`${T.font.family} text-[14px] leading-[20px] text-[#008C8C] font-regular`}>
+                                <span
+                                    className={`${T.font.family} text-[14px] leading-[20px] font-regular`}
+                                    style={{ color: accentColor }}
+                                >
                                     {item.projects}
                                 </span>
                             </div>
@@ -114,7 +127,7 @@ const ResearchCollaborations = () => {
 
                     <button className="flex items-center gap-2 text-[#223F7F] leading-[24px] font-regular text-[15px] hover:text-[#1E3A8A] transition-colors mt-auto pt-4">
                         View All International Partners
-                          <span><img src={IconArrowRight} className="w-[16px] h-[16px] sm:w-[20px] sm:h-[20px]" alt="" /></span>
+                        <span><img src={IconArrowRight} className="w-[16px] h-[16px] sm:w-[20px] sm:h-[20px]" alt="" /></span>
                     </button>
                 </div>
 
@@ -122,7 +135,10 @@ const ResearchCollaborations = () => {
 
             {/* Footer Button */}
             <div className="flex justify-center">
-                <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-8 py-3 rounded-[6px] font-medium text-[18px] flex items-center gap-2 transition-colors">
+                <button
+                    className="hover:opacity-90 text-white px-8 py-3 rounded-[6px] font-medium text-[18px] flex items-center gap-2 transition-colors"
+                    style={{ backgroundColor: buttonConfig.bg }}
+                >
                     Explore All Collaborations & MoUs
                     <span><img src={IconArrowRight} className="w-[21px] h-[21px] invert brightness-0" alt="" /></span>
                 </button>

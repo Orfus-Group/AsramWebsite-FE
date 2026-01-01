@@ -31,7 +31,10 @@ const programs = [
   }
 ];
 
-const ResearchStudentResearch = () => {
+const ResearchStudentResearch = ({
+  iconConfig = { bg: "#008C8C", iconFilter: "brightness(0) invert(1)" },
+  buttonConfig = { bg: "#008C8C" },
+}) => {
   return (
     <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]">
       <h2 className={`${T.font.family} font-bold text-[40px] text-[#223F7F] mb-10`}>
@@ -41,9 +44,15 @@ const ResearchStudentResearch = () => {
       {/* Row 1: Programs Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] mb-10">
         {programs.map((item, index) => (
-          <div style={{ border: "1px solid #07070733" }} key={index} className="bg-white rounded-[9.3px] p-[24px] md:p-[30px] flex flex-col items-start h-full shadow-sm hover:shadow-md transition-shadow">
-            <div className="w-[48px] h-[48px] bg-[#008C8C] rounded-[8px] flex items-center justify-center mb-5 shrink-0">
-              {item.icon}
+          <div style={{ border: "1px solid #07070733" }} key={index} className="bg-white rounded-[9.3px] p-[24px] md:p-[30px] flex flex-col items-start h-full shadow-sm transition-shadow">
+            <div
+              className={`${iconConfig.sizeClass || "w-[48px] h-[48px]"} ${iconConfig.radiusClass || "rounded-[8px]"} flex items-center justify-center mb-5 shrink-0`}
+              style={{ backgroundColor: iconConfig.bg }}
+            >
+              {React.cloneElement(item.icon, {
+                style: { filter: iconConfig.iconFilter },
+                className: iconConfig.iconSizeClass || item.icon.props.className
+              })}
             </div>
 
             <h3 className={`${T.font.family} font-medium text-[18px] text-[#223F7F] mb-3 leading-snug`}>
@@ -75,7 +84,8 @@ const ResearchStudentResearch = () => {
           </p>
 
           <button
-            className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-8 py-3 rounded-[6px] font-medium text-[18px] transition-colors shrink-0"
+            className="text-white px-8 py-3 rounded-[6px] font-medium text-[18px] transition-colors shrink-0 hover:opacity-90"
+            style={{ backgroundColor: buttonConfig.bg }}
           >
             Join Forum
           </button>
@@ -121,7 +131,10 @@ const ResearchStudentResearch = () => {
 
       {/* Footer Button */}
       <div className="flex justify-center">
-        <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-8 py-3 rounded-[6px] font-medium text-[18px] flex items-center gap-2 transition-colors">
+        <button
+          className="hover:opacity-90 text-white px-8 py-3 rounded-[6px] font-medium text-[18px] flex items-center gap-2 transition-colors"
+          style={{ backgroundColor: buttonConfig.bg }}
+        >
           Explore Student Research Opportunities
           <span><IconArrowRightWhite size={19} /></span>
         </button>

@@ -107,7 +107,7 @@ const PatientCareFacilities = () => {
             <InfoCardGrid
                 items={facilitiesTop.map(item => ({ ...item, description: item.desc }))}
                 gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] mb-[40px]"
-                cardClassName="bg-white rounded-[8px] p-[30px] border-[0.9px] border-[#E0E0E0] h-full flex flex-col items-start gap-[12px] hover:shadow-md transition-shadow"
+                cardClassName="bg-white rounded-[8px] p-[30px] border-[0.9px] border-[#E0E0E0] h-full flex flex-col items-start gap-[12px] transition-shadow"
                 iconContainerClassName="w-[48px] h-[48px] bg-[rgba(34,63,127,0.1)] rounded-[8px] flex items-center justify-center text-[#223F7F] shrink-0"
                 titleClassName="text-[#223F7F] font-medium text-[22px] leading-[1.2] font-montserrat"
                 descriptionClassName="text-[rgba(25,25,25,0.75)] text-[18px] leading-[1.44] font-montserrat flex-1"

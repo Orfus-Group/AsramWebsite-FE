@@ -307,13 +307,13 @@ const NewsArticleDetail = ({
               {relatedArticles.map((art) => (
                 <div
                   key={art.id}
-                  className="group bg-[#EEF2F7] border border-[rgba(0,0,0,0.08)] rounded-[16px] overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:bg-[#e8edff] flex flex-col h-full hover:-translate-y-1"
+                  className="group bg-[#EEF2F7] border border-[rgba(0,0,0,0.08)] rounded-[16px] overflow-hidden cursor-pointer transition-all duration-300 flex flex-col h-full"
                 >
                   <div className="relative h-[200px] sm:h-[180px] w-full shrink-0 overflow-hidden">
                     <img
                       src={art.image}
                       alt={art.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     <span className="absolute top-4 left-4 bg-[#223F7F] text-white text-[11px] font-semibold px-3 py-1.5 rounded-[8px] uppercase tracking-wider shadow-sm">

@@ -99,7 +99,7 @@ const PatientSupportServices = () => {
             <InfoCardGrid
                 items={servicesData.map(item => ({ ...item, description: item.desc }))}
                 gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]"
-                cardClassName="bg-[#EEF2F7] rounded-[11.3px] p-[30px] border border-[rgba(7,7,7,0.2)] h-full flex flex-col items-start gap-[12px] hover:shadow-md transition-shadow"
+                cardClassName="bg-[#EEF2F7] rounded-[11.3px] p-[30px] border border-[rgba(7,7,7,0.2)] h-full flex flex-col items-start gap-[12px] transition-shadow"
                 iconContainerClassName="w-[48px] h-[48px] bg-white rounded-[8px] flex items-center justify-center text-[#223F7F] shrink-0"
                 titleClassName="text-[#223F7F] font-medium text-[22px] leading-[1.2] font-montserrat"
                 descriptionClassName="text-[rgba(25,25,25,0.75)] text-[18px] leading-[1.44] font-montserrat flex-1"

@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from "react";
 import { useHero } from "@/context/HeroContext";
 import { T } from "@/theme";
 import TypedText from "@/components/common/TypedText";
-import MotionSection from "@/components/common/MotionSection";
+
 import CareAtAsram from "./sections/CareAtAsram";
 import SpecialtiesDepartments from "./sections/SpecialtiesDepartments";
 import ExperiencedDoctors from "./sections/ExpertMedicalTeams";
@@ -54,36 +54,16 @@ const HealthcarePage = () => {
 
   return (
     <div className="w-full bg-white">
-      <MotionSection>
-        <CareAtAsram />
-      </MotionSection>
-      <MotionSection delay={0.1}>
-        <SpecialtiesDepartments />
-      </MotionSection>
-      <MotionSection delay={0.1}>
-        <ExperiencedDoctors />
-      </MotionSection>
-      <MotionSection delay={0.2}>
-        <PatientCareFacilities />
-      </MotionSection>
-      <MotionSection delay={0.2}>
-        <DiagnosticServices />
-      </MotionSection>
-      <MotionSection delay={0.2}>
-        <SafetyAccreditation />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <PatientSupportServices />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <HealthCampsOutreach />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <EmergencyCriticalCare />
-      </MotionSection>
-      <MotionSection delay={0.3}>
-        <HospitalInfrastructureGallery />
-      </MotionSection>
+      <CareAtAsram />
+      <SpecialtiesDepartments />
+      <ExperiencedDoctors />
+      <PatientCareFacilities />
+      <DiagnosticServices />
+      <SafetyAccreditation />
+      <PatientSupportServices />
+      <HealthCampsOutreach />
+      <EmergencyCriticalCare />
+      <HospitalInfrastructureGallery />
     </div>
   );
 };

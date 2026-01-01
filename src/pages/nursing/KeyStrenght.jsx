@@ -1,7 +1,6 @@
 import React from "react";
 
 // ICONS
-
 import { T } from "@/theme";
 import InfoCard from "@/features/common/cards/InfoCard";
 import PageSection from "@/features/common/layout/PageContainer";
@@ -14,8 +13,17 @@ const IconClearPathways = "/AsramWebsite-FE/assets/icons/IconClearPathways.svg";
 const IconStudentCentered = "/AsramWebsite-FE/assets/icons/IconStudentCentered.svg";
 const IconOrientation = "/AsramWebsite-FE/assets/icons/IconOrientation.svg";
 
-export default function KeyStrengthsSection() {
-  const strengths = [
+export default function KeyStrengthsSection({
+  heading = "Key Strengths",
+  data,
+  iconConfig = {},
+  cardConfig = {},
+  whyChooseConfig = {},
+  bgColor = "bg-[#EEF2F7]",
+  paddingClass = "py-[80px]",
+  showWhyChoose = true
+}) {
+  const defaultStrengths = [
     {
       icon: (
         <img src={IconHospitalIntegration} className="w-[28px] h-[28px]" alt="" />
@@ -62,9 +70,10 @@ export default function KeyStrengthsSection() {
     },
   ];
 
+  const strengths = data || defaultStrengths;
 
   return (
-    <PageSection bg="bg-[#EEF2F7]" paddingClass="py-[80px]">
+    <PageSection bg={bgColor} paddingClass={paddingClass}>
       <div className="flex flex-col gap-[50px]">
         {/* TITLE */}
         <h2
@@ -76,7 +85,7 @@ export default function KeyStrengthsSection() {
           `}
           style={{ color: T.color.text.secondary }}
         >
-          Key Strengths
+          {heading}
         </h2>
 
         {/* GRID */}
@@ -86,7 +95,7 @@ export default function KeyStrengthsSection() {
             grid-cols-1 
             sm:grid-cols-2 
             lg:grid-cols-3
-            gap-[40px]
+            gap-[20px]
             w-full
           "
         >
@@ -97,12 +106,27 @@ export default function KeyStrengthsSection() {
               icon={item.icon}
               title={item.title}
               description={item.description}
+              iconBg={iconConfig.bg}
+              iconContainerClassName={iconConfig.className}
+              cardBg={cardConfig.bg}
+              cardBorder={cardConfig.border}
+              borderColor={cardConfig.borderColor}
             />
           ))}
         </div>
 
       </div>
-      <WhyChooseSection />
-    </PageSection>
+
+
+      {
+        showWhyChoose && (
+          <WhyChooseSection
+            title={whyChooseConfig?.title}
+            columns={whyChooseConfig?.columns}
+            CheckIcon={whyChooseConfig?.CheckIcon}
+          />
+        )
+      }
+    </PageSection >
   );
 }

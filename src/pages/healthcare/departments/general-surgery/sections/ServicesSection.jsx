@@ -91,7 +91,7 @@ const ServicesSection = () => {
             <InfoCardGrid
                 items={services}
                 gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]"
-                cardClassName="bg-white rounded-[13.1px] p-[30px] border-[1.1px] border-[#E0E0E0] h-full flex flex-col items-start gap-[12px] hover:shadow-md transition-shadow"
+                cardClassName="bg-white rounded-[13.1px] p-[30px] border-[1.1px] border-[#E0E0E0] h-full flex flex-col items-start gap-[12px] transition-shadow"
                 iconContainerClassName="w-[52.6px] h-[52.6px] bg-[rgba(34,63,127,0.1)] rounded-[8.8px] flex items-center justify-center text-[#223F7F] flex-shrink-0"
                 titleClassName="text-[#223F7F] font-medium text-[22px] font-montserrat"
                 descriptionClassName="text-[#191919BF] text-[18px] leading-[1.44] font-montserrat"

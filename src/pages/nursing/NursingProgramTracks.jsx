@@ -73,7 +73,6 @@ const NursingProgramTracks = () => {
                 border border-[#E5E7EB]
                 px-5 pt-5 pb-6
                 shadow-[0_14px_38px_rgba(15,23,42,0.06)]
-                hover:shadow-[0_18px_48px_rgba(15,23,42,0.12)]
                 hover:border-[#C4D2FF]
                 transition
                 flex flex-col

@@ -7,26 +7,9 @@ import OurCoreValues from "./sections/OurCoreValues";
 import AccreditationStandards from "./sections/AccreditationStandards";
 import LeadershipGovernance from "./sections/LeadershipGovernance";
 import GlobalPartnerships from "./sections/GlobalPartnerships";
-import { motion } from "framer-motion";
+
 const HeroBg = "/AsramWebsite-FE/assets/about/aboutherobg.png";
 
-
-// Animation variants for sections
-const sectionVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-};
-
-const MotionSection = ({ children }) => (
-    <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={sectionVariants}
-    >
-        {children}
-    </motion.div>
-);
 
 const AboutAsramPage = () => {
     const { setHero, hideHero } = useHero();
@@ -35,7 +18,7 @@ const AboutAsramPage = () => {
         setHero({
             title: (
                 <span className={`${T.font.family} font-normal text-[32px] md:text-[60px] leading-[40px] md:leading-[54px]`}>
-                    <TypedText text="About " className="font-normal" />
+                    <TypedText text="About" className="font-normal" />{" "}
                     <TypedText text="ASRAM" className="font-bold" delay={0.3} />
                 </span>
             ),
@@ -67,25 +50,11 @@ const AboutAsramPage = () => {
 
     return (
         <div className="w-full bg-white">
-            <MotionSection>
-                <WhoWeAre />
-            </MotionSection>
-
-            <MotionSection delay={0.2}>
-                <OurCoreValues />
-            </MotionSection>
-
-            <MotionSection delay={0.2}>
-                <AccreditationStandards />
-            </MotionSection>
-
-            <MotionSection delay={0.2}>
-                <LeadershipGovernance />
-            </MotionSection>
-
-            <MotionSection delay={0.2}>
-                <GlobalPartnerships />
-            </MotionSection>
+            <WhoWeAre />
+            <OurCoreValues />
+            <AccreditationStandards />
+            <LeadershipGovernance />
+            <GlobalPartnerships />
         </div>
     );
 };

@@ -14,7 +14,7 @@ import ConferencesSection from "./sections/ConferencesSection";
 import FacultySection from "./sections/FacultySection";
 import ResearchSection from "./sections/ResearchSection";
 
-import MotionSection from "@/components/common/MotionSection";
+
 
 const GeneralSurgeryPage = () => {
     const { setHero, hideHero } = useHero();
@@ -26,7 +26,7 @@ const GeneralSurgeryPage = () => {
                     <TypedText
                         text="Department of"
                         className={`${T.font.family} font-regular text-[24px] sm:text-[32px] md:text-[60px] leading-[1.1] md:leading-[54px] mb-[0px] md:mb-[18px] text-white`}
-                    />
+                    />{" "}
                     <TypedText
                         text="General Surgery"
                         className={`${T.font.family} font-bold text-[28px] sm:text-[32px] md:text-[60px] leading-[1.1] md:leading-[54px] text-white`}
@@ -49,33 +49,13 @@ const GeneralSurgeryPage = () => {
 
     return (
         <div className="flex flex-col ">
-            <MotionSection>
-                <DepartmentOverview />
-            </MotionSection>
-
-            <MotionSection delay={0.1}>
-                <AcademicsSection />
-            </MotionSection>
-
-            <MotionSection delay={0.1}>
-                <FacilitiesSection />
-            </MotionSection>
-
-            <MotionSection delay={0.1}>
-                <ServicesSection />
-            </MotionSection>
-
-            <MotionSection delay={0.2}>
-                <ConferencesSection />
-            </MotionSection>
-
-            <MotionSection delay={0.2}>
-                <FacultySection />
-            </MotionSection>
-
-            <MotionSection delay={0.2}>
-                <ResearchSection />
-            </MotionSection>
+            <DepartmentOverview />
+            <AcademicsSection />
+            <FacilitiesSection />
+            <ServicesSection />
+            <ConferencesSection />
+            <FacultySection />
+            <ResearchSection />
         </div>
     );
 };

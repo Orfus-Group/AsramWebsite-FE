@@ -40,7 +40,11 @@ const internalSchemes = [
     { title: "Conference Travel Grant", grant: "Up to ₹1 lakh" },
 ];
 
-const ResearchGrantsAndFunds = () => {
+const ResearchGrantsAndFunds = ({
+    iconConfig = { bg: "#EEF2F7", iconFilter: "inherit", isBoxed: false }, // Default no box
+    buttonConfig = { bg: "#008C8C" },
+    accentColor = "#008C8C",
+}) => {
     return (
         <PageSection bg={T.bg.white} paddingClass="py-[80px]">
             <h2 className={`${T.font.family} font-bold text-[42px] text-[#223F7F] mb-10`}>
@@ -51,9 +55,19 @@ const ResearchGrantsAndFunds = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px] mb-12">
                 {stats.map((stat, index) => (
                     <div style={{ border: "1px solid #07070733" }} key={index} className="bg-[#EEF2F7] rounded-[10.42px] p-[24px] md:p-[40px] flex flex-col items-center text-center">
-                        <div className="w-[40px] h-[40px] mb-4 text-[#333] flex items-center justify-center">
+                        <div
+                            className={`${iconConfig.sizeClass || "w-[40px] h-[40px]"} mb-4 flex items-center justify-center ${iconConfig.radiusClass || "rounded-[8px]"}`} // Added rounded for box
+                            style={{
+                                backgroundColor: iconConfig.isBoxed ? iconConfig.bg : "transparent",
+                                // If boxed, we might need padding or different size?
+                                ...(iconConfig.sizeClass ? {} : { width: iconConfig.isBoxed ? "48px" : "40px", height: iconConfig.isBoxed ? "48px" : "40px" })
+                            }}
+                        >
                             {/* Rendering icon directly with specific styling if needed */}
-                            {stat.icon}
+                            {React.cloneElement(stat.icon, {
+                                className: iconConfig.iconSizeClass || (iconConfig.isBoxed ? "w-[24px] h-[24px]" : "w-[50px] h-[50px]"), // Resize if boxed or using config
+                                style: { filter: iconConfig.iconFilter }
+                            })}
                         </div>
                         <AnimatedStatValue
                             value={stat.value}
@@ -86,7 +100,10 @@ const ResearchGrantsAndFunds = () => {
                                         {item.projects}
                                     </p>
                                 </div>
-                                <span className={`${T.font.family} font-medium text-[20px] text-[#008C8C]`}>
+                                <span
+                                    className={`${T.font.family} font-medium text-[20px]`}
+                                    style={{ color: accentColor }}
+                                >
                                     {item.amount}
                                 </span>
                             </div>
@@ -111,7 +128,10 @@ const ResearchGrantsAndFunds = () => {
                                 <h4 className={`${T.font.family} font-medium text-[16px] text-[#333] mb-1`}>
                                     {item.title}
                                 </h4>
-                                <span className={`${T.font.family} text-[14px] text-[#008C8C] font-medium`}>
+                                <span
+                                    className={`${T.font.family} text-[14px] font-medium`}
+                                    style={{ color: accentColor }}
+                                >
                                     {item.grant}
                                 </span>
                             </div>
@@ -128,7 +148,10 @@ const ResearchGrantsAndFunds = () => {
 
             {/* Footer Button */}
             <div className="flex justify-center">
-                <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-8 py-3 rounded-[6px] font-medium text-[18px] flex items-center gap-2 transition-colors">
+                <button
+                    className="hover:opacity-90 text-white px-8 py-3 rounded-[6px] font-medium text-[18px] flex items-center gap-2 transition-colors"
+                    style={{ backgroundColor: buttonConfig.bg }}
+                >
                     View Funding Guidelines & Application Process
                     <span><img src={IconArrowRight} className="w-[21px] h-[21px] invert brightness-0" alt="" /></span>
                 </button>

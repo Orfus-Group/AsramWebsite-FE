@@ -4,7 +4,7 @@ import { T } from "@/theme";
 import InfoCard from "../components/InfoCard";
 import { ScheduleIcon, FacultyIcon, BookIcon, AwardIcon } from "../components/CampusIcons";
 
-const items = [
+const defaultItems = [
     {
         icon: <ScheduleIcon />,
         title: "Structured Schedules",
@@ -27,11 +27,19 @@ const items = [
     },
 ];
 
-const AcademicEnvironment = () => {
+const FeatureGridSection = ({
+    heading = "Academic Environment",
+    items = defaultItems,
+    bgColor = "bg-[#EEF2F7]",
+    paddingClass = "py-[60px] md:py-[80px]",
+    buttonText,
+    onButtonClick,
+    cardVariant = "vertical-white"
+}) => {
     return (
-        <PageSection bg="bg-[#EEF2F7]" paddingClass="py-[60px] md:py-[80px]">
+        <PageSection bg={bgColor} paddingClass={paddingClass}>
             <h1 className={`${T.font.family} font-bold text-[28px] md:text-[32px] lg:text-[42px] text-[#223F7F] mb-10`}>
-                Academic Environment
+                {heading}
             </h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-[30px]">
@@ -41,12 +49,23 @@ const AcademicEnvironment = () => {
                         icon={item.icon}
                         title={item.title}
                         description={item.description}
-                        variant="vertical-white"
+                        variant={cardVariant}
                     />
                 ))}
             </div>
+
+            {buttonText && (
+                <div className="flex justify-center mt-12">
+                    <button
+                        onClick={onButtonClick}
+                        className="bg-[#223F7F] text-white px-8 py-3 rounded-[8px] font-medium text-[18px] hover:bg-[#1a3163] transition-colors"
+                    >
+                        {buttonText}
+                    </button>
+                </div>
+            )}
         </PageSection>
     );
 };
 
-export default AcademicEnvironment;
+export default FeatureGridSection;
