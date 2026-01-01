@@ -225,7 +225,7 @@ const AsramMainHeader = () => {
                   decoding="async"
                   src={AsramBlueLogo}
                   alt="Asram Blue Logo"
-                  className="h-[46px] object-contain flex-shrink-0 transition-all duration-300"
+                  className="h-[46px] object-contain flex-shrink-0 transition-all duration-300 rounded-[8px]"
                 />
               ) : (
                 <>
