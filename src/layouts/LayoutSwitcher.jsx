@@ -11,6 +11,9 @@ import PageWrapper from "@/components/common/PageWrapper";
 import ScrollToTop from "@/components/common/ScrollToTop";
 
 const layoutByPath = (pathname) => {
+  if (pathname.startsWith("/medical")) return "medical";
+  if (pathname.startsWith("/medical-research")) return "medical";
+  if (pathname.startsWith("/medical-academics")) return "medical";
   if (pathname.startsWith("/nursing")) return "nursing";
   if (pathname.startsWith("/academics")) return "academics";
   if (pathname.startsWith("/research")) return "research";
@@ -19,11 +22,13 @@ const layoutByPath = (pathname) => {
   if (pathname.startsWith("/community-health")) return "communityhealth";
   if (pathname.startsWith("/campus-life")) return "campuslife";
   if (pathname.startsWith("/about-asram")) return "aboutasram";
+  if (pathname.startsWith("/asram-home")) return "asram-latest";
   return "main";
 };
 
 const headerMap = {
   main: AsramMainHeader,
+  medical: AcademicsHeader,
   nursing: AcademicsHeader,
   academics: AcademicsHeader,
   research: AcademicsHeader,
@@ -32,10 +37,12 @@ const headerMap = {
   faculty: AcademicsHeader,
   campuslife: AsramMainHeader,
   aboutasram: AsramMainHeader,
+  "asram-latest": AsramMainHeader,
 };
 
 const footerMap = {
   main: AsramFooter,
+  medical: NursingFooter,
   nursing: NursingFooter,
   academics: NursingFooter,
   communityhealth: NursingFooter,
@@ -44,6 +51,7 @@ const footerMap = {
   faculty: AsramFooter,
   campuslife: AsramFooter,
   aboutasram: AsramFooter,
+  "asram-latest": AsramFooter,
 };
 
 const InnerLayout = () => {
@@ -61,6 +69,9 @@ const InnerLayout = () => {
     "/healthcare",
     "/healthcare/departments/general-surgery",
     "/academics",
+    "/medical",
+    "/medical-research",
+    "/medical-academics",
     "/nursing",
     "/research",
   ];
@@ -88,7 +99,13 @@ const InnerLayout = () => {
           </PageWrapper>
         </AnimatePresence>
       </main>
-      <Footer />
+      <Footer
+        {...(layoutKey === "medical"
+          ? {
+            bgClass: "bg-[#223F7F33]",
+          }
+          : {})}
+      />
       <ScrollToTop />
     </>
   );

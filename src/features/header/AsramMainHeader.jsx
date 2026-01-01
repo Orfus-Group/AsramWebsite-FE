@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 const Logo = "/AsramWebsite-FE/assets/asram/mainasramlogo.svg";
 const AsramLogo = "/AsramWebsite-FE/assets/asram/asramcolredlogo.png";
 const AsramLogoFull = "/AsramWebsite-FE/assets/asram/ASymbol.png";
+const AsramBlueLogo = "/AsramWebsite-FE/assets/asram/asrambluelogo.png";
 const StudentIcon = "/AsramWebsite-FE/assets/asram/studentcentericon.svg";
 const LibraryIcon = "/AsramWebsite-FE/assets/asram/libraryicon.svg";
 const PayIcon = "/AsramWebsite-FE/assets/asram/payonlineicon.svg";
@@ -217,17 +218,30 @@ const AsramMainHeader = () => {
           {/* LOGO */}
           <Link to="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:translate-x-0 lg:translate-y-0 lg:mx-0 z-[101]">
             <div className="flex items-center gap-[4px] justify-center md:w-[189.4px]">
-              <img
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                src={AsramLogoFull}
-                alt="Asram Icon"
-                className="w-[38px] h-[38px] sm:w-[46.4px] sm:h-[46px] object-contain flex-shrink-0 transition-all duration-300"
-              />
-              <span className={`${T.font.family} ${T.font.weight.semibold} text-[32px] sm:text-[42px] text-[#223F7F] leading-none transition-all duration-300`}>
-                Asram
-              </span>
+              {location.pathname.startsWith("/asram-home") ? (
+                <img
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  src={AsramBlueLogo}
+                  alt="Asram Blue Logo"
+                  className="h-[46px] object-contain flex-shrink-0 transition-all duration-300"
+                />
+              ) : (
+                <>
+                  <img
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    src={AsramLogoFull}
+                    alt="Asram Icon"
+                    className="w-[38px] h-[38px] sm:w-[46.4px] sm:h-[46px] object-contain flex-shrink-0 transition-all duration-300"
+                  />
+                  <span className={`${T.font.family} ${T.font.weight.semibold} text-[32px] sm:text-[42px] text-[#223F7F] leading-none transition-all duration-300`}>
+                    Asram
+                  </span>
+                </>
+              )}
             </div>
           </Link>
 
@@ -395,7 +409,7 @@ const AsramMainHeader = () => {
                                   {col.links.map((link) => (
                                     <Link
                                       key={link}
-                                      to={link === "College of Nursing" ? "/nursing" : "#"}
+                                      to={link === "College of Nursing" ? "/nursing" : link === "College of Medical College" ? "/medical" : "#"}
                                       className="text-white text-[15px] font-medium hover:underline"
                                       onClick={() => {
                                         setMobileMenuOpen(false);
@@ -512,7 +526,7 @@ const AsramMainHeader = () => {
                       {col.links.map((link) => (
                         <Link
                           key={link}
-                          to={link === "College of Nursing" ? "/nursing" : "#"}
+                          to={link === "College of Nursing" ? "/nursing" : link === "College of Medical College" ? "/medical" : "#"}
                           className={`${T.font.family} ${T.font.weight.semibold} text-[18px] leading-[22px] block group w-fit`}
                           style={{
                             color: T.color.secondary,

@@ -1,6 +1,9 @@
 import React, { lazy } from "react";
 
 const HomePage = lazy(() => import("@/pages/asram/AsramHome"));
+const MedicalPage = lazy(() => import("@/pages/medical/MedicalPage"));
+const MedicalAcademicsPage = lazy(() => import("@/pages/medical/MedicalAcademicsPage"));
+const MedicalResearchPage = lazy(() => import("@/pages/medical/MedicalResearchPage"));
 const NursingPage = lazy(() => import("@/pages/nursing/NursingPage"));
 const AcademicsPage = lazy(() => import("@/pages/academics/AcademicsPage"));
 const ResearchPage = lazy(() => import("@/pages/research/ResearchPage"));
@@ -13,6 +16,7 @@ const AboutAsramPage = lazy(() => import("@/pages/about-asram/AboutAsramPage"));
 const HealthcarePage = lazy(() => import("@/pages/healthcare/HealthcarePage"));
 const NewsArticlePage = lazy(() => import("@/pages/news/NewsArticlePage"));
 const GeneralSurgeryPage = lazy(() => import("@/pages/healthcare/departments/general-surgery/GeneralSurgeryPage"));
+const AsramLatest = lazy(() => import("@/pages/asram/AsramLatest"));
 
 const routesConfig = [
   {
@@ -20,6 +24,12 @@ const routesConfig = [
     label: "Home",
     element: <HomePage />,
     layout: "main",
+  },
+  {
+    path: "/asram-home",
+    label: "Asram Latest",
+    element: <AsramLatest />,
+    layout: "asram-latest",
   },
   {
     path: "/about-asram",
@@ -34,10 +44,28 @@ const routesConfig = [
     layout: "academics",
   },
   {
+    path: "/medical",
+    label: "Medical College",
+    element: <MedicalPage />,
+    layout: "medical",
+  },
+  {
     path: "/nursing",
     label: "Nursing",
     element: <NursingPage />,
     layout: "nursing",
+  },
+  {
+    path: "/medical-academics",
+    label: "Medical Academics",
+    element: <MedicalAcademicsPage />,
+    layout: "medical",
+  },
+  {
+    path: "/medical-research",
+    label: "Medical Research",
+    element: <MedicalResearchPage />,
+    layout: "medical",
   },
   {
     path: "/research",
