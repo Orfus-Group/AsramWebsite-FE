@@ -1,12 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
 const DrRajeshImg = "/AsramWebsite-FE/assets/departments/departfac.png"
 import AnimatedStatValue from "@/features/common/ui/AnimatedStatValue";
 
 const FacultySection = () => {
+    const navigate = useNavigate();
+
     const faculty = [
         {
+            id: 4,
             name: "Dr. Rajesh Kumar",
             role: "Head of Department & Professor",
             qualification: "MBBS, MS (General Surgery), FICS",
@@ -15,6 +19,7 @@ const FacultySection = () => {
             image: DrRajeshImg
         },
         {
+            id: 2,
             name: "Dr. Priya Sharma",
             role: "Professor",
             qualification: "MBBS, MS (General Surgery), DNB",
@@ -73,7 +78,10 @@ const FacultySection = () => {
                                 </div>
                             </div>
 
-                            <button className="bg-[#223F7F] text-white text-[14px] font-medium px-[24px] py-[8px] rounded-[8px] hover:bg-[#1a3163] transition-colors font-montserrat mt-auto">
+                            <button
+                                onClick={() => navigate(`/faculty/${member.id}`)}
+                                className="bg-[#223F7F] text-white text-[14px] font-medium px-[24px] py-[8px] rounded-[8px] hover:bg-[#1a3163] transition-colors font-montserrat mt-auto"
+                            >
                                 View Profile
                             </button>
                         </div>
