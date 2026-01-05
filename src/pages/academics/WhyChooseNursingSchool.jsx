@@ -11,7 +11,7 @@ export const IconAccredited = "/AsramWebsite-FE/assets/icons/IconAccredited.svg"
 export const IconHolisticDev = "/AsramWebsite-FE/assets/icons/IconHolisticDev.svg";
 export const IconCareerReady = "/AsramWebsite-FE/assets/icons/IconCareerReady.svg";
 
-const features = [
+const defaultFeatures = [
   {
     icon: IconHospitalTraining,
     title: "Hospital Training",
@@ -50,9 +50,15 @@ const features = [
   },
 ];
 
-export default function WhyChooseNursingSchool() {
+export default function WhyChooseNursingSchool({ theme, features, title, paddingClass }) {
+  const primaryColor = theme?.primary || T.color.primary;
+  const secondaryColor = theme?.secondary || T.color.secondary;
+  const tagTextColor = theme?.tagTextColor || primaryColor;
+
+  const displayFeatures = features || defaultFeatures;
+
   return (
-    <PageSection bg={T.bg.white} paddingClass="py-[80px]">
+    <PageSection bg={T.bg.white} paddingClass={paddingClass || "pt-[80px] pb-[40px]"}>
 
       {/* SECTION TITLE */}
       <h2
@@ -61,11 +67,11 @@ export default function WhyChooseNursingSchool() {
           ${T.font.weight.bold}
           text-[42px]
           leading-[46px]
-          text-[${T.color.secondary}]
           mb-[40px]
         `}
+        style={{ color: secondaryColor }}
       >
-        Why Choose Our Nursing School
+        {title || "Why Choose Our Nursing School"}
       </h2>
 
       {/* GRID */}
@@ -75,39 +81,44 @@ export default function WhyChooseNursingSchool() {
           grid-cols-1
           sm:grid-cols-2
           lg:grid-cols-3
-          gap-[30px]
+          gap-5
           w-full
+          max-w-[1200.8px]
+          mx-auto
         "
       >
-        {features.map((item, i) => (
+        {displayFeatures.map((item, i) => (
           <div
             key={i}
             className="
               w-full
-              h-[430.16px]
+              h-full
               bg-[#EEF2F7]
               rounded-[8px]
-              p-[30px]
+              p-[20px]
               flex
               flex-col
-              justify-between
+              justify-start
+              items-start
+              gap-[20px]
               border
-              border-[#1A18181A]
+              border-transparent
             "
           >
             {/* ICON */}
             <div
               className="
-                w-[63.16px] h-[63.16px]
+                w-[48px] h-[48px]
                 flex items-center justify-center
-                rounded-[9.87px]
+                rounded-[7.5px]
+                bg-white
               "
-              style={{ backgroundColor: T.color.primary }}
             >
               <img
                 src={item.icon}
-                className="w-[28px] h-[28px]"
+                className="w-[21px] h-[21px]"
                 alt=""
+                style={theme?.iconFilter ? { filter: theme.iconFilter } : {}}
               />
 
             </div>
@@ -115,13 +126,12 @@ export default function WhyChooseNursingSchool() {
             {/* TITLE */}
             <h3
               className={`
-                mt-[20px]
                 ${T.font.family}
                 ${T.font.weight.semibold}
                 text-[24px]
-                leading-[24px]
-                text-[${T.color.secondary}]
+                leading-[28px]
               `}
+              style={{ color: secondaryColor }}
             >
               {item.title}
             </h3>
@@ -129,7 +139,6 @@ export default function WhyChooseNursingSchool() {
             {/* DESCRIPTION */}
             <p
               className={`
-                mt-[14px]
                 ${T.font.family}
                 font.regular
                 text-[18px]
@@ -141,7 +150,7 @@ export default function WhyChooseNursingSchool() {
             </p>
 
             {/* TAG */}
-            <div className="mt-[20px]">
+            <div className="mt-auto w-full">
               <span
                 className={`
                   inline-flex items-center justify-center
@@ -156,7 +165,7 @@ export default function WhyChooseNursingSchool() {
                 style={{
                   border: "1px solid #07070733",
                   backgroundColor: T.color.background.white,
-                  color: T.color.primary,
+                  color: tagTextColor,
                 }}
               >
                 {item.tag}

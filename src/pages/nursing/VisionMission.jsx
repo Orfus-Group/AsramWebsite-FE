@@ -68,8 +68,7 @@ export default function VisionMissionSection({
           sm:grid-cols-2
           lg:grid-cols-3
 
-          gap-y-[32px]
-          lg:gap-x-[46px]
+          gap-[30px]
 
           w-full
         "
@@ -79,10 +78,11 @@ export default function VisionMissionSection({
             key={index}
             {...item}
             variant="vmv"
-            className="w-full max-w-none"
+            className="w-full max-w-none h-full"
             iconBg={iconBg}
             cardBg={cardBg}
             iconContainerClassName={iconContainerClassName}
+            cardBorder="none"
           />
         ))}
       </div>

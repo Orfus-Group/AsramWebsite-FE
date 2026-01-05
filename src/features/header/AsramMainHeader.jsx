@@ -30,7 +30,7 @@ to earn strong learning.`,
     {
       heading: "Colleges",
       links: [
-        "College of Health Sciences",
+        "College of Paramedical Science",
         "College of Nursing",
         "College of Medical College",
       ],
@@ -204,13 +204,13 @@ const AsramMainHeader = () => {
             />
             <NavItem
               label="Academics"
-              isActive={location.pathname.startsWith("/academics")}
+              isActive={location.pathname.startsWith("/nursing-academics")}
               onClick={() => setOpenMenu((prev) => (prev === "Academics" ? null : "Academics"))}
               hasMegaMenu
             />
             <NavItem
               label="Research"
-              isActive={location.pathname.startsWith("/research")}
+              isActive={location.pathname.startsWith("/nursing-research")}
               onClick={() => setOpenMenu((prev) => (prev === "Research" ? null : "Research"))}
               hasMegaMenu
             />
@@ -219,30 +219,14 @@ const AsramMainHeader = () => {
           {/* LOGO */}
           <Link to="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:static lg:translate-x-0 lg:translate-y-0 lg:mx-0 z-[101]">
             <div className="flex items-center gap-[4px] justify-center md:w-[189.4px]">
-              {location.pathname.startsWith("/asram-home") ? (
-                <img
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                  src={AsramLatestLogo}
-                  alt="Asram Latest Logo"
-                  className="h-[46px] object-contain flex-shrink-0 transition-all duration-300 rounded-[8px]"
-                />
-              ) : (
-                <>
-                  <img
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="async"
-                    src={AsramLogoFull}
-                    alt="Asram Icon"
-                    className="w-[38px] h-[38px] sm:w-[46.4px] sm:h-[46px] object-contain flex-shrink-0 transition-all duration-300"
-                  />
-                  <span className={`${T.font.family} ${T.font.weight.semibold} text-[32px] sm:text-[42px] text-[#223F7F] leading-none transition-all duration-300`}>
-                    Asram
-                  </span>
-                </>
-              )}
+              <img
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                src={AsramLatestLogo}
+                alt="Asram Latest Logo"
+                className="h-[46px] object-contain flex-shrink-0 transition-all duration-300 rounded-[8px]"
+              />
             </div>
           </Link>
 
@@ -307,18 +291,16 @@ const AsramMainHeader = () => {
                   setOpenMenu(null);
                 }}
               >
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src={AsramLogoFull}
-                  alt="ASRAM Logo"
-                  className="w-[46.4px] h-[46px] object-contain"
-                />
-                <span
-                  className={`${T.font.family} ${T.font.weight.semibold} text-[36px] text-white leading-none ml-[-2px]`}
-                >
-                  Asram
-                </span>
+                <div className="flex items-center gap-[4px] justify-center md:w-[189.4px]">
+                  <img
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    src={AsramBlueLogo}
+                    alt="Asram Latest Logo"
+                    className="h-[46px] object-contain flex-shrink-0 transition-all duration-300 rounded-[8px]"
+                  />
+                </div>
               </Link>
               {/* MAIN MENU */}
               <div className="flex flex-col gap-4">
@@ -410,7 +392,7 @@ const AsramMainHeader = () => {
                                   {col.links.map((link) => (
                                     <Link
                                       key={link}
-                                      to={link === "College of Nursing" ? "/nursing" : link === "College of Medical College" ? "/medical" : "#"}
+                                      to={link === "College of Nursing" ? "/nursing" : link === "College of Medical College" ? "/medical" : link === "College of Paramedical Science" ? "/paramedical" : "#"}
                                       className="text-white text-[15px] font-medium hover:underline"
                                       onClick={() => {
                                         setMobileMenuOpen(false);
@@ -527,7 +509,7 @@ const AsramMainHeader = () => {
                       {col.links.map((link) => (
                         <Link
                           key={link}
-                          to={link === "College of Nursing" ? "/nursing" : link === "College of Medical College" ? "/medical" : "#"}
+                          to={link === "College of Nursing" ? "/nursing" : link === "College of Medical College" ? "/medical" : link === "College of Paramedical Science" ? "/paramedical" : "#"}
                           className={`${T.font.family} ${T.font.weight.semibold} text-[18px] leading-[22px] block group w-fit`}
                           style={{
                             color: T.color.secondary,

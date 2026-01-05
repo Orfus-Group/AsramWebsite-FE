@@ -34,7 +34,10 @@ const FeatureGridSection = ({
     paddingClass = "py-[60px] md:py-[80px]",
     buttonText,
     onButtonClick,
-    cardVariant = "vertical-white"
+    cardVariant = "vertical-white",
+    gridCols = "grid-cols-1 md:grid-cols-2 lg:grid-cols-2",
+    gap = "gap-[30px]",
+    cardProps = {},
 }) => {
     return (
         <PageSection bg={bgColor} paddingClass={paddingClass}>
@@ -42,7 +45,7 @@ const FeatureGridSection = ({
                 {heading}
             </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-[30px]">
+            <div className={`grid ${gridCols} ${gap}`}>
                 {items.map((item, index) => (
                     <InfoCard
                         key={index}
@@ -50,6 +53,7 @@ const FeatureGridSection = ({
                         title={item.title}
                         description={item.description}
                         variant={cardVariant}
+                        {...cardProps}
                     />
                 ))}
             </div>

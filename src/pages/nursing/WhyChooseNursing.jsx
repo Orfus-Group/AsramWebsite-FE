@@ -93,8 +93,8 @@ export default function WhyChooseSection({
 
                 <ul className="flex flex-col gap-[10px]">
                   {col.items.map((item, idx) => (
-                    <li key={idx} className="flex items-center gap-[10px]">
-                      {icon}
+                    <li key={idx} className="flex items-start gap-[10px]">
+                      <div className="mt-[2.5px] shrink-0">{icon}</div>
                       <p
                         className={`
                           ${T.font.family}

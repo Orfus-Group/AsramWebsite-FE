@@ -20,7 +20,11 @@ const stats = [
   { value: "100+", label: "Scholarship Programs" },
 ];
 
-export default function FinancialAidScholarships() {
+export default function FinancialAidScholarships({ theme }) {
+  const primaryColor = theme?.primary || T.color.primary;
+  const secondaryColor = theme?.secondary || T.color.secondary;
+  const bulletColor = theme?.bulletColor || primaryColor;
+
   const steps = [
     {
       title: "Check Eligibility",
@@ -46,7 +50,7 @@ export default function FinancialAidScholarships() {
 
   return (
     <PageSection bg={T.bg.sectionCard} sectionClassName="py-[60px] md:py-[80px]">
-      <div className="flex flex-col gap-[40px]">
+      <div className="flex flex-col gap-[20px]">
         {/* SECTION TITLE */}
         <h2
           className={`
@@ -54,51 +58,77 @@ export default function FinancialAidScholarships() {
             ${T.font.weight.bold}
             text-[42px]
             leading-[42px]
-            text-[${T.color.secondary}]
-            mb-[40px]
+            mb-5
           `}
+          style={{ color: secondaryColor }}
         >
           Financial Aid & Scholarships
         </h2>
 
         {/* ⭐ STATS GRID — RESPONSIVE */}
         <div
-          className="
+          className={`
             grid
             grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
-            gap-[23.68px]
+            gap-5
             w-full
-          "
-
+          `}
         >
           {stats.map((item, i) => (
             <div
               key={i}
-              className="
+              className={`
                 bg-white
-                h-[100.66px]
-                rounded-[9.87px]
-                flex flex-col items-center justify-center gap-[6px]
-              "
-              style={{ border: "1px solid #07070733" }}
+                ${theme?.useNewStatsGrid ? "h-[157px] rounded-[9.9px] p-[40px] gap-[12px]" : "h-[100.66px] rounded-[9.87px] gap-[6px]"}
+                flex flex-col items-center justify-center
+              `}
+              style={{
+                border: theme?.useNewStatsGrid ? "1px solid rgba(7, 7, 7, 0.2)" : "1px solid #07070733"
+              }}
             >
-              <p
-                className={`
-                  ${T.font.family}
-                  text-[15.79px]
-                  leading-[23.68px]
-                  ${T.font.weight.semibold}
-                `}
-                style={{ color: T.color.primary }}
-              >
-                {item.value}
-              </p>
+              {theme?.useNewStatsGrid ? (
+                <>
+                  <h3
+                    className={`
+                      ${T.font.family}
+                      mb-[10px]
+                      text-[32px]
+                      leading-[23.68px]
+                      ${T.font.weight.semibold}
+                      text-center
+                    `}
+                    style={{ color: "#223F7F" }}
+                  >
+                    {item.value}
+                  </h3>
 
-              <p
-                className={`${T.font.family} text-[#191919BF] font-regular text-[13.82px] leading-[19.74px]`}
-              >
-                {item.label}
-              </p>
+                  <p
+                    className={`${T.font.family} text-[#191919BF] font-regular text-[18px] leading-[19.74px] text-center`}
+                  >
+                    {item.label}
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p
+                    className={`
+                      ${T.font.family}
+                      text-[15.79px]
+                      leading-[23.68px]
+                      ${T.font.weight.semibold}
+                    `}
+                    style={{ color: primaryColor }}
+                  >
+                    {item.value}
+                  </p>
+
+                  <p
+                    className={`${T.font.family} text-[#191919BF] font-regular text-[13.82px] leading-[19.74px]`}
+                  >
+                    {item.label}
+                  </p>
+                </>
+              )}
             </div>
           ))}
         </div>
@@ -108,36 +138,48 @@ export default function FinancialAidScholarships() {
           className="
             grid
             grid-cols-1 md:grid-cols-2
-            gap-[31.58px]
+            gap-5
             w-full
           "
         >
           <Card
-            icon={<img src={IconMeritBased} className="w-[23.68px] h-[23.68px]" alt="" />}
+            icon={<img src={IconMeritBased} className="w-[23.68px] h-[23.68px]" alt="" style={theme?.iconFilter ? { filter: theme.iconFilter } : {}} />}
             title="Merit-Based Scholarships"
             desc="Scholarships awarded to students based on academic excellence in qualifying examinations."
             eligibility="Top performers in 10+2 or entrance exams"
+            primaryColor={primaryColor}
+            secondaryColor={secondaryColor}
+            iconFilter={theme?.iconFilter}
           />
 
           <Card
-            icon={<img src={IconMeritBased} className="w-[23.68px] h-[23.68px]" alt="" />}
+            icon={<img src={IconMeritBased} className="w-[23.68px] h-[23.68px]" alt="" style={theme?.iconFilter ? { filter: theme.iconFilter } : {}} />}
             title="Reserved Category Benefits"
             desc="Fee concessions and special provisions for SC/ST/OBC and other reserved categories as per government norms."
             eligibility="Students from reserved categories with valid certificates"
+            primaryColor={primaryColor}
+            secondaryColor={secondaryColor}
+            iconFilter={theme?.iconFilter}
           />
 
           <Card
-            icon={<img src={IconMeritBased} className="w-[23.68px] h-[23.68px]" alt="" />}
+            icon={<img src={IconMeritBased} className="w-[23.68px] h-[23.68px]" alt="" style={theme?.iconFilter ? { filter: theme.iconFilter } : {}} />}
             title="Government Scholarships"
             desc="Various state and central government scholarship schemes available for eligible students."
             eligibility="Based on family income and category"
+            primaryColor={primaryColor}
+            secondaryColor={secondaryColor}
+            iconFilter={theme?.iconFilter}
           />
 
           <Card
-            icon={<img src={IconMeritBased} className="w-[23.68px] h-[23.68px]" alt="" />}
+            icon={<img src={IconMeritBased} className="w-[23.68px] h-[23.68px]" alt="" style={theme?.iconFilter ? { filter: theme.iconFilter } : {}} />}
             title="Education Loans"
             desc="Tie-ups with leading banks for easy education loan processing at competitive interest rates."
             eligibility="All admitted students"
+            primaryColor={primaryColor}
+            secondaryColor={secondaryColor}
+            iconFilter={theme?.iconFilter}
           />
         </div>
 
@@ -146,7 +188,7 @@ export default function FinancialAidScholarships() {
           className="
             grid
             grid-cols-1 md:grid-cols-2
-            gap-[31.58px]
+            gap-5
             w-full
           "
         >
@@ -162,9 +204,9 @@ export default function FinancialAidScholarships() {
                   rounded-[9.87px]
                   flex items-center justify-center shrink-0
                 "
-                style={{ backgroundColor: T.color.primary }}
+                style={{ backgroundColor: primaryColor }}
               >
-                <img src={IconScholar} className="w-[23.68px] h-[23.68px]" alt="" />
+                <img src={IconScholar} className="w-[23.68px] h-[23.68px]" alt="" style={theme?.iconFilter ? { filter: theme.iconFilter } : {}} />
 
               </div>
 
@@ -174,8 +216,8 @@ export default function FinancialAidScholarships() {
                   ${T.font.weight.bold}
                   text-[23.68px]
                   leading-[33.16px]
-                  text-[${T.color.secondary}]
                 `}
+                style={{ color: secondaryColor }}
               >
                 Fee Structure
               </h3>
@@ -196,8 +238,8 @@ export default function FinancialAidScholarships() {
                 ${T.font.weight.semibold}
                 text-[19.74px]
                 leading-[29.61px]
-                text-[${T.color.secondary}]
               `}
+              style={{ color: secondaryColor }}
             >
               Payment Options
             </p>
@@ -212,7 +254,7 @@ export default function FinancialAidScholarships() {
                 <li key={index} className="flex items-start gap-[8px]">
                   <span
                     className="w-[7.89px] h-[7.89px] rounded-full mt-[10px]"
-                    style={{ backgroundColor: T.color.primary }}
+                    style={{ backgroundColor: bulletColor }}
                   ></span>
 
                   <span
@@ -238,9 +280,9 @@ export default function FinancialAidScholarships() {
                   rounded-[9.87px]
                   flex items-center justify-center shrink-0
                 "
-                style={{ backgroundColor: T.color.primary }}
+                style={{ backgroundColor: primaryColor }}
               >
-                <img src={IconApplyAid} className="w-[23.68px] h-[23.68px]" alt="" />
+                <img src={IconApplyAid} className="w-[23.68px] h-[23.68px]" alt="" style={theme?.iconFilter ? { filter: theme.iconFilter } : {}} />
 
               </div>
 
@@ -250,8 +292,8 @@ export default function FinancialAidScholarships() {
                   ${T.font.weight.semibold}
                   text-[23.68px]
                   leading-[33.16px]
-                  text-[${T.color.secondary}]
                 `}
+                style={{ color: secondaryColor }}
               >
                 How to Apply for Aid
               </h3>
@@ -315,7 +357,7 @@ export default function FinancialAidScholarships() {
 }
 
 /* ⭐ REUSABLE CARD COMPONENT — RESPONSIVE */
-function Card({ icon, title, desc, eligibility }) {
+function Card({ icon, title, desc, eligibility, primaryColor = T.color.primary, secondaryColor = T.color.secondary, iconFilter }) {
   return (
     <div
       className="bg-white rounded-[9.87px] p-[30px] border flex flex-col gap-[12px]"
@@ -327,7 +369,7 @@ function Card({ icon, title, desc, eligibility }) {
             w-[55.26px] h-[55.26px] rounded-[9.87px]
             flex items-center justify-center shrink-0
           "
-          style={{ backgroundColor: T.color.primary }}
+          style={{ backgroundColor: primaryColor }}
         >
           {icon}
 
@@ -340,8 +382,8 @@ function Card({ icon, title, desc, eligibility }) {
               ${T.font.weight.bold}
               text-[23.68px]
               leading-[33.16px]
-              text-[${T.color.secondary}]
             `}
+            style={{ color: secondaryColor }}
           >
             {title}
           </h3>
@@ -354,7 +396,7 @@ function Card({ icon, title, desc, eligibility }) {
           </p>
 
           <div className="flex gap-[8px] pt-[4px] items-start">
-            <img src={IconEnrollmentTeal} className="w-[17.76px] h-[17.76px] shrink-0" alt="" />
+            <img src={IconEnrollmentTeal} className="w-[17.76px] h-[17.76px] shrink-0" alt="" style={iconFilter ? { filter: iconFilter } : {}} />
 
             <p className={`${T.font.family} text-[13.82px] leading-[19.74px]`}>
               <span

@@ -30,10 +30,12 @@ const voices = [
   },
 ];
 
-export default function StudentVoices() {
+export default function StudentVoices({ theme }) {
+  const secondaryColor = theme?.secondary || T.color.secondary;
+
   return (
     <PageSection bg={T.bg.white} sectionClassName="py-[80px]">
-      <div className="flex flex-col gap-[32px]">
+      <div className="flex flex-col gap-[40px]">
         {/* SECTION TITLE */}
         <h2
           className={`
@@ -41,8 +43,8 @@ export default function StudentVoices() {
             ${T.font.weight.bold}
             text-[42px]
             leading-[42px]
-            text-[${T.color.secondary}]
           `}
+          style={{ color: secondaryColor }}
         >
           Student Voices
         </h2>
@@ -52,7 +54,7 @@ export default function StudentVoices() {
           className="
             grid
             grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
-            gap-[31.58px]
+            gap-5
             w-full
           "
         >
@@ -60,18 +62,18 @@ export default function StudentVoices() {
             <div
               key={index}
               className="
-                rounded-[16px]
+                rounded-[8px]
                 p-[30px]
                 flex flex-col
                 h-full
               "
               style={{
-                backgroundColor: "#eef2f7",
-                border: "solid 1px rgba(7, 7, 7, 0.2)"
+                backgroundColor: "#F7F9FC",
+                border: "0.99px solid #E5E5E5"
               }}
             >
               {/* QUOTE ICON */}
-              <img src={IconQuote} className="w-[39.47px] h-[39.47px] mb-[12px]" alt="" />
+              <img src={IconQuote} className="w-[39.47px] h-[39.47px] mb-[20px]" alt="" style={theme?.iconFilter ? { filter: theme.iconFilter } : {}} />
 
 
               {/* TESTIMONIAL */}
@@ -80,7 +82,7 @@ export default function StudentVoices() {
                   ${T.font.family}
                   text-[18px]
                   leading-[26px]
-                  mb-[20px]
+                  mb-[30px]
                 `}
                 style={{ color: "#191919BF" }}
               >
@@ -90,20 +92,20 @@ export default function StudentVoices() {
               {/* NAME & PROGRAM */}
               <div className="mt-auto">
                 <div
-                  className="w-full h-[0.99px]"
-                  style={{ backgroundColor: T.color.border }}
+                  className="w-full h-[0.99px] mb-[20px]"
+                  style={{ backgroundColor: "#E5E5E5" }}
                 />
 
-                <div className="flex flex-col gap-[4px] pt-[12px]">
+                <div className="flex flex-col gap-[4px]">
                   {/* NAME */}
                   <p
                     className={`
                       ${T.font.family}
                       ${T.font.weight.medium}
                       text-[20px] 
-                      text-[#223F7F]
                       leading-[22px]
                     `}
+                    style={{ color: secondaryColor }}
                   >
                     {item.name}
                   </p>

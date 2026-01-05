@@ -15,15 +15,54 @@ import TypedText from "@/components/common/TypedText";
 
 
 
+
 const MedicalAcademicsPage = () => {
     const { setHero, hideHero } = useHero();
+
+    const medicalTheme = {
+        primary: "#C0392B", // Medical Red
+        secondary: "#223F7F", // Medical Blue (Default)
+        primaryTransparent: "#C0392B33", // 20% Red
+        iconFilter: "brightness(0) saturate(100%) invert(26%) sepia(73%) saturate(3078%) hue-rotate(349deg) brightness(88%) contrast(92%)", // #C0392B
+        textMuted: "#6b7280",
+        ctaButtonBg: "#223F7F",
+    };
+
+    const medicalWhiteRedTheme = {
+        primary: "#FFF", // Medical Red
+        secondary: "#223F7F", // Medical Blue (Default)
+        primaryTransparent: "#C0392B33", // 20% Red
+        iconFilter: "brightness(0) saturate(100%) invert(26%) sepia(73%) saturate(3078%) hue-rotate(349deg) brightness(88%) contrast(92%)", // #C0392B
+        textMuted: "#6b7280",
+        tagTextColor: "#223F7F", // Blue text for tags since primary is White
+        ctaButtonBg: "#223F7F", // Blue background for 'Start Your Application'
+    };
+
+    const transparentRedIconConfig = {
+        primary: "#C0392B1A", // Medical Red
+        secondary: "#223F7F", // Medical Blue (Default)
+        primaryTransparent: "#C0392B33", // 20% Red
+        iconFilter: "brightness(0) saturate(100%) invert(26%) sepia(73%) saturate(3078%) hue-rotate(349deg) brightness(88%) contrast(92%)", // #C0392B
+        textMuted: "#6b7280",
+        ctaButtonBg: "#223F7F",
+        bulletColor: "#C0392B",
+        useNewStatsGrid: true,
+    };
+
+    const joinCommunityTheme = {
+        primary: "#223F7F", // Blue for icons
+        secondary: "#223F7F", // Blue for text
+        ctaButtonBg: "#223F7F", // Blue for button
+    };
+
+
 
 
     useLayoutEffect(() => {
         setHero({
             title: (
                 <TypedText
-                    text="Build a Career in Healthcare" // Maybe update to Medical?
+                    text="Build a Career in Healthcare"
                     className="font-montserrat font-bold text-[32px] md:text-[40px] leading-[1.2] text-white"
                 />
             ),
@@ -33,20 +72,6 @@ const MedicalAcademicsPage = () => {
                     <p className="font-montserrat font-medium text-[16px] md:text-[22px] leading-[1.4] text-white max-w-[520px] mb-6">
                         Structured medical education supported by experienced faculty, advanced laboratories, and real-world clinical exposure.
                     </p>
-
-                    {/* <button
-            className="
-                      bg-[#191919] 
-                      hover:bg-[#27272a] 
-                      text-white 
-                      px-5 py-2.5 md:px-8 md:py-3
-                      rounded-[8px] 
-                      text-[15px] md:text-[22px] font-medium 
-                      transition-colors
-                  "
-          >
-            Explore Programs
-          </button> */}
                 </>
             ),
         });
@@ -55,14 +80,14 @@ const MedicalAcademicsPage = () => {
 
     return (
         <>
-            <DepartmentsSection />
-            <UGProgramsSection />
-            <PGProgramsSection />
-            <SuperSpecialtyProgramsSection />
-            <AcademicCalendarSection />
-            <LibraryFacilitiesSection />
-            <FacultyDirectorySection />
-            <StudentResourcesSection />
+            <ProgramsOffered theme={medicalTheme} />
+            <NursingCareerSection />
+            <WhyChooseNursingSchool theme={medicalWhiteRedTheme} />
+        <ExperienceDrivenEducation theme={medicalTheme} />
+            <NursingAdmissionsSection theme={medicalTheme} />
+            <StudentVoices />
+            <FinancialAidScholarships theme={transparentRedIconConfig} />
+            <JoinOurNursingCommunity theme={joinCommunityTheme} title="Join Our Medical Community" />
         </>
     );
 };

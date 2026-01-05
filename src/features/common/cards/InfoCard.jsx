@@ -21,6 +21,7 @@ export default function InfoCard({
     borderColor,
     titleClassName = "",
     titleColor,
+    borderRadius,
 }) {
     const isProgram = variant === "program";
 
@@ -47,7 +48,7 @@ export default function InfoCard({
             title: `
         ${T.font.family}
         ${T.font.weight.semibold}
-        text-[28px] leading-[34px]
+        text-[22px] md:text-[24px] leading-[1.3]
         text-left
       `,
             paragraph: `
@@ -294,7 +295,7 @@ export default function InfoCard({
             wrapperStyle: {
                 backgroundColor: cardBg || "#FFFFFF",
                 borderRadius: "12px",
-                padding: "24px",
+                padding: "20px",
                 gap: "12px",
                 border: cardBorder || "none",
                 /* No border as per visual/snippet, relying on shadow/bg */
@@ -442,7 +443,8 @@ export default function InfoCard({
             style={{
                 ...v.wrapperStyle,
                 ...(cardBg ? { backgroundColor: cardBg } : {}),
-                ...(cardBorder ? { border: cardBorder, boxShadow: 'none' } : {})
+                ...(cardBorder ? { border: cardBorder, boxShadow: 'none' } : {}),
+                ...(borderRadius ? { borderRadius: borderRadius } : {})
             }}
         >
             {/* ICON */}

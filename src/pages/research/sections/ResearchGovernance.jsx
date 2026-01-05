@@ -19,7 +19,7 @@ const IconShieldGovernance = "/AsramWebsite-FE/assets/icons/IconShieldGovernance
    DATA
 ===================================================== */
 
-const governanceData = [
+const defaultGovernanceData = [
   {
     title: "Institutional Research Committee",
     acronym: "(IRC)",
@@ -52,15 +52,19 @@ const ResearchGovernance = ({
   headerBg = "#008C8C33",
   accentColor = "#008C8C",
   buttonConfig = { bg: "#008C8C" },
+  governanceData,
+  gridGap = "gap-5"
 }) => {
+  const dataToRender = governanceData || defaultGovernanceData;
+
   return (
     <PageSection bg={T.bg.white} paddingClass="py-[80px]">
       <h2 className={`${T.font.family} font-bold text-[42px] text-[#223f7f] mb-10`}>
         Research Governance
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] mb-12">
-        {governanceData.map((item, index) => (
+      <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${gridGap} mb-12`}>
+        {dataToRender.map((item, index) => (
           <div
             key={index}
             className="flex flex-col rounded-[10.4px] overflow-hidden transition-shadow"

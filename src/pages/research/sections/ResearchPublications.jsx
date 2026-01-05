@@ -9,7 +9,7 @@ const IconExternalLinkWhite = "/AsramWebsite-FE/assets/icons/IconExternalLinkWhi
 import AnimatedStatValue from "@/features/common/ui/AnimatedStatValue";
 import { IconArrowRight } from "@/assets/icons";
 
-const stats = [
+const defaultStats = [
   {
     value: "450+",
     label: "Total Publications (2020-2024)",
@@ -32,7 +32,7 @@ const stats = [
   }
 ];
 
-const recentPubs = [
+const defaultRecentPubs = [
   {
     title: "Machine Learning Algorithms for Early Detection of Diabetic Retinopathy",
     authors: "Patel R, Kumar S, Sharma P, et al.",
@@ -57,7 +57,13 @@ const ResearchPublications = ({
   iconConfig = { bg: "#008C8C", iconFilter: "brightness(0) invert(1)" },
   buttonConfig = { bg: "#008C8C" },
   accentColor = "#008C8C",
+  stats,
+  publications,
+  footerDescription,
 }) => {
+  const statsToRender = stats || defaultStats;
+  const pubsToRender = publications || defaultRecentPubs;
+  const descToRender = footerDescription || "Browse our comprehensive publication repository with year-wise listings, citation metrics, and direct links to Scopus, SCI, and PubMed.";
   return (
     <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]">
       <h2 className={`${T.font.family} font-bold text-[42px] text-[#223F7F] mb-10`}>
@@ -65,8 +71,8 @@ const ResearchPublications = ({
       </h2>
 
       {/* 1. Stats Row */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-[20px] mb-10">
-        {stats.map((stat, index) => (
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-[20px] mb-[20px]">
+        {statsToRender.map((stat, index) => (
           <div style={{ border: "1px solid #07070733" }} key={index} className="bg-white rounded-[9.3px] p-6 flex flex-col items-center text-center shadow-sm">
             <div
               className={`${iconConfig.sizeClass || "w-[44px] h-[44px]"} ${iconConfig.radiusClass || "rounded-[8px]"} flex items-center justify-center mb-4`}
@@ -89,14 +95,14 @@ const ResearchPublications = ({
       </div>
 
       {/* 2. Recent Publications Card */}
-      <div style={{ border: "1px solid #07070733" }} className="bg-white rounded-[9.3px] p-[24px] md:p-[40px] shadow-sm mb-10">
+      <div style={{ border: "1px solid #07070733" }} className="bg-white rounded-[9.3px] p-[24px] md:p-[30px] shadow-sm mb-[20px]">
         <h3 className={`${T.font.family} font-semibold text-[22px] text-[#223F7F] mb-6`}>
           Recent Publications (2024)
         </h3>
 
         <div className="flex flex-col gap-6 mb-8" >
-          {recentPubs.map((pub, index) => (
-            <div key={index} className="border-b-[0.9px] border-[rgba(7,7,7,0.2)] pb-6 last:border-0 last:pb-0">
+          {pubsToRender.map((pub, index) => (
+            <div key={index} className="border-b-[0.9px] border-[rgba(7,7,7,0.2)] pb-2 last:border-0 last:pb-0">
               <h4 className={`${T.font.family} font-regular text-[20px] text-[#191919] mb-1 leading-snug`}>
                 {pub.title}
               </h4>
@@ -106,7 +112,7 @@ const ResearchPublications = ({
               <div className="flex items-center gap-3">
                 <span
                   className="text-[14px] font-regular"
-                  style={{ color: accentColor }}
+                  style={{ color: "#223F7F" }}
                 >
                   {pub.journal}
                 </span>
@@ -154,8 +160,7 @@ const ResearchPublications = ({
           <p
             className={`${T.font.family} font-regular text-[18px] leading-[26px] text-[#191919BF]`}
           >
-            Browse our comprehensive publication repository with year-wise listings,
-            citation metrics, and direct links to Scopus, SCI, and PubMed.
+            {descToRender}
           </p>
 
           {/* BUTTONS – BELOW TEXT */}

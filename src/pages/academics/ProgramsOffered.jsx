@@ -11,7 +11,7 @@ const seatsicon = "/AsramWebsite-FE/assets/academics/seatsicon.svg";
 const IconFullArrow = "/AsramWebsite-FE/assets/icons/IconFullArrow.svg";
 
 
-const programs = [
+const defaultPrograms = [
   {
     tag: "Undergraduate",
     title: "B.Sc Nursing",
@@ -53,7 +53,14 @@ const programs = [
   },
 ];
 
-export default function ProgramsOffered() {
+export default function ProgramsOffered({ theme, programs }) {
+  const primaryColor = theme?.primary || T.color.primary; // Default Teal
+  const secondaryColor = theme?.secondary || T.color.secondary; // Default Blue
+  const primaryTransparent = theme?.primaryTransparent || "#008C8C33"; // Default Teal Transparent
+  const textMuted = theme?.textMuted || T.color.text.muted;
+
+  const displayPrograms = programs || defaultPrograms;
+
   return (
     <PageSection bg={T.bg.white} paddingClass="py-[80px]">
       {/* TITLE */}
@@ -63,9 +70,9 @@ export default function ProgramsOffered() {
           ${T.font.weight.bold}
           text-[42px]
           leading-[42px]
-          text-[${T.color.secondary}]
           mb-[40px]
         `}
+        style={{ color: secondaryColor }}
       >
         Programs Offered
       </h2>
@@ -77,11 +84,11 @@ export default function ProgramsOffered() {
           grid-cols-1
           md:grid-cols-2
           lg:grid-cols-3
-          gap-[40px]
+          gap-5
           w-full
         "
       >
-        {programs.map((program, idx) => (
+        {displayPrograms.map((program, idx) => (
           <div
             key={idx}
             className={`
@@ -98,10 +105,10 @@ export default function ProgramsOffered() {
             <div
               className="
                 h-[206px]
-                bg-[#008C8C33]
-                px-[24px] pt-[18px] pb-[16px]
+                pt-[23.7px] pr-[27.6px] pb-[24.2px] pl-[23.7px]
                 flex flex-col
               "
+              style={{ backgroundColor: primaryTransparent }}
             >
               {/* TAG */}
               <span
@@ -129,8 +136,8 @@ export default function ProgramsOffered() {
                     ${T.font.weight.semibold}
                     text-[24px]
                     leading-[32px]
-                    text-[${T.color.secondary}]
                   `}
+                  style={{ color: secondaryColor }}
                 >
                   {program.title}
                 </h3>
@@ -173,7 +180,7 @@ export default function ProgramsOffered() {
             {/* BOTTOM SECTION */}
             <div
               className={`
-                h-[413px]
+                h-[413.74px]
                 ${T.bg.sectionCard}
                 p-[30px]
                 flex flex-col
@@ -190,7 +197,7 @@ export default function ProgramsOffered() {
                     leading-[26px]
                     w-full
                   `}
-                  style={{ color: T.color.text.muted }}
+                  style={{ color: textMuted }}
                 >
                   {program.description}
                 </p>
@@ -203,8 +210,8 @@ export default function ProgramsOffered() {
                     ${T.font.family}
                     ${T.font.weight.semibold}
                     text-[18px]
-                    text-[${T.color.secondary}]
                   `}
+                  style={{ color: secondaryColor }}
                 >
                   Program Highlights
                 </h4>
@@ -220,7 +227,7 @@ export default function ProgramsOffered() {
     "
                       style={{ color: "#191919BF" }}
                     >
-                      <IconCheckMark size={11} className="shrink-0 mt-[2px]" />
+                      <IconCheckMark size={11} className="shrink-0 mt-[2px]" color={primaryColor} />
                       <span className={`${T.font.family} leading-[18px]`}>
                         {item}
                       </span>
@@ -238,8 +245,8 @@ export default function ProgramsOffered() {
                   ${T.font.family}
                   ${T.font.weight.medium}
                   text-[18px]
-                  text-[${T.color.secondary}]
                 `}
+                style={{ color: secondaryColor }}
               >
                 Learn More
                 <img

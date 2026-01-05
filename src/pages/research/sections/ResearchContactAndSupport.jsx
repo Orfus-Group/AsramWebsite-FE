@@ -43,7 +43,7 @@ const ResearchContactAndSupport = ({
             </h2>
 
             {/* 1. Contact Info Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-5">
                 {contactInfo.map((item, index) => (
                     <div key={index} style={{ border: "1px solid #07070733" }} className="bg-[#EEF2F7] rounded-[9.3px] p-[24px] md:p-[30px] flex flex-col items-center text-center">
                         <div
@@ -52,7 +52,7 @@ const ResearchContactAndSupport = ({
                         >
                             <img src={item.icon.props.src} className={iconConfig.iconSizeClass || "w-[23px] h-[23px]"} alt="" style={{ filter: iconConfig.iconFilter }} />
                         </div>
-                        <p className={`${T.font.family} font-semibold text-[13px] text-[#ABABAB] mb-1`}>
+                        <p className={`${T.font.family} font-medium text-[22px] text-[#223F7F] mb-1`}>
                             {item.label}
                         </p>
                         <p className={`${T.font.family} font-regular text-[15px] text-[#191919] font-regular leading-[24px]`}>
@@ -63,7 +63,7 @@ const ResearchContactAndSupport = ({
             </div>
 
             {/* 2. Feature Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
 
                 {/* Helpdesk */}
                 <div className="bg-[#EEF2F7] rounded-[9.3px] p-[24px] md:p-[40px] flex flex-col items-start">
@@ -114,15 +114,18 @@ const ResearchContactAndSupport = ({
             </div>
 
             {/* 3. Footer Banner */}
-            <div className="bg-[#EEF2F7] rounded-[9.3px] p-[24px] md:p-[40px] text-center">
-                <h3 className={`${T.font.family} font-semibold text-[24px] text-[#223F7F] mb-4`}>
-                    R&D Cell Contact Information
-                </h3>
-                <p className={`${T.font.family} text-[18px] font-regular text-[#191919BF] leading-[26px] mb-8 max-w-[800px] mx-auto`}>
-                    Connect with our dedicated research team for comprehensive support across all aspects of your research activities, from planning to publication.
-                </p>
+            {/* 3. Footer Banner */}
+            <div className="bg-[#EEF2F7] rounded-[9.3px] p-[30px] flex flex-col items-center justify-center gap-[30px] text-center">
+                <div className="flex flex-col items-center justify-center gap-[20px]">
+                    <h3 className={`${T.font.family} font-semibold text-[24px] text-[#223F7F]`}>
+                        R&D Cell Contact Information
+                    </h3>
+                    <p className={`${T.font.family} text-[18px] font-regular text-[rgba(25,25,25,0.75)] leading-[1.44]`}>
+                        Connect with our dedicated research team for comprehensive support across all aspects of your research activities, from planning to publication.
+                    </p>
+                </div>
 
-                <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <div className="flex flex-col sm:flex-row justify-center gap-[20px]">
                     <button
                         className="hover:opacity-90 text-white px-6 py-3 rounded-[9.4px] font-medium text-[18px] transition-colors"
                         style={{ backgroundColor: buttonConfig.bg }}

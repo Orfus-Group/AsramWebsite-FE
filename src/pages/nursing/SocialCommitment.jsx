@@ -44,9 +44,11 @@ export default function SocialCommitment({
   iconColor = "white",
   cardBg,
   cardBorder,
-  iconBg
+  iconBg,
+  data,
+  description
 }) {
-  const features = [
+  const defaultFeatures = [
     {
       icon: <IconHeartCare color={iconColor} />,
       title: "Health Camps",
@@ -73,16 +75,25 @@ export default function SocialCommitment({
     },
   ];
 
+  const finalFeatures = defaultFeatures.map((feature, index) => {
+    if (data && data[index]) {
+      return { ...feature, ...data[index] };
+    }
+    return feature;
+  });
+
+  const defaultParagraphs = [
+    "As part of the ASRAM educational society, the nursing school actively participates in health camps, rural outreach, and community health programmes—aligning education with service to society. Students engage directly with communities to understand real-world healthcare needs.",
+    "The focus on holistic development includes instilling ethics, empathy, and a service-oriented mindset among nursing students, preparing them to serve diverse communities with compassion and dedication.",
+  ];
+
   return (
     <TwoColumnSection
       title="Social Commitment"
       bgColor="#FFF"
       innerHeading="Service-Oriented Education"
       image={outreachImg}
-      paragraphs={[
-        "As part of the ASRAM educational society, the nursing school actively participates in health camps, rural outreach, and community health programmes—aligning education with service to society.",
-        "The focus on holistic development includes instilling ethics, empathy, and a service-oriented mindset among nursing students, preparing them to serve diverse communities with compassion and dedication.",
-      ]}
+      paragraphs={description || defaultParagraphs}
     >
       {/* Responsive Feature Grid */}
       <div
@@ -96,7 +107,7 @@ export default function SocialCommitment({
           w-full
         "
       >
-        {features.map((item, i) => (
+        {finalFeatures.map((item, i) => (
           <InfoCard
             key={i}
             {...item}

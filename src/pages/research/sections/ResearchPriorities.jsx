@@ -11,7 +11,7 @@ import {
   IconPatientSafety
 } from "@/assets/icons";
 
-const priorities = [
+const defaultPriorities = [
   {
     title: "Artificial Intelligence & Digital Health",
     desc: "AI-powered diagnostics, predictive analytics, telemedicine platforms, and wearable health technology.",
@@ -48,22 +48,27 @@ const priorities = [
 const ResearchPriorities = ({
   iconConfig = { color: "white", bg: "#008C8C", size: 50 },
   buttonConfig = { bg: "#008c8c" },
+  priorities,
+  gridGap = "gap-5",
+  cardPadding = "p-[24px] md:p-[30px]"
 }) => {
+  const displayPriorities = priorities || defaultPriorities;
+
   return (
-    <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]">
+    <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]" >
       <div className="flex flex-col items-start mb-10">
         <h2 className={`${T.font.family} font-bold text-[42px] text-[#223f7f]`}>
           Research Priorities
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
-        {priorities.map((item, index) => (
+      <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${gridGap}`}>
+        {displayPriorities.map((item, index) => (
           <div
             key={index}
             style={{ border: "1px solid rgba(7, 7, 7, 0.2)" }}
 
-            className="flex flex-col items-start bg-white p-[24px] md:p-[30px] rounded-[8px] shadow-sm transition-shadow h-full"
+            className={`flex flex-col items-start bg-white ${cardPadding} rounded-[8px] shadow-sm transition-shadow h-full`}
           >
             {/* Icon Box */}
             <div
@@ -100,10 +105,10 @@ const ResearchPriorities = ({
       </div>
 
       {/* Button */}
-      <div className="flex justify-center mt-12">
+      <div className="flex justify-center mt-12" >
         <button
           className="hover:opacity-90 text-white px-8 py-3 rounded-[10px] font-regular text-[18px] flex items-center gap-2 transition-colors"
-          style={{ backgroundColor: buttonConfig.bg }}
+          style={{ backgroundColor: "#223F7F" }}
         >
           Explore Research Areas in Detail
           <IconArrowRight
@@ -113,8 +118,8 @@ const ResearchPriorities = ({
           />
 
         </button>
-      </div>
-    </PageSection>
+      </div >
+    </PageSection >
   );
 };
 

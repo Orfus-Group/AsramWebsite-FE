@@ -52,7 +52,7 @@ const ResearchCollaborations = ({
             </h2>
 
             {/* 1. Stats Row */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px] mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
                 {stats.map((stat, index) => (
                     <div style={{ border: "1px solid #07070733" }} key={index} className="bg-white rounded-[12px] p-[24px] md:p-[30px] flex flex-col items-center text-center shadow-sm">
                         <div
@@ -76,7 +76,7 @@ const ResearchCollaborations = ({
             </div>
 
             {/* 2. Detailed Lists Row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
 
                 {/* National */}
                 <div style={{ border: "1px solid #07070733" }} className="bg-white rounded-[10px] p-[24px] md:p-[40px] shadow-sm flex flex-col">
@@ -86,13 +86,13 @@ const ResearchCollaborations = ({
 
                     <div className="flex flex-col gap-6 mb-8 flex-grow">
                         {nationalCollabs.map((item, index) => (
-                            <div key={index} style={{ borderBottom: "1px solid #E5E7EB" }} className="flex justify-between items-center pb-4 last:border-0 last:pb-0">
+                            <div key={index} className="flex justify-between items-center border-b border-[#E5E7EB] pb-2 last:border-0 last:pb-0">
                                 <span className={`${T.font.family} font-medium text-[14px] text-[#191919]`}>
                                     {item.name}
                                 </span>
                                 <span
                                     className={`${T.font.family} text-[14px] leading-[20px] font-regular`}
-                                    style={{ color: accentColor }}
+                                    style={{ color: "#223F7F" }}
                                 >
                                     {item.projects}
                                 </span>
@@ -114,7 +114,7 @@ const ResearchCollaborations = ({
 
                     <div className="flex flex-col gap-6 mb-8 flex-grow">
                         {internationalCollabs.map((item, index) => (
-                            <div style={{ borderBottom: "1px solid #E5E7EB" }} key={index} className=" pb-4 last:border-0 last:pb-0">
+                            <div key={index} className="border-b border-[#E5E7EB] pb-2 last:border-0 last:pb-0">
                                 <h4 className={`${T.font.family} font-medium text-[18px] text-[#191919] mb-1`}>
                                     {item.name}
                                 </h4>
@@ -137,7 +137,7 @@ const ResearchCollaborations = ({
             <div className="flex justify-center">
                 <button
                     className="hover:opacity-90 text-white px-8 py-3 rounded-[6px] font-medium text-[18px] flex items-center gap-2 transition-colors"
-                    style={{ backgroundColor: buttonConfig.bg }}
+                    style={{ backgroundColor: "#223F7F" }}
                 >
                     Explore All Collaborations & MoUs
                     <span><img src={IconArrowRight} className="w-[21px] h-[21px] invert brightness-0" alt="" /></span>

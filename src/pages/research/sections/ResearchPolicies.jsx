@@ -54,6 +54,7 @@ const ResearchPolicies = ({
     buttonConfig = { bg: "#008C8C" },
     linkColor = "#008C8C",
     variant = "default", // 'default' | 'medical'
+    gridGap
 }) => {
     const displayPolicies = variant === "medical" ? medicalPolicies : policies;
     const isMedical = variant === "medical";
@@ -64,7 +65,7 @@ const ResearchPolicies = ({
                 Research Policies
             </h2>
 
-            <div className={`grid gap-[20px] md:gap-[30px] mb-12 ${isMedical ? "grid-cols-1 md:grid-cols-6" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}>
+            <div className={`grid ${gridGap || "gap-5"} mb-12 ${isMedical ? "grid-cols-1 md:grid-cols-6" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}>
                 {displayPolicies.map((item, index) => {
                     // Span Logic for Medical Variant
                     // First 3 items: col-span-2 (in a 6-col grid) -> 3 items per row
@@ -102,7 +103,7 @@ const ResearchPolicies = ({
                             {/* Link */}
                             <button
                                 className="flex items-center gap-2 font-medium text-[16px] hover:underline mt-2"
-                                style={{ color: linkColor }}
+                                style={{ color: "#223F7F" }}
                             >
                                 <img src={IconDownloadBlue} className="w-[16px] h-[16px]" alt="" style={{ filter: "brightness(0) saturate(100%) invert(18%) sepia(37%) saturate(3439%) hue-rotate(210deg) brightness(95%) contrast(93%)" }} />
                                 Download PDF
@@ -117,7 +118,7 @@ const ResearchPolicies = ({
             <div className="flex justify-center">
                 <button
                     className="hover:opacity-90 text-white px-8 py-3 rounded-[6px] font-medium text-[16px] flex items-center gap-2 transition-colors"
-                    style={{ backgroundColor: buttonConfig.bg }}
+                    style={{ backgroundColor: "#223F7F" }}
                 >
                     View All Policies & Guidelines
                     <span><img src={IconArrowRight} className="w-[20px] h-[20px] invert brightness-0" alt="" /></span>

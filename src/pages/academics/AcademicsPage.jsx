@@ -17,6 +17,16 @@ import TypedText from "@/components/common/TypedText";
 const AcademicsPage = () => {
   const { setHero, hideHero } = useHero();
 
+  const transparenttiltIconConfig = {
+    primary: "#008C8C1A", // 10% Teal for Background
+    secondary: "#223F7F", // Medical Blue
+    primaryTransparent: "#008C8C1A", // 10% Teal
+    iconFilter: "brightness(0) saturate(100%) invert(29%) sepia(91%) saturate(1883%) hue-rotate(162deg) brightness(94%) contrast(103%)", // #008C8C (Teal)
+    textMuted: "#6b7280",
+    ctaButtonBg: "#223F7F",
+    bulletColor: "#008C8C", // Solid Teal for bullets
+    useNewStatsGrid: true,
+  };
 
   useLayoutEffect(() => {
     setHero({
@@ -56,11 +66,28 @@ const AcademicsPage = () => {
     <>
       <ProgramsOffered />
       <NursingCareerSection />
-      <WhyChooseNursingSchool />
+      <WhyChooseNursingSchool
+        theme={{
+          iconFilter: "brightness(0) saturate(100%) invert(29%) sepia(91%) saturate(1883%) hue-rotate(162deg) brightness(94%) contrast(103%)",
+          tagTextColor: "#223F7F"
+        }}
+      />
       <ExperienceDrivenEducation />
-      <NursingAdmissionsSection />
+      <NursingAdmissionsSection
+        theme={{
+          secondary: "#223F7F",
+          ctaButtonBg: "#223F7F"
+        }}
+        readyToApplyDesc={
+          <>
+            Start your application today and take the first step toward an exceptional nursing education. Our admissions team is here to support you throughout the process.
+            <br /><br />
+            Start your application today and take the first step toward an exceptional nursing education. Our admissions team is here to support you throughout the process.
+          </>
+        }
+      />
       <StudentVoices />
-      <FinancialAidScholarships />
+      <FinancialAidScholarships theme={transparenttiltIconConfig} />
       <JoinOurNursingCommunity />
     </>
   );

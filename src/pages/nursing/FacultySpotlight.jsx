@@ -16,6 +16,8 @@ const timeIcon = "/AsramWebsite-FE/assets/nursing/timeperiod.svg";
 export default function FacultySpotlightSection({
   heading = "Faculty Spotlight",
   facultyData,
+  footerStats,
+  showCta = true,
   iconConfig = {
     color: "#223F7F",
     width: "18",
@@ -35,8 +37,14 @@ export default function FacultySpotlightSection({
     fontSize: "text-[16px] md:text-[18px]",
     fontWeight: "font-normal"
   },
+  collegeConfig = {
+    color: "#4A5565",
+    fontSize: "text-[16px]",
+    lineHeight: "leading-[23.5px]",
+    fontWeight: "font-normal"
+  },
   ctaConfig = {
-    bg: T.color.primary,
+    bg: "#223F7F",
     color: "#FFFFFF",
     textSize: "text-[15px]",
     className: "rounded-[10px]",
@@ -55,7 +63,10 @@ export default function FacultySpotlightSection({
     buttonsPt: "pt-[20px]",
     borderClass: "border-t border-[#E5E5E5]"
   },
-  cardBorder = "border-[2px] border-[#D0D7E2]" // Default 2px for Nursing
+  cardBorder = "border-[2px] border-[#D0D7E2]", // Default 2px for Nursing
+  borderRadius = "rounded-[20px]",
+  imageHeight = "h-[260px] sm:h-[280px] md:h-[300px]",
+  gridGap = "gap-5"
 }) {
 
   // Default Faculty Data (Nursing)
@@ -64,6 +75,7 @@ export default function FacultySpotlightSection({
       img: faculty1,
       name: "Dr. Rajesh Kumar",
       role: "Cardiologist",
+      college: "ASRAM Medical College",
       qualification: "MBBS, MD, DM (Cardiology)",
       details: [
         { icon: <img src={expIcon} className="w-[18px] h-[18px]" />, text: "20+ Years Experience" },
@@ -76,6 +88,7 @@ export default function FacultySpotlightSection({
       img: faculty2,
       name: "Dr. Priya Sharma",
       role: "Neurologist",
+      college: "ASRAM Medical College",
       qualification: "MBBS, MD, DM (Neurology)",
       details: [
         { icon: <img src={expIcon} className="w-[18px] h-[18px]" />, text: "15+ Years Experience" },
@@ -88,6 +101,7 @@ export default function FacultySpotlightSection({
       img: faculty3,
       name: "Dr. Amit Patel",
       role: "Orthopedic Surgeon",
+      college: "ASRAM Medical College",
       qualification: "MBBS, MS (Orthopedics)",
       details: [
         { icon: <img src={expIcon} className="w-[18px] h-[18px]" />, text: "18+ Years Experience" },
@@ -117,22 +131,23 @@ export default function FacultySpotlightSection({
         </h2>
 
         {/* FACULTY CARDS */}
+        {/* FACULTY CARDS */}
         <div
-          className="
+          className={`
             grid 
             grid-cols-1 
             sm:grid-cols-2 
             lg:grid-cols-3
-            gap-[32px] md:gap-[40px]
+            ${gridGap}
             w-full
-          "
+          `}
         >
           {data.map((f, i) => (
             <div
               key={i}
               className={`
                 w-full
-                bg-white rounded-[20px]
+                bg-white ${borderRadius}
                 ${cardBorder}
                 flex flex-col
                 relative
@@ -140,7 +155,7 @@ export default function FacultySpotlightSection({
               `}
             >
               {/* Image */}
-              <div className="w-full h-[260px] sm:h-[280px] md:h-[300px] bg-gray-200 rounded-t-[10px]">
+              <div className={`w-full ${imageHeight} bg-gray-200 rounded-t-[10px]`}>
                 <img loading="lazy" decoding="async"
                   src={f.img}
                   alt={f.name}
@@ -193,6 +208,20 @@ export default function FacultySpotlightSection({
                   >
                     {f.role}
                   </p>
+
+                  {f.college && (
+                    <p
+                      className={`
+                        ${T.font.family}
+                        ${collegeConfig.fontSize}
+                        ${collegeConfig.lineHeight}
+                        ${collegeConfig.fontWeight}
+                      `}
+                      style={{ color: collegeConfig.color }}
+                    >
+                      {f.college}
+                    </p>
+                  )}
 
                   {f.qualification && (
                     <p
@@ -255,20 +284,35 @@ export default function FacultySpotlightSection({
           ))}
         </div>
 
+        {/* FOOTER STATS */}
+        {footerStats && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
+            {footerStats.map((stat, i) => (
+              <div key={i} className="bg-white rounded-[12px] p-[30px] text-center flex flex-col items-center justify-center border-[0.9px] border-[#07070733] h-full gap-[12px]">
+                <h4 className={`${T.font.family} text-[32px] font-semibold text-[#223F7F] leading-[39px]`}>{stat.value}</h4>
+                <p className={`${T.font.family} text-[22px] font-medium text-[#223F7F] leading-[27px]`}>{stat.label}</p>
+                <p className={`${T.font.family} text-[18px] font-normal text-[#191919BF] leading-[26px]`}>{stat.desc}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
         {/* BOTTOM CTA */}
-        <div className="flex justify-center mt-[10px]">
-          <Button
-            bg={ctaConfig.bg}
-            color={ctaConfig.color}
-            textSize={ctaConfig.textSize}
-            className={ctaConfig.className}
-            width={ctaConfig.width}
-            height={ctaConfig.height}
-            fontWeight={ctaConfig.fontWeight}
-          >
-            Meet All Faculty
-          </Button>
-        </div>
+        {showCta && (
+          <div className="flex justify-center mt-[10px]">
+            <Button
+              bg={ctaConfig.bg}
+              color={ctaConfig.color}
+              textSize={ctaConfig.textSize}
+              className={ctaConfig.className}
+              width={ctaConfig.width}
+              height={ctaConfig.height}
+              fontWeight={ctaConfig.fontWeight}
+            >
+              Meet All Faculty
+            </Button>
+          </div>
+        )}
       </div>
     </PageSection>
   );

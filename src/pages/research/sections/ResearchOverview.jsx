@@ -11,6 +11,11 @@ const ResearchOverview = ({
   iconConfig = { bg: "#008C8C", iconFilter: "brightness(0) invert(1)" },
   buttonConfig = { bg: "#008C8C" },
   accentColor = "#008C8C",
+  visionText,
+  missionText,
+  deanMessage,
+  deanName,
+  deanTitle
 }) => {
   return (
     <PageSection bg={T.bg.white} paddingClass="py-[80px]">
@@ -22,9 +27,9 @@ const ResearchOverview = ({
         Research Overview
       </h2>
 
-      <div className="flex flex-col gap-[40px]">
+      <div className="flex flex-col gap-5">
         {/* Row 1: Vision & Mission */}
-        <div className="grid grid-cols-1 gap-[30px] md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {/* Vision Card */}
           <div
             className="p-[30px] sm:p-[40px] rounded-[8px]"
@@ -55,9 +60,7 @@ const ResearchOverview = ({
               className={`${T.font.family} font-regular text-[16px] sm:text-[18px] leading-[26px]`}
               style={{ color: "#191919BF" }}
             >
-              To be a globally recognized research institution advancing healthcare through transformative
-              discoveries, innovative technologies, and evidence-based practices that improve patient outcomes
-              and community health.
+              {visionText || "To be a globally recognized research institution advancing healthcare through transformative discoveries, innovative technologies, and evidence-based practices that improve patient outcomes and community health."}
             </p>
           </div>
 
@@ -89,9 +92,7 @@ const ResearchOverview = ({
               className={`${T.font.family} text-[16px] sm:text-[18px] leading-[26px]`}
               style={{ color: "#191919BF" }}
             >
-              To foster a culture of scientific inquiry, promote interdisciplinary collaboration, support
-              faculty and student research excellence, and translate discoveries into practical solutions for
-              healthcare challenges facing our communities.
+              {missionText || "To foster a culture of scientific inquiry, promote interdisciplinary collaboration, support faculty and student research excellence, and translate discoveries into practical solutions for healthcare challenges facing our communities."}
             </p>
           </div>
         </div>
@@ -110,14 +111,20 @@ const ResearchOverview = ({
             className={`${T.font.family} text-[16px] sm:text-[18px] space-y-4 mb-10 leading-[26px]`}
             style={{ color: "#191919BF" }}
           >
-            <p>
-              Welcome to the Research & Innovation wing of ASRAM. Our institution has a proud legacy of
-              contributing to medical science through rigorous research, innovative practices, and a commitment to improving healthcare delivery.
-            </p>
-            <p>
-              We provide comprehensive support to our faculty and students through world-class research
-              infrastructure, funding opportunities, ethical guidance, and mentorship programs...
-            </p>
+            {deanMessage ? (
+              <p>{deanMessage}</p>
+            ) : (
+              <>
+                <p>
+                  Welcome to the Research & Innovation wing of ASRAM. Our institution has a proud legacy of
+                  contributing to medical science through rigorous research, innovative practices, and a commitment to improving healthcare delivery.
+                </p>
+                <p>
+                  We provide comprehensive support to our faculty and students through world-class research
+                  infrastructure, funding opportunities, ethical guidance, and mentorship programs...
+                </p>
+              </>
+            )}
           </div>
 
           {/* Bottom Row */}
@@ -126,9 +133,9 @@ const ResearchOverview = ({
             style={{ borderColor: "#ABABAB" }}
           >
             <div className="mb-6 sm:mb-0">
-              <h4 className="font-medium text-[18px] text-[#191919]">Dr. Arun Sharma</h4>
-              <p className="text-[14px] font-medium" style={{ color: accentColor }}>
-                Dean, Research & Innovation
+              <h4 className="font-medium text-[18px] text-[#191919]">{deanName || "Dr. Arun Sharma"}</h4>
+              <p className="text-[14px] font-medium" style={{ color: " #223F7F" }}>
+                {deanTitle || "Dean, Research & Innovation"}
               </p>
             </div>
 
@@ -149,7 +156,7 @@ const ResearchOverview = ({
                 transition-colors
                 hover:opacity-90
               "
-              style={{ backgroundColor: buttonConfig.bg }}
+              style={{ backgroundColor: "#223F7F" }}
             >
               Read Full Message
               <IconArrowRightWhite size={19} />

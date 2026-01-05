@@ -9,7 +9,27 @@ const IconPrototype = "/AsramWebsite-FE/assets/icons/IconPrototype.svg";
 import AnimatedStatValue from "@/features/common/ui/AnimatedStatValue";
 import IconArrowRightWhite from "@/assets/icons/IconArrowRightWhite";
 
-const stats = [
+
+const IconPrototypeSvg = (props) => (
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+        <path d="M13 21.6641V23.8307" stroke="#C0392B" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M13 2.16406V4.33073" stroke="#C0392B" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M18.417 21.6641V23.8307" stroke="#C0392B" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M18.417 2.16406V4.33073" stroke="#C0392B" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M2.16748 13H4.33415" stroke="#C0392B" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M2.16748 18.4141H4.33415" stroke="#C0392B" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M2.16748 7.58594H4.33415" stroke="#C0392B" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M21.6675 13H23.8341" stroke="#C0392B" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M21.6675 18.4141H23.8341" stroke="#C0392B" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M21.6675 7.58594H23.8341" stroke="#C0392B" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M7.5835 21.6641V23.8307" stroke="#C0392B" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M7.5835 2.16406V4.33073" stroke="#C0392B" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M19.5002 4.33594H6.50016C5.30355 4.33594 4.3335 5.30599 4.3335 6.5026V19.5026C4.3335 20.6992 5.30355 21.6693 6.50016 21.6693H19.5002C20.6968 21.6693 21.6668 20.6992 21.6668 19.5026V6.5026C21.6668 5.30599 20.6968 4.33594 19.5002 4.33594Z" stroke="#C0392B" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M16.2503 8.67188H9.75033C9.15202 8.67188 8.66699 9.1569 8.66699 9.75521V16.2552C8.66699 16.8535 9.15202 17.3385 9.75033 17.3385H16.2503C16.8486 17.3385 17.3337 16.8535 17.3337 16.2552V9.75521C17.3337 9.1569 16.8486 8.67188 16.2503 8.67188Z" stroke="#C0392B" strokeWidth="2.16667" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+const defaultStats = [
     {
         value: "8",
         label: "Patents Granted",
@@ -28,12 +48,12 @@ const stats = [
     {
         value: "5",
         label: "Prototypes",
-        icon: <img src={IconPrototype} className="w-[26px] h-[26px]" alt="" />,
+        icon: <IconPrototypeSvg className="w-[26px] h-[26px]" />,
     },
 ];
 
 
-const patents = [
+const defaultPatents = [
     {
         title: "AI-Powered Diabetic Retinopathy Screening Device",
         authors: "Dr. Rajesh Patel, Dr. Suresh Kumar, Dr. Anjali Verma",
@@ -54,7 +74,7 @@ const patents = [
     }
 ];
 
-const innovations = [
+const defaultInnovations = [
     {
         title: "Mobile Health Platform for Maternal Care",
         category: "Digital Health Solution",
@@ -75,18 +95,27 @@ const innovations = [
 const ResearchPatentsAndInnovations = ({
     iconConfig = { bg: "#008C8C", iconFilter: "brightness(0) invert(1)" },
     buttonConfig = { bg: "#008C8C" },
+    statValueColor = "#223F7F",
+    badgeConfig, // Optional: { bg: string, text: string }
+    stats,
+    patents,
+    innovations,
+    incubationDesc
 }) => {
+    const statsToRender = stats || defaultStats;
+    const patentsToRender = patents || defaultPatents;
+    const innovationsToRender = innovations || defaultInnovations;
+    const incubationDescText = incubationDesc || "ASRAM's Innovation Center supports researchers in translating discoveries into market-ready products through mentorship, funding, legal support, and industry connections.";
+
     return (
         <PageSection bg={T.bg.white} paddingClass="py-[80px]">
             <h2 className={`${T.font.family} font-bold text-[40px] text-[#223F7F] mb-10`}>
                 Patents & Innovations
             </h2>
 
-
-
             {/* Real Stats Row - Clean Implementation */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-[20px] mb-12">
-                {stats.map((stat, index) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-5">
+                {statsToRender.map((stat, index) => (
                     <div style={{ border: "1px solid #07070733" }} key={index} className="bg-[#EEF2F7] rounded-[10.4px] p-[24px] md:p-[30px] flex flex-col items-center text-center">
                         <div
                             className={`${iconConfig.sizeClass || "w-[48px] h-[48px]"} mb-4 ${iconConfig.radiusClass || "rounded-[12px]"} flex items-center justify-center`}
@@ -99,7 +128,8 @@ const ResearchPatentsAndInnovations = ({
                         </div>
                         <AnimatedStatValue
                             value={stat.value}
-                            className={`${T.font.family} font-regular text-[43.75px] text-[#191919] mb-1`}
+                            className={`${T.font.family} font-regular text-[43.75px] mb-1`}
+                            style={{ color: statValueColor }}
                         />
                         <p className={`${T.font.family} text-[18px] text-[#191919BF] font-regular leading-[26px]`}>
                             {stat.label}
@@ -110,7 +140,7 @@ const ResearchPatentsAndInnovations = ({
 
 
             {/* 2. Main Content Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
 
                 {/* Featured Patents */}
                 <div style={{ border: "1px solid #07070733" }} className="bg-[#EEF2F7] rounded-[8px] p-[24px] md:p-[40px]">
@@ -119,7 +149,7 @@ const ResearchPatentsAndInnovations = ({
                     </h3>
 
                     <div className="flex flex-col gap-6 mb-8">
-                        {patents.map((item, index) => (
+                        {patentsToRender.map((item, index) => (
                             <div key={index} className="border-b border-[#cbd5e1] pb-6 last:border-0 last:pb-0 border-opacity-50">
                                 <h4 className={`${T.font.family} font-regular text-[19px] text-[#191919] mb-1 leading-snug`}>
                                     {item.title}
@@ -127,7 +157,10 @@ const ResearchPatentsAndInnovations = ({
                                 <p className={`${T.font.family} text-[14px] font-regular leading-[20px] text-[#191919BF] mb-2`}>
                                     {item.authors}
                                 </p>
-                                <span className={`${item.statusColor} text-[12.5px] px-3 py-1 rounded-[34952500px] font-regular inline-block`}>
+                                <span
+                                    className={`${badgeConfig ? '' : item.statusColor} text-[12.5px] px-3 py-1 rounded-[34952500px] font-regular inline-block`}
+                                    style={badgeConfig ? { backgroundColor: badgeConfig.bg, color: badgeConfig.text } : {}}
+                                >
                                     {item.status}
                                 </span>
                             </div>
@@ -147,7 +180,7 @@ const ResearchPatentsAndInnovations = ({
                     </h3>
 
                     <div className="flex flex-col gap-6 mb-[20px]">
-                        {innovations.map((item, index) => (
+                        {innovationsToRender.map((item, index) => (
                             <div key={index} className="border-b border-[#cbd5e1] pb-6 last:border-0 last:pb-0 border-opacity-50">
                                 <h4 className={`${T.font.family} font-regular text-[19px] text-[#191919] mb-1 leading-snug`}>
                                     {item.title}
@@ -155,7 +188,10 @@ const ResearchPatentsAndInnovations = ({
                                 <p className={`${T.font.family} text-[14px] font-regular leading-[20px] text-[#191919BF] mb-2`}>
                                     {item.category}
                                 </p>
-                                <span className="text-[#008C8C] text-[12.5px] px-3 py-1 rounded-[34952500px] font-regular inline-block" style={{ backgroundColor: "#008C8C1A" }}>
+                                <span
+                                    className={`${badgeConfig ? '' : 'text-[#008C8C]'} text-[12.5px] px-3 py-1 rounded-[34952500px] font-regular inline-block`}
+                                    style={{ backgroundColor: badgeConfig ? badgeConfig.bg : "#008C8C1A", color: badgeConfig ? badgeConfig.text : undefined }}
+                                >
                                     {item.badge}
                                 </span>
                             </div>
@@ -176,12 +212,12 @@ const ResearchPatentsAndInnovations = ({
                     Innovation Incubation & Commercialization
                 </h3>
                 <p className={`${T.font.family} font-regular text-[18px] text-[#191919BF] leading-[26px] mb-8 max-w-[900px]`}>
-                    ASRAM's Innovation Center supports researchers in translating discoveries into market-ready products through mentorship, funding, legal support, and industry connections.
+                    {incubationDescText}
                 </p>
 
                 <button
                     className="hover:opacity-90 text-white px-6 py-3 rounded-[10.4px] font-medium text-[18px] flex items-center gap-2 transition-colors"
-                    style={{ backgroundColor: buttonConfig.bg }}
+                    style={{ backgroundColor: "#223F7F" }}
                 >
                     Learn About Incubation Support
                     <span><IconArrowRightWhite size={19} /></span>

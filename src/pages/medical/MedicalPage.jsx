@@ -27,48 +27,134 @@ import ResearchSection from "../nursing/ResearchSection";
 import SocialCommitment from "../nursing/SocialCommitment";
 import AsramNewsEvents from "../asram/AsramNewsEvents";
 import FacultySpotlightSection from "../nursing/FacultySpotlight";
-import KeyStrengthsSection from "../nursing/KeyStrenght";
+import PageSection from "@/features/common/layout/PageContainer";
+import { T } from "@/theme";
+import InfoCardGrid from "@/components/common/InfoCardGrid";
+const KeyStrengthsSection = React.lazy(() => import("../nursing/KeyStrenght"));
+
+const HatIcon = ({ width = "20", height = "20", color = "#191919", strokeWidth = "1.6" }) => (
+    <svg width={width} height={height} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#clip0_621_1341)">
+            <path d="M17.3012 8.82275C17.4458 8.75896 17.5685 8.65415 17.6541 8.52131C17.7398 8.38847 17.7845 8.23342 17.7829 8.07539C17.7812 7.91735 17.7333 7.76327 17.6449 7.63222C17.5566 7.50117 17.4318 7.39892 17.2859 7.33814L10.3628 4.18474C10.1523 4.08874 9.92368 4.03906 9.69236 4.03906C9.46103 4.03906 9.23240 4.08874 9.02194 4.18474L2.09966 7.33491C1.95585 7.39789 1.83352 7.50141 1.74762 7.63281C1.66172 7.76421 1.61597 7.91780 1.61597 8.07479C1.61597 8.23178 1.66172 8.38537 1.74762 8.51677C1.83352 8.64817 1.95585 8.75169 2.09966 8.81467L9.02194 11.9713C9.23240 12.0673 9.46103 12.1170 9.69236 12.1170C9.92368 12.1170 10.1523 12.0673 10.3628 11.9713L17.3012 8.82275Z" stroke={color} strokeOpacity="0.75" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M17.7698 8.07812V12.9245" stroke={color} strokeOpacity="0.75" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M4.84473 10.0938V12.9208C4.84473 13.5635 5.35533 14.1798 6.26421 14.6343C7.17308 15.0887 8.40578 15.3440 9.69113 15.3440C10.9765 15.3440 12.2092 15.0887 13.1181 14.6343C14.0269 14.1798 14.5375 13.5635 14.5375 12.9208V10.0938" stroke={color} strokeOpacity="0.75" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        </g>
+        <defs>
+            <clipPath id="clip0_621_1341">
+                <rect width="19.3856" height="19.3856" fill="white" />
+            </clipPath>
+        </defs>
+    </svg>
+);
+
+const RibbonIcon = ({ width = "20", height = "20", color = "#191919", strokeWidth = "1.6" }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="8" r="7" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8.21094 13.8896L7 23L12 20L17 23L15.789 13.8896" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+const EnvelopeIcon = ({ width = "20", height = "20", color = "#191919", strokeWidth = "1.6" }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M22 6L12 13L2 6" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+const IconFacultyRatio = ({ width = "20", height = "20", color = "#C0392B", strokeWidth = "1.6" }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+const IconTrophy = ({ width = "20", height = "20", color = "#C0392B", strokeWidth = "1.6" }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 21H16" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 17V21" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M7 4H17C17.5304 4 18.0391 4.21071 18.4142 4.58579C18.7893 4.96086 19 5.46957 19 6V9C19 10.8565 18.2625 12.6371 16.9497 13.9497C15.637 15.2625 13.8565 16 12 16C10.1435 16 8.36301 15.2625 7.05025 13.9497C5.7375 12.6371 5 10.8565 5 9V6C5 5.46957 5.21071 4.96086 5.58579 4.58579C5.96086 4.21071 6.46957 4 7 4Z" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M19 4V9H21C21.5304 9 22.0391 8.78929 22.4142 8.41421C22.7893 8.03914 23 7.53043 23 7C23 6.46957 22.7893 5.96086 22.4142 5.58579C22.0391 5.21071 21.5304 5 21 5H19Z" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M5 4V9H3C2.46957 9 1.96086 8.78929 1.58579 8.41421C1.21071 8.03914 1 7.53043 1 7C1 6.46957 1.21071 5.96086 1.58579 5.58579C1.96086 5.21071 2.46957 5 3 5H5Z" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+const IconWifi = ({ width = "20", height = "20", color = "#C0392B", strokeWidth = "1.6" }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12.55C6.5 11 8.5 10 10.5 10C12.5 10 14.5 11 16 12.55" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8.5 15.5C9.25 14.75 10.25 14.5 11 14.5C11.75 14.5 12.75 14.75 13.5 15.5" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M2 9.15002C4.5 6.65002 7.5 5.50002 11 5.50002C14.5 5.50002 17.5 6.65002 20 9.15002" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M11 19.01L11.01 18.998" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+const IconBrain = ({ width = "24", height = "24", color = "#C0392B", strokeWidth = "1.5" }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 5C12 5 12.5556 3 10.3333 3C8.11111 3 7 4.5 7 6C7 6 4 5.5 4 8C4 10.5 6 11 6 11C6 11 5 12.5 5 14C5 15.5 6 15.5 6 15.5C6 15.5 5 18 8.88889 18C12.7778 18 12 15 12 15M12 5C12 5 11.4444 3 13.6667 3C15.8889 3 17 4.5 17 6C17 6 20 5.5 20 8C20 10.5 18 11 18 11C18 11 19 12.5 19 14C19 15.5 18 15.5 18 15.5C18 15.5 19 18 15.1111 18C11.2222 18 12 15 12 15" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 5V8" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 15V18" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+const IconHealthEquity = ({ width = "24", height = "24", color = "#C0392B", strokeWidth = "1.5" }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8.5 11C10.7091 11 12.5 9.20914 12.5 7C12.5 4.79086 10.7091 3 8.5 3C6.29086 3 4.5 4.79086 4.5 7C4.5 9.20914 6.29086 11 8.5 11Z" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+const IconECG = ({ width = "24", height = "24", color = "#C0392B", strokeWidth = "1.5" }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 12H18L15 21L9 3L6 12H2" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+const IconStethoscopeSimple = ({ width = "24", height = "24", color = "#C0392B", strokeWidth = "1.5" }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 3V7C6 9.76142 8.23858 12 11 12H13C15.7614 12 18 9.76142 18 7V3" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 12V21" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="12" cy="21" r="2" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+const IconMicroscope = ({ width = "24", height = "24", color = "#C0392B", strokeWidth = "1.5" }) => (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 18H18" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 21H15" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 18V13" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 10C9 8.34315 10.3431 7 12 7C13.6569 7 15 8.34315 15 10V13H9V10Z" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 7V3" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8 3H16" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
 
 const medicalPrograms = [
     {
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path className="transition-all duration-700" d="M28.1838 14.3709C28.4336 14.2671 28.6479 14.0963 28.8016 13.8799C28.9553 13.6635 29.0425 13.4109 29.0399 13.1535C29.0373 12.8961 28.9449 12.6451 28.7867 12.4317C28.6285 12.2184 28.4111 12.0515 28.1589 11.9526L16.8811 6.81572C16.5384 6.65933 16.1659 6.57839 15.7891 6.57839C15.4122 6.57839 15.0397 6.65933 14.697 6.81572L3.41924 11.9469C3.17213 12.0499 2.95856 12.2184 2.80005 12.4326C2.64154 12.6468 2.54417 12.8989 2.54417 13.1574C2.54417 13.4159 2.64154 13.668 2.80005 13.8822C2.95856 14.0964 3.17213 14.2649 3.41924 14.3679L14.697 19.5142C15.0397 19.6706 15.4122 19.7515 15.7891 19.7515C16.1659 19.7515 16.5384 19.6706 16.8811 19.5142L28.1838 14.3709Z" stroke="#C0392B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path className="transition-all duration-700" d="M29.0471 13.1579V21.0527" stroke="#C0392B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path className="transition-all duration-700" d="M7.89209 16.4469V21.0522C7.89209 22.0992 8.72672 23.1032 10.2072 23.8434C11.6877 24.5837 13.6958 25 15.7891 25C17.8824 25 19.8905 24.5837 21.371 23.8434C22.8515 23.1032 23.6861 22.0992 23.6861 21.0522V16.4469" stroke="#C0392B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        ),
+        icon: <HatIcon width="24" height="24" color="#C0392B" strokeWidth="2" />,
         title: "MBBS",
-        years: "4 Years Full-Time",
+        years: "5.5 Years Full-Time",
         seats: "~150 Seats",
         description:
-            "Undergraduate medical program with integrated clinical training.",
+            "Flagship undergraduate programme integrating foundational medical sciences, clinical rotations, hospital exposure, and hands-on patient care training across specialties.",
     },
     {
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13.8163 8.0592V24.1776" stroke="#C0392B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M3.45405 20.7236C3.1487 20.7236 2.85586 20.6023 2.63995 20.3864C2.42403 20.1705 2.30273 19.8776 2.30273 19.5723V4.60517C2.30273 4.29983 2.42403 4.00698 2.63995 3.79107C2.85586 3.57516 3.1487 3.45386 3.45405 3.45386H9.21063C10.432 3.45386 11.6034 3.93905 12.467 4.80271C13.3307 5.66636 13.8159 6.83773 13.8159 8.05912C13.8159 6.83773 14.3011 5.66636 15.1647 4.80271C16.0284 3.93905 17.1998 3.45386 18.4212 3.45386H24.1777C24.4831 3.45386 24.7759 3.57516 24.9918 3.79107C25.2078 4.00698 25.329 4.29983 25.329 4.60517V19.5723C25.329 19.8776 25.2078 20.1705 24.9918 20.3864C24.7759 20.6023 24.4831 20.7236 24.1777 20.7236H17.2698C16.3538 20.7236 15.4753 21.0875 14.8275 21.7352C14.1798 22.383 13.8159 23.2615 13.8159 24.1775C13.8159 23.2615 13.452 22.383 12.8043 21.7352C12.1565 21.0875 11.278 20.7236 10.3619 20.7236H3.45405Z" stroke="#C0392B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        ),
-        title: "MD / MS",
+        icon: <BookIcon width="24" height="24" color="#C0392B" strokeWidth="2" />,
+        title: "General Medicine (MD)",
         years: "3 Years Full-Time",
         seats: "~100 Seats",
         description:
-            "Postgraduate programs across major medical and surgical specialties.",
+            "Postgraduate programme providing advanced training in diagnosis, treatment planning, and comprehensive management of adult medical conditions.",
     },
     {
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.818 14.8405L19.5622 24.6566C19.5817 24.7722 19.5655 24.891 19.5157 24.9971C19.4659 25.1032 19.3849 25.1916 19.2835 25.2504C19.1821 25.3092 19.0652 25.3357 18.9483 25.3263C18.8315 25.3169 18.7203 25.272 18.6296 25.1977L14.5079 22.1041C14.309 21.9555 14.0672 21.8751 13.8189 21.8751C13.5705 21.8751 13.3288 21.9555 13.1298 22.1041L9.00118 25.1965C8.9106 25.2707 8.79954 25.3155 8.68284 25.325C8.56613 25.3344 8.44933 25.308 8.348 25.2493C8.24667 25.1907 8.16565 25.1025 8.11573 24.9966C8.06581 24.8907 8.04938 24.7721 8.06862 24.6566L9.81171 14.8405" stroke="#C0392B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M13.8148 16.1184C17.6299 16.1184 20.7227 13.0256 20.7227 9.21051C20.7227 5.39538 17.6299 2.30261 13.8148 2.30261C9.99963 2.30261 6.90686 5.39538 6.90686 9.21051C6.90686 13.0256 9.99963 16.1184 13.8148 16.1184Z" stroke="#C0392B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        ),
-        title: "Super Speciality",
+        icon: <RibbonIcon width="24" height="24" color="#C0392B" strokeWidth="2" />,
+        title: "Specializations (MS)",
         years: "3 Years Full-Time",
-        seats: "~100 Seats", // Placeholder, need to check if user gave this data. Figma image shows "3 Years Full-Time". Seats not shown in snippet 0/1. I'll match format.
+        seats: "~100 Seats",
         description:
-            "Advanced DM and MCh programs with focused clinical exposure.",
+            "Specialization tracks include Pediatrics, Orthopedics, General Surgery, Obstetrics & Gynaecology, and other major clinical and surgical disciplines.",
     },
 ];
 
@@ -104,32 +190,39 @@ const MedicalPage = () => {
 
     const medicalStudentExperience = [
         {
-            icon: (
-                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.7144 18.0022V16.2879C13.7144 15.3786 13.3531 14.5066 12.7102 13.8636C12.0672 13.2206 11.1951 12.8594 10.2858 12.8594H5.14293C4.23361 12.8594 3.36154 13.2206 2.71856 13.8636C2.07558 14.5066 1.71436 15.3786 1.71436 16.2879V18.0022" stroke="#C0392B" strokeWidth="1.71429" strokeLinecap="round" strokeLinejoin="round" /><path d="M13.7146 2.67969C14.4498 2.87029 15.1009 3.29963 15.5658 3.90031C16.0306 4.501 16.2828 5.23902 16.2828 5.99854C16.2828 6.75807 16.0306 7.49609 15.5658 8.09678C15.1009 8.69746 14.4498 9.1268 13.7146 9.3174" stroke="#C0392B" strokeWidth="1.71429" strokeLinecap="round" strokeLinejoin="round" /><path d="M18.8573 18.0002V16.2859C18.8568 15.5262 18.6039 14.7883 18.1385 14.1879C17.6731 13.5875 17.0214 13.1587 16.2859 12.9688" stroke="#C0392B" strokeWidth="1.71429" strokeLinecap="round" strokeLinejoin="round" /><path d="M7.7147 9.42746C9.60825 9.42746 11.1433 7.89243 11.1433 5.99888C11.1433 4.10534 9.60825 2.57031 7.7147 2.57031C5.82116 2.57031 4.28613 4.10534 4.28613 5.99888C4.28613 7.89243 5.82116 9.42746 7.7147 9.42746Z" stroke="#C0392B" strokeWidth="1.71429" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            ),
-            title: "Experienced Faculty",
-            desc: "Mentorship by senior clinicians and academic leaders.",
+            icon: <IconFacultyRatio width="20" height="20" color="#C0392B" strokeWidth="1.6" />,
+            title: "Favorable Faculty Ratio",
+            desc: "~6:1 faculty to student ratio supports close supervision and academic mentoring.",
         },
         {
-            icon: (
-                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.68579 10.4219H12.1601" stroke="#C0392B" strokeWidth="1.30286" strokeLinecap="round" strokeLinejoin="round" /><path d="M8.68579 6.94531H12.1601" stroke="#C0392B" strokeWidth="1.30286" strokeLinecap="round" strokeLinejoin="round" /><path d="M12.1601 18.2413V15.6356C12.1601 15.1749 11.9771 14.733 11.6513 14.4072C11.3255 14.0815 10.8837 13.8984 10.4229 13.8984C9.96221 13.8984 9.52037 14.0815 9.19459 14.4072C8.86881 14.733 8.68579 15.1749 8.68579 15.6356V18.2413" stroke="#C0392B" strokeWidth="1.30286" strokeLinecap="round" strokeLinejoin="round" /><path d="M5.21135 8.68384H3.4742C3.01348 8.68384 2.57164 8.86686 2.24586 9.19264C1.92008 9.51841 1.73706 9.96026 1.73706 10.421V16.501C1.73706 16.9617 1.92008 17.4035 2.24586 17.7293C2.57164 18.0551 3.01348 18.2381 3.4742 18.2381H17.3713C17.8321 18.2381 18.2739 18.0551 18.5997 17.7293C18.9255 17.4035 19.1085 16.9617 19.1085 16.501V7.81527C19.1085 7.35455 18.9255 6.9127 18.5997 6.58692C18.2739 6.26114 17.8321 6.07813 17.3713 6.07812H15.6342" stroke="#C0392B" strokeWidth="1.30286" strokeLinecap="round" strokeLinejoin="round" /><path d="M5.21143 18.2358V4.33871C5.21143 3.87799 5.39445 3.43614 5.72022 3.11036C6.046 2.78458 6.48785 2.60156 6.94857 2.60156H13.8971C14.3579 2.60156 14.7997 2.78458 15.1255 3.11036C15.4513 3.43614 15.6343 3.87799 15.6343 4.33871V18.2358" stroke="#C0392B" strokeWidth="1.30286" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            ),
-            title: "Clinical Learning",
-            desc: "Daily exposure to wards, OPDs, and specialty units.",
+            icon: <LightbulbIcon width="20" height="20" color="#C0392B" strokeWidth="1.6" />,
+            title: "Practical Learning Experience",
+            desc: "Clinical postings, simulation labs, ward rounds, case discussions, and hands-on patient care.",
         },
         {
-            icon: (
-                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.443 11.1953L14.7589 18.6008C14.7736 18.688 14.7614 18.7776 14.7238 18.8576C14.6862 18.9377 14.6251 19.0044 14.5486 19.0488C14.4721 19.0931 14.3839 19.1131 14.2958 19.106C14.2076 19.0989 14.1237 19.065 14.0553 19.009L10.9459 16.6751C10.7957 16.563 10.6134 16.5024 10.426 16.5024C10.2386 16.5024 10.0563 16.563 9.90618 16.6751L6.79148 19.0081C6.72314 19.0641 6.63936 19.0979 6.55131 19.105C6.46327 19.1121 6.37515 19.0922 6.29871 19.048C6.22226 19.0037 6.16114 18.9372 6.12348 18.8573C6.08582 18.7774 6.07342 18.6879 6.08794 18.6008L7.40295 11.1953" stroke="#C0392B" strokeWidth="1.30286" strokeLinecap="round" strokeLinejoin="round" /><path d="M10.4229 12.1572C13.301 12.1572 15.6343 9.824 15.6343 6.9458C15.6343 4.06761 13.301 1.73438 10.4229 1.73438C7.54466 1.73438 5.21143 4.06761 5.21143 6.9458C5.21143 9.824 7.54466 12.1572 10.4229 12.1572Z" stroke="#C0392B" strokeWidth="1.30286" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            icon: (<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_704_3810)">
+                    <path d="M8.57143 12.5703V13.964C8.56819 14.2577 8.48956 14.5456 8.34307 14.8002C8.19658 15.0547 7.98715 15.2674 7.73486 15.4177C7.19926 15.8144 6.76358 16.3306 6.46242 16.9252C6.16125 17.5198 6.00292 18.1764 6 18.8429" stroke="#C0392B" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12.0002 12.5703V13.964C12.0035 14.2577 12.0821 14.5456 12.2286 14.8002C12.3751 15.0547 12.5845 15.2674 12.8368 15.4177C13.3724 15.8144 13.8081 16.3306 14.1093 16.9252C14.4104 17.5198 14.5688 18.1764 14.5717 18.8429" stroke="#C0392B" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M15.4287 7.7154H16.7144C17.2827 7.7154 17.8278 7.48964 18.2297 7.08777C18.6315 6.68591 18.8573 6.14087 18.8573 5.57254C18.8573 5.00422 18.6315 4.45918 18.2297 4.05732C17.8278 3.65545 17.2827 3.42969 16.7144 3.42969H15.4287" stroke="#C0392B" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3.42822 18.8594H17.1425" stroke="#C0392B" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M5.14258 7.71875C5.14258 9.08272 5.68441 10.3908 6.64889 11.3553C7.61336 12.3198 8.92146 12.8616 10.2854 12.8616C11.6494 12.8616 12.9575 12.3198 13.922 11.3553C14.8865 10.3908 15.4283 9.08272 15.4283 7.71875V2.57589C15.4283 2.34856 15.338 2.13055 15.1772 1.9698C15.0165 1.80906 14.7985 1.71875 14.5711 1.71875H5.99972C5.77239 1.71875 5.55438 1.80906 5.39363 1.9698C5.23288 2.13055 5.14258 2.34856 5.14258 2.57589V7.71875Z" stroke="#C0392B" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M5.14268 7.7154H3.85697C3.28865 7.7154 2.7436 7.48964 2.34174 7.08777C1.93988 6.68591 1.71411 6.14087 1.71411 5.57254C1.71411 5.00422 1.93988 4.45918 2.34174 4.05732C2.7436 3.65545 3.28865 3.42969 3.85697 3.42969H5.14268" stroke="#C0392B" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+                <defs>
+                    <clipPath id="clip0_704_3810">
+                        <rect width="20.5714" height="20.5714" fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
             ),
-            title: "Skill Development",
-            desc: "Hands-on training through labs and demonstrations.",
+            title: "Extra-Curricular Activities",
+            desc: "Academic seminars, clinical workshops, research forums, student associations, and competitions.",
         },
         {
-            icon: (
-                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.8626 12.5218C18.2402 11.1442 19.1087 9.99076 19.1087 8.25362C19.1087 7.28707 18.8155 6.34327 18.2678 5.54686C17.7202 4.75045 16.9438 4.1389 16.0413 3.79298C15.1388 3.44707 14.1525 3.38306 13.2129 3.60941C12.2732 3.83575 11.4243 4.34182 10.7783 5.06075M16.8626 12.5218C16.6913 12.6931 16.4879 12.829 16.2641 12.9218C16.0402 13.0145 15.8003 13.0622 15.558 13.0622C15.3157 13.0622 15.0758 13.0145 14.852 12.9218C14.6281 12.829 14.4247 12.6931 14.2534 12.5218C14.4389 12.6895 14.5883 12.8932 14.6927 13.1204C14.797 13.3477 14.8541 13.5938 14.8603 13.8438C14.8666 14.0938 14.822 14.3425 14.7292 14.5747C14.6364 14.8069 14.4974 15.0178 14.3206 15.1946C14.1437 15.3715 13.9328 15.5105 13.7006 15.6033C13.4684 15.6961 13.2197 15.7407 12.9697 15.7344C12.7197 15.7281 12.4736 15.6711 12.2464 15.5668C12.0191 15.4624 11.8154 15.313 11.6477 15.1275C11.8192 15.2983 11.9553 15.5012 12.0483 15.7246C12.1412 15.9481 12.1893 16.1876 12.1896 16.4296C12.1899 16.6716 12.1425 16.9113 12.0501 17.135C11.9578 17.3587 11.8222 17.562 11.6512 17.7332C11.4861 17.8983 11.2895 18.0284 11.073 18.1158C10.8566 18.2033 10.6247 18.2461 10.3913 18.2419C10.1579 18.2377 9.92769 18.1865 9.71452 18.0913C9.50135 17.9961 9.30954 17.859 9.15056 17.688L4.34302 13.0308C3.04016 11.7279 1.7373 10.2513 1.7373 8.25362C1.7375 7.28715 2.03083 6.34346 2.57857 5.54719C3.1263 4.75092 3.90268 4.1395 4.80516 3.7937C5.70765 3.44789 6.6938 3.38395 7.63339 3.61032C8.57298 3.8367 9.4218 4.34274 10.0678 5.06162C10.1643 5.15137 10.2913 5.20119 10.4232 5.20103C10.555 5.20087 10.6819 5.15074 10.7783 5.06075M16.8626 12.5218C17.1883 12.196 17.3712 11.7542 17.3712 11.2936C17.3712 10.833 17.1883 10.3912 16.8626 10.0655L15.2288 8.43081C15.0344 8.23633 14.8036 8.08206 14.5496 7.97681C14.2956 7.87156 14.0233 7.81738 13.7483 7.81738C13.4734 7.81738 13.2011 7.87156 12.9471 7.97681C12.6931 8.08206 12.4623 8.23633 12.2679 8.43081L10.7826 9.91606C10.4568 10.2417 10.0151 10.4247 9.55445 10.4247C9.09382 10.4247 8.65205 10.2417 8.32629 9.91606C8.00062 9.5903 7.81768 9.14853 7.81768 8.6879C7.81768 8.22728 8.00062 7.78551 8.32629 7.45975L10.7783 5.06075" stroke="#C0392B" strokeWidth="1.30286" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            ),
-            title: "Student Support",
-            desc: "Academic guidance, counseling, and structured peer support.",
+            icon: <IconWifi width="20" height="20" color="#C0392B" strokeWidth="1.6" />,
+            title: "Modern Amenities in a place",
+            desc: "Hostels, transport, WiFi connectivity, campus safety, and comprehensive student support.",
         },
     ];
 
@@ -144,7 +237,7 @@ const MedicalPage = () => {
             ),
             title: "Vision",
             description:
-                "To develop competent, ethical, and compassionate medical professionals.",
+                "To evolve into a premier institution of medical education that cultivates competent, ethical, patient-focused medical professionals capable of meeting national and global health care demands.",
         },
         {
             icon: (
@@ -154,7 +247,7 @@ const MedicalPage = () => {
             ),
             title: "Mission",
             description:
-                "Deliver quality medical education integrated with patient care and research.",
+                "To evolve into a premier institution of medical education that cultivates competent, ethical, patient-focused medical professionals capable of meeting national and global health care demands.",
         },
         {
             icon: (
@@ -165,30 +258,78 @@ const MedicalPage = () => {
             ),
             title: "Values",
             description:
-                "Integrity, excellence, compassion, accountability, and service.",
+                "Integrity, excellence, accountability, compassion, and innovation\u2014students are trained not only in clinical competence but also in ethical and patient-centered practice.",
         },
     ];
 
     const medicalResearchData = [
         {
-            icon: <BeakerIcon />,
-            title: "Clinical Research",
-            description: "Faculty-led studies and evidence-based practice.",
+            icon: (<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.16602 10.2961C2.16604 9.09061 2.53174 7.91344 3.21483 6.92011C3.89791 5.92679 4.86624 5.16402 5.99192 4.73258C7.11761 4.30113 8.34769 4.22129 9.5197 4.50361C10.6917 4.78593 11.7505 5.41712 12.5563 6.31381C12.613 6.37449 12.6816 6.42287 12.7578 6.45595C12.8341 6.48902 12.9163 6.50609 12.9993 6.50609C13.0824 6.50609 13.1646 6.48902 13.2408 6.45595C13.3171 6.42287 13.3857 6.37449 13.4424 6.31381C14.2457 5.41129 15.3047 4.77479 16.4786 4.48905C17.6525 4.2033 18.8856 4.28185 20.0138 4.71425C21.142 5.14665 22.1117 5.91239 22.7939 6.90954C23.4761 7.90669 23.8384 9.08797 23.8327 10.2961C23.8327 12.777 22.2077 14.6295 20.5827 16.2545L14.633 22.0102C14.4312 22.2421 14.1823 22.4283 13.9029 22.5566C13.6235 22.6848 13.3201 22.7521 13.0127 22.7541C12.7053 22.756 12.401 22.6925 12.12 22.5678C11.839 22.4431 11.5878 22.2601 11.383 22.0308L5.41602 16.2545C3.79102 14.6295 2.16602 12.7878 2.16602 10.2961Z" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            ),
+            title: "Cardiovascular Health",
+            description: "Investigating advanced medical interventions to improve outcomes for patients with heart disease.",
         },
         {
-            icon: <LightbulbIcon />,
-            title: "Medical Innovation",
-            description: "Research supporting improved diagnosis and treatment.",
+            icon: (<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 19.4974V5.41406" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16.25 14.0833C15.3127 13.8093 14.4894 13.239 13.9035 12.4578C13.3176 11.6766 13.0006 10.7265 13 9.75C12.9994 10.7265 12.6824 11.6766 12.0965 12.4578C11.5106 13.239 10.6873 13.8093 9.75 14.0833" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M19.0645 7.03921C19.3138 6.60748 19.4604 6.1242 19.493 5.62675C19.5257 5.12929 19.4434 4.631 19.2526 4.17042C19.0619 3.70984 18.7677 3.29932 18.3929 2.97062C18.0181 2.64191 17.5727 2.40384 17.0912 2.27481C16.6096 2.14578 16.1049 2.12925 15.6159 2.22652C15.127 2.32378 14.667 2.53221 14.2715 2.8357C13.876 3.13919 13.5556 3.5296 13.3351 3.97672C13.1146 4.42384 13 4.91568 13 5.41421C13 4.91568 12.8854 4.42384 12.6649 3.97672C12.4444 3.5296 12.124 3.13919 11.7285 2.8357C11.333 2.53221 10.873 2.32378 10.3841 2.22652C9.89513 2.12925 9.39036 2.14578 8.90883 2.27481C8.42729 2.40384 7.98189 2.64191 7.60709 2.97062C7.23228 3.29932 6.93812 3.70984 6.74736 4.17042C6.55659 4.631 6.47434 5.12929 6.50697 5.62675C6.53959 6.1242 6.68622 6.60748 6.9355 7.03921" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M19.4966 5.55469C20.1334 5.71842 20.7245 6.02491 21.2253 6.45094C21.7261 6.87698 22.1234 7.41138 22.3871 8.01369C22.6508 8.616 22.7739 9.27041 22.7472 9.92736C22.7206 10.5843 22.5447 11.2266 22.2331 11.8055" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M19.5 19.5001C20.4539 19.5 21.3811 19.1852 22.1378 18.6045C22.8946 18.0238 23.4386 17.2097 23.6855 16.2883C23.9324 15.3669 23.8683 14.3898 23.5033 13.5085C23.1383 12.6273 22.4927 11.891 21.6667 11.4141" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M21.6313 18.9453C21.7072 19.5327 21.6619 20.1295 21.4982 20.6987C21.3344 21.2679 21.0557 21.7976 20.6793 22.2548C20.3029 22.7121 19.8367 23.0874 19.3095 23.3575C18.7823 23.6275 18.2054 23.7867 17.6143 23.825C17.0233 23.8634 16.4306 23.7801 15.873 23.5805C15.3153 23.3808 14.8046 23.0689 14.3722 22.6641C13.9398 22.2593 13.595 21.7702 13.359 21.2269C13.1231 20.6836 13.001 20.0977 13.0004 19.5054C12.9998 20.0977 12.8777 20.6836 12.6418 21.2269C12.4058 21.7702 12.061 22.2593 11.6286 22.6641C11.1963 23.0689 10.6855 23.3808 10.1278 23.5805C9.57018 23.7801 8.97753 23.8634 8.38646 23.825C7.7954 23.7867 7.21847 23.6275 6.69131 23.3575C6.16415 23.0874 5.69795 22.7121 5.3215 22.2548C4.94506 21.7976 4.66636 21.2679 4.50262 20.6987C4.33887 20.1295 4.29356 19.5327 4.36949 18.9453" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.50014 19.5001C5.54626 19.5 4.61904 19.1852 3.86229 18.6045C3.10554 18.0238 2.56154 17.2097 2.31465 16.2883C2.06777 15.3669 2.13179 14.3898 2.4968 13.5085C2.86181 12.6273 3.50741 11.891 4.33347 11.4141" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6.5035 5.55469C5.86672 5.71842 5.27554 6.02491 4.77475 6.45094C4.27396 6.87698 3.87668 7.41138 3.613 8.01369C3.34932 8.616 3.22616 9.27041 3.25284 9.92736C3.27952 10.5843 3.45535 11.2266 3.767 11.8055" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            ),
+            title: "Mental Health & Wellness",
+            description: "Advancing clinical approaches to mental health care and substance use disorder management.",
         },
         {
-            icon: <BookIcon width="24" height="24" color="#C0392B" strokeWidth="1.5" />,
-            title: "Student Research",
-            description: "Opportunities for undergraduate and postgraduate research.",
+            icon: (<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.3337 22.75V20.5833C17.3337 19.4341 16.8771 18.3319 16.0645 17.5192C15.2518 16.7065 14.1496 16.25 13.0003 16.25H6.50033C5.35105 16.25 4.24885 16.7065 3.4362 17.5192C2.62354 18.3319 2.16699 19.4341 2.16699 20.5833V22.75" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.333 3.39062C18.2622 3.63153 19.0852 4.17416 19.6727 4.93336C20.2601 5.69256 20.5789 6.62534 20.5789 7.58529C20.5789 8.54524 20.2601 9.47803 19.6727 10.2372C19.0852 10.9964 18.2622 11.5391 17.333 11.78" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M23.8337 22.7498V20.5831C23.833 19.623 23.5135 18.6903 22.9252 17.9315C22.337 17.1726 21.5134 16.6307 20.5837 16.3906" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9.75033 11.9167C12.1436 11.9167 14.0837 9.97657 14.0837 7.58333C14.0837 5.1901 12.1436 3.25 9.75033 3.25C7.35709 3.25 5.41699 5.1901 5.41699 7.58333C5.41699 9.97657 7.35709 11.9167 9.75033 11.9167Z" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            ),
+            title: "Health Equity",
+            description: "Addressing healthcare disparities and improving access through population-based medical research.",
         },
         {
-            icon: <HeartIcon />,
-            title: "Public Health",
-            description: "Studies addressing community and population health needs.",
+            icon: (<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.8327 12.9974H21.146C20.6726 12.9964 20.2118 13.1505 19.8342 13.4361C19.4566 13.7217 19.183 14.1232 19.0552 14.5791L16.5093 23.6357C16.4929 23.692 16.4587 23.7414 16.4118 23.7766C16.365 23.8117 16.3079 23.8307 16.2493 23.8307C16.1907 23.8307 16.1337 23.8117 16.0868 23.7766C16.04 23.7414 16.0058 23.692 15.9893 23.6357L10.0093 2.35906C9.99294 2.30281 9.95873 2.25339 9.91185 2.21823C9.86497 2.18307 9.80795 2.16406 9.74935 2.16406C9.69075 2.16406 9.63373 2.18307 9.58685 2.21823C9.53997 2.25339 9.50576 2.30281 9.48935 2.35906L6.94352 11.4157C6.81619 11.8698 6.54418 12.27 6.16878 12.5554C5.79339 12.8409 5.33511 12.996 4.86352 12.9974H2.16602" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            ),
+            title: "Disease Management",
+            description: "Developing medical strategies for managing diabetes, cancer, and long-term health conditions.",
+        },
+        {
+            icon: (<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.917 2.16406V4.33073" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5.41699 2.16406V4.33073" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5.41699 3.25H4.33366C3.75902 3.25 3.20792 3.47827 2.80159 3.8846C2.39527 4.29093 2.16699 4.84203 2.16699 5.41667V9.75C2.16699 11.4739 2.85181 13.1272 4.0708 14.3462C5.28978 15.5652 6.94309 16.25 8.66699 16.25C10.3909 16.25 12.0442 15.5652 13.2632 14.3462C14.4822 13.1272 15.167 11.4739 15.167 9.75V5.41667C15.167 4.84203 14.9387 4.29093 14.5324 3.8846C14.1261 3.47827 13.575 3.25 13.0003 3.25H11.917" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.66699 16.25C8.66699 17.9739 9.35181 19.6272 10.5708 20.8462C11.7898 22.0652 13.4431 22.75 15.167 22.75C16.8909 22.75 18.5442 22.0652 19.7632 20.8462C20.9822 19.6272 21.667 17.9739 21.667 16.25V13" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M21.6667 12.9974C22.8633 12.9974 23.8333 12.0273 23.8333 10.8307C23.8333 9.63411 22.8633 8.66406 21.6667 8.66406C20.47 8.66406 19.5 9.63411 19.5 10.8307C19.5 12.0273 20.47 12.9974 21.6667 12.9974Z" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+            ),
+            title: "Clinical Practice Innovation",
+            description: "Transforming healthcare delivery through technology-driven and evidence-based medical practice.",
+        },
+        {
+            icon: (<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.5 19.5H15.1667" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M3.25 23.8359H22.75" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M15.1671 23.8307C17.1783 23.8307 19.1071 23.0318 20.5293 21.6096C21.9514 20.1875 22.7504 18.2586 22.7504 16.2474C22.7504 14.2362 21.9514 12.3073 20.5293 10.8852C19.1071 9.46302 17.1783 8.66406 15.1671 8.66406H14.0837" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9.75073 15.1641H11.9174" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9.75041 13C9.17577 13 8.62467 12.7717 8.21834 12.3654C7.81201 11.9591 7.58374 11.408 7.58374 10.8333V6.5H14.0837V10.8333C14.0837 11.408 13.8555 11.9591 13.4491 12.3654C13.0428 12.7717 12.4917 13 11.9171 13H9.75041Z" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M13.0003 6.4974V3.2474C13.0003 2.96008 12.8862 2.68453 12.683 2.48136C12.4799 2.2782 12.2043 2.16406 11.917 2.16406H9.75033C9.46301 2.16406 9.18746 2.2782 8.98429 2.48136C8.78113 2.68453 8.66699 2.96008 8.66699 3.2474V6.4974" stroke="#C0392B" stroke-width="2.25069" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            ),
+            title: "Precision Health",
+            description: "Utilizing genomics and personalized medicine to optimize clinical outcomes.",
         },
     ];
 
@@ -197,34 +338,7 @@ const MedicalPage = () => {
     const faculty2 = "/AsramWebsite-FE/assets/nursing/doctor_2.png";
     const faculty3 = "/AsramWebsite-FE/assets/nursing/doctor_3.png";
 
-    const HatIcon = ({ width = "20", height = "20", color = "#191919", strokeWidth = "1.6" }) => (
-        <svg width={width} height={height} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clipPath="url(#clip0_621_1341)">
-                <path d="M17.3012 8.82275C17.4458 8.75896 17.5685 8.65415 17.6541 8.52131C17.7398 8.38847 17.7845 8.23342 17.7829 8.07539C17.7812 7.91735 17.7333 7.76327 17.6449 7.63222C17.5566 7.50117 17.4318 7.39892 17.2859 7.33814L10.3628 4.18474C10.1523 4.08874 9.92368 4.03906 9.69236 4.03906C9.46103 4.03906 9.23240 4.08874 9.02194 4.18474L2.09966 7.33491C1.95585 7.39789 1.83352 7.50141 1.74762 7.63281C1.66172 7.76421 1.61597 7.91780 1.61597 8.07479C1.61597 8.23178 1.66172 8.38537 1.74762 8.51677C1.83352 8.64817 1.95585 8.75169 2.09966 8.81467L9.02194 11.9713C9.23240 12.0673 9.46103 12.1170 9.69236 12.1170C9.92368 12.1170 10.1523 12.0673 10.3628 11.9713L17.3012 8.82275Z" stroke={color} strokeOpacity="0.75" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M17.7698 8.07812V12.9245" stroke={color} strokeOpacity="0.75" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M4.84473 10.0938V12.9208C4.84473 13.5635 5.35533 14.1798 6.26421 14.6343C7.17308 15.0887 8.40578 15.3440 9.69113 15.3440C10.9765 15.3440 12.2092 15.0887 13.1181 14.6343C14.0269 14.1798 14.5375 13.5635 14.5375 12.9208V10.0938" stroke={color} strokeOpacity="0.75" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
-            </g>
-            <defs>
-                <clipPath id="clip0_621_1341">
-                    <rect width="19.3856" height="19.3856" fill="white" />
-                </clipPath>
-            </defs>
-        </svg>
-    );
 
-    const RibbonIcon = ({ width = "20", height = "20", color = "#191919", strokeWidth = "1.6" }) => (
-        <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="8" r="7" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M8.21094 13.8896L7 23L12 20L17 23L15.789 13.8896" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-    );
-
-    const EnvelopeIcon = ({ width = "20", height = "20", color = "#191919", strokeWidth = "1.6" }) => (
-        <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M22 6L12 13L2 6" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-    );
 
     const medicalFacultyData = [
         {
@@ -265,31 +379,31 @@ const MedicalPage = () => {
         }
     ];
 
-    // Red Check Icon for Why Choose
-    const IconCheckRed = () => (
+    // Teal Check Icon for Why Choose
+    const IconCheckTeal = () => (
         <svg width="11.83" height="17" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2.21201 10.7801C2.21201 10.6587 2.18868 10.5981 2.14201 10.5981L1.82001 10.7521C1.82001 10.6867 1.78268 10.6401 1.70801 10.6121L1.59601 10.5981C1.52134 10.5981 1.42801 10.6307 1.31601 10.6961C1.29734 10.6494 1.27401 10.6027 1.24601 10.5561C1.21801 10.5094 1.19468 10.4674 1.17601 10.4301C1.05468 10.1967 0.933344 9.94006 0.812011 9.66006C0.700011 9.37073 0.592677 9.0954 0.490011 8.83406C0.396677 8.57273 0.322011 8.3674 0.266011 8.21806C0.228677 8.09673 0.186677 7.91473 0.140011 7.67206C0.0933441 7.4294 0.0466774 7.1214 1.0781e-05 6.74806C0.102677 6.8134 0.182011 6.84606 0.238011 6.84606C0.303344 6.84606 0.364011 6.74806 0.420011 6.55206C0.448011 6.5894 0.499344 6.60806 0.574011 6.60806C0.630011 6.60806 0.672011 6.5894 0.700011 6.55206L0.924011 6.21606L1.17601 6.30006H1.19001C1.20868 6.30006 1.22734 6.29073 1.24601 6.27206C1.26468 6.2534 1.29268 6.23473 1.33001 6.21606C1.40468 6.1694 1.46068 6.14606 1.49801 6.14606L1.54001 6.16006C1.77334 6.27206 1.92268 6.4774 1.98801 6.77606C2.15601 7.4854 2.32401 7.84006 2.49201 7.84006C2.66001 7.84006 2.85601 7.66273 3.08001 7.30806C3.19201 7.13073 3.30401 6.9254 3.41601 6.69206C3.53734 6.45873 3.65868 6.1974 3.78001 5.90806C3.79868 6.02006 3.81734 6.07606 3.83601 6.07606C3.88268 6.07606 3.96201 5.9594 4.07401 5.72606C4.19534 5.49273 4.38668 5.17073 4.64801 4.76006C4.79734 4.50806 4.98401 4.2234 5.20801 3.90606C5.44134 3.58873 5.68868 3.26206 5.95001 2.92606C6.21134 2.59006 6.46334 2.27273 6.70601 1.97406C6.95801 1.6754 7.18201 1.41873 7.37801 1.20406C7.57401 0.989395 7.71868 0.849395 7.81201 0.784062C8.16668 0.541395 8.44668 0.308062 8.65201 0.0840621C8.64268 0.149395 8.62868 0.210062 8.61001 0.266062C8.60068 0.312729 8.59601 0.345395 8.59601 0.364062C8.59601 0.401395 8.61468 0.420062 8.65201 0.420062L9.04401 0.224062V0.280062C9.04401 0.354729 9.06268 0.392062 9.10001 0.392062C9.12801 0.392062 9.18401 0.350062 9.26801 0.266062C9.35201 0.182062 9.39868 0.121396 9.40801 0.0840621L9.38001 0.280062L9.85601 6.23465e-05L9.74401 0.252062C9.89334 0.149395 10.0007 0.0980619 10.066 0.0980619C10.1033 0.0980619 10.1313 0.121395 10.15 0.168062C10.1687 0.205395 10.178 0.242729 10.178 0.280062C10.178 0.336062 10.1547 0.401395 10.108 0.476062C10.0613 0.550729 10.0007 0.639396 9.92601 0.742062C9.87001 0.816729 9.77668 0.928729 9.64601 1.07806C9.52468 1.21806 9.33801 1.42806 9.08601 1.70806C8.83401 1.97873 8.49801 2.35673 8.07801 2.84206C7.96601 2.9634 7.79334 3.17806 7.56001 3.48606C7.32668 3.78473 7.06068 4.13473 6.76201 4.53606C6.47268 4.92806 6.18334 5.32473 5.89401 5.72606C5.60468 6.1274 5.34801 6.4914 5.12401 6.81806C4.90001 7.1354 4.74134 7.3734 4.64801 7.53206L3.78001 9.00206C3.59334 9.3194 3.43934 9.58073 3.31801 9.78606C3.19668 9.98206 3.10334 10.1174 3.03801 10.1921C2.89801 10.3601 2.74401 10.5094 2.57601 10.6401L2.45001 10.5701L2.33801 10.6401L2.21201 10.7801Z" fill="#C0392B" />
+            <path d="M2.21201 10.7801C2.21201 10.6587 2.18868 10.5981 2.14201 10.5981L1.82001 10.7521C1.82001 10.6867 1.78268 10.6401 1.70801 10.6121L1.59601 10.5981C1.52134 10.5981 1.42801 10.6307 1.31601 10.6961C1.29734 10.6494 1.27401 10.6027 1.24601 10.5561C1.21801 10.5094 1.19468 10.4674 1.17601 10.4301C1.05468 10.1967 0.933344 9.94006 0.812011 9.66006C0.700011 9.37073 0.592677 9.0954 0.490011 8.83406C0.396677 8.57273 0.322011 8.3674 0.266011 8.21806C0.228677 8.09673 0.186677 7.91473 0.140011 7.67206C0.0933441 7.4294 0.0466774 7.1214 1.0781e-05 6.74806C0.102677 6.8134 0.182011 6.84606 0.238011 6.84606C0.303344 6.84606 0.364011 6.74806 0.420011 6.55206C0.448011 6.5894 0.499344 6.60806 0.574011 6.60806C0.630011 6.60806 0.672011 6.5894 0.700011 6.55206L0.924011 6.21606L1.17601 6.30006H1.19001C1.20868 6.30006 1.22734 6.29073 1.24601 6.27206C1.26468 6.2534 1.29268 6.23473 1.33001 6.21606C1.40468 6.1694 1.46068 6.14606 1.49801 6.14606L1.54001 6.16006C1.77334 6.27206 1.92268 6.4774 1.98801 6.77606C2.15601 7.4854 2.32401 7.84006 2.49201 7.84006C2.66001 7.84006 2.85601 7.66273 3.08001 7.30806C3.19201 7.13073 3.30401 6.9254 3.41601 6.69206C3.53734 6.45873 3.65868 6.1974 3.78001 5.90806C3.79868 6.02006 3.81734 6.07606 3.83601 6.07606C3.88268 6.07606 3.96201 5.9594 4.07401 5.72606C4.19534 5.49273 4.38668 5.17073 4.64801 4.76006C4.79734 4.50806 4.98401 4.2234 5.20801 3.90606C5.44134 3.58873 5.68868 3.26206 5.95001 2.92606C6.21134 2.59006 6.46334 2.27273 6.70601 1.97406C6.95801 1.6754 7.18201 1.41873 7.37801 1.20406C7.57401 0.989395 7.71868 0.849395 7.81201 0.784062C8.16668 0.541395 8.44668 0.308062 8.65201 0.0840621C8.64268 0.149395 8.62868 0.210062 8.61001 0.266062C8.60068 0.312729 8.59601 0.345395 8.59601 0.364062C8.59601 0.401395 8.61468 0.420062 8.65201 0.420062L9.04401 0.224062V0.280062C9.04401 0.354729 9.06268 0.392062 9.10001 0.392062C9.12801 0.392062 9.18401 0.350062 9.26801 0.266062C9.35201 0.182062 9.39868 0.121396 9.40801 0.0840621L9.38001 0.280062L9.85601 6.23465e-05L9.74401 0.252062C9.89334 0.149395 10.0007 0.0980619 10.066 0.0980619C10.1033 0.0980619 10.1313 0.121395 10.15 0.168062C10.1687 0.205395 10.178 0.242729 10.178 0.280062C10.178 0.336062 10.1547 0.401395 10.108 0.476062C10.0613 0.550729 10.0007 0.639396 9.92601 0.742062C9.87001 0.816729 9.77668 0.928729 9.64601 1.07806C9.52468 1.21806 9.33801 1.42806 9.08601 1.70806C8.83401 1.97873 8.49801 2.35673 8.07801 2.84206C7.96601 2.9634 7.79334 3.17806 7.56001 3.48606C7.32668 3.78473 7.06068 4.13473 6.76201 4.53606C6.47268 4.92806 6.18334 5.32473 5.89401 5.72606C5.60468 6.1274 5.34801 6.4914 5.12401 6.81806C4.90001 7.1354 4.74134 7.3734 4.64801 7.53206L3.78001 9.00206C3.59334 9.3194 3.43934 9.58073 3.31801 9.78606C3.19668 9.98206 3.10334 10.1174 3.03801 10.1921C2.89801 10.3601 2.74401 10.5094 2.57601 10.6401L2.45001 10.5701L2.33801 10.6401L2.21201 10.7801Z" fill="#008C8C" />
         </svg>
     );
 
     const medicalWhyChooseConfig = {
-        title: "Why Choose Asram Medical College",
-        CheckIcon: <IconCheckRed />,
+        title: "Why Choose ASRAM Medical Sciences?",
+        CheckIcon: <IconCheckTeal />,
         columns: [
             {
                 title: "Educational Excellence",
                 items: [
-                    "Integration with comprehensive multispecialty hospital",
-                    "Robust infrastructure across 10-acre campus",
-                    "Recognized affiliations and regulatory approvals"
+                    "Integrated multispecialty hospital for clinical learning",
+                    "Advanced infrastructure supporting medical education",
+                    "Recognized regulatory approvals and affiliations"
                 ]
             },
             {
                 title: "Student Success",
                 items: [
-                    "Clear pathways from undergraduate to postgraduate",
-                    "Student-centered environment with strong mentoring",
-                    "Practical orientation ensuring job readiness"
+                    "Clear academic pathways from MBBS to postgraduate programs",
+                    "Student-focused mentoring and academic supervision",
+                    "Practical orientation ensuring clinical competence"
                 ]
             }
         ]
@@ -378,6 +492,30 @@ const MedicalPage = () => {
         }
     ];
 
+    const medicalSocialCommitmentData = [
+        {
+            title: "Health Camps",
+            description: "Specialty and general health camps offering medical consultations, screenings, and referrals."
+        },
+        {
+            title: "Rural Outreach",
+            description: "Community medical outreach programmes addressing primary care and health needs."
+        },
+        {
+            title: "Health Education",
+            description: "Awareness programs on disease prevention, lifestyle modification, and public health practices."
+        },
+        {
+            title: "Ethical Training",
+            description: "Training in medical ethics, patient rights, professional conduct, and responsible care."
+        }
+    ];
+
+    const medicalSocialDescription = [
+        "As part of the ASRAM educational society, the medical college actively contributes to health camps, rural outreach, and community healthcare initiatives—integrating medical education with social responsibility. Students gain exposure to population health challenges through direct community engagement.",
+        "The emphasis on ethical practice and social accountability helps develop doctors who are sensitive to public health needs and committed to equitable, patient-focused care across diverse communities."
+    ];
+
     return (
         <>
             <AcademicProgramsSection
@@ -394,33 +532,53 @@ const MedicalPage = () => {
                 iconBg="#C0392B1A"
                 iconContainerClassName="w-[48px] h-[48px]"
             />
+
             <StudentExperience
                 data={medicalStudentExperience}
                 cardBg="#eef2f7"
-                iconBg="#C0392B1A"
+                iconBg="#FFFFFF"
                 iconContainerClassName="w-[48px] h-[48px] overflow-hidden"
                 titleColor="#223f7f"
-                cardBorder="1px solid rgba(7, 7, 7, 0.2)"
                 titleClassName=""
                 heading="Student Experience"
                 subHeading="Comprehensive Learning Environment"
                 description={[
-                    "Students learn in a supportive academic environment that blends classroom learning, bedside teaching, and real clinical exposure.Students learn in a supportive academic environment that blends classroom learning, bedside teaching, and real clinical exposure.",
-                    "Students learn in a supportive academic environment that blends classroom learning, bedside teaching, and real clinical exposure."
+                    "At ASRAM College of Medical Sciences, we foster a structured and disciplined environment where students build strong academic foundations, clinical competence, and professional responsibility. The learning culture emphasizes ethical practice, critical thinking, and patient-centered care from the early stages of training.",
+                    "Our approach integrates rigorous medical education with extensive hospital exposure, supervised clinical practice, and real-world case-based learning. This prepares students to transition confidently into clinical roles with sound judgment and professional integrity."
                 ]}
             />
-            <FeatureGridSection
-                heading="Research"
-                items={medicalResearchData}
-                bgColor="bg-[#EEF2F7]"
-                buttonText="Explore Our Research"
-                onButtonClick={() => { }}
-            />
+
+
+
+            <PageSection bg="bg-[#EEF2F7]" paddingClass="py-[60px] md:py-[80px]">
+                <h1 className={`${T.font.family} font-bold text-[28px] md:text-[32px] lg:text-[42px] text-[#223F7F] mb-10`}>
+                    Research
+                </h1>
+                <InfoCardGrid
+                    items={medicalResearchData}
+                    gridClassName="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px]"
+                    cardClassName="bg-white rounded-[13.1px] p-[24px] border border-[rgba(7,7,7,0.2)] h-full flex flex-col items-start hover:shadow-lg transition-shadow"
+                    iconContainerClassName="w-[48px] h-[48px] bg-[#C0392B1A] rounded-[8px] flex items-center justify-center text-[#C0392B] mb-[16px] flex-shrink-0"
+                    titleClassName="text-[#223F7F] font-semibold text-[20px] mb-[8px] font-montserrat"
+                    descriptionClassName="text-[#191919BF] text-[16px] leading-[1.5] font-montserrat"
+                />
+                <div className="flex justify-center mt-12">
+                    <button
+                        onClick={() => { }}
+                        className="bg-[#223F7F] text-white px-8 py-3 rounded-[8px] font-medium text-[18px] hover:bg-[#1a3163] transition-colors"
+                    >
+                        Explore Our Research
+                    </button>
+                </div>
+            </PageSection>
+
             <SocialCommitment
                 iconColor="#C0392B"
                 cardBg="#EEF2F7"
                 cardBorder="1px solid rgba(7, 7, 7, 0.2)"
-                iconBg="#C0392B1A"
+                iconBg="#FFF"
+                data={medicalSocialCommitmentData}
+                description={medicalSocialDescription}
             />
             <AsramNewsEvents />
             <FacultySpotlightSection

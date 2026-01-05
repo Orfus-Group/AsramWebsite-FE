@@ -10,7 +10,9 @@ const IconActiveStudents = "/AsramWebsite-FE/assets/icons/IconActiveStudents.svg
 const IconPlacementSuccess = "/AsramWebsite-FE/assets/icons/IconPlacementSuccess.svg";
 const IconApprovedPrograms = "/AsramWebsite-FE/assets/icons/IconApprovedPrograms.svg";
 
-export default function NursingCareerSection() {
+export default function NursingCareerSection({ theme }) {
+  const secondaryColor = theme?.secondary || "#223F7F"; // Default Blue
+
   return (
     <PageSection bg={T.bg.sectionCard} sectionClassName="py-[60px] md:py-[80px]">
       {/* SECTION TITLE */}
@@ -21,23 +23,21 @@ export default function NursingCareerSection() {
           text-[32px] leading-[40px]
           sm:text-[38px] sm:leading-[44px]
           md:text-[42px] md:leading-[46px]
-          text-[${T.color.secondary}]
           mb-[40px]
         `}
+        style={{ color: secondaryColor }}
       >
-        Shape Your Career in Nursing
+        Shape Your Career in Medicine
       </h2>
 
       {/* MAIN LAYOUT */}
-      <div className="w-full flex flex-col lg:flex-row items-center justify-start gap-[40px] lg:gap-[90px]">
+      <div className="w-full mx-auto flex flex-col lg:flex-row items-center justify-between gap-5">
 
         {/* LEFT IMAGE */}
         <div
           className="
-            flex-1
-            w-full
-            lg:max-w-[563px]
-            aspect-[563/367]
+            w-full lg:flex-1
+            h-[367px]
             rounded-[8px]
             overflow-hidden
           "
@@ -54,27 +54,26 @@ export default function NursingCareerSection() {
         {/* RIGHT GRID */}
         <div
           className="
-            flex-1
-            w-full
-            lg:max-w-[588px]
+            w-full lg:flex-1
             grid
-            grid-cols-2
-            gap-[23.7px]
+            grid-cols-1 sm:grid-cols-2
+            gap-5
           "
         >
           {/* Custom Card 1 */}
           <div
-            className="bg-white flex flex-col items-center justify-center border border-transparent transition-shadow aspect-[282/171] rounded-[9.9px]"
+            className="bg-white flex flex-col items-center justify-start border border-transparent transition-shadow w-full h-[171.7px] rounded-[9.9px] pt-[23.7px] pr-[23.6px] pb-[41.1px] pl-[23.7px]"
           >
-            <img src={IconExcellence} className="w-[32px] h-[32px]" alt="" />
+            <img src={IconExcellence} className="w-[32px] h-[32px] mb-[15px]" alt="" style={theme?.iconFilter ? { filter: theme.iconFilter } : {}} />
             <span
-              className="mt-[15px] text-[#223F7F] font-bold font-montserrat text-center"
+              className="font-bold font-montserrat text-center"
               style={{
                 fontSize: "29.6px",
                 lineHeight: "1.2",
+                color: secondaryColor,
               }}
             >
-              20+
+              30+
             </span>
             <span
               className="mt-[5px] text-center font-montserrat font-medium"
@@ -86,14 +85,15 @@ export default function NursingCareerSection() {
 
           {/* Custom Card 2 */}
           <div
-            className="bg-white flex flex-col items-center justify-center border border-transparent transition-shadow aspect-[282/171] rounded-[9.9px]"
+            className="bg-white flex flex-col items-center justify-start border border-transparent transition-shadow w-full h-[171.7px] rounded-[9.9px] pt-[23.7px] pr-[23.6px] pb-[41.1px] pl-[23.7px]"
           >
-            <img src={IconActiveStudents} className="w-[32px] h-[32px]" alt="" />
+            <img src={IconActiveStudents} className="w-[32px] h-[32px] mb-[15px]" alt="" style={theme?.iconFilter ? { filter: theme.iconFilter } : {}} />
             <span
-              className="mt-[15px] text-[#223F7F] font-bold font-montserrat text-center"
+              className="font-bold font-montserrat text-center"
               style={{
                 fontSize: "29.6px",
                 lineHeight: "1.2",
+                color: secondaryColor,
               }}
             >
               377+
@@ -108,14 +108,15 @@ export default function NursingCareerSection() {
 
           {/* Custom Card 3 */}
           <div
-            className="bg-white flex flex-col items-center justify-center border border-transparent transition-shadow aspect-[282/171] rounded-[9.9px]"
+            className="bg-white flex flex-col items-center justify-start border border-transparent transition-shadow w-full h-[171.7px] rounded-[9.9px] pt-[23.7px] pr-[23.6px] pb-[41.1px] pl-[23.7px]"
           >
-            <img src={IconPlacementSuccess} className="w-[32px] h-[32px]" alt="" />
+            <img src={IconPlacementSuccess} className="w-[32px] h-[32px] mb-[15px]" alt="" style={theme?.iconFilter ? { filter: theme.iconFilter } : {}} />
             <span
-              className="mt-[15px] text-[#223F7F] font-bold font-montserrat text-center"
+              className="font-bold font-montserrat text-center"
               style={{
                 fontSize: "29.6px",
                 lineHeight: "1.2",
+                color: secondaryColor,
               }}
             >
               95%
@@ -130,17 +131,18 @@ export default function NursingCareerSection() {
 
           {/* Custom Card 4 */}
           <div
-            className="bg-white flex flex-col items-center justify-center border border-transparent transition-shadow aspect-[282/171] rounded-[9.9px]"
+            className="bg-white flex flex-col items-center justify-start border border-transparent transition-shadow w-full h-[171.7px] rounded-[9.9px] pt-[23.7px] pr-[23.6px] pb-[41.1px] pl-[23.7px]"
           >
-            <img src={IconApprovedPrograms} className="w-[32px] h-[32px]" alt="" />
+            <img src={IconApprovedPrograms} className="w-[32px] h-[32px] mb-[15px]" alt="" style={theme?.iconFilter ? { filter: theme.iconFilter } : {}} />
             <span
-              className="mt-[15px] text-[#223F7F] font-bold font-montserrat text-center"
+              className="font-bold font-montserrat text-center"
               style={{
                 fontSize: "29.6px",
                 lineHeight: "1.2",
+                color: secondaryColor,
               }}
             >
-              INC
+              NMC
             </span>
             <span
               className="mt-[5px] text-center font-montserrat font-medium"

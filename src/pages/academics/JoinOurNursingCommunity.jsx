@@ -34,63 +34,155 @@ const contactCards = [
     },
 ];
 
-const JoinOurNursingCommunity = () => {
+const JoinOurNursingCommunity = ({ theme }) => {
+    // Colors from theme or Figma defaults
+    const secondaryColor = theme?.secondary || "#1E3A8A"; // Dark Blue
+    const primaryButtonBg = "#1E3A8A"; // Dark Blue for primary action
+    const secondaryButtonBg = "#EEF2F7"; // Light gray-blue for secondary actions
+
     return (
-        <PageSection bg={T.bg.white} paddingClass="py-[80px]">
-            <div className="flex flex-col gap-12">
+        <PageSection bg={T.bg.white} paddingClass="py-[40px]">
+            {/* 
+                Structure:
+                1. Title (Centered)
+                2. Buttons (Centered, gap-4) -- 40px gap below
+                3. Cards (Grid, gap-6) -- 40px gap below
+                4. Divider -- 40px gap below (or integrated)
+                5. Stats (Centered)
+             */}
 
-                {/* Header Section */}
-                <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
-                    <h2 className={`${T.font.family} font-bold text-[40px] text-[#1E3A8A] leading-tight max-w-[400px]`}>
-                        Join Our Nursing Community
-                    </h2>
-                    <p className={`${T.font.family} text-[16px] text-gray-600 leading-relaxed max-w-[500px]`}>
-                        Take the first step towards a rewarding career in healthcare. ASRAM School of Nursing is ready to welcome you into a community of compassionate, skilled nursing professionals.
-                    </p>
-                </div>
+            <div className="flex flex-col items-center">
 
-                {/* Buttons Row */}
-                <div className="flex flex-wrap gap-4 items-center">
-                    <button className="bg-[#008C8C] hover:bg-[#007A7A] text-white px-6 py-3 rounded-[6px] font-medium text-[15px] flex items-center gap-2 transition-colors">
+                {/* 1. Header Section */}
+                <h2
+                    className={`
+                        ${T.font.family} 
+                        font-bold 
+                        text-[40px] 
+                        leading-tight 
+                        text-center 
+                        mb-[40px]
+                    `}
+                    style={{ color: secondaryColor }}
+                >
+                    Join Our Medical Community
+                </h2>
+
+                {/* 2. Buttons Row */}
+                <div className="flex flex-wrap justify-center gap-[16px] mb-[40px]">
+                    <button
+                        className="
+                            text-white 
+                            px-[24px] py-[12px] 
+                            rounded-[8px] 
+                            font-bold 
+                            text-[14px] 
+                            flex items-center gap-2 
+                            transition-colors
+                        "
+                        style={{ backgroundColor: primaryButtonBg }}
+                    >
                         Start Your Application
-                        <span>→</span>
+                        <span className="text-[16px]">→</span>
                     </button>
-                    <button className="bg-[#F8FAFC] hover:bg-gray-100 text-[#5A6B89] px-6 py-3 rounded-[6px] font-medium text-[15px] transition-colors border border-transparent hover:border-gray-200">
+
+                    <button
+                        className="
+                            text-[#1E3A8A] 
+                            px-[24px] py-[12px] 
+                            rounded-[8px] 
+                            font-medium 
+                            text-[14px] 
+                            transition-colors
+                        "
+                        style={{ backgroundColor: secondaryButtonBg }}
+                    >
                         Explore Programs
                     </button>
-                    <button className="bg-[#E2E8F0] hover:bg-[#CBD5E1] text-[#334155] px-6 py-3 rounded-[6px] font-medium text-[15px] transition-colors">
+
+                    <button
+                        className="
+                             text-[#1E3A8A]  
+                            px-[24px] py-[12px] 
+                            rounded-[8px] 
+                            font-medium 
+                            text-[14px] 
+                            transition-colors
+                        "
+                        style={{ backgroundColor: secondaryButtonBg }}
+                    >
                         Visit Website
                     </button>
                 </div>
 
-                {/* Contact Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
+                {/* 3. Contact Cards */}
+                <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-[24px] mb-[40px]">
                     {contactCards.map((card, index) => (
-                        <div key={index} className="bg-[#F8FAFC] rounded-[12px] p-[40px] flex flex-col items-center text-center">
-                            <div className="w-[56px] h-[56px] bg-[#008C8C] rounded-full flex items-center justify-center mb-5 shrink-0">
-                                <img src={card.icon} className="w-[24px] h-[24px]" alt="" />
+                        <div
+                            key={index}
+                            className="
+                                flex flex-col items-center text-center
+                                p-[24px]
+                                rounded-[8px]
+                                gap-[12px]
+                            "
+                            style={{
+                                backgroundColor: "#F7F9FC",
+                                border: "0.99px solid rgba(7, 7, 7, 0.2)"
+                            }}
+                        >
+                            <div
+                                className="
+                                    w-[48px] h-[48px] 
+                                    rounded-full 
+                                    flex items-center justify-center 
+                                    shrink-0
+                                "
+                                style={{ backgroundColor: secondaryColor }}
+                            >
+                                <img src={card.icon} className="w-[20px] h-[20px]" alt="" />
                             </div>
-                            <h3 className={`${T.font.family} font-bold text-[20px] text-[#1E3A8A] mb-2`}>
+
+                            <h3
+                                className={`
+                                    ${T.font.family} 
+                                    font-bold 
+                                    text-[18px] 
+                                `}
+                                style={{ color: secondaryColor }}
+                            >
                                 {card.title}
                             </h3>
-                            <p className={`${T.font.family} text-[15px] text-gray-600`}>
-                                {card.desc}
-                            </p>
-                            <p className={`${T.font.family} text-[14px] text-gray-500`}>
-                                {card.sub}
-                            </p>
+
+                            <div className="flex flex-col gap-[2px]">
+                                <p className={`${T.font.family} text-[14px] text-gray-600`}>
+                                    {card.desc}
+                                </p>
+
+                                <p className={`${T.font.family} text-[14px] text-gray-500`}>
+                                    {card.sub}
+                                </p>
+                            </div>
                         </div>
                     ))}
                 </div>
 
-                {/* Divider */}
-                <div className="h-[1px] w-full bg-gray-200"></div>
+                {/* 4. Divider */}
+                <div className="h-[1px] w-full bg-gray-200 mb-[40px]"></div>
 
-                {/* Stats Row */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {/* 5. Stats Row */}
+                <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-8">
                     {stats.map((stat, index) => (
                         <div key={index} className="flex flex-col items-center text-center">
-                            <h4 className={`${T.font.family} font-bold text-[36px] text-[#1E3A8A] mb-1`}>
+                            <h4
+                                className={`
+                                    ${T.font.family} 
+                                    font-bold 
+                                    text-[36px] 
+                                    mb-1
+                                `}
+                                style={{ color: secondaryColor }}
+                            >
                                 {stat.value}
                             </h4>
                             <p className={`${T.font.family} text-[14px] text-gray-500`}>

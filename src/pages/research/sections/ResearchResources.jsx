@@ -7,7 +7,7 @@ const IconChartWhite = "/AsramWebsite-FE/assets/icons/IconChartWhite.svg";
 const IconLaptop = "/AsramWebsite-FE/assets/icons/IconLaptop.svg";
 const IconArrowRightBlue = "/AsramWebsite-FE/assets/icons/IconArrowRightBlue.svg";
 
-const resources = [
+const defaultResources = [
     {
         title: "Central Research Laboratory",
         desc: "State-of-the-art facility with PCR, flow cytometry, ELISA readers, and cell culture capabilities.",
@@ -27,9 +27,19 @@ const resources = [
 
 const ResearchResources = ({
     iconConfig = { bg: "#008C8C", iconFilter: "brightness(0) invert(1)" },
-    buttonConfig = { bg: "#008C8C" },
-    accentColor = "#008C8C",
+    buttonConfig = { bg: "#223F7F" },
+    accentColor = "#223F7F",
+    arrowFilter,
+    titleColor = "#191919",
+    resources,
+    footerContent
 }) => {
+    const resourcesToRender = resources || defaultResources;
+    const footerTitle = footerContent?.title || "Book Resources & Training";
+    const footerDesc = footerContent?.desc || "Access our online resource management system to book laboratory equipment, software licenses, and consultation time. Regular training programs available for all tools and facilities.";
+    const footerBtn1Text = footerContent?.btn1Text || "Access Resource Portal";
+    const footerBtn2Text = footerContent?.btn2Text || "View Training Schedule";
+
     return (
         <PageSection bgColor="#EEF2F7" paddingClass="py-[80px]">
             <h2 className={`${T.font.family} font-bold text-[40px] text-[#223F7F] mb-10`}>
@@ -37,8 +47,8 @@ const ResearchResources = ({
             </h2>
 
             {/* 1. Resources Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px] mb-10">
-                {resources.map((item, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
+                {resourcesToRender.map((item, index) => (
                     <div style={{ border: "1px solid #07070733" }} key={index} className="bg-white rounded-[12px] p-[24px] md:p-[30px] flex flex-col items-start h-full shadow-sm transition-shadow">
                         <div
                             className={`${iconConfig.sizeClass || "w-[48px] h-[48px]"} ${iconConfig.radiusClass || "rounded-[8px]"} flex items-center justify-center mb-5 shrink-0`}
@@ -50,7 +60,10 @@ const ResearchResources = ({
                             })}
                         </div>
 
-                        <h3 className={`${T.font.family} font-medium text-[18px] text-[#191919] mb-3 leading-snug`}>
+                        <h3
+                            className={`${T.font.family} font-medium text-[18px] mb-3 leading-snug`}
+                            style={{ color: titleColor }}
+                        >
                             {item.title}
                         </h3>
 
@@ -63,7 +76,7 @@ const ResearchResources = ({
                             style={{ color: accentColor }}
                         >
                             Learn More
-                            <span><img src={IconArrowRightBlue} className="w-[16px] h-[16px]" alt="" style={{ filter: "inherit" }} />
+                            <span><img src={IconArrowRightBlue} className="w-[16px] h-[16px]" alt="" style={{ filter: arrowFilter || "none" }} />
                             </span>
                         </button>
                     </div>
@@ -71,29 +84,29 @@ const ResearchResources = ({
             </div>
 
             {/* 2. Book Resources Card */}
-            <div style={{ border: "1px solid #07070733" }} className="bg-white rounded-[12px] p-[24px] md:p-[40px] shadow-sm">
-                <h3 className={`${T.font.family} font-semibold text-[24px] text-[#223F7F] mb-4`}>
-                    Book Resources & Training
+            <div style={{ border: "1px solid #07070733" }} className="bg-white rounded-[12px] p-[24px] md:p-[40px] shadow-sm flex flex-col gap-[20px]">
+                <h3 className={`${T.font.family} font-semibold text-[24px] text-[#223F7F]`}>
+                    {footerTitle}
                 </h3>
 
-                <p className={`${T.font.family} font-regular text-[18px] text-[#191919BF] leading-[26px] max-w-[900px] mb-8`}>
-                    Access our online resource management system to book laboratory equipment, software licenses, and consultation time. Regular training programs available for all tools and facilities.
+                <p className={`${T.font.family} font-regular text-[18px] text-[rgba(25,25,25,0.75)] leading-[1.44]`}>
+                    {footerDesc}
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-[20px]">
                     <button
-                        className="hover:opacity-90 text-white px-6 py-3 rounded-[10.4px] font-medium text-[18px] flex items-center gap-2 transition-colors"
+                        className="hover:opacity-90 text-white px-6 py-3 rounded-[10.4px] font-medium text-[18px] flex items-center gap-2 transition-colors shrink-0"
                         style={{ backgroundColor: buttonConfig.bg }}
                     >
-                        Access Resource Portal
+                        {footerBtn1Text}
                         <span><img src={IconArrowRight} className="w-[21px] h-[21px] invert brightness-0" alt="" /></span>
                     </button>
 
                     <button
-                        className="hover:opacity-90 text-white px-6 py-3 rounded-[10.4px] font-medium text-[18px] flex items-center gap-2 transition-colors"
+                        className="hover:opacity-90 text-white px-6 py-3 rounded-[10.4px] font-medium text-[18px] flex items-center gap-2 transition-colors shrink-0"
                         style={{ backgroundColor: buttonConfig.bg }}
                     >
-                        View Training Schedule
+                        {footerBtn2Text}
                         <span><img src={IconArrowRight} className="w-[21px] h-[21px] invert brightness-0" alt="" /></span>
                     </button>
                 </div>

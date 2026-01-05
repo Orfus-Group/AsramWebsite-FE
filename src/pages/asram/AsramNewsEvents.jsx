@@ -72,7 +72,7 @@ const AsramNewsEvents = () => {
         <div
           className="
             grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
-            gap-[20px] lg:gap-[30px]
+            gap-5
             w-full
             mb-[40px] md:mb-[60px]
           "

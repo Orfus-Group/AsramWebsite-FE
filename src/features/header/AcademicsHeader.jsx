@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { T } from "@/theme";
 const AsramLogoFull = "/AsramWebsite-FE/assets/asram/ASymbol.png";
+const AsramBlueLogo = "/AsramWebsite-FE/assets/asram/asrambluelogo.png";
 
 const AsramLogo = "/AsramWebsite-FE/assets/asram/asramcolredlogo.png";
 import ShortcutLinks from "./ShortcutLinks";
@@ -70,14 +71,21 @@ const AcademicsHeader = () => {
   const location = useLocation();
   const isMedical = location.pathname.startsWith("/medical");
 
+  const isParamedical = location.pathname.startsWith("/paramedical");
+
   const navItems = isMedical ? [
     { label: "Academics", path: "/medical-academics" },
     { label: "Research", path: "/medical-research" },
     { label: "Global & Community", path: "/community-health" },
     { label: "News", path: "/news" },
+  ] : isParamedical ? [
+    { label: "Academics", path: "/paramedical-academics" },
+    { label: "Research", path: "/paramedical-research" },
+    { label: "Global & Community", path: "/community-health" },
+    { label: "News", path: "/news" },
   ] : [
-    { label: "Academics", path: "/academics" },
-    { label: "Research", path: "/research" },
+    { label: "Academics", path: "/nursing-academics" },
+    { label: "Research", path: "/nursing-research" },
     { label: "Global & Community", path: "/community-health" },
     { label: "News", path: "/news" },
   ];
@@ -122,7 +130,7 @@ const AcademicsHeader = () => {
 
           {/* ================= CENTER LOGO (Mobile) ================= */}
           <div className="flex-1 flex justify-center md:justify-start overflow-hidden">
-            <Link to={isMedical ? "/medical" : "/nursing"}>
+            <Link to={isMedical ? "/medical" : isParamedical ? "/paramedical" : "/nursing"}>
               <div className="flex items-center gap-[4px] md:gap-[5.6px]">
                 <img
                   loading="eager"
@@ -136,7 +144,7 @@ const AcademicsHeader = () => {
                     Asram
                   </span>
                   <span className={`${T.font.family} ${T.font.weight.bold} text-[12.5px] md:text-[14.9px] text-[#223F7F] leading-[1.2] md:leading-[1.25] mt-[1px] md:mt-[1.2px] whitespace-nowrap transition-all duration-300`}>
-                    {isMedical ? "College of Medicine" : "School of Nursing"}
+                    {isMedical ? "College of Medicine" : isParamedical ? "College of Paramedical" : "School of Nursing"}
                   </span>
                 </div>
               </div>
@@ -195,26 +203,16 @@ const AcademicsHeader = () => {
             className="flex items-center mb-6 w-full justify-center"
             onClick={() => setMenuOpen(false)}
           >
-            <img
-              src={AsramLogo}
-              alt="ASRAM Logo"
-              className="
-                h-[54px] w-[54px]
-                sm:h-[60px] sm:w-[60px]
-                object-contain
-              "
-            />
-            <span
-              className={`text-white
-                text-[36px]
-                sm:text-[34px]
-                font-semibold
-                tracking-wide
-                leading-none
-                ml-[-2px] ${T.font.family}`}
-            >
-              Asram
-            </span>
+            <div className="flex items-center gap-[4px] justify-center md:w-[189.4px]">
+              <img
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                src={AsramBlueLogo}
+                alt="Asram Latest Logo"
+                className="h-[46px] object-contain flex-shrink-0 transition-all duration-300 rounded-[8px]"
+              />
+            </div>
           </Link>
 
 
@@ -251,7 +249,7 @@ const AcademicsHeader = () => {
         text-white/70            /* NEW footer text color */
       `}
             >
-              © ASRAM {isMedical ? "College of Medicine" : "School of Nursing"}
+              © ASRAM {isMedical ? "College of Medicine" : isParamedical ? "College of Paramedical" : "School of Nursing"}
             </p>
           </div>
         </div>

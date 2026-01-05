@@ -7,12 +7,12 @@ import { BeakerIcon, HeartIcon, LectureIcon, ConferenceIcon } from "../component
 
 const items = [
     {
-        icon: <BeakerIcon />,
+        icon: <BeakerIcon color="#223F7F" />,
         title: "Clinical Skill Workshops",
         description: "Regular hands-on workshops covering advanced clinical procedures, diagnostic techniques, and patient care protocols conducted by industry experts.",
     },
     {
-        icon: <HeartIcon />,
+        icon: <HeartIcon color="#223F7F" />,
         title: "Health Awareness Camps",
         description: "Community outreach programs where students organize health screening camps, awareness drives, and preventive healthcare initiatives in local areas.",
     },

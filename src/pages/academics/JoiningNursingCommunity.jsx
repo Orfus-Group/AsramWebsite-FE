@@ -16,7 +16,11 @@ const IconEmailWhite = "/AsramWebsite-FE/assets/icons/IconEmailWhite.svg";
 
 
 
-export default function JoinOurNursingCommunity() {
+export default function JoinOurNursingCommunity({ theme, title = "Join Our Nursing Community", titleClassName = "" }) {
+  const primaryColor = theme?.primary || T.color.primary;
+  const secondaryColor = theme?.secondary || T.color.secondary;
+  const ctaButtonBg = theme?.ctaButtonBg || primaryColor;
+
   return (
     <PageSection
       bg={T.bg.white}
@@ -30,17 +34,19 @@ export default function JoinOurNursingCommunity() {
           ${T.font.weight.bold}
           text-[42px]
           leading-[52px]
-          text-[${T.color.secondary}]
+          text-center w-full
+          ${titleClassName}
         `}
+        style={{ color: secondaryColor }}
       >
-        Join Our Nursing Community
+        {title}
       </h2>
 
       {/* ---------------- BUTTONS ---------------- */}
-      <div className="flex flex-wrap justify-center gap-[18px] mt-[40px]">
+      <div className="flex flex-wrap justify-center gap-[16px]">
         <Button
           customPadding="px-[39px] py-[18px]"
-          bg={T.color.primary}
+          bg={ctaButtonBg}
           color="white"
           rounded="9.87px"
           textSize="text-[15.79px]"
@@ -59,7 +65,7 @@ export default function JoinOurNursingCommunity() {
         <Button
           customPadding="px-[39.47px] py-[15.79px]"
           bg="#EEF2F7"
-          color={T.color.secondary}
+          color={secondaryColor}
           rounded="9.87px"
           textSize="text-[15.79px]"
           leading="leading-[23.68px]"
@@ -71,7 +77,7 @@ export default function JoinOurNursingCommunity() {
         <Button
           customPadding="px-[39.47px] py-[15.79px]"
           bg="#EEF2F7"
-          color={T.color.secondary}
+          color={secondaryColor}
           rounded="9.87px"
           // borderColor={T.color.extra.dark10}
           // borderWidth="2px"
@@ -83,14 +89,14 @@ export default function JoinOurNursingCommunity() {
         </Button>
       </div>
 
-      {/* ---------------- CONTACT CARDS (FIGMA EXACT) ---------------- */}
+      {/* ---------------- CONTACT CARDS ---------------- */}
       <div
         className="
           grid
           grid-cols-1
           sm:grid-cols-2
           lg:grid-cols-3
-          mt-[40px]
+          gap-5
           place-items-center
         "
       >
@@ -99,6 +105,8 @@ export default function JoinOurNursingCommunity() {
           title="Visit Campus"
           subtitle1="ASRAM Campus"
           subtitle2="Eluru, Andhra Pradesh"
+          primaryColor={primaryColor}
+          secondaryColor={secondaryColor}
         />
 
         <ContactCard
@@ -106,6 +114,8 @@ export default function JoinOurNursingCommunity() {
           title="Call Us"
           subtitle1="Admissions Office"
           subtitle2="Contact via asram.in"
+          primaryColor={primaryColor}
+          secondaryColor={secondaryColor}
         />
 
         <ContactCard
@@ -113,12 +123,14 @@ export default function JoinOurNursingCommunity() {
           title="Email Us"
           subtitle1="For admission inquiries"
           subtitle2="See official website"
+          primaryColor={primaryColor}
+          secondaryColor={secondaryColor}
         />
 
       </div>
 
       {/* LINE DIVIDER */}
-      <div className="w-full mt-[40px]" style={{ border: "1px solid #19191933" }} />
+      <div className="w-full" style={{ border: "1px solid #19191933" }} />
 
       {/* ---------------- STATISTICS (EXACT SPACING) ---------------- */}
       <div
@@ -126,14 +138,14 @@ export default function JoinOurNursingCommunity() {
           grid
           grid-cols-4
           text-center
-          gap-[24px]
+          gap-5
           place-items-center
         "
       >
-        <StatBlock count="20+" label="Years of Excellence" />
-        <StatBlock count="190+" label="Total Seats" />
-        <StatBlock count="56+" label="Expert Faculty" />
-        <StatBlock count="INC" label="Approved" />
+        <StatBlock count="20+" label="Years of Excellence" color={secondaryColor} />
+        <StatBlock count="190+" label="Total Seats" color={secondaryColor} />
+        <StatBlock count="56+" label="Expert Faculty" color={secondaryColor} />
+        <StatBlock count="INC" label="Approved" color={secondaryColor} />
       </div>
     </PageSection>
   );
@@ -142,28 +154,32 @@ export default function JoinOurNursingCommunity() {
 /* =========================================================
    CONTACT CARD EXACT FIGMA STYLE
 ========================================================= */
-function ContactCard({ icon, title, subtitle1, subtitle2 }) {
+function ContactCard({ icon, title, subtitle1, subtitle2, primaryColor = T.color.primary, secondaryColor = T.color.secondary }) {
   return (
     <div
       className="
         flex flex-col
         items-center justify-center
         text-center
-        rounded-[9.87px]
-        p-[20px]
+        rounded-[8px]
+        p-[24px]
+        gap-[12px]
         w-[321px]
-        h-[195px]
+        h-[196px]
       "
-      style={{ backgroundColor: "#EEF2F7" }}
+      style={{
+        backgroundColor: "#F7F9FC",
+        border: "0.99px solid rgba(7, 7, 7, 0.2)"
+      }}
     >
       <div
         className="
           w-[55.26px] h-[55.26px]
           rounded-full
           flex items-center justify-center
-          mb-[16px]
+          shrink-0
         "
-        style={{ backgroundColor: T.color.primary }}
+        style={{ backgroundColor: primaryColor }}
       >
         {icon}      </div>
 
@@ -173,20 +189,26 @@ function ContactCard({ icon, title, subtitle1, subtitle2 }) {
           ${T.font.weight.semibold}
           text-[19.74px]
           leading-[29.61px]
-          text-[${T.color.secondary}]
         `}
+        style={{ color: secondaryColor }}
       >
         {title}
       </h3>
 
-      <p
-        className="text-[14px] leading-[20px] mt-[6px]"
-        style={{ color: "#191919BF" }}
-      >
-        {subtitle1}
-        <br />
-        {subtitle2}
-      </p>
+      <div className="flex flex-col gap-[2px]">
+        <p
+          className="text-[14px] leading-[20px]"
+          style={{ color: "#191919BF" }}
+        >
+          {subtitle1}
+        </p>
+        <p
+          className="text-[14px] leading-[20px]"
+          style={{ color: "#191919BF" }}
+        >
+          {subtitle2}
+        </p>
+      </div>
     </div>
   );
 }
@@ -197,7 +219,7 @@ function ContactCard({ icon, title, subtitle1, subtitle2 }) {
 /* =========================================================
    STAT BLOCK — FIGMA LAYOUT + ORIGINAL ANIMATION RESTORED
 ========================================================= */
-function StatBlock({ count, label }) {
+function StatBlock({ count, label, color = T.color.secondary }) {
   const [displayValue, setDisplayValue] = useState("0");
   const ref = useRef(null);
   const hasAnimated = useRef(false);
@@ -251,8 +273,8 @@ function StatBlock({ count, label }) {
           text-[35.53px]
           leading-[39.47px]
           mb-[10px]
-          text-[${T.color.secondary}]
         `}
+        style={{ color: color }}
       >
         {displayValue}
       </span>

@@ -185,7 +185,7 @@ const InstitutionsSection = () => {
 
                 {/* CTA BUTTON */}
                 <Link
-                  to={item.id === 1 ? "/medical" : item.id === 2 ? "/nursing" : "#"}
+                  to={item.id === 1 ? "/medical" : item.id === 2 ? "/nursing" : item.id === 3 ? "/paramedical" : "#"}
                   className="
                   mt-auto
                   w-full

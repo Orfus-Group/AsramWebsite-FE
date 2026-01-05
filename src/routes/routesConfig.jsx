@@ -4,6 +4,9 @@ const HomePage = lazy(() => import("@/pages/asram/AsramHome"));
 const MedicalPage = lazy(() => import("@/pages/medical/MedicalPage"));
 const MedicalAcademicsPage = lazy(() => import("@/pages/medical/MedicalAcademicsPage"));
 const MedicalResearchPage = lazy(() => import("@/pages/medical/MedicalResearchPage"));
+const ParaMedicalPage = lazy(() => import("@/pages/paramedical/ParaMedicalPage"));
+const ParaMedicalAcademicsPage = lazy(() => import("@/pages/paramedical/ParaMedicalAcademicsPage"));
+const ParaMedicalResearchPage = lazy(() => import("@/pages/paramedical/ParaMedicalResearchPage"));
 const NursingPage = lazy(() => import("@/pages/nursing/NursingPage"));
 const AcademicsPage = lazy(() => import("@/pages/academics/AcademicsPage"));
 const ResearchPage = lazy(() => import("@/pages/research/ResearchPage"));
@@ -38,8 +41,8 @@ const routesConfig = [
     layout: "aboutasram",
   },
   {
-    path: "/academics",
-    label: "Academics",
+    path: "/nursing-academics",
+    label: "Nursing Academics",
     element: <AcademicsPage />,
     layout: "academics",
   },
@@ -48,12 +51,6 @@ const routesConfig = [
     label: "Medical College",
     element: <MedicalPage />,
     layout: "medical",
-  },
-  {
-    path: "/nursing",
-    label: "Nursing",
-    element: <NursingPage />,
-    layout: "nursing",
   },
   {
     path: "/medical-academics",
@@ -68,8 +65,32 @@ const routesConfig = [
     layout: "medical",
   },
   {
-    path: "/research",
-    label: "Research",
+    path: "/paramedical",
+    label: "ParaMedical College",
+    element: <ParaMedicalPage />,
+    layout: "paramedical",
+  },
+  {
+    path: "/paramedical-academics",
+    label: "ParaMedical Academics",
+    element: <ParaMedicalAcademicsPage />,
+    layout: "paramedical",
+  },
+  {
+    path: "/paramedical-research",
+    label: "ParaMedical Research",
+    element: <ParaMedicalResearchPage />,
+    layout: "paramedical",
+  },
+  {
+    path: "/nursing",
+    label: "Nursing",
+    element: <NursingPage />,
+    layout: "nursing",
+  },
+  {
+    path: "/nursing-research",
+    label: "Nursing Research",
     element: <ResearchPage />,
     layout: "research",
   },

@@ -14,7 +14,7 @@ const IconAppReviewTeal = "/AsramWebsite-FE/assets/icons/IconAppReviewTeal.svg";
 const IconInterviewTeal = "/AsramWebsite-FE/assets/icons/IconInterviewTeal.svg";
 const IconEnrollmentTeal = "/AsramWebsite-FE/assets/icons/IconEnrollmentTeal.svg";
 
-const processSteps = [
+const defaultProcessSteps = [
   {
     step: "Step 1",
     title: "Submit Application",
@@ -49,7 +49,7 @@ const processSteps = [
   },
 ];
 
-const requirements = [
+const defaultRequirements = [
   {
     title: "BSN Programs",
     items: [
@@ -92,11 +92,20 @@ const dates = [
   { date: "April 15", label: "Graduate Programs Deadline" },
 ];
 
-export default function NursingAdmissionsSection() {
+export default function NursingAdmissionsSection({ theme, processSteps, requirements, title, readyToApplyDesc }) {
+  const primaryColor = theme?.primary || T.color.primary;
+  const secondaryColor = theme?.secondary || T.color.secondary;
+  const ctaButtonBg = theme?.ctaButtonBg || primaryColor;
+
+  const iconStyle = theme?.iconFilter ? { filter: theme.iconFilter } : {};
+
+  const stepsToRender = processSteps || defaultProcessSteps;
+  const requirementsToRender = requirements || defaultRequirements;
+
   return (
     <PageSection
       bg={T.bg.sectionCard}
-      paddingClass="py-[80px]"
+      paddingClass="pt-[80px] pb-[40px]"
       className="flex flex-col gap-[40px]"
     >
       {/* -------------------- TITLE -------------------- */}
@@ -106,21 +115,21 @@ export default function NursingAdmissionsSection() {
           ${T.font.weight.bold}
           text-[42px]
           leading-[54px]
-          text-[${T.color.secondary}]
         `}
+        style={{ color: secondaryColor }}
       >
-        Nursing Program Admissions
+        {title || "Nursing Program Admissions"}
       </h2>
 
       {/* -------------------- APPLICATION PROCESS -------------------- */}
-      <div className="flex flex-col gap-[24px]">
+      <div className="flex flex-col gap-5">
         <h3
           className={`
             ${T.font.family}
             ${T.font.weight.semibold}
             text-[32px]
-            text-[${T.color.secondary}]
           `}
+          style={{ color: secondaryColor }}
         >
           Application Process
         </h3>
@@ -129,10 +138,10 @@ export default function NursingAdmissionsSection() {
           className="
             grid
             grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
-            gap-[23.68px]
+            gap-5
           "
         >
-          {processSteps.map((item, i) => (
+          {stepsToRender.map((item, i) => (
             <div
               key={i}
               className="
@@ -147,7 +156,7 @@ export default function NursingAdmissionsSection() {
               "
               style={{ border: "1px solid #07070733" }}
             >
-              <img src={item.icon} className="w-[31.58px] h-[31.58px]" alt="" />
+              <img src={item.icon} className="w-[31.58px] h-[31.58px]" alt="" style={iconStyle} />
 
 
               <span
@@ -156,7 +165,7 @@ export default function NursingAdmissionsSection() {
                   text-[12px]
                   py-[8px]
                 `}
-                style={{ color: T.color.primary }}
+                style={{ color: primaryColor }}
               >
                 {item.step}
               </span>
@@ -168,8 +177,8 @@ export default function NursingAdmissionsSection() {
                   text-[20px]
                   leading-[26px]
                   pb-[10px]
-                  text-[${T.color.secondary}]
                 `}
+                style={{ color: secondaryColor }}
               >
                 {item.title}
               </h4>
@@ -192,8 +201,8 @@ export default function NursingAdmissionsSection() {
                   text-[14px]
                   leading-[20px]
                   self-end
-                  text-[${T.color.secondary}]
                 `}
+                style={{ color: secondaryColor }}
               >
                 <span className={`${T.font.weight.medium} `}>{item.timeline}</span>{" "}
                 {item.timelinedescription}
@@ -204,14 +213,14 @@ export default function NursingAdmissionsSection() {
       </div>
 
       {/* -------------------- ADMISSION REQUIREMENTS -------------------- */}
-      <div className="flex flex-col gap-[24px]">
+      <div className="flex flex-col gap-5">
         <h3
           className={`
             ${T.font.family}
             ${T.font.weight.bold}
             text-[32px]
-            text-[${T.color.secondary}]
           `}
+          style={{ color: secondaryColor }}
         >
           Admission Requirements
         </h3>
@@ -220,10 +229,10 @@ export default function NursingAdmissionsSection() {
           className="
             grid
             grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
-            gap-[31.58px]
+            gap-5
           "
         >
-          {requirements.map((box, i) => (
+          {requirementsToRender.map((box, i) => (
             <div
               key={i}
               className="
@@ -244,8 +253,8 @@ export default function NursingAdmissionsSection() {
                   text-[24px]
                   mb-[5px]
                   leading-[24px]
-                  text-[${T.color.secondary}]
                 `}
+                style={{ color: secondaryColor }}
               >
                 {box.title}
               </h4>
@@ -261,7 +270,7 @@ export default function NursingAdmissionsSection() {
                     `}
                     style={{ color: T.color.text.muted }}
                   >
-                    <img src={IconEnrollmentTeal} className="w-[17.76px] h-[17.76px] shrink-0" alt="" />
+                    <img src={IconEnrollmentTeal} className="w-[17.76px] h-[17.76px] shrink-0" alt="" style={iconStyle} />
                     <span
                       className={`
                         ${T.font.family}
@@ -282,7 +291,7 @@ export default function NursingAdmissionsSection() {
       </div>
 
       {/* -------------------- IMPORTANT DATES -------------------- */}
-      <div className="w-full flex justify-center my-[40px]">
+      <div className="w-full flex justify-center">
         <div className="w-full bg-white rounded-[8px] py-[30px] px-[30px]">
           <h2
             className={`
@@ -292,13 +301,13 @@ export default function NursingAdmissionsSection() {
               text-[32px]
               leading-[39px]
               mb-[30px]
-              text-[${T.color.secondary}]
             `}
+            style={{ color: secondaryColor }}
           >
             Important Dates
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-[23.68px] gap-y-[20px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {dates.map((item, i) => (
               <div key={i} className="flex flex-col items-center text-center">
                 <p
@@ -336,28 +345,26 @@ export default function NursingAdmissionsSection() {
           w-full
           flex flex-col lg:flex-row
           items-start
-          gap-[40px]
-          mb-[80px]
+          gap-5
         "
       >
         {/* LEFT IMAGE */}
         <div
           className="
-            w-full lg:w-auto
-            flex-shrink-0
+            w-full lg:flex-1
             rounded-[12px] 
             overflow-hidden
           "
         >
           <img loading="lazy" decoding="async"
             src={readytoapply}
-            className="w-full lg:w-[589px] h-[389px] object-cover rounded-[12px]"
+            className="w-full h-[389px] object-cover rounded-[12px]"
           />
         </div>
         {/* RIGHT CONTENT */}
         <div
           className="
-            flex-1
+            w-full lg:flex-1
             flex flex-col
             gap-[20px]
           "
@@ -368,8 +375,8 @@ export default function NursingAdmissionsSection() {
         ${T.font.weight.semibold}
         text-[26px]
         leading-[34px]
-        text-[${T.color.secondary}]
       `}
+            style={{ color: secondaryColor }}
           >
             Ready to Apply?
           </h3>
@@ -382,24 +389,13 @@ export default function NursingAdmissionsSection() {
       `}
             style={{ color: T.color.text.researchMuted }}
           >
-            Start your application today and take the first step toward an exceptional nursing education. Our admissions team is here to support you throughout the process.
-          </p>
-
-          <p
-            className={`
-        ${T.font.family}
-        text-[16px]
-        leading-[24px]
-      `}
-            style={{ color: T.color.text.researchMuted }}
-          >
-            Start your application today and take the first step toward an exceptional nursing education. Our admissions team is here to support you throughout the process.
+            {readyToApplyDesc || "Start your application today and take the first step toward an exceptional nursing education. Our admissions team is here to support you throughout the process."}
           </p>
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-[16px]">
             <Button
-              bg={T.color.primary}
+              bg={ctaButtonBg}
               color="white"
               rounded="8px"
               textSize="text-[14px]"
@@ -408,21 +404,22 @@ export default function NursingAdmissionsSection() {
               height="44px"
               customPadding="px-[22px] py-[12px]"
               weight={T.font.weight.bold}
+              borderWidth="0"
             >
               Start Your Application
             </Button>
 
             <Button
               bg={T.color.background.white}
-              color={T.color.secondary}
+              color={secondaryColor}
               rounded="8px"
               textSize="text-[14px]"
               leading="leading-[20px]"
               width="206px"
               height="44px"
               customPadding="px-[22px] py-[12px]"
-              borderColor={T.color.secondary}
-              borderWidth="1px"
+              borderColor={secondaryColor}
+              borderWidth="1.5px"
               weight={T.font.weight.bold}
             >
               Contact Admissions
