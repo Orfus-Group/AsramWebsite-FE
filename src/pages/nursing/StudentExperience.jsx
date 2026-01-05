@@ -55,7 +55,7 @@ export default function StudentExperience({
   const features = data || defaultFeatures;
 
   return (
-    <PageSection bg="bg-[#FFF]" paddingClass="py-[80px]">
+    <PageSection bg="bg-[#FFF]" paddingClass="py-[60px] md:py-[80px]">
       {/* Heading */}
       <div className="flex flex-col gap-[8px] w-full mb-[32px] md:mb-[40px]">
         <h2 className="font-montserrat font-bold text-[28px] md:text-[32px] lg:text-[36px] leading-[38px] md:leading-[44px] lg:leading-[48px] text-[#223F7F]">
@@ -64,7 +64,7 @@ export default function StudentExperience({
       </div>
 
       {/* Top — Image + Content */}
-      <div className="flex flex-col lg:flex-row gap-[40px] items-start mb-[60px] w-full mx-auto">
+      <div className="flex flex-col lg:flex-row gap-[30px] lg:gap-[40px] items-start mb-[60px] w-full mx-auto">
         {/* Left: Image */}
         <div className="w-full lg:flex-1">
           <img
@@ -76,7 +76,7 @@ export default function StudentExperience({
 
         {/* Right: Content */}
         <div className="w-full lg:flex-1 flex flex-col items-start justify-between lg:h-[361px]">
-          <h4 className="font-montserrat font-semibold text-[24px] md:text-[28px] lg:text-[28px] leading-[32px] md:leading-[38px] lg:leading-[42px] text-[#223F7F] max-w-full m-0 whitespace-nowrap">
+          <h4 className="font-montserrat font-semibold text-[24px] md:text-[28px] lg:text-[28px] leading-[32px] md:leading-[38px] lg:leading-[42px] text-[#223F7F] max-w-full m-0 whitespace-normal lg:whitespace-nowrap">
             {subHeading}
           </h4>
 

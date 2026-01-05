@@ -20,6 +20,7 @@ const HealthcarePage = lazy(() => import("@/pages/healthcare/HealthcarePage"));
 const NewsArticlePage = lazy(() => import("@/pages/news/NewsArticlePage"));
 const GeneralSurgeryPage = lazy(() => import("@/pages/healthcare/departments/general-surgery/GeneralSurgeryPage"));
 const AsramLatest = lazy(() => import("@/pages/asram/AsramLatest"));
+const EventsPage = lazy(() => import("@/pages/events/EventsPage"));
 
 const routesConfig = [
   {
@@ -111,6 +112,12 @@ const routesConfig = [
     label: "Campus Life",
     element: <CampusLifePage />,
     layout: "main",
+  },
+  {
+    path: "/events",
+    label: "Events",
+    element: <EventsPage />,
+    layout: "events",
   },
   {
     path: "/faculty",

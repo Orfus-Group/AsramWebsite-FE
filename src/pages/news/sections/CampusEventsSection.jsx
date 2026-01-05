@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { T } from "@/theme";
 import { HiOutlineCalendar, HiOutlineLocationMarker } from "react-icons/hi";
 import PageSection from "@/features/common/layout/PageContainer";
 const campusEvents = "/AsramWebsite-FE/assets/news/campusevents.png"; // Fallback placeholder
 
 const CampusEventsSection = () => {
+    const navigate = useNavigate();
     const upcomingEvents = [
         {
             title: "Annual Cultural Fest",
@@ -192,6 +194,27 @@ const CampusEventsSection = () => {
                             </p>
                         </div>
                     ))}
+                </div>
+
+                {/* VIEW ALL BUTTON */}
+                <div className="flex justify-center mt-[30px] sm:mt-[40px]">
+                    <button
+                        onClick={() => navigate("/events")}
+                        className={`
+                            h-[44px] sm:h-[48px]
+                            bg-[#223F7F]
+                            text-white
+                            rounded-[8px]
+                            px-[32px]
+                            font-montserrat
+                            font-medium
+                            text-[15px] sm:text-[16px]
+                            hover:bg-[#1a3163]
+                            transition-all
+                        `}
+                    >
+                        View All Events
+                    </button>
                 </div>
             </div>
 

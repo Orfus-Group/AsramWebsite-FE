@@ -16,9 +16,10 @@ const ContentImageSection = ({
     className = "",
     bg = "bg-white",
     gapClass = "gap-[30px] md:gap-[50px] lg:gap-[72px]",
+    paddingClass = "py-[40px] md:py-[60px] lg:py-[80px]",
 }) => {
     return (
-        <PageSection bg={bg} paddingClass="py-[40px] md:py-[60px] lg:py-[80px]">
+        <PageSection bg={bg} paddingClass={paddingClass}>
             <div
                 className={`
           w-full
