@@ -9,6 +9,7 @@ import ModernHamburger from "@/features/common/ui/ModernHamburger";
 
 import { Link, useLocation } from "react-router-dom";
 
+import { useCollegeContext } from "@/context/CollegeContext";
 
 /* =======================
    SEARCH ICON (SVG)
@@ -69,9 +70,17 @@ const NavItem = ({ label, to, isActive, onClick }) => {
 const AcademicsHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
-  const isMedical = location.pathname.startsWith("/medical");
+  const { activeCollege, setActiveCollege } = useCollegeContext();
 
-  const isParamedical = location.pathname.startsWith("/paramedical");
+  // Sync context if current path is explicit
+  React.useEffect(() => {
+    if (location.pathname.startsWith("/medical")) setActiveCollege("medical");
+    else if (location.pathname.startsWith("/paramedical")) setActiveCollege("paramedical");
+    else if (location.pathname.startsWith("/nursing")) setActiveCollege("nursing");
+  }, [location.pathname, setActiveCollege]);
+
+  const isMedical = activeCollege === "medical";
+  const isParamedical = activeCollege === "paramedical";
 
   const navItems = isMedical ? [
     { label: "Academics", path: "/medical-academics" },

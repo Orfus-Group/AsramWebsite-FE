@@ -8,26 +8,30 @@ import LayoutSwitcher from "./layouts/LayoutSwitcher";
 import ScrollToReset from "./components/common/ScrollToReset";
 import usePageTitle from "./hooks/usePageTitle";
 
+import { CollegeProvider } from "./context/CollegeContext";
+
 const App = () => {
   usePageTitle();
 
   return (
-    <LazyMotion features={domAnimation}>
-      <Suspense fallback={<LoadingScreen />}>
-        <ScrollToReset />
-        <Routes>
-          <Route path="/*" element={<LayoutSwitcher />}>
-            {routesConfig.map(({ path = "", element }, index) => (
-              <Route
-                key={index}
-                path={path === "/" ? "" : path.replace(/^\//, "")}
-                element={element}
-              />
-            ))}
-          </Route>
-        </Routes>
-      </Suspense>
-    </LazyMotion>
+    <CollegeProvider>
+      <LazyMotion features={domAnimation}>
+        <Suspense fallback={<LoadingScreen />}>
+          <ScrollToReset />
+          <Routes>
+            <Route path="/*" element={<LayoutSwitcher />}>
+              {routesConfig.map(({ path = "", element }, index) => (
+                <Route
+                  key={index}
+                  path={path === "/" ? "" : path.replace(/^\//, "")}
+                  element={element}
+                />
+              ))}
+            </Route>
+          </Routes>
+        </Suspense>
+      </LazyMotion>
+    </CollegeProvider>
   );
 };
 

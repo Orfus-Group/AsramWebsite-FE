@@ -12,6 +12,7 @@ const ContactIcon = "/AsramWebsite-FE/assets/asram/contacticon.svg";
 import { Link, useLocation } from "react-router-dom";
 import { T } from "@/theme";
 import ModernHamburger from "@/features/common/ui/ModernHamburger";
+import { useCollegeContext } from "@/context/CollegeContext";
 
 const utilityLinks = [
   { label: "Student Center", icon: StudentIcon },
@@ -110,6 +111,7 @@ const AsramMainHeader = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const menuRef = useRef(null);
+  const { setActiveCollege } = useCollegeContext();
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -397,6 +399,9 @@ const AsramMainHeader = () => {
                                       onClick={() => {
                                         setMobileMenuOpen(false);
                                         setOpenMenu(null);
+                                        if (link === "College of Nursing") setActiveCollege("nursing");
+                                        else if (link === "College of Medical College") setActiveCollege("medical");
+                                        else if (link === "College of Paramedical Science") setActiveCollege("paramedical");
                                       }}
                                     >
                                       {link}
@@ -515,6 +520,12 @@ const AsramMainHeader = () => {
                             color: T.color.secondary,
                             letterSpacing: "-0.2px",
                             whiteSpace: "nowrap",
+                          }}
+                          onClick={() => {
+                            setOpenMenu(null);
+                            if (link === "College of Nursing") setActiveCollege("nursing");
+                            else if (link === "College of Medical College") setActiveCollege("medical");
+                            else if (link === "College of Paramedical Science") setActiveCollege("paramedical");
                           }}
                         >
                           <span className="relative py-1">

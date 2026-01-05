@@ -18,6 +18,11 @@ export default defineConfig({
     },
   },
 
+  server: {
+    port: 3040,
+    host: true, 
+  },
+
   build: {
     rollupOptions: {
       output: {
