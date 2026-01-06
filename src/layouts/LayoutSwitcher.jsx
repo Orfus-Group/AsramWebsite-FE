@@ -27,6 +27,7 @@ const layoutByPath = (pathname) => {
   if (pathname.startsWith("/about-asram")) return "aboutasram";
   if (pathname.startsWith("/asram-home")) return "asram-latest";
   if (pathname.startsWith("/events")) return "events";
+  if (pathname === "/login") return "auth";
   return "main";
 };
 

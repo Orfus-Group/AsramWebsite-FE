@@ -1,0 +1,258 @@
+import React, { useState } from "react";
+import { HiOutlineMail, HiOutlineLockClosed, HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
+import { Link } from "react-router-dom";
+
+const PortalCard = ({ id, title, description, icon, selected, onSelect }) => {
+    return (
+        <div
+            onClick={() => onSelect(id)}
+            className={`relative flex items-center p-4 lg:p-5 rounded-[10px] border cursor-pointer transition-all duration-200 h-auto lg:h-[97.6px] ${selected
+                ? "bg-[#EEF2F7] border-[#223F7F]"
+                : "bg-white border-[rgba(7,7,7,0.2)] hover:border-[#223F7F]/50"
+                }`}
+        >
+            <div
+                className={`flex shrink-0 items-center justify-center w-12 h-12 rounded-[10px] mr-4 ${selected ? "bg-[#223F7F] text-white" : "bg-[#1919190D] text-[rgba(25,25,25,0.75)]"
+                    }`}
+            >
+                {icon}
+
+            </div>
+            <div className="flex-grow">
+                <h5
+                    className={`text-[24px] font-semibold font-montserrat ${selected ? "text-[#223F7F]" : "text-[#191919]"
+                        }`}
+                >
+                    {title}
+                </h5>
+
+                <p className="text-[14px] text-[#191919BF] leading-[20px] font-montserrat">{description}</p>
+            </div>
+            <div className="ml-4 shrink-0">
+                <div
+                    className={`w-5 h-5 rounded-full border flex items-center justify-center ${selected ? "border-[#223F7F]" : "border-[2px] border-[rgba(25,25,25,0.75)]"
+                        }`}
+                >
+                    {selected && <div className="w-3 h-3 rounded-full bg-[#223F7F]" />}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const LoginPage = () => {
+    const [selectedrole, setSelectedRole] = useState("student");
+    const [showPassword, setShowPassword] = useState(false);
+
+    const roles = [
+        {
+            id: "student",
+            title: "Students",
+            description: "Access course materials, grades, and schedules",
+            icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.42 10.9219C21.5991 10.8429 21.751 10.7131 21.857 10.5487C21.963 10.3842 22.0184 10.1923 22.0164 9.99661C22.0143 9.80095 21.955 9.61019 21.8456 9.44795C21.7362 9.28571 21.5817 9.15912 21.401 9.08387L12.83 5.17987C12.5695 5.06102 12.2864 4.99951 12 4.99951C11.7137 4.99951 11.4306 5.06102 11.17 5.17987L2.60004 9.07987C2.42201 9.15784 2.27056 9.286 2.16421 9.44868C2.05786 9.61136 2.00122 9.80151 2.00122 9.99587C2.00122 10.1902 2.05786 10.3804 2.16421 10.5431C2.27056 10.7057 2.42201 10.8339 2.60004 10.9119L11.17 14.8199C11.4306 14.9387 11.7137 15.0002 12 15.0002C12.2864 15.0002 12.5695 14.9387 12.83 14.8199L21.42 10.9219Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M22 10V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M6 12.5V16C6 16.7956 6.63214 17.5587 7.75736 18.1213C8.88258 18.6839 10.4087 19 12 19C13.5913 19 15.1174 18.6839 16.2426 18.1213C17.3679 17.5587 18 16.7956 18 16V12.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            ),
+        },
+        {
+            id: "faculty",
+            title: "Faculty",
+            description: "Manage courses, attendance, and assessments",
+            icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.42 10.9219C21.5991 10.8429 21.751 10.7131 21.857 10.5487C21.963 10.3842 22.0184 10.1923 22.0164 9.99661C22.0143 9.80095 21.955 9.61019 21.8456 9.44795C21.7362 9.28571 21.5817 9.15912 21.401 9.08387L12.83 5.17987C12.5695 5.06102 12.2864 4.99951 12 4.99951C11.7137 4.99951 11.4306 5.06102 11.17 5.17987L2.60004 9.07987C2.42201 9.15784 2.27056 9.286 2.16421 9.44868C2.05786 9.61136 2.00122 9.80151 2.00122 9.99587C2.00122 10.1902 2.05786 10.3804 2.16421 10.5431C2.27056 10.7057 2.42201 10.8339 2.60004 10.9119L11.17 14.8199C11.4306 14.9387 11.7137 15.0002 12 15.0002C12.2864 15.0002 12.5695 14.9387 12.83 14.8199L21.42 10.9219Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M22 10V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M6 12.5V16C6 16.7956 6.63214 17.5587 7.75736 18.1213C8.88258 18.6839 10.4087 19 12 19C13.5913 19 15.1174 18.6839 16.2426 18.1213C17.3679 17.5587 18 16.7956 18 16V12.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            ),
+        },
+        {
+            id: "parent",
+            title: "Parents",
+            description: "Monitor student progress and communications",
+            icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M16 3.12793C16.8578 3.3503 17.6174 3.85119 18.1597 4.55199C18.702 5.25279 18.9962 6.11382 18.9962 6.99993C18.9962 7.88604 18.702 8.74707 18.1597 9.44787C17.6174 10.1487 16.8578 10.6496 16 10.8719" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M22 20.9999V18.9999C21.9993 18.1136 21.7044 17.2527 21.1614 16.5522C20.6184 15.8517 19.8581 15.3515 19 15.1299" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            ),
+        },
+    ];
+
+    return (
+        <div className="min-h-screen w-full bg-white flex items-start lg:items-center justify-center py-10 px-4 lg:p-4">
+            <div className="w-full max-w-[1200px] flex flex-col lg:flex-row items-center lg:items-start gap-6 lg:gap-[139px]">
+
+                {/* Left Section: Portal Selection */}
+                <div className="w-full max-w-[500px] lg:max-w-none lg:w-[592px] shrink-0 flex flex-col gap-[20px]">
+                    <div className="flex flex-col gap-[8px]">
+                        <h3 className="text-[24px] lg:text-[32px] font-bold text-[#223F7F] font-montserrat leading-none">
+                            Select Your Portal
+                        </h3>
+                        <p className="text-[#4A5565] text-[16px] lg:text-[18px] font-medium font-montserrat leading-none">
+                            Choose your role to continue
+                        </p>
+                    </div>
+
+                    <div className="flex flex-col gap-[12px]">
+                        {roles.map((role) => (
+                            <PortalCard
+                                key={role.id}
+                                {...role}
+                                selected={selectedrole === role.id}
+                                onSelect={setSelectedRole}
+                            />
+                        ))}
+                    </div>
+
+                    <div className="border border-[#07070733] bg-white rounded-[10px] p-4 lg:p-[20px]">
+                        <h5 className="text-[24px] font-semibold text-[#223F7F] font-montserrat mb-[12px]">
+                            Need Help?
+                        </h5>
+                        <div className="space-y-2 leading-[20px] text-[#565E6C] font-montserrat text-[14px]">
+                            <p>• Contact IT Support: support@asram.in</p>
+                            <p>• Help Desk: +91 80 1234 5678</p>
+                            <p>• Available: Mon-Sat, 9:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Right Section: Sign In Form */}
+                <div className="w-full max-w-[469px] shrink-0">
+                    <div className={`
+                w-full bg-white rounded-[11.73px] p-4 lg:p-[30px]
+                border border-[rgba(7,7,7,0.2)] flex flex-col
+            `}>
+                        <div className="mb-[28px]">
+                            <h5 className="text-[24px] font-semibold text-[#223F7F] font-montserrat mb-1">Sign In</h5>
+                            <p className="text-[#191919BF] text-[14px] font-montserrat">Enter your {selectedrole} credentials</p>
+                        </div>
+
+                        <form className="flex flex-col">
+                            <div className="flex flex-col gap-[8px] mb-[20px]">
+                                <label className="block text-[14px] font-normal text-[#191919BF] font-montserrat leading-[20px]">
+                                    Email Address / User ID
+                                </label>
+                                <div className="flex items-center gap-[8px] px-[20px] py-[16px] rounded-[10px] border border-[#07070733] bg-white">
+                                    <div className="flex items-center justify-center w-[20px] h-[20px]">
+                                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.5844 4.95898L9.21577 9.01561C8.99965 9.14114 8.75417 9.20725 8.50425 9.20725C8.25432 9.20725 8.00884 9.14114 7.79272 9.01561L1.41772 4.95898" stroke="#191919" strokeOpacity="0.75" strokeWidth="1.41667" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M14.1677 2.8335H2.83439C2.05199 2.8335 1.41772 3.46776 1.41772 4.25016V12.7502C1.41772 13.5326 2.05199 14.1668 2.83439 14.1668H14.1677C14.9501 14.1668 15.5844 13.5326 15.5844 12.7502V4.25016C15.5844 3.46776 14.9501 2.8335 14.1677 2.8335Z" stroke="#191919" strokeOpacity="0.75" strokeWidth="1.41667" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        className="flex-1 w-full border-none outline-none p-0 text-[14px] font-montserrat placeholder-[#9095A1]"
+                                        placeholder="Enter your email or user ID"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col gap-[8px] mb-[30px]">
+                                <label className="block text-[14px] font-normal text-[#191919BF] font-montserrat leading-[20px]">
+                                    Password
+                                </label>
+                                <div className="flex items-center gap-[8px] px-[20px] py-[16px] rounded-[10px] border border-[#07070733] bg-white">
+                                    <div className="flex items-center justify-center w-[20px] h-[20px]">
+                                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13.4591 7.79053H3.5424C2.76 7.79053 2.12573 8.42479 2.12573 9.20719V14.1655C2.12573 14.9479 2.76 15.5822 3.5424 15.5822H13.4591C14.2415 15.5822 14.8757 14.9479 14.8757 14.1655V9.20719C14.8757 8.42479 14.2415 7.79053 13.4591 7.79053Z" stroke="#191919" strokeOpacity="0.75" strokeWidth="1.41667" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M4.96045 7.7915V4.95817C4.96045 4.01886 5.33359 3.11803 5.99778 2.45383C6.66197 1.78964 7.56281 1.4165 8.50212 1.4165C9.44142 1.4165 10.3423 1.78964 11.0065 2.45383C11.6706 3.11803 12.0438 4.01886 12.0438 4.95817V7.7915" stroke="#191919" strokeOpacity="0.75" strokeWidth="1.41667" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <input
+                                        type={showPassword ? "text" : "password"}
+                                        className="flex-1 w-full border-none outline-none p-0 text-[14px] font-montserrat placeholder-[#9095A1]"
+                                        placeholder="Enter your password"
+                                    />
+                                    <div
+                                        className="flex items-center cursor-pointer text-[#191919] opacity-75"
+                                        onClick={() => setShowPassword(!showPassword)}
+                                    >
+                                        {showPassword ? (
+                                            <HiOutlineEyeOff size={17} />
+                                        ) : (
+                                            <HiOutlineEye size={17} />
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-[20px]">
+                                <div className="flex items-center gap-[8px]">
+                                    <div className="relative w-[14px] h-[14px] flex items-center justify-center">
+                                        <input
+                                            id="remember-me"
+                                            name="remember-me"
+                                            type="checkbox"
+                                            className="peer appearance-none w-full h-full rounded-full bg-[#191919BF] checked:bg-[#223F7F] cursor-pointer transition-colors"
+                                        />
+                                        <svg
+                                            className="absolute w-[8px] h-[8px] text-white opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"
+                                            viewBox="0 0 12 10"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M1 5L4.5 8.5L11 1.5"
+                                                stroke="currentColor"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <label htmlFor="remember-me" className="block text-[14px] leading-[20px] font-normal text-[#191919BF] font-montserrat">
+                                        Remember me
+                                    </label>
+                                </div>
+
+                                <div className="text-sm">
+                                    <a href="#" className="font-medium text-[#223F7F] hover:text-[#1a2f5f] font-montserrat">
+                                        Forgot Password?
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="mb-[20px]">
+                                <button
+                                    type="button"
+                                    className="w-full h-[50px] flex justify-center items-center px-4 border border-transparent rounded-[12px] shadow-sm text-sm font-medium text-white bg-[#223F7F] hover:bg-[#1a2f5f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#223F7F] font-montserrat"
+                                >
+                                    Sign In
+                                </button>
+                            </div>
+                        </form>
+
+                        <div className="relative mb-[20px]">
+                            <div className="absolute inset-0 flex items-center">
+                                <div className="w-full border-t border-gray-200" />
+                            </div>
+                            <div className="relative flex justify-center text-sm">
+                                <span className="px-2 bg-white text-gray-500 font-montserrat">Or</span>
+                            </div>
+                        </div>
+
+                        <div className="mb-[30px]">
+                            <button
+                                type="button"
+                                className="w-full h-[50px] flex justify-center items-center px-4 border border-[#07070733] rounded-[11.73px] text-sm font-medium text-[#323743] bg-[#EEF2F7] hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 font-montserrat"
+                            >
+                                Sign in with SSO
+                            </button>
+                        </div>
+
+                        <div className="text-center">
+                            <p className="text-sm text-[#565E6C] font-montserrat">
+                                New user? <Link to="#" className="font-bold text-[#223F7F]">Request Access</Link>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default LoginPage;

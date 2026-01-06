@@ -21,6 +21,7 @@ const NewsArticlePage = lazy(() => import("@/pages/news/NewsArticlePage"));
 const GeneralSurgeryPage = lazy(() => import("@/pages/healthcare/departments/general-surgery/GeneralSurgeryPage"));
 const AsramLatest = lazy(() => import("@/pages/asram/AsramLatest"));
 const EventsPage = lazy(() => import("@/pages/events/EventsPage"));
+const LoginPage = lazy(() => import("@/pages/auth/LoginPage"));
 
 const routesConfig = [
   {
@@ -148,6 +149,12 @@ const routesConfig = [
     label: "General Surgery Department",
     element: <GeneralSurgeryPage />,
     layout: "Healthcare",
+  },
+  {
+    path: "/login",
+    label: "Login",
+    element: <LoginPage />,
+    layout: "auth",
   },
 ];
 
