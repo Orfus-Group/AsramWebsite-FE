@@ -265,7 +265,7 @@ const AsramFooter = () => {
               { text: "Admissions", path: "/admissions" },
               { text: "Healthcare Services", path: "/healthcare" },
               { text: "Academic Programs", path: "/academics" },
-              { text: "Research", path: "/research" },
+              { text: "Research", path: "/nursing-research" },
               { text: "Faculty", path: "/faculty" },
               { text: "Campus Life", path: "/campus-life" }
             ].map(item => (
@@ -290,9 +290,9 @@ const AsramFooter = () => {
           </FooterAccordion>
           <FooterAccordion title="Academic Life">
             {[
-              { text: "Medical College", path: "/academics/medical-college" },
+              { text: "Medical College", path: "/medical" },
               { text: "Nursing College", path: "/nursing" },
-              { text: "Paramedical College", path: "/academics/paramedical-college" },
+              { text: "Paramedical College", path: "/paramedical" },
               { text: "Student Portal", path: null },
               { text: "Library", path: null },
               { text: "Placement Cell", path: null }
@@ -364,7 +364,7 @@ const AsramFooter = () => {
               { text: "Admissions", path: "/admissions" },
               { text: "Healthcare Services", path: "/healthcare" },
               { text: "Academic Programs", path: "/academics" },
-              { text: "Research", path: "/research" },
+              { text: "Research", path: "/nursing-research" },
               { text: "Faculty", path: "/faculty" },
               { text: "Campus Life", path: "/campus-life" },
               { text: "News & Events", path: "/news" },
@@ -411,9 +411,9 @@ const AsramFooter = () => {
             </h3>
 
             {[
-              { text: "Medical College", path: "/academics/medical-college" },
+              { text: "Medical College", path: "/medical" },
               { text: "Nursing College", path: "/nursing" },
-              { text: "Paramedical College", path: "/academics/paramedical-college" },
+              { text: "Paramedical College", path: "/paramedical" },
               { text: "Online Courses", path: null },
               { text: "Student Portal", path: null },
               { text: "Library", path: null },

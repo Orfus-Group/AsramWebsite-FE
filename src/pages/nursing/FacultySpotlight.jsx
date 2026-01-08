@@ -2,6 +2,7 @@ import React from "react";
 import { T } from "@/theme";
 import Button from "@/components/ui/button";
 import PageSection from "@/features/common/layout/PageContainer";
+import { useNavigate } from "react-router-dom";
 
 // Faculty Images (Default)
 const faculty1 = "/AsramWebsite-FE/assets/nursing/doctor_1.png";
@@ -68,10 +69,12 @@ export default function FacultySpotlightSection({
   imageHeight = "h-[260px] sm:h-[280px] md:h-[300px]",
   gridGap = "gap-5"
 }) {
+  const navigate = useNavigate();
 
   // Default Faculty Data (Nursing)
   const defaultFaculty = [
     {
+      id: "dr-rajesh-kumar",
       img: faculty1,
       name: "Dr. Rajesh Kumar",
       role: "Cardiologist",
@@ -85,6 +88,7 @@ export default function FacultySpotlightSection({
       badge: "Leadership"
     },
     {
+      id: "dr-priya-sharma",
       img: faculty2,
       name: "Dr. Priya Sharma",
       role: "Neurologist",
@@ -98,6 +102,7 @@ export default function FacultySpotlightSection({
       badge: "Leadership"
     },
     {
+      id: "dr-amit-patel",
       img: faculty3,
       name: "Dr. Amit Patel",
       role: "Orthopedic Surgeon",
@@ -269,6 +274,7 @@ export default function FacultySpotlightSection({
                   </button>
 
                   <button
+                    onClick={() => navigate(`/faculty/${f.id}`)}
                     className={`
                       transition-colors
                       flex items-center justify-center
@@ -301,6 +307,7 @@ export default function FacultySpotlightSection({
         {showCta && (
           <div className="flex justify-center mt-[10px]">
             <Button
+              onClick={() => navigate("/faculty")}
               bg={ctaConfig.bg}
               color={ctaConfig.color}
               textSize={ctaConfig.textSize}

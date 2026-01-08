@@ -28,6 +28,8 @@ const layoutByPath = (pathname) => {
   if (pathname.startsWith("/asram-home")) return "asram-latest";
   if (pathname.startsWith("/events")) return "events";
   if (pathname === "/login") return "auth";
+  if (pathname === "/signup") return "auth";
+  if (pathname === "/forget-password") return "auth";
   return "main";
 };
 

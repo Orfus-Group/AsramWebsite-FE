@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HiOutlineMail, HiOutlineLockClosed, HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
+import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
 const PortalCard = ({ id, title, description, icon, selected, onSelect }) => {
@@ -40,9 +40,10 @@ const PortalCard = ({ id, title, description, icon, selected, onSelect }) => {
     );
 };
 
-const LoginPage = () => {
+const SignupPage = () => {
     const [selectedrole, setSelectedRole] = useState("student");
     const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const roles = [
         {
@@ -129,15 +130,14 @@ const LoginPage = () => {
                         </div>
                     </div>
 
-                    {/* Right Section: Sign In Form */}
+                    {/* Right Section: Sign Up Form */}
                     <div className="w-full max-w-[469px] shrink-0">
                         <div className={`
                 w-full bg-white rounded-[11.73px] p-4 lg:p-[30px]
                 border border-[rgba(7,7,7,0.2)] flex flex-col
             `}>
                             <div className="mb-[20px] xl:mb-[28px]">
-                                <h5 className="text-[24px] font-semibold text-[#223F7F] font-montserrat mb-1">Sign In</h5>
-                                <p className="text-[#191919BF] text-[14px] font-montserrat">Enter your {selectedrole} credentials</p>
+                                <h5 className="text-[24px] font-semibold text-[#223F7F] font-montserrat mb-1">Sign Up</h5>
                             </div>
 
                             <form className="flex flex-col">
@@ -160,7 +160,7 @@ const LoginPage = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col gap-[8px] mb-[30px]">
+                                <div className="flex flex-col gap-[8px] mb-[20px]">
                                     <label className="block text-[14px] font-normal text-[#191919BF] font-montserrat leading-[20px]">
                                         Password
                                     </label>
@@ -189,22 +189,45 @@ const LoginPage = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex items-center justify-between mb-[20px]">
-                                    <label className="flex items-center">
-                                        <input type="checkbox" className="w-4 h-4 text-[#223F7F] border-gray-300 rounded focus:ring-[#223F7F]" />
-                                        <span className="ml-2 text-sm text-[#565E6C] font-montserrat">Remember me</span>
+                                <div className="flex flex-col gap-[8px] mb-[12px]">
+                                    <label className="block text-[14px] font-normal text-[#191919BF] font-montserrat leading-[20px]">
+                                        Confirm Password
                                     </label>
-                                    <Link to="/forget-password" className="text-sm font-medium text-[#223F7F] hover:text-[#1a2f5f] font-montserrat">
-                                        Forgot Password?
-                                    </Link>
+                                    <div className="flex items-center gap-[8px] px-[20px] py-[16px] rounded-[10px] border border-[#07070733] bg-white">
+                                        <div className="flex items-center justify-center w-[20px] h-[20px]">
+                                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.4591 7.79053H3.5424C2.76 7.79053 2.12573 8.42479 2.12573 9.20719V14.1655C2.12573 14.9479 2.76 15.5822 3.5424 15.5822H13.4591C14.2415 15.5822 14.8757 14.9479 14.8757 14.1655V9.20719C14.8757 8.42479 14.2415 7.79053 13.4591 7.79053Z" stroke="#191919" strokeOpacity="0.75" strokeWidth="1.41667" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M4.96045 7.7915V4.95817C4.96045 4.01886 5.33359 3.11803 5.99778 2.45383C6.66197 1.78964 7.56281 1.4165 8.50212 1.4165C9.44142 1.4165 10.3423 1.78964 11.0065 2.45383C11.6706 3.11803 12.0438 4.01886 12.0438 4.95817V7.7915" stroke="#191919" strokeOpacity="0.75" strokeWidth="1.41667" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <input
+                                            type={showConfirmPassword ? "text" : "password"}
+                                            className="flex-1 w-full border-none outline-none p-0 text-[14px] font-montserrat placeholder-[#9095A1]"
+                                            placeholder="Enter your password"
+                                        />
+                                        <div
+                                            className="flex items-center cursor-pointer text-[#191919] opacity-75"
+                                            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                        >
+                                            {showConfirmPassword ? (
+                                                <HiOutlineEyeOff size={17} />
+                                            ) : (
+                                                <HiOutlineEye size={17} />
+                                            )}
+                                        </div>
+                                    </div>
                                 </div>
+
+                                <p className="text-[12px] text-[#191919BF] font-montserrat mb-[20px]">
+                                    Use at least 8 characters with 1 number, and one special character.
+                                </p>
 
                                 <div className="mb-[20px]">
                                     <button
                                         type="button"
                                         className="w-full h-[50px] flex justify-center items-center px-4 border border-transparent rounded-[12px] shadow-sm text-sm font-medium text-white bg-[#223F7F] hover:bg-[#1a2f5f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#223F7F] font-montserrat"
                                     >
-                                        Sign In
+                                        Sign Up
                                     </button>
                                 </div>
                             </form>
@@ -227,9 +250,15 @@ const LoginPage = () => {
                                 </button>
                             </div>
 
+                            <div className="relative mb-[20px]">
+                                <div className="absolute inset-0 flex items-center">
+                                    <div className="w-full border-t border-gray-200" />
+                                </div>
+                            </div>
+
                             <div className="text-center">
                                 <p className="text-sm text-[#565E6C] font-montserrat">
-                                    New user? <Link to="/signup" className="font-bold text-[#223F7F]">Request Access</Link>
+                                    Have Account? <Link to="/login" className="font-bold text-[#223F7F]">Login</Link>
                                 </p>
                             </div>
                         </div>
@@ -240,4 +269,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default SignupPage;

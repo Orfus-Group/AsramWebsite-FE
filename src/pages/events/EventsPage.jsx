@@ -111,7 +111,7 @@ const EventsPage = () => {
             {/* 2. ABOUT EVENT SECTION (Image Left, Text Right) - Light Blue/Gray Bg */}
             <PageSection bg="bg-[#EEF2F7]" paddingClass="py-[60px] md:py-[80px]">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[54px] items-center">
-                    <div className="h-[300px] lg:h-[380px] w-full lg:max-w-[552px] rounded-[12px] overflow-hidden order-last lg:order-first">
+                    <div className="h-[300px] lg:h-[380px] w-full lg:max-w-[552px] rounded-[12px] overflow-hidden order-last lg:order-first bg-gray-200">
                         <img src={AboutImage} alt="About Event" className="w-full h-full object-cover" />
                     </div>
                     <div className="flex flex-col">
@@ -152,7 +152,7 @@ const EventsPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="h-[300px] lg:h-[380px] w-full rounded-[12px] overflow-hidden">
+                    <div className="h-[300px] lg:h-[380px] w-full rounded-[12px] overflow-hidden bg-gray-200">
                         <img src={VenueImage} alt="Venue" className="w-full h-full object-cover" />
                     </div>
                 </div>
@@ -166,7 +166,7 @@ const EventsPage = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[10px]">
                     {[1, 2, 3].map((item, idx) => (
                         <div key={idx} className="bg-white rounded-[9.69px] border border-[#07070733] overflow-hidden flex flex-col">
-                            <div className="h-[310.17px] w-full">
+                            <div className="h-[310.17px] w-full bg-gray-200">
                                 <img src={speakerImage} alt="Dr. Sanjay Malhotra" className="w-full h-full object-cover object-top" />
                             </div>
                             <div className="p-[27.13px] flex flex-col items-start bg-white">
@@ -265,7 +265,7 @@ const EventsPage = () => {
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px]">
                     {gallery.map((img, idx) => (
-                        <div key={idx} className="h-[250px] rounded-[12px] overflow-hidden">
+                        <div key={idx} className="h-[250px] rounded-[12px] overflow-hidden bg-gray-200">
                             <img src={img} alt={`Gallery ${idx}`} className="w-full h-full object-cover" />
                         </div>
                     ))}

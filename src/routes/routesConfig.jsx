@@ -22,6 +22,8 @@ const GeneralSurgeryPage = lazy(() => import("@/pages/healthcare/departments/gen
 const AsramLatest = lazy(() => import("@/pages/asram/AsramLatest"));
 const EventsPage = lazy(() => import("@/pages/events/EventsPage"));
 const LoginPage = lazy(() => import("@/pages/auth/LoginPage"));
+const SignupPage = lazy(() => import("@/pages/auth/SignupPage"));
+const ForgetPassword = lazy(() => import("@/pages/auth/ForgetPassword"));
 
 const routesConfig = [
   {
@@ -149,6 +151,18 @@ const routesConfig = [
     label: "General Surgery Department",
     element: <GeneralSurgeryPage />,
     layout: "Healthcare",
+  },
+  {
+    path: "/signup",
+    label: "Sign Up",
+    element: <SignupPage />,
+    layout: "auth",
+  },
+  {
+    path: "/forget-password",
+    label: "Forgot Password",
+    element: <ForgetPassword />,
+    layout: "auth",
   },
   {
     path: "/login",

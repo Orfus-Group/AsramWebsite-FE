@@ -564,7 +564,7 @@ const MedicalPage = () => {
                 />
                 <div className="flex justify-center mt-12">
                     <button
-                        onClick={() => { }}
+                        onClick={() => navigate('/medical-research')}
                         className="bg-[#223F7F] text-white px-8 py-3 rounded-[8px] font-medium text-[18px] hover:bg-[#1a3163] transition-colors"
                     >
                         Explore Our Research
