@@ -15,11 +15,13 @@ import ModernHamburger from "@/features/common/ui/ModernHamburger";
 import { useCollegeContext } from "@/context/CollegeContext";
 
 const utilityLinks = [
-  { label: "Login", icon: StudentIcon, to: "/login" },
-  { label: "Library", icon: LibraryIcon },
-  { label: "Pay Online", icon: PayIcon },
-  { label: "Contact", icon: ContactIcon },
+  { label: "Library", to: "https://asramopac.2cqrkoha.com/" },
+  { label: "Pay" },
+  { label: "Alumni", to: "/alumni" },
+  { label: "Careers", to: "/careers" },
+  { label: "Login", to: "/login" },
 ];
+
 
 const academicsContent = {
   leftText: `ASRAM School of Nursing is widely respected for its high-quality teaching,
@@ -162,40 +164,29 @@ const AsramMainHeader = () => {
                 text-[10px] sm:text-[14px]
               `}
             >
-              {utilityLinks.map((item) => (
-                item.to ? (
-                  <Link
+              {utilityLinks.map((item) => {
+                const isExternal = item.to?.startsWith("http");
+                const Tag = isExternal ? "a" : item.to ? Link : "button";
+                const props = isExternal
+                  ? { href: item.to, target: "_blank", rel: "noopener noreferrer" }
+                  : item.to
+                    ? { to: item.to }
+                    : {};
+
+                return (
+                  <Tag
                     key={item.label}
-                    to={item.to}
+                    {...props}
                     className={`
                       flex items-center gap-[4px] 
                       hover:opacity-80 transition whitespace-nowrap
                       ${T.font.family}
                     `}
                   >
-                    <img loading="eager" decoding="async"
-                      src={item.icon}
-                      className="w-[12px] h-[12px] sm:w-[16px] sm:h-[16px]"
-                    />
                     <span className={T.font.family}>{item.label}</span>
-                  </Link>
-                ) : (
-                  <button
-                    key={item.label}
-                    className={`
-                      flex items-center gap-[4px] 
-                      hover:opacity-80 transition whitespace-nowrap
-                      ${T.font.family}
-                    `}
-                  >
-                    <img loading="eager" decoding="async"
-                      src={item.icon}
-                      className="w-[12px] h-[12px] sm:w-[16px] sm:h-[16px]"
-                    />
-                    <span className={T.font.family}>{item.label}</span>
-                  </button>
-                )
-              ))}
+                  </Tag>
+                );
+              })}
             </div>
           </div>
         </div>
