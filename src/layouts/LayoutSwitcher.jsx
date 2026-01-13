@@ -26,6 +26,8 @@ const layoutByPath = (pathname) => {
   if (pathname.startsWith("/campus-life")) return "campuslife";
   if (pathname.startsWith("/about-asram")) return "aboutasram";
   if (pathname.startsWith("/asram-home")) return "asram-latest";
+  if (pathname.startsWith("/careers")) return "careers";
+  if (pathname.startsWith("/asram-alumni")) return "alumni";
   if (pathname.startsWith("/events")) return "events";
   if (pathname === "/login") return "auth";
   if (pathname === "/signup") return "auth";
@@ -45,6 +47,8 @@ const headerMap = {
   faculty: AcademicsHeader,
   campuslife: AsramMainHeader,
   aboutasram: AsramMainHeader,
+  careers: AsramMainHeader,
+  alumni: AsramMainHeader,
   "asram-latest": AsramMainHeader,
   events: AsramMainHeader,
 };
@@ -61,6 +65,8 @@ const footerMap = {
   faculty: AsramFooter,
   campuslife: AsramFooter,
   aboutasram: AsramFooter,
+  careers: AsramFooter,
+  alumni: AsramFooter,
   "asram-latest": AsramFooter,
   events: AsramFooter,
 };

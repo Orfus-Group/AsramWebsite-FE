@@ -24,6 +24,8 @@ const EventsPage = lazy(() => import("@/pages/events/EventsPage"));
 const LoginPage = lazy(() => import("@/pages/auth/LoginPage"));
 const SignupPage = lazy(() => import("@/pages/auth/SignupPage"));
 const ForgetPassword = lazy(() => import("@/pages/auth/ForgetPassword"));
+const CareersPage = lazy(() => import("@/pages/careers/CareersPage"));
+const AlumniPage = lazy(() => import("@/pages/alumni/AlumniPage"));
 
 const routesConfig = [
   {
@@ -169,6 +171,18 @@ const routesConfig = [
     label: "Login",
     element: <LoginPage />,
     layout: "auth",
+  },
+  {
+    path: "/careers",
+    label: "Careers",
+    element: <CareersPage />,
+    layout: "careers",
+  },
+  {
+    path: "/asram-alumni",
+    label: "Alumni",
+    element: <AlumniPage />,
+    layout: "alumni",
   },
 ];
 
