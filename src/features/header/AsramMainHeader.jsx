@@ -17,8 +17,8 @@ import { useCollegeContext } from "@/context/CollegeContext";
 const utilityLinks = [
   { label: "Library", to: "https://asramopac.2cqrkoha.com/" },
   { label: "Pay", to: import.meta.env.VITE_PAY_URL || "http://pay.asram.in/" },
-  { label: "Alumni", to: "/" },
-  { label: "Careers", to: "/" },
+  { label: "Alumni", to: "/asram-alumni" },
+  { label: "Careers", to: "/careers" },
   { label: "Login", to: "/login" },
 ];
 

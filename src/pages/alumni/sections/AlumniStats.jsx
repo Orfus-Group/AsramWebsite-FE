@@ -1,74 +1,109 @@
 import React from "react";
 
 const stats = [
-    {
-        label: "Alumni Worldwide",
-        value: "15,000+",
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#223F7F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#223F7F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="#223F7F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.01 6.11684 19.01 7.005C19.01 7.89316 18.7122 8.75608 18.1676 9.45768C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#223F7F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        )
-    },
-    {
-        label: "Countries",
-        value: "50+",
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="#223F7F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M2 12H22" stroke="#223F7F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M12 2A15.3 15.3 0 0 1 16 12A15.3 15.3 0 0 1 12 22A15.3 15.3 0 0 1 8 12A15.3 15.3 0 0 1 12 2Z" stroke="#223F7F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        )
-    },
-    {
-        label: "Graduates",
-        value: "500+",
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#223F7F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M8.5 11C10.7091 11 12.5 9.20914 12.5 7C12.5 4.79086 10.7091 3 8.5 3C6.29086 3 4.5 4.79086 4.5 7C4.5 9.20914 6.29086 11 8.5 11Z" stroke="#223F7F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M17 11L19 13L23 9" stroke="#223F7F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        )
-    },
-    {
-        label: "Years Historic",
-        value: "30+",
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="#223F7F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M16 2V6" stroke="#223F7F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M8 2V6" stroke="#223F7F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M3 10H21" stroke="#223F7F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        )
-    },
+  {
+    value: "15,000+",
+    label: "Alumni Worldwide",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.001 21V19C16.001 17.9391 15.5795 16.9217 14.8294 16.1716C14.0793 15.4214 13.0618 15 12.001 15H6.00098C4.94011 15 3.92269 15.4214 3.17255 16.1716C2.4224 16.9217 2.00098 17.9391 2.00098 19V21" stroke="#223F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M15.999 3.13281C16.8568 3.35518 17.6164 3.85608 18.1587 4.55687C18.701 5.25767 18.9952 6.1187 18.9952 7.00481C18.9952 7.89092 18.701 8.75195 18.1587 9.45275C17.6164 10.1535 16.8568 10.6544 15.999 10.8768" stroke="#223F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M22 21.0028V19.0028C21.9993 18.1165 21.7044 17.2556 21.1614 16.5551C20.6184 15.8547 19.8581 15.3544 19 15.1328" stroke="#223F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#223F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+
+    ),
+  },
+  {
+    value: "50+",
+    label: "Countries",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 2V4" stroke="#223F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M5 2V4" stroke="#223F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M5.00098 3H4.00098C3.47054 3 2.96184 3.21071 2.58676 3.58579C2.21169 3.96086 2.00098 4.46957 2.00098 5V9C2.00098 10.5913 2.63312 12.1174 3.75834 13.2426C4.88355 14.3679 6.40968 15 8.00098 15C9.59228 15 11.1184 14.3679 12.2436 13.2426C13.3688 12.1174 14.001 10.5913 14.001 9V5C14.001 4.46957 13.7903 3.96086 13.4152 3.58579C13.0401 3.21071 12.5314 3 12.001 3H11.001" stroke="#223F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M8.00098 15C8.00098 16.5913 8.63312 18.1174 9.75834 19.2426C10.8836 20.3679 12.4097 21 14.001 21C15.5923 21 17.1184 20.3679 18.2436 19.2426C19.3688 18.1174 20.001 16.5913 20.001 15V12" stroke="#223F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M20 12C21.1046 12 22 11.1046 22 10C22 8.89543 21.1046 8 20 8C18.8954 8 18 8.89543 18 10C18 11.1046 18.8954 12 20 12Z" stroke="#223F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+
+    ),
+  },
+  {
+    value: "500+",
+    label: "Award Winners",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.4768 12.8906L16.9918 21.4166C17.0087 21.517 16.9946 21.6202 16.9514 21.7124C16.9081 21.8046 16.8377 21.8813 16.7497 21.9324C16.6616 21.9835 16.56 22.0065 16.4586 21.9983C16.3571 21.9902 16.2605 21.9512 16.1817 21.8866L12.6018 19.1996C12.4289 19.0705 12.219 19.0007 12.0033 19.0007C11.7875 19.0007 11.5776 19.0705 11.4048 19.1996L7.81875 21.8856C7.74007 21.9501 7.64361 21.989 7.54225 21.9972C7.44088 22.0054 7.33942 21.9825 7.25141 21.9315C7.16341 21.8805 7.09303 21.804 7.04967 21.712C7.00631 21.62 6.99204 21.5169 7.00875 21.4166L8.52275 12.8906" stroke="#223F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M12 14C15.3137 14 18 11.3137 18 8C18 4.68629 15.3137 2 12 2C8.68629 2 6 4.68629 6 8C6 11.3137 8.68629 14 12 14Z" stroke="#223F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+
+    ),
+  },
+  {
+    value: "30+",
+    label: "Years Legacy",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.999 7H21.999V13" stroke="#223F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M22.001 7L13.501 15.5L8.50098 10.5L2.00098 17" stroke="#223F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+
+    ),
+  },
 ];
 
 const AlumniStats = () => {
-    return (
-        <section className="py-[60px] w-full font-montserrat px-5 sm:px-6 md:px-10 lg:px-[120px]">
-            <div className="w-full max-w-[1440px] mx-auto">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px]">
-                    {stats.map((stat, index) => (
-                        <div key={index} className="bg-white border-[0.9px] border-[#e0e0e0] rounded-[8px] p-[24px] flex items-center gap-[16px] shadow-sm">
-                            <div className="w-[48px] h-[48px] rounded-[8px] bg-[#eef2f7] flex items-center justify-center flex-shrink-0">
-                                {stat.icon}
-                            </div>
-                            <div>
-                                <h3 className="text-[24px] font-bold text-[#191919] leading-none mb-[4px]">{stat.value}</h3>
-                                <p className="text-[12px] font-medium text-[#666666] uppercase tracking-wide">{stat.label}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+  return (
+    <section className="w-full bg-white font-montserrat">
+      <div className="max-w-[1440px] mx-auto py-[80px] px-5 sm:px-6 md:px-10 lg:px-[120px] border-b-[1px] border-[#e0e0e0]">
+
+        {/* RESPONSIVE GRID */}
+        <div
+          className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-4
+            gap-[20px]
+            justify-items-center
+          "
+        >
+          {stats.map((item, index) => (
+            <div
+              key={index}
+              className="
+                w-full
+                max-w-[285px]
+                h-[193px]
+                bg-white
+                border border-[rgba(7,7,7,0.2)]
+                rounded-[12px]
+                p-[20px]
+                flex flex-col
+                gap-[20px]
+              "
+            >
+              {/* ICON */}
+              <div className="w-[48px] h-[48px] rounded-[6.4px] bg-[rgba(34,63,127,0.1)] flex items-center justify-center">
+                {item.icon}
+              </div>
+
+              {/* VALUE */}
+              <span className="text-[32px] font-semibold text-[#191919] leading-none">
+                {item.value}
+              </span>
+
+              {/* LABEL */}
+              <span className="text-[18px] leading-[1.44] text-[rgba(25,25,25,0.75)]">
+                {item.label}
+              </span>
             </div>
-        </section>
-    );
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
 };
 
 export default AlumniStats;
