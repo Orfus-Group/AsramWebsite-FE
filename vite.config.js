@@ -19,8 +19,8 @@ export default defineConfig({
   },
 
   server: {
-    port: 3040,
-    host: true, 
+    port: process.env.VITE_PORT ? parseInt(process.env.VITE_PORT) : 3040,
+    host: true,
   },
 
   build: {
