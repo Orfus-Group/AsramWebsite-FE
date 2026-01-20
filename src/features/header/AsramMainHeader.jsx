@@ -403,7 +403,7 @@ const AsramMainHeader = () => {
                                   {col.links.map((link) => (
                                     <Link
                                       key={link}
-                                      to={link === "College of Nursing" ? "/nursing" : link === "College of Medical College" ? "/medical" : link === "College of Paramedical Science" ? "/paramedical" : "#"}
+                                      to={link === "College of Nursing" ? (item === "Research" ? "/nursing-research" : "/nursing-academics") : link === "College of Medical College" ? (item === "Research" ? "/medical-research" : "/medical-academics") : link === "College of Paramedical Science" ? (item === "Research" ? "/paramedical-research" : "/paramedical-academics") : "#"}
                                       className="text-white text-[15px] font-medium hover:underline"
                                       onClick={() => {
                                         setMobileMenuOpen(false);
@@ -523,7 +523,7 @@ const AsramMainHeader = () => {
                       {col.links.map((link) => (
                         <Link
                           key={link}
-                          to={link === "College of Nursing" ? "/nursing" : link === "College of Medical College" ? "/medical" : link === "College of Paramedical Science" ? "/paramedical" : "#"}
+                          to={link === "College of Nursing" ? (openMenu === "Research" ? "/nursing-research" : "/nursing-academics") : link === "College of Medical College" ? (openMenu === "Research" ? "/medical-research" : "/medical-academics") : link === "College of Paramedical Science" ? (openMenu === "Research" ? "/paramedical-research" : "/paramedical-academics") : "#"}
                           className={`${T.font.family} ${T.font.weight.semibold} text-[18px] leading-[22px] block group w-fit`}
                           style={{
                             color: T.color.secondary,
