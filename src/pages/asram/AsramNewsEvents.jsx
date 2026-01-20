@@ -163,7 +163,7 @@ const AsramNewsEvents = () => {
                 {/* READ MORE */}
                 <div className="w-full pt-[12px] border-t border-[#F3F4F6] mt-auto">
                   <Link
-                    to="/news"
+                    to={`/news/${item.id}`}
                     className="
                       flex items-center gap-[6px]
                       text-[#223F7F]
@@ -183,7 +183,8 @@ const AsramNewsEvents = () => {
 
         {/* APPLY BUTTON */}
         <div className="w-full flex justify-center">
-          <button
+          <Link
+            to="/news"
             className="
               bg-[#223F7F]
               text-[#F7F9FC]
@@ -195,8 +196,8 @@ const AsramNewsEvents = () => {
               transition-colors
             "
           >
-            Apply Now
-          </button>
+            View All News
+          </Link>
         </div>
       </div>
     </PageSection>

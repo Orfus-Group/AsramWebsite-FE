@@ -84,6 +84,7 @@ const AsramPage = () => {
         ASRAM drives research and innovation through collaborative projects, clinical studies, and evidence-based exploration. Students and faculty work together to develop new ideas, strengthen healthcare practices ASRAM drives research and innovation through collaborative projects, clinical studies, and evidence-based exploration.
         "
         image={ResearchSectionimg}
+        buttonLink="/nursing-research"
       />
       <ClinicalExposureSection />
       <LaboratoriesTrainingSection />

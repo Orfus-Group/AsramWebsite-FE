@@ -92,11 +92,11 @@ const benefits = [
 
 const AlumniBenefits = () => {
   return (
-    <section className="w-full bg-[#FFF] py-[80px] font-montserrat">
-      <div className="max-w-[1440px] mx-auto px-[120px]">
+    <section className="w-full bg-[#FFF] py-[40px] lg:py-[80px] font-montserrat">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10 lg:px-[120px]">
 
         {/* Heading */}
-        <h2 className="text-[40px] font-bold text-[#223f7f] mb-[40px]">
+        <h2 className="text-[32px] lg:text-[40px] font-bold text-[#223f7f] mb-[30px] lg:mb-[40px]">
           Exclusive Alumni Benefits
         </h2>
 

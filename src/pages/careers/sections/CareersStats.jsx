@@ -39,7 +39,7 @@ const stats = [
 
 const CareersStats = () => {
     return (
-        <section className="py-[80px] bg-white relative z-10 w-full">
+        <section className="py-[40px] lg:py-[80px] bg-white relative z-10 w-full">
             <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10 lg:px-[120px]">
                 <div className="
                 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 
@@ -53,7 +53,7 @@ const CareersStats = () => {
                             border border-[#07070733] 
                             rounded-[12px] 
                             p-[20px] 
-                            h-[193px]
+                            h-auto lg:h-[193px]
                             flex flex-col 
                             box-border
                         "

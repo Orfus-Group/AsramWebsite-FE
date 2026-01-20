@@ -54,9 +54,9 @@ const actions = [
 
 const GetInvolved = () => {
     return (
-        <section className="py-[80px] bg-[#eef2f7] w-full font-montserrat">
+        <section className="py-[40px] lg:py-[80px] bg-[#eef2f7] w-full font-montserrat">
             <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10 lg:px-[120px]">
-                <h2 className="text-[28px] md:text-[42px] font-bold text-[#223F7F] mb-[40px]">
+                <h2 className="text-[28px] md:text-[42px] font-bold text-[#223F7F] mb-[30px] lg:mb-[40px]">
                     Get Involved
                 </h2>
 

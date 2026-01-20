@@ -1,7 +1,9 @@
 // src/sections/home/HealthcareServices.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { T } from "@/theme";
+import PageSection from "@/features/common/layout/PageContainer";
 
 import IconFullArrowRight from "@/assets/icons/IconFullArrow";
 
@@ -22,6 +24,7 @@ const services = [
     iconBg: "rgba(34, 63, 127, 0.10)",
     buttonBg: "rgba(34, 63, 127, 0.10)",
     taglineColor: "#223F7F",
+    link: "/healthcare",
   },
   {
     id: 2,
@@ -35,12 +38,11 @@ const services = [
     iconBg: "rgba(106, 27, 154, 0.10)",
     buttonBg: "rgba(106, 27, 154, 0.10)",
     taglineColor: "#223F7F",
+    link: "#",
   },
 ];
 
 const CARD_BORDER = "rgba(26, 24, 24, 0.10)";
-
-
 
 const HealthcareServices = () => {
   return (
@@ -168,8 +170,9 @@ const HealthcareServices = () => {
               {item.description}
             </p>
 
-            {/* CTA BUTTON */}
-            <button
+            {/* CTA BUTTON - Converted to Link */}
+            <Link
+              to={item.link}
               className="
                 flex items-center justify-center gap-[6px]
                 rounded-[6px]
@@ -195,7 +198,7 @@ const HealthcareServices = () => {
                   strokeWidth={2}
                 />
               </div>
-            </button>
+            </Link>
           </div>
         ))}
       </div>
@@ -204,5 +207,3 @@ const HealthcareServices = () => {
 };
 
 export default HealthcareServices;
-
-import PageSection from "@/features/common/layout/PageContainer";

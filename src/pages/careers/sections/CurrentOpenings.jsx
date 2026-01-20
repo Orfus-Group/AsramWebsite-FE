@@ -48,7 +48,7 @@ const CurrentOpenings = () => {
     const [searchTerm, setSearchTerm] = useState("");
 
     return (
-        <section className="py-10 md:py-16 bg-[#FFF] w-full font-montserrat">
+        <section className="py-[40px] md:py-[80px] bg-[#FFF] w-full font-montserrat">
             <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10 lg:px-[120px]">
                 <h2 className="text-[28px] md:text-[40px] font-bold text-[#223F7F] mb-[20px]">
                     Current Openings
@@ -104,7 +104,7 @@ const CurrentOpenings = () => {
                 {/* Jobs List */}
                 <div className="flex flex-col gap-[20px]">
                     {jobs.map((job) => (
-                        <div key={job.id} className="bg-[#eef2f7] p-[30px] rounded-[7.5px] border-[0.9px] border-[#e0e0e0] flex flex-col md:flex-row justify-between items-start md:items-start gap-6">
+                        <div key={job.id} className="bg-[#eef2f7] p-[20px] md:p-[30px] rounded-[7.5px] border-[0.9px] border-[#e0e0e0] flex flex-col md:flex-row justify-between items-start md:items-start gap-6">
                             <div className="flex-1 min-w-0">
                                 <div className="flex items-center gap-4 mb-3">
                                     <span className="bg-[#a66e00] text-white text-[12px] font-medium px-3 py-1 rounded-[8px]">
@@ -114,13 +114,13 @@ const CurrentOpenings = () => {
                                         {job.posted}
                                     </span>
                                 </div>
-                                <h3 className="text-[22px] font-semibold text-[#191919] mb-2">
+                                <h3 className="text-[20px] md:text-[22px] font-semibold text-[#191919] mb-2">
                                     {job.title}
                                 </h3>
-                                <p className="text-[#191919] opacity-75 text-[14px] font-normal leading-[1.43] mb-4 w-full whitespace-nowrap overflow-hidden text-ellipsis">
+                                <p className="text-[#191919] opacity-75 text-[14px] font-normal leading-[1.43] mb-4 w-full whitespace-normal md:whitespace-nowrap overflow-hidden text-ellipsis">
                                     {job.description}
                                 </p>
-                                <div className="flex flex-wrap items-center gap-6 md:gap-8 text-[#191919] opacity-75 text-[13.1px]">
+                                <div className="flex flex-col sm:flex-row flex-wrap sm:items-center gap-3 sm:gap-6 md:gap-8 text-[#191919] opacity-75 text-[13.1px]">
                                     <span className="flex items-center gap-[7.5px]">
                                         {/* Clock Icon */}
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -140,9 +140,9 @@ const CurrentOpenings = () => {
                                     <span className="flex items-center gap-[7.5px]">
                                         {/* Rupee Icon */}
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_1027_432)">
-                                                <path d="M7.50977 1.25V13.7663" stroke="#223F7F" stroke-width="0.938722" stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M10.6388 3.125H5.94523C5.36432 3.125 4.80719 3.35577 4.39642 3.76654C3.98565 4.17731 3.75488 4.73443 3.75488 5.31535C3.75488 5.89627 3.98565 6.45339 4.39642 6.86416C4.80719 7.27494 5.36432 7.5057 5.94523 7.5057H9.07431C9.65523 7.5057 10.2124 7.73647 10.6231 8.14724C11.0339 8.55801 11.2647 9.11514 11.2647 9.69606C11.2647 10.277 11.0339 10.8341 10.6231 11.2449C10.2124 11.6556 9.65523 11.8864 9.07431 11.8864H3.75488" stroke="#223F7F" stroke-width="0.938722" stroke-linecap="round" stroke-linejoin="round" />
+                                            <g clipPath="url(#clip0_1027_432)">
+                                                <path d="M7.50977 1.25V13.7663" stroke="#223F7F" strokeWidth="0.938722" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M10.6388 3.125H5.94523C5.36432 3.125 4.80719 3.35577 4.39642 3.76654C3.98565 4.17731 3.75488 4.73443 3.75488 5.31535C3.75488 5.89627 3.98565 6.45339 4.39642 6.86416C4.80719 7.27494 5.36432 7.5057 5.94523 7.5057H9.07431C9.65523 7.5057 10.2124 7.73647 10.6231 8.14724C11.0339 8.55801 11.2647 9.11514 11.2647 9.69606C11.2647 10.277 11.0339 10.8341 10.6231 11.2449C10.2124 11.6556 9.65523 11.8864 9.07431 11.8864H3.75488" stroke="#223F7F" strokeWidth="0.938722" strokeLinecap="round" strokeLinejoin="round" />
                                             </g>
                                             <defs>
                                                 <clipPath id="clip0_1027_432">
@@ -155,7 +155,7 @@ const CurrentOpenings = () => {
                                     </span>
                                 </div>
                             </div>
-                            <button className="flex-shrink-0 w-[155px] h-[47px] bg-[#223F7F] text-[15px] text-white rounded-[8px] font-medium hover:bg-[#1a3266] transition-colors flex items-center justify-center gap-2">
+                            <button className="flex-shrink-0 w-full sm:w-[155px] h-[47px] bg-[#223F7F] text-[15px] text-white rounded-[8px] font-medium hover:bg-[#1a3266] transition-colors flex items-center justify-center gap-2">
                                 Apply Now
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M3.12793 7.51562H11.8893" stroke="white" strokeWidth="0.938722" strokeLinecap="round" strokeLinejoin="round" />

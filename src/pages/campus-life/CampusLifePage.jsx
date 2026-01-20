@@ -36,7 +36,7 @@ const CampusLifePage = () => {
                 <div className="max-w-[700px]">
                     <p className="font-montserrat font-medium text-[16px] md:text-[22px] leading-[30px] text-white/90 mb-8">
                         A well-structured campus environment that supports academic focus, personal growth, and student well-being.                    </p>
-                    <button
+                    {/* <button
                         className="
                 bg-[#191919] 
                 hover:bg-[#27272a] 
@@ -48,7 +48,7 @@ const CampusLifePage = () => {
             "
                     >
                         Explore Programs
-                    </button>
+                    </button> */}
                 </div>
             )
         });

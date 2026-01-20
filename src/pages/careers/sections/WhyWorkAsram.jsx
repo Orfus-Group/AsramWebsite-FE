@@ -86,9 +86,9 @@ const careersectiontwo = "/AsramWebsite-FE/assets/careers/careerssectiontwo.png"
 
 const WhyWorkAsram = () => {
     return (
-        <section className="py-[80px] bg-[#eef2f7] w-full">
+        <section className="py-[40px] lg:py-[80px] bg-[#eef2f7] w-full">
             <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-6 md:px-10 lg:px-[120px]">
-                <h2 className={`${T.font.family} text-[28px] md:text-[40px] font-bold text-[#223F7F] mb-[40px]`}>
+                <h2 className={`${T.font.family} text-[28px] md:text-[40px] font-bold text-[#223F7F] mb-[30px] lg:mb-[40px]`}>
                     Why Work at ASRAM
                 </h2>
 
@@ -101,15 +101,15 @@ const WhyWorkAsram = () => {
                     descriptionClassName={`${T.font.family} text-[#666666] text-[15px] leading-[1.6] font-montserrat m-0`}
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] mt-[40px]">
-                    <div className="w-full h-[322px] overflow-hidden rounded-[7.5px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px] mt-[30px] lg:mt-[40px]">
+                    <div className="w-full h-[220px] sm:h-[322px] overflow-hidden rounded-[7.5px]">
                         <img
                             src={careersectionone}
                             alt="Medical Tools"
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                         />
                     </div>
-                    <div className="w-full h-[322px] overflow-hidden rounded-[7.5px]">
+                    <div className="w-full h-[220px] sm:h-[322px] overflow-hidden rounded-[7.5px]">
                         <img
                             src={careersectiontwo}
                             alt="Surgical Team"

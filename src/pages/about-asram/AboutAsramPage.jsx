@@ -29,7 +29,7 @@ const AboutAsramPage = () => {
                     <p className={`${T.font.family} font-medium text-[16px] md:text-[22px] leading-[1.36] mb-8 text-white`}>
                         A premier academic and healthcare institution integrating medical education, research, and advanced clinical care since 2000.
                     </p>
-                    <button
+                    {/* <button
                         className="
                 bg-[#191919] 
                 hover:bg-[#27272a] 
@@ -41,7 +41,7 @@ const AboutAsramPage = () => {
             "
                     >
                         Know About Us
-                    </button>
+                    </button> */}
                 </div>
             )
         });
