@@ -183,7 +183,7 @@ const routesConfig = [
     label: "Alumni",
     element: <AlumniPage />,
     layout: "alumni",
-  },
+  }
 ];
 
 export default routesConfig;
