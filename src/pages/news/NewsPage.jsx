@@ -8,9 +8,31 @@ import LatestNews from "./sections/LatestNews";
 
 
 import CampusEventsSection from "./sections/CampusEventsSection";
+import { useLocation } from "react-router-dom";
 
 
 const NewsPage = () => {
+
+  const location = useLocation();
+
+useLayoutEffect(() => {
+  if (location.hash) {
+    const id = location.hash.replace("#", "");
+    const el = document.getElementById(id);
+
+    if (el) {
+      // Delay ensures hero + layout finished rendering
+      setTimeout(() => {
+        el.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    }
+  }
+}, [location]);
+
+
   const [activeCollege, setActiveCollege] = useState("All");
   const [activeCategory, setActiveCategory] = useState("All");
   const { setHero, hideHero } = useHero();
@@ -37,14 +59,20 @@ const NewsPage = () => {
 
   return (
     <>
+      <section id="campus-events" className="scroll-mt-[60px]">
       <CampusEventsSection />
+    </section>
+      <section id="featured-story" className="scroll-mt-[60px]">
       <FeaturedStory />
+    </section>
+      <section id="latest-news" className="scroll-mt-[60px]">
       <LatestNews
         activeCollege={activeCollege}
         setActiveCollege={setActiveCollege}
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
       />
+    </section>
     </>
   );
 };

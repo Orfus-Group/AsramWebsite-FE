@@ -18,9 +18,29 @@ import CampusGallery from './sections/CampusGallery';
 // Assets
 const HeroBg = "/AsramWebsite-FE/assets/campuslife/campuslifeherobg.png";
 import StudentVoices from '../academics/StudentVoices';
+import { useLocation } from 'react-router-dom';
 
 const CampusLifePage = () => {
     const { setHero, hideHero } = useHero();
+
+    const location = useLocation();
+
+useLayoutEffect(() => {
+  if (location.hash) {
+    const id = location.hash.replace("#", "");
+    const el = document.getElementById(id);
+
+    if (el) {
+      setTimeout(() => {
+        el.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    }
+  }
+}, [location]);
+
 
     useLayoutEffect(() => {
         setHero({
@@ -57,18 +77,36 @@ const CampusLifePage = () => {
 
     return (
         <div className="w-full">
-            <CampusOverview />
-            <FeatureGridSection />
-            <StudentLifeCommunity />
-            <HostelAccommodation />
-            <ClubsActivities />
-            <SportsWellbeing />
-            {/* Reusing News Events Section */}
-            <CampusEventsSection />
-            <SafetyDiscipline />
-            <EventsWorkshops />
-            <CampusGallery />
-            <StudentVoices />
+      <CampusOverview />
+
+  <section id="academic-environment" className="scroll-mt-[60px]">
+      <FeatureGridSection />
+    </section>
+
+    <section id="student-life-community" className="scroll-mt-[60px]">
+      <StudentLifeCommunity />
+    </section>
+
+    <section id="hostel-accommodation" className="scroll-mt-[60px]">
+      <HostelAccommodation />
+    </section>
+
+    <section id="clubs-activities" className="scroll-mt-[60px]">
+      <ClubsActivities />
+    </section>
+
+    <section id="sports-wellbeing" className="scroll-mt-[60px]">
+      <SportsWellbeing />
+    </section>
+
+    <section id="campus-events" className="scroll-mt-[60px]">
+      <CampusEventsSection />
+    </section>
+
+    <SafetyDiscipline />
+    <EventsWorkshops />
+    <CampusGallery />
+    <StudentVoices />
         </div>
     );
 };

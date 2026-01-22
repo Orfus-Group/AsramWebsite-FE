@@ -7,12 +7,32 @@ import OurCoreValues from "./sections/OurCoreValues";
 import AccreditationStandards from "./sections/AccreditationStandards";
 import LeadershipGovernance from "./sections/LeadershipGovernance";
 import GlobalPartnerships from "./sections/GlobalPartnerships";
+import { useLocation } from "react-router-dom";
 
 const HeroBg = "/AsramWebsite-FE/assets/about/aboutherobg.png";
 
 
 const AboutAsramPage = () => {
     const { setHero, hideHero } = useHero();
+    const location = useLocation();
+
+
+    useLayoutEffect(() => {
+  if (location.hash) {
+    const id = location.hash.replace("#", "");
+    const el = document.getElementById(id);
+
+    if (el) {
+      setTimeout(() => {
+        el.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    }
+  }
+}, [location]);
+
 
     useLayoutEffect(() => {
         setHero({
@@ -50,11 +70,25 @@ const AboutAsramPage = () => {
 
     return (
         <div className="w-full bg-white">
-            <WhoWeAre />
-            <OurCoreValues />
-            <AccreditationStandards />
-            <LeadershipGovernance />
-            <GlobalPartnerships />
+           <section id="who-we-are" className="scroll-mt-[60px]">
+      <WhoWeAre />
+    </section>
+
+    <section id="our-core-values" className="scroll-mt-[60px]">
+      <OurCoreValues />
+    </section>
+
+    <section id="accreditation-standards" className="scroll-mt-[60px]">
+      <AccreditationStandards />
+    </section>
+
+    <section id="leadership-governance" className="scroll-mt-[60px]">
+      <LeadershipGovernance />
+    </section>
+
+    <section id="global-partnerships" className="scroll-mt-[60px]">
+      <GlobalPartnerships />
+    </section>
         </div>
     );
 };

@@ -24,16 +24,14 @@ const utilityLinks = [
 
 
 const academicsContent = {
-  leftText: `ASRAM School of Nursing is widely respected for its high-quality teaching,
-strong clinical training, and excellent student outcomes. Our programs continue
-to earn strong learning.`,
+  leftText: `Outcome-driven programs built to create thinkers, not note-takers. Learn from structured curricula designed for real-world impact.`,
 
   button: "Explore Our Achievements",
   columns: [
     {
       heading: "Colleges",
       links: [
-        "College of Paramedical Science",
+        "College of Health Sciences",
         "College of Nursing",
         "College of Medical College",
       ],
@@ -41,21 +39,133 @@ to earn strong learning.`,
     {
       heading: "Quick Links",
       links: [
-        "Education at Asram",
-        "Graduate Medical Education",
-        "Academic Affairs",
+        "Departments",
+        "Skill Lab",
+        "Faculty",
+      ],
+    },
+  ],
+};
+
+const newsContent = {
+  leftText: `Updates and announcements from across academics, healthcare, and campus life.`,
+
+  button: "Explore News & Events",
+  columns: [
+    {
+      heading: "Quick Links",
+      links: [
+        "Campus Events",
+        "Featured Story",
+        "Latest News",
+      ],
+    },
+   
+  ],
+};
+
+const researchContent = {
+  leftText: `Focused research initiatives driven by innovation, problem-solving, and real-world relevance. Faculty and students collaborate to turn ideas into impactful outcomes for industry and society.`,
+
+  button: "Explore Our Achievements",
+  columns: [
+    {
+      heading: "Colleges",
+      links: [
+        "College of Health Sciences",
+        "College of Nursing",
+        "College of Medical College",
+      ],
+    },
+    {
+      heading: "Quick Links",
+      links: [
+        "Departments",
+        "Skill Lab",
+        "Faculty",
+      ],
+    },
+  ],
+};
+
+const campusLifeContent = {
+  leftText: `A well-structured campus environment that supports academic focus, personal growth, and student well-being.`,
+
+  button: "Explore Campus Life",
+  columns: [
+    {
+      heading: "Quick Links",
+      links: [
+        "Academic Environment",
+        "Student Life & Community",
+        "Hostel & Accommodation",
+      ],
+    },
+    {
+      heading: null,
+      links: [
+        "Clubs & Activities",
+        "Sports & Wellbeing",
+        "Campus Events",
+      ],
+    },
+  ],
+};
+
+const aboutContent = {
+  leftText: `A premier academic and healthcare institution integrating medical education, research, and advanced clinical care since 2000.`,
+
+  button: "Explore About Us",
+  columns: [
+    {
+      heading: "Quick Links",
+      links: [
+        "Who We Are",
+        "Our Core Values",
+        "Accreditation Standards",
+      ],
+    },
+    {
+      heading: null,
+      links: [
+        "Leadership & Governance",
+        "Global Partnerships",
+      ],
+    },
+  ],
+};
+
+const healthCareContent = {
+  leftText: `A well-structured campus environment that supports academic focus, personal growth, and student well-being.`,
+
+  button: "Explore Healthcare",
+  columns: [
+    {
+      heading: "Quick Links",
+      links: [
+        "Specialties & Departments",
+        "Experienced Doctors",
+        "Patient Care & Facilities",
+      ],
+    },
+    {
+      heading: null,
+      links: [
+        "Diagnostic Services",
+        "Safety Accreditation",
+        "Patient Support Services"
       ],
     },
   ],
 };
 
 const megaMenuContent = {
-  About: academicsContent,
+  About: aboutContent,
   Academics: academicsContent,
-  Research: academicsContent,
-  Healthcare: academicsContent,
-  "Campus Life": academicsContent,
-  News: academicsContent,
+  Research: researchContent,
+  Healthcare: healthCareContent,
+  "Campus Life": campusLifeContent,
+  News: newsContent,
 };
 
 const NavItem = ({ label, to, isActive, hasMegaMenu, onClick, onHover }) => {
@@ -209,9 +319,10 @@ const AsramMainHeader = () => {
           <nav className={`${T.font.family} hidden lg:flex flex-1 items-center justify-between gap-[40px] mr-[84px] h-full`}>
             <NavItem
               label="About"
-              to="/about-asram"
+               to="/about-asram"
               isActive={location.pathname.startsWith("/about-asram")}
-              onClick={() => setOpenMenu(null)}
+              onClick={() => setOpenMenu((prev) => (prev === "About" ? null : "About"))}
+              hasMegaMenu
             />
             <NavItem
               label="Academics"
@@ -245,21 +356,24 @@ const AsramMainHeader = () => {
           <nav className={`${T.font.family} hidden lg:flex flex-1 items-center justify-between gap-[40px] ml-[84px] h-full`}>
             <NavItem
               label="Healthcare"
-              to="/healthcare"
+               to="/healthcare"
               isActive={location.pathname.startsWith("/healthcare")}
-              onClick={() => setOpenMenu(null)}
+              onClick={() => setOpenMenu((prev) => (prev === "Healthcare" ? null : "Healthcare"))}
+              hasMegaMenu
             />
             <NavItem
               label="Campus Life"
               to="/campus-life"
               isActive={location.pathname.startsWith("/campus-life")}
-              onClick={() => setOpenMenu(null)}
+               onClick={() => setOpenMenu((prev) => (prev === "Campus Life" ? null : "Campus Life"))}
+               hasMegaMenu
             />
             <NavItem
               label="News"
               to="/news"
               isActive={location.pathname.startsWith("/news")}
-              onClick={() => setOpenMenu(null)}
+               onClick={() => setOpenMenu((prev) => (prev === "News" ? null : "News"))}
+               hasMegaMenu
             />
           </nav>
         </div>
@@ -403,14 +517,14 @@ const AsramMainHeader = () => {
                                   {col.links.map((link) => (
                                     <Link
                                       key={link}
-                                      to={link === "College of Nursing" ? (item === "Research" ? "/nursing-research" : "/nursing-academics") : link === "College of Medical College" ? (item === "Research" ? "/medical-research" : "/medical-academics") : link === "College of Paramedical Science" ? (item === "Research" ? "/paramedical-research" : "/paramedical-academics") : "#"}
+                                      to={link === "College of Nursing" ? (item === "Research" ? "/nursing-research" : "/nursing-academics") : link === "College of Medical College" ? (item === "Research" ? "/medical-research" : "/medical-academics") : link === "College of Health Sciences" ? (item === "Research" ? "/paramedical-research" : "/paramedical-academics") : item === "News" ? (link === "Campus Events" ? "/news#campus-events" : link === "Featured Story" ? "/news#featured-story" : link === "Latest News" ? "/news#latest-news" : "#") : "#"}
                                       className="text-white text-[15px] font-medium hover:underline"
                                       onClick={() => {
                                         setMobileMenuOpen(false);
                                         setOpenMenu(null);
                                         if (link === "College of Nursing") setActiveCollege("nursing");
                                         else if (link === "College of Medical College") setActiveCollege("medical");
-                                        else if (link === "College of Paramedical Science") setActiveCollege("paramedical");
+                                        else if (link === "College of Health Sciences") setActiveCollege("paramedical");
                                       }}
                                     >
                                       {link}
@@ -508,22 +622,109 @@ const AsramMainHeader = () => {
                     className="flex flex-col"
                     style={{ width: col.heading === "Colleges" ? "286px" : "301px" }}
                   >
-                    <h3
-                      className={`${T.font.family} ${T.font.weight.bold} text-[22px] leading-[34px]`}
-                      style={{
-                        color: T.color.extra.dark75,
-                        marginBottom: "20px",
-                        marginTop: "-4px",
-                      }}
-                    >
-                      {col.heading}
-                    </h3>
+                   <h3
+  className={`${T.font.family} ${T.font.weight.bold} text-[22px] leading-[34px]`}
+  style={{
+    color: T.color.extra.dark75,
+    marginBottom: "20px",
+    marginTop: "-4px",
+    visibility: col.heading ? "visible" : "hidden",
+  }}
+>
+  {col.heading || "placeholder"}
+</h3>
+
 
                     <ul className="space-y-[16px]">
                       {col.links.map((link) => (
                         <Link
                           key={link}
-                          to={link === "College of Nursing" ? (openMenu === "Research" ? "/nursing-research" : "/nursing-academics") : link === "College of Medical College" ? (openMenu === "Research" ? "/medical-research" : "/medical-academics") : link === "College of Paramedical Science" ? (openMenu === "Research" ? "/paramedical-research" : "/paramedical-academics") : "#"}
+                          // to={link === "College of Nursing" ? (openMenu === "Research" ? "/nursing-research" : "/nursing-academics") : link === "College of Medical College" ? (openMenu === "Research" ? "/medical-research" : "/medical-academics") : link === "College of Health Sciences" ? (openMenu === "Research" ? "/paramedical-research" : "/paramedical-academics") : openMenu === "News" ? (link === "Campus Events" ? "/news#campus-events" : link === "Featured Story" ? "/news#featured-story" : link === "Latest News" ? "/news#latest-news" : "#") : "#"}
+              to={
+  openMenu === "Academics"
+    ? link === "College of Health Sciences"
+      ? "/paramedical-academics"
+      : link === "College of Medical College"
+      ? "/medical-academics"
+      : link === "College of Nursing"
+      ? "/nursing-academics"
+      : link === "Faculty"
+      ? "/faculty"
+      : link === "Departments"
+      ? "/healthcare/general-surgery"
+      : "#"
+
+    : openMenu === "Research"
+    ? link === "College of Health Sciences"
+      ? "/paramedical-research"
+      : link === "College of Medical College"
+      ? "/medical-research"
+      : link === "College of Nursing"
+      ? "/nursing-research"
+      : link === "Faculty"
+      ? "/faculty"
+      : link === "Departments"
+      ? "/healthcare/general-surgery"
+      : "#"
+
+    : openMenu === "Healthcare"
+    ? link === "Specialties & Departments"
+      ? "/healthcare#specialties-departments"
+      : link === "Experienced Doctors"
+      ? "/healthcare#experienced-doctors"
+      : link === "Patient Care & Facilities"
+      ? "/healthcare#patient-care-facilities"
+      : link === "Diagnostic Services"
+      ? "/healthcare#diagnostic-services"
+      : link === "Safety Accreditation"
+      ? "/healthcare#safety-accreditation"
+      : link === "Patient Support Services"
+      ? "/healthcare#patient-support-services"
+      : "#"
+
+    : openMenu === "Campus Life"
+    ? link === "Academic Environment"
+      ? "/campus-life#academic-environment"
+      : link === "Student Life & Community"
+      ? "/campus-life#student-life-community"
+      : link === "Hostel & Accommodation"
+      ? "/campus-life#hostel-accommodation"
+      : link === "Clubs & Activities"
+      ? "/campus-life#clubs-activities"
+      : link === "Sports & Wellbeing"
+      ? "/campus-life#sports-wellbeing"
+      : link === "Campus Events"
+      ? "/campus-life#campus-events"
+      : "#"
+
+    : openMenu === "About"
+    ? link === "Who We Are"
+      ? "/about-asram#who-we-are"
+      : link === "Our Core Values"
+      ? "/about-asram#our-core-values"
+      : link === "Accreditation Standards"
+      ? "/about-asram#accreditation-standards"
+      : link === "Leadership & Governance"
+      ? "/about-asram#leadership-governance"
+      : link === "Global Partnerships"
+      ? "/about-asram#global-partnerships"
+      : "#"
+
+    : openMenu === "News"
+    ? link === "Campus Events"
+      ? "/news#campus-events"
+      : link === "Featured Story"
+      ? "/news#featured-story"
+      : link === "Latest News"
+      ? "/news#latest-news"
+      : "#"
+
+    : "#"
+}
+
+
+
+
                           className={`${T.font.family} ${T.font.weight.semibold} text-[18px] leading-[22px] block group w-fit`}
                           style={{
                             color: T.color.secondary,
@@ -531,11 +732,13 @@ const AsramMainHeader = () => {
                             whiteSpace: "nowrap",
                           }}
                           onClick={() => {
-                            setOpenMenu(null);
-                            if (link === "College of Nursing") setActiveCollege("nursing");
-                            else if (link === "College of Medical College") setActiveCollege("medical");
-                            else if (link === "College of Paramedical Science") setActiveCollege("paramedical");
-                          }}
+  setOpenMenu(null);
+
+  if (link === "College of Nursing") setActiveCollege("nursing");
+  else if (link === "College of Medical College") setActiveCollege("medical");
+  else if (link === "College of Health Sciences") setActiveCollege("paramedical");
+}}
+
                         >
                           <span className="relative py-1">
                             {link}

@@ -1,6 +1,7 @@
 import React from "react";
 import PageSection from "@/features/common/layout/PageContainer";
 import { T } from "@/theme";
+import { useNavigate } from "react-router-dom";
 
 // Generic placeholder icon with generic shape matching visual style
 const PlaceholderIcon1 = () => (
@@ -159,6 +160,7 @@ const specialties = [
 ];
 
 const SpecialtiesDepartments = () => {
+     const navigate = useNavigate();
     return (
         <PageSection bg="bg-[#EEF2F7]" paddingClass="py-[60px] md:py-[80px] px-[20px] lg:px-[120px]">
             <h1 className={`${T.font.family} font-bold text-[28px] md:text-[42px] text-[#223F7F] mb-[40px]`}>
@@ -167,19 +169,25 @@ const SpecialtiesDepartments = () => {
             {/* Grid Layout Configuration based on Figma: 4 columns, gap 22.5px */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-[22.5px] gap-x-[22.5px]">
                 {specialties.map((item, index) => (
-                    <div
-                        key={index}
-                        className="
-                            bg-white 
-                            rounded-[8px] 
-                            border border-[#E0E0E0] border-[0.9px]
-                            p-[20px] 
-                            min-h-[129.5px]
-                            flex flex-col justify-center items-start 
-                            gap-[20px]
-                            cursor-pointer
-                        "
-                    >
+                   <div
+    key={index}
+    onClick={() => {
+        if (item.name === "General Surgery") {
+            navigate("/healthcare/general-surgery");
+        }
+    }}
+    className="
+        bg-white 
+        rounded-[8px] 
+        border border-[#E0E0E0] border-[0.9px]
+        p-[20px] 
+        min-h-[129.5px]
+        flex flex-col justify-center items-start 
+        gap-[20px]
+        cursor-pointer
+    "
+>
+
                         {/* Icon Container: 45.1px square, radius 7.5px, color rgba(34, 63, 127, 0.1) which is approx #223F7F with 10% opacity */}
                         <div className="w-[45.1px] h-[45.1px] bg-[#223F7F]/10 rounded-[7.5px] flex items-center justify-center text-[#223F7F]">
                             {item.icon}

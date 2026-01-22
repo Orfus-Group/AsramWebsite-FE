@@ -13,10 +13,30 @@ import PatientSupportServices from "./sections/PatientSupportServices";
 import HealthCampsOutreach from "./sections/HealthCampsOutreach";
 import EmergencyCriticalCare from "./sections/EmergencyCriticalCare";
 import HospitalInfrastructureGallery from "./sections/HospitalInfrastructureGallery";
+import { useLocation } from "react-router-dom";
 const HeroBg = "/AsramWebsite-FE/assets/healthcare/healthcareherobg.png";
 
 const HealthcarePage = () => {
   const { setHero, hideHero } = useHero();
+
+  const location = useLocation();
+
+useLayoutEffect(() => {
+  if (location.hash) {
+    const id = location.hash.replace("#", "");
+    const el = document.getElementById(id);
+
+    if (el) {
+      setTimeout(() => {
+        el.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    }
+  }
+}, [location]);
+
 
   useLayoutEffect(() => {
     setHero({
@@ -52,20 +72,42 @@ const HealthcarePage = () => {
     return () => hideHero();
   }, [setHero, hideHero]);
 
-  return (
-    <div className="w-full bg-white">
+ return (
+  <div className="w-full bg-white">
+    <section id="care-at-asram" className="scroll-mt-[60px]">
       <CareAtAsram />
+    </section>
+
+    <section id="specialties-departments" className="scroll-mt-[60px]">
       <SpecialtiesDepartments />
+    </section>
+
+    <section id="experienced-doctors" className="scroll-mt-[60px]">
       <ExperiencedDoctors />
+    </section>
+
+    <section id="patient-care-facilities" className="scroll-mt-[60px]">
       <PatientCareFacilities />
+    </section>
+
+    <section id="diagnostic-services" className="scroll-mt-[60px]">
       <DiagnosticServices />
+    </section>
+
+    <section id="safety-accreditation" className="scroll-mt-[60px]">
       <SafetyAccreditation />
+    </section>
+
+    <section id="patient-support-services" className="scroll-mt-[60px]">
       <PatientSupportServices />
-      <HealthCampsOutreach />
-      <EmergencyCriticalCare />
-      <HospitalInfrastructureGallery />
-    </div>
-  );
+    </section>
+
+    <HealthCampsOutreach />
+    <EmergencyCriticalCare />
+    <HospitalInfrastructureGallery />
+  </div>
+);
+
 };
 
 export default HealthcarePage;
