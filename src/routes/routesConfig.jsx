@@ -4,9 +4,9 @@ const HomePage = lazy(() => import("@/pages/asram/AsramHome"));
 const MedicalPage = lazy(() => import("@/pages/medical/MedicalPage"));
 const MedicalAcademicsPage = lazy(() => import("@/pages/medical/MedicalAcademicsPage"));
 const MedicalResearchPage = lazy(() => import("@/pages/medical/MedicalResearchPage"));
-const ParaMedicalPage = lazy(() => import("@/pages/paramedical/ParaMedicalPage"));
-const ParaMedicalAcademicsPage = lazy(() => import("@/pages/paramedical/ParaMedicalAcademicsPage"));
-const ParaMedicalResearchPage = lazy(() => import("@/pages/paramedical/ParaMedicalResearchPage"));
+const HealthSciencePage = lazy(() => import("@/pages/paramedical/ParaMedicalPage"));
+const HealthScienceAcademicsPage = lazy(() => import("@/pages/paramedical/ParaMedicalAcademicsPage"));
+const HealthScienceResearchPage = lazy(() => import("@/pages/paramedical/ParaMedicalResearchPage"));
 const NursingPage = lazy(() => import("@/pages/nursing/NursingPage"));
 const AcademicsPage = lazy(() => import("@/pages/academics/AcademicsPage"));
 const ResearchPage = lazy(() => import("@/pages/research/ResearchPage"));
@@ -70,24 +70,25 @@ const routesConfig = [
     element: <MedicalResearchPage />,
     layout: "medical",
   },
-  {
-    path: "/paramedical",
-    label: "ParaMedical College",
-    element: <ParaMedicalPage />,
-    layout: "paramedical",
-  },
-  {
-    path: "/paramedical-academics",
-    label: "ParaMedical Academics",
-    element: <ParaMedicalAcademicsPage />,
-    layout: "paramedical",
-  },
-  {
-    path: "/paramedical-research",
-    label: "ParaMedical Research",
-    element: <ParaMedicalResearchPage />,
-    layout: "paramedical",
-  },
+{
+  path: "/health-science",
+  label: "College of Health Sciences",
+  element: <HealthSciencePage />,
+  layout: "healthscience",
+},
+{
+  path: "/health-science-academics",
+  label: "Health Science Academics",
+  element: <HealthScienceAcademicsPage />,
+  layout: "healthscience",
+},
+{
+  path: "/health-science-research",
+  label: "Health Science Research",
+  element: <HealthScienceResearchPage />,
+  layout: "healthscience",
+},
+
   {
     path: "/nursing",
     label: "Nursing",

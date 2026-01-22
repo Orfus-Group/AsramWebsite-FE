@@ -60,7 +60,7 @@ const newsContent = {
         "Latest News",
       ],
     },
-   
+
   ],
 };
 
@@ -319,7 +319,6 @@ const AsramMainHeader = () => {
           <nav className={`${T.font.family} hidden lg:flex flex-1 items-center justify-between gap-[40px] mr-[84px] h-full`}>
             <NavItem
               label="About"
-               to="/about-asram"
               isActive={location.pathname.startsWith("/about-asram")}
               onClick={() => setOpenMenu((prev) => (prev === "About" ? null : "About"))}
               hasMegaMenu
@@ -356,7 +355,7 @@ const AsramMainHeader = () => {
           <nav className={`${T.font.family} hidden lg:flex flex-1 items-center justify-between gap-[40px] ml-[84px] h-full`}>
             <NavItem
               label="Healthcare"
-               to="/healthcare"
+              to="/healthcare"
               isActive={location.pathname.startsWith("/healthcare")}
               onClick={() => setOpenMenu((prev) => (prev === "Healthcare" ? null : "Healthcare"))}
               hasMegaMenu
@@ -365,15 +364,15 @@ const AsramMainHeader = () => {
               label="Campus Life"
               to="/campus-life"
               isActive={location.pathname.startsWith("/campus-life")}
-               onClick={() => setOpenMenu((prev) => (prev === "Campus Life" ? null : "Campus Life"))}
-               hasMegaMenu
+              onClick={() => setOpenMenu((prev) => (prev === "Campus Life" ? null : "Campus Life"))}
+              hasMegaMenu
             />
             <NavItem
               label="News"
               to="/news"
               isActive={location.pathname.startsWith("/news")}
-               onClick={() => setOpenMenu((prev) => (prev === "News" ? null : "News"))}
-               hasMegaMenu
+              onClick={() => setOpenMenu((prev) => (prev === "News" ? null : "News"))}
+              hasMegaMenu
             />
           </nav>
         </div>
@@ -517,14 +516,14 @@ const AsramMainHeader = () => {
                                   {col.links.map((link) => (
                                     <Link
                                       key={link}
-                                      to={link === "College of Nursing" ? (item === "Research" ? "/nursing-research" : "/nursing-academics") : link === "College of Medical College" ? (item === "Research" ? "/medical-research" : "/medical-academics") : link === "College of Health Sciences" ? (item === "Research" ? "/paramedical-research" : "/paramedical-academics") : item === "News" ? (link === "Campus Events" ? "/news#campus-events" : link === "Featured Story" ? "/news#featured-story" : link === "Latest News" ? "/news#latest-news" : "#") : "#"}
+                                      to={link === "College of Nursing" ? (item === "Research" ? "/nursing-research" : "/nursing-academics") : link === "College of Medical College" ? (item === "Research" ? "/medical-research" : "/medical-academics") : link === "College of Health Sciences" ? (item === "Research" ? "/health-science-research" : "/health-science-academics") : item === "News" ? (link === "Campus Events" ? "/news#campus-events" : link === "Featured Story" ? "/news#featured-story" : link === "Latest News" ? "/news#latest-news" : "#") : "#"}
                                       className="text-white text-[15px] font-medium hover:underline"
                                       onClick={() => {
                                         setMobileMenuOpen(false);
                                         setOpenMenu(null);
                                         if (link === "College of Nursing") setActiveCollege("nursing");
                                         else if (link === "College of Medical College") setActiveCollege("medical");
-                                        else if (link === "College of Health Sciences") setActiveCollege("paramedical");
+                                        else if (link === "College of Health Sciences") setActiveCollege("health-science");
                                       }}
                                     >
                                       {link}
@@ -622,105 +621,105 @@ const AsramMainHeader = () => {
                     className="flex flex-col"
                     style={{ width: col.heading === "Colleges" ? "286px" : "301px" }}
                   >
-                   <h3
-  className={`${T.font.family} ${T.font.weight.bold} text-[22px] leading-[34px]`}
-  style={{
-    color: T.color.extra.dark75,
-    marginBottom: "20px",
-    marginTop: "-4px",
-    visibility: col.heading ? "visible" : "hidden",
-  }}
->
-  {col.heading || "placeholder"}
-</h3>
+                    <h3
+                      className={`${T.font.family} ${T.font.weight.bold} text-[22px] leading-[34px]`}
+                      style={{
+                        color: T.color.extra.dark75,
+                        marginBottom: "20px",
+                        marginTop: "-4px",
+                        visibility: col.heading ? "visible" : "hidden",
+                      }}
+                    >
+                      {col.heading || "placeholder"}
+                    </h3>
 
 
                     <ul className="space-y-[16px]">
                       {col.links.map((link) => (
                         <Link
                           key={link}
-                          // to={link === "College of Nursing" ? (openMenu === "Research" ? "/nursing-research" : "/nursing-academics") : link === "College of Medical College" ? (openMenu === "Research" ? "/medical-research" : "/medical-academics") : link === "College of Health Sciences" ? (openMenu === "Research" ? "/paramedical-research" : "/paramedical-academics") : openMenu === "News" ? (link === "Campus Events" ? "/news#campus-events" : link === "Featured Story" ? "/news#featured-story" : link === "Latest News" ? "/news#latest-news" : "#") : "#"}
-              to={
-  openMenu === "Academics"
-    ? link === "College of Health Sciences"
-      ? "/paramedical-academics"
-      : link === "College of Medical College"
-      ? "/medical-academics"
-      : link === "College of Nursing"
-      ? "/nursing-academics"
-      : link === "Faculty"
-      ? "/faculty"
-      : link === "Departments"
-      ? "/healthcare/general-surgery"
-      : "#"
+                          // to={link === "College of Nursing" ? (openMenu === "Research" ? "/nursing-research" : "/nursing-academics") : link === "College of Medical College" ? (openMenu === "Research" ? "/medical-research" : "/medical-academics") : link === "College of Health Sciences" ? (openMenu === "Research" ? "/health-science-research" : "/health-science-academics") : openMenu === "News" ? (link === "Campus Events" ? "/news#campus-events" : link === "Featured Story" ? "/news#featured-story" : link === "Latest News" ? "/news#latest-news" : "#") : "#"}
+                          to={
+                            openMenu === "Academics"
+                              ? link === "College of Health Sciences"
+                                ? "/health-science-academics"
+                                : link === "College of Medical College"
+                                  ? "/medical-academics"
+                                  : link === "College of Nursing"
+                                    ? "/nursing-academics"
+                                    : link === "Faculty"
+                                      ? "/faculty"
+                                      : link === "Departments"
+                                        ? "/healthcare/general-surgery"
+                                        : "#"
 
-    : openMenu === "Research"
-    ? link === "College of Health Sciences"
-      ? "/paramedical-research"
-      : link === "College of Medical College"
-      ? "/medical-research"
-      : link === "College of Nursing"
-      ? "/nursing-research"
-      : link === "Faculty"
-      ? "/faculty"
-      : link === "Departments"
-      ? "/healthcare/general-surgery"
-      : "#"
+                              : openMenu === "Research"
+                                ? link === "College of Health Sciences"
+                                  ? "/health-science-research"
+                                  : link === "College of Medical College"
+                                    ? "/medical-research"
+                                    : link === "College of Nursing"
+                                      ? "/nursing-research"
+                                      : link === "Faculty"
+                                        ? "/faculty"
+                                        : link === "Departments"
+                                          ? "/healthcare/general-surgery"
+                                          : "#"
 
-    : openMenu === "Healthcare"
-    ? link === "Specialties & Departments"
-      ? "/healthcare#specialties-departments"
-      : link === "Experienced Doctors"
-      ? "/healthcare#experienced-doctors"
-      : link === "Patient Care & Facilities"
-      ? "/healthcare#patient-care-facilities"
-      : link === "Diagnostic Services"
-      ? "/healthcare#diagnostic-services"
-      : link === "Safety Accreditation"
-      ? "/healthcare#safety-accreditation"
-      : link === "Patient Support Services"
-      ? "/healthcare#patient-support-services"
-      : "#"
+                                : openMenu === "Healthcare"
+                                  ? link === "Specialties & Departments"
+                                    ? "/healthcare#specialties-departments"
+                                    : link === "Experienced Doctors"
+                                      ? "/healthcare#experienced-doctors"
+                                      : link === "Patient Care & Facilities"
+                                        ? "/healthcare#patient-care-facilities"
+                                        : link === "Diagnostic Services"
+                                          ? "/healthcare#diagnostic-services"
+                                          : link === "Safety Accreditation"
+                                            ? "/healthcare#safety-accreditation"
+                                            : link === "Patient Support Services"
+                                              ? "/healthcare#patient-support-services"
+                                              : "#"
 
-    : openMenu === "Campus Life"
-    ? link === "Academic Environment"
-      ? "/campus-life#academic-environment"
-      : link === "Student Life & Community"
-      ? "/campus-life#student-life-community"
-      : link === "Hostel & Accommodation"
-      ? "/campus-life#hostel-accommodation"
-      : link === "Clubs & Activities"
-      ? "/campus-life#clubs-activities"
-      : link === "Sports & Wellbeing"
-      ? "/campus-life#sports-wellbeing"
-      : link === "Campus Events"
-      ? "/campus-life#campus-events"
-      : "#"
+                                  : openMenu === "Campus Life"
+                                    ? link === "Academic Environment"
+                                      ? "/campus-life#academic-environment"
+                                      : link === "Student Life & Community"
+                                        ? "/campus-life#student-life-community"
+                                        : link === "Hostel & Accommodation"
+                                          ? "/campus-life#hostel-accommodation"
+                                          : link === "Clubs & Activities"
+                                            ? "/campus-life#clubs-activities"
+                                            : link === "Sports & Wellbeing"
+                                              ? "/campus-life#sports-wellbeing"
+                                              : link === "Campus Events"
+                                                ? "/campus-life#campus-events"
+                                                : "#"
 
-    : openMenu === "About"
-    ? link === "Who We Are"
-      ? "/about-asram#who-we-are"
-      : link === "Our Core Values"
-      ? "/about-asram#our-core-values"
-      : link === "Accreditation Standards"
-      ? "/about-asram#accreditation-standards"
-      : link === "Leadership & Governance"
-      ? "/about-asram#leadership-governance"
-      : link === "Global Partnerships"
-      ? "/about-asram#global-partnerships"
-      : "#"
+                                    : openMenu === "About"
+                                      ? link === "Who We Are"
+                                        ? "/about-asram#who-we-are"
+                                        : link === "Our Core Values"
+                                          ? "/about-asram#our-core-values"
+                                          : link === "Accreditation Standards"
+                                            ? "/about-asram#accreditation-standards"
+                                            : link === "Leadership & Governance"
+                                              ? "/about-asram#leadership-governance"
+                                              : link === "Global Partnerships"
+                                                ? "/about-asram#global-partnerships"
+                                                : "#"
 
-    : openMenu === "News"
-    ? link === "Campus Events"
-      ? "/news#campus-events"
-      : link === "Featured Story"
-      ? "/news#featured-story"
-      : link === "Latest News"
-      ? "/news#latest-news"
-      : "#"
+                                      : openMenu === "News"
+                                        ? link === "Campus Events"
+                                          ? "/news#campus-events"
+                                          : link === "Featured Story"
+                                            ? "/news#featured-story"
+                                            : link === "Latest News"
+                                              ? "/news#latest-news"
+                                              : "#"
 
-    : "#"
-}
+                                        : "#"
+                          }
 
 
 
@@ -732,12 +731,12 @@ const AsramMainHeader = () => {
                             whiteSpace: "nowrap",
                           }}
                           onClick={() => {
-  setOpenMenu(null);
+                            setOpenMenu(null);
 
-  if (link === "College of Nursing") setActiveCollege("nursing");
-  else if (link === "College of Medical College") setActiveCollege("medical");
-  else if (link === "College of Health Sciences") setActiveCollege("paramedical");
-}}
+                            if (link === "College of Nursing") setActiveCollege("nursing");
+                            else if (link === "College of Medical College") setActiveCollege("medical");
+                            else if (link === "College of Health Sciences") setActiveCollege("health-science");
+                          }}
 
                         >
                           <span className="relative py-1">

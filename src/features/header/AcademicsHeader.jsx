@@ -75,21 +75,21 @@ const AcademicsHeader = () => {
   // Sync context if current path is explicit
   React.useEffect(() => {
     if (location.pathname.startsWith("/medical")) setActiveCollege("medical");
-    else if (location.pathname.startsWith("/paramedical")) setActiveCollege("paramedical");
+    else if (location.pathname.startsWith("/health-science")) setActiveCollege("healthscience");
     else if (location.pathname.startsWith("/nursing")) setActiveCollege("nursing");
   }, [location.pathname, setActiveCollege]);
 
   const isMedical = activeCollege === "medical";
-  const isParamedical = activeCollege === "paramedical";
+  const isHealthScience = activeCollege === "healthscience";
 
   const navItems = isMedical ? [
     { label: "Academics", path: "/medical-academics" },
     { label: "Research", path: "/medical-research" },
     { label: "Global & Community", path: "/community-health" },
     { label: "News", path: "/news" },
-  ] : isParamedical ? [
-    { label: "Academics", path: "/paramedical-academics" },
-    { label: "Research", path: "/paramedical-research" },
+  ] : isHealthScience ? [
+    { label: "Academics", path: "/health-science-academics" },
+    { label: "Research", path: "/health-science-research" },
     { label: "Global & Community", path: "/community-health" },
     { label: "News", path: "/news" },
   ] : [
@@ -139,7 +139,7 @@ const AcademicsHeader = () => {
 
           {/* ================= CENTER LOGO (Mobile) ================= */}
           <div className="flex-1 flex justify-center md:justify-start overflow-hidden">
-            <Link to={isMedical ? "/medical" : isParamedical ? "/paramedical" : "/nursing"}>
+            <Link to={isMedical ? "/medical" : isHealthScience ? "/health-science" : "/nursing"}>
               <div className="flex items-center gap-[4px] md:gap-[5.6px]">
                 <img
                   loading="eager"
@@ -153,7 +153,7 @@ const AcademicsHeader = () => {
                     Asram
                   </span>
                   <span className={`${T.font.family} ${T.font.weight.bold} text-[12.5px] md:text-[14.9px] text-[#223F7F] leading-[1.2] md:leading-[1.25] mt-[1px] md:mt-[1.2px] whitespace-nowrap transition-all duration-300`}>
-                    {isMedical ? "College of Medicine" : isParamedical ? "College of Paramedical" : "School of Nursing"}
+                    {isMedical ? "College of Medicine" : isHealthScience ? "College of Health Sciences" : "School of Nursing"}
                   </span>
                 </div>
               </div>
@@ -258,7 +258,7 @@ const AcademicsHeader = () => {
         text-white/70            /* NEW footer text color */
       `}
             >
-              © ASRAM {isMedical ? "College of Medicine" : isParamedical ? "College of Paramedical" : "School of Nursing"}
+              © ASRAM {isMedical ? "College of Medicine" : isHealthScience ? "College of Health Sciences" : "School of Nursing"}
             </p>
           </div>
         </div>

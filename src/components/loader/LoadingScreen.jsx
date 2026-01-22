@@ -53,7 +53,7 @@ export default function LoadingScreen() {
               Asram
             </span>
             <span className={`${T.font.family} ${T.font.weight.bold} text-[12.5px] md:text-[14.9px] text-[#223F7F] leading-[1.2] md:leading-[1.25] mt-[1px] md:mt-[1.2px] whitespace-nowrap transition-all duration-300`}>
-              {isParamedical ? "College of Paramedical" : "College of Medicine"}
+              {isParamedical ? "College of Health Sciences" : "College of Medicine"}
             </span>
           </div>
         </div>

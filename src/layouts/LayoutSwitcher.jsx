@@ -14,9 +14,9 @@ const layoutByPath = (pathname) => {
   if (pathname.startsWith("/medical")) return "medical";
   if (pathname.startsWith("/medical-research")) return "medical";
   if (pathname.startsWith("/medical-academics")) return "medical";
-  if (pathname.startsWith("/paramedical")) return "paramedical";
-  if (pathname.startsWith("/paramedical-research")) return "paramedical";
-  if (pathname.startsWith("/paramedical-academics")) return "paramedical";
+ if (pathname.startsWith("/health-science")) return "healthscience";
+if (pathname.startsWith("/health-science-research")) return "healthscience";
+if (pathname.startsWith("/health-science-academics")) return "healthscience";
   if (pathname.startsWith("/nursing-research")) return "research";
   if (pathname.startsWith("/nursing-academics")) return "academics";
   if (pathname.startsWith("/nursing")) return "nursing";
@@ -40,7 +40,7 @@ const layoutByPath = (pathname) => {
 const headerMap = {
   main: AsramMainHeader,
   medical: AcademicsHeader,
-  paramedical: AcademicsHeader,
+healthscience: AcademicsHeader,
   nursing: AcademicsHeader,
   academics: AcademicsHeader,
   research: AcademicsHeader,
@@ -93,9 +93,9 @@ const InnerLayout = () => {
     "/medical",
     "/medical-research",
     "/medical-academics",
-    "/paramedical",
-    "/paramedical-research",
-    "/paramedical-academics",
+    "/health-science",
+"/health-science-research",
+"/health-science-academics",
     "/nursing",
     "/research",
   ];
@@ -122,7 +122,7 @@ const InnerLayout = () => {
         </PageWrapper>
       </main>
       <Footer
-        {...(layoutKey === "medical" || layoutKey === "paramedical" || layoutKey === "nursing"
+        {...(layoutKey === "medical" || layoutKey === "healthscience" || layoutKey === "nursing"
           ? {
             bgClass: "bg-[#223F7F33]",
           }
