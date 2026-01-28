@@ -1,3 +1,4 @@
+import DonatePage from "@/pages/donate/DonatePage";
 import React, { lazy } from "react";
 
 const HomePage = lazy(() => import("@/pages/asram/AsramHome"));
@@ -184,6 +185,12 @@ const routesConfig = [
     label: "Alumni",
     element: <AlumniPage />,
     layout: "alumni",
+  },
+  {
+    path: "/donate",
+    label: "Donate",
+    element: <DonatePage />,
+    layout: "donate",
   }
 ];
 

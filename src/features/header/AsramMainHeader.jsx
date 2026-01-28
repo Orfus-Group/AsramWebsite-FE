@@ -19,6 +19,7 @@ const utilityLinks = [
   { label: "Pay", to: import.meta.env.VITE_PAY_URL || "http://pay.asram.in/" },
   { label: "Alumni", to: "/asram-alumni" },
   { label: "Careers", to: "/careers" },
+  { label: "Donate", to: "/donate" },
   { label: "Login", to: "/login" },
 ];
 
